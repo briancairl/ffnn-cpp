@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package>
+
+  <name>ffnn</name>
+  <version>0.0.0</version>
+
+  <description>
+    A header-only, C++ deep neural network library
+  </description>
+
+  <author email="briancairl@gmail.com">Brian Cairl</author>
+  <maintainer email="briancairl@gmail.com">Brian Cairl</maintainer>
+
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>eigen</build_depend>
+
+</package>

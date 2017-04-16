@@ -1,0 +1,171 @@
+/**
+ * @author Brian Cairl
+ * @date 2017
+ */
+#ifndef FFNN_LAYER_HIDDEN_H
+#define FFNN_LAYER_HIDDEN_H
+
+// C++ Standard Library
+#include <vector>
+
+// FFNN
+#include <ffnn/config/global.h>
+#include <ffnn/assert.h>
+#include <ffnn/mapped.h>
+#include <ffnn/layer/layer.h>
+#include <ffnn/traits/serializable.h>
+
+namespace ffnn
+{
+namespace layer
+{
+/**
+ * @brief A network layer object
+ */
+template<typename ValueType,
+         FFNN_SIZE_TYPE InputsAtCompileTime = Eigen::Dynamic,
+         FFNN_SIZE_TYPE OutputsAtCompileTime = Eigen::Dynamic>
+class Hidden :
+  public Layer<ValueType>,
+  public traits::Serializable
+{
+public:
+  /// Base-type alias
+  using Base = Layer<ValueType>;
+
+  /// Class verision type alias
+  using ClassVersionType = traits::Serializable::ClassVersionType;
+
+  /// Hidden input type standardization
+  typedef Eigen::Matrix<ValueType, InputsAtCompileTime, 1, Eigen::ColMajor> InputVector;
+
+  /// Hidden output type standardization
+  typedef Eigen::Matrix<ValueType, OutputsAtCompileTime, 1, Eigen::ColMajor> OutputVector;
+
+  /// Size-type standardization
+  typedef typename Base::SizeType SizeType;
+
+  /// Offset-type standardization
+  typedef typename Base::OffsetType OffsetType;
+
+  /**
+   * @brief Setup constructor
+   * @param input_dim  number of inputs to the Hidden
+   * @param output_dim  number of outputs from the Hidden
+   */
+  Hidden(SizeType input_dim = InputsAtCompileTime,
+         SizeType output_dim = OutputsAtCompileTime);
+  virtual ~Hidden();
+
+  /**
+   * @brief Initialize the layer
+   */
+  virtual bool initialize();
+
+  /**
+   * @brief Returns true if Hidden has been initialized
+   * @retval true  if Hidden is initialized
+   * @retval false  otherwise
+   */
+  virtual bool isInitialized() const
+  {
+    return static_cast<bool>(input_);
+  }
+
+  /**
+   * @brief Returns layer input values
+   * @return input values
+   * @warn Invalid before <code>initialize</code>
+   */
+  inline const typename Mapped<InputVector>::Type& input() const
+  {
+    FFNN_ASSERT_MSG(input_, "Hidden input is not initialized.");
+    return *input_;
+  }
+
+  /**
+   * @brief Returns layer output values
+   * @return output values
+   * @warn Invalid before <code>initialize</code>
+   */
+  inline const typename Mapped<OutputVector>::Type& output() const
+  {
+    FFNN_ASSERT_MSG(output_, "Hidden output is not initialized.");
+    return *output_;
+  }
+
+  /**
+   * @brief Forward value propagation
+   * @retval true  if forward-propagation succeeded
+   * @retval false  otherwise
+   */
+  virtual bool forward() = 0;
+
+  /**
+   * @brief Backward value propagation
+   * @retval true  if backward-propagation succeeded
+   * @retval false  otherwise
+   */
+  virtual bool backward() = 0;
+
+  /**
+   * @brief Applies layer weight updates
+   * @retval true  if weight update succeeded
+   * @retval false  otherwise
+   */
+  virtual bool update() = 0;
+
+  /**
+   * @brief Saves object contents
+   * @param[out] os  input stream
+   * @param version  class version number
+   * @retval true  if object was loaded successfully
+   * @retval false  otherwise
+   */
+  virtual bool save(std::ostream& os, ClassVersionType version) = 0;
+
+  /**
+   * @brief Loads object contents
+   * @param[in] is  input stream
+   * @param version  class version number
+   * @retval true  if object was loaded successfully
+   * @retval false  otherwise
+   */
+  virtual bool load(std::istream& is, ClassVersionType version) = 0;
+
+protected:
+  /**
+   * @brief Sets up the layer after initialization
+   * @retval true  if setup succeeded
+   * @retval false  otherwise
+   * @note Called after initialization sequence
+   */
+  virtual bool setup();
+
+  /// Memory-mapped input vector
+  typename Mapped<InputVector>::Ptr input_;
+
+  /// Memory-mapped output vector
+  typename Mapped<OutputVector>::Ptr output_;
+
+  /// Backward error vector
+  typename Mapped<InputVector>::Ptr backward_error_;
+
+  /// Output-target error vector
+  typename Mapped<OutputVector>::Ptr forward_error_;
+
+private:
+  /**
+   * @brief Maps outputs of this layer to inputs of the next
+   * @param next  a subsequent layer
+   * @param offset  offset index of a memory location in the input buffer of the next layer
+   * @retval <code>offset + output_dimension_</code>
+   */
+  OffsetType connectToForwardLayer(const Layer<ValueType>& next, OffsetType offset);
+};
+}  // namespace layer
+}  // namespace ffnn
+
+/// FFNN (implementation)
+#include <ffnn/layer/impl/hidden.hpp>
+#endif  // FFNN_LAYER_HIDDEN_H
