@@ -36,9 +36,8 @@ public:
 
   /**
    * @brief Default constructor
-   * @param network_output_dim  Output dimension of the network
    */
-  Output(SizeType network_output_dim = NetworkOutputsAtCompileTime);
+  Output();
   virtual ~Output();
 
   /**

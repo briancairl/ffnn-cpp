@@ -13,6 +13,8 @@
 // FFNN
 #include <ffnn/layer/hidden.h>
 #include <ffnn/neuron/neuron.h>
+#include <ffnn/optimizer/optimizer.h>
+#include <ffnn/optimizer/fwd.h>
 
 namespace ffnn
 {
@@ -32,41 +34,48 @@ public:
   /// Base-type alias
   using Base = Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>;
 
-  /// Class verision type alias
-  using ClassVersionType = traits::Serializable::ClassVersionType;
+  /// Sekf-type alias
+  using Self = FullyConnected<ValueType, NeuronTypeAtCompileTime, InputsAtCompileTime, OutputsAtCompileTime>;
 
-  /// Matrix-type standardization
-  typedef typename Hidden<ValueType>::InputVector InputVector;
-
-  /// Matrix-type standardization
-  typedef typename Hidden<ValueType>::OutputVector OutputVector;
+  /// Scalar-type standardization
+  typedef typename Base::ScalarType ScalarType;
 
   /// Size-type standardization
-  typedef typename Hidden<ValueType>::SizeType SizeType;
+  typedef typename Base::SizeType SizeType;
 
   /// Offset-type standardization
-  typedef typename Hidden<ValueType>::OffsetType OffsetType;
+  typedef typename Base::OffsetType OffsetType;
 
-  /// Neuron type standardization
-  typedef neuron::Neuron<ValueType> Neuron;
+  /// Matrix-type standardization
+  typedef typename Base::InputVector InputVector;
+
+  /// Matrix-type standardization
+  typedef typename Base::OutputVector OutputVector;
 
   /// Input-output weight matrix
   typedef Eigen::Matrix<ValueType, OutputsAtCompileTime, InputsAtCompileTime> WeightMatrix;
 
-  /// A configuration struct for a FullyConnected Hidden
-  struct Config
+  /// Neuron type standardization
+  typedef neuron::Neuron<ValueType> Neuron;
+
+  /// Layer optimization type standardization
+  typedef optimizer::Optimizer<Self> Optimizer;
+
+  /// A configuration object for a FullyConnected hidden layer
+  struct Parameters
   {
-    /// Learning rate used during weight updates
-    ValueType learning_rate;
-
     /// Standard deviation of weights on init
-    ValueType weight_init_variance;
+    ScalarType std_weight;
 
-    /// Default constructor
-    Config() :
-      learning_rate(1e-3),
-      weight_init_variance(1e-3)
-    {}
+    /// Standard deviation of biases on init
+    ScalarType std_bias;
+
+    /**
+     * @brief Setup constructor
+     * @param std_weight  Standard deviation of initial weights
+     * @param std_bias  Standard deviation of initial bias
+     */
+    Parameters(ScalarType std_weight = 1e-3, ScalarType std_bias = 1e-3);
   };
 
   /**
@@ -75,85 +84,75 @@ public:
    * @param config  layer configuration struct
    */
   FullyConnected(SizeType output_dim = OutputsAtCompileTime,
-                 const Config& config = Config());
+                 const Parameters& config = Parameters());
   virtual ~FullyConnected();
+
+  /**
+   * @brief Initialize the layer
+   */
+  virtual bool initialize();
 
   /**
    * @brief Forward value propagation
    * @retval true  if forward-propagation succeeded
    * @retval false  otherwise
    */
-  bool forward();
+  virtual bool forward();
 
   /**
    * @brief Backward value propagation
    * @retval true  if backward-propagation succeeded
    * @retval false  otherwise
    */
-  bool backward();
+  virtual bool backward();
 
   /**
    * @brief Applies layer weight updates
    * @retval true  if weight update succeeded
    * @retval false  otherwise
    */
-  bool update();
+  virtual bool update();
 
   /**
-   * @brief Saves object contents
-   * @param[out] os  input stream
-   * @param version  class version number
-   * @retval true  if object was loaded successfully
-   * @retval false  otherwise
+   * @brief Reset weights and biases
    */
-  bool save(std::ostream& os, ClassVersionType version);
+  void reset();
 
   /**
-   * @brief Loads object contents
-   * @param[in] is  input stream
-   * @param version  class version number
-   * @retval true  if object was loaded successfully
-   * @retval false  otherwise
+   * @brief Sets an optimizer used update network weights during back-propagation
+   * @param opt  optimizer to set
    */
-  bool load(std::istream& is, ClassVersionType version);
+  void setOptimizer(typename Optimizer::Ptr opt);
 
 protected:
-  /// Layer configurations
-  Config config_;
+  FFNN_REGISTER_SERIALIZABLE(FullyConnected)
 
-  /// Output neurons
-  std::vector<typename Neuron::Ptr> neurons_;
+  /// Save serializer
+  void save(OutputArchive& ar, VersionType version) const;
+
+  /// Load serializer
+  void load(InputArchive& ar, VersionType version);
 
 private:
-  /**
-   * @brief Sets up the layer after initialization
-   * @retval true  if setup succeeded
-   * @retval false  otherwise
-   * @note Called after initialization sequence
-   */
-  bool setup();
+  FFNN_REGISTER_OPTIMIZER(FullyConnected, GradientDescent);
+
+  /// Layer configuration
+  Parameters config_;
 
   /// Weight matrix
   WeightMatrix w_;
 
-  /// Weight matrix delta
-  WeightMatrix w_delta_;
+  /// Bias vector
+  OutputVector b_;
 
   /// Weighted input vector on last call to <code>forward</code>
   OutputVector w_input_;
 
-  /// Input vector on last call to <code>forward</code>
-  InputVector prev_input_;
+  /// Output neurons
+  std::vector<typename Neuron::Ptr> neurons_;
 
-  /// Archive save helper
-  template<class Archive>
-  void save(Archive& ar, ClassVersionType version) const;
-
-  /// Archive load helper
-  template<class Archive>
-  void load(Archive& ar, ClassVersionType version);
-
-  BOOST_SERIALIZATION_SPLIT_MEMBER()
+  /// Weight optimization resource
+  typename Optimizer::Ptr opt_;
 };
 }  // namespace layer
 }  // namespace ffnn

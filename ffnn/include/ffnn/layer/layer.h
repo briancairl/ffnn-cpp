@@ -6,11 +6,13 @@
 #define FFNN_LAYER_LAYER_H
 
 // C++ Standard Library
-#include <vector>
+#include <iostream>
+#include <map>
 
 // FFNN
 #include <ffnn/config/global.h>
 #include <ffnn/traits/shared.h>
+#include <ffnn/traits/serializable.h>
 #include <ffnn/traits/unique.h>
 
 namespace ffnn
@@ -30,11 +32,22 @@ template<typename LayerType>
 friend bool connect(const typename LayerType::Ptr& from,
                     const typename LayerType::Ptr& to);
 public:
+  /// Scalar-type standardization
+  typedef ValueType ScalarType;
+
   /// Size-type standardization
   typedef FFNN_SIZE_TYPE SizeType;
 
   /// Offset-type standardization
   typedef FFNN_OFFSET_TYPE OffsetType;
+
+#ifndef FFNN_NO_EXPLICIT_ALIGNMENT
+  /// Data buffer (vector) type
+  typedef std::vector<ValueType, Eigen::aligned_allocator<ValueType>> BufferType;
+#else
+  /// Data buffer (vector) type
+  typedef std::vector<ValueType> BufferType;
+#endif
 
   /**
    * @brief Setup constructor
@@ -89,7 +102,7 @@ public:
   /**
    * @brief Exposes raw input buffer
    */
-  inline const std::vector<ValueType>& getInputBuffer() const
+  inline const BufferType& getInputBuffer() const
   {
     return input_buffer_;
   }
@@ -97,7 +110,7 @@ public:
   /**
    * @brief Exposes raw bakcward-error buffer
    */
-  inline const std::vector<ValueType>& getBackwardErrorBuffer() const
+  inline const BufferType& getBackwardErrorBuffer() const
   {
     return backward_error_buffer_;
   }
@@ -127,6 +140,15 @@ public:
   virtual OffsetType connectToForwardLayer(const Layer<ValueType>& next, OffsetType offset) = 0;
 
 protected:
+  // Register serialization material
+  FFNN_REGISTER_SERIALIZABLE(Layer)
+
+  /// Save serializer
+  void save(OutputArchive& ar, VersionType version) const;
+
+  /// Load serializer
+  void load(InputArchive& ar, VersionType version);
+
   /**
    * @brief Counts the number of inputs from outputs of previous layers
    * @return total input count
@@ -142,8 +164,11 @@ protected:
   /// Flags if a layer has been initialized
   bool initialized_;
 
+  /// Flags if a layer was loaded from file
+  bool loaded_;
+
   /// Pointers to previous layers
-  std::vector<typename Layer<ValueType>::Ptr> prev_;
+  std::map<std::string, typename Layer<ValueType>::Ptr> prev_;
 
   /// Total number of input connections
   SizeType input_dimension_;
@@ -152,10 +177,10 @@ protected:
   SizeType output_dimension_;
 
   /// Raw input value buffer
-  std::vector<ValueType> input_buffer_;
+  BufferType input_buffer_;
 
   /// Raw bakward error value buffer
-  std::vector<ValueType> backward_error_buffer_;
+  BufferType backward_error_buffer_;
 };
 }  // namespace layer
 }  // namespace ffnn

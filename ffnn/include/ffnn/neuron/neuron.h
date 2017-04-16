@@ -7,7 +7,6 @@
 
 // FFNN
 #include <ffnn/traits/shared.h>
-#include <ffnn/traits/unique.h>
 
 namespace ffnn
 {
@@ -18,8 +17,7 @@ namespace neuron
  */
 template<typename ValueType>
 class Neuron :
-  public traits::Shared<Neuron<ValueType>>,
-  public traits::Unique
+  public traits::Shared<Neuron<ValueType>>
 {
 public:
   /**

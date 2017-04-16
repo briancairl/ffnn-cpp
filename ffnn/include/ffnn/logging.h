@@ -12,25 +12,104 @@ namespace ffnn
 {
 namespace logging
 {
-  const char* HEADER = "\033[95m";
-  const char* BLUE = "\033[94m";
-  const char* GREEN = "\033[92m";
-  const char* WARN = "\033[93m";
-  const char* FAIL = "\033[91m";
-  const char* ENDC = "\033[0m";
-  const char* BOLD = "\033[1m";
-  const char* UNDERLINE = "\033[4m";
+/// @defgroup UnicodeColorDefinitions
+/// @{
+const char* HEADER = "\033[95m";
+const char* BLUE = "\033[94m";
+const char* GREEN = "\033[92m";
+const char* WARN = "\033[93m";
+const char* FAIL = "\033[91m";
+const char* ENDC = "\033[0m";
+const char* BOLD = "\033[1m";
+const char* UNDERLINE = "\033[4m";
+/// @}
 }  // namespace logging
-}  // namespace ffnn
+
+// No debug printouts in Release build
+#if NDEBUG && !FFNN_ALLOW_LOGGING
+/// Disables console logging
+#define FFNN_NO_LOGGING 1
+#endif
+
+/// Named header for all <code>_NAMED</code> printouts
+#define FFNN_NAME_HEADER(name)\
+ffnn::logging::HEADER << "[" << name << "] " << ffnn::logging::ENDC
 
 #ifndef FFNN_NO_LOGGING
-#define FFNN_HEADER(name) ffnn::logging::HEADER << "[" << name << "] " << ffnn::logging::ENDC
-#define FFNN_ERROR_NAMED(name, msg)  {std::cout << FFNN_HEADER(name) << ffnn::logging::FAIL << msg << ffnn::logging::ENDC << std::endl;}
-#define FFNN_DEBUG_NAMED(name, msg) {std::cout << FFNN_HEADER(name) << ffnn::logging::BLUE << msg << ffnn::logging::ENDC << std::endl;}
-#define FFNN_WARN_NAMED(name, msg)  {std::cout << FFNN_HEADER(name) << ffnn::logging::WARN << msg << ffnn::logging::ENDC << std::endl;}
+/**
+ * @brief Prints an named debug message
+ * @param name  name to associate with message
+ * @param msg  message to print
+ * @warning Will not log when <code>FFNN_NO_LOGGING</code> is defined
+ */
+#define FFNN_DEBUG_NAMED(name, msg)\
+{std::cout << FFNN_NAME_HEADER(name) << ffnn::logging::BLUE << msg << ffnn::logging::ENDC << std::endl;}
+
+/**
+ * @brief Prints an named warning message
+ * @param name  name to associate with message
+ * @param msg  message to print
+ * @warning Will not log when <code>FFNN_NO_LOGGING</code> is defined
+ */
+#define FFNN_WARN_NAMED(name, msg)\
+{std::cout << FFNN_NAME_HEADER(name) << ffnn::logging::WARN << msg << ffnn::logging::ENDC << std::endl;}
+
 #else
-#define FFNN_ERROR_NAMED(name, msg) {}
-#define FFNN_DEBUG_NAMED(name, msg) {}
-#define FFNN_WARN_NAMED(name, msg)  {}
+#define FFNN_DEBUG_NAMED(name, msg) (void(0))
+#define FFNN_WARN_NAMED(name, msg)  (void(0))
 #endif
+
+/**
+ * @brief Prints a named general info message
+ * @param name  name to associate with message
+ * @param msg  message to print
+ * @warning Will not log when <code>FFNN_NO_LOGGING</code> is defined
+ */
+#define FFNN_INFO_NAMED(name, msg)\
+{std::cout << FFNN_NAME_HEADER(name) << ffnn::logging::GREEN << msg << ffnn::logging::ENDC << std::endl;}
+
+#if FFNN_SUPRESS_ERROR_LOGGING
+#define FFNN_ERROR_NAMED(name, msg) (void(0))
+#else
+/**
+ * @brief Prints an named error message
+ * @param name  name to associate with message
+ * @param msg  message to print
+ */
+#define FFNN_ERROR_NAMED(name, msg)\
+{std::cout << FFNN_NAME_HEADER(name) << ffnn::logging::FAIL << msg << ffnn::logging::ENDC << std::endl;}
+#endif
+
+/**
+ * @brief Prints an unnamed error message
+ * @param name  name to associate with message
+ * @param msg  message to print
+ */
+#define FFNN_ERROR(msg) FFNN_ERROR_NAMED("ERROR", msg)
+
+/**
+ * @brief Prints an unnamed debug message
+ * @param name  name to associate with message
+ * @param msg  message to print
+ * @warning Will not log when <code>FFNN_NO_LOGGING</code> is defined
+ */
+#define FFNN_DEBUG(msg) FFNN_DEBUG_NAMED("DEBUG", msg)
+
+/**
+ * @brief Prints an unnamed warning message
+ * @param name  name to associate with message
+ * @param msg  message to print
+ * @warning Will not log when <code>FFNN_NO_LOGGING</code> is defined
+ */
+#define FFNN_WARN(msg) FFNN_WARN_NAMED("-WARN", msg)
+
+/**
+ * @brief Prints an unnamed general info message
+ * @param name  name to associate with message
+ * @param msg  message to print
+ * @warning Will not log when <code>FFNN_NO_LOGGING</code> is defined
+ */
+#define FFNN_INFO(msg) FFNN_INFO_NAMED("-INFO", msg)
+
+}  // namespace ffnn
 #endif  // FFNN_LOGGING_H

@@ -10,8 +10,8 @@ namespace ffnn
 namespace layer
 {
 template<typename ValueType, FFNN_SIZE_TYPE NetworkOutputsAtCompileTime>
-Output<ValueType, NetworkOutputsAtCompileTime>::Output(SizeType network_output_dim) :
-  Base(network_output_dim, 0)
+Output<ValueType, NetworkOutputsAtCompileTime>::Output() :
+  Base(NetworkOutputsAtCompileTime, 0)
 {}
 
 template<typename ValueType, FFNN_SIZE_TYPE NetworkOutputsAtCompileTime>
@@ -22,9 +22,9 @@ template<typename ValueType, FFNN_SIZE_TYPE NetworkOutputsAtCompileTime>
 bool Output<ValueType, NetworkOutputsAtCompileTime>::initialize()
 {
   // Abort if layer is already initialized
-  if (Base::isInitialized())
+  if (!Base::loaded_ && Base::isInitialized())
   {
-    FFNN_WARN_NAMED("layer::Layer", "<" << Base::id() << "> already initialized.");
+    FFNN_WARN_NAMED("layer::Output", "<" << Base::getID() << "> already initialized.");
     return false;
   }
 
@@ -32,26 +32,31 @@ bool Output<ValueType, NetworkOutputsAtCompileTime>::initialize()
   SizeType input_count = Base::countInputs();
   {
     // Validate network input count
-    FFNN_ASSERT_MSG (NetworkOutputsAtCompileTime < 0 || input_count == NetworkOutputsAtCompileTime,
-                     "(NetworkOutputsAtCompileTime != `resolved input size`) for fixed-size layer.");
-  
+    FFNN_STATIC_ASSERT_MSG (NetworkOutputsAtCompileTime < 0 || input_count == NetworkOutputsAtCompileTime,
+                            "(NetworkOutputsAtCompileTime != `resolved input size`) for fixed-size layer.");
+
     // Set network input count
     Base::input_dimension_ = input_count;
   }
 
   // Do basic initialization and connect last hidden layer
-  if (Base::initialize() && Base::connectInputLayers() == input_count)
+  if (Base::initialize())
   {
-    FFNN_DEBUG_NAMED("layer::Output",
-                     "<" << Base::id() <<
-                     "> initialized as network output (net-out=" <<
-                     Base::input_dimension_ << ")");
-    return true;
+    if (Base::connectInputLayers() != input_count)
+    {
+      // Error initializing
+      Base::initialized_ = false;
+    }
+    else
+    {
+      FFNN_DEBUG_NAMED("layer::Output",
+                       "<" << Base::getID() <<
+                       "> initialized as network output (net-out=" <<
+                       Base::input_dimension_ << ")");
+      return true;
+    }
   }
-
-  // Error initializing
-  Base::initialized_ = false;
-  FFNN_ERROR_NAMED("layer::Output", "< " << Base::id() << "> failed to initialize.");
+  FFNN_ERROR_NAMED("layer::Output", "< " << Base::getID() << "> failed to initialize.");
   return false;
 }
 

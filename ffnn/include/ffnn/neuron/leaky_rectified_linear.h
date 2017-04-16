@@ -28,8 +28,7 @@ public:
   LeakyRectifiedLinear(ValueType leak_factor = 0.01) :
     leak_factor_(leak_factor)
   {
-    FFNN_ASSERT_MSG((leak_factor > 0 && leak_factor <= 1),
-                    "'leak_factor' is not in the range [0, 1]");
+    FFNN_ASSERT_MSG((leak_factor > 0 && leak_factor <= 1), "'leak_factor' is not in the range [0, 1]");
   }
 
   /**

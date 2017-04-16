@@ -13,6 +13,9 @@
 #include <boost/uuid/uuid_generators.hpp>
 #include <boost/uuid/uuid_io.hpp>
 
+// FFNN
+#include <ffnn/traits/serializable.h>
+
 namespace ffnn
 {
 namespace traits
@@ -20,7 +23,8 @@ namespace traits
 /**
  * @brief An object with a unique ID
  */
-class Unique
+class Unique :
+  public Serializable
 {
 public:
   /**
@@ -32,16 +36,41 @@ public:
     static boost::uuids::basic_random_generator<boost::mt19937> id_gen_;
 
     // Generate a new UUID
-    this->id_ = boost::uuids::to_string(id_gen_());
+    setID(boost::uuids::to_string(id_gen_()));
   }
 
   /**
-   * @brief Returns a unique ID associated a class
-   * @return unique ID
+   * @brief Returns an ID
+   * @return ID
    */
-  inline const std::string& id() const { return id_; }
+  inline const std::string& getID() const
+  {
+    return id_;
+  }
+
+  /**
+   * @brief Sets an ID
+   * @param id  ID to set
+   */
+  inline void setID(const std::string& id)
+  {
+    id_ = id;
+  }
 
 protected:
+  FFNN_REGISTER_SERIALIZABLE();
+
+  void save(OutputArchive& ar, VersionType) const
+  {
+    ar & id_;
+  }
+
+  void load(InputArchive& ar, VersionType)
+  {
+    ar & id_;
+  }
+
+private:
   /// UUID string associated with this class
   std::string id_;
 };

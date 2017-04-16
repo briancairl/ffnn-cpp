@@ -26,27 +26,23 @@ template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime = Eigen::Dynamic,
          FFNN_SIZE_TYPE OutputsAtCompileTime = Eigen::Dynamic>
 class Hidden :
-  public Layer<ValueType>,
-  public traits::Serializable
+  public Layer<ValueType>
 {
 public:
   /// Base-type alias
   using Base = Layer<ValueType>;
-
-  /// Class verision type alias
-  using ClassVersionType = traits::Serializable::ClassVersionType;
-
-  /// Hidden input type standardization
-  typedef Eigen::Matrix<ValueType, InputsAtCompileTime, 1, Eigen::ColMajor> InputVector;
-
-  /// Hidden output type standardization
-  typedef Eigen::Matrix<ValueType, OutputsAtCompileTime, 1, Eigen::ColMajor> OutputVector;
 
   /// Size-type standardization
   typedef typename Base::SizeType SizeType;
 
   /// Offset-type standardization
   typedef typename Base::OffsetType OffsetType;
+
+  /// Hidden input type standardization
+  typedef Eigen::Matrix<ValueType, InputsAtCompileTime, 1, Eigen::ColMajor> InputVector;
+
+  /// Hidden output type standardization
+  typedef Eigen::Matrix<ValueType, OutputsAtCompileTime, 1, Eigen::ColMajor> OutputVector;
 
   /**
    * @brief Setup constructor
@@ -61,16 +57,6 @@ public:
    * @brief Initialize the layer
    */
   virtual bool initialize();
-
-  /**
-   * @brief Returns true if Hidden has been initialized
-   * @retval true  if Hidden is initialized
-   * @retval false  otherwise
-   */
-  virtual bool isInitialized() const
-  {
-    return static_cast<bool>(input_);
-  }
 
   /**
    * @brief Returns layer input values
@@ -99,48 +85,39 @@ public:
    * @retval true  if forward-propagation succeeded
    * @retval false  otherwise
    */
-  virtual bool forward() = 0;
+  virtual bool forward()
+  {
+    return true;
+  }
 
   /**
    * @brief Backward value propagation
    * @retval true  if backward-propagation succeeded
    * @retval false  otherwise
    */
-  virtual bool backward() = 0;
+  virtual bool backward()
+  {
+    return true;
+  }
 
   /**
    * @brief Applies layer weight updates
    * @retval true  if weight update succeeded
    * @retval false  otherwise
    */
-  virtual bool update() = 0;
-
-  /**
-   * @brief Saves object contents
-   * @param[out] os  input stream
-   * @param version  class version number
-   * @retval true  if object was loaded successfully
-   * @retval false  otherwise
-   */
-  virtual bool save(std::ostream& os, ClassVersionType version) = 0;
-
-  /**
-   * @brief Loads object contents
-   * @param[in] is  input stream
-   * @param version  class version number
-   * @retval true  if object was loaded successfully
-   * @retval false  otherwise
-   */
-  virtual bool load(std::istream& is, ClassVersionType version) = 0;
+  virtual bool update()
+  {
+    return true;
+  }
 
 protected:
-  /**
-   * @brief Sets up the layer after initialization
-   * @retval true  if setup succeeded
-   * @retval false  otherwise
-   * @note Called after initialization sequence
-   */
-  virtual bool setup();
+  FFNN_REGISTER_SERIALIZABLE(Layer)
+
+  /// Save serializer
+  void save(OutputArchive& ar, VersionType version) const;
+
+  /// Load serializer
+  void load(InputArchive& ar, VersionType version);
 
   /// Memory-mapped input vector
   typename Mapped<InputVector>::Ptr input_;

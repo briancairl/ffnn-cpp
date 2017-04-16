@@ -8,10 +8,6 @@
 // C++ Standard Library
 #include <iostream>
 
-// Boost
-#include <boost/archive/text_oarchive.hpp>
-#include <boost/archive/text_iarchive.hpp>
-
 // FFNN
 #include <ffnn/config/global.h>
 
@@ -26,29 +22,48 @@ class Serializable
 {
 public:
   /// Class-version type standardization
-  typedef FFNN_CLASS_VERSION_TYPE ClassVersionType;
+  typedef FFNN_SERIALIZATION_VERSION_TYPE VersionType;
 
-  /**
-   * @brief Loads object contents
-   * @param[in] is  input stream
-   * @param version  class version number
-   * @retval true  if object was loaded successfully
-   * @retval false  otherwise
-   */
-  virtual bool load(std::istream& is, ClassVersionType version = 0) = 0; 
+  /// Input (load) archive type
+  typedef FFNN_SERIALIZATION_INPUT_ARCHIVE_TYPE InputArchive;
 
-  /**
-   * @brief Saves object contents
-   * @param[out] os  input stream
-   * @param version  class version number
-   * @retval true  if object was loaded successfully
-   * @retval false  otherwise
-   */
-  virtual bool save(std::ostream& os, ClassVersionType version = 0) = 0;
+  /// Output (save) archive type
+  typedef FFNN_SERIALIZATION_OUTPUT_ARCHIVE_TYPE OutputArchive;
+  
+  virtual void save(OutputArchive& ar, VersionType) const = 0;
 
-private:
-  friend class boost::serialization::access;
+  virtual void load(InputArchive& ar, VersionType) = 0;
 };
+
+/**
+ * @brief Imbues an object with objects/types for serialization
+ * @warning Must be placed in the <code>protected</code> portion of a class definition
+ */
+#define FFNN_REGISTER_SERIALIZABLE(object)\
+  typedef ::ffnn::traits::Serializable::VersionType VersionType;\
+  typedef ::ffnn::traits::Serializable::InputArchive InputArchive;\
+  typedef ::ffnn::traits::Serializable::OutputArchive OutputArchive;\
+  friend void ::ffnn::save(std::ostream& os, const ::ffnn::traits::Serializable& object, const VersionType version);\
+  friend void ::ffnn::load(std::istream& is, ::ffnn::traits::Serializable& object, const VersionType version);
+
 }  // namespace traits
+
+inline void save(std::ostream& os,
+                 const traits::Serializable& object,
+                 const traits::Serializable::VersionType version = 0)
+{
+  traits::Serializable::OutputArchive archive(os);
+  object.save(archive, version);
+}
+
+inline void load(std::istream& is,
+                 traits::Serializable& object,
+                 const traits::Serializable::VersionType version = 0)
+{
+  // Read data
+  traits::Serializable::InputArchive archive(is);
+  object.load(archive, version);
+}
+
 }  // namespace ffnn
 #endif  // FFNN_TRAITS_SERIALIZABLE_H

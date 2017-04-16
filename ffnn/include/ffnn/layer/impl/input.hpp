@@ -26,13 +26,13 @@ bool Input<ValueType, NetworkInputsAtCompileTime>::initialize()
   {
     FFNN_DEBUG_NAMED("layer::Input",
                      "<" <<
-                     Base::id() <<
+                     Base::getID() <<
                      "> initialized as network input (net-in=" <<
                      Base::output_dimension_ <<
                      ")");
     return true;
   }
-  FFNN_ERROR_NAMED("layer::Input", "< " << Base::id() << "> failed to initialize.");
+  FFNN_ERROR_NAMED("layer::Input", "<" << Base::getID() << "> failed to initialize.");
   return false;
 }
 

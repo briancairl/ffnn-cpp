@@ -2,8 +2,8 @@
  * @author Brian Cairl
  * @date 2017
  */
-#ifndef FFNN_NEURON_SOFT_SIGN_H
-#define FFNN_NEURON_SOFT_SIGN_H
+#ifndef FFNN_NEURON_LECUN_SIGMOID_H
+#define FFNN_NEURON_LECUN_SIGMOID_H
 
 // C++ Standard Library
 #include <cmath>
@@ -16,12 +16,14 @@ namespace ffnn
 namespace neuron
 {
 /**
- * @brief A soft-sign activation unit
+ * @brief A bipolar sigmoid activation unit scaled to prevent saturation
  * 
- *        Represents the mapping \f[ f(x) = 1 / (1 + |x|^{2}) \f]
+ *        Represents the mapping \f[ f(x) = 1.7159 * tanh(2/3 x) \f]
+ *
+ * @note ref: http://yann.lecun.com/exdb/publis/pdf/lecun-98b.pdf
  */
 template<typename ValueType>
-class SoftSign :
+class LeCunSigmoid :
   public Neuron<ValueType>
 {
 public:
@@ -32,7 +34,7 @@ public:
    */
   inline void fn(const ValueType& input, ValueType& output) const
   {
-    output = input / (1 + std::abs(input));
+    output = 1.7159 * std::tanh(0.6666 * input);
   }
 
   /**
@@ -42,10 +44,9 @@ public:
    */
   inline void derivative(const ValueType& input, ValueType& output) const
   {
-    const ValueType v = (1 + std::abs(input));
-    output = 1 / (v * v);
+    output = 1.14382 * (1 - output * output);
   }
 };
 }  // namespace neuron
 }  // namespace ffnn
-#endif  // FFNN_NEURON_SOFT_SIGN_H
+#endif  // FFNN_NEURON_LECUN_SIGMOID_H

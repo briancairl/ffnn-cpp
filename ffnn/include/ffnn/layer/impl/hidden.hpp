@@ -26,21 +26,6 @@ Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::~Hidden()
 template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
          FFNN_SIZE_TYPE OutputsAtCompileTime>
-bool Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::setup()
-{
-  FFNN_DEBUG_NAMED("layer::Hidden",
-                   "<"  <<
-                   Base::id() <<
-                   "> initialized as (in=" <<
-                   Base::input_dimension_  <<
-                   ", out=" <<
-                   Base::output_dimension_ << ")");
-  return true;
-}
-
-template<typename ValueType,
-         FFNN_SIZE_TYPE InputsAtCompileTime,
-         FFNN_SIZE_TYPE OutputsAtCompileTime>
 typename Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::OffsetType 
 Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::connectToForwardLayer(const Base& next, OffsetType offset)
 {
@@ -64,44 +49,75 @@ template<typename ValueType,
 bool Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::initialize()
 {
   // Abort if layer is already initialized
-  if (isInitialized())
+  if (!Base::loaded_ && Base::isInitialized())
   {
-    FFNN_WARN_NAMED("layer::Hidden", "<" << Base::id() << "> already initialized.");
+    FFNN_WARN_NAMED("layer::Hidden", "<" << Base::getID() << "> already initialized.");
     return false;
   }
 
   // Resolve input dimensions from previous layer output dimensions
-  SizeType input_count = Base::countInputs();
-  {
-    // Validate and set input count
-    FFNN_ASSERT_MSG (InputsAtCompileTime < 0 || input_count == InputsAtCompileTime,
-                     "(InputsAtCompileTime != `resolved input size`) for fixed-size layer.");
-    
-    // Set input count (including bias unit)
-    Base::input_dimension_ = input_count + 1;
-  }
+  Base::input_dimension_ = Base::countInputs();
 
+  // Validate and set input count
+  FFNN_STATIC_ASSERT_MSG (InputsAtCompileTime < 0 ||
+                          InputsAtCompileTime == Base::input_dimension_,
+                          "(InputsAtCompileTime != `resolved input size`) for fixed-size layer.");
+    
   // Do basic initialization
   if (Base::initialize())
   {
-    // Create input buffer map
-    input_ = Mapped<InputVector>::create(Base::input_buffer_);
+    FFNN_DEBUG_NAMED("layer::Hidden", "Creating forward mappings.");
 
     // Create input buffer map
-    backward_error_ = Mapped<InputVector>::create(Base::backward_error_buffer_);
+    input_ = Mapped<InputVector>::create(Base::input_buffer_.data(),
+                                         Base::input_dimension_);
+
+    // Create input buffer map
+    backward_error_ = Mapped<InputVector>::create(Base::backward_error_buffer_.data(),
+                                                  Base::input_dimension_);
 
     // Resolve previous layer output buffers
-    if (Base::connectInputLayers() == input_count)
+    if (Base::connectInputLayers() == Base::input_dimension_)
     {
-      // Run Hidden setup
-      return setup() && isInitialized();
+      FFNN_DEBUG_NAMED("layer::Hidden",
+                       "<" <<
+                       Base::getID() <<
+                       "> initialized as (in=" <<
+                       Base::input_dimension_  <<
+                       ", out=" <<
+                       Base::output_dimension_ << ")");
+      return Base::isInitialized();
     }
-  }
 
+    // Initialization failed
+    Base::initialized_ = false;
+    FFNN_ERROR_NAMED("layer::Hidden", "<" << Base::getID() << "> bad input count after input resolution.");
+  }
   // Error initializing
-  Base::initialized_ = false;
-  FFNN_ERROR_NAMED("layer::Hidden", "< " << Base::id() << "> failed basic initialization.");
+  FFNN_ERROR_NAMED("layer::Hidden", "<" << Base::getID() << "> failed to initialize.");
   return false;
+}
+
+template<typename ValueType,
+         FFNN_SIZE_TYPE InputsAtCompileTime,
+         FFNN_SIZE_TYPE OutputsAtCompileTime>
+void Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::
+  save(typename Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::OutputArchive& ar,
+       typename Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::VersionType version) const
+{
+  Base::save(ar, version);
+  FFNN_DEBUG_NAMED("layer::Hidden", "Saved");
+}
+
+template<typename ValueType,
+         FFNN_SIZE_TYPE InputsAtCompileTime,
+         FFNN_SIZE_TYPE OutputsAtCompileTime>
+void Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::
+  load(typename Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::InputArchive& ar,
+       typename Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::VersionType version)
+{
+  Base::load(ar, version);
+  FFNN_DEBUG_NAMED("layer::Hidden", "Loaded");
 }
 }  // namespace layer
 }  // namespace ffnn
