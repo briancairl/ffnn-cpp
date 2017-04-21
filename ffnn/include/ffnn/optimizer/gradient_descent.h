@@ -25,6 +25,8 @@ public:
   GradientDescent() :
     Optimizer<LayerType>("GradientDescent")
   {}
+  virtual ~GradientDescent()
+  {}
 };
 }  // namespace optimizer
 }  // namespace ffnn
