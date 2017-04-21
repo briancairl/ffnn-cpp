@@ -29,19 +29,21 @@ public:
   None() :
     Optimizer<LayerType>("None")
   {}
-
-  /**
-   * @brief Passthrough
-   * @retval true
-   */
-  virtual void initialize(LayerType& layer)
+  ~None()
   {}
 
   /**
    * @brief Passthrough
    * @retval true
    */
-  virtual bool forward(LayerType& layer)
+  void initialize(LayerType& layer)
+  {}
+
+  /**
+   * @brief Passthrough
+   * @retval true
+   */
+  bool forward(LayerType& layer)
   {
     return true;
   }
@@ -50,7 +52,7 @@ public:
    * @brief Does nothing
    * @warning This method will throw if called
    */
-  virtual bool backward(LayerType& layer)
+  bool backward(LayerType& layer)
   {
     throw std::runtime_error("Optimizer::backward called on \"None\" optimizer.");
     return false;
@@ -60,7 +62,7 @@ public:
    * @brief Does nothing
    * @warning This method will throw if called
    */
-  virtual bool update(LayerType& layer)
+  bool update(LayerType& layer)
   {
     throw std::runtime_error("Optimizer::update called on \"None\" optimizer.");
     return false;
