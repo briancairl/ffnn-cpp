@@ -24,7 +24,8 @@ Parameters::Parameters(ScalarType std_weight, ScalarType std_bias) :
   std_weight(std_weight),
   std_bias(std_bias)
 {
-  FFNN_ASSERT_MSG(std_weight > 0, "[std_weight] is non-positive");
+  FFNN_ASSERT_MSG(std_weight > 0, "[std_weight] should be positive");
+  FFNN_ASSERT_MSG(std_weight > 0, "[std_bias] should be positive");
 }
 
 template<typename ValueType,
