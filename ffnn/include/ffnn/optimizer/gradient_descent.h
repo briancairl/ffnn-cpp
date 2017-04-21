@@ -5,9 +5,6 @@
 #ifndef FFNN_LAYER_OPTIMIZATION_GRADIENT_DESCENT_H
 #define FFNN_LAYER_OPTIMIZATION_GRADIENT_DESCENT_H
 
-// C++ Standard Library
-#include <string>
-
 // FFNN
 #include <ffnn/config/global.h>
 #include <ffnn/assert.h>
@@ -24,7 +21,6 @@ class GradientDescent :
 public:
   /**
    * @brief Setup constructor
-   * @param lr  Learning rate
    */
   GradientDescent() :
     Optimizer<LayerType>("GradientDescent")
