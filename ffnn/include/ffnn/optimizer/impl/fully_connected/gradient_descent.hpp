@@ -51,6 +51,8 @@ public:
     Optimizer<LayerType>("GradientDescent[FullyConnected]"),
     lr_(lr)
   {}
+  virtual ~GradientDescent()
+  {}
 
   /**
    * @brief Initializes the Optimizer
