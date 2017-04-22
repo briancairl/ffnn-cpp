@@ -22,7 +22,7 @@
 #include <ffnn/layer/output.h>
 #include <ffnn/neuron/linear.h>
 #include <ffnn/neuron/sigmoid.h>
-#include <ffnn/io/io.h>
+#include <ffnn/io.h>
 
 /***********************************************************/
 // Creates network with one FullyConnected hidden layer 

@@ -2,8 +2,8 @@
  * @author Brian Cairl
  * @date 2017
  */
-#ifndef FFNN_IO_SIGNATURE_H
-#define FFNN_IO_SIGNATURE_H
+#ifndef FFNN_INTERNAL_SIGNATURE_H
+#define FFNN_INTERNAL_SIGNATURE_H
 
 // C++ Standard Library
 #include <exception>

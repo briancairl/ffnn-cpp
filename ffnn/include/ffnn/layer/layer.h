@@ -11,9 +11,9 @@
 
 // FFNN
 #include <ffnn/config/global.h>
-#include <ffnn/traits/shared.h>
-#include <ffnn/traits/serializable.h>
-#include <ffnn/traits/unique.h>
+#include <ffnn/internal/traits/shared.h>
+#include <ffnn/internal/traits/serializable.h>
+#include <ffnn/internal/traits/unique.h>
 
 namespace ffnn
 {

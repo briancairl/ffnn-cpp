@@ -2,8 +2,8 @@
  * @author Brian Cairl
  * @date 2017
  */
-#ifndef FFNN_TRAITS_SHARED_H
-#define FFNN_TRAITS_SHARED_H
+#ifndef FFNN_INTERNAL_TRAITS_SHARED_H
+#define FFNN_INTERNAL_TRAITS_SHARED_H
 
 // Boost
 #include <boost/shared_ptr.hpp>
@@ -27,4 +27,4 @@ public:
 };
 }  // namespace traits
 }  // namespace ffnn
-#endif  // FFNN_TRAITS_SHARED_H
+#endif  // FFNN_INTERNAL_TRAITS_SHARED_H

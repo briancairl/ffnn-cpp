@@ -2,8 +2,8 @@
  * @author Brian Cairl
  * @date 2017
  */
-#ifndef FFNN_TRAITS_SERIALIZABLE_H
-#define FFNN_TRAITS_SERIALIZABLE_H
+#ifndef FFNN_INTERNAL_TRAITS_SERIALIZABLE_H
+#define FFNN_INTERNAL_TRAITS_SERIALIZABLE_H
 
 // C++ Standard Library
 #include <iostream>
@@ -64,4 +64,4 @@ public:
 
 }  // namespace traits
 }  // namespace ffnn
-#endif  // FFNN_TRAITS_SERIALIZABLE_H
+#endif  // FFNN_INTERNAL_TRAITS_SERIALIZABLE_H

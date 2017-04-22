@@ -9,7 +9,7 @@
 // FFNN
 #include <ffnn/assert.h>
 #include <ffnn/logging.h>
-#include <ffnn/io/signature.h>
+#include <ffnn/internal/signature.h>
 
 namespace ffnn
 {

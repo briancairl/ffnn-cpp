@@ -11,7 +11,7 @@
 // FFNN
 #include <ffnn/config/global.h>
 #include <ffnn/assert.h>
-#include <ffnn/traits/shared.h>
+#include <ffnn/internal/traits/shared.h>
 
 namespace ffnn
 {

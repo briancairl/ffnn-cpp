@@ -2,8 +2,8 @@
  * @author Brian Cairl
  * @date 2017
  */
-#ifndef FFNN_TRAITS_UNIQUE_H
-#define FFNN_TRAITS_UNIQUE_H
+#ifndef FFNN_INTERNAL_TRAITS_UNIQUE_H
+#define FFNN_INTERNAL_TRAITS_UNIQUE_H
 
 // C++ Standard Library
 #include <string>
@@ -14,8 +14,8 @@
 #include <boost/uuid/uuid_io.hpp>
 
 // FFNN
-#include <ffnn/traits/serializable.h>
-#include <ffnn/io/signature.h>
+#include <ffnn/internal/traits/serializable.h>
+#include <ffnn/internal/signature.h>
 
 namespace ffnn
 {
@@ -79,4 +79,4 @@ private:
 };
 }  // namespace traits
 }  // namespace ffnn
-#endif  // FFNN_TRAITS_UNIQUE_H
+#endif  // FFNN_INTERNAL_TRAITS_UNIQUE_H

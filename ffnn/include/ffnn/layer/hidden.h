@@ -13,7 +13,7 @@
 #include <ffnn/assert.h>
 #include <ffnn/mapped.h>
 #include <ffnn/layer/layer.h>
-#include <ffnn/traits/serializable.h>
+#include <ffnn/internal/traits/serializable.h>
 
 namespace ffnn
 {
