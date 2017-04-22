@@ -2,9 +2,11 @@
  * @note HEADER-ONLY IMPLEMENTATION FILE
  * @warn Do not include directly
  */
+
 // FFNN
 #include <ffnn/assert.h>
 #include <ffnn/logging.h>
+#include <ffnn/io/signature.h>
 
 namespace ffnn
 {
@@ -105,6 +107,7 @@ void Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::
   save(typename Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::OutputArchive& ar,
        typename Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::VersionType version) const
 {
+  ffnn::io::signature::apply<Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>>(ar);
   Base::save(ar, version);
   FFNN_DEBUG_NAMED("layer::Hidden", "Saved");
 }
@@ -116,6 +119,7 @@ void Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::
   load(typename Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::InputArchive& ar,
        typename Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::VersionType version)
 {
+  ffnn::io::signature::check<Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>>(ar);
   Base::load(ar, version);
   FFNN_DEBUG_NAMED("layer::Hidden", "Loaded");
 }

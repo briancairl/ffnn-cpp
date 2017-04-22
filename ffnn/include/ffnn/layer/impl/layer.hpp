@@ -9,6 +9,7 @@
 // FFNN
 #include <ffnn/assert.h>
 #include <ffnn/logging.h>
+#include <ffnn/io/signature.h>
 
 namespace ffnn
 {
@@ -133,6 +134,7 @@ template<typename ValueType>
 void Layer<ValueType>::save(typename Layer<ValueType>::OutputArchive& ar,
                             typename Layer<ValueType>::VersionType version) const
 {
+  ffnn::io::signature::apply<Layer<ValueType>>(ar);
   traits::Unique::save(ar, version);
 
   // Load flags
@@ -157,6 +159,7 @@ template<typename ValueType>
 void Layer<ValueType>::load(typename Layer<ValueType>::InputArchive& ar,
                             typename Layer<ValueType>::VersionType version)
 {
+  ffnn::io::signature::check<Layer<ValueType>>(ar);
   traits::Unique::load(ar, version);
 
   // Load flags

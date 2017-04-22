@@ -15,6 +15,7 @@
 
 // FFNN
 #include <ffnn/traits/serializable.h>
+#include <ffnn/io/signature.h>
 
 namespace ffnn
 {
@@ -62,11 +63,13 @@ protected:
 
   void save(OutputArchive& ar, VersionType) const
   {
+    ffnn::io::signature::apply<Unique>(ar);
     ar & id_;
   }
 
   void load(InputArchive& ar, VersionType)
   {
+    ffnn::io::signature::check<Unique>(ar);
     ar & id_;
   }
 

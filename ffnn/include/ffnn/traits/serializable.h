@@ -13,6 +13,16 @@
 
 namespace ffnn
 {
+template<typename Serializable>
+void save(std::ostream& os,
+          const Serializable& object,
+          const typename Serializable::VersionType version = 0);
+
+template<typename Serializable>
+void load(std::istream& is,
+          Serializable& object,
+          const typename Serializable::VersionType version = 0);
+
 namespace traits
 {
 /**
@@ -43,27 +53,15 @@ public:
   typedef ::ffnn::traits::Serializable::VersionType VersionType;\
   typedef ::ffnn::traits::Serializable::InputArchive InputArchive;\
   typedef ::ffnn::traits::Serializable::OutputArchive OutputArchive;\
-  friend void ::ffnn::save(std::ostream& os, const ::ffnn::traits::Serializable& object, const VersionType version);\
-  friend void ::ffnn::load(std::istream& is, ::ffnn::traits::Serializable& object, const VersionType version);
+  template<typename SerializableType>\
+    friend void ::ffnn::save(std::ostream& os,\
+                             const SerializableType& object,\
+                             const typename SerializableType::VersionType version);\
+  template<typename SerializableType>\
+    friend void ::ffnn::load(std::istream& is,\
+                             SerializableType& object,\
+                             const typename SerializableType::VersionType version);
 
 }  // namespace traits
-
-inline void save(std::ostream& os,
-                 const traits::Serializable& object,
-                 const traits::Serializable::VersionType version = 0)
-{
-  traits::Serializable::OutputArchive archive(os);
-  object.save(archive, version);
-}
-
-inline void load(std::istream& is,
-                 traits::Serializable& object,
-                 const traits::Serializable::VersionType version = 0)
-{
-  // Read data
-  traits::Serializable::InputArchive archive(is);
-  object.load(archive, version);
-}
-
 }  // namespace ffnn
 #endif  // FFNN_TRAITS_SERIALIZABLE_H

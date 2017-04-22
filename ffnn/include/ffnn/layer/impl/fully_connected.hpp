@@ -10,6 +10,7 @@
 #include <ffnn/assert.h>
 #include <ffnn/logging.h>
 #include <ffnn/optimizer/none.h>
+#include <ffnn/io/signature.h>
 
 namespace ffnn
 {
@@ -173,6 +174,7 @@ void FullyConnected<ValueType, NeuronType, InputsAtCompileTime, OutputsAtCompile
   save(typename FullyConnected<ValueType, NeuronType, InputsAtCompileTime, OutputsAtCompileTime>::OutputArchive& ar,
        typename FullyConnected<ValueType, NeuronType, InputsAtCompileTime, OutputsAtCompileTime>::VersionType version) const
 {
+  ffnn::io::signature::apply<FullyConnected<ValueType, NeuronType, InputsAtCompileTime, OutputsAtCompileTime>>(ar);
   Base::save(ar, version);
 
   // Save configuration parameters
@@ -197,6 +199,7 @@ void FullyConnected<ValueType, NeuronType, InputsAtCompileTime, OutputsAtCompile
   load(typename FullyConnected<ValueType, NeuronType, InputsAtCompileTime, OutputsAtCompileTime>::InputArchive& ar,
        typename FullyConnected<ValueType, NeuronType, InputsAtCompileTime, OutputsAtCompileTime>::VersionType version)
 {
+  ffnn::io::signature::check<FullyConnected<ValueType, NeuronType, InputsAtCompileTime, OutputsAtCompileTime>>(ar);
   Base::load(ar, version);
 
   // Save configuration parameters
