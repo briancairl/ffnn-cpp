@@ -13,7 +13,7 @@
 #include <boost/uuid/uuid_generators.hpp>
 #include <boost/uuid/uuid_io.hpp>
 
-// FFNN
+// FFNN (internal)
 #include <ffnn/internal/traits/serializable.h>
 #include <ffnn/internal/signature.h>
 

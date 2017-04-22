@@ -9,11 +9,13 @@
 #include <iostream>
 #include <map>
 
+// FFNN (internal)
+#include <ffnn/internal/traits/serializable.h>
+#include <ffnn/internal/traits/shared.h>
+#include <ffnn/internal/traits/unique.h>
+
 // FFNN
 #include <ffnn/config/global.h>
-#include <ffnn/internal/traits/shared.h>
-#include <ffnn/internal/traits/serializable.h>
-#include <ffnn/internal/traits/unique.h>
 
 namespace ffnn
 {

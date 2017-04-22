@@ -8,12 +8,15 @@
 // C++ Standard Library
 #include <vector>
 
+// FFNN (internal)
+#include <ffnn/internal/traits/serializable.h>
+
 // FFNN
 #include <ffnn/config/global.h>
 #include <ffnn/assert.h>
-#include <ffnn/mapped.h>
 #include <ffnn/layer/layer.h>
-#include <ffnn/internal/traits/serializable.h>
+#include <ffnn/mapped.h>
+
 
 namespace ffnn
 {
