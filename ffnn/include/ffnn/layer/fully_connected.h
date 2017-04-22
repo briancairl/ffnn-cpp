@@ -6,8 +6,6 @@
 #define FFNN_LAYER_FULLY_CONNECTED_H
 
 // C++ Standard Library
-#include <iostream>
-#include <string>
 #include <vector>
 
 // FFNN
