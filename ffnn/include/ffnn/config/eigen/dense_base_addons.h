@@ -1,24 +1,23 @@
 /**
- * @file eigen_dense_base_addons.h
+ * @file  dense_base_addons.h
+ * @brief http://stackoverflow.com/questions/18382457/eigen-and-boostserialize
  */
-#ifndef EIGEN_DENSE_BASE_ADDONS_H_
-#define EIGEN_DENSE_BASE_ADDONS_H_
-
-friend class boost::serialization::access;
+#ifndef FFNN_CONFIG_EIGEN_DENSE_BASE_ADDONS_H
+#define FFNN_CONFIG_EIGEN_DENSE_BASE_ADDONS_H
 
 template<class Archive>
 void save(Archive & ar, const unsigned int version) const
 {
   derived().eval();
-  const Index rows = derived().rows()
+  const Index rows = derived().rows();
   const Index cols = derived().cols();
   ar & rows;
   ar & cols;
-  for (Index j = 0; j < cols; ++j )
+  for (Index jdx = 0; jdx < cols; jdx++)
   {
-    for (Index i = 0; i < rows; ++i )
+    for (Index idx = 0; idx < rows; idx++)
     {
-      ar & derived().coeff(i, j);
+      ar & derived().coeff(idx, jdx);
     }
   }
 }
@@ -29,7 +28,7 @@ void load(Archive & ar, const unsigned int version)
   Index rows, cols;
   ar & rows;
   ar & cols;
-  if (rows != derived().rows() || cols != derived().cols() )
+  if (rows != derived().rows() || cols != derived().cols())
   {
     derived().resize(rows, cols);
   }
@@ -37,8 +36,9 @@ void load(Archive & ar, const unsigned int version)
 }
 
 template<class Archive>
-void serialize(Archive & ar, const unsigned int file_version) {
+void serialize(Archive & ar, const unsigned int file_version)
+{
   boost::serialization::split_member(ar, *this, file_version);
 }
 
-#endif // EIGEN_DENSE_BASE_ADDONS_H_
+#endif // FFNN_CONFIG_EIGEN_DENSE_BASE_ADDONS_H
