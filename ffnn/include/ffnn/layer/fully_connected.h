@@ -22,7 +22,7 @@ namespace layer
  * @brief A fully-connected layer
  */
 template<typename ValueType,
-         template<class> class NeuronTypeAtCompileTime,
+         template<class> class NeuronType,
          FFNN_SIZE_TYPE InputsAtCompileTime = Eigen::Dynamic,
          FFNN_SIZE_TYPE OutputsAtCompileTime = Eigen::Dynamic>
 class FullyConnected :
@@ -33,7 +33,7 @@ public:
   using Base = Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>;
 
   /// Sekf-type alias
-  using Self = FullyConnected<ValueType, NeuronTypeAtCompileTime, InputsAtCompileTime, OutputsAtCompileTime>;
+  using Self = FullyConnected<ValueType, NeuronType, InputsAtCompileTime, OutputsAtCompileTime>;
 
   /// Scalar-type standardization
   typedef typename Base::ScalarType ScalarType;
@@ -52,9 +52,6 @@ public:
 
   /// Input-output weight matrix
   typedef Eigen::Matrix<ValueType, OutputsAtCompileTime, InputsAtCompileTime> WeightMatrix;
-
-  /// Neuron type standardization
-  typedef neuron::Neuron<ValueType> Neuron;
 
   /// Layer optimization type standardization
   typedef optimizer::Optimizer<Self> Optimizer;
@@ -129,14 +126,6 @@ public:
    */
   void setOptimizer(typename Optimizer::Ptr opt);
 
-  /**
-   * @brief Sets a custom activation unit to a layer-output slot
-   * @param index  specifies which unit, in the range [0, <code>getOutputDim()</code>), to set
-   * @param neuron  an activastion unit resource
-   * @note  Units are initialized to <code>NeuronTypeAtCompileTime</code> upon object instantiation
-   */
-  void setActivationUnit(typename Neuron::Ptr opt);
-
 protected:
   FFNN_REGISTER_SERIALIZABLE(FullyConnected)
 
@@ -161,12 +150,8 @@ private:
   /// Weighted input vector on last call to <code>forward</code>
   OutputVector w_input_;
 
-  /**
-   * @brief Layer activation units
-   * @note  Units are initialized to <code>NeuronTypeAtCompileTime</code> upon object instantiation
-   * @see   setActivationUnit
-   */
-  std::vector<typename Neuron::Ptr> neurons_;
+  /// Layer activation units
+  std::vector<NeuronType<ValueType>> neurons_;
 
   /**
    * @brief Weight optimization resource

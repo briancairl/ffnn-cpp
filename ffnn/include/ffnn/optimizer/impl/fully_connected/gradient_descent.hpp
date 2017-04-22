@@ -14,16 +14,16 @@ namespace optimizer
 {
 template<>
 template<typename ValueType,
-         template<class> class NeuronTypeAtCompileTime,
+         template<class> class NeuronType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
          FFNN_SIZE_TYPE OutputsAtCompileTime>
-class GradientDescent<layer::FullyConnected<ValueType, NeuronTypeAtCompileTime, InputsAtCompileTime, OutputsAtCompileTime>>:
-  public Optimizer<layer::FullyConnected<ValueType, NeuronTypeAtCompileTime, InputsAtCompileTime, OutputsAtCompileTime>>
+class GradientDescent<layer::FullyConnected<ValueType, NeuronType, InputsAtCompileTime, OutputsAtCompileTime>>:
+  public Optimizer<layer::FullyConnected<ValueType, NeuronType, InputsAtCompileTime, OutputsAtCompileTime>>
 {
 public:
   /// Layer-type standardization
   typedef typename layer::FullyConnected<ValueType,
-                                         NeuronTypeAtCompileTime,
+                                         NeuronType,
                                          InputsAtCompileTime,
                                          OutputsAtCompileTime> LayerType;
 
@@ -101,7 +101,7 @@ public:
     OutputVector deriv = layer.output();
     for (SizeType idx = 0; idx < layer.output_dimension_; idx++)
     {
-      layer.neurons_[idx]->derivative(layer.w_input_(idx), deriv(idx));
+      layer.neurons_[idx].derivative(layer.w_input_(idx), deriv(idx));
     }
 
     // Incorporate error

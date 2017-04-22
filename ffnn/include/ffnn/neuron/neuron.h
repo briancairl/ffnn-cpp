@@ -16,8 +16,7 @@ namespace neuron
  * @brief A basic activation unit type
  */
 template<typename ValueType>
-class Neuron :
-  public traits::Shared<Neuron<ValueType>>
+class Neuron
 {
 public:
   /**
