@@ -93,23 +93,28 @@ public:
   virtual bool initialize();
 
   /**
-   * @brief Forward value propagation
+   * @brief Performs forward value propagation
    * @retval true  if forward-propagation succeeded
    * @retval false  otherwise
    */
   virtual bool forward();
 
   /**
-   * @brief Backward value propagation
+   * @brief Performs backward error propagation
    * @retval true  if backward-propagation succeeded
    * @retval false  otherwise
+   * @warning Does not apply layer weight updates
+   * @warning Will throw if an optimizer has not been associated with this layer
+   * @see setOptimizer
    */
   virtual bool backward();
 
   /**
-   * @brief Applies layer weight updates
+   * @brief Applies accumulated layer weight updates computed during optimization
    * @retval true  if weight update succeeded
    * @retval false  otherwise
+   * @warning Will throw if an optimizer has not been associated with this layer
+   * @see setOptimizer
    */
   virtual bool update();
 
@@ -121,8 +126,18 @@ public:
   /**
    * @brief Sets an optimizer used update network weights during back-propagation
    * @param opt  optimizer to set
+   * @warning <code>backward</code> and <code>update</code> methods are expected to throw if an
+   *          optimizer has not been set explicitly
    */
   void setOptimizer(typename Optimizer::Ptr opt);
+
+  /**
+   * @brief Sets a custom activation unit to a layer-output slot
+   * @param index  specifies which unit, in the range [0, <code>getOutputDim()</code>), to set
+   * @param neuron  an activastion unit resource
+   * @note  Units are initialized to <code>NeuronTypeAtCompileTime</code> upon object instantiation
+   */
+  void setActivationUnit(typename Neuron::Ptr opt);
 
 protected:
   FFNN_REGISTER_SERIALIZABLE(FullyConnected)
@@ -136,7 +151,7 @@ protected:
 private:
   FFNN_REGISTER_OPTIMIZER(FullyConnected, GradientDescent);
 
-  /// Layer configuration
+  /// Layer configuration parameters
   Parameters config_;
 
   /// Weight matrix
@@ -148,10 +163,18 @@ private:
   /// Weighted input vector on last call to <code>forward</code>
   OutputVector w_input_;
 
-  /// Output neurons
+  /**
+   * @brief Layer activation units
+   * @note  Units are initialized to <code>NeuronTypeAtCompileTime</code> upon object instantiation
+   * @see   setActivationUnit
+   */
   std::vector<typename Neuron::Ptr> neurons_;
 
-  /// Weight optimization resource
+  /**
+   * @brief Weight optimization resource
+   * @note  This will be the <code>optimizer::None</code> type by default
+   * @see   setOptimizer
+   */
   typename Optimizer::Ptr opt_;
 };
 }  // namespace layer
