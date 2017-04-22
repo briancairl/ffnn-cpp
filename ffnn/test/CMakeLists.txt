@@ -11,10 +11,10 @@ endif()
 #   - layer::FullyConnected
 ############################################
 
-catkin_add_gtest(test_layer_io
-  test_layer_io.cpp
+catkin_add_gtest(test_layer_fully_connected_io
+  test_layer_fully_connected_io.cpp
 )
-target_link_libraries(test_layer_io
+target_link_libraries(test_layer_fully_connected_io
   ${Boost_LIBRARIES}
   ${catkin_LIBRARIES}
   ${EIGEN_LIBRARIES}
@@ -29,10 +29,28 @@ target_link_libraries(test_layer_io
 #  	 - optimizer::GradientDescent
 ############################################
 
-catkin_add_gtest(test_layer_fully_connected
-  test_layer_fully_connected.cpp
+catkin_add_gtest(test_layer_fully_connected_training
+  test_layer_fully_connected_training.cpp
 )
-target_link_libraries(test_layer_fully_connected
+target_link_libraries(test_layer_fully_connected_training
+  ${Boost_LIBRARIES}
+  ${catkin_LIBRARIES}
+  ${EIGEN_LIBRARIES}
+  ${GTEST_LIBRARIES}
+)
+
+############################################
+# Tests:
+#    - layer::Input
+#    - layer::Output
+#    - layer::SparselyConnected
+#  	 - optimizer::GradientDescent
+############################################
+
+catkin_add_gtest(test_layer_sparsely_connected_training
+  test_layer_sparsely_connected_training.cpp
+)
+target_link_libraries(test_layer_sparsely_connected_training
   ${Boost_LIBRARIES}
   ${catkin_LIBRARIES}
   ${EIGEN_LIBRARIES}

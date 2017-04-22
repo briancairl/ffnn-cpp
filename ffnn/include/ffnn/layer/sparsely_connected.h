@@ -2,8 +2,8 @@
  * @author Brian Cairl
  * @date 2017
  */
-#ifndef FFNN_LAYER_FULLY_CONNECTED_H
-#define FFNN_LAYER_FULLY_CONNECTED_H
+#ifndef FFNN_LAYER_SPARSELY_CONNECTED_H
+#define FFNN_LAYER_SPARSELY_CONNECTED_H
 
 // C++ Standard Library
 #include <vector>
@@ -25,7 +25,7 @@ template<typename ValueType,
          template<class> class NeuronType,
          FFNN_SIZE_TYPE InputsAtCompileTime = Eigen::Dynamic,
          FFNN_SIZE_TYPE OutputsAtCompileTime = Eigen::Dynamic>
-class FullyConnected :
+class SparselyConnected :
   public Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>
 {
 public:
@@ -33,7 +33,7 @@ public:
   using Base = Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>;
 
   /// Self-type alias
-  using Self = FullyConnected<ValueType, NeuronType, InputsAtCompileTime, OutputsAtCompileTime>;
+  using Self = SparselyConnected<ValueType, NeuronType, InputsAtCompileTime, OutputsAtCompileTime>;
 
   /// Scalar-type standardization
   typedef typename Base::ScalarType ScalarType;
@@ -51,12 +51,12 @@ public:
   typedef typename Base::OutputVector OutputVector;
 
   /// Input-output weight matrix
-  typedef Eigen::Matrix<ValueType, OutputsAtCompileTime, InputsAtCompileTime> WeightMatrix;
+  typedef Eigen::SparseMatrix<ValueType> WeightMatrix;
 
   /// Layer optimization type standardization
   typedef optimizer::Optimizer<Self> Optimizer;
 
-  /// A configuration object for a FullyConnected hidden layer
+  /// A configuration object for a SparselyConnected hidden layer
   struct Parameters
   {
     /// Standard deviation of weights on init
@@ -65,12 +65,17 @@ public:
     /// Standard deviation of biases on init
     ScalarType std_bias;
 
+    /// Porbability that a connection exists between any input/output pair
+    ScalarType connection_probability;
+
     /**
      * @brief Setup constructor
      * @param std_weight  Standard deviation of initial weights
      * @param std_bias  Standard deviation of initial bias
      */
-    Parameters(ScalarType std_weight = 1e-3, ScalarType std_bias = 1e-3);
+    Parameters(ScalarType std_weight = 1e-3,
+               ScalarType std_bias = 1e-3,
+               ScalarType connection_probability = 0.5);
   };
 
   /**
@@ -78,9 +83,9 @@ public:
    * @param output_dim  number of outputs from the Hidden
    * @param config  layer configuration struct
    */
-  FullyConnected(SizeType output_dim = OutputsAtCompileTime,
-                 const Parameters& config = Parameters());
-  virtual ~FullyConnected();
+  SparselyConnected(SizeType output_dim = OutputsAtCompileTime,
+                    const Parameters& config = Parameters());
+  virtual ~SparselyConnected();
 
   /**
    * @brief Initialize the layer
@@ -127,7 +132,7 @@ public:
   void setOptimizer(typename Optimizer::Ptr opt);
 
 protected:
-  FFNN_REGISTER_SERIALIZABLE(FullyConnected)
+  FFNN_REGISTER_SERIALIZABLE(SparselyConnected)
 
   /// Save serializer
   void save(OutputArchive& ar, VersionType version) const;
@@ -136,7 +141,7 @@ protected:
   void load(InputArchive& ar, VersionType version);
 
 private:
-  FFNN_REGISTER_OPTIMIZER(FullyConnected, GradientDescent);
+  FFNN_REGISTER_OPTIMIZER(SparselyConnected, GradientDescent);
 
   /// Layer configuration parameters
   Parameters config_;
@@ -164,5 +169,5 @@ private:
 }  // namespace ffnn
 
 /// FFNN (implementation)
-#include <ffnn/layer/impl/fully_connected.hpp>
-#endif  // FFNN_LAYER_FULLY_CONNECTED_H
+#include <ffnn/layer/impl/sparsely_connected.hpp>
+#endif  // FFNN_LAYER_SPARSELY_CONNECTED_H

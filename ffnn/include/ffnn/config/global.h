@@ -57,7 +57,9 @@
 
 // Eigen (addons)
 #include <boost/serialization/array.hpp>
-#define EIGEN_DENSEBASE_PLUGIN "ffnn/config/eigen/dense_base_addons.h"
+#include <boost/serialization/split_free.hpp>
+#define EIGEN_DENSEBASE_PLUGIN "ffnn/internal/eigen/dense_base_addons.h"
+#define EIGEN_SPARSEMATRIX_PLUGIN "ffnn/internal/eigen/spase_matrix_base_addons.h"
 #include <Eigen/Core>
 #include <Eigen/Dense>
 #include <Eigen/Sparse>

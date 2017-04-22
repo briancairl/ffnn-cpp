@@ -6,7 +6,7 @@
 // FFNN
 #include <ffnn/assert.h>
 #include <ffnn/logging.h>
-#include <ffnn/layer/fully_connected.h>
+#include <ffnn/layer/sparsely_connected.h>
 
 namespace ffnn
 {
@@ -17,12 +17,12 @@ template<typename ValueType,
          template<class> class NeuronType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
          FFNN_SIZE_TYPE OutputsAtCompileTime>
-class GradientDescent<layer::FullyConnected<ValueType, NeuronType, InputsAtCompileTime, OutputsAtCompileTime>>:
-  public Optimizer<layer::FullyConnected<ValueType, NeuronType, InputsAtCompileTime, OutputsAtCompileTime>>
+class GradientDescent<layer::SparselyConnected<ValueType, NeuronType, InputsAtCompileTime, OutputsAtCompileTime>>:
+  public Optimizer<layer::SparselyConnected<ValueType, NeuronType, InputsAtCompileTime, OutputsAtCompileTime>>
 {
 public:
   /// Layer-type standardization
-  typedef typename layer::FullyConnected<ValueType,
+  typedef typename layer::SparselyConnected<ValueType,
                                          NeuronType,
                                          InputsAtCompileTime,
                                          OutputsAtCompileTime> LayerType;
@@ -48,7 +48,7 @@ public:
    */
   explicit
   GradientDescent(ScalarType lr) :
-    Optimizer<LayerType>("GradientDescent[FullyConnected]"),
+    Optimizer<LayerType>("GradientDescent[SparselyConnected]"),
     lr_(lr)
   {}
   virtual ~GradientDescent()
@@ -63,7 +63,7 @@ public:
     FFNN_ASSERT_MSG(layer.isInitialized(), "Layer to optimize is not initialized.");
 
     // Reset weight delta
-    w_delta_.setZero(layer.output_dimension_, layer.input_dimension_);
+    w_delta_.resize(layer.output_dimension_, layer.input_dimension_);
 
     // Reset bias delta
     b_delta_.setZero(layer.output_dimension_, 1);
@@ -97,6 +97,8 @@ public:
   {
     FFNN_ASSERT_MSG(layer.isInitialized(), "Layer to optimize is not initialized.");
 
+    using InnerIterator = typename WeightMatrix::InnerIterator;
+
     // Compute neuron derivatives
     OutputVector deriv = layer.output();
     for (SizeType idx = 0; idx < layer.output_dimension_; idx++)
@@ -109,7 +111,14 @@ public:
 
     // Compute current weight delta
     WeightMatrix w_delta_curr(layer.output_dimension_, layer.input_dimension_);
-    w_delta_curr.noalias() = deriv * prev_input_.transpose();
+    for(SizeType idx = 0; idx < layer.w_.outerSize(); idx++)
+    {
+      for(InnerIterator it(layer.w_, idx); it; ++it)
+      {
+        w_delta_curr.insert(it.row(), it.col()) =
+          deriv(it.row()) * prev_input_(it.col());
+      }
+    }
 
     // Accumulate weight delta
     w_delta_ += w_delta_curr;
@@ -131,7 +140,7 @@ public:
     FFNN_ASSERT_MSG(layer.isInitialized(), "Layer to optimize is not initialized.");
 
     // Update weights
-    layer.w_.noalias() -= lr_ * w_delta_;
+    layer.w_ -= lr_ * w_delta_;
 
     // Update biases
     layer.b_.noalias() -= lr_ * b_delta_;
