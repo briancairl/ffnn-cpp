@@ -1,6 +1,6 @@
 /**
  * @file  dense_base_addons.h
- * @brief http://stackoverflow.com/questions/18382457/eigen-and-boostserialize
+ * @brief Reference: http://stackoverflow.com/questions/18382457/eigen-and-boostserialize
  */
 #ifndef FFNN_CONFIG_EIGEN_DENSE_BASE_ADDONS_H
 #define FFNN_CONFIG_EIGEN_DENSE_BASE_ADDONS_H

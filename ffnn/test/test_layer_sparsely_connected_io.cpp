@@ -18,28 +18,28 @@
 #include <ffnn/logging.h>
 #include <ffnn/layer/layer.h>
 #include <ffnn/layer/input.h>
-#include <ffnn/layer/fully_connected.h>
+#include <ffnn/layer/sparsely_connected.h>
 #include <ffnn/layer/output.h>
 #include <ffnn/neuron/linear.h>
 #include <ffnn/neuron/sigmoid.h>
 #include <ffnn/io.h>
 
 /***********************************************************/
-// Creates network with one FullyConnected hidden layer 
+// Creates network with one SparselyConnected hidden layer 
 // (dyanmic-sized) and saves it
 //
 // Tests:
 //    - Save
 //    - layer::Input
 //    - layer::Output
-//    - layer::FullyConnected
+//    - layer::SparselyConnected
 /***********************************************************/
-TEST(TestLayerIO, SaveDynamicSize)
+TEST(TestSpareslyConnectedLayerIO, SaveDynamicSize)
 {
   // Layer-type alias
   using Layer  = ffnn::layer::Layer<float>;
   using Input  = ffnn::layer::Input<float>;
-  using Hidden = ffnn::layer::FullyConnected<float, ffnn::neuron::Linear>;
+  using Hidden = ffnn::layer::SparselyConnected<float, ffnn::neuron::Linear>;
   using Output = ffnn::layer::Output<float>;
 
   // Layer sizes
@@ -81,21 +81,21 @@ TEST(TestLayerIO, SaveDynamicSize)
 }
 
 /***********************************************************/
-// Reconstructs network with one FullyConnected hidden layer 
+// Reconstructs network with one SparselyConnected hidden layer 
 // from saved data
 //
 // Tests:
 //    - Load
 //    - layer::Input
 //    - layer::Output
-//    - layer::FullyConnected
+//    - layer::SparselyConnected
 /***********************************************************/
-TEST(TestLayerIO, LoadDynamicSize)
+TEST(TestSpareslyConnectedLayerIO, LoadDynamicSize)
 {
   // Layer-type alias
   using Layer  = ffnn::layer::Layer<float>;
   using Input  = ffnn::layer::Input<float>;
-  using Hidden = ffnn::layer::FullyConnected<float, ffnn::neuron::Linear>;
+  using Hidden = ffnn::layer::SparselyConnected<float, ffnn::neuron::Linear>;
   using Output = ffnn::layer::Output<float>;
 
   // Layer sizes
@@ -140,21 +140,21 @@ TEST(TestLayerIO, LoadDynamicSize)
 }
 
 /***********************************************************/
-// Attempt to reconstructs network with one FullyConnected
+// Attempt to reconstructs network with one SparselyConnected
 // hidden layer with a mismatched signature from saved data
 //
 // Tests:
 //    - Load
 //    - layer::Input
 //    - layer::Output
-//    - layer::FullyConnected
+//    - layer::SparselyConnected
 /***********************************************************/
-TEST(TestLayerIO, LoadSignatureMismatch)
+TEST(TestSpareslyConnectedLayerIO, LoadSignatureMismatch)
 {
   // Layer-type alias
   using Layer  = ffnn::layer::Layer<float>;
   using Input  = ffnn::layer::Input<float>;
-  using Hidden = ffnn::layer::FullyConnected<float, ffnn::neuron::Sigmoid>;
+  using Hidden = ffnn::layer::SparselyConnected<float, ffnn::neuron::Sigmoid>;
   using Output = ffnn::layer::Output<float>;
 
   // Create layers
