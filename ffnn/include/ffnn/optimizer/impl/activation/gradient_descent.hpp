@@ -6,7 +6,7 @@
 // FFNN
 #include <ffnn/assert.h>
 #include <ffnn/logging.h>
-#include <ffnn/layer/sparsely_connected.h>
+#include <ffnn/layer/activation.h>
 
 namespace ffnn
 {
@@ -14,16 +14,16 @@ namespace optimizer
 {
 template<>
 template<typename ValueType,
-         FFNN_SIZE_TYPE InputsAtCompileTime,
-         FFNN_SIZE_TYPE OutputsAtCompileTime>
-class GradientDescent<layer::SparselyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>>:
-  public Optimizer<layer::SparselyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>>
+         template<class> class NeuronType,
+         FFNN_SIZE_TYPE SizeAtCompileTime>
+class GradientDescent<layer::Activation<ValueType, NeuronType, SizeAtCompileTime>>:
+  public Optimizer<layer::Activation<ValueType, NeuronType, SizeAtCompileTime>>
 {
 public:
   /// Layer type standardization
-  typedef typename layer::SparselyConnected<ValueType,
-                                            InputsAtCompileTime,
-                                            OutputsAtCompileTime> LayerType;
+  typedef typename layer::Activation<ValueType,
+                                         NeuronType,
+                                         SizeAtCompileTime> LayerType;
 
   /// Scalar type standardization
   typedef typename LayerType::ScalarType ScalarType;
@@ -35,10 +35,7 @@ public:
   typedef typename LayerType::InputVector InputVector;
 
   /// Matrix type standardization
-  typedef typename LayerType::OutputVector OutputVector;
-
-  /// Input-output weight matrix
-  typedef typename LayerType::WeightMatrix WeightMatrix;
+  typedef typename LayerType::BiasVector BiasVector;
 
   /**
    * @brief Setup constructor
@@ -46,7 +43,7 @@ public:
    */
   explicit
   GradientDescent(ScalarType lr) :
-    Optimizer<LayerType>("GradientDescent[SparselyConnected]"),
+    Optimizer<LayerType>("GradientDescent[Activation]"),
     lr_(lr)
   {}
   virtual ~GradientDescent()
@@ -60,9 +57,6 @@ public:
   {
     FFNN_ASSERT_MSG(layer.isInitialized(), "Layer to optimize is not initialized.");
     reset(layer);
-
-    // Initialize previous input vector
-    prev_input_.setZero(layer.input_dimension_, 1);
   }
 
   /**
@@ -71,8 +65,8 @@ public:
    */
   virtual void reset(LayerType& layer)
   {
-    // Reset weight delta
-    w_delta_.resize(layer.output_dimension_, layer.input_dimension_);
+    // Reset bias delta
+    b_delta_.setZero(layer.output_dimension_, 1);
   }
 
   /**
@@ -84,9 +78,6 @@ public:
   virtual bool forward(LayerType& layer)
   {
     FFNN_ASSERT_MSG(layer.isInitialized(), "Layer to optimize is not initialized.");
-
-    // Copy current input for updating
-    prev_input_ = layer.input();
     return true;
   }
 
@@ -100,22 +91,18 @@ public:
   {
     FFNN_ASSERT_MSG(layer.isInitialized(), "Layer to optimize is not initialized.");
 
-    // Compute current weight delta
-    WeightMatrix w_delta_curr(layer.output_dimension_, layer.input_dimension_);
-    for(SizeType idx = 0; idx < layer.w_.outerSize(); idx++)
+    // Compute neuron derivatives
+    layer.backward_error_->noalias() = layer.output();
+    for (SizeType idx = 0; idx < layer.output_dimension_; idx++)
     {
-      for(typename WeightMatrix::InnerIterator it(layer.w_, idx); it; ++it)
-      {
-        w_delta_curr.insert(it.row(), it.col()) =
-          (*layer.forward_error_)(it.row()) * prev_input_(it.col());
-      }
+      layer.neurons_[idx].derivative(layer.b_input_(idx), (*layer.backward_error_)(idx));
     }
 
-    // Accumulate weight delta
-    w_delta_ += w_delta_curr;
+    // Incorporate error
+    layer.backward_error_->array() *= layer.forward_error_->array();
 
-    // Compute back-propagated error
-    layer.backward_error_->noalias() = layer.w_.transpose() * (*layer.forward_error_);
+    // Accumulate weight delta
+    b_delta_.noalias() += (*layer.backward_error_);
     return true;
   }
 
@@ -129,11 +116,11 @@ public:
   {
     FFNN_ASSERT_MSG(layer.isInitialized(), "Layer to optimize is not initialized.");
 
-    // Update weights
-    layer.w_ -= lr_ * w_delta_;
+    // Update biases
+    layer.b_.noalias() -= lr_ * b_delta_;
 
     // Reinitialize optimizer
-    reset(layer);
+    initialize(layer);
     return true;
   }
 
@@ -142,14 +129,8 @@ protected:
   ScalarType lr_;
 
 private:
-  /// Weight matrix delta
-  WeightMatrix w_delta_;
-
   /// Bias vector delta
-  OutputVector b_delta_;
-
-  /// Previous input
-  InputVector prev_input_;
+  BiasVector b_delta_;
 };
 }  // namespace optimizer
 }  // namespace ffnn

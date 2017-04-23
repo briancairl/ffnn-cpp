@@ -20,8 +20,6 @@
 #include <ffnn/layer/input.h>
 #include <ffnn/layer/fully_connected.h>
 #include <ffnn/layer/output.h>
-#include <ffnn/neuron/linear.h>
-#include <ffnn/neuron/sigmoid.h>
 #include <ffnn/io.h>
 
 /***********************************************************/
@@ -39,7 +37,7 @@ TEST(TestFullyConnectedLayerIO, SaveDynamicSize)
   // Layer-type alias
   using Layer  = ffnn::layer::Layer<float>;
   using Input  = ffnn::layer::Input<float>;
-  using Hidden = ffnn::layer::FullyConnected<float, ffnn::neuron::Linear>;
+  using Hidden = ffnn::layer::FullyConnected<float>;
   using Output = ffnn::layer::Output<float>;
 
   // Layer sizes
@@ -72,7 +70,7 @@ TEST(TestFullyConnectedLayerIO, SaveDynamicSize)
   }
 
   // Save all layer data to same file
-  std::ofstream ofs("test.nnl", std::ios::binary);
+  std::ofstream ofs("full_io_test.nnl", std::ios::binary);
   for(const auto& layer : layers)
   {
     EXPECT_NO_THROW(ffnn::save(ofs, *layer));
@@ -95,7 +93,7 @@ TEST(TestFullyConnectedLayerIO, LoadDynamicSize)
   // Layer-type alias
   using Layer  = ffnn::layer::Layer<float>;
   using Input  = ffnn::layer::Input<float>;
-  using Hidden = ffnn::layer::FullyConnected<float, ffnn::neuron::Linear>;
+  using Hidden = ffnn::layer::FullyConnected<float>;
   using Output = ffnn::layer::Output<float>;
 
   // Layer sizes
@@ -109,7 +107,7 @@ TEST(TestFullyConnectedLayerIO, LoadDynamicSize)
   });
 
   // Load all layer data from same file
-  std::ifstream ifs("test.nnl", std::ios::binary);
+  std::ifstream ifs("full_io_test.nnl", std::ios::binary);
   for(const auto& layer : layers)
   {
     EXPECT_NO_THROW(ffnn::load(ifs, *layer));
@@ -154,7 +152,7 @@ TEST(TestFullyConnectedLayerIO, LoadSignatureMismatch)
   // Layer-type alias
   using Layer  = ffnn::layer::Layer<float>;
   using Input  = ffnn::layer::Input<float>;
-  using Hidden = ffnn::layer::FullyConnected<float, ffnn::neuron::Sigmoid>;
+  using Hidden = ffnn::layer::FullyConnected<float, 4>;
   using Output = ffnn::layer::Output<float>;
 
   // Create layers
@@ -165,7 +163,7 @@ TEST(TestFullyConnectedLayerIO, LoadSignatureMismatch)
   });
 
   // Load all layer data from same file
-  std::ifstream ifs("test.nnl", std::ios::binary);
+  std::ifstream ifs("full_io_test.nnl", std::ios::binary);
   EXPECT_NO_THROW(ffnn::load(ifs, *layers[0]));
   EXPECT_THROW(ffnn::load(ifs, *layers[1]), std::runtime_error);
   ifs.close();

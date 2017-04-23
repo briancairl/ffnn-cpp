@@ -19,19 +19,18 @@ namespace layer
 /**
  * @brief Probabilistic dropout-modeling layer type
  */
-template<typename ValueType,
-         FFNN_SIZE_TYPE SizeAtCompileTime = Eigen::Dynamic>
+template<typename ValueType, FFNN_SIZE_TYPE SizeAtCompileTime = Eigen::Dynamic>
 class Dropout :
   public Hidden<ValueType, SizeAtCompileTime, SizeAtCompileTime>
 {
 public:
-  /// Base-type alias
+  /// Base type alias
   using Base = Hidden<ValueType, SizeAtCompileTime, SizeAtCompileTime>;
 
-  /// Size-type standardization
+  /// Size type standardization
   typedef typename Base::SizeType SizeType;
 
-  /// Offset-type standardization
+  /// Offset type standardization
   typedef typename Base::OffsetType OffsetType;
 
   // Probability (real-number) type standardization

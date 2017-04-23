@@ -36,6 +36,12 @@ public:
   virtual void initialize(LayerType& layer) = 0;
 
   /**
+   * @brief Resetrs persistent Optimizer states
+   * @param[in, out] layer  Layer to optimize
+   */
+  virtual void reset(LayerType& layer) = 0;
+
+  /**
    * @brief Computes one optimizer update step
    * @param[in, out] layer  Layer to optimize
    * @retval true  if optimizer setp was successful

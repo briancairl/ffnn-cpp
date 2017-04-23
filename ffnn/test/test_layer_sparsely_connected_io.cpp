@@ -20,8 +20,6 @@
 #include <ffnn/layer/input.h>
 #include <ffnn/layer/sparsely_connected.h>
 #include <ffnn/layer/output.h>
-#include <ffnn/neuron/linear.h>
-#include <ffnn/neuron/sigmoid.h>
 #include <ffnn/io.h>
 
 /***********************************************************/
@@ -39,7 +37,7 @@ TEST(TestSpareslyConnectedLayerIO, SaveDynamicSize)
   // Layer-type alias
   using Layer  = ffnn::layer::Layer<float>;
   using Input  = ffnn::layer::Input<float>;
-  using Hidden = ffnn::layer::SparselyConnected<float, ffnn::neuron::Linear>;
+  using Hidden = ffnn::layer::SparselyConnected<float>;
   using Output = ffnn::layer::Output<float>;
 
   // Layer sizes
@@ -72,7 +70,7 @@ TEST(TestSpareslyConnectedLayerIO, SaveDynamicSize)
   }
 
   // Save all layer data to same file
-  std::ofstream ofs("test.nnl", std::ios::binary);
+  std::ofstream ofs("sparse_io_test.nnl", std::ios::binary);
   for(const auto& layer : layers)
   {
     EXPECT_NO_THROW(ffnn::save(ofs, *layer));
@@ -95,7 +93,7 @@ TEST(TestSpareslyConnectedLayerIO, LoadDynamicSize)
   // Layer-type alias
   using Layer  = ffnn::layer::Layer<float>;
   using Input  = ffnn::layer::Input<float>;
-  using Hidden = ffnn::layer::SparselyConnected<float, ffnn::neuron::Linear>;
+  using Hidden = ffnn::layer::SparselyConnected<float>;
   using Output = ffnn::layer::Output<float>;
 
   // Layer sizes
@@ -109,10 +107,10 @@ TEST(TestSpareslyConnectedLayerIO, LoadDynamicSize)
   });
 
   // Load all layer data from same file
-  std::ifstream ifs("test.nnl", std::ios::binary);
+  std::ifstream ifs("sparse_io_test.nnl", std::ios::binary);
   for(const auto& layer : layers)
   {
-    EXPECT_NO_THROW(ffnn::load(ifs, *layer));
+    (ffnn::load(ifs, *layer));
   }
   ifs.close();
 
@@ -154,7 +152,7 @@ TEST(TestSpareslyConnectedLayerIO, LoadSignatureMismatch)
   // Layer-type alias
   using Layer  = ffnn::layer::Layer<float>;
   using Input  = ffnn::layer::Input<float>;
-  using Hidden = ffnn::layer::SparselyConnected<float, ffnn::neuron::Sigmoid>;
+  using Hidden = ffnn::layer::SparselyConnected<float, 3>;
   using Output = ffnn::layer::Output<float>;
 
   // Create layers
@@ -165,7 +163,7 @@ TEST(TestSpareslyConnectedLayerIO, LoadSignatureMismatch)
   });
 
   // Load all layer data from same file
-  std::ifstream ifs("test.nnl", std::ios::binary);
+  std::ifstream ifs("sparse_io_test.nnl", std::ios::binary);
   EXPECT_NO_THROW(ffnn::load(ifs, *layers[0]));
   EXPECT_THROW(ffnn::load(ifs, *layers[1]), std::runtime_error);
   ifs.close();

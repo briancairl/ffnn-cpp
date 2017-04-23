@@ -26,10 +26,10 @@ struct Mapped
   typedef Eigen::Map<MatrixType> Type;
 #endif
 
-  /// Real value-type standardization
+  /// Real value type standardization
   typedef typename MatrixType::Scalar ValueType;
 
-  /// Size-type standardization
+  /// Size type standardization
   typedef typename MatrixType::Index SizeType;
 
   /// Shared-resrouce type standardization

@@ -10,7 +10,6 @@
 // FFNN
 #include <ffnn/assert.h>
 #include <ffnn/logging.h>
-#include <ffnn/layer/layer.h>
 
 namespace ffnn
 {
@@ -53,6 +52,15 @@ bool Dropout<ValueType, SizeAtCompileTime>::initialize()
     // Setup connectedness flags
     connected_.resize(Base::output_dimension_, true);
 
+    FFNN_DEBUG_NAMED("layer::Dropout",
+                     "<" <<
+                     Base::getID() <<
+                     "> initialized as (in=" <<
+                     Base::input_dimension_ <<
+                     ", out=" <<
+                     Base::output_dimension_ <<
+                     ")");
+
     return true;
   }
   return false;
@@ -87,7 +95,7 @@ bool Dropout<ValueType, SizeAtCompileTime>::backward()
 {
   if (config_.blind)
   {
-    (*Base::backward_error_) = (*Base::forward_error_);
+    Base::backward_error_->noalias() = (*Base::forward_error_);
   }
   else
   {

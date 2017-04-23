@@ -2,13 +2,14 @@
  * @author Brian Cairl
  * @date 2017
  */
-#ifndef FFNN_LAYER_FULLY_CONNECTED_H
-#define FFNN_LAYER_FULLY_CONNECTED_H
+#ifndef FFNN_LAYER_ACTIVATION_H
+#define FFNN_LAYER_ACTIVATION_H
 
-// C++ Standard Library
-#include <vector>
+// Boost
+#include <boost/dynamic_bitset.hpp>
 
 // FFNN
+#include <ffnn/config/global.h>
 #include <ffnn/layer/hidden.h>
 #include <ffnn/neuron/neuron.h>
 #include <ffnn/optimizer/optimizer.h>
@@ -19,20 +20,20 @@ namespace ffnn
 namespace layer
 {
 /**
- * @brief A fully-connected layer
+ * @brief Activation layer
  */
 template<typename ValueType,
-         FFNN_SIZE_TYPE InputsAtCompileTime = Eigen::Dynamic,
-         FFNN_SIZE_TYPE OutputsAtCompileTime = Eigen::Dynamic>
-class FullyConnected :
-  public Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>
+         template<class> class NeuronType,
+         FFNN_SIZE_TYPE SizeAtCompileTime = Eigen::Dynamic>
+class Activation :
+  public Hidden<ValueType, SizeAtCompileTime, SizeAtCompileTime>
 {
 public:
   /// Base type alias
-  using Base = Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>;
+  using Base = Hidden<ValueType, SizeAtCompileTime, SizeAtCompileTime>;
 
   /// Self type alias
-  using Self = FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>;
+  using Self = Activation<ValueType, NeuronType, SizeAtCompileTime>;
 
   /// Scalar type standardization
   typedef typename Base::ScalarType ScalarType;
@@ -43,14 +44,8 @@ public:
   /// Offset type standardization
   typedef typename Base::OffsetType OffsetType;
 
-  /// Matrix type standardization
-  typedef typename Base::InputVector InputVector;
-
-  /// Matrix type standardization
-  typedef typename Base::OutputVector OutputVector;
-
-  /// Input-output weight matrix
-  typedef Eigen::Matrix<ValueType, OutputsAtCompileTime, InputsAtCompileTime, Eigen::ColMajor> WeightMatrix;
+  /// Bia vector type standardization
+  typedef typename Base::OutputVector BiasVector;
 
   /// Layer optimization type standardization
   typedef optimizer::Optimizer<Self> Optimizer;
@@ -59,23 +54,21 @@ public:
   struct Parameters
   {
     /// Standard deviation of biases on init
-    ScalarType std_weight;
+    ScalarType std_bias;
 
     /**
      * @brief Setup constructor
-     * @param std_weight  Standard deviation of initial weights
+     * @param std_bias  Standard deviation of initial weights
      */
-    Parameters(ScalarType std_weight = 1e-3);
+    Parameters(ScalarType std_bias = 1e-3);
   };
 
   /**
-   * @brief Setup constructor
-   * @param output_dim  number of outputs from the Hidden
-   * @param config  layer configuration struct
+   * @brief Default constructor
+   * @param config  layer configuration object
    */
-  FullyConnected(SizeType output_dim = OutputsAtCompileTime,
-                 const Parameters& config = Parameters());
-  virtual ~FullyConnected();
+  Activation(const Parameters& config = Parameters());
+  virtual ~Activation();
 
   /**
    * @brief Initialize the layer
@@ -83,19 +76,16 @@ public:
   virtual bool initialize();
 
   /**
-   * @brief Performs forward value propagation
+   * @brief Forward value propagation
    * @retval true  if forward-propagation succeeded
    * @retval false  otherwise
    */
   virtual bool forward();
 
   /**
-   * @brief Performs backward error propagation
+   * @brief Backward value propagation
    * @retval true  if backward-propagation succeeded
    * @retval false  otherwise
-   * @warning Does not apply layer weight updates
-   * @warning Will throw if an optimizer has not been associated with this layer
-   * @see setOptimizer
    */
   virtual bool backward();
 
@@ -122,7 +112,7 @@ public:
   void setOptimizer(typename Optimizer::Ptr opt);
 
 protected:
-  FFNN_REGISTER_SERIALIZABLE(FullyConnected)
+  FFNN_REGISTER_SERIALIZABLE(Activation)
 
   /// Save serializer
   void save(OutputArchive& ar, VersionType version) const;
@@ -131,13 +121,19 @@ protected:
   void load(InputArchive& ar, VersionType version);
 
 private:
-  FFNN_REGISTER_OPTIMIZER(FullyConnected, GradientDescent);
+  FFNN_REGISTER_OPTIMIZER(Activation, GradientDescent);
 
   /// Layer configuration parameters
   Parameters config_;
 
-  /// Weight matrix
-  WeightMatrix w_;
+  /// Bias vector
+  BiasVector b_;
+
+  /// Biased input
+  BiasVector b_input_;
+
+  /// Layer activation units
+  std::vector<NeuronType<ValueType>> neurons_;
 
   /**
    * @brief Weight optimization resource
@@ -150,5 +146,5 @@ private:
 }  // namespace ffnn
 
 /// FFNN (implementation)
-#include <ffnn/layer/impl/fully_connected.hpp>
-#endif  // FFNN_LAYER_FULLY_CONNECTED_H
+#include <ffnn/layer/impl/activation.hpp>
+#endif  // FFNN_LAYER_ACTIVATION_H

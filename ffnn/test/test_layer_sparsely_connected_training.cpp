@@ -21,7 +21,6 @@
 #include <ffnn/layer/input.h>
 #include <ffnn/layer/sparsely_connected.h>
 #include <ffnn/layer/output.h>
-#include <ffnn/neuron/linear.h>
 #include <ffnn/optimizer/gradient_descent.h>
 
 /***********************************************************/
@@ -39,7 +38,7 @@ TEST(TestLayerSparselyConnectedWithOptimizers, GradientDescent)
   // Layer-type alias
   using Layer  = ffnn::layer::Layer<float>;
   using Input  = ffnn::layer::Input<float>;
-  using Hidden = ffnn::layer::SparselyConnected<float, ffnn::neuron::Linear>;
+  using Hidden = ffnn::layer::SparselyConnected<float>;
   using Output = ffnn::layer::Output<float>;
 
   // Layer sizes
@@ -47,7 +46,7 @@ TEST(TestLayerSparselyConnectedWithOptimizers, GradientDescent)
 
   // Create layers
   auto input = boost::make_shared<Input>(DIM);  
-  auto hidden = boost::make_shared<Hidden>(DIM, Hidden::Parameters(0.001, 0.001, 0.01));
+  auto hidden = boost::make_shared<Hidden>(DIM, Hidden::Parameters(0.001, 0.01));
   auto output = boost::make_shared<Output>();  
 
   // Set optimizer (gradient descent)
@@ -76,7 +75,7 @@ TEST(TestLayerSparselyConnectedWithOptimizers, GradientDescent)
 
   // Check that error montonically decreases
   float prev_error = std::numeric_limits<float>::infinity();
-  for (size_t idx = 0UL; idx < 10; idx++)
+  for (size_t idx = 0UL; idx < 100; idx++)
   {
     // Forward activate
     (*input) << target_data;

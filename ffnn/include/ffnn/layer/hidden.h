@@ -32,13 +32,13 @@ class Hidden :
   public Layer<ValueType>
 {
 public:
-  /// Base-type alias
+  /// Base type alias
   using Base = Layer<ValueType>;
 
-  /// Size-type standardization
+  /// Size type standardization
   typedef typename Base::SizeType SizeType;
 
-  /// Offset-type standardization
+  /// Offset type standardization
   typedef typename Base::OffsetType OffsetType;
 
   /// Hidden input type standardization

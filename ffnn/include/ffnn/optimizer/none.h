@@ -29,15 +29,18 @@ public:
   None() :
     Optimizer<LayerType>("None")
   {}
-  ~None()
+  virtual ~None()
   {}
 
   /**
    * @brief Passthrough
-   * @retval true
    */
-  void initialize(LayerType& layer)
-  {}
+  void initialize(LayerType& layer) {}
+
+  /**
+   * @brief Passthrough
+   */
+  void reset(LayerType& layer) {}
 
   /**
    * @brief Passthrough

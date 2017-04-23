@@ -34,13 +34,13 @@ template<typename LayerType>
 friend bool connect(const typename LayerType::Ptr& from,
                     const typename LayerType::Ptr& to);
 public:
-  /// Scalar-type standardization
+  /// Scalar type standardization
   typedef ValueType ScalarType;
 
-  /// Size-type standardization
+  /// Size type standardization
   typedef FFNN_SIZE_TYPE SizeType;
 
-  /// Offset-type standardization
+  /// Offset type standardization
   typedef FFNN_OFFSET_TYPE OffsetType;
 
 #ifndef FFNN_NO_EXPLICIT_ALIGNMENT

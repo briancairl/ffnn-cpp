@@ -41,6 +41,13 @@
 #define FFNN_OFFSET_TYPE std::ptrdiff_t
 #endif
 
+// No debug printouts in Release build
+#if NDEBUG && !FFNN_ALLOW_LOGGING
+/// Disables console logging
+#define FFNN_NO_LOGGING 1
+#endif
+#include <ffnn/logging.h>
+
 // Serialization
 #define FFNN_SERIALIZATION_VERSION_TYPE const unsigned int
 #ifdef FFNN_ARCHIVE_TEXT
@@ -55,11 +62,13 @@
 #define FFNN_SERIALIZATION_INPUT_ARCHIVE_TYPE boost::archive::binary_iarchive
 #endif
 
-// Eigen (addons)
+// Eigen
 #include <boost/serialization/array.hpp>
 #include <boost/serialization/split_free.hpp>
+#include <boost/serialization/vector.hpp>
+#include <ffnn/internal/eigen/sparse_triplet_serialization.h>
 #define EIGEN_DENSEBASE_PLUGIN "ffnn/internal/eigen/dense_base_addons.h"
-#define EIGEN_SPARSEMATRIX_PLUGIN "ffnn/internal/eigen/spase_matrix_base_addons.h"
+#define EIGEN_SPARSEMATRIXBASE_PLUGIN "ffnn/internal/eigen/sparse_matrix_base_addons.h"
 #include <Eigen/Core>
 #include <Eigen/Dense>
 #include <Eigen/Sparse>

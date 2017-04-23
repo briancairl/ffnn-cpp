@@ -22,36 +22,35 @@ namespace layer
  * @brief A fully-connected layer
  */
 template<typename ValueType,
-         template<class> class NeuronType,
          FFNN_SIZE_TYPE InputsAtCompileTime = Eigen::Dynamic,
          FFNN_SIZE_TYPE OutputsAtCompileTime = Eigen::Dynamic>
 class SparselyConnected :
   public Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>
 {
 public:
-  /// Base-type alias
+  /// Base type alias
   using Base = Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>;
 
-  /// Self-type alias
-  using Self = SparselyConnected<ValueType, NeuronType, InputsAtCompileTime, OutputsAtCompileTime>;
+  /// Self type alias
+  using Self = SparselyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>;
 
-  /// Scalar-type standardization
+  /// Scalar type standardization
   typedef typename Base::ScalarType ScalarType;
 
-  /// Size-type standardization
+  /// Size type standardization
   typedef typename Base::SizeType SizeType;
 
-  /// Offset-type standardization
+  /// Offset type standardization
   typedef typename Base::OffsetType OffsetType;
 
-  /// Matrix-type standardization
+  /// Matrix type standardization
   typedef typename Base::InputVector InputVector;
 
-  /// Matrix-type standardization
+  /// Matrix type standardization
   typedef typename Base::OutputVector OutputVector;
 
   /// Input-output weight matrix
-  typedef Eigen::SparseMatrix<ValueType> WeightMatrix;
+  typedef Eigen::SparseMatrix<ValueType, Eigen::ColMajor> WeightMatrix;
 
   /// Layer optimization type standardization
   typedef optimizer::Optimizer<Self> Optimizer;
@@ -62,20 +61,15 @@ public:
     /// Standard deviation of weights on init
     ScalarType std_weight;
 
-    /// Standard deviation of biases on init
-    ScalarType std_bias;
-
-    /// Porbability that a connection exists between any input/output pair
+    /// Probability that a connection exists between any input/output pair
     ScalarType connection_probability;
 
     /**
      * @brief Setup constructor
      * @param std_weight  Standard deviation of initial weights
-     * @param std_bias  Standard deviation of initial bias
+     * @param connection_probability  Probability a connection will exist between any input/output pair
      */
-    Parameters(ScalarType std_weight = 1e-3,
-               ScalarType std_bias = 1e-3,
-               ScalarType connection_probability = 0.5);
+    Parameters(ScalarType std_weight = 1e-3, ScalarType connection_probability = 0.5);
   };
 
   /**
@@ -154,15 +148,6 @@ private:
 
   /// Weight matrix
   WeightMatrix w_;
-
-  /// Bias vector
-  OutputVector b_;
-
-  /// Weighted input vector on last call to <code>forward</code>
-  OutputVector w_input_;
-
-  /// Layer activation units
-  std::vector<NeuronType<ValueType>> neurons_;
 
   /**
    * @brief Weight optimization resource

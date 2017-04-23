@@ -25,15 +25,8 @@ const char* UNDERLINE = "\033[4m";
 /// @}
 }  // namespace logging
 
-// No debug printouts in Release build
-#if NDEBUG && !FFNN_ALLOW_LOGGING
-/// Disables console logging
-#define FFNN_NO_LOGGING 1
-#endif
-
 /// Named header for all <code>_NAMED</code> printouts
-#define FFNN_NAME_HEADER(name)\
-ffnn::logging::HEADER << "[" << name << "] " << ffnn::logging::ENDC
+#define FFNN_NAME_HEADER(name) ffnn::logging::HEADER << "[" << name << "] " << ffnn::logging::ENDC
 
 #ifndef FFNN_NO_LOGGING
 /**

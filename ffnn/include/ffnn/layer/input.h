@@ -26,13 +26,13 @@ class Input :
   public Layer<ValueType>
 {
 public:
-  /// Base-type alias
+  /// Base type alias
   using Base = Layer<ValueType>;
 
-  /// Size-type standardization
+  /// Size type standardization
   typedef typename Base::SizeType SizeType;
 
-  /// Offset-type standardization
+  /// Offset type standardization
   typedef typename Base::OffsetType OffsetType;
 
   /**
@@ -53,7 +53,7 @@ public:
    * @note <code>NetworkInputType</code> must have the following methods
    *       - <code>NetworkInputType::data()</code> to expose a pointer to a contiguous memory block
    *       - <code>NetworkInputType::size()</code> to expose the size of the memory block
-   * @warning This method does not check element-type correctness
+   * @warning This method does not check element type correctness
    */
   template<typename NetworkInputType>
   void operator<<(const NetworkInputType& input) const;

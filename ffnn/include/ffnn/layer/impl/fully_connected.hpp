@@ -14,23 +14,19 @@ namespace ffnn
 namespace layer
 {
 template<typename ValueType,
-         template<class> class NeuronType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
          FFNN_SIZE_TYPE OutputsAtCompileTime>
-FullyConnected<ValueType, NeuronType, InputsAtCompileTime, OutputsAtCompileTime>::
-Parameters::Parameters(ScalarType std_weight, ScalarType std_bias) :
-  std_weight(std_weight),
-  std_bias(std_bias)
+FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::
+Parameters::Parameters(ScalarType std_weight) :
+  std_weight(std_weight)
 {
   FFNN_ASSERT_MSG(std_weight > 0, "[std_weight] should be positive");
-  FFNN_ASSERT_MSG(std_bias > 0, "[std_bias] should be positive");
 }
 
 template<typename ValueType,
-         template<class> class NeuronType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
          FFNN_SIZE_TYPE OutputsAtCompileTime>
-FullyConnected<ValueType, NeuronType, InputsAtCompileTime, OutputsAtCompileTime>::
+FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::
 FullyConnected(SizeType output_dim, const Parameters& config) :
   Base(0, output_dim),
   config_(config),
@@ -38,17 +34,15 @@ FullyConnected(SizeType output_dim, const Parameters& config) :
 {}
 
 template<typename ValueType,
-         template<class> class NeuronType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
          FFNN_SIZE_TYPE OutputsAtCompileTime>
-FullyConnected<ValueType, NeuronType, InputsAtCompileTime, OutputsAtCompileTime>::~FullyConnected()
+FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::~FullyConnected()
 {}
 
 template<typename ValueType,
-         template<class> class NeuronType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
          FFNN_SIZE_TYPE OutputsAtCompileTime>
-bool FullyConnected<ValueType, NeuronType, InputsAtCompileTime, OutputsAtCompileTime>::initialize()
+bool FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::initialize()
 {
   // Abort if layer is already initialized
   if (!Base::loaded_ && Base::isInitialized())
@@ -61,17 +55,11 @@ bool FullyConnected<ValueType, NeuronType, InputsAtCompileTime, OutputsAtCompile
     return false;
   }
 
-  // Set weighted-input vector
-  w_input_.setZero(Base::output_dimension_, 1);
-
   // Initialize weights
   if (!Base::loaded_)
   {
     reset();
   }
-
-  // Initialize neurons
-  neurons_.resize(Base::output_dimension_);
 
   // Setup optimizer
   if (opt_)
@@ -93,59 +81,44 @@ bool FullyConnected<ValueType, NeuronType, InputsAtCompileTime, OutputsAtCompile
 }
 
 template<typename ValueType,
-         template<class> class NeuronType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
          FFNN_SIZE_TYPE OutputsAtCompileTime>
-bool FullyConnected<ValueType, NeuronType, InputsAtCompileTime, OutputsAtCompileTime>::forward()
+bool FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::forward()
 {
-  FFNN_ASSERT_MSG(opt_, "No optimization resource set.");
   if (!opt_->forward(*this))
   {
     return false;
   }
 
   // Compute weighted outputs
-  w_input_.noalias() = w_ * Base::input() + b_;
-
-  // Compute neuron outputs
-  for (SizeType idx = 0; idx < Base::output_dimension_; idx++)
-  {
-    neurons_[idx].fn(w_input_(idx), (*Base::output_)(idx));
-  }
+  Base::output_->noalias() = w_ * Base::input();
   return true;
 }
 
 template<typename ValueType,
-         template<class> class NeuronType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
          FFNN_SIZE_TYPE OutputsAtCompileTime>
-bool FullyConnected<ValueType, NeuronType, InputsAtCompileTime, OutputsAtCompileTime>::backward()
+bool FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::backward()
 {
   FFNN_ASSERT_MSG(opt_, "No optimization resource set.");
   return opt_->backward(*this);
 }
 
 template<typename ValueType,
-         template<class> class NeuronType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
          FFNN_SIZE_TYPE OutputsAtCompileTime>
-bool FullyConnected<ValueType, NeuronType, InputsAtCompileTime, OutputsAtCompileTime>::update()
+bool FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::update()
 {
   FFNN_ASSERT_MSG(opt_, "No optimization resource set.");
   return opt_->update(*this);
 }
 
 template<typename ValueType,
-         template<class> class NeuronType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
          FFNN_SIZE_TYPE OutputsAtCompileTime>
-void FullyConnected<ValueType, NeuronType, InputsAtCompileTime, OutputsAtCompileTime>::reset()
+void FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::reset()
 {
   FFNN_ASSERT_MSG(Base::isInitialized(), "Layer is not initialized.");
-
-  // Set bias vector ([-1, 1] * std(b))
-  b_.setRandom(Base::output_dimension_, 1);
-  b_ *= config_.std_bias;
 
   // Set random weight matrix ([-1, 1] * std(w))
   w_.resize(Base::output_dimension_, Base::input_dimension_);
@@ -153,10 +126,9 @@ void FullyConnected<ValueType, NeuronType, InputsAtCompileTime, OutputsAtCompile
 }
 
 template<typename ValueType,
-         template<class> class NeuronType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
          FFNN_SIZE_TYPE OutputsAtCompileTime>
-void FullyConnected<ValueType, NeuronType, InputsAtCompileTime, OutputsAtCompileTime>::
+void FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::
   setOptimizer(typename Optimizer::Ptr opt)
 {
   FFNN_ASSERT_MSG(opt, "Input optimizer object is an empty resource.");
@@ -164,51 +136,39 @@ void FullyConnected<ValueType, NeuronType, InputsAtCompileTime, OutputsAtCompile
 }
 
 template<typename ValueType,
-         template<class> class NeuronType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
          FFNN_SIZE_TYPE OutputsAtCompileTime>
-void FullyConnected<ValueType, NeuronType, InputsAtCompileTime, OutputsAtCompileTime>::
-  save(typename FullyConnected<ValueType, NeuronType, InputsAtCompileTime, OutputsAtCompileTime>::OutputArchive& ar,
-       typename FullyConnected<ValueType, NeuronType, InputsAtCompileTime, OutputsAtCompileTime>::VersionType version) const
+void FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::
+  save(typename FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::OutputArchive& ar,
+       typename FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::VersionType version) const
 {
-  ffnn::io::signature::apply<FullyConnected<ValueType, NeuronType, InputsAtCompileTime, OutputsAtCompileTime>>(ar);
+  ffnn::io::signature::apply<FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>>(ar);
   Base::save(ar, version);
 
   // Save configuration parameters
   ar & config_.std_weight;
-  ar & config_.std_bias;
 
   // Save weight matrix
   ar & w_;
-  ar & b_;
-
-  // Last weighted inputs
-  ar & w_input_;
 
   FFNN_DEBUG_NAMED("layer::FullyConnected", "Saved");
 }
 
 template<typename ValueType,
-         template<class> class NeuronType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
          FFNN_SIZE_TYPE OutputsAtCompileTime>
-void FullyConnected<ValueType, NeuronType, InputsAtCompileTime, OutputsAtCompileTime>::
-  load(typename FullyConnected<ValueType, NeuronType, InputsAtCompileTime, OutputsAtCompileTime>::InputArchive& ar,
-       typename FullyConnected<ValueType, NeuronType, InputsAtCompileTime, OutputsAtCompileTime>::VersionType version)
+void FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::
+  load(typename FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::InputArchive& ar,
+       typename FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::VersionType version)
 {
-  ffnn::io::signature::check<FullyConnected<ValueType, NeuronType, InputsAtCompileTime, OutputsAtCompileTime>>(ar);
+  ffnn::io::signature::check<FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>>(ar);
   Base::load(ar, version);
 
   // Save configuration parameters
   ar & config_.std_weight;
-  ar & config_.std_bias;
 
   // Save weight matrix
   ar & w_;
-  ar & b_;
-
-  // Last weighted inputs
-  ar & w_input_;
 
   FFNN_DEBUG_NAMED("layer::FullyConnected", "Loaded");
 }
