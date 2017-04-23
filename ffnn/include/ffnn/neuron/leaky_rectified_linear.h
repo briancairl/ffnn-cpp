@@ -7,6 +7,7 @@
 
 // FFNN
 #include <ffnn/assert.h>
+#include <ffnn/config/global.h>
 #include <ffnn/neuron/neuron.h>
 
 namespace ffnn
@@ -16,7 +17,9 @@ namespace neuron
 /**
  * @brief A leaky-rectified linear activation unit
  */
-template<typename ValueType>
+template<typename ValueType,
+         FFNN_OFFSET _P,
+         FFNN_OFFSET _B = 100>
 class LeakyRectifiedLinear :
   public Neuron<ValueType>
 {
@@ -25,10 +28,11 @@ public:
    * @brief Setup constructor
    * @param leak_factor input to leak with (input < 0) 
    */
-  LeakyRectifiedLinear(ValueType leak_factor = 0.01) :
-    leak_factor_(leak_factor)
+  LeakyRectifiedLinear() :
+    leak_factor_(static_cast<ValueType>(_P)/static_cast<ValueType>(_B))
   {
-    FFNN_ASSERT_MSG((leak_factor > 0 && leak_factor <= 1), "'leak_factor' is not in the range [0, 1]");
+    FFNN_ASSERT_MSG((leak_factor > 0 && leak_factor <= 1),
+                    "Leak constant is not in the range [0, 1]");
   }
 
   /**
@@ -53,7 +57,7 @@ public:
 
 protected:
   /// Factor in the range [0, 1] to leak when (input < 0)
-  ValueType leak_factor_;
+  const ValueType leak_factor_;
 };
 }  // namespace neuron
 }  // namespace ffnn
