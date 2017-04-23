@@ -27,7 +27,7 @@ public:
    * @param[in] input  a scalar input value
    * @param[in,out] output  a scalar output value
    */
-  inline void fn(const ValueType& input, ValueType& output) const
+  virtual inline void fn(const ValueType& input, ValueType& output)
   {
     output = input;
   }
@@ -37,7 +37,7 @@ public:
    * @param[in] input  a scalar input value
    * @param[in,out] output  a scalar output value
    */
-  inline void derivative(const ValueType& input, ValueType& output) const
+  virtual inline void derivative(const ValueType& input, ValueType& output) const
   {
     output = 1;
   }

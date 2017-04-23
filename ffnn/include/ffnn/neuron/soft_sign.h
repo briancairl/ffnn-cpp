@@ -30,7 +30,7 @@ public:
    * @param[in] input  a scalar input value
    * @param[in,out] output  a scalar output value
    */
-  inline void fn(const ValueType& input, ValueType& output) const
+  virtual inline void fn(const ValueType& input, ValueType& output)
   {
     output = input / (1 + std::abs(input));
   }
@@ -40,7 +40,7 @@ public:
    * @param[in] input  a scalar input value
    * @param[in,out] output  a scalar output value
    */
-  inline void derivative(const ValueType& input, ValueType& output) const
+  virtual inline void derivative(const ValueType& input, ValueType& output) const
   {
     const ValueType v = (1 + std::abs(input));
     output = 1 / (v * v);

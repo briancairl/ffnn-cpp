@@ -36,7 +36,7 @@ public:
    * @param[in] input  a scalar input value
    * @param[in,out] output  a scalar output value
    */
-  inline void fn(const ValueType& input, ValueType& output) const
+  virtual inline void fn(const ValueType& input, ValueType& output)
   {
     output = (input > 0) ? input : (leak_factor_ * input);
   }
@@ -46,7 +46,7 @@ public:
    * @param[in] input  a scalar input value
    * @param[in,out] output  a scalar output value
    */
-  inline void derivative(const ValueType& input, ValueType& output) const
+  virtual inline void derivative(const ValueType& input, ValueType& output) const
   {
     output = (input > 0) ? 1 : leak_factor_;
   }
