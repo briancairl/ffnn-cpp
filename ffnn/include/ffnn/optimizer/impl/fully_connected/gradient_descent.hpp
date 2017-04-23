@@ -126,8 +126,7 @@ public:
     layer.w_.noalias() -= lr_ * w_delta_;
 
     // Reinitialize optimizer
-    initialize(layer);
-
+    reset(layer);
     return true;
   }
 
