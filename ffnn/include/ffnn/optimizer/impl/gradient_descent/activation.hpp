@@ -21,9 +21,7 @@ class GradientDescent<layer::Activation<ValueType, NeuronType, SizeAtCompileTime
 {
 public:
   /// Layer type standardization
-  typedef typename layer::Activation<ValueType,
-                                         NeuronType,
-                                         SizeAtCompileTime> LayerType;
+  typedef typename layer::Activation<ValueType, NeuronType, SizeAtCompileTime> LayerType;
 
   /// Scalar type standardization
   typedef typename LayerType::ScalarType ScalarType;
@@ -46,8 +44,7 @@ public:
     Optimizer<LayerType>("GradientDescent[Activation]"),
     lr_(lr)
   {}
-  virtual ~GradientDescent()
-  {}
+  virtual ~GradientDescent() {}
 
   /**
    * @brief Initializes the Optimizer
@@ -72,7 +69,7 @@ public:
   /**
    * @brief Computes one forward optimization update step
    * @param[in, out] layer  Layer to optimize
-   * @retval true  if optimization setp was successful
+   * @retval true  if optimization setup was successful
    * @retval false  otherwise
    */
   virtual bool forward(LayerType& layer)
@@ -82,9 +79,9 @@ public:
   }
 
   /**
-   * @brief Computes optimization step during backward propogation
+   * @brief Computes optimization step during backward propagation
    * @param[in, out] layer  Layer to optimize
-   * @retval true  if optimization setp was successful
+   * @retval true  if optimization setup was successful
    * @retval false  otherwise
    */
   virtual bool backward(LayerType& layer)
@@ -116,8 +113,11 @@ public:
   {
     FFNN_ASSERT_MSG(layer.isInitialized(), "Layer to optimize is not initialized.");
 
+    // Incorporate learning rate
+    gradient_ *= lr_;
+
     // Update biases
-    layer.b_.noalias() -= lr_ * gradient_;
+    layer.b_.noalias() -= gradient_;
 
     // Reinitialize optimizer
     reset(layer);
@@ -128,7 +128,6 @@ protected:
   /// Learning rate
   ScalarType lr_;
 
-private:
   /// Bias vector delta
   BiasVector gradient_;
 };

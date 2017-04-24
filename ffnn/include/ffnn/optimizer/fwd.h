@@ -11,6 +11,7 @@ namespace optimizer
 {
 // Foward Declarations
 template<typename LayerType> class None;
+template<typename LayerType> class Adam;
 template<typename LayerType> class GradientDescent;
 
 }  // namespace optimizer

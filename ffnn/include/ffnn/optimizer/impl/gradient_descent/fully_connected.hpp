@@ -21,9 +21,7 @@ class GradientDescent<layer::FullyConnected<ValueType, InputsAtCompileTime, Outp
 {
 public:
   /// Layer type standardization
-  typedef typename layer::FullyConnected<ValueType,
-                                         InputsAtCompileTime,
-                                         OutputsAtCompileTime> LayerType;
+  typedef typename layer::FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime> LayerType;
 
   /// Scalar type standardization
   typedef typename LayerType::ScalarType ScalarType;
@@ -49,8 +47,7 @@ public:
     Optimizer<LayerType>("GradientDescent[FullyConnected]"),
     lr_(lr)
   {}
-  virtual ~GradientDescent()
-  {}
+  virtual ~GradientDescent() {}
 
   /**
    * @brief Initializes the Optimizer
@@ -122,8 +119,11 @@ public:
   {
     FFNN_ASSERT_MSG(layer.isInitialized(), "Layer to optimize is not initialized.");
 
+    // Incorporate learning rate
+    gradient_ *= lr_;
+
     // Update weights
-    layer.w_.noalias() -= lr_ * gradient_;
+    layer.w_.noalias() -= gradient_;
 
     // Reinitialize optimizer
     reset(layer);
@@ -134,7 +134,6 @@ protected:
   /// Learning rate
   ScalarType lr_;
 
-private:
   /// Weight matrix delta
   WeightMatrix gradient_;
 

@@ -141,6 +141,7 @@ protected:
   void load(InputArchive& ar, VersionType version);
 
 private:
+  FFNN_REGISTER_OPTIMIZER(SparselyConnected, Adam);
   FFNN_REGISTER_OPTIMIZER(SparselyConnected, GradientDescent);
 
   /// Layer configuration parameters

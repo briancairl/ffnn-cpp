@@ -9,25 +9,11 @@
 #include <ffnn/config/global.h>
 #include <ffnn/assert.h>
 #include <ffnn/optimizer/optimizer.h>
-
-namespace ffnn
-{
-namespace optimizer
-{
-template<typename LayerType>
-class GradientDescent :
-  public Optimizer<LayerType>
-{
-public:
-  GradientDescent();
-  virtual ~GradientDescent()
-  {}
-};
-}  // namespace optimizer
-}  // namespace ffnn
+#include <ffnn/optimizer/fwd.h>
 
 /// FFNN (specializations)
 #include <ffnn/optimizer/impl/gradient_descent/activation.hpp>
 #include <ffnn/optimizer/impl/gradient_descent/fully_connected.hpp>
 #include <ffnn/optimizer/impl/gradient_descent/sparsely_connected.hpp>
+
 #endif  // FFNN_LAYER_OPTIMIZATION_GRADIENT_DESCENT_H
