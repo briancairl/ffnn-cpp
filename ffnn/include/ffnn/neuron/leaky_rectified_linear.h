@@ -18,8 +18,8 @@ namespace neuron
  * @brief A leaky-rectified linear activation unit
  */
 template<typename ValueType,
-         FFNN_OFFSET _P,
-         FFNN_OFFSET _B = 100>
+         FFNN_SIZE_TYPE _P,
+         FFNN_SIZE_TYPE _B = 100>
 class LeakyRectifiedLinear :
   public Neuron<ValueType>
 {
