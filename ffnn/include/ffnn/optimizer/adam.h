@@ -15,19 +15,19 @@ namespace ffnn
 namespace optimizer
 {
 template<typename LayerType>
-class GradientDescent :
+class Adam :
   public Optimizer<LayerType>
 {
 public:
-  GradientDescent();
-  virtual ~GradientDescent()
+  Adam();
+  virtual ~Adam()
   {}
 };
 }  // namespace optimizer
 }  // namespace ffnn
 
 /// FFNN (specializations)
-#include <ffnn/optimizer/impl/gradient_descent/activation.hpp>
-#include <ffnn/optimizer/impl/gradient_descent/fully_connected.hpp>
-#include <ffnn/optimizer/impl/gradient_descent/sparsely_connected.hpp>
+#include <ffnn/optimizer/impl/activation/gradient_descent.hpp>
+#include <ffnn/optimizer/impl/fully_connected/gradient_descent.hpp>
+#include <ffnn/optimizer/impl/sparsely_connected/gradient_descent.hpp>
 #endif  // FFNN_LAYER_OPTIMIZATION_GRADIENT_DESCENT_H
