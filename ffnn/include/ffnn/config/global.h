@@ -21,7 +21,7 @@
  * - <code>FFNN_ALLOW_ASSERT</code>: force enables run-time assertions
  * - <code>FFNN_ALLOW_LOGGING</code>: force enables debugging printouts
  * - <code>FFNN_SUPRESS_ERROR_LOGGING</code>: suppresses error message
- * - <code>FFNN_NO_EXPLICIT_ALIGNMENT</code>: disables matrix vectorization
+ * - <code>FFNN_DISABLE_ALIGNMENT</code>: disables matrix vectorization
  * @}
  * 
  * @author Brian Cairl

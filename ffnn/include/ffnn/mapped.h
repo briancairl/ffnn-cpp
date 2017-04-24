@@ -18,7 +18,7 @@ namespace ffnn
 template<typename MatrixType>
 struct Mapped
 {
-#ifndef FFNN_DONT_ALIGN
+#ifndef FFNN_DISABLE_ALIGNMENT
   /// Mapped-vector result type
   typedef Eigen::Map<MatrixType, 32> Type;
 #else

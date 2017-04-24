@@ -43,7 +43,7 @@ public:
   /// Offset type standardization
   typedef FFNN_OFFSET_TYPE OffsetType;
 
-#ifndef FFNN_NO_EXPLICIT_ALIGNMENT
+#ifndef FFNN_DISABLE_ALIGNMENT
   /// Data buffer (vector) type
   typedef std::vector<ValueType, Eigen::aligned_allocator<ValueType>> BufferType;
 #else
