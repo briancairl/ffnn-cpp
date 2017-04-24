@@ -54,6 +54,28 @@ target_link_libraries(test_layer_sparsely_connected_io
 #    - layer::Output
 #    - layer::FullyConnected
 #    - layer::Activation
+#    - neuron::modifier::Dropout
+#    - neuron::Linear
+#  	 - optimizer::GradientDescent[FullyConnected]
+#  	 - optimizer::GradientDescent[Activation]
+##############################################################
+
+catkin_add_gtest(test_layer_activation_dropout_training
+  test_layer_activation_dropout_training.cpp
+)
+target_link_libraries(test_layer_activation_dropout_training
+  ${Boost_LIBRARIES}
+  ${catkin_LIBRARIES}
+  ${EIGEN_LIBRARIES}
+  ${GTEST_LIBRARIES}
+)
+
+##############################################################
+# Tests:
+#    - layer::Input
+#    - layer::Output
+#    - layer::FullyConnected
+#    - layer::Activation
 #  	 - optimizer::GradientDescent[FullyConnected]
 #  	 - optimizer::GradientDescent[Activation]
 ##############################################################

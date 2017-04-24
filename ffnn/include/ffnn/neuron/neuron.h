@@ -24,7 +24,7 @@ public:
    * @param[in] input  a scalar input value
    * @param[in,out] output  a scalar output value
    */
-  virtual void fn(const ValueType& input, ValueType& output) const = 0;
+  virtual void fn(const ValueType& input, ValueType& output) = 0;
 
   /**
    * @brief Computes first-order activation derivative

@@ -20,10 +20,10 @@ namespace modifier
 template<typename ValueType,
          template<class> class NeuronType,
          template<class> class DistributionType,
-         FFNN_OFFSET _P,
-         FFNN_OFFSET _B = 100>
+         FFNN_SIZE_TYPE _P,
+         FFNN_SIZE_TYPE _B = 100>
 class SoftDropout :
-  public Neuron<ValueType>
+  public NeuronType<ValueType>
 {
 public:
   /// Default constructor
@@ -37,7 +37,7 @@ public:
    * @param[in] input  a scalar input value
    * @param[in,out] output  a scalar output value
    */
-  virtual inline void fn(const ValueType& input, ValueType& output)
+  virtual void fn(const ValueType& input, ValueType& output)
   {
     // Create distribution to draw from
     static DistributionType<ValueType> dist;
@@ -52,9 +52,9 @@ public:
    * @param[in] input  a scalar input value
    * @param[in,out] output  a scalar output value
    */
-  virtual inline void derivative(const ValueType& input, ValueType& output) const
+  virtual void derivative(const ValueType& input, ValueType& output) const
   {
-    Neuron<ValueType>::derivative(input, output);
+    NeuronType<ValueType>::derivative(input, output);
     output *= connection_probability_;
   }
 

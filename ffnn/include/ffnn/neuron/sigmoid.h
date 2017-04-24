@@ -30,7 +30,7 @@ public:
    * @param[in] input  a scalar input value
    * @param[in,out] output  a scalar output value
    */
-  virtual inline void fn(const ValueType& input, ValueType& output)
+  virtual void fn(const ValueType& input, ValueType& output)
   {
     output = std::tanh(input);
   }
@@ -40,7 +40,7 @@ public:
    * @param[in] input  a scalar input value
    * @param[in,out] output  a scalar output value
    */
-  virtual inline void derivative(const ValueType& input, ValueType& output) const
+  virtual void derivative(const ValueType& input, ValueType& output) const
   {
     output =  (1 - output * output);
   }
