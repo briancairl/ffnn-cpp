@@ -72,7 +72,7 @@ public:
   virtual void reset(LayerType& layer)
   {
     // Reset weight delta
-    w_delta_.resize(layer.output_dimension_, layer.input_dimension_);
+    gradient_.resize(layer.output_dimension_, layer.input_dimension_);
   }
 
   /**
@@ -101,18 +101,18 @@ public:
     FFNN_ASSERT_MSG(layer.isInitialized(), "Layer to optimize is not initialized.");
 
     // Compute current weight delta
-    WeightMatrix w_delta_curr(layer.output_dimension_, layer.input_dimension_);
+    WeightMatrix current_gradient(layer.output_dimension_, layer.input_dimension_);
     for(SizeType idx = 0; idx < layer.w_.outerSize(); idx++)
     {
       for(typename WeightMatrix::InnerIterator it(layer.w_, idx); it; ++it)
       {
-        w_delta_curr.insert(it.row(), it.col()) =
+        current_gradient.insert(it.row(), it.col()) =
           (*layer.forward_error_)(it.row()) * prev_input_(it.col());
       }
     }
 
     // Accumulate weight delta
-    w_delta_ += w_delta_curr;
+    gradient_ += current_gradient;
 
     // Compute back-propagated error
     layer.backward_error_->noalias() = layer.w_.transpose() * (*layer.forward_error_);
@@ -130,7 +130,7 @@ public:
     FFNN_ASSERT_MSG(layer.isInitialized(), "Layer to optimize is not initialized.");
 
     // Update weights
-    layer.w_ -= lr_ * w_delta_;
+    layer.w_ -= lr_ * gradient_;
 
     // Reinitialize optimizer
     reset(layer);
@@ -143,10 +143,7 @@ protected:
 
 private:
   /// Weight matrix delta
-  WeightMatrix w_delta_;
-
-  /// Bias vector delta
-  OutputVector b_delta_;
+  WeightMatrix gradient_;
 
   /// Previous input
   InputVector prev_input_;

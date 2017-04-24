@@ -72,7 +72,7 @@ public:
   virtual void reset(LayerType& layer)
   {
     // Reset weight delta
-    w_delta_.setZero(layer.output_dimension_, layer.input_dimension_);
+    gradient_.setZero(layer.output_dimension_, layer.input_dimension_);
   }
 
   /**
@@ -101,11 +101,11 @@ public:
     FFNN_ASSERT_MSG(layer.isInitialized(), "Layer to optimize is not initialized.");
 
     // Compute current weight delta
-    WeightMatrix w_delta_curr(layer.output_dimension_, layer.input_dimension_);
-    w_delta_curr.noalias() = (*layer.forward_error_) * prev_input_.transpose();
+    WeightMatrix current_gradient(layer.output_dimension_, layer.input_dimension_);
+    current_gradient.noalias() = (*layer.forward_error_) * prev_input_.transpose();
 
     // Accumulate weight delta
-    w_delta_ += w_delta_curr;
+    gradient_ += current_gradient;
 
     // Compute back-propagated error
     layer.backward_error_->noalias() = layer.w_.transpose() * (*layer.forward_error_);
@@ -123,7 +123,7 @@ public:
     FFNN_ASSERT_MSG(layer.isInitialized(), "Layer to optimize is not initialized.");
 
     // Update weights
-    layer.w_.noalias() -= lr_ * w_delta_;
+    layer.w_.noalias() -= lr_ * gradient_;
 
     // Reinitialize optimizer
     reset(layer);
@@ -136,10 +136,7 @@ protected:
 
 private:
   /// Weight matrix delta
-  WeightMatrix w_delta_;
-
-  /// Bias vector delta
-  OutputVector b_delta_;
+  WeightMatrix gradient_;
 
   /// Previous input
   InputVector prev_input_;

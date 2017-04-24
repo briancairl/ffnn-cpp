@@ -19,12 +19,7 @@ class GradientDescent :
   public Optimizer<LayerType>
 {
 public:
-  /**
-   * @brief Setup constructor
-   */
-  GradientDescent() :
-    Optimizer<LayerType>("GradientDescent")
-  {}
+  GradientDescent();
   virtual ~GradientDescent()
   {}
 };

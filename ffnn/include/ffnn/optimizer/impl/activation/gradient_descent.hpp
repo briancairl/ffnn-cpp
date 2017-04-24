@@ -66,7 +66,7 @@ public:
   virtual void reset(LayerType& layer)
   {
     // Reset bias delta
-    b_delta_.setZero(layer.output_dimension_, 1);
+    gradient_.setZero(layer.output_dimension_, 1);
   }
 
   /**
@@ -102,7 +102,7 @@ public:
     layer.backward_error_->array() *= layer.forward_error_->array();
 
     // Accumulate weight delta
-    b_delta_.noalias() += (*layer.backward_error_);
+    gradient_.noalias() += (*layer.backward_error_);
     return true;
   }
 
@@ -117,7 +117,7 @@ public:
     FFNN_ASSERT_MSG(layer.isInitialized(), "Layer to optimize is not initialized.");
 
     // Update biases
-    layer.b_.noalias() -= lr_ * b_delta_;
+    layer.b_.noalias() -= lr_ * gradient_;
 
     // Reinitialize optimizer
     reset(layer);
@@ -130,7 +130,7 @@ protected:
 
 private:
   /// Bias vector delta
-  BiasVector b_delta_;
+  BiasVector gradient_;
 };
 }  // namespace optimizer
 }  // namespace ffnn
