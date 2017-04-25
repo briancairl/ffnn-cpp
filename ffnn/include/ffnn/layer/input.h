@@ -39,6 +39,7 @@ public:
    * @brief Setup constructor
    * @param input_dim  number of inputs supplied to network by this Layer
    */
+  explicit
   Input(const SizeType& network_input_dim = NetworkInputsAtCompileTime);
   virtual ~Input();
 
