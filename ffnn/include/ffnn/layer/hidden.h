@@ -52,6 +52,7 @@ public:
    * @param input_dim  number of inputs to the Hidden
    * @param output_dim  number of outputs from the Hidden
    */
+  explicit
   Hidden(SizeType input_dim = InputsAtCompileTime,
          SizeType output_dim = OutputsAtCompileTime);
   virtual ~Hidden();
