@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package>
+
+  <name>ffnn_app</name>
+  <version>0.0.0</version>
+
+  <description>
+    Test applications using ffnn
+  </description>
+
+  <author email="briancairl@gmail.com">Brian Cairl</author>
+  <maintainer email="briancairl@gmail.com">Brian Cairl</maintainer>
+
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>eigen</build_depend>
+  <build_depend>ffnn</build_depend>
+  <run_depend>ffnn</run_depend>
+
+</package>

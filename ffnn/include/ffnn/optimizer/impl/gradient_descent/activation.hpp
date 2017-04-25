@@ -57,7 +57,7 @@ public:
   }
 
   /**
-   * @brief Resetrs persistent Optimizer states
+   * @brief Resets persistent Optimizer states
    * @param[in, out] layer  Layer to optimize
    */
   virtual void reset(LayerType& layer)
@@ -118,7 +118,7 @@ public:
 
     // Update biases
     layer.b_.noalias() -= gradient_;
-
+  
     // Reinitialize optimizer
     reset(layer);
     return true;
