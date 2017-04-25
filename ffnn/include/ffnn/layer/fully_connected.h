@@ -73,6 +73,7 @@ public:
    * @param output_dim  number of outputs from the Hidden
    * @param config  layer configuration struct
    */
+  explicit
   FullyConnected(SizeType output_dim = OutputsAtCompileTime,
                  const Parameters& config = Parameters());
   virtual ~FullyConnected();
