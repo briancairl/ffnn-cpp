@@ -121,6 +121,15 @@ public:
    */
   void setOptimizer(typename Optimizer::Ptr opt);
 
+  /**
+   * @brief Exposes internal connection weights
+   * @return input-output connection weights
+   */
+  inline const WeightMatrix& getWeights() const
+  {
+    return w_;
+  }
+
 protected:
   FFNN_REGISTER_SERIALIZABLE(FullyConnected)
 
