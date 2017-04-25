@@ -97,12 +97,8 @@ public:
   {
     FFNN_ASSERT_MSG(layer.isInitialized(), "Layer to optimize is not initialized.");
 
-    // Compute current weight delta
-    WeightMatrix current_gradient(layer.output_dimension_, layer.input_dimension_);
-    current_gradient.noalias() = (*layer.forward_error_) * prev_input_.transpose();
-
-    // Accumulate weight delta
-    gradient_ += current_gradient;
+    // Compute and accumulate new gradient
+    gradient_.noalias() += (*layer.forward_error_) * prev_input_.transpose();
 
     // Compute back-propagated error
     layer.backward_error_->noalias() = layer.w_.transpose() * (*layer.forward_error_);
