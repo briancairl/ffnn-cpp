@@ -67,6 +67,7 @@ public:
    * @brief Default constructor
    * @param config  layer configuration object
    */
+  explicit
   Activation(const Parameters& config = Parameters());
   virtual ~Activation();
 
