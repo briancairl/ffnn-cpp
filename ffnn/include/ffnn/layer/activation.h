@@ -111,6 +111,15 @@ public:
    */
   void setOptimizer(typename Optimizer::Ptr opt);
 
+  /**
+   * @brief Exposes internal biasing weights
+   * @return input-biasing vector
+   */
+  inline const BiasVector& getBiases() const
+  {
+    return b_;
+  }
+
 protected:
   FFNN_REGISTER_SERIALIZABLE(Activation)
 
