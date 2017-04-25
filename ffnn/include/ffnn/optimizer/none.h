@@ -29,8 +29,7 @@ public:
   None() :
     Optimizer<LayerType>("None")
   {}
-  virtual ~None()
-  {}
+  virtual ~None() {}
 
   /**
    * @brief Passthrough
