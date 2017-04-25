@@ -77,6 +77,7 @@ public:
    * @param output_dim  number of outputs from the Hidden
    * @param config  layer configuration struct
    */
+  explicit
   SparselyConnected(SizeType output_dim = OutputsAtCompileTime,
                     const Parameters& config = Parameters());
   virtual ~SparselyConnected();
