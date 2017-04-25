@@ -53,8 +53,8 @@ public:
     epsilon_(eps)
   {
     Base::setName("Adam[Activation]");
-    FFNN_ASSERT_MSG(beta1_ > 0 && beta1_ < 1, "Beta1 should be in the range (0, 1).");
-    FFNN_ASSERT_MSG(beta2_ > 0 && beta2_ < 1, "Beta1 should be in the range (0, 1).");
+    FFNN_ASSERT_MSG(beta1_ > 0 && beta1_ < 1, "'beta1' should be in the range (0, 1).");
+    FFNN_ASSERT_MSG(beta2_ > 0 && beta2_ < 1, "'beta2' should be in the range (0, 1).");
     FFNN_ASSERT_MSG(epsilon_ > 0, "Epsilon should be > 0.");
   }
   virtual ~Adam() {}
