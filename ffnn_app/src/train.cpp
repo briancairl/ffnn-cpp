@@ -62,7 +62,7 @@ int main(int argc, char** argv)
   }
 
   const size_t iterations = 1000;
-  const size_t epoch = 5000;
+  const size_t epoch = 500;
 
   // Layer sizes
   static const Layer::SizeType DIM = samples[0].rows();
