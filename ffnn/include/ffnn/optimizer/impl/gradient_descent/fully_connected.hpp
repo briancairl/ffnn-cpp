@@ -83,7 +83,7 @@ public:
     FFNN_ASSERT_MSG(layer.isInitialized(), "Layer to optimize is not initialized.");
 
     // Copy current input for updating
-    prev_input_ = layer.input();
+    prev_input_ = (*layer.input_);
     return true;
   }
 

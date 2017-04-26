@@ -89,7 +89,7 @@ public:
     FFNN_ASSERT_MSG(layer.isInitialized(), "Layer to optimize is not initialized.");
 
     // Compute neuron derivatives
-    layer.backward_error_->noalias() = layer.output();
+    layer.backward_error_->noalias() = (*layer.output_);
     for (SizeType idx = 0; idx < layer.output_dimension_; idx++)
     {
       layer.neurons_[idx].derivative(layer.b_input_(idx), (*layer.backward_error_)(idx));

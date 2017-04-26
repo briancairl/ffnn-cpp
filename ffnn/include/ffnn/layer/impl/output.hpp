@@ -89,14 +89,11 @@ void Output<ValueType, NetworkOutputsAtCompileTime>::operator<<(const NetworkTar
   FFNN_ASSERT_MSG(target.size() == Base::input_dimension_,
                   "Target object size does not match expected network output size.");
 
-  // Mapped vector type aliases
-  using Vector = Eigen::Matrix<ValueType, Eigen::Dynamic, 1, Eigen::ColMajor>;
-  using MapVec = typename Mapped<Vector>::Type;
-
   // Compute network error
-  MapVec(const_cast<ValueType*>(Base::backward_error_buffer_.data()), Base::backward_error_buffer_.size(), 1) =
-    MapVec(const_cast<ValueType*>(Base::input_buffer_.data()), Base::input_buffer_.size(), 1) -
-    MapVec(const_cast<ValueType*>(target.data()), target.size(), 1);
+  for (SizeType idx = 0; idx < Base::backward_error_buffer_.size(); idx++)
+  {
+    Base::backward_error_buffer_.data()[idx] = Base::input_buffer_.data()[idx] - target.data()[idx];
+  }
 }
 }  // namespace layer
 }  // namespace ffnn

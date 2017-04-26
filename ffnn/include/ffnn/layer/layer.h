@@ -11,10 +11,10 @@
 
 // FFNN (internal)
 #include <ffnn/internal/traits/serializable.h>
-#include <ffnn/internal/traits/shared.h>
 #include <ffnn/internal/traits/unique.h>
 
 // FFNN
+#include <ffnn/aligned_types.h>
 #include <ffnn/config/global.h>
 
 namespace ffnn
@@ -26,7 +26,6 @@ namespace layer
  */
 template<typename ValueType>
 class Layer :
-  public traits::Shared<Layer<ValueType>>,
   public traits::Unique
 {
 /// Connects Layer objects
@@ -34,6 +33,12 @@ template<typename LayerType>
 friend bool connect(const typename LayerType::Ptr& from,
                     const typename LayerType::Ptr& to);
 public:
+  /// Shared resource standardization
+  typedef boost::shared_ptr<Layer> Ptr;
+
+  /// Constant shared resource standardization
+  typedef boost::shared_ptr<const Layer> ConstPtr;
+
   /// Scalar type standardization
   typedef ValueType ScalarType;
 
@@ -42,14 +47,6 @@ public:
 
   /// Offset type standardization
   typedef FFNN_OFFSET_TYPE OffsetType;
-
-#ifndef FFNN_DISABLE_ALIGNMENT
-  /// Data buffer (vector) type
-  typedef std::vector<ValueType, Eigen::aligned_allocator<ValueType>> BufferType;
-#else
-  /// Data buffer (vector) type
-  typedef std::vector<ValueType> BufferType;
-#endif
 
   /**
    * @brief Setup constructor
@@ -104,7 +101,7 @@ public:
   /**
    * @brief Exposes raw input buffer
    */
-  inline const BufferType& getInputBuffer() const
+  inline const aligned::Buffer<ValueType>& getInputBuffer() const
   {
     return input_buffer_;
   }
@@ -112,7 +109,7 @@ public:
   /**
    * @brief Exposes raw bakcward-error buffer
    */
-  inline const BufferType& getBackwardErrorBuffer() const
+  inline const aligned::Buffer<ValueType>& getBackwardErrorBuffer() const
   {
     return backward_error_buffer_;
   }
@@ -120,7 +117,7 @@ public:
   /**
    * @brief Returns the total number of Layer inputs
    */
-  inline SizeType getInputDim() const
+  inline SizeType inputSize() const
   {
     return input_dimension_;
   }
@@ -128,7 +125,7 @@ public:
   /**
    * @brief Returns the total number of Layer outputs
    */
-  inline SizeType getOutputDim() const
+  inline SizeType outputSize() const
   {
     return output_dimension_;
   }
@@ -179,10 +176,10 @@ protected:
   SizeType output_dimension_;
 
   /// Raw input value buffer
-  BufferType input_buffer_;
+  aligned::Buffer<ValueType> input_buffer_;
 
   /// Raw bakward error value buffer
-  BufferType backward_error_buffer_;
+  aligned::Buffer<ValueType> backward_error_buffer_;
 };
 }  // namespace layer
 }  // namespace ffnn

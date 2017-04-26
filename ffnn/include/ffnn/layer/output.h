@@ -10,7 +10,7 @@
 
 // FFNN
 #include <ffnn/config/global.h>
-#include <ffnn/mapped.h>
+#include <ffnn/aligned_types.h>
 #include <ffnn/layer/layer.h>
 
 namespace ffnn
@@ -20,7 +20,8 @@ namespace layer
 /**
  * @brief A layer which handles network outputs
  */
-template<typename ValueType, FFNN_SIZE_TYPE NetworkOutputsAtCompileTime = Eigen::Dynamic>
+template<typename ValueType,
+         FFNN_SIZE_TYPE NetworkOutputsAtCompileTime = Eigen::Dynamic>
 class Output :
   public Layer<ValueType>
 {

@@ -15,7 +15,7 @@
 #include <ffnn/config/global.h>
 #include <ffnn/assert.h>
 #include <ffnn/layer/layer.h>
-#include <ffnn/mapped.h>
+#include <ffnn/aligned_types.h>
 
 
 namespace ffnn
@@ -63,28 +63,6 @@ public:
   virtual bool initialize();
 
   /**
-   * @brief Returns layer input values
-   * @return input values
-   * @warn Invalid before <code>initialize</code>
-   */
-  inline const typename Mapped<InputVector>::Type& input() const
-  {
-    FFNN_ASSERT_MSG(input_, "Hidden input is not initialized.");
-    return *input_;
-  }
-
-  /**
-   * @brief Returns layer output values
-   * @return output values
-   * @warn Invalid before <code>initialize</code>
-   */
-  inline const typename Mapped<OutputVector>::Type& output() const
-  {
-    FFNN_ASSERT_MSG(output_, "Hidden output is not initialized.");
-    return *output_;
-  }
-
-  /**
    * @brief Forward value propagation
    * @retval true  if forward-propagation succeeded
    * @retval false  otherwise
@@ -124,16 +102,16 @@ protected:
   void load(InputArchive& ar, VersionType version);
 
   /// Memory-mapped input vector
-  typename Mapped<InputVector>::Ptr input_;
+  typename aligned::Map<InputVector>::Ptr input_;
 
   /// Memory-mapped output vector
-  typename Mapped<OutputVector>::Ptr output_;
+  typename aligned::Map<OutputVector>::Ptr output_;
 
   /// Backward error vector
-  typename Mapped<InputVector>::Ptr backward_error_;
+  typename aligned::Map<InputVector>::Ptr backward_error_;
 
   /// Output-target error vector
-  typename Mapped<OutputVector>::Ptr forward_error_;
+  typename aligned::Map<OutputVector>::Ptr forward_error_;
 
 private:
   /**

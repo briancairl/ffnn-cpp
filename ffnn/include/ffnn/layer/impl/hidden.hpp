@@ -34,12 +34,12 @@ Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::connectToForwardLa
   // Map output of next layer to input buffer
   {
     ValueType* ptr = const_cast<ValueType*>(next.getInputBuffer().data());
-    output_ = Mapped<OutputVector>::create(ptr + offset, Base::output_dimension_);      
+    output_ = aligned::Map<OutputVector>::create(ptr + offset, Base::output_dimension_);      
   }
   // Map error of next layer to backward-error buffer
   {
     ValueType* ptr = const_cast<ValueType*>(next.getBackwardErrorBuffer().data());
-    forward_error_ = Mapped<OutputVector>::create(ptr + offset, Base::output_dimension_);
+    forward_error_ = aligned::Map<OutputVector>::create(ptr + offset, Base::output_dimension_);
   }
   // Return next offset after assigning buffer segments
   return offset + Base::output_dimension_;
@@ -71,12 +71,12 @@ bool Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::initialize()
     FFNN_DEBUG_NAMED("layer::Hidden", "Creating forward mappings.");
 
     // Create input buffer map
-    input_ = Mapped<InputVector>::create(Base::input_buffer_.data(),
-                                         Base::input_dimension_);
+    input_ = aligned::Map<InputVector>::create(Base::input_buffer_.data(),
+                                             Base::input_dimension_);
 
     // Create input buffer map
-    backward_error_ = Mapped<InputVector>::create(Base::backward_error_buffer_.data(),
-                                                  Base::input_dimension_);
+    backward_error_ = aligned::Map<InputVector>::create(Base::backward_error_buffer_.data(),
+                                                      Base::input_dimension_);
 
     // Resolve previous layer output buffers
     if (Base::connectInputLayers() == Base::input_dimension_)

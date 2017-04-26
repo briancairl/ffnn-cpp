@@ -8,10 +8,13 @@
 // C++ Standard Library
 #include <string>
 
+// Boost
+#include <boost/make_shared.hpp>
+#include <boost/shared_ptr.hpp>
+
 // FFNN
 #include <ffnn/config/global.h>
 #include <ffnn/assert.h>
-#include <ffnn/internal/traits/shared.h>
 
 namespace ffnn
 {
@@ -21,13 +24,23 @@ namespace optimizer
  * @brief A layer-wise optimizer visitor
  */
 template<typename LayerType>
-class Optimizer :
-  public traits::Shared<Optimizer<LayerType>>
+class Optimizer
 {
 public:
+  /// Shared resource standardization
+  typedef boost::shared_ptr<Optimizer> Ptr;
+
+  /// Constant shared resource standardization
+  typedef boost::shared_ptr<const Optimizer> ConstPtr;
+
+  /**
+   * @brief Naming constructor
+   * @param name  name associated with the optimizer
+   */
   Optimizer(const std::string& name) :
     name_(name)
   {}
+  virtual ~Optimizer() {}
 
   /**
    * @brief Initializes the Optimizer

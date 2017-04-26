@@ -5,9 +5,6 @@
 #ifndef FFNN_NEURON_NEURON_H
 #define FFNN_NEURON_NEURON_H
 
-// FFNN
-#include <ffnn/internal/traits/shared.h>
-
 namespace ffnn
 {
 namespace neuron

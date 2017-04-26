@@ -91,7 +91,7 @@ bool FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::forwa
   }
 
   // Compute weighted outputs
-  Base::output_->noalias() = w_ * Base::input();
+  Base::output_->noalias() = w_ * (*Base::input_);
   return true;
 }
 
