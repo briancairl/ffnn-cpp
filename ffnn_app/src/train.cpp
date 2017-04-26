@@ -19,6 +19,7 @@
 #include <ffnn/layer/output.h>
 #include <ffnn/neuron/lecun_sigmoid.h>
 #include <ffnn/neuron/linear.h>
+#include <ffnn/neuron/rectified_linear.h>
 #include <ffnn/optimizer/gradient_descent.h>
 #include <ffnn/io.h>
 
@@ -28,7 +29,7 @@ using Input  = ffnn::layer::Input<float>;
 using FC_H1  = ffnn::layer::FullyConnected<float>;
 using ACT_1  = ffnn::layer::Activation<float, ffnn::neuron::Linear>;
 using FC_H2  = ffnn::layer::FullyConnected<float>;
-using ACT_2  = ffnn::layer::Activation<float, ffnn::neuron::Linear>;
+using ACT_2  = ffnn::layer::Activation<float, ffnn::neuron::RectifiedLinear>;
 using Output = ffnn::layer::Output<float>;
 
 void read_vector(std::ifstream& is, Eigen::VectorXf& v, size_t pad = 2)
