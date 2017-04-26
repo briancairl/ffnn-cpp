@@ -21,8 +21,9 @@ template<typename ValueType,
          template<class> class NeuronType,
          FFNN_SIZE_TYPE SizeAtCompileTime>
 Activation<ValueType, NeuronType, SizeAtCompileTime>::
-Parameters::Parameters(ScalarType std_bias) :
-  std_bias(std_bias)
+Parameters::Parameters(ScalarType std_bias, ScalarType std_mean) :
+  std_bias(std_bias),
+  std_mean(std_mean)
 {
   FFNN_ASSERT_MSG(std_bias > 0, "[std_bias] should be positive");
 }
@@ -137,9 +138,15 @@ void Activation<ValueType, NeuronType, SizeAtCompileTime>::reset()
   // Set biased input
   b_input_.setZero(Base::input_dimension_, 1);
 
-  // Set bias vector ([-1, 1] * std(b))
+  // Set bias vector
   b_.setRandom(Base::output_dimension_, 1);
   b_ *= config_.std_bias;
+
+  // Apply offset to all biases
+  if (std::abs(config_.std_mean) > 0)
+  {
+    b_.array() += config_.std_mean;
+  }
 }
 
 template<typename ValueType,

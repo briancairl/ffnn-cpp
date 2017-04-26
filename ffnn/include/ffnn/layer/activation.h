@@ -56,11 +56,16 @@ public:
     /// Standard deviation of biases on init
     ScalarType std_bias;
 
+    /// Connection biasing mean (bias) on init
+    ScalarType std_mean;
+
     /**
      * @brief Setup constructor
      * @param std_bias  Standard deviation of initial weights
+     * @param std_mean  Mean of intial biases
      */
-    Parameters(ScalarType std_bias = 1e-3);
+    explicit
+    Parameters(ScalarType std_bias = 1e-3, ScalarType std_mean = 0.0);
   };
 
   /**

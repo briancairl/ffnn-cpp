@@ -58,14 +58,19 @@ public:
   /// A configuration object for a FullyConnected hidden layer
   struct Parameters
   {
-    /// Standard deviation of biases on init
-    ScalarType std_weight;
+    /// Standard deviation of connection weights on init
+    ScalarType weight_std;
+
+    /// Connection weight mean (bias) on init
+    ScalarType weight_mean;
 
     /**
      * @brief Setup constructor
-     * @param std_weight  Standard deviation of initial weights
+     * @param weight_std  Standard deviation of initial weights
+     * @param weight_mean  Mean of intial weights
      */
-    Parameters(ScalarType std_weight = 1e-3);
+    explicit
+    Parameters(ScalarType weight_std = 1e-3, ScalarType weight_mean = 0.0);
   };
 
   /**

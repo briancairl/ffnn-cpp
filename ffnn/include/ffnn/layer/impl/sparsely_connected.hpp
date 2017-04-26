@@ -17,11 +17,14 @@ template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
          FFNN_SIZE_TYPE OutputsAtCompileTime>
 SparselyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::
-Parameters::Parameters(ScalarType std_weight, ScalarType connection_probability) :
-  std_weight(std_weight),
+Parameters::Parameters(ScalarType weight_std,
+                       ScalarType weight_mean,
+                       ScalarType connection_probability) :
+  weight_std(weight_std),
+  weight_mean(weight_mean),
   connection_probability(connection_probability)
 {
-  FFNN_ASSERT_MSG(std_weight > 0, "[std_weight] should be positive");
+  FFNN_ASSERT_MSG(weight_std > 0, "[weight_std] should be positive");
   FFNN_ASSERT_MSG(connection_probability > 0, "[connection_probability] should be in range (0, 1)");
   FFNN_ASSERT_MSG(connection_probability < 1, "[connection_probability] should be in range (0, 1)");
 }
@@ -139,7 +142,8 @@ void SparselyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::re
       const ValueType p = (random(idx, jdx) + 1) / 2;
       if (p < config_.connection_probability)
       {
-        w_.insert(idx, jdx) = random(idx, jdx) * config_.std_weight;
+        w_.insert(idx, jdx) =
+          config_.weight_mean + random(idx, jdx) * config_.weight_std;
       }
     }
   }
@@ -175,7 +179,7 @@ void SparselyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::
 
   // Save configuration parameters
   ar & config_.connection_probability;
-  ar & config_.std_weight;
+  ar & config_.weight_std;
 
   // Save weight matrix
   ar & w_;
@@ -195,7 +199,7 @@ void SparselyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::
 
   // Save configuration parameters
   ar & config_.connection_probability;
-  ar & config_.std_weight;
+  ar & config_.weight_std;
 
   // Save weight matrix
   ar & w_;

@@ -17,10 +17,11 @@ template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
          FFNN_SIZE_TYPE OutputsAtCompileTime>
 FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::
-Parameters::Parameters(ScalarType std_weight) :
-  std_weight(std_weight)
+Parameters::Parameters(ScalarType weight_std, ScalarType weight_mean) :
+  weight_std(weight_std),
+  weight_mean(weight_mean)
 {
-  FFNN_ASSERT_MSG(std_weight > 0, "[std_weight] should be positive");
+  FFNN_ASSERT_MSG(weight_std > 0, "[weight_std] should be positive");
 }
 
 template<typename ValueType,
@@ -120,9 +121,15 @@ void FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::reset
 {
   FFNN_ASSERT_MSG(Base::isInitialized(), "Layer is not initialized.");
 
-  // Set random weight matrix ([-1, 1] * std(w))
-  w_.resize(Base::output_dimension_, Base::input_dimension_);
-  w_ *= config_.std_weight;
+  // Set unfiormly random weight matrix
+  w_.setRandom(Base::output_dimension_, Base::input_dimension_);
+  w_ *= config_.weight_std;
+
+  // Apply offset to all weights
+  if (std::abs(config_.weight_mean) > 0)
+  {
+    w_.array() += config_.weight_mean;
+  }
 }
 
 template<typename ValueType,
@@ -146,7 +153,7 @@ void FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::
   Base::save(ar, version);
 
   // Save configuration parameters
-  ar & config_.std_weight;
+  ar & config_.weight_std;
 
   // Save weight matrix
   ar & w_;
@@ -165,7 +172,7 @@ void FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::
   Base::load(ar, version);
 
   // Save configuration parameters
-  ar & config_.std_weight;
+  ar & config_.weight_std;
 
   // Save weight matrix
   ar & w_;

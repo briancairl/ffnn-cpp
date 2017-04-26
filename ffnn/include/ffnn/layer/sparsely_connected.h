@@ -59,17 +59,23 @@ public:
   struct Parameters
   {
     /// Standard deviation of weights on init
-    ScalarType std_weight;
+    ScalarType weight_std;
+
+    /// Connection weight mean (bias) on init
+    ScalarType weight_mean;
 
     /// Probability that a connection exists between any input/output pair
     ScalarType connection_probability;
 
     /**
      * @brief Setup constructor
-     * @param std_weight  Standard deviation of initial weights
+     * @param weight_std  Standard deviation of initial weights
      * @param connection_probability  Probability a connection will exist between any input/output pair
      */
-    Parameters(ScalarType std_weight = 1e-3, ScalarType connection_probability = 0.5);
+    explicit
+    Parameters(ScalarType weight_std = 1e-3,
+               ScalarType weight_mean = 0.0,
+               ScalarType connection_probability = 0.5);
   };
 
   /**
