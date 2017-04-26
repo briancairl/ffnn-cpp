@@ -46,3 +46,13 @@ target_link_libraries(train
   ${GTEST_LIBRARIES}
 )
 
+add_executable(test_trained
+  src/test_trained.cpp
+)
+target_link_libraries(test_trained
+  ${Boost_LIBRARIES}
+  ${catkin_LIBRARIES}
+  ${EIGEN_LIBRARIES}
+  ${GTEST_LIBRARIES}
+)
+

@@ -60,9 +60,6 @@ int main(int argc, char** argv)
     read_vector(is, v); samples.push_back(v);
   }
 
-  const size_t iterations = 1000;
-  const size_t epoch = 5000;
-
   // Layer sizes
   static const Layer::SizeType DIM = samples[0].rows();
 
@@ -74,33 +71,10 @@ int main(int argc, char** argv)
   auto a1    = boost::make_shared<ACT_1>(ACT_1::Parameters(0.05));
   auto output = boost::make_shared<Output>();  
 
-  double lr = 1.0 / (samples.size() * epoch);
-
-  // Set optimizer (gradient descent)
-  {
-    using Optimizer = ffnn::optimizer::GradientDescent<FC_H1>;
-    h1->setOptimizer(boost::make_shared<Optimizer>(lr));
-  }
-  {
-    using Optimizer = ffnn::optimizer::GradientDescent<ACT_1>;
-    a1->setOptimizer(boost::make_shared<Optimizer>(lr));
-  }
-  {
-    using Optimizer = ffnn::optimizer::GradientDescent<FC_H2>;
-    h2->setOptimizer(boost::make_shared<Optimizer>(lr));
-  }
-  {
-    using Optimizer = ffnn::optimizer::GradientDescent<ACT_2>;
-    a2->setOptimizer(boost::make_shared<Optimizer>(lr));
-  }
-
   // Create network
   std::vector<Layer::Ptr> layers({input, h1, a1, h2, a2, output});
 
-  std::stringstream issname;
-  issname << "/home/brian/network_saves/990_5000.net";
-  FFNN_INFO("Loading : " << issname.str());
-  std::ifstream ifs(issname.str().c_str(), std::ios::binary);
+  std::ifstream ifs("/home/brian/network_saves/990_5000.net", std::ios::binary);
   for(const auto& layer : layers)
   {
     try
@@ -130,73 +104,21 @@ int main(int argc, char** argv)
     }
   }
 
+  std::ofstream ofs("/home/brian/network_saves/test_out.txt");
   // Check that error montonically decreases
-  float prev_error = std::numeric_limits<float>::infinity();
-  for (size_t idx = 0UL; idx < iterations; idx++)
+  for (size_t idx = 0; samples.size(); idx++)
   {
-    FFNN_INFO(idx << " " << epoch << " lr: " << lr);
-    double error = 0;
-    for (size_t jdx = 0UL; jdx < epoch; jdx++)
-    {
-      size_t kdx(rand() % targets.size());
-
-      // Forward activate
-      (*input) << samples[kdx];
-      for(const auto& layer : layers)
-      {
-        layer->forward();
-      }
-      Eigen::VectorXf netout(samples[kdx].rows(), 1);
-      (*output) >> netout;
-
-      // Compute error and check
-      error += (targets[kdx] - netout).norm();
-
-      // Set target
-      (*output) << targets[kdx];
-
-      // Backward propogated error
-      for(const auto& layer : layers)
-      {
-        layer->backward();
-      }
-    }
-
-    // Trigger optimization
+    // Forward activate
+    (*input) << samples[idx];
     for(const auto& layer : layers)
     {
-      layer->update();
+      layer->forward();
     }
+    Eigen::VectorXf netout(samples[idx].rows(), 1);
+    (*output) >> netout;
 
-    // Save network
-    if (!(idx % 10))
-    {
-      std::stringstream ssname;
-      ssname << "/home/brian/network_saves/" << idx << "_" << epoch << ".net";
-      FFNN_INFO("Saving : " << ssname.str());
-      std::ofstream of(ssname.str().c_str(), std::ios::binary);
-      for(const auto& layer : layers)
-      {
-        try
-        {
-          ffnn::save(of, *layer);
-        }
-        catch (const boost::archive::archive_exception& ex)
-        {
-          FFNN_ERROR(ex.what());
-        }
-      }
-      of.close();
-    }
-
-    // Check for early-stopping
-    FFNN_INFO("Error : " << error);
-    if (std::abs(error - prev_error) < 1e-12)
-    {
-      FFNN_INFO("Training complete");
-      return 0;
-    }
-    prev_error = error;
+    ofs << targets[idx].transpose() << std::endl;
+    ofs << netout.transpose() << std::endl;
   }
   return 0;
 }
