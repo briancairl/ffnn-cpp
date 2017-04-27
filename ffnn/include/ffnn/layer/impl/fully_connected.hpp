@@ -154,6 +154,7 @@ void FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::
 
   // Save configuration parameters
   ar & config_.weight_std;
+  ar & config_.weight_mean;
 
   // Save weight matrix
   ar & w_;
@@ -173,6 +174,7 @@ void FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::
 
   // Save configuration parameters
   ar & config_.weight_std;
+  ar & config_.weight_mean;
 
   // Save weight matrix
   ar & w_;
