@@ -22,10 +22,10 @@ template<typename ValueType,
          FFNN_SIZE_TYPE SizeAtCompileTime>
 Activation<ValueType, NeuronType, SizeAtCompileTime>::
 Parameters::Parameters(ScalarType std_bias, ScalarType std_mean) :
-  std_bias(std_bias),
-  std_mean(std_mean)
+  init_bias_std(init_bias_std),
+  init_bias_mean(init_bias_mean)
 {
-  FFNN_ASSERT_MSG(std_bias > 0, "[std_bias] should be positive");
+  FFNN_ASSERT_MSG(init_bias_std > 0, "[std_bias] should be positive");
 }
 
 template<typename ValueType,
@@ -140,12 +140,12 @@ void Activation<ValueType, NeuronType, SizeAtCompileTime>::reset()
 
   // Set bias vector
   b_.setRandom(Base::output_dimension_, 1);
-  b_ *= config_.std_bias;
+  b_ *= config_.init_bias_std;
 
   // Apply offset to all biases
   if (std::abs(config_.std_mean) > 0)
   {
-    b_.array() += config_.std_mean;
+    b_.array() += config_.init_bias_mean;
   }
 }
 
@@ -169,7 +169,8 @@ void Activation<ValueType, NeuronType, SizeAtCompileTime>::
   Base::save(ar, version);
 
   // Save configuration parameters
-  ar & config_.std_bias;
+  ar & config_.init_bias_std;
+  ar & config_.init_bias_mean;
 
   // Save weight matrix
   ar & b_;
@@ -188,7 +189,8 @@ void Activation<ValueType, NeuronType, SizeAtCompileTime>::
   Base::load(ar, version);
 
   // Save configuration parameters
-  ar & config_.std_bias;
+  ar & config_.init_bias_std;
+  ar & config_.init_bias_mean;
 
   // Save weight matrix
   ar & b_;

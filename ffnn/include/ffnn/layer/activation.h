@@ -54,10 +54,10 @@ public:
   struct Parameters
   {
     /// Standard deviation of biases on init
-    ScalarType std_bias;
+    ScalarType init_bias_std;
 
     /// Connection biasing mean (bias) on init
-    ScalarType std_mean;
+    ScalarType init_bias_mean;
 
     /**
      * @brief Setup constructor
@@ -65,7 +65,7 @@ public:
      * @param std_mean  Mean of intial biases
      */
     explicit
-    Parameters(ScalarType std_bias = 1e-3, ScalarType std_mean = 0.0);
+    Parameters(ScalarType init_bias_std = 1e-3, ScalarType init_bias_mean = 0.0);
   };
 
   /**
