@@ -17,7 +17,7 @@
 #include <ffnn/layer/input.h>
 #include <ffnn/layer/activation.h>
 #include <ffnn/layer/output.h>
-#include <ffnn/neuron/lecun_sigmoid.h>
+#include <ffnn/neuron/sigmoid.h>
 #include <ffnn/neuron/linear.h>
 #include <ffnn/neuron/rectified_linear.h>
 #include <ffnn/optimizer/gradient_descent.h>
@@ -27,9 +27,9 @@
 using Layer  = ffnn::layer::Layer<float>;
 using Input  = ffnn::layer::Input<float>;
 using FC_H1  = ffnn::layer::FullyConnected<float>;
-using ACT_1  = ffnn::layer::Activation<float, ffnn::neuron::Linear>;
 using FC_H2  = ffnn::layer::FullyConnected<float>;
-using ACT_2  = ffnn::layer::Activation<float, ffnn::neuron::RectifiedLinear>;
+using ACT_1  = ffnn::layer::Activation<float, ffnn::neuron::Linear>;
+using ACT_2  = ffnn::layer::Activation<float, ffnn::neuron::Linear>;
 using Output = ffnn::layer::Output<float>;
 
 void read_vector(std::ifstream& is, Eigen::VectorXf& v, size_t pad = 2)
@@ -61,21 +61,21 @@ int main(int argc, char** argv)
     read_vector(is, v); samples.push_back(v);
   }
 
-  const size_t iterations = 1000;
-  const size_t epoch = 500;
+  const size_t iterations = 10000;
+  const size_t epoch = 5000;
 
   // Layer sizes
   static const Layer::SizeType DIM = samples[0].rows();
 
   // Create layers
   auto input = boost::make_shared<Input>(DIM);  
-  auto h1    = boost::make_shared<FC_H1>(DIM, FC_H1::Parameters(0.05));
-  auto h2    = boost::make_shared<FC_H2>(DIM, FC_H2::Parameters(0.05));
-  auto a2    = boost::make_shared<ACT_2>(ACT_2::Parameters(0.05));
-  auto a1    = boost::make_shared<ACT_1>(ACT_1::Parameters(0.05));
+  auto h1    = boost::make_shared<FC_H1>(DIM, FC_H1::Parameters(1.0/(DIM*DIM)));
+  auto h2    = boost::make_shared<FC_H2>(DIM, FC_H2::Parameters(1.0/(DIM*DIM)));
+  auto a1    = boost::make_shared<ACT_1>(ACT_1::Parameters(1.0/(DIM*DIM)));
+  auto a2    = boost::make_shared<ACT_2>(ACT_2::Parameters(1.0/(DIM*DIM)));
   auto output = boost::make_shared<Output>();  
 
-  double lr = 1.0 / (samples.size() * epoch);
+  double lr = 0.1 / epoch;
 
   // Set optimizer (gradient descent)
   {

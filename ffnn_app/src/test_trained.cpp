@@ -17,7 +17,7 @@
 #include <ffnn/layer/input.h>
 #include <ffnn/layer/activation.h>
 #include <ffnn/layer/output.h>
-#include <ffnn/neuron/lecun_sigmoid.h>
+#include <ffnn/neuron/sigmoid.h>
 #include <ffnn/neuron/linear.h>
 #include <ffnn/neuron/rectified_linear.h>
 #include <ffnn/optimizer/gradient_descent.h>
@@ -27,9 +27,9 @@
 using Layer  = ffnn::layer::Layer<float>;
 using Input  = ffnn::layer::Input<float>;
 using FC_H1  = ffnn::layer::FullyConnected<float>;
-using ACT_1  = ffnn::layer::Activation<float, ffnn::neuron::Linear>;
 using FC_H2  = ffnn::layer::FullyConnected<float>;
-using ACT_2  = ffnn::layer::Activation<float, ffnn::neuron::RectifiedLinear>;
+using ACT_1  = ffnn::layer::Activation<float, ffnn::neuron::Linear>;
+using ACT_2  = ffnn::layer::Activation<float, ffnn::neuron::Sigmoid>;
 using Output = ffnn::layer::Output<float>;
 
 void read_vector(std::ifstream& is, Eigen::VectorXf& v, size_t pad = 2)
@@ -66,16 +66,16 @@ int main(int argc, char** argv)
 
   // Create layers
   auto input = boost::make_shared<Input>(DIM);  
-  auto h1    = boost::make_shared<FC_H1>(DIM, FC_H1::Parameters(0.05));
-  auto h2    = boost::make_shared<FC_H2>(DIM, FC_H2::Parameters(0.05));
-  auto a2    = boost::make_shared<ACT_2>(ACT_2::Parameters(0.05));
-  auto a1    = boost::make_shared<ACT_1>(ACT_1::Parameters(0.05));
+  auto h1    = boost::make_shared<FC_H1>();
+  auto h2    = boost::make_shared<FC_H2>();
+  auto a2    = boost::make_shared<ACT_2>();
+  auto a1    = boost::make_shared<ACT_1>();
   auto output = boost::make_shared<Output>();  
 
   // Create network
   std::vector<Layer::Ptr> layers({input, h1, a1, h2, a2, output});
 
-  std::ifstream ifs("/home/brian/network_saves/990_5000.net", std::ios::binary);
+  std::ifstream ifs(argv[2], std::ios::binary);
   for(const auto& layer : layers)
   {
     try
