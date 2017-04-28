@@ -168,6 +168,9 @@ private:
   /// Weight matrix
   WeightMatrix w_;
 
+  /// Bias vector
+  BiasVector b_;
+
   /**
    * @brief Weight optimization resource
    * @note  This will be the <code>optimizer::None</code> type by default

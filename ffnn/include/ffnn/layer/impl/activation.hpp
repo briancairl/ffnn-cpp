@@ -79,6 +79,23 @@ bool Activation<ValueType, NeuronType, SizeAtCompileTime>::forward()
 template<typename ValueType,
          template<class> class NeuronType,
          FFNN_SIZE_TYPE SizeAtCompileTime>
+bool Activation<ValueType, NeuronType, SizeAtCompileTime>::backward()
+{
+  // Compute neuron derivatives
+  Base::backward_error_->noalias() = (*Base::output_);
+  for (SizeType idx = 0; idx < Base::output_dimension_; idx++)
+  {
+    neurons_[idx].derivative((*Base::input_)(idx), (*Base::backward_error_)(idx));
+  }
+
+  // Incorporate error
+  Base::backward_error_->array() *= Base::forward_error_->array();
+  return true;
+}
+
+template<typename ValueType,
+         template<class> class NeuronType,
+         FFNN_SIZE_TYPE SizeAtCompileTime>
 void Activation<ValueType, NeuronType, SizeAtCompileTime>::
   save(typename Activation<ValueType, NeuronType, SizeAtCompileTime>::OutputArchive& ar,
        typename Activation<ValueType, NeuronType, SizeAtCompileTime>::VersionType version) const

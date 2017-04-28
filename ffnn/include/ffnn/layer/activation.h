@@ -57,6 +57,13 @@ public:
    */
   virtual bool forward();
 
+  /**
+   * @brief Performs backward error propagation
+   * @retval true  if backward-propagation succeeded
+   * @retval false  otherwise
+   */
+  virtual bool backward();
+
 protected:
   FFNN_REGISTER_SERIALIZABLE(Activation)
 

@@ -41,6 +41,9 @@ public:
   /// Input-output weight matrix
   typedef typename LayerType::WeightMatrix WeightMatrix;
 
+  /// Bia vector type standardization
+  typedef typename LayerType::BiasVector BiasVector;
+
   /**
    * @brief Setup constructor
    * @param lr  Learning rate
@@ -114,6 +117,9 @@ private:
 
   /// Running mean of error gradient
   WeightMatrix mean_gradient_;
+
+  // 
+  BiasVector
 
   /// Uncentered variance of error gradient
   WeightMatrix var_gradient_;

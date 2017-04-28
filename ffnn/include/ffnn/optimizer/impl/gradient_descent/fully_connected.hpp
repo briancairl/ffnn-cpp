@@ -38,6 +38,9 @@ public:
   /// Input-output weight matrix
   typedef typename LayerType::WeightMatrix WeightMatrix;
 
+  /// Bia vector type standardization
+  typedef typename LayerType::BiasVector BiasVector;
+
   /**
    * @brief Setup constructor
    * @param lr  Learning rate
@@ -69,7 +72,7 @@ public:
   virtual void reset(LayerType& layer)
   {
     // Reset weight delta
-    gradient_.setZero(layer.output_dimension_, layer.input_dimension_);
+    weight_gradient_.setZero(layer.output_dimension_, layer.input_dimension_);
   }
 
   /**
@@ -98,7 +101,7 @@ public:
     FFNN_ASSERT_MSG(layer.isInitialized(), "Layer to optimize is not initialized.");
 
     // Compute and accumulate new gradient
-    gradient_.noalias() += (*layer.forward_error_) * prev_input_.transpose();
+    weight_gradient_.noalias() += (*layer.forward_error_) * prev_input_.transpose();
 
     // Compute back-propagated error
     layer.backward_error_->noalias() = layer.w_.transpose() * (*layer.forward_error_);
@@ -116,10 +119,11 @@ public:
     FFNN_ASSERT_MSG(layer.isInitialized(), "Layer to optimize is not initialized.");
 
     // Incorporate learning rate
-    gradient_ *= lr_;
+    weight_gradient_ *= lr_;
 
     // Update weights
-    layer.w_.noalias() -= gradient_;
+    layer.w_.noalias() -= weight_gradient_;
+    layer.b_.noalias() -= bias_gradient_;
 
     // Reinitialize optimizer
     reset(layer);
@@ -130,8 +134,11 @@ protected:
   /// Learning rate
   ScalarType lr_;
 
-  /// Weight matrix delta
-  WeightMatrix gradient_;
+  /// Total weight matrix gradient
+  WeightMatrix weight_gradient_;
+
+  /// Total bias vector delta
+  BiasVector bias_gradient_;
 
   /// Previous input
   InputVector prev_input_;

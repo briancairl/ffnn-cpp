@@ -181,9 +181,6 @@ private:
   /// Bias vector
   BiasVector b_;
 
-  /// Biased input
-  BiasVector b_input_;
-
   /**
    * @brief Weight optimization resource
    * @note  This will be the <code>optimizer::None</code> type by default
