@@ -7,6 +7,7 @@
 #include <ffnn/assert.h>
 #include <ffnn/logging.h>
 #include <ffnn/layer/fully_connected.h>
+#include <ffnn/optimizer/impl/adam/states.hpp>
 
 namespace ffnn
 {
@@ -43,39 +44,6 @@ public:
 
   /// Bia vector type standardization
   typedef typename LayerType::BiasVector BiasVector;
-
-  template<typename MatrixType>
-  class AdamStates
-  {
-  public:
-
-    void update(MatrixType& gradient, ScalarType beta1, ScalarType beta2, ScalarType eps)
-    {
-      // Update gradient moments
-      mean_gradient_.noalias() += beta1 * (gradient - mean_gradient_);
-      var_gradient_.noalias() += beta2 * (gradient - var_gradient_);
-
-      // Compute learning rates for all weights
-      gradient.noalias() = var_gradient_;
-      gradient.noalias() /= (1 - beta2);
-      gradient.array() += eps;
-      gradient.noalias() = mean_gradient_.array() / gradient.array();
-      gradient.noalias() /= (1 - beta1);
-    }
-
-    inline void initialize(SizeType rows, SizeType col)
-    {
-      mean_gradient_.setZero(rows, col);
-      var_gradient_.setZero(rows, col);
-    }
-
-  private:
-    /// Running mean of error gradient
-    MatrixType mean_gradient_;
-
-    /// Uncentered variance of error gradient
-    MatrixType var_gradient_;
-  };
 
   /**
    * @brief Setup constructor
@@ -122,12 +90,8 @@ public:
     weight_gradient_states_.update(Base::weight_gradient_, beta1_, beta2_, epsilon_);
     bias_gradient_states_.update(Base::bias_gradient_, beta1_, beta2_, epsilon_);
 
-    // Update weights
-    layer.w_.noalias() -= Base::lr_ * Base::weight_gradient_;
-    layer.b_.noalias() -= Base::lr_ * Base::bias_gradient_;
-
     // Reinitialize optimizer
-    Base::reset(layer);
+    Base::update(layer);
     return true;
   }
 
@@ -142,10 +106,10 @@ private:
   const ScalarType epsilon_;
 
   /// Running estimates of mean/variance of weight gradients
-  AdamStates<WeightMatrix> weight_gradient_states_;
+  States<WeightMatrix> weight_gradient_states_;
 
   /// Running estimates of mean/variance of bias gradients 
-  AdamStates<BiasVector> bias_gradient_states_;
+  States<BiasVector> bias_gradient_states_;
 };
 }  // namespace optimizer
 }  // namespace ffnn
