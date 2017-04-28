@@ -59,7 +59,8 @@ bool Activation<ValueType, NeuronType, SizeAtCompileTime>::initialize()
                    ", out=" <<
                    Base::output_dimension_ <<
                    ")");
-  return !neurons_.empty();
+
+  return Base::output_dimension_ == Base::input_dimension_;
 }
 
 template<typename ValueType,
