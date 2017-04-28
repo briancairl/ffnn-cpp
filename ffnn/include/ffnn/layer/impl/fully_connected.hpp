@@ -17,11 +17,17 @@ template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
          FFNN_SIZE_TYPE OutputsAtCompileTime>
 FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::
-Parameters::Parameters(ScalarType weight_std, ScalarType weight_mean) :
-  weight_std(weight_std),
-  weight_mean(weight_mean)
+Parameters::Parameters(ScalarType init_weight_std,
+                       ScalarType init_bias_std,
+                       ScalarType init_weight_mean,
+                       ScalarType init_bias_mean) :
+  init_weight_std(init_weight_std),
+  init_bias_std(init_bias_std),
+  init_weight_mean(init_weight_mean),
+  init_bias_mean(init_bias_mean)
 {
-  FFNN_ASSERT_MSG(weight_std > 0, "[weight_std] should be positive");
+  FFNN_ASSERT_MSG(init_bias_std > 0, "[init_bias_std] should be positive");
+  FFNN_ASSERT_MSG(init_weight_std > 0, "[init_weight_std] should be positive");
 }
 
 template<typename ValueType,
@@ -123,12 +129,12 @@ void FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::reset
 
   // Set unfiormly random weight matrix
   w_.setRandom(Base::output_dimension_, Base::input_dimension_);
-  w_ *= config_.weight_std;
+  w_ *= config_.init_weight_std;
 
   // Apply offset to all weights
-  if (std::abs(config_.weight_mean) > 0)
+  if (std::abs(config_.init_weight_mean) > 0)
   {
-    w_.array() += config_.weight_mean;
+    w_.array() += config_.init_weight_mean;
   }
 }
 
@@ -153,11 +159,14 @@ void FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::
   Base::save(ar, version);
 
   // Save configuration parameters
-  ar & config_.weight_std;
-  ar & config_.weight_mean;
+  ar & config_.init_weight_std;
+  ar & config_.init_weight_mean;
+  ar & config_.init_bias_std;
+  ar & config_.init_bias_mean;
 
-  // Save weight matrix
+  // Save weight/bias matrix
   ar & w_;
+  ar & b_;
 
   FFNN_DEBUG_NAMED("layer::FullyConnected", "Saved");
 }
@@ -173,11 +182,14 @@ void FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::
   Base::load(ar, version);
 
   // Save configuration parameters
-  ar & config_.weight_std;
-  ar & config_.weight_mean;
+  ar & config_.init_weight_std;
+  ar & config_.init_weight_mean;
+  ar & config_.init_bias_std;
+  ar & config_.init_bias_mean;
 
-  // Save weight matrix
+  // Save weight/bias matrix
   ar & w_;
+  ar & b_;
 
   FFNN_DEBUG_NAMED("layer::FullyConnected", "Loaded");
 }

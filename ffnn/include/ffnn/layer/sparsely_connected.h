@@ -58,24 +58,35 @@ public:
   /// A configuration object for a SparselyConnected hidden layer
   struct Parameters
   {
-    /// Standard deviation of weights on init
-    ScalarType weight_std;
-
-    /// Connection weight mean (bias) on init
-    ScalarType weight_mean;
-
     /// Probability that a connection exists between any input/output pair
     ScalarType connection_probability;
 
+    /// Standard deviation of connection weights on init
+    ScalarType init_weight_std;
+
+    /// Standard deviation of biases on init
+    ScalarType init_bias_std;
+
+    /// Connection weight mean (bias) on init
+    ScalarType init_weight_mean;
+
+    /// Connection biasing mean (bias) on init
+    ScalarType init_bias_mean;
+
     /**
      * @brief Setup constructor
-     * @param weight_std  Standard deviation of initial weights
      * @param connection_probability  Probability a connection will exist between any input/output pair
+     * @param init_weight_std  Standard deviation of initial weights
+     * @param init_bias_std  Standard deviation of initial weights
+     * @param init_weight_mean  Mean of intial weights
+     * @param init_bias_mean  Mean of intial biases
      */
     explicit
-    Parameters(ScalarType weight_std = 1e-3,
-               ScalarType weight_mean = 0.0,
-               ScalarType connection_probability = 0.5);
+    Parameters(ScalarType connection_probability = 0.5
+               ScalarType init_weight_std = 1e-3,
+               ScalarType init_bias_std = 1e-3,
+               ScalarType init_weight_mean = 0.0,
+               ScalarType init_bias_mean = 0.0);
   };
 
   /**

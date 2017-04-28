@@ -17,16 +17,21 @@ template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
          FFNN_SIZE_TYPE OutputsAtCompileTime>
 SparselyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::
-Parameters::Parameters(ScalarType weight_std,
-                       ScalarType weight_mean,
-                       ScalarType connection_probability) :
-  weight_std(weight_std),
-  weight_mean(weight_mean),
-  connection_probability(connection_probability)
+Parameters::Parameters(ScalarType connection_probability,
+                       ScalarType init_weight_std,
+                       ScalarType init_bias_std,
+                       ScalarType init_weight_mean,
+                       ScalarType init_bias_mean) :
+  connection_probability(connection_probability),
+  init_weight_std(init_weight_std),
+  init_bias_std(init_bias_std),
+  init_weight_mean(init_weight_mean),
+  init_bias_mean(init_bias_mean)
 {
-  FFNN_ASSERT_MSG(weight_std > 0, "[weight_std] should be positive");
-  FFNN_ASSERT_MSG(connection_probability > 0, "[connection_probability] should be in range (0, 1)");
-  FFNN_ASSERT_MSG(connection_probability < 1, "[connection_probability] should be in range (0, 1)");
+  FFNN_ASSERT_MSG(connection_probability > 0, "[connection_probability] should be in the range (0, 1)");
+  FFNN_ASSERT_MSG(connection_probability < 1, "[connection_probability] should be in the range (0, 1)");
+  FFNN_ASSERT_MSG(init_bias_std > 0, "[init_bias_std] should be positive");
+  FFNN_ASSERT_MSG(init_weight_std > 0, "[init_weight_std] should be positive");
 }
 
 template<typename ValueType,
