@@ -152,6 +152,14 @@ void SparselyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::re
       }
     }
   }
+
+  // Set uniformly random bias matrix + add biases
+  b_.setRandom(Base::output_dimension_, 1);
+  b_ *= config_.init_bias_std;
+  if (std::abs(config_.init_bias_mean) > 0)
+  {
+    b_.array() += config_.init_bias_mean;
+  }
 }
 
 template<typename ValueType,
@@ -184,10 +192,14 @@ void SparselyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::
 
   // Save configuration parameters
   ar & config_.connection_probability;
-  ar & config_.weight_std;
+  ar & config_.init_weight_std;
+  ar & config_.init_weight_mean;
+  ar & config_.init_bias_std;
+  ar & config_.init_bias_mean;
 
-  // Save weight matrix
+  // Save weight/bias matrix
   ar & w_;
+  ar & b_;
 
   FFNN_DEBUG_NAMED("layer::SparselyConnected", "Saved");
 }
@@ -204,10 +216,14 @@ void SparselyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::
 
   // Save configuration parameters
   ar & config_.connection_probability;
-  ar & config_.weight_std;
+  ar & config_.init_weight_std;
+  ar & config_.init_weight_mean;
+  ar & config_.init_bias_std;
+  ar & config_.init_bias_mean;
 
-  // Save weight matrix
+  // Save weight/bias matrix
   ar & w_;
+  ar & b_;
 
   FFNN_DEBUG_NAMED("layer::SparselyConnected", "Loaded");
 }
