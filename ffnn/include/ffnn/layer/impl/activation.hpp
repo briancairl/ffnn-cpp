@@ -82,7 +82,7 @@ template<typename ValueType,
 bool Activation<ValueType, NeuronType, SizeAtCompileTime>::backward()
 {
   // Compute neuron derivatives
-  Base::backward_error_->noalias() = (*Base::output_);
+  Base::backward_error_->noalias() = *Base::output_;
   for (SizeType idx = 0; idx < Base::output_dimension_; idx++)
   {
     neurons_[idx].derivative((*Base::input_)(idx), (*Base::backward_error_)(idx));

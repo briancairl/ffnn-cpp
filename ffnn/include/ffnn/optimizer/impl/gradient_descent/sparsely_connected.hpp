@@ -69,7 +69,10 @@ public:
   virtual void reset(LayerType& layer)
   {
     // Reset weight delta
-    gradient_.resize(layer.output_dimension_, layer.input_dimension_);
+    weight_gradient_.setZero(layer.output_dimension_, layer.input_dimension_);
+
+    // Reset bias delta
+    bias_gradient_.setZero(layer.output_dimension_, 1);
   }
 
   /**
@@ -98,18 +101,19 @@ public:
     FFNN_ASSERT_MSG(layer.isInitialized(), "Layer to optimize is not initialized.");
 
     // Compute current weight delta
-    WeightMatrix current_gradient(layer.output_dimension_, layer.input_dimension_);
+    WeightMatrix current_weight_gradient(layer.output_dimension_, layer.input_dimension_);
     for(SizeType idx = 0; idx < layer.w_.outerSize(); idx++)
     {
       for(typename WeightMatrix::InnerIterator it(layer.w_, idx); it; ++it)
       {
-        current_gradient.insert(it.row(), it.col()) =
+        current_weight_gradient.insert(it.row(), it.col()) =
           (*layer.forward_error_)(it.row()) * prev_input_(it.col());
       }
     }
 
     // Accumulate weight delta
-    gradient_ += current_gradient;
+    weight_gradient_ += current_weight_gradient;
+    bias_gradient_.noalias() += (*layer.forward_error_);
 
     // Compute back-propagated error
     layer.backward_error_->noalias() = layer.w_.transpose() * (*layer.forward_error_);
@@ -127,10 +131,12 @@ public:
     FFNN_ASSERT_MSG(layer.isInitialized(), "Layer to optimize is not initialized.");
 
     // Incorporate learning rate
-    gradient_ *= lr_;
+    weight_gradient_ *= lr_;
+    bias_gradient_ *= lr_;
 
-    // Update weights
-    layer.w_ -= gradient_;
+    // Update weights and biases
+    layer.w_ -= weight_gradient_;
+    layer.b_.noalias() -= bias_gradient_;
 
     // Reinitialize optimizer
     reset(layer);
@@ -142,7 +148,10 @@ protected:
   ScalarType lr_;
 
   /// Weight matrix delta
-  WeightMatrix gradient_;
+  WeightMatrix weight_gradient_;
+
+  /// Total bias vector delta
+  BiasVector bias_gradient_;
 
   /// Previous input
   InputVector prev_input_;

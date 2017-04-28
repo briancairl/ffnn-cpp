@@ -44,6 +44,39 @@ public:
   /// Bia vector type standardization
   typedef typename LayerType::BiasVector BiasVector;
 
+  template<typename MatrixType>
+  class AdamStates
+  {
+  public:
+
+    void update(MatrixType& gradient, ScalarType beta1, ScalarType beta2, ScalarType eps)
+    {
+      // Update gradient moments
+      mean_gradient_.noalias() += beta1 * (gradient - mean_gradient_);
+      var_gradient_.noalias() += beta2 * (gradient - var_gradient_);
+
+      // Compute learning rates for all weights
+      gradient.noalias() = var_gradient_;
+      gradient.noalias() /= (1 - beta2);
+      gradient.array() += eps;
+      gradient.noalias() = mean_gradient_.array() / gradient.array();
+      gradient.noalias() /= (1 - beta1);
+    }
+
+    inline void initialize(SizeType rows, SizeType col)
+    {
+      mean_gradient_.setZero(rows, col);
+      var_gradient_.setZero(rows, col);
+    }
+
+  private:
+    /// Running mean of error gradient
+    MatrixType mean_gradient_;
+
+    /// Uncentered variance of error gradient
+    MatrixType var_gradient_;
+  };
+
   /**
    * @brief Setup constructor
    * @param lr  Learning rate
@@ -70,9 +103,9 @@ public:
   {
     Base::initialize(layer);
 
-    // Reset moment matrices
-    mean_gradient_.setZero(layer.output_dimension_, layer.input_dimension_);
-    var_gradient_.setZero(layer.output_dimension_, layer.input_dimension_);
+    // Reset states
+    weight_gradient_states_.initialize(layer.output_dimension_, layer.input_dimension_);
+    bias_gradient_states_.initialize(layer.output_dimension_, layer.input_dimension_);
   }
 
   /**
@@ -85,20 +118,13 @@ public:
   {
     FFNN_ASSERT_MSG(layer.isInitialized(), "Layer to optimize is not initialized.");
 
-    // Update gradient moments
-    mean_gradient_ += beta1_ * (gradient_ - mean_gradient_);
-    var_gradient_  += beta2_ * (gradient_ - var_gradient_);
-
-    // Compute learning rates for all weights
-    WeightMatrix current_gradient = var_gradient_;
-    current_gradient.noalias() /= (1 - beta2_);
-    current_gradient.array() += epsilon_;
-    current_gradient.noalias() = mean_gradient_.array() / current_gradient.array();
-    current_gradient.noalias() /= (1 - beta1_);
-    current_gradient.noalias() *= Base::lr_;
+    // Update gradients
+    weight_gradient_states_.update(Base::weight_gradient_, beta1_, beta2_, epsilon_);
+    bias_gradient_states_.update(Base::bias_gradient_, beta1_, beta2_, epsilon_);
 
     // Update weights
-    layer.w_.noalias() -= current_gradient;
+    layer.w_.noalias() -= Base::lr_ * Base::weight_gradient_;
+    layer.b_.noalias() -= Base::lr_ * Base::bias_gradient_;
 
     // Reinitialize optimizer
     Base::reset(layer);
@@ -115,14 +141,11 @@ private:
   /// Variance normalization value
   const ScalarType epsilon_;
 
-  /// Running mean of error gradient
-  WeightMatrix mean_gradient_;
+  /// Running estimates of mean/variance of weight gradients
+  AdamStates<WeightMatrix> weight_gradient_states_;
 
-  // 
-  BiasVector
-
-  /// Uncentered variance of error gradient
-  WeightMatrix var_gradient_;
+  /// Running estimates of mean/variance of bias gradients 
+  AdamStates<BiasVector> bias_gradient_states_;
 };
 }  // namespace optimizer
 }  // namespace ffnn

@@ -73,6 +73,9 @@ public:
   {
     // Reset weight delta
     weight_gradient_.setZero(layer.output_dimension_, layer.input_dimension_);
+
+    // Reset bias delta
+    bias_gradient_.setZero(layer.output_dimension_, 1);
   }
 
   /**
@@ -86,7 +89,7 @@ public:
     FFNN_ASSERT_MSG(layer.isInitialized(), "Layer to optimize is not initialized.");
 
     // Copy current input for updating
-    prev_input_ = (*layer.input_);
+    prev_input_.noalias() = *layer.input_;
     return true;
   }
 
@@ -102,6 +105,7 @@ public:
 
     // Compute and accumulate new gradient
     weight_gradient_.noalias() += (*layer.forward_error_) * prev_input_.transpose();
+    bias_gradient_.noalias() += (*layer.forward_error_);
 
     // Compute back-propagated error
     layer.backward_error_->noalias() = layer.w_.transpose() * (*layer.forward_error_);
@@ -120,6 +124,7 @@ public:
 
     // Incorporate learning rate
     weight_gradient_ *= lr_;
+    bias_gradient_ *= lr_;
 
     // Update weights
     layer.w_.noalias() -= weight_gradient_;
