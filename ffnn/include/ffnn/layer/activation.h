@@ -74,9 +74,6 @@ protected:
   void load(InputArchive& ar, VersionType version);
 
 private:
-  FFNN_REGISTER_OPTIMIZER(Activation, Adam);
-  FFNN_REGISTER_OPTIMIZER(Activation, GradientDescent);
-
   /// Layer activation units
   std::vector<NeuronType<ValueType>> neurons_;
 };

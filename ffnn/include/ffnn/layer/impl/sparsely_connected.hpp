@@ -149,7 +149,7 @@ void SparselyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::re
       if (p < config_.connection_probability)
       {
         w_.insert(idx, jdx) =
-          config_.weight_mean + random(idx, jdx) * config_.weight_std;
+          config_.init_weight_mean + random(idx, jdx) * config_.init_weight_std;
       }
     }
   }

@@ -35,6 +35,9 @@ public:
   /// Matrix type standardization
   typedef typename LayerType::OutputVector OutputVector;
 
+  /// Bia vector type standardization
+  typedef typename LayerType::BiasVector BiasVector;
+
   /// Input-output weight matrix
   typedef typename LayerType::WeightMatrix WeightMatrix;
 
@@ -69,7 +72,7 @@ public:
   virtual void reset(LayerType& layer)
   {
     // Reset weight delta
-    weight_gradient_.setZero(layer.output_dimension_, layer.input_dimension_);
+    weight_gradient_.resize(layer.output_dimension_, layer.input_dimension_);
 
     // Reset bias delta
     bias_gradient_.setZero(layer.output_dimension_, 1);

@@ -17,15 +17,15 @@ public:
   void update(MatrixType& gradient, ScalarType beta1, ScalarType beta2, ScalarType eps)
   {
     // Update gradient moments
-    mean_.noalias() += beta1 * (gradient - mean_);
-    var_.noalias()  += beta2 * (gradient - var_);
+    mean_ += beta1 * (gradient - mean_);
+    var_  += beta2 * (gradient - var_);
 
     // Compute learning rates for all weights
-    gradient.noalias() = var_;
-    gradient.noalias() /= (1 - beta2);
+    gradient = var_;
+    gradient /= (1 - beta2);
     gradient.array() += eps;
-    gradient.noalias() = mean_.array() / gradient.array();
-    gradient.noalias() /= (1 - beta1);
+    gradient = mean_.array() / gradient.array();
+    gradient /= (1 - beta1);
   }
 
   inline void initialize(SizeType rows, SizeType col)

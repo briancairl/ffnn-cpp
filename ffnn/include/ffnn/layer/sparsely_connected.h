@@ -49,6 +49,9 @@ public:
   /// Matrix type standardization
   typedef typename Base::OutputVector OutputVector;
 
+  /// Bia vector type standardization
+  typedef typename Base::OutputVector BiasVector;
+
   /// Input-output weight matrix
   typedef Eigen::SparseMatrix<ValueType, Eigen::ColMajor> WeightMatrix;
 
@@ -82,7 +85,7 @@ public:
      * @param init_bias_mean  Mean of intial biases
      */
     explicit
-    Parameters(ScalarType connection_probability = 0.5
+    Parameters(ScalarType connection_probability = 0.5,
                ScalarType init_weight_std = 1e-3,
                ScalarType init_bias_std = 1e-3,
                ScalarType init_weight_mean = 0.0,
