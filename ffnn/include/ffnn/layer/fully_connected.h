@@ -44,13 +44,13 @@ public:
   typedef typename Base::OffsetType OffsetType;
 
   /// Matrix type standardization
-  typedef typename Base::InputVector InputVector;
+  typedef typename Base::InputVectorType InputVectorType;
 
   /// Matrix type standardization
-  typedef typename Base::OutputVector OutputVector;
+  typedef typename Base::OutputVectorType OutputVectorType;
 
   /// Bia vector type standardization
-  typedef typename Base::OutputVector BiasVector;
+  typedef typename Base::OutputVectorType BiasVector;
 
   /// Input-output weight matrix
   typedef Eigen::Matrix<ValueType, OutputsAtCompileTime, InputsAtCompileTime, Eigen::ColMajor> WeightMatrix;

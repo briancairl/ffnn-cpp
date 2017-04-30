@@ -30,10 +30,10 @@ public:
   typedef typename LayerType::SizeType SizeType;
 
   /// Matrix type standardization
-  typedef typename LayerType::InputVector InputVector;
+  typedef typename LayerType::InputVectorType InputVectorType;
 
   /// Matrix type standardization
-  typedef typename LayerType::OutputVector OutputVector;
+  typedef typename LayerType::OutputVectorType OutputVectorType;
 
   /// Input-output weight matrix
   typedef typename LayerType::WeightMatrix WeightMatrix;
@@ -146,7 +146,7 @@ protected:
   BiasVector bias_gradient_;
 
   /// Previous input
-  InputVector prev_input_;
+  InputVectorType prev_input_;
 };
 }  // namespace optimizer
 }  // namespace ffnn

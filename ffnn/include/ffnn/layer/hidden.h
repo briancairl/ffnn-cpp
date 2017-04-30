@@ -23,11 +23,15 @@ namespace ffnn
 namespace layer
 {
 /**
- * @brief A network layer object
+ * @brief A network hidden-layer object
  */
 template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime = Eigen::Dynamic,
-         FFNN_SIZE_TYPE OutputsAtCompileTime = Eigen::Dynamic>
+         FFNN_SIZE_TYPE OutputsAtCompileTime = Eigen::Dynamic,
+         typename _InputVectorType = Eigen::Matrix<ValueType, InputsAtCompileTime, 1, Eigen::ColMajor>,
+         typename _OutputVectorType = Eigen::Matrix<ValueType, OutputsAtCompileTime, 1, Eigen::ColMajor>,
+         typename _InputMappingType = aligned::Map<_InputVectorType>,
+         typename _OutputMappingType = aligned::Map<_OutputVectorType>>
 class Hidden :
   public Layer<ValueType>
 {
@@ -42,10 +46,10 @@ public:
   typedef typename Base::OffsetType OffsetType;
 
   /// Hidden input type standardization
-  typedef Eigen::Matrix<ValueType, InputsAtCompileTime, 1, Eigen::ColMajor> InputVector;
+  typedef _InputVectorType InputVectorType;
 
   /// Hidden output type standardization
-  typedef Eigen::Matrix<ValueType, OutputsAtCompileTime, 1, Eigen::ColMajor> OutputVector;
+  typedef _OutputVectorType OutputVectorType;
 
   /**
    * @brief Setup constructor
@@ -102,16 +106,16 @@ protected:
   void load(InputArchive& ar, VersionType version);
 
   /// Memory-mapped input vector
-  typename aligned::Map<InputVector>::Ptr input_;
+  typename _InputMappingType::Ptr input_;
 
   /// Memory-mapped output vector
-  typename aligned::Map<OutputVector>::Ptr output_;
+  typename _OutputMappingType::Ptr output_;
 
   /// Backward error vector
-  typename aligned::Map<InputVector>::Ptr backward_error_;
+  typename _InputMappingType::Ptr backward_error_;
 
   /// Output-target error vector
-  typename aligned::Map<OutputVector>::Ptr forward_error_;
+  typename _OutputMappingType::Ptr forward_error_;
 
 private:
   /**

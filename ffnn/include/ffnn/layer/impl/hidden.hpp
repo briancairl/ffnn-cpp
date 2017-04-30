@@ -14,32 +14,48 @@ namespace layer
 {
 template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
-         FFNN_SIZE_TYPE OutputsAtCompileTime>
-Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::Hidden(SizeType input_dim, SizeType output_dim) :
-  Base(input_dim, output_dim)
+         FFNN_SIZE_TYPE OutputsAtCompileTime,
+         typename _InputVectorType,
+         typename _OutputVectorType,
+         typename _InputMappingType,
+         typename _OutputMappingType>
+Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _InputVectorType, _OutputVectorType, _InputMappingType, _OutputMappingType>::
+  Hidden(SizeType input_dim, SizeType output_dim) :
+    Base(input_dim, output_dim)
 {}
 
 template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
-         FFNN_SIZE_TYPE OutputsAtCompileTime>
-Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::~Hidden()
+         FFNN_SIZE_TYPE OutputsAtCompileTime,
+         typename _InputVectorType,
+         typename _OutputVectorType,
+         typename _InputMappingType,
+         typename _OutputMappingType>
+Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _InputVectorType, _OutputVectorType, _InputMappingType, _OutputMappingType>::
+  ~Hidden()
 {}
 
 template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
-         FFNN_SIZE_TYPE OutputsAtCompileTime>
-typename Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::OffsetType 
-Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::connectToForwardLayer(const Base& next, OffsetType offset)
+         FFNN_SIZE_TYPE OutputsAtCompileTime,
+         typename _InputVectorType,
+         typename _OutputVectorType,
+         typename _InputMappingType,
+         typename _OutputMappingType>
+typename Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _InputVectorType, _OutputVectorType, _InputMappingType, _OutputMappingType>::
+  OffsetType 
+Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _InputVectorType, _OutputVectorType, _InputMappingType, _OutputMappingType>::
+  connectToForwardLayer(const Base& next, OffsetType offset)
 {
   // Map output of next layer to input buffer
   {
     ValueType* ptr = const_cast<ValueType*>(next.getInputBuffer().data());
-    output_ = aligned::Map<OutputVector>::create(ptr + offset, Base::output_dimension_);      
+    output_ = _OutputMappingType::create(ptr + offset, Base::output_dimension_);      
   }
   // Map error of next layer to backward-error buffer
   {
     ValueType* ptr = const_cast<ValueType*>(next.getBackwardErrorBuffer().data());
-    forward_error_ = aligned::Map<OutputVector>::create(ptr + offset, Base::output_dimension_);
+    forward_error_ = _OutputMappingType::create(ptr + offset, Base::output_dimension_);
   }
   // Return next offset after assigning buffer segments
   return offset + Base::output_dimension_;
@@ -47,8 +63,13 @@ Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::connectToForwardLa
 
 template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
-         FFNN_SIZE_TYPE OutputsAtCompileTime>
-bool Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::initialize()
+         FFNN_SIZE_TYPE OutputsAtCompileTime,
+         typename _InputVectorType,
+         typename _OutputVectorType,
+         typename _InputMappingType,
+         typename _OutputMappingType>
+bool Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _InputVectorType, _OutputVectorType, _InputMappingType, _OutputMappingType>::
+  initialize()
 {
   // Abort if layer is already initialized
   if (!Base::loaded_ && Base::isInitialized())
@@ -71,12 +92,10 @@ bool Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::initialize()
     FFNN_DEBUG_NAMED("layer::Hidden", "Creating forward mappings.");
 
     // Create input buffer map
-    input_ = aligned::Map<InputVector>::create(Base::input_buffer_.data(),
-                                             Base::input_dimension_);
+    input_ = _InputMappingType::create(Base::input_buffer_.data(), Base::input_dimension_);
 
     // Create input buffer map
-    backward_error_ = aligned::Map<InputVector>::create(Base::backward_error_buffer_.data(),
-                                                      Base::input_dimension_);
+    backward_error_ = _InputMappingType::create(Base::backward_error_buffer_.data(), Base::input_dimension_);
 
     // Resolve previous layer output buffers
     if (Base::connectInputLayers() == Base::input_dimension_)
@@ -87,7 +106,8 @@ bool Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::initialize()
                        "> initialized as (in=" <<
                        Base::input_dimension_  <<
                        ", out=" <<
-                       Base::output_dimension_ << ")");
+                       Base::output_dimension_ <<
+                       ")");
       return Base::isInitialized();
     }
 
@@ -102,24 +122,32 @@ bool Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::initialize()
 
 template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
-         FFNN_SIZE_TYPE OutputsAtCompileTime>
-void Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::
-  save(typename Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::OutputArchive& ar,
-       typename Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::VersionType version) const
+         FFNN_SIZE_TYPE OutputsAtCompileTime,
+         typename _InputVectorType,
+         typename _OutputVectorType,
+         typename _InputMappingType,
+         typename _OutputMappingType>
+void Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _InputVectorType, _OutputVectorType, _InputMappingType, _OutputMappingType>::
+  save(typename Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _InputVectorType, _OutputVectorType, _InputMappingType, _OutputMappingType>::OutputArchive& ar,
+       typename Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _InputVectorType, _OutputVectorType, _InputMappingType, _OutputMappingType>::VersionType version) const
 {
-  ffnn::io::signature::apply<Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>>(ar);
+  ffnn::io::signature::apply<Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _InputVectorType, _OutputVectorType, _InputMappingType, _OutputMappingType>>(ar);
   Base::save(ar, version);
   FFNN_DEBUG_NAMED("layer::Hidden", "Saved");
 }
 
 template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
-         FFNN_SIZE_TYPE OutputsAtCompileTime>
-void Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::
-  load(typename Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::InputArchive& ar,
-       typename Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::VersionType version)
+         FFNN_SIZE_TYPE OutputsAtCompileTime,
+         typename _InputVectorType,
+         typename _OutputVectorType,
+         typename _InputMappingType,
+         typename _OutputMappingType>
+void Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _InputVectorType, _OutputVectorType, _InputMappingType, _OutputMappingType>::
+  load(typename Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _InputVectorType, _OutputVectorType, _InputMappingType, _OutputMappingType>::InputArchive& ar,
+       typename Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _InputVectorType, _OutputVectorType, _InputMappingType, _OutputMappingType>::VersionType version)
 {
-  ffnn::io::signature::check<Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>>(ar);
+  ffnn::io::signature::check<Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _InputVectorType, _OutputVectorType, _InputMappingType, _OutputMappingType>>(ar);
   Base::load(ar, version);
   FFNN_DEBUG_NAMED("layer::Hidden", "Loaded");
 }

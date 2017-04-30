@@ -34,10 +34,10 @@ public:
   typedef typename LayerType::SizeType SizeType;
 
   /// Matrix type standardization
-  typedef typename LayerType::InputVector InputVector;
+  typedef typename LayerType::InputVectorType InputVectorType;
 
   /// Matrix type standardization
-  typedef typename LayerType::OutputVector OutputVector;
+  typedef typename LayerType::OutputVectorType OutputVectorType;
 
   /// Input-output weight matrix
   typedef typename LayerType::WeightMatrix WeightMatrix;
