@@ -97,7 +97,7 @@ public:
   }
 
 protected:
-  FFNN_REGISTER_SERIALIZABLE(Layer)
+  FFNN_REGISTER_SERIALIZABLE(Hidden)
 
   /// Save serializer
   void save(OutputArchive& ar, VersionType version) const;
