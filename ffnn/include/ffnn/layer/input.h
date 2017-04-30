@@ -37,10 +37,10 @@ public:
 
   /**
    * @brief Setup constructor
-   * @param input_dim  number of inputs supplied to network by this Layer
+   * @param input_size  number of inputs supplied to network by this Layer
    */
   explicit
-  Input(const SizeType& network_input_dim = NetworkInputsAtCompileTime);
+  Input(const SizeType& network_input_size = NetworkInputsAtCompileTime);
   virtual ~Input();
 
   /**
@@ -64,7 +64,7 @@ private:
    * @brief Maps outputs of this layer to inputs of the next
    * @param next  a subsequent layer
    * @param offset  offset index of a memory location in the input buffer of the next layer
-   * @retval output_dimension_
+   * @retval output_size_
    */
   OffsetType connectToForwardLayer(const Base& next, OffsetType offset);
 

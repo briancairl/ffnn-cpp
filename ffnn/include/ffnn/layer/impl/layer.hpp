@@ -22,7 +22,7 @@ bool connect(const typename LayerType::Ptr& from, const typename LayerType::Ptr&
   auto itr = to->prev_.find(from->getID());
   if (itr != to->prev_.end())
   {
-    if (to->loaded_ && from->loaded_)
+    if (to->setupRequired() && from->setupRequired())
     {
       FFNN_DEBUG_NAMED("layer::connect", "<" << from->getID() << "> virtual connection to " <<
                                          "<" << to->getID() << "> resolved.");
@@ -48,11 +48,8 @@ bool connect(const typename LayerType::Ptr& from, const typename LayerType::Ptr&
 }
 
 template<typename ValueType>
-Layer<ValueType>:: Layer(SizeType input_dim, SizeType output_dim) :
-  initialized_(false),
-  loaded_(false),
-  input_dimension_(input_dim > 0 ? input_dim : 0),
-  output_dimension_(output_dim > 0 ? output_dim : 0)
+Layer<ValueType>::Layer(SizeType input_size, SizeType output_size) :
+  Layer<ValueType>::Base(input_size, output_size)
 {}
 
 template<typename ValueType>
@@ -63,35 +60,35 @@ template<typename ValueType>
 bool Layer<ValueType>::initialize()
 {
   // Abort if layer is already initialized
-  if (!loaded_ && isInitialized())
+  if (!Base::setupRequired() && Base::isInitialized())
   {
-    FFNN_WARN_NAMED("layer::Layer", "<" << getID() << "> already initialized.");
+    FFNN_WARN_NAMED("layer::Layer", "<" << Base::getID() << "> already initialized.");
     return false;
   }
 
   // Allocate input/error buffers
-  if (input_dimension_ > 0 && input_buffer_.empty() && backward_error_buffer_.empty())
+  if (Base::input_size_ > 0 && input_buffer_.empty() && backward_error_buffer_.empty())
   {
     // Allocate input buffer
-    input_buffer_.resize(input_dimension_, 0);
+    input_buffer_.resize(Base::input_size_, 0);
 
     // Allocate backward error buffer
-    backward_error_buffer_.resize(input_dimension_, 0);
+    backward_error_buffer_.resize(Base::input_size_, 0);
+
+    // Setup input data-interface pointer
+    Base::input_ptr_ = const_cast<ValueType*>(input_buffer_.data());
+
+    // Setup backward error data-interface pointer
+    Base::backward_error_ptr_ = const_cast<ValueType*>(backward_error_buffer_.data());
   }
 
   // Set initialization flag
-  initialized_ = true;
-  return initialized_;
+  Base::initialized_ = true;
+  return Base::initialized_;
 }
 
 template<typename ValueType>
-bool Layer<ValueType>::isInitialized()
-{
-  return initialized_;
-}
-
-template<typename ValueType>
-typename Layer<ValueType>::SizeType Layer<ValueType>::countInputs() const
+typename Layer<ValueType>::SizeType Layer<ValueType>::evaluateInputSize() const
 {
   SizeType count(0);
   for (const auto& connection : prev_)
@@ -104,7 +101,7 @@ typename Layer<ValueType>::SizeType Layer<ValueType>::countInputs() const
     }
     else
     {
-      count += connection.second->output_dimension_;
+      count += connection.second->output_size_;
     }
   }
   return count;
@@ -135,14 +132,14 @@ void Layer<ValueType>::save(typename Layer<ValueType>::OutputArchive& ar,
                             typename Layer<ValueType>::VersionType version) const
 {
   ffnn::io::signature::apply<Layer<ValueType>>(ar);
-  traits::Unique::save(ar, version);
+  Base::save(ar, version);
 
   // Load flags
-  ar & initialized_;
+  ar & Base::initialized_;
 
   // Save sizing parameters
-  ar & input_dimension_;
-  ar & output_dimension_;
+  ar & Base::input_size_;
+  ar & Base::output_size_;
 
   // Save connection information
   SizeType layer_count = prev_.size();
@@ -160,14 +157,14 @@ void Layer<ValueType>::load(typename Layer<ValueType>::InputArchive& ar,
                             typename Layer<ValueType>::VersionType version)
 {
   ffnn::io::signature::check<Layer<ValueType>>(ar);
-  traits::Unique::load(ar, version);
+  Base::load(ar, version);
 
   // Load flags
-  ar & initialized_;
+  ar & Base::initialized_;
 
   // Load sizing parameters
-  ar & input_dimension_;
-  ar & output_dimension_;
+  ar & Base::input_size_;
+  ar & Base::output_size_;
 
   // Load connection information
   SizeType layer_count;
@@ -183,7 +180,7 @@ void Layer<ValueType>::load(typename Layer<ValueType>::InputArchive& ar,
   }
 
   // Flag as loaded
-  loaded_ = true;
+  Base::setup_required_ = true;
   FFNN_DEBUG_NAMED("layer::Layer", "Loaded");
 }
 }  // namespace layer

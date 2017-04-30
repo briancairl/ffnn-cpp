@@ -9,7 +9,7 @@
 #include <vector>
 
 // FFNN
-#include <ffnn/layer/hidden.h>
+#include <ffnn/layer/hidden_interface.h>
 #include <ffnn/neuron/neuron.h>
 #include <ffnn/optimizer/optimizer.h>
 #include <ffnn/optimizer/fwd.h>
@@ -25,11 +25,11 @@ template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime = Eigen::Dynamic,
          FFNN_SIZE_TYPE OutputsAtCompileTime = Eigen::Dynamic>
 class SparselyConnected :
-  public Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>
+  public HiddenInterface<ValueType, InputsAtCompileTime, OutputsAtCompileTime>
 {
 public:
   /// Base type alias
-  using Base = Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>;
+  using Base = HiddenInterface<ValueType, InputsAtCompileTime, OutputsAtCompileTime>;
 
   /// Self type alias
   using Self = SparselyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>;
@@ -94,11 +94,11 @@ public:
 
   /**
    * @brief Setup constructor
-   * @param output_dim  number of outputs from the Hidden
+   * @param output_size  number of outputs from the layer
    * @param config  layer configuration struct
    */
   explicit
-  SparselyConnected(SizeType output_dim = OutputsAtCompileTime,
+  SparselyConnected(SizeType output_size = OutputsAtCompileTime,
                     const Parameters& config = Parameters());
   virtual ~SparselyConnected();
 

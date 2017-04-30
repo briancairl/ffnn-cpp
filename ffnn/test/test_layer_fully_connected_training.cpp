@@ -74,8 +74,8 @@ TEST(TestLayerFullyConnectedWithOptimizers, GradientDescent)
   }
 
   // Create some data
-  Hidden::InputVector target_data = Hidden::InputVector::Ones(DIM);
-  Hidden::InputVector output_data(DIM, 1);
+  Hidden::InputVectorType target_data = Hidden::InputVectorType::Ones(DIM);
+  Hidden::InputVectorType output_data(DIM, 1);
 
   // Check that error montonically decreases
   float prev_error = std::numeric_limits<float>::infinity();
@@ -165,8 +165,8 @@ TEST(TestLayerFullyConnectedActivationWithOptimizers, GradientDescent)
   }
 
   // Create some data
-  Hidden::InputVector target_data = Hidden::InputVector::Ones(DIM);
-  Hidden::InputVector output_data(DIM, 1);
+  Hidden::InputVectorType target_data = Hidden::InputVectorType::Ones(DIM);
+  Hidden::InputVectorType output_data(DIM, 1);
 
   // Check that error montonically decreases
   float prev_error = std::numeric_limits<float>::infinity();

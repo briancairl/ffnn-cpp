@@ -46,7 +46,7 @@ TEST(TestLayerSparselyConnectedWithOptimizers, GradientDescent)
 
   // Create layers
   auto input = boost::make_shared<Input>(DIM);  
-  auto hidden = boost::make_shared<Hidden>(DIM, Hidden::Parameters(0.001, 0.00, 0.01));
+  auto hidden = boost::make_shared<Hidden>(DIM, Hidden::Parameters(0.001, 0.01));
   auto output = boost::make_shared<Output>();  
 
   // Set optimizer (gradient descent)
@@ -70,8 +70,8 @@ TEST(TestLayerSparselyConnectedWithOptimizers, GradientDescent)
   }
 
   // Create some data
-  Hidden::InputVector target_data = Hidden::InputVector::Ones(DIM);
-  Hidden::InputVector output_data(DIM, 1);
+  Hidden::InputVectorType target_data = Hidden::InputVectorType::Ones(DIM);
+  Hidden::InputVectorType output_data(DIM, 1);
 
   // Check that error montonically decreases
   float prev_error = std::numeric_limits<float>::infinity();

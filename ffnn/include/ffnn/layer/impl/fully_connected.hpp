@@ -34,8 +34,8 @@ template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
          FFNN_SIZE_TYPE OutputsAtCompileTime>
 FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::
-FullyConnected(SizeType output_dim, const Parameters& config) :
-  Base(0, output_dim),
+FullyConnected(SizeType output_size, const Parameters& config) :
+  Base(0, output_size),
   config_(config),
   opt_(boost::make_shared<typename optimizer::None<Self>>())
 {}
@@ -52,7 +52,7 @@ template<typename ValueType,
 bool FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::initialize()
 {
   // Abort if layer is already initialized
-  if (!Base::loaded_ && Base::isInitialized())
+  if (!Base::setupRequired() && Base::isInitialized())
   {
     FFNN_WARN_NAMED("layer::FullyConnected", "<" << Base::getID() << "> already initialized.");
     return false;
@@ -63,7 +63,7 @@ bool FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::initi
   }
 
   // Initialize weights
-  if (!Base::loaded_)
+  if (!Base::setupRequired())
   {
     reset();
   }
@@ -78,9 +78,9 @@ bool FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::initi
                    "<" <<
                    Base::getID() <<
                    "> initialized as (in=" <<
-                   Base::input_dimension_ <<
+                   Base::input_size_ <<
                    ", out=" <<
-                   Base::output_dimension_ <<
+                   Base::output_size_ <<
                    ") [with 1 biasing input] (optimizer=" <<
                    opt_->name() <<
                    ")");
@@ -128,7 +128,7 @@ void FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::reset
   FFNN_ASSERT_MSG(Base::isInitialized(), "Layer is not initialized.");
 
   // Set uniformly random weight matrix + add biases
-  w_.setRandom(Base::output_dimension_, Base::input_dimension_);
+  w_.setRandom(Base::output_size_, Base::input_size_);
   w_ *= config_.init_weight_std;
   if (std::abs(config_.init_weight_mean) > 0)
   {
@@ -136,7 +136,7 @@ void FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::reset
   }
 
   // Set uniformly random bias matrix + add biases
-  b_.setRandom(Base::output_dimension_, 1);
+  b_.setRandom(Base::output_size_, 1);
   b_ *= config_.init_bias_std;
   if (std::abs(config_.init_bias_mean) > 0)
   {

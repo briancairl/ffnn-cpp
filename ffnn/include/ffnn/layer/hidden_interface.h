@@ -2,8 +2,8 @@
  * @author Brian Cairl
  * @date 2017
  */
-#ifndef FFNN_LAYER_HIDDEN_H
-#define FFNN_LAYER_HIDDEN_H
+#ifndef FFNN_LAYER_HIDDEN_INTERFACE_H
+#define FFNN_LAYER_HIDDEN_INTERFACE_H
 
 // C++ Standard Library
 #include <vector>
@@ -16,7 +16,6 @@
 #include <ffnn/assert.h>
 #include <ffnn/layer/layer.h>
 #include <ffnn/aligned_types.h>
-
 
 namespace ffnn
 {
@@ -31,35 +30,33 @@ template<typename ValueType,
          typename _InputVectorType = Eigen::Matrix<ValueType, InputsAtCompileTime, 1, Eigen::ColMajor>,
          typename _OutputVectorType = Eigen::Matrix<ValueType, OutputsAtCompileTime, 1, Eigen::ColMajor>,
          typename _InputMappingType = aligned::Map<_InputVectorType>,
-         typename _OutputMappingType = aligned::Map<_OutputVectorType>>
-class Hidden :
-  public Layer<ValueType>
+         typename _OutputMappingType = aligned::Map<_OutputVectorType>,
+         typename _ForwardInterfacedType = Layer<ValueType>>
+class HiddenInterface :
+  public _ForwardInterfacedType
 {
 public:
-  /// Base type alias
-  using Base = Layer<ValueType>;
-
   /// Size type standardization
-  typedef typename Base::SizeType SizeType;
+  typedef typename _ForwardInterfacedType::SizeType SizeType;
 
   /// Offset type standardization
-  typedef typename Base::OffsetType OffsetType;
+  typedef typename _ForwardInterfacedType::OffsetType OffsetType;
 
-  /// Hidden input type standardization
+  /// Vectorized input type standardization
   typedef _InputVectorType InputVectorType;
 
-  /// Hidden output type standardization
+  /// Vectorized output type standardization
   typedef _OutputVectorType OutputVectorType;
 
   /**
    * @brief Setup constructor
-   * @param input_dim  number of inputs to the Hidden
-   * @param output_dim  number of outputs from the Hidden
+   * @param input_size  number of inputs to the interface
+   * @param output_size  number of outputs from the interface
    */
   explicit
-  Hidden(SizeType input_dim = InputsAtCompileTime,
-         SizeType output_dim = OutputsAtCompileTime);
-  virtual ~Hidden();
+  HiddenInterface(SizeType input_size = InputsAtCompileTime,
+                  SizeType output_size = OutputsAtCompileTime);
+  virtual ~HiddenInterface();
 
   /**
    * @brief Initialize the layer
@@ -97,7 +94,7 @@ public:
   }
 
 protected:
-  FFNN_REGISTER_SERIALIZABLE(Hidden)
+  FFNN_REGISTER_SERIALIZABLE(HiddenInterface)
 
   /// Save serializer
   void save(OutputArchive& ar, VersionType version) const;
@@ -122,13 +119,13 @@ private:
    * @brief Maps outputs of this layer to inputs of the next
    * @param next  a subsequent layer
    * @param offset  offset index of a memory location in the input buffer of the next layer
-   * @retval <code>offset + output_dimension_</code>
+   * @retval <code>offset + output_size_</code>
    */
-  OffsetType connectToForwardLayer(const Layer<ValueType>& next, OffsetType offset);
+  OffsetType connectToForwardLayer(const _ForwardInterfacedType& next, OffsetType offset);
 };
 }  // namespace layer
 }  // namespace ffnn
 
 /// FFNN (implementation)
-#include <ffnn/layer/impl/hidden.hpp>
-#endif  // FFNN_LAYER_HIDDEN_H
+#include <ffnn/layer/impl/hidden_interface.hpp>
+#endif  // FFNN_LAYER_HIDDEN_INTERFACE_H

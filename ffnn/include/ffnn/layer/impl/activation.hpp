@@ -35,10 +35,11 @@ template<typename ValueType,
 bool Activation<ValueType, NeuronType, SizeAtCompileTime>::initialize()
 {
   // This layer has equal inputs and outputs
-  Base::output_dimension_ = Base::countInputs();
+  Base::input_size_  = Base::evaluateInputSize();
+  Base::output_size_ = Base::input_size_;
 
   // Abort if layer is already initialized
-  if (!Base::loaded_ && Base::isInitialized())
+  if (!Base::setupRequired() && Base::isInitialized())
   {
     FFNN_WARN_NAMED("layer::Activation", "<" << Base::getID() << "> already initialized.");
     return false;
@@ -49,18 +50,18 @@ bool Activation<ValueType, NeuronType, SizeAtCompileTime>::initialize()
   }
 
   // Initialize neurons
-  neurons_.resize(Base::output_dimension_);
+  neurons_.resize(Base::output_size_);
 
   FFNN_DEBUG_NAMED("layer::Activation",
                    "<" <<
                    Base::getID() <<
                    "> initialized as (in=" <<
-                   Base::input_dimension_ <<
+                   Base::input_size_ <<
                    ", out=" <<
-                   Base::output_dimension_ <<
+                   Base::output_size_ <<
                    ")");
 
-  return Base::output_dimension_ == Base::input_dimension_;
+  return Base::output_size_ == Base::input_size_;
 }
 
 template<typename ValueType,
@@ -69,7 +70,7 @@ template<typename ValueType,
 bool Activation<ValueType, NeuronType, SizeAtCompileTime>::forward()
 {
   // Compute neuron outputs
-  for (SizeType idx = 0; idx < Base::input_dimension_; idx++)
+  for (SizeType idx = 0; idx < Base::input_size_; idx++)
   {
     neurons_[idx].fn((*Base::input_)(idx), (*Base::output_)(idx));
   }
@@ -83,7 +84,7 @@ bool Activation<ValueType, NeuronType, SizeAtCompileTime>::backward()
 {
   // Compute neuron derivatives
   Base::backward_error_->noalias() = *Base::output_;
-  for (SizeType idx = 0; idx < Base::output_dimension_; idx++)
+  for (SizeType idx = 0; idx < Base::output_size_; idx++)
   {
     neurons_[idx].derivative((*Base::input_)(idx), (*Base::backward_error_)(idx));
   }

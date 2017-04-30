@@ -22,27 +22,27 @@ template<typename ValueType, FFNN_SIZE_TYPE NetworkOutputsAtCompileTime>
 bool Output<ValueType, NetworkOutputsAtCompileTime>::initialize()
 {
   // Abort if layer is already initialized
-  if (!Base::loaded_ && Base::isInitialized())
+  if (!Base::setupRequired() && Base::isInitialized())
   {
     FFNN_WARN_NAMED("layer::Output", "<" << Base::getID() << "> already initialized.");
     return false;
   }
 
   // Resolve input dimensions from previous layer output dimensions
-  SizeType input_count = Base::countInputs();
+  SizeType ev_input_size = Base::evaluateInputSize();
   {
     // Validate network input count
-    FFNN_STATIC_ASSERT_MSG (NetworkOutputsAtCompileTime < 0 || input_count == NetworkOutputsAtCompileTime,
+    FFNN_STATIC_ASSERT_MSG (NetworkOutputsAtCompileTime < 0 || ev_input_size == NetworkOutputsAtCompileTime,
                             "(NetworkOutputsAtCompileTime != `resolved input size`) for fixed-size layer.");
 
     // Set network input count
-    Base::input_dimension_ = input_count;
+    Base::input_size_ = ev_input_size;
   }
 
   // Do basic initialization and connect last hidden layer
   if (Base::initialize())
   {
-    if (Base::connectInputLayers() != input_count)
+    if (Base::connectInputLayers() != ev_input_size)
     {
       // Error initializing
       Base::initialized_ = false;
@@ -52,11 +52,11 @@ bool Output<ValueType, NetworkOutputsAtCompileTime>::initialize()
       FFNN_DEBUG_NAMED("layer::Output",
                        "<" << Base::getID() <<
                        "> initialized as network output (net-out=" <<
-                       Base::input_dimension_ << ")");
+                       Base::input_size_ << ")");
       return true;
     }
   }
-  FFNN_ERROR_NAMED("layer::Output", "< " << Base::getID() << "> failed to initialize.");
+  FFNN_ERROR_NAMED("layer::Output", "<" << Base::getID() << "> failed to initialize.");
   return false;
 }
 
@@ -72,7 +72,7 @@ template<typename NetworkOutputType>
 void Output<ValueType, NetworkOutputsAtCompileTime>::operator>>(NetworkOutputType& output)
 {
   // Check output data size
-  FFNN_ASSERT_MSG(output.size() == Base::input_dimension_,
+  FFNN_ASSERT_MSG(output.size() == Base::input_size_,
                   "Output object size does not match expected network output size.");
 
   // Copy output data from last network layer
@@ -86,7 +86,7 @@ template<typename NetworkTargetType>
 void Output<ValueType, NetworkOutputsAtCompileTime>::operator<<(const NetworkTargetType& target)
 {
   // Check target data size
-  FFNN_ASSERT_MSG(target.size() == Base::input_dimension_,
+  FFNN_ASSERT_MSG(target.size() == Base::input_size_,
                   "Target object size does not match expected network output size.");
 
   // Compute network error
