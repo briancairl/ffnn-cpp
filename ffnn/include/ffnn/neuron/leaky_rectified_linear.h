@@ -31,7 +31,7 @@ public:
   LeakyRectifiedLinear() :
     leak_factor_(static_cast<ValueType>(_P)/static_cast<ValueType>(_B))
   {
-    FFNN_ASSERT_MSG((leak_factor > 0 && leak_factor <= 1),
+    FFNN_ASSERT_MSG((leak_factor_ > 0 && leak_factor_ <= 1),
                     "Leak constant is not in the range [0, 1]");
   }
 

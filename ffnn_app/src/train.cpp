@@ -19,9 +19,14 @@
 #include <ffnn/layer/output.h>
 #include <ffnn/neuron/sigmoid.h>
 #include <ffnn/neuron/linear.h>
-#include <ffnn/neuron/rectified_linear.h>
+#include <ffnn/neuron/leaky_rectified_linear.h>
 #include <ffnn/optimizer/gradient_descent.h>
 #include <ffnn/io.h>
+
+template<typename ValueType>
+class Leaky :
+  public ffnn::neuron::LeakyRectifiedLinear<ValueType, 1, 100>
+{};
 
 // Layer-type alias
 using Layer  = ffnn::layer::Layer<float>;
@@ -29,7 +34,7 @@ using Input  = ffnn::layer::Input<float>;
 using FC_H1  = ffnn::layer::FullyConnected<float>;
 using FC_H2  = ffnn::layer::FullyConnected<float>;
 using ACT_1  = ffnn::layer::Activation<float, ffnn::neuron::Linear>;
-using ACT_2  = ffnn::layer::Activation<float, ffnn::neuron::Linear>;
+using ACT_2  = ffnn::layer::Activation<float, Leaky>;
 using Output = ffnn::layer::Output<float>;
 
 void read_vector(std::ifstream& is, Eigen::VectorXf& v, size_t pad = 2)
@@ -62,7 +67,7 @@ int main(int argc, char** argv)
   }
 
   const size_t iterations = 10000;
-  const size_t epoch = 5000;
+  const size_t epoch = 10000-1;
 
   // Layer sizes
   static const Layer::SizeType DIM = samples[0].rows();
@@ -71,11 +76,11 @@ int main(int argc, char** argv)
   auto input = boost::make_shared<Input>(DIM);  
   auto h1    = boost::make_shared<FC_H1>(DIM, FC_H1::Parameters(1.0/(DIM*DIM)));
   auto h2    = boost::make_shared<FC_H2>(DIM, FC_H2::Parameters(1.0/(DIM*DIM)));
-  auto a1    = boost::make_shared<ACT_1>(ACT_1::Parameters(1.0/(DIM*DIM)));
-  auto a2    = boost::make_shared<ACT_2>(ACT_2::Parameters(1.0/(DIM*DIM)));
+  auto a1    = boost::make_shared<ACT_1>();
+  auto a2    = boost::make_shared<ACT_2>();
   auto output = boost::make_shared<Output>();  
 
-  double lr = 0.1 / epoch;
+  double lr = 0.01 / epoch;
 
   // Set optimizer (gradient descent)
   {
@@ -83,16 +88,8 @@ int main(int argc, char** argv)
     h1->setOptimizer(boost::make_shared<Optimizer>(lr));
   }
   {
-    using Optimizer = ffnn::optimizer::GradientDescent<ACT_1>;
-    a1->setOptimizer(boost::make_shared<Optimizer>(lr));
-  }
-  {
     using Optimizer = ffnn::optimizer::GradientDescent<FC_H2>;
     h2->setOptimizer(boost::make_shared<Optimizer>(lr));
-  }
-  {
-    using Optimizer = ffnn::optimizer::GradientDescent<ACT_2>;
-    a2->setOptimizer(boost::make_shared<Optimizer>(lr));
   }
 
   // Create network
@@ -139,7 +136,7 @@ int main(int argc, char** argv)
     double error = 0;
     for (size_t jdx = 0UL; jdx < epoch; jdx++)
     {
-      size_t kdx(rand() % targets.size());
+      size_t kdx = jdx;
 
       // Forward activate
       (*input) << samples[kdx];
