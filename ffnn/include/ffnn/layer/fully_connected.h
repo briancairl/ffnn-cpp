@@ -49,6 +49,9 @@ public:
   /// Matrix type standardization
   typedef typename Base::OutputVector OutputVector;
 
+  /// Bia vector type standardization
+  typedef typename Base::OutputVector BiasVector;
+
   /// Input-output weight matrix
   typedef Eigen::Matrix<ValueType, OutputsAtCompileTime, InputsAtCompileTime, Eigen::ColMajor> WeightMatrix;
 
@@ -59,18 +62,29 @@ public:
   struct Parameters
   {
     /// Standard deviation of connection weights on init
-    ScalarType weight_std;
+    ScalarType init_weight_std;
+
+    /// Standard deviation of biases on init
+    ScalarType init_bias_std;
 
     /// Connection weight mean (bias) on init
-    ScalarType weight_mean;
+    ScalarType init_weight_mean;
+
+    /// Connection biasing mean (bias) on init
+    ScalarType init_bias_mean;
 
     /**
      * @brief Setup constructor
-     * @param weight_std  Standard deviation of initial weights
-     * @param weight_mean  Mean of intial weights
+     * @param init_weight_std  Standard deviation of initial weights
+     * @param init_bias_std  Standard deviation of initial weights
+     * @param init_weight_mean  Mean of intial weights
+     * @param init_bias_mean  Mean of intial biases
      */
     explicit
-    Parameters(ScalarType weight_std = 1e-3, ScalarType weight_mean = 0.0);
+    Parameters(ScalarType init_weight_std = 1e-3,
+               ScalarType init_bias_std = 1e-3,
+               ScalarType init_weight_mean = 0.0,
+               ScalarType init_bias_mean = 0.0);
   };
 
   /**
@@ -136,6 +150,15 @@ public:
     return w_;
   }
 
+  /**
+   * @brief Exposes internal biasing weights
+   * @return input-biasing vector
+   */
+  inline const BiasVector& getBiases() const
+  {
+    return b_;
+  }
+
 protected:
   FFNN_REGISTER_SERIALIZABLE(FullyConnected)
 
@@ -154,6 +177,9 @@ private:
 
   /// Weight matrix
   WeightMatrix w_;
+
+  /// Bias vector
+  BiasVector b_;
 
   /**
    * @brief Weight optimization resource

@@ -147,10 +147,6 @@ TEST(TestLayerFullyConnectedActivationWithOptimizers, GradientDescent)
     using Optimizer = ffnn::optimizer::GradientDescent<Hidden>;
     hidden1->setOptimizer(boost::make_shared<Optimizer>(1e-3));
   }
-  {
-    using Optimizer = ffnn::optimizer::GradientDescent<Activation>;
-    hidden2->setOptimizer(boost::make_shared<Optimizer>(1e-3));
-  }
 
   // Create network
   std::vector<Layer::Ptr> layers({input, hidden1, hidden2, output});
@@ -186,7 +182,7 @@ TEST(TestLayerFullyConnectedActivationWithOptimizers, GradientDescent)
 
     // Compute error and check
     double error = (target_data - output_data).norm();
-    EXPECT_LT(error, prev_error);
+    EXPECT_LE(error, prev_error);
 
     // Set target
     (*output) << target_data;

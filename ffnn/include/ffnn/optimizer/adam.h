@@ -13,7 +13,6 @@
 #include <ffnn/optimizer/fwd.h>
 
 /// FFNN (specializations)
-#include <ffnn/optimizer/impl/adam/activation.hpp>
 #include <ffnn/optimizer/impl/adam/fully_connected.hpp>
 #include <ffnn/optimizer/impl/adam/sparsely_connected.hpp>
 

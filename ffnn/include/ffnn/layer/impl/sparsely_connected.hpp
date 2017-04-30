@@ -17,16 +17,21 @@ template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
          FFNN_SIZE_TYPE OutputsAtCompileTime>
 SparselyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::
-Parameters::Parameters(ScalarType weight_std,
-                       ScalarType weight_mean,
-                       ScalarType connection_probability) :
-  weight_std(weight_std),
-  weight_mean(weight_mean),
-  connection_probability(connection_probability)
+Parameters::Parameters(ScalarType connection_probability,
+                       ScalarType init_weight_std,
+                       ScalarType init_bias_std,
+                       ScalarType init_weight_mean,
+                       ScalarType init_bias_mean) :
+  connection_probability(connection_probability),
+  init_weight_std(init_weight_std),
+  init_bias_std(init_bias_std),
+  init_weight_mean(init_weight_mean),
+  init_bias_mean(init_bias_mean)
 {
-  FFNN_ASSERT_MSG(weight_std > 0, "[weight_std] should be positive");
-  FFNN_ASSERT_MSG(connection_probability > 0, "[connection_probability] should be in range (0, 1)");
-  FFNN_ASSERT_MSG(connection_probability < 1, "[connection_probability] should be in range (0, 1)");
+  FFNN_ASSERT_MSG(connection_probability > 0, "[connection_probability] should be in the range (0, 1)");
+  FFNN_ASSERT_MSG(connection_probability < 1, "[connection_probability] should be in the range (0, 1)");
+  FFNN_ASSERT_MSG(init_bias_std > 0, "[init_bias_std] should be positive");
+  FFNN_ASSERT_MSG(init_weight_std > 0, "[init_weight_std] should be positive");
 }
 
 template<typename ValueType,
@@ -99,6 +104,7 @@ bool SparselyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::fo
 
   // Compute weighted outputs
   Base::output_->noalias() = w_ * (*Base::input_);
+  Base::output_->noalias() += b_;
   return true;
 }
 
@@ -143,9 +149,17 @@ void SparselyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::re
       if (p < config_.connection_probability)
       {
         w_.insert(idx, jdx) =
-          config_.weight_mean + random(idx, jdx) * config_.weight_std;
+          config_.init_weight_mean + random(idx, jdx) * config_.init_weight_std;
       }
     }
+  }
+
+  // Set uniformly random bias matrix + add biases
+  b_.setRandom(Base::output_dimension_, 1);
+  b_ *= config_.init_bias_std;
+  if (std::abs(config_.init_bias_mean) > 0)
+  {
+    b_.array() += config_.init_bias_mean;
   }
 }
 
@@ -179,10 +193,14 @@ void SparselyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::
 
   // Save configuration parameters
   ar & config_.connection_probability;
-  ar & config_.weight_std;
+  ar & config_.init_weight_std;
+  ar & config_.init_weight_mean;
+  ar & config_.init_bias_std;
+  ar & config_.init_bias_mean;
 
-  // Save weight matrix
+  // Save weight/bias matrix
   ar & w_;
+  ar & b_;
 
   FFNN_DEBUG_NAMED("layer::SparselyConnected", "Saved");
 }
@@ -199,10 +217,14 @@ void SparselyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::
 
   // Save configuration parameters
   ar & config_.connection_probability;
-  ar & config_.weight_std;
+  ar & config_.init_weight_std;
+  ar & config_.init_weight_mean;
+  ar & config_.init_bias_std;
+  ar & config_.init_bias_mean;
 
-  // Save weight matrix
+  // Save weight/bias matrix
   ar & w_;
+  ar & b_;
 
   FFNN_DEBUG_NAMED("layer::SparselyConnected", "Loaded");
 }

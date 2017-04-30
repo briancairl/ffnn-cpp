@@ -12,7 +12,6 @@
 #include <ffnn/optimizer/fwd.h>
 
 /// FFNN (specializations)
-#include <ffnn/optimizer/impl/gradient_descent/activation.hpp>
 #include <ffnn/optimizer/impl/gradient_descent/fully_connected.hpp>
 #include <ffnn/optimizer/impl/gradient_descent/sparsely_connected.hpp>
 

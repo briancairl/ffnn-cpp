@@ -7,6 +7,7 @@
 #include <ffnn/assert.h>
 #include <ffnn/logging.h>
 #include <ffnn/layer/fully_connected.h>
+#include <ffnn/optimizer/impl/adam/states.hpp>
 
 namespace ffnn
 {
@@ -41,6 +42,9 @@ public:
   /// Input-output weight matrix
   typedef typename LayerType::WeightMatrix WeightMatrix;
 
+  /// Bia vector type standardization
+  typedef typename LayerType::BiasVector BiasVector;
+
   /**
    * @brief Setup constructor
    * @param lr  Learning rate
@@ -67,9 +71,9 @@ public:
   {
     Base::initialize(layer);
 
-    // Reset moment matrices
-    mean_gradient_.setZero(layer.output_dimension_, layer.input_dimension_);
-    var_gradient_.setZero(layer.output_dimension_, layer.input_dimension_);
+    // Reset states
+    weight_gradient_states_.initialize(layer.output_dimension_, layer.input_dimension_);
+    bias_gradient_states_.initialize(layer.output_dimension_, layer.input_dimension_);
   }
 
   /**
@@ -82,23 +86,12 @@ public:
   {
     FFNN_ASSERT_MSG(layer.isInitialized(), "Layer to optimize is not initialized.");
 
-    // Update gradient moments
-    mean_gradient_ += beta1_ * (gradient_ - mean_gradient_);
-    var_gradient_  += beta2_ * (gradient_ - var_gradient_);
-
-    // Compute learning rates for all weights
-    WeightMatrix current_gradient = var_gradient_;
-    current_gradient.noalias() /= (1 - beta2_);
-    current_gradient.array() += epsilon_;
-    current_gradient.noalias() = mean_gradient_.array() / current_gradient.array();
-    current_gradient.noalias() /= (1 - beta1_);
-    current_gradient.noalias() *= Base::lr_;
-
-    // Update weights
-    layer.w_.noalias() -= current_gradient;
+    // Update gradients
+    weight_gradient_states_.update(Base::weight_gradient_, beta1_, beta2_, epsilon_);
+    bias_gradient_states_.update(Base::bias_gradient_, beta1_, beta2_, epsilon_);
 
     // Reinitialize optimizer
-    Base::reset(layer);
+    Base::update(layer);
     return true;
   }
 
@@ -112,11 +105,11 @@ private:
   /// Variance normalization value
   const ScalarType epsilon_;
 
-  /// Running mean of error gradient
-  WeightMatrix mean_gradient_;
+  /// Running estimates of mean/variance of weight gradients
+  States<WeightMatrix> weight_gradient_states_;
 
-  /// Uncentered variance of error gradient
-  WeightMatrix var_gradient_;
+  /// Running estimates of mean/variance of bias gradients 
+  States<BiasVector> bias_gradient_states_;
 };
 }  // namespace optimizer
 }  // namespace ffnn

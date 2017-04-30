@@ -74,10 +74,6 @@ TEST(TestLayerFullyConnectedDropoutActivationWithOptimizers, GradientDescent)
     using Optimizer = ffnn::optimizer::GradientDescent<Hidden>;
     hidden1->setOptimizer(boost::make_shared<Optimizer>(1e-5));
   }
-  {
-    using Optimizer = ffnn::optimizer::GradientDescent<Activation>;
-    hidden2->setOptimizer(boost::make_shared<Optimizer>(1e-5));
-  }
 
   // Create network
   std::vector<Layer::Ptr> layers({input, hidden1, hidden2, output});

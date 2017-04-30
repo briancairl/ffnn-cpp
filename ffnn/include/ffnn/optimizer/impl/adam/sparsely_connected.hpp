@@ -7,6 +7,7 @@
 #include <ffnn/assert.h>
 #include <ffnn/logging.h>
 #include <ffnn/layer/sparsely_connected.h>
+#include <ffnn/optimizer/impl/adam/adam_states.hpp>
 
 namespace ffnn
 {
