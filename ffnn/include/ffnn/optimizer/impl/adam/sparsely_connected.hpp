@@ -21,11 +21,11 @@ class Adam<layer::SparselyConnected<ValueType, InputsAtCompileTime, OutputsAtCom
   public GradientDescent<layer::SparselyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>>
 {
 public:
-  /// Base type standardization
-  typedef typename GradientDescent<layer::Activation<ValueType, NeuronType, SizeAtCompileTime>> Base;
-
   /// Layer type standardization
   typedef typename layer::SparselyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime> LayerType;
+
+  /// Base type standardization
+  typedef GradientDescent<LayerType> Base;
 
   /// Scalar type standardization
   typedef typename LayerType::ScalarType ScalarType;
@@ -41,6 +41,9 @@ public:
 
   /// Input-output weight matrix
   typedef typename LayerType::WeightMatrix WeightMatrix;
+
+  /// Bia vector type standardization
+  typedef typename LayerType::BiasVector BiasVector;
 
   /**
    * @brief Setup constructor
@@ -68,9 +71,9 @@ public:
   {
     Base::initialize(layer);
 
-    // Reset moment matrices
-    mean_gradient_.resize(layer.output_dimension_, layer.input_dimension_);
-    var_gradient_.resize(layer.output_dimension_, layer.input_dimension_);
+    // Reset states
+    weight_gradient_states_.initialize(layer.output_dimension_, layer.input_dimension_);
+    bias_gradient_states_.initialize(layer.output_dimension_, layer.input_dimension_);
   }
 
   /**
@@ -83,23 +86,12 @@ public:
   {
     FFNN_ASSERT_MSG(layer.isInitialized(), "Layer to optimize is not initialized.");
 
-    // Update gradient moments
-    mean_gradient_ += beta1_ * (gradient_ - mean_gradient_);
-    var_gradient_  += beta2_ * (gradient_ - var_gradient_);
-
-    // Compute learning rates for all weights
-    WeightMatrix current_gradient = var_gradient_;
-    current_gradient /= (1 - beta2_);
-    current_gradient.array() += epsilon_;
-    current_gradient = mean_gradient_.array() / current_gradient.array();
-    current_gradient /= (1 - beta1_);
-    current_gradient *= Base::lr_;
-
-    // Update weights
-    layer.w_ -= current_gradient;
+    // Update gradients
+    weight_gradient_states_.update(Base::weight_gradient_, beta1_, beta2_, epsilon_);
+    bias_gradient_states_.update(Base::bias_gradient_, beta1_, beta2_, epsilon_);
 
     // Reinitialize optimizer
-    Base::reset(layer);
+    Base::update(layer);
     return true;
   }
 
@@ -113,11 +105,11 @@ private:
   /// Variance normalization value
   const ScalarType epsilon_;
 
-  /// Running mean of error gradient
-  WeightMatrix mean_gradient_;
+  /// Running estimates of mean/variance of weight gradients
+  AdamStates<WeightMatrix> weight_gradient_states_;
 
-  /// Uncentered variance of error gradient
-  WeightMatrix var_gradient_;
+  /// Running estimates of mean/variance of bias gradients 
+  AdamStates<BiasVector> bias_gradient_states_;
 };
 }  // namespace optimizer
 }  // namespace ffnn

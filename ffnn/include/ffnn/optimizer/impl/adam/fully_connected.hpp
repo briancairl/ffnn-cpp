@@ -7,7 +7,7 @@
 #include <ffnn/assert.h>
 #include <ffnn/logging.h>
 #include <ffnn/layer/fully_connected.h>
-#include <ffnn/optimizer/impl/adam/states.hpp>
+#include <ffnn/optimizer/impl/adam/adam_states.hpp>
 
 namespace ffnn
 {
@@ -21,11 +21,11 @@ class Adam<layer::FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompil
   public GradientDescent<layer::FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>>
 {
 public:
-  /// Base type standardization
-  typedef typename GradientDescent<layer::Activation<ValueType, NeuronType, SizeAtCompileTime>> Base;
-
   /// Layer type standardization
   typedef typename layer::FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime> LayerType;
+
+  /// Base type standardization
+  typedef GradientDescent<LayerType> Base;
 
   /// Scalar type standardization
   typedef typename LayerType::ScalarType ScalarType;
@@ -106,10 +106,10 @@ private:
   const ScalarType epsilon_;
 
   /// Running estimates of mean/variance of weight gradients
-  States<WeightMatrix> weight_gradient_states_;
+  AdamStates<WeightMatrix> weight_gradient_states_;
 
   /// Running estimates of mean/variance of bias gradients 
-  States<BiasVector> bias_gradient_states_;
+  AdamStates<BiasVector> bias_gradient_states_;
 };
 }  // namespace optimizer
 }  // namespace ffnn

@@ -81,12 +81,18 @@ public:
   /**
    * @brief Exposes name of the optimizer
    */
-  inline const std::string& name() const { return name_; }
+  inline const std::string& name() const
+  {
+    return name_;
+  }
 
   /**
    * @brief Sets name of the optimizer
    */
-  inline void setName(const std::string& name) const { name_ = name; }
+  inline void setName(const std::string& name)
+  {
+    name_ = name;
+  }
 
 private:
   /// Name of the optimizer

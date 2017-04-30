@@ -38,7 +38,7 @@ bool Activation<ValueType, NeuronType, SizeAtCompileTime>::initialize()
   Base::output_dimension_ = Base::countInputs();
 
   // Abort if layer is already initialized
-  if (Base::isInitialized())
+  if (!Base::loaded_ && Base::isInitialized())
   {
     FFNN_WARN_NAMED("layer::Activation", "<" << Base::getID() << "> already initialized.");
     return false;

@@ -20,7 +20,7 @@
 #include <ffnn/neuron/sigmoid.h>
 #include <ffnn/neuron/linear.h>
 #include <ffnn/neuron/leaky_rectified_linear.h>
-#include <ffnn/optimizer/gradient_descent.h>
+#include <ffnn/optimizer/adam.h>
 #include <ffnn/io.h>
 
 template<typename ValueType>
@@ -80,23 +80,25 @@ int main(int argc, char** argv)
   auto a2    = boost::make_shared<ACT_2>();
   auto output = boost::make_shared<Output>();  
 
-  double lr = 0.01 / epoch;
+  double lr = 10.0 / epoch;
 
   // Set optimizer (gradient descent)
   {
-    using Optimizer = ffnn::optimizer::GradientDescent<FC_H1>;
+    using Optimizer = ffnn::optimizer::Adam<FC_H1>;
     h1->setOptimizer(boost::make_shared<Optimizer>(lr));
   }
   {
-    using Optimizer = ffnn::optimizer::GradientDescent<FC_H2>;
+    using Optimizer = ffnn::optimizer::Adam<FC_H2>;
     h2->setOptimizer(boost::make_shared<Optimizer>(lr));
   }
 
   // Create network
   std::vector<Layer::Ptr> layers({input, h1, a1, h2, a2, output});
 
+  Eigen::setNbThreads(4);
+
   std::stringstream issname;
-  issname << "/home/brian/network_saves/990_5000.net";
+  issname << "/home/brian/network_saves/20_9999.net";
   FFNN_INFO("Loading : " << issname.str());
   std::ifstream ifs(issname.str().c_str(), std::ios::binary);
   for(const auto& layer : layers)

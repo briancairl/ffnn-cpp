@@ -15,7 +15,7 @@ if (CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_GNUCXX)
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -DEIGEN_NO_DEBUG -std=c++11 -Wall -Wextra -Werror -Wno-unused-parameter")
 endif()
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -DEIGEN_NO_DEBUG -march=native -msse2")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -DEIGEN_NO_DEBUG -DFFNN_ALLOW_LOGGING -march=native -msse2")
 
 find_package(Boost REQUIRED COMPONENTS thread random serialization)
 find_package(Eigen3 REQUIRED)

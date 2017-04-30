@@ -14,6 +14,10 @@ class AdamStates
 {
 public:
 
+  typedef typename MatrixType::Scalar ScalarType;
+
+  typedef typename MatrixType::Index SizeType;
+
   void update(MatrixType& gradient, ScalarType beta1, ScalarType beta2, ScalarType eps)
   {
     // Update gradient moments
@@ -41,5 +45,6 @@ private:
   /// Uncentered variance of error gradient
   MatrixType var_;
 };
-
+}  // namespace optimizer
+}  // namespace ffnn
 #endif  // FFNN_LAYER_OPTIMIZATION_ADAM_STATES_HPP
