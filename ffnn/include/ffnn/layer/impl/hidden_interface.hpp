@@ -12,6 +12,15 @@ namespace ffnn
 {
 namespace layer
 {
+#define HIDDEN_INTERFACE HiddenInterface<ValueType,\
+                                         InputsAtCompileTime,\
+                                         OutputsAtCompileTime,\
+                                         _InputVectorType,\
+                                         _OutputVectorType,\
+                                         _InputMappingType,\
+                                         _OutputMappingType,\
+                                         _ForwardInterfacedType>
+
 template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
          FFNN_SIZE_TYPE OutputsAtCompileTime,
@@ -20,8 +29,7 @@ template<typename ValueType,
          typename _InputMappingType,
          typename _OutputMappingType,
          typename _ForwardInterfacedType>
-HiddenInterface<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _InputVectorType, _OutputVectorType, _InputMappingType, _OutputMappingType, _ForwardInterfacedType>::
-  HiddenInterface(SizeType input_size, SizeType output_size) :
+HIDDEN_INTERFACE::HiddenInterface(SizeType input_size, SizeType output_size) :
     _ForwardInterfacedType(input_size, output_size)
 {}
 
@@ -33,8 +41,7 @@ template<typename ValueType,
          typename _InputMappingType,
          typename _OutputMappingType,
          typename _ForwardInterfacedType>
-HiddenInterface<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _InputVectorType, _OutputVectorType, _InputMappingType, _OutputMappingType, _ForwardInterfacedType>::
-  ~HiddenInterface()
+HIDDEN_INTERFACE::~HiddenInterface()
 {}
 
 template<typename ValueType,
@@ -45,10 +52,8 @@ template<typename ValueType,
          typename _InputMappingType,
          typename _OutputMappingType,
          typename _ForwardInterfacedType>
-typename HiddenInterface<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _InputVectorType, _OutputVectorType, _InputMappingType, _OutputMappingType, _ForwardInterfacedType>::
-  OffsetType 
-HiddenInterface<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _InputVectorType, _OutputVectorType, _InputMappingType, _OutputMappingType, _ForwardInterfacedType>::
-  connectToForwardLayer(const _ForwardInterfacedType& next, OffsetType offset)
+typename HIDDEN_INTERFACE::OffsetType 
+HIDDEN_INTERFACE::connectToForwardLayer(const _ForwardInterfacedType& next, OffsetType offset)
 {
   // Map output of next layer to input buffer
   output_ = _OutputMappingType::create(next.getInputPtr() + offset, _ForwardInterfacedType::outputSize());      
@@ -68,8 +73,7 @@ template<typename ValueType,
          typename _InputMappingType,
          typename _OutputMappingType,
          typename _ForwardInterfacedType>
-bool HiddenInterface<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _InputVectorType, _OutputVectorType, _InputMappingType, _OutputMappingType, _ForwardInterfacedType>::
-  initialize()
+bool HIDDEN_INTERFACE::initialize()
 {
   // Abort if layer is already initialized
   if (!_ForwardInterfacedType::setupRequired() &&
@@ -131,11 +135,10 @@ template<typename ValueType,
          typename _InputMappingType,
          typename _OutputMappingType,
          typename _ForwardInterfacedType>
-void HiddenInterface<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _InputVectorType, _OutputVectorType, _InputMappingType, _OutputMappingType, _ForwardInterfacedType>::
-  save(typename HiddenInterface<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _InputVectorType, _OutputVectorType, _InputMappingType, _OutputMappingType, _ForwardInterfacedType>::OutputArchive& ar,
-       typename HiddenInterface<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _InputVectorType, _OutputVectorType, _InputMappingType, _OutputMappingType, _ForwardInterfacedType>::VersionType version) const
+void HIDDEN_INTERFACE::save(typename HIDDEN_INTERFACE::OutputArchive& ar,
+                            typename HIDDEN_INTERFACE::VersionType version) const
 {
-  ffnn::io::signature::apply<HiddenInterface<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _InputVectorType, _OutputVectorType, _InputMappingType, _OutputMappingType, _ForwardInterfacedType>>(ar);
+  ffnn::io::signature::apply<HIDDEN_INTERFACE>(ar);
   _ForwardInterfacedType::save(ar, version);
   FFNN_DEBUG_NAMED("layer::HiddenInterface", "Saved");
 }
@@ -148,13 +151,14 @@ template<typename ValueType,
          typename _InputMappingType,
          typename _OutputMappingType,
          typename _ForwardInterfacedType>
-void HiddenInterface<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _InputVectorType, _OutputVectorType, _InputMappingType, _OutputMappingType, _ForwardInterfacedType>::
-  load(typename HiddenInterface<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _InputVectorType, _OutputVectorType, _InputMappingType, _OutputMappingType, _ForwardInterfacedType>::InputArchive& ar,
-       typename HiddenInterface<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _InputVectorType, _OutputVectorType, _InputMappingType, _OutputMappingType, _ForwardInterfacedType>::VersionType version)
+void HIDDEN_INTERFACE::load(typename HIDDEN_INTERFACE::InputArchive& ar,
+                            typename HIDDEN_INTERFACE::VersionType version)
 {
-  ffnn::io::signature::check<HiddenInterface<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _InputVectorType, _OutputVectorType, _InputMappingType, _OutputMappingType, _ForwardInterfacedType>>(ar);
+  ffnn::io::signature::check<HIDDEN_INTERFACE>(ar);
   _ForwardInterfacedType::load(ar, version);
   FFNN_DEBUG_NAMED("layer::HiddenInterface", "Loaded");
 }
+
+#undef HIDDEN_INTERFACE
 }  // namespace layer
 }  // namespace ffnn
