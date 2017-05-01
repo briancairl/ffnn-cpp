@@ -127,5 +127,5 @@ private:
 }  // namespace ffnn
 
 /// FFNN (implementation)
-#include <ffnn/layer/impl/hidden_interface.hpp>
+#include <ffnn/layer/impl/internal/hidden_interface.hpp>
 #endif  // FFNN_LAYER_HIDDEN_INTERFACE_H

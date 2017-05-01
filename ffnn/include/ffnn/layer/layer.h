@@ -14,7 +14,7 @@
 // FFNN
 #include <ffnn/aligned_types.h>
 #include <ffnn/config/global.h>
-#include <ffnn/layer/forward_interface.h>
+#include <ffnn/layer/internal/forward_interface.h>
 
 namespace ffnn
 {

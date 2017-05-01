@@ -9,7 +9,7 @@
 #include <vector>
 
 // FFNN
-#include <ffnn/layer/hidden_interface.h>
+#include <ffnn/layer/internal/hidden_interface.h>
 #include <ffnn/neuron/neuron.h>
 #include <ffnn/optimizer/optimizer.h>
 #include <ffnn/optimizer/fwd.h>

@@ -10,7 +10,7 @@
 
 // FFNN
 #include <ffnn/config/global.h>
-#include <ffnn/layer/hidden_interface.h>
+#include <ffnn/layer/internal/hidden_interface.h>
 #include <ffnn/neuron/neuron.h>
 
 namespace ffnn
