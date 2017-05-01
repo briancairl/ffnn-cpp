@@ -2,8 +2,8 @@
  * @author Brian Cairl
  * @date 2017
  */
-#ifndef FFNN_LAYER_IMPL_FORWARD_INTERFACE_H
-#define FFNN_LAYER_IMPL_FORWARD_INTERFACE_H
+#ifndef FFNN_LAYER_INTERNAL_FORWARD_INTERFACE_H
+#define FFNN_LAYER_INTERNAL_FORWARD_INTERFACE_H
 
 // FFNN (internal)
 #include <ffnn/internal/traits/serializable.h>
@@ -138,4 +138,4 @@ protected:
 };
 }  // namespace layer
 }  // namespace ffnn
-#endif  // FFNN_LAYER_IMPL_FORWARD_INTERFACE_H
+#endif  // FFNN_LAYER_INTERNAL_FORWARD_INTERFACE_H

@@ -2,8 +2,8 @@
  * @author Brian Cairl
  * @date 2017
  */
-#ifndef FFNN_LAYER_HIDDEN_INTERFACE_H
-#define FFNN_LAYER_HIDDEN_INTERFACE_H
+#ifndef FFNN_LAYER_INTERNAL_HIDDEN_INTERFACE_H
+#define FFNN_LAYER_INTERNAL_HIDDEN_INTERFACE_H
 
 // C++ Standard Library
 #include <vector>
@@ -128,4 +128,4 @@ private:
 
 /// FFNN (implementation)
 #include <ffnn/layer/impl/internal/hidden_interface.hpp>
-#endif  // FFNN_LAYER_HIDDEN_INTERFACE_H
+#endif  // FFNN_LAYER_INTERNAL_HIDDEN_INTERFACE_H
