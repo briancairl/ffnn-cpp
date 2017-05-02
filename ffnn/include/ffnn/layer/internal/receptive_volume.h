@@ -43,11 +43,11 @@ public:
   typedef Eigen::Matrix<ValueType,
                         EmbeddingMode == ColEmbedding ? PROD_IF_STATIC_PAIR(HeightAtCompileTime, DepthAtCompileTime) : HeightAtCompileTime,
                         EmbeddingMode == RowEmbedding ? PROD_IF_STATIC_PAIR(WidthAtCompileTime,  DepthAtCompileTime) : WidthAtCompileTime,
-                        Eigen::ColMajor> KernelType;
+                        EmbeddingMode == ColEmbedding ? Eigen::ColMajor : Eigen::RowMajor> KernelMatrixType;
 
   typedef Eigen::Matrix<ValueType, FilterCountAtCompileTime, 1, Eigen::ColMajor> BiasVectorType;
           
-  typedef std::vector<KernelType> FilterBankType;
+  typedef std::vector<KernelMatrixType> FilterBankType;
 
   ReceptiveVolume()
   {}
