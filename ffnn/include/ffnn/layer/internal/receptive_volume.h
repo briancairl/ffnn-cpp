@@ -8,12 +8,11 @@
 // C++ Standard Library
 #include <vector>
 
-// FFNN
-#include <ffnn/layer/hidden.h>
-
 namespace ffnn
 {
 namespace layer
+{
+namespace internal
 {
 #define IS_DYNAMIC(x) (x == Eigen::Dynamic)
 #define IS_DYNAMIC_PAIR(n, m) (IS_DYNAMIC(n) || IS_DYNAMIC(m))
@@ -22,12 +21,18 @@ namespace layer
 #define PROD_IF_STATIC_TRIPLET(n, m, l) (IS_DYNAMIC_TRIPLET(n, m, l) ? Eigen::Dynamic : (n*m*l))
 #define RECEPTIVE_VOLUME_INPUT_SIZE (PROD_IF_STATIC_TRIPLET(HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime))
 
+enum EmbeddingMode
+{
+  RowEmbedding = 0,
+  ColEmbedding = 1,
+};
+
 template <typename ValueType,
-          FFNN_SIZE_TYPE FilterCount,
           FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic,
           FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic,
           FFNN_SIZE_TYPE DepthAtCompileTime = Eigen::Dynamic,
-          FFNN_SIZE_TYPE EmbedAlongColumns = true>
+          FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic,
+          FFNN_SIZE_TYPE EmbeddingMode = ColEmbedding>
 class ReceptiveVolume
 {
 public:
@@ -36,22 +41,21 @@ public:
   typedef typename Base::OffsetType OffsetType;
 
   typedef Eigen::Matrix<ValueType,
-                        EmbedAlongColumns ? PROD_IF_STATIC_PAIR(HeightAtCompileTime, DepthAtCompileTime) : HeightAtCompileTime,
-                        !EmbedAlongColumns ? PROD_IF_STATIC_PAIR(WidthAtCompileTime, DepthAtCompileTime) : WidthAtCompileTime,
+                        EmbeddingMode == ColEmbedding ? PROD_IF_STATIC_PAIR(HeightAtCompileTime, DepthAtCompileTime) : HeightAtCompileTime,
+                        EmbeddingMode == RowEmbedding ? PROD_IF_STATIC_PAIR(WidthAtCompileTime,  DepthAtCompileTime) : WidthAtCompileTime,
                         Eigen::ColMajor> Kernel;
 
-  typedef Eigen::Matrix<ValueType, FilterCount, 1, Eigen::ColMajor> BiasVector;
+  typedef Eigen::Matrix<ValueType, FilterCountAtCompileTime, 1, Eigen::ColMajor> BiasVector;
           
-  typedef std::array<Kernel, FilterCount> FilterBank;
+  typedef std::vector<Kernel> FilterBank;
 
-  ReceptiveVolume() :
-    Base(RECEPTIVE_VOLUME_INPUT_SIZE, FilterCount)
+  ReceptiveVolume()
   {}
 
   template<typename InputBlockType, typename OutputBlockType>
   bool forward(const InputBlockType& input, OutputBlockType& output)
   {
-    for (OffsetType idx = 0; idx < FilterCount; idx++)
+    for (size_t idx = 0; idx < filter_bank_.size(); idx++)
     {
       output(idx) = (input.array() * filter_bank_[idx].array()).sum() + b_(idx);
     }
@@ -63,14 +67,7 @@ private:
           
   BiasVector b_;
 };
-#undef IS_DYNAMIC
-#undef IS_DYNAMIC_PAIR
-#undef IS_DYNAMIC_TRIPLET
-#undef PROD_IF_STATIC_PAIR
-#undef PROD_IF_STATIC_TRIPLET
+}  // namespace internal
 }  // namespace layer
 }  // namespace ffnn
-
-/// FFNN (implementation)
-#include <ffnn/layer/impl/fully_connected.hpp>
 #endif  // FFNN_LAYER_INTERNAL_RECEPTIVE_VOLUME_H
