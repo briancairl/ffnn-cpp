@@ -61,6 +61,16 @@ public:
     }
     return true;
   }
+  
+  template<typename InputBlockType, typename ForwardErrorBlockType>
+  bool backward(const InputBlockType& input, const ForwardErrorBlockType& error)
+  {
+    for (size_t idx = 0; idx < filter_bank_.size(); idx++)
+    {
+      filter_gradient_[idx].array() = error(idx) * input.array();
+    }
+    return true;
+  }
 
 private:
   FilterBankType filter_bank_;
