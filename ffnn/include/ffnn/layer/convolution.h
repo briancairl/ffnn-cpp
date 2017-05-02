@@ -2,37 +2,57 @@
  * @author Brian Cairl
  * @date 2017
  */
-#ifndef FFNN_LAYER_INTERNAL_RECEPTIVE_FIELD_H
-#define FFNN_LAYER_INTERNAL_RECEPTIVE_FIELD_H
+#ifndef FFNN_LAYER_FULLY_CONNECTED_H
+#define FFNN_LAYER_FULLY_CONNECTED_H
 
 // C++ Standard Library
 #include <vector>
 
 // FFNN
-#include <ffnn/layer/internal/hidden_interface.h>
+#include <ffnn/layer/hidden.h>
+#include <ffnn/layer/internal/receptive_volume.h>
 #include <ffnn/neuron/neuron.h>
 #include <ffnn/optimizer/optimizer.h>
 #include <ffnn/optimizer/fwd.h>
+
 
 namespace ffnn
 {
 namespace layer
 {
+#define IS_DYNAMIC(x) (x == Eigen::Dynamic)
+#define IS_DYNAMIC_PAIR(n, m) (IS_DYNAMIC(n) || IS_DYNAMIC(m))
+#define IS_DYNAMIC_TRIPLET(n, m, l) (IS_DYNAMIC(n) || IS_DYNAMIC(m) || IS_DYNAMIC(l))
+#define PROD_IF_STATIC_PAIR(n, m) (IS_DYNAMIC_PAIR(n, m) ? Eigen::Dynamic : (n*m))
+#define PROD_IF_STATIC_TRIPLET(n, m, l) (IS_DYNAMIC_TRIPLET(n, m, l) ? Eigen::Dynamic : (n*m*l))
+#define RECEPTIVE_VOLUME_INPUT_SIZE (PROD_IF_STATIC_TRIPLET(HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime))
+
 /**
  * @brief A fully-connected layer
  */
-template<typename ValueType,
-         FFNN_SIZE_TYPE InputsAtCompileTime = Eigen::Dynamic,
-         FFNN_SIZE_TYPE OutputsAtCompileTime = Eigen::Dynamic>
-class FullyConnected :
-  public HiddenInterface<ValueType, InputsAtCompileTime, OutputsAtCompileTime>
+template <typename ValueType,
+          FFNN_SIZE_TYPE FilterCount,
+          FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic,
+          FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic,
+          FFNN_SIZE_TYPE DepthAtCompileTime = Eigen::Dynamic,
+          FFNN_SIZE_TYPE FilterHeightAtCompileTime = Eigen::Dynamic,
+          FFNN_SIZE_TYPE FilterWidthAtCompileTime = Eigen::Dynamic,
+          FFNN_SIZE_TYPE Stride = 1,
+          FFNN_SIZE_TYPE EmbedAlongColumns = true>
+class Convolution :
+  public Hidden<ValueType,
+                InputsAtCompileTime,
+                OutputsAtCompileTime>
 {
 public:
   /// Base type alias
-  using Base = HiddenInterface<ValueType, InputsAtCompileTime, OutputsAtCompileTime>;
+  using Base = Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>;
 
   /// Self type alias
-  using Self = FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>;
+  using Self = Convolution<ValueType, InputsAtCompileTime, OutputsAtCompileTime>;
+
+  /// Recptived-volume type alias
+  typedef ReceptiveVolume<ValueType, FilterCount, FilterHeightAtCompileTime, FilterWidthAtCompileTime, DepthAtCompileTime, EmbedAlongColumns> ReceptorType;
 
   /// Scalar type standardization
   typedef typename Base::ScalarType ScalarType;
@@ -43,22 +63,10 @@ public:
   /// Offset type standardization
   typedef typename Base::OffsetType OffsetType;
 
-  /// Matrix type standardization
-  typedef typename Base::InputVectorType InputVectorType;
-
-  /// Matrix type standardization
-  typedef typename Base::OutputVectorType OutputVectorType;
-
-  /// Bia vector type standardization
-  typedef typename Base::OutputVectorType BiasVector;
-
-  /// Input-output weight matrix
-  typedef Eigen::Matrix<ValueType, OutputsAtCompileTime, InputsAtCompileTime, Eigen::ColMajor> WeightMatrix;
-
   /// Layer optimization type standardization
   typedef optimizer::Optimizer<Self> Optimizer;
 
-  /// A configuration object for a FullyConnected hidden layer
+  /// A configuration object for a Convolution hidden layer
   struct Parameters
   {
     /// Standard deviation of connection weights on init
@@ -93,9 +101,9 @@ public:
    * @param config  layer configuration struct
    */
   explicit
-  FullyConnected(SizeType output_size = OutputsAtCompileTime,
+  Convolution(SizeType output_size = OutputsAtCompileTime,
                  const Parameters& config = Parameters());
-  virtual ~FullyConnected();
+  virtual ~Convolution();
 
   /**
    * @brief Initialize the layer
@@ -160,7 +168,7 @@ public:
   }
 
 protected:
-  FFNN_REGISTER_SERIALIZABLE(FullyConnected)
+  FFNN_REGISTER_SERIALIZABLE(Convolution)
 
   /// Save serializer
   void save(OutputArchive& ar, VersionType version) const;
@@ -169,8 +177,8 @@ protected:
   void load(InputArchive& ar, VersionType version);
 
 private:
-  FFNN_REGISTER_OPTIMIZER(FullyConnected, Adam);
-  FFNN_REGISTER_OPTIMIZER(FullyConnected, GradientDescent);
+  FFNN_REGISTER_OPTIMIZER(Convolution, Adam);
+  FFNN_REGISTER_OPTIMIZER(Convolution, GradientDescent);
 
   /// Layer configuration parameters
   Parameters config_;
@@ -193,4 +201,4 @@ private:
 
 /// FFNN (implementation)
 #include <ffnn/layer/impl/fully_connected.hpp>
-#endif  // FFNN_LAYER_INTERNAL_RECEPTIVE_FIELD_H
+#endif  // FFNN_LAYER_FULLY_CONNECTED_H

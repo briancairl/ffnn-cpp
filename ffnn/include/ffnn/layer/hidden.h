@@ -14,8 +14,8 @@
 // FFNN
 #include <ffnn/config/global.h>
 #include <ffnn/assert.h>
-#include <ffnn/layer/layer.h>
 #include <ffnn/aligned_types.h>
+#include <ffnn/layer/layer.h>
 
 namespace ffnn
 {
@@ -30,17 +30,19 @@ template<typename ValueType,
          typename _InputVectorType = Eigen::Matrix<ValueType, InputsAtCompileTime, 1, Eigen::ColMajor>,
          typename _OutputVectorType = Eigen::Matrix<ValueType, OutputsAtCompileTime, 1, Eigen::ColMajor>,
          typename _InputMappingType = aligned::Map<_InputVectorType>,
-         typename _OutputMappingType = aligned::Map<_OutputVectorType>,
-         typename _ForwardInterfacedType = Layer<ValueType>>
-class HiddenInterface :
-  public _ForwardInterfacedType
+         typename _OutputMappingType = aligned::Map<_OutputVectorType>>
+class Hidden :
+  public Layer<ValueType>
 {
 public:
+  /// Base type alias
+  using Base = Layer<ValueType>;
+
   /// Size type standardization
-  typedef typename _ForwardInterfacedType::SizeType SizeType;
+  typedef typename Base::SizeType SizeType;
 
   /// Offset type standardization
-  typedef typename _ForwardInterfacedType::OffsetType OffsetType;
+  typedef typename Base::OffsetType OffsetType;
 
   /// Vectorized input type standardization
   typedef _InputVectorType InputVectorType;
@@ -54,9 +56,9 @@ public:
    * @param output_size  number of outputs from the interface
    */
   explicit
-  HiddenInterface(SizeType input_size = InputsAtCompileTime,
+  Hidden(SizeType input_size = InputsAtCompileTime,
                   SizeType output_size = OutputsAtCompileTime);
-  virtual ~HiddenInterface();
+  virtual ~Hidden();
 
   /**
    * @brief Initialize the layer
@@ -94,7 +96,7 @@ public:
   }
 
 protected:
-  FFNN_REGISTER_SERIALIZABLE(HiddenInterface)
+  FFNN_REGISTER_SERIALIZABLE(Hidden)
 
   /// Save serializer
   void save(OutputArchive& ar, VersionType version) const;
@@ -121,11 +123,11 @@ private:
    * @param offset  offset index of a memory location in the input buffer of the next layer
    * @retval <code>offset + output_size_</code>
    */
-  OffsetType connectToForwardLayer(const _ForwardInterfacedType& next, OffsetType offset);
+  OffsetType connectToForwardLayer(const Base& next, OffsetType offset);
 };
 }  // namespace layer
 }  // namespace ffnn
 
 /// FFNN (implementation)
-#include <ffnn/layer/impl/internal/hidden_interface.hpp>
+#include <ffnn/layer/impl/hidden.hpp>
 #endif  // FFNN_LAYER_INTERNAL_HIDDEN_INTERFACE_H

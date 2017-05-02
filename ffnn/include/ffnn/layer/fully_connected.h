@@ -9,7 +9,7 @@
 #include <vector>
 
 // FFNN
-#include <ffnn/layer/internal/hidden_interface.h>
+#include <ffnn/layer/hidden.h>
 #include <ffnn/neuron/neuron.h>
 #include <ffnn/optimizer/optimizer.h>
 #include <ffnn/optimizer/fwd.h>
@@ -25,11 +25,11 @@ template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime = Eigen::Dynamic,
          FFNN_SIZE_TYPE OutputsAtCompileTime = Eigen::Dynamic>
 class FullyConnected :
-  public HiddenInterface<ValueType, InputsAtCompileTime, OutputsAtCompileTime>
+  public Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>
 {
 public:
   /// Base type alias
-  using Base = HiddenInterface<ValueType, InputsAtCompileTime, OutputsAtCompileTime>;
+  using Base = Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>;
 
   /// Self type alias
   using Self = FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>;

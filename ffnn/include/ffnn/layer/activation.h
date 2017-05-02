@@ -10,7 +10,7 @@
 
 // FFNN
 #include <ffnn/config/global.h>
-#include <ffnn/layer/internal/hidden_interface.h>
+#include <ffnn/layer/hidden.h>
 #include <ffnn/neuron/neuron.h>
 
 namespace ffnn
@@ -24,11 +24,11 @@ template<typename ValueType,
          template<class> class NeuronType,
          FFNN_SIZE_TYPE SizeAtCompileTime = Eigen::Dynamic>
 class Activation :
-  public HiddenInterface<ValueType, SizeAtCompileTime, SizeAtCompileTime>
+  public Hidden<ValueType, SizeAtCompileTime, SizeAtCompileTime>
 {
 public:
   /// Base type alias
-  using Base = HiddenInterface<ValueType, SizeAtCompileTime, SizeAtCompileTime>;
+  using Base = Hidden<ValueType, SizeAtCompileTime, SizeAtCompileTime>;
 
   /// Scalar type standardization
   typedef typename Base::ScalarType ScalarType;
