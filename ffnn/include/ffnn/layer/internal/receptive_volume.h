@@ -40,10 +40,9 @@ public:
                         !EmbedAlongColumns ? PROD_IF_STATIC_PAIR(WidthAtCompileTime, DepthAtCompileTime) : WidthAtCompileTime,
                         Eigen::ColMajor> Kernel;
 
+  typedef Eigen::Matrix<ValueType, FilterCount, 1, Eigen::ColMajor> BiasVector;
+          
   typedef std::array<Kernel, FilterCount> FilterBank;
-
-private:
-  FilterBank filter_bank_;
 
   ReceptiveVolume() :
     Base(RECEPTIVE_VOLUME_INPUT_SIZE, FilterCount)
@@ -54,15 +53,15 @@ private:
   {
     for (OffsetType idx = 0; idx < FilterCount; idx++)
     {
-      output(idx) = (input.array() * filter_bank_[idx].array()).sum();
+      output(idx) = (input.array() * filter_bank_[idx].array()).sum() + b_(idx);
     }
     return true;
   }
 
-  SizeType depth() const
-  {
-    return FilterCount;
-  }
+private:
+  FilterBank filter_bank_;
+          
+  BiasVector b_;
 };
 #undef IS_DYNAMIC
 #undef IS_DYNAMIC_PAIR
