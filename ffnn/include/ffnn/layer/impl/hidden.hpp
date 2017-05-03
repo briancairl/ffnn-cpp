@@ -114,8 +114,8 @@ template<typename ValueType,
          typename _OutputMappingType>
 bool HIDDEN::initialize()
 {
-  FFNN_ASSERT_MSG (input_dim_.valid(), "Input dimensions are invalid or unresolved.");
-  FFNN_ASSERT_MSG (output_dim_.valid(), "Input dimensions are invalid or unresolved.");
+  FFNN_ASSERT_MSG (input_dim_.valid(),  "Input dimensions are invalid (non-positive) or unresolved.");
+  FFNN_ASSERT_MSG (output_dim_.valid(), "Output dimensions are invalid (non-positive) or unresolved.");
 
   // Abort if layer is already initialized
   if (!Base::setupRequired() && Base::isInitialized())
@@ -125,7 +125,7 @@ bool HIDDEN::initialize()
   }
 
   // Resolve input dimensions from previous layer output dimensions
-  Base::input_size_ = Base::evaluateInputSize();
+  Base::input_size_ = input_dim_.size();
 
   // Validate input count
   FFNN_STATIC_ASSERT_MSG (input_dim_.size() == Base::inputSize(),
