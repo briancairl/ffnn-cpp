@@ -1,6 +1,16 @@
-if (CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_GNUCXX)
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DFFNN_NO_LOGGING -DFFNN_SUPRESS_ERROR_LOGGING")
-endif()
+# if (CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_GNUCXX)
+#   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DFFNN_NO_LOGGING -DFFNN_SUPRESS_ERROR_LOGGING")
+# endif()
+
+catkin_add_gtest(test_layer_hidden
+  test_layer_hidden.cpp
+)
+target_link_libraries(test_layer_hidden
+  ${Boost_LIBRARIES}
+  ${catkin_LIBRARIES}
+  ${EIGEN_LIBRARIES}
+  ${GTEST_LIBRARIES}
+)
 
 #-------------------------------------------------------------
 # IO

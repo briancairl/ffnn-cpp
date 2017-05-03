@@ -21,7 +21,7 @@ namespace layer
  * @brief Base object for all layer types
  */
 template<typename ValueType>
-class ForwardInterface :
+class LayerBase :
   public traits::Unique
 {
 public:
@@ -34,13 +34,13 @@ public:
   /// Offset type standardization
   typedef FFNN_OFFSET_TYPE OffsetType;
 
-  ForwardInterface(SizeType input_size, SizeType output_size) :
+  LayerBase(SizeType input_size, SizeType output_size) :
     initialized_(false),
     setup_required_(false),
     input_size_(input_size > 0 ? input_size : 0),
     output_size_(output_size > 0 ? output_size : 0)
   {}
-  virtual ~ForwardInterface() {}
+  virtual ~LayerBase() {}
 
   ValueType* getInputPtr() const
   {
@@ -102,19 +102,19 @@ public:
   }
 
 protected:
-  FFNN_REGISTER_SERIALIZABLE(ForwardInterface)
+  FFNN_REGISTER_SERIALIZABLE(LayerBase)
 
   /// Save serializer
   void save(OutputArchive& ar, VersionType version) const
   {
-    ffnn::io::signature::apply<ForwardInterface<ValueType>>(ar);
+    ffnn::io::signature::apply<LayerBase<ValueType>>(ar);
     traits::Unique::save(ar, version);
   }
 
   /// Load serializer
   void load(InputArchive& ar, VersionType version)
   {
-    ffnn::io::signature::check<ForwardInterface<ValueType>>(ar);
+    ffnn::io::signature::check<LayerBase<ValueType>>(ar);
     traits::Unique::load(ar, version);
   }
 

@@ -57,7 +57,7 @@ public:
    */
   explicit
   Hidden(SizeType input_size = InputsAtCompileTime,
-                  SizeType output_size = OutputsAtCompileTime);
+         SizeType output_size = OutputsAtCompileTime);
   virtual ~Hidden();
 
   /**

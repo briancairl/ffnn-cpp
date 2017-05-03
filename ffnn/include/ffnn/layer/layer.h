@@ -14,7 +14,7 @@
 // FFNN
 #include <ffnn/aligned_types.h>
 #include <ffnn/config/global.h>
-#include <ffnn/layer/internal/forward_interface.h>
+#include <ffnn/layer/internal/layer_base.h>
 
 namespace ffnn
 {
@@ -25,14 +25,14 @@ namespace layer
  */
 template<typename ValueType>
 class Layer :
-  public ForwardInterface<ValueType>
+  public LayerBase<ValueType>
 {
 /// Connects Layer objects
 template<typename LayerType>
 friend bool connect(const typename LayerType::Ptr& from,
                     const typename LayerType::Ptr& to);
 public:
-  using Base = ForwardInterface<ValueType>;
+  using Base = LayerBase<ValueType>;
 
   /// Shared resource standardization
   typedef boost::shared_ptr<Layer> Ptr;
