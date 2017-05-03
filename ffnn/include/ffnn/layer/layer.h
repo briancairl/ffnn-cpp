@@ -25,14 +25,15 @@ namespace layer
  */
 template<typename ValueType>
 class Layer :
-  public LayerBase<ValueType>
+  public internal::LayerBase<ValueType>
 {
 /// Connects Layer objects
 template<typename LayerType>
 friend bool connect(const typename LayerType::Ptr& from,
                     const typename LayerType::Ptr& to);
 public:
-  using Base = LayerBase<ValueType>;
+  /// Base type alias
+  using Base = internal::LayerBase<ValueType>;
 
   /// Shared resource standardization
   typedef boost::shared_ptr<Layer> Ptr;

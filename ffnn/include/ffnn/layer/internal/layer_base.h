@@ -17,6 +17,8 @@ namespace ffnn
 {
 namespace layer
 {
+namespace internal
+{
 /**
  * @brief Base object for all layer types
  */
@@ -120,6 +122,7 @@ protected:
   /// Total number of output connections
   SizeType output_size_;
 };
+}  // namespace internal
 }  // namespace layer
 }  // namespace ffnn
 #endif  // FFNN_LAYER_INTERNAL_FORWARD_INTERFACE_H
