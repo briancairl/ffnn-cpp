@@ -24,11 +24,11 @@ template<typename ValueType,
          template<class> class NeuronType,
          FFNN_SIZE_TYPE SizeAtCompileTime = Eigen::Dynamic>
 class Activation :
-  public Hidden<ValueType, SizeAtCompileTime, SizeAtCompileTime>
+  public Hidden<ValueType, SizeAtCompileTime, 1, SizeAtCompileTime, 1>
 {
 public:
   /// Base type alias
-  using Base = Hidden<ValueType, SizeAtCompileTime, SizeAtCompileTime>;
+  using Base = Hidden<ValueType, SizeAtCompileTime, 1, SizeAtCompileTime, 1>;
 
   /// Scalar type standardization
   typedef typename Base::ScalarType ScalarType;

@@ -35,7 +35,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE OutputsAtCompileTime>
 FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::
 FullyConnected(SizeType output_size, const Parameters& config) :
-  Base(0, output_size),
+  Base(typename Base::DimType(0), typename Base::DimType(output_size)),
   config_(config),
   opt_(boost::make_shared<typename optimizer::None<Self>>())
 {}
@@ -51,6 +51,9 @@ template<typename ValueType,
          FFNN_SIZE_TYPE OutputsAtCompileTime>
 bool FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::initialize()
 {
+  // Deduce input dimensions
+  Base::input_dim_ = typename Base::DimType(Base::evaluateInputSize());
+
   // Abort if layer is already initialized
   if (!Base::setupRequired() && Base::isInitialized())
   {
@@ -78,9 +81,9 @@ bool FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::initi
                    "<" <<
                    Base::getID() <<
                    "> initialized as (in=" <<
-                   Base::input_size_ <<
+                   Base::inputSize() <<
                    ", out=" <<
-                   Base::output_size_ <<
+                   Base::outputSize() <<
                    ") [with 1 biasing input] (optimizer=" <<
                    opt_->name() <<
                    ")");
@@ -128,7 +131,7 @@ void FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::reset
   FFNN_ASSERT_MSG(Base::isInitialized(), "Layer is not initialized.");
 
   // Set uniformly random weight matrix + add biases
-  w_.setRandom(Base::output_size_, Base::input_size_);
+  w_.setRandom(Base::outputSize(), Base::inputSize());
   w_ *= config_.init_weight_std;
   if (std::abs(config_.init_weight_mean) > 0)
   {
@@ -136,7 +139,7 @@ void FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::reset
   }
 
   // Set uniformly random bias matrix + add biases
-  b_.setRandom(Base::output_size_, 1);
+  b_.setRandom(Base::outputSize(), 1);
   b_ *= config_.init_bias_std;
   if (std::abs(config_.init_bias_mean) > 0)
   {

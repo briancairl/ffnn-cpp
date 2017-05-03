@@ -74,8 +74,8 @@ TEST(TestLayerActivationWithOptimizers, GradientDescent)
   }
 
   // Create some data
-  Hidden::InputVectorType target_data = Hidden::InputVectorType::Zero(DIM);
-  Hidden::InputVectorType output_data(DIM, 1);
+  Hidden::InputBlockType target_data = Hidden::InputBlockType::Zero(DIM);
+  Hidden::InputBlockType output_data(DIM, 1);
 
   // Check that error montonically decreases
   float prev_error = std::numeric_limits<float>::infinity();

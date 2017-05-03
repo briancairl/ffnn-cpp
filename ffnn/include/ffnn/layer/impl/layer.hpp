@@ -67,13 +67,13 @@ bool Layer<ValueType>::initialize()
   }
 
   // Allocate input/error buffers
-  if (Base::input_size_ > 0 && input_buffer_.empty() && backward_error_buffer_.empty())
+  if (Base::inputSize() > 0 && input_buffer_.empty() && backward_error_buffer_.empty())
   {
     // Allocate input buffer
-    input_buffer_.resize(Base::input_size_, 0);
+    input_buffer_.resize(Base::inputSize(), 0);
 
     // Allocate backward error buffer
-    backward_error_buffer_.resize(Base::input_size_, 0);
+    backward_error_buffer_.resize(Base::inputSize(), 0);
   }
 
   // Set initialization flag
@@ -91,7 +91,7 @@ typename Layer<ValueType>::SizeType Layer<ValueType>::evaluateInputSize() const
     if (!static_cast<bool>(connection.second))
     {
       FFNN_ERROR_NAMED("layer::Layer",
-                       "No layer associated with virtual connection <" <<connection.first << ">");
+                       "No layer associated with virtual connection <" << connection.first << ">");
     }
     else
     {

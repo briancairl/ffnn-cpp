@@ -25,11 +25,11 @@ template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime = Eigen::Dynamic,
          FFNN_SIZE_TYPE OutputsAtCompileTime = Eigen::Dynamic>
 class FullyConnected :
-  public Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>
+  public Hidden<ValueType, InputsAtCompileTime, 1, OutputsAtCompileTime, 1>
 {
 public:
   /// Base type alias
-  using Base = Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>;
+  using Base = Hidden<ValueType, InputsAtCompileTime, 1, OutputsAtCompileTime, 1>;
 
   /// Self type alias
   using Self = FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>;
@@ -44,13 +44,13 @@ public:
   typedef typename Base::OffsetType OffsetType;
 
   /// Matrix type standardization
-  typedef typename Base::InputVectorType InputVectorType;
+  typedef typename Base::InputBlockType InputBlockType;
 
   /// Matrix type standardization
-  typedef typename Base::OutputVectorType OutputVectorType;
+  typedef typename Base::OutputBlockType OutputBlockType;
 
   /// Bia vector type standardization
-  typedef typename Base::OutputVectorType BiasVector;
+  typedef typename Base::OutputBlockType BiasVector;
 
   /// Input-output weight matrix
   typedef Eigen::Matrix<ValueType, OutputsAtCompileTime, InputsAtCompileTime, Eigen::ColMajor> WeightMatrix;

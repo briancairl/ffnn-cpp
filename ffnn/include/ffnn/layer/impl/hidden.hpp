@@ -36,6 +36,11 @@ struct Dimensions
   {
     return PROD_IF_STATIC_TRIPLET(height, width, depth);
   }
+
+  inline bool valid() const
+  {
+    return !IS_DYNAMIC_TRIPLET(height, width, depth);
+  }
 };
 
 #define HIDDEN_PARAMS ValueType, InputsHeightAtCompileTime, InputsWidthAtCompileTime, OutputsHeightAtCompileTime, OutputsWidthAtCompileTime
@@ -51,8 +56,8 @@ template<typename ValueType,
          typename _OutputBlockType,
          typename _InputMappingType,
          typename _OutputMappingType>
-HIDDEN::Hidden(const DimensionsType& input_dim,
-               const DimensionsType& output_dim) :
+HIDDEN::Hidden(const DimType& input_dim,
+               const DimType& output_dim) :
   Base(input_dim.size(), output_dim.size()),
   input_dim_(input_dim),
   output_dim_(output_dim)
@@ -109,6 +114,9 @@ template<typename ValueType,
          typename _OutputMappingType>
 bool HIDDEN::initialize()
 {
+  FFNN_ASSERT_MSG (input_dim_.valid(), "Input dimensions are invalid or unresolved.");
+  FFNN_ASSERT_MSG (output_dim_.valid(), "Input dimensions are invalid or unresolved.");
+
   // Abort if layer is already initialized
   if (!Base::setupRequired() && Base::isInitialized())
   {
@@ -137,7 +145,7 @@ bool HIDDEN::initialize()
                                        input_dim_.width);
 
     // Create input buffer map
-    auto error_ptr = const_cast<ValueType*>(Base::getBackwardErrorBuffer().data()),
+    auto error_ptr = const_cast<ValueType*>(Base::getBackwardErrorBuffer().data());
     backward_error_ = _InputMappingType::create(error_ptr,
                                                 input_dim_.height,
                                                 input_dim_.width);
@@ -177,10 +185,19 @@ template<typename ValueType,
          typename _InputMappingType,
          typename _OutputMappingType>
 void HIDDEN::save(typename HIDDEN::OutputArchive& ar,
-                            typename HIDDEN::VersionType version) const
+                  typename HIDDEN::VersionType version) const
 {
   ffnn::io::signature::apply<HIDDEN>(ar);
   Base::save(ar, version);
+
+  ar & input_dim_.height;
+  ar & input_dim_.width;
+  ar & input_dim_.depth;
+
+  ar & output_dim_.height;
+  ar & output_dim_.width;
+  ar & output_dim_.depth;
+
   FFNN_DEBUG_NAMED("layer::Hidden", "Saved");
 }
 
@@ -194,10 +211,19 @@ template<typename ValueType,
          typename _InputMappingType,
          typename _OutputMappingType>
 void HIDDEN::load(typename HIDDEN::InputArchive& ar,
-                            typename HIDDEN::VersionType version)
+                  typename HIDDEN::VersionType version)
 {
   ffnn::io::signature::check<HIDDEN>(ar);
   Base::load(ar, version);
+
+  ar & input_dim_.height;
+  ar & input_dim_.width;
+  ar & input_dim_.depth;
+
+  ar & output_dim_.height;
+  ar & output_dim_.width;
+  ar & output_dim_.depth;
+
   FFNN_DEBUG_NAMED("layer::Hidden", "Loaded");
 }
 

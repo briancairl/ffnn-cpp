@@ -29,20 +29,17 @@ bool Output<ValueType, NetworkOutputsAtCompileTime>::initialize()
   }
 
   // Resolve input dimensions from previous layer output dimensions
-  SizeType ev_input_size = Base::evaluateInputSize();
+  Base::input_size_ = Base::evaluateInputSize();
   {
     // Validate network input count
-    FFNN_STATIC_ASSERT_MSG (NetworkOutputsAtCompileTime < 0 || ev_input_size == NetworkOutputsAtCompileTime,
+    FFNN_STATIC_ASSERT_MSG (NetworkOutputsAtCompileTime < 0 || Base::input_size_ == NetworkOutputsAtCompileTime,
                             "(NetworkOutputsAtCompileTime != `resolved input size`) for fixed-size layer.");
-
-    // Set network input count
-    Base::input_size_ = ev_input_size;
   }
 
   // Do basic initialization and connect last hidden layer
   if (Base::initialize())
   {
-    if (Base::connectInputLayers() != ev_input_size)
+    if (Base::connectInputLayers() != Base::inputSize())
     {
       // Error initializing
       Base::initialized_ = false;
@@ -52,7 +49,7 @@ bool Output<ValueType, NetworkOutputsAtCompileTime>::initialize()
       FFNN_DEBUG_NAMED("layer::Output",
                        "<" << Base::getID() <<
                        "> initialized as network output (net-out=" <<
-                       Base::input_size_ << ")");
+                       Base::inputSize() << ")");
       return true;
     }
   }
@@ -72,7 +69,7 @@ template<typename NetworkOutputType>
 void Output<ValueType, NetworkOutputsAtCompileTime>::operator>>(NetworkOutputType& output)
 {
   // Check output data size
-  FFNN_ASSERT_MSG(output.size() == Base::input_size_,
+  FFNN_ASSERT_MSG(output.size() == Base::inputSize(),
                   "Output object size does not match expected network output size.");
 
   // Copy output data from last network layer
@@ -86,7 +83,7 @@ template<typename NetworkTargetType>
 void Output<ValueType, NetworkOutputsAtCompileTime>::operator<<(const NetworkTargetType& target)
 {
   // Check target data size
-  FFNN_ASSERT_MSG(target.size() == Base::input_size_,
+  FFNN_ASSERT_MSG(target.size() == Base::inputSize(),
                   "Target object size does not match expected network output size.");
 
   // Compute network error

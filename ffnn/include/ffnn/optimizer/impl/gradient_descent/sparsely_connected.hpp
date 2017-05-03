@@ -30,10 +30,10 @@ public:
   typedef typename LayerType::SizeType SizeType;
 
   /// Matrix type standardization
-  typedef typename LayerType::InputVectorType InputVectorType;
+  typedef typename LayerType::InputBlockType InputBlockType;
 
   /// Matrix type standardization
-  typedef typename LayerType::OutputVectorType OutputVectorType;
+  typedef typename LayerType::OutputBlockType OutputBlockType;
 
   /// Bia vector type standardization
   typedef typename LayerType::BiasVector BiasVector;
@@ -157,7 +157,7 @@ protected:
   BiasVector bias_gradient_;
 
   /// Previous input
-  InputVectorType prev_input_;
+  InputBlockType prev_input_;
 };
 }  // namespace optimizer
 }  // namespace ffnn

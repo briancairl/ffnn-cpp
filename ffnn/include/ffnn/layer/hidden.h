@@ -51,7 +51,7 @@ public:
   typedef typename Base::OffsetType OffsetType;
 
   /// Dimensions specifier standardization
-  typedef Dimensions<SizeType> DimensionsType;
+  typedef Dimensions<SizeType> DimType;
 
   /// Input block type standardization
   typedef _InputBlockType InputBlockType;
@@ -67,8 +67,8 @@ public:
    * @param output_width  width of the output surface
    */
   explicit
-  Hidden(const DimensionsType& input_dim  = DimensionsType(InputHeightAtCompileTime, InputWidthAtCompileTime),
-         const DimensionsType& output_dim = DimensionsType(OutputHeightAtCompileTime, OutputWidthAtCompileTime));
+  Hidden(const DimType& input_dim  = DimType(InputHeightAtCompileTime, InputWidthAtCompileTime),
+         const DimType& output_dim = DimType(OutputHeightAtCompileTime, OutputWidthAtCompileTime));
   virtual ~Hidden();
 
   /**
@@ -128,10 +128,10 @@ protected:
   typename _OutputMappingType::Ptr forward_error_;
 
   /// Input block-dimensions
-  const DimensionsType input_dim_;
+  DimType input_dim_;
 
   /// Output block-dimension
-  const DimensionsType output_dim_;
+  DimType output_dim_;
 
 private:
   /**
