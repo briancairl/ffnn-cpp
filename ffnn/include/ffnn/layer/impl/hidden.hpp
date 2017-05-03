@@ -227,6 +227,8 @@ void HIDDEN::load(typename HIDDEN::InputArchive& ar,
   FFNN_DEBUG_NAMED("layer::Hidden", "Loaded");
 }
 
+#undef HIDDEN_PARAMS
+#undef HIDDEN_PARAMS_ADVANCED
 #undef HIDDEN
 }  // namespace layer
 }  // namespace ffnn
