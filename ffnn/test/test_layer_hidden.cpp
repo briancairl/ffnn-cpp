@@ -21,26 +21,33 @@
 #include <ffnn/layer/hidden.h>
 #include <ffnn/layer/layer.h>
 
-  using M1 = Eigen::Matrix<float, 10, 1,  Eigen::ColMajor>;
-  using M2 = Eigen::Matrix<float, 5, 2, Eigen::ColMajor>;
-
 
 class Hidden :
-  public ffnn::layer::Hidden<float, 5, 2, 10, 1>
+  public ffnn::layer::Hidden<float>
 {
 public:
   Hidden() :
-    ffnn::layer::Hidden<float, 5, 2, 10, 1>()
-  {}
+    ffnn::layer::Hidden<float>(Hidden::DimensionsType(5, 2), Hidden::DimensionsType(2, 5))
+  {
+    FFNN_INFO("Input  : " << input_dim_.height  << " by " << input_dim_.width);
+    FFNN_INFO("Output : " << output_dim_.height  << " by " << output_dim_.width);
+  }
 
   bool forward()
   {
-    FFNN_ERROR("Input  : " << input_->rows()  << " by " << input_->cols());
-    FFNN_ERROR("\n" << (*input_));
-    FFNN_ERROR("Output : " << output_->rows() << " by " << output_->cols());
-    FFNN_ERROR("\n" << (*output_));
+    FFNN_INFO("Input  : " << input_->rows()  << " by " << input_->cols());
+    FFNN_INFO("Output : " << output_->rows() << " by " << output_->cols());
+
+    std::memcpy(output_->data(), input_->data(), input_->size() * sizeof(float));
+    FFNN_INFO("\n" << (*input_));
+    FFNN_INFO("\n" << (*output_));
     return true;
   }
+
+  inline SizeType inputHeight() const { return input_->rows(); }
+  inline SizeType inputWidth() const { return input_->cols(); }
+  inline SizeType outputHeight() const { return output_->rows(); }
+  inline SizeType outputWidth() const { return output_->cols(); }
 };
 
 
@@ -54,7 +61,6 @@ TEST(TestLayerHiddenBasic, Mapping2D)
   using Layer  = ffnn::layer::Layer<float>;
   using Input  = ffnn::layer::Input<float>;
   using Output = ffnn::layer::Output<float>;
-
 
   // Layer sizes
   static const Layer::SizeType DIM = 10;
@@ -80,19 +86,25 @@ TEST(TestLayerHiddenBasic, Mapping2D)
     EXPECT_TRUE(layer->isInitialized());
   }
 
-  M1 input_mat;
+  // Create dummy input values
+  Hidden::InputBlockType input_block(5, 2);
   for (size_t idx = 0; idx < DIM; idx++)
   {
-    input_mat(idx) = idx;
+    input_block(idx) = idx;
   }
-  (*input) << input_mat;
 
+  // Forward propagate
+  (*input) << input_block;
   input->forward();
   hidden->forward();
   output->forward();
+  (*output) >> input_block;
 
-  FFNN_ERROR(output->inputSize());
-  (*output) >> input_mat;
+  // Check effective hidden input/output sizes
+  EXPECT_EQ(hidden->inputHeight(), 5);
+  EXPECT_EQ(hidden->inputWidth(), 2);
+  EXPECT_EQ(hidden->outputHeight(), 2);
+  EXPECT_EQ(hidden->outputWidth(), 5);
 }
 
 // Run tests

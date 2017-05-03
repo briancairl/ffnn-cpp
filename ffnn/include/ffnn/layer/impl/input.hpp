@@ -48,10 +48,8 @@ Input<ValueType, NetworkInputsAtCompileTime>::connectToForwardLayer(const Base& 
 
 template<typename ValueType, FFNN_SIZE_TYPE NetworkInputsAtCompileTime>
 template<typename NetworkInputType>
-void Input<ValueType, NetworkInputsAtCompileTime>::operator<<(const NetworkInputType& input)
+void Input<ValueType, NetworkInputsAtCompileTime>::operator<<(const NetworkInputType& input) const
 {
-  FFNN_ERROR(next_ptr_);
-
   // Check input data size
   FFNN_ASSERT_MSG(input.size() == Base::outputSize(),
                   "Input data size does not match expected network input size.");
