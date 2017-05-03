@@ -96,7 +96,7 @@ public:
   LayerBase(const DimType& input_dim  = DimType(Eigen::Dynamic),
             const DimType& output_dim = DimType(Eigen::Dynamic)) :
     initialized_(false),
-    setup_required_(false),
+    setup_required_(true),
     input_dim_(input_dim),
     output_dim_(output_dim)
   {}
@@ -190,8 +190,8 @@ protected:
     ar & output_dim_.height;
     ar & output_dim_.width;
     ar & output_dim_.depth;
-
-    setup_required_ = true;
+    
+    setup_required_ = false;
   }
 
   /// Flags which indicated that layer has been initialized

@@ -52,7 +52,7 @@ template<typename ValueType,
 bool FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::initialize()
 {
   // Abort if layer is already initialized
-  if (!Base::setupRequired() && Base::isInitialized())
+  if (Base::setupRequired() && Base::isInitialized())
   {
     FFNN_WARN_NAMED("layer::FullyConnected", "<" << Base::getID() << "> already initialized.");
     return false;
@@ -63,7 +63,7 @@ bool FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::initi
   }
 
   // Initialize weights
-  if (!Base::setupRequired())
+  if (Base::setupRequired())
   {
     reset();
   }

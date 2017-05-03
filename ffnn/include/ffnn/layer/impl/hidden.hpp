@@ -93,7 +93,7 @@ bool HIDDEN::initialize()
   FFNN_ASSERT_MSG (Base::input_dim_ > 0,  "Input dimensions are invalid (non-positive) or unresolved.");
 
   // Abort if layer is already initialized
-  if (!Base::setupRequired() && Base::isInitialized())
+  if (Base::setupRequired() && Base::isInitialized())
   {
     FFNN_WARN_NAMED("layer::Hidden", "<" << Base::getID() << "> already initialized.");
     return false;

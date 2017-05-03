@@ -22,7 +22,7 @@ bool connect(const typename LayerType::Ptr& from, const typename LayerType::Ptr&
   auto itr = to->prev_.find(from->getID());
   if (itr != to->prev_.end())
   {
-    if (to->setupRequired() && from->setupRequired())
+    if (!to->setupRequired() && !from->setupRequired())
     {
       FFNN_DEBUG_NAMED("layer::connect", "<" << from->getID() << "> virtual connection to " <<
                                          "<" << to->getID() << "> resolved.");
@@ -60,7 +60,7 @@ template<typename ValueType>
 bool Layer<ValueType>::initialize()
 {
   // Abort if layer is already initialized
-  if (!Base::setupRequired() && Base::isInitialized())
+  if (Base::setupRequired() && Base::isInitialized())
   {
     FFNN_WARN_NAMED("layer::Layer", "<" << Base::getID() << "> already initialized.");
     return false;

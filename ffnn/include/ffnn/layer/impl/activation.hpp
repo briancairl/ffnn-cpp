@@ -35,7 +35,7 @@ template<typename ValueType,
 bool Activation<ValueType, NeuronType, SizeAtCompileTime>::initialize()
 {
   // Abort if layer is already initialized
-  if (!Base::setupRequired() && Base::isInitialized())
+  if (Base::setupRequired() && Base::isInitialized())
   {
     FFNN_WARN_NAMED("layer::Activation", "<" << Base::getID() << "> already initialized.");
     return false;

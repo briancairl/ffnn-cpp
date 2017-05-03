@@ -22,7 +22,7 @@ template<typename ValueType, FFNN_SIZE_TYPE NetworkOutputsAtCompileTime>
 bool Output<ValueType, NetworkOutputsAtCompileTime>::initialize()
 {
   // Abort if layer is already initialized
-  if (!Base::setupRequired() && Base::isInitialized())
+  if (Base::setupRequired() && Base::isInitialized())
   {
     FFNN_WARN_NAMED("layer::Output", "<" << Base::getID() << "> already initialized.");
     return false;

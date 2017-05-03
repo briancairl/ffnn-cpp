@@ -56,7 +56,7 @@ template<typename ValueType,
 bool SparselyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::initialize()
 {
   // Abort if layer is already initialized
-  if (!Base::setupRequired() && Base::isInitialized())
+  if (Base::setupRequired() && Base::isInitialized())
   {
     FFNN_WARN_NAMED("layer::SparselyConnected", "<" << Base::getID() << "> already initialized.");
     return false;
@@ -67,7 +67,7 @@ bool SparselyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::in
   }
 
   // Initialize weights
-  if (!Base::setupRequired())
+  if (Base::setupRequired())
   {
     reset();
   }
