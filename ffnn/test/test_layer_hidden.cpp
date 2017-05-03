@@ -29,8 +29,8 @@ public:
   Hidden() :
     ffnn::layer::Hidden<float>(Hidden::DimType(5, 2), Hidden::DimType(2, 5))
   {
-    FFNN_INFO("Input  : " << input_dim_.height  << " by " << input_dim_.width);
-    FFNN_INFO("Output : " << output_dim_.height  << " by " << output_dim_.width);
+    FFNN_INFO("Input  : " << input_dim_);
+    FFNN_INFO("Output : " << output_dim_);
   }
 
   bool forward()

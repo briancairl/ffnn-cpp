@@ -25,6 +25,8 @@ namespace internal
 #define PROD_IF_STATIC_PAIR(n, m) (IS_DYNAMIC_PAIR(n, m) ? Eigen::Dynamic : (n*m))
 #define PROD_IF_STATIC_TRIPLET(n, m, l) (IS_DYNAMIC_TRIPLET(n, m, l) ? Eigen::Dynamic : (n*m*l))
 
+
+
 template<typename SizeType>
 struct Dimensions
 {
@@ -71,6 +73,13 @@ struct Dimensions
     depth = dim.depth;
   }
 };
+
+template<typename SizeType>
+std::ostream& operator<<(std::ostream& os, const Dimensions<SizeType>& dim)
+{
+  os << "<" << dim.height << " x " << dim.width << " x " << dim.depth << ">";
+  return os;
+}
 
 /**
  * @brief Base object for all layer types
