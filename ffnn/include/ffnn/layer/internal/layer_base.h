@@ -64,7 +64,7 @@ struct Dimensions
     depth = 1;
   }
 
-  void operator=(Dimensions dim)
+  void operator=(const Dimensions& dim)
   {
     height = dim.height;
     width = dim.width;
@@ -190,7 +190,7 @@ protected:
     ar & output_dim_.height;
     ar & output_dim_.width;
     ar & output_dim_.depth;
-    
+
     setup_required_ = false;
   }
 
