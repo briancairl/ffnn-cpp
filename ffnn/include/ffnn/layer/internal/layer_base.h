@@ -2,13 +2,14 @@
  * @author Brian Cairl
  * @date 2017
  */
-#ifndef FFNN_LAYER_INTERNAL_FORWARD_INTERFACE_H
-#define FFNN_LAYER_INTERNAL_FORWARD_INTERFACE_H
+#ifndef FFNN_LAYER_INTERNAL_LAYER_BASE_H
+#define FFNN_LAYER_INTERNAL_LAYER_BASE_H
 
 // FFNN (internal)
 #include <ffnn/internal/traits/serializable.h>
 #include <ffnn/internal/traits/unique.h>
 #include <ffnn/internal/signature.h>
+#include <ffnn/layer/internal/dimensions.h>
 
 // FFNN
 #include <ffnn/config/global.h>
@@ -19,68 +20,6 @@ namespace layer
 {
 namespace internal
 {
-#define IS_DYNAMIC(x) (x == Eigen::Dynamic)
-#define IS_DYNAMIC_PAIR(n, m) (IS_DYNAMIC(n) || IS_DYNAMIC(m))
-#define IS_DYNAMIC_TRIPLET(n, m, l) (IS_DYNAMIC(n) || IS_DYNAMIC(m) || IS_DYNAMIC(l))
-#define PROD_IF_STATIC_PAIR(n, m) (IS_DYNAMIC_PAIR(n, m) ? Eigen::Dynamic : (n*m))
-#define PROD_IF_STATIC_TRIPLET(n, m, l) (IS_DYNAMIC_TRIPLET(n, m, l) ? Eigen::Dynamic : (n*m*l))
-
-
-
-template<typename SizeType>
-struct Dimensions
-{
-  SizeType height;
-  SizeType width;
-  SizeType depth;
-
-  Dimensions() :
-    height(Eigen::Dynamic),
-    width(Eigen::Dynamic),
-    depth(Eigen::Dynamic)
-  {}
-
-  explicit
-  Dimensions(SizeType height, SizeType width = 1, SizeType depth = 1) :
-    height(height),
-    width(width),
-    depth(depth)
-  {}
-
-  inline SizeType size() const
-  {
-    return PROD_IF_STATIC_TRIPLET(height, width, depth);
-  }
-
-  inline bool valid() const
-  {
-    return PROD_IF_STATIC_TRIPLET(height, width, depth) > 0;
-  }
-
-  operator SizeType() const { return size(); }
-
-  void operator=(SizeType count)
-  {
-    height = count;
-    width = 1;
-    depth = 1;
-  }
-
-  void operator=(const Dimensions& dim)
-  {
-    height = dim.height;
-    width = dim.width;
-    depth = dim.depth;
-  }
-};
-
-template<typename SizeType>
-std::ostream& operator<<(std::ostream& os, const Dimensions<SizeType>& dim)
-{
-  os << "<" << dim.height << " x " << dim.width << " x " << dim.depth << ">";
-  return os;
-}
-
 /**
  * @brief Base object for all layer types
  */
@@ -169,17 +108,12 @@ protected:
     ffnn::io::signature::apply<LayerBase<ValueType>>(ar);
     traits::Unique::save(ar, version);
 
-    // Load flags
+    // Save flags
     ar & initialized_;
 
-    // Load dimensions
-    ar & input_dim_.height;
-    ar & input_dim_.width;
-    ar & input_dim_.depth;
-
-    ar & output_dim_.height;
-    ar & output_dim_.width;
-    ar & output_dim_.depth;
+    // Save dimensions
+    input_dim_.save(ar, version);
+    output_dim_.save(ar, version);
   }
 
   /// Load serializer
@@ -192,13 +126,8 @@ protected:
     ar & initialized_;
 
     // Load dimensions
-    ar & input_dim_.height;
-    ar & input_dim_.width;
-    ar & input_dim_.depth;
-
-    ar & output_dim_.height;
-    ar & output_dim_.width;
-    ar & output_dim_.depth;
+    input_dim_.load(ar, version);
+    output_dim_.load(ar, version);
 
     setup_required_ = false;
   }
@@ -218,4 +147,4 @@ protected:
 }  // namespace internal
 }  // namespace layer
 }  // namespace ffnn
-#endif  // FFNN_LAYER_INTERNAL_FORWARD_INTERFACE_H
+#endif  // FFNN_LAYER_INTERNAL_LAYER_BASE_H
