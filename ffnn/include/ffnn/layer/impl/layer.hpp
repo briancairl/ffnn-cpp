@@ -48,8 +48,8 @@ bool connect(const typename LayerType::Ptr& from, const typename LayerType::Ptr&
 }
 
 template<typename ValueType>
-Layer<ValueType>::Layer(SizeType input_size, SizeType output_size) :
-  Layer<ValueType>::Base(input_size, output_size)
+Layer<ValueType>::Layer(DimType input_dim, DimType output_dim) :
+  Layer<ValueType>::Base(input_dim, output_dim)
 {}
 
 template<typename ValueType>
@@ -95,7 +95,7 @@ typename Layer<ValueType>::SizeType Layer<ValueType>::evaluateInputSize() const
     }
     else
     {
-      count += connection.second->output_size_;
+      count += connection.second->output_dim_.size();
     }
   }
   return count;
@@ -128,13 +128,6 @@ void Layer<ValueType>::save(typename Layer<ValueType>::OutputArchive& ar,
   ffnn::io::signature::apply<Layer<ValueType>>(ar);
   Base::save(ar, version);
 
-  // Load flags
-  ar & Base::initialized_;
-
-  // Save sizing parameters
-  ar & Base::input_size_;
-  ar & Base::output_size_;
-
   // Save connection information
   SizeType layer_count = prev_.size();
   ar & layer_count;
@@ -153,13 +146,6 @@ void Layer<ValueType>::load(typename Layer<ValueType>::InputArchive& ar,
   ffnn::io::signature::check<Layer<ValueType>>(ar);
   Base::load(ar, version);
 
-  // Load flags
-  ar & Base::initialized_;
-
-  // Load sizing parameters
-  ar & Base::input_size_;
-  ar & Base::output_size_;
-
   // Load connection information
   SizeType layer_count;
   ar & layer_count;
@@ -172,9 +158,6 @@ void Layer<ValueType>::load(typename Layer<ValueType>::InputArchive& ar,
     // Create connection with empty layer data (promise)
     prev_.emplace(id, typename Layer<ValueType>::Ptr());
   }
-
-  // Flag as loaded
-  Base::setup_required_ = true;
   FFNN_DEBUG_NAMED("layer::Layer", "Loaded");
 }
 }  // namespace layer

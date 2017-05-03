@@ -43,6 +43,9 @@ public:
   /// Offset type standardization
   typedef typename Base::OffsetType OffsetType;
 
+  /// Dimension type standardization
+  typedef typename Base::DimType DimType;
+
   /// Matrix type standardization
   typedef typename Base::InputBlockType InputBlockType;
 

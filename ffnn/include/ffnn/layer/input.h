@@ -35,6 +35,9 @@ public:
   /// Offset type standardization
   typedef typename Base::OffsetType OffsetType;
 
+  /// Dimension type standardization
+  typedef typename Base::DimType DimType;
+
   /**
    * @brief Setup constructor
    * @param input_size  number of inputs supplied to network by this Layer
@@ -64,7 +67,7 @@ private:
    * @brief Maps outputs of this layer to inputs of the next
    * @param next  a subsequent layer
    * @param offset  offset index of a memory location in the input buffer of the next layer
-   * @retval output_size_
+   * @retval output_dim_.size()
    */
   OffsetType connectToForwardLayer(const Base& next, OffsetType offset);
 

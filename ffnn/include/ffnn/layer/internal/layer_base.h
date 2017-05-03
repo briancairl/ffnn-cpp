@@ -19,6 +19,37 @@ namespace layer
 {
 namespace internal
 {
+#define IS_DYNAMIC(x) (x == Eigen::Dynamic)
+#define IS_DYNAMIC_PAIR(n, m) (IS_DYNAMIC(n) || IS_DYNAMIC(m))
+#define IS_DYNAMIC_TRIPLET(n, m, l) (IS_DYNAMIC(n) || IS_DYNAMIC(m) || IS_DYNAMIC(l))
+#define PROD_IF_STATIC_PAIR(n, m) (IS_DYNAMIC_PAIR(n, m) ? Eigen::Dynamic : (n*m))
+#define PROD_IF_STATIC_TRIPLET(n, m, l) (IS_DYNAMIC_TRIPLET(n, m, l) ? Eigen::Dynamic : (n*m*l))
+
+template<typename SizeType>
+struct Dimensions
+{
+  SizeType height;
+  SizeType width;
+  SizeType depth;
+
+  explicit
+  Dimensions(SizeType height = Eigen::Dynamic, SizeType width = 1, SizeType depth = 1) :
+    height(height),
+    width(width),
+    depth(depth)
+  {}
+
+  inline SizeType size() const
+  {
+    return PROD_IF_STATIC_TRIPLET(height, width, depth);
+  }
+
+  inline bool valid() const
+  {
+    return !IS_DYNAMIC_TRIPLET(height, width, depth);
+  }
+};
+
 /**
  * @brief Base object for all layer types
  */
@@ -36,28 +67,32 @@ public:
   /// Offset type standardization
   typedef FFNN_OFFSET_TYPE OffsetType;
 
-  LayerBase(SizeType input_size, SizeType output_size) :
+  /// Dimension type standardization
+  typedef Dimensions<SizeType> DimType;
+
+  LayerBase(const DimType& input_dim  = DimType(Eigen::Dynamic),
+            const DimType& output_dim = DimType(Eigen::Dynamic)) :
     initialized_(false),
     setup_required_(false),
-    input_size_(input_size > 0 ? input_size : 0),
-    output_size_(output_size > 0 ? output_size : 0)
+    input_dim_(input_dim),
+    output_dim_(output_dim)
   {}
   virtual ~LayerBase() {}
 
   /**
    * @brief Returns the total number of Layer inputs
    */
-  SizeType inputSize() const
+  inline SizeType inputSize() const
   {
-    return input_size_;
+    return input_dim_.size();
   }
 
   /**
    * @brief Returns the total number of Layer outputs
    */
-  SizeType outputSize() const
+  inline SizeType outputSize() const
   {
-    return output_size_;
+    return output_dim_.size();
   }
 
   /**
@@ -65,7 +100,7 @@ public:
    */
   virtual SizeType evaluateInputSize() const
   {
-    return input_size_;
+    return input_dim_.size();
   }
 
   /**
@@ -101,6 +136,18 @@ protected:
   {
     ffnn::io::signature::apply<LayerBase<ValueType>>(ar);
     traits::Unique::save(ar, version);
+
+    // Load flags
+    ar & initialized_;
+
+    // Load dimensions
+    ar & input_dim_.height;
+    ar & input_dim_.width;
+    ar & input_dim_.depth;
+
+    ar & output_dim_.height;
+    ar & output_dim_.width;
+    ar & output_dim_.depth;
   }
 
   /// Load serializer
@@ -108,6 +155,20 @@ protected:
   {
     ffnn::io::signature::check<LayerBase<ValueType>>(ar);
     traits::Unique::load(ar, version);
+
+    // Load flags
+    ar & initialized_;
+
+    // Load dimensions
+    ar & input_dim_.height;
+    ar & input_dim_.width;
+    ar & input_dim_.depth;
+
+    ar & output_dim_.height;
+    ar & output_dim_.width;
+    ar & output_dim_.depth;
+
+    setup_required_ = true;
   }
 
   /// Flags which indicated that layer has been initialized
@@ -117,10 +178,10 @@ protected:
   bool setup_required_;
 
   /// Total number of input connections
-  SizeType input_size_;
+  DimType input_dim_;
 
   /// Total number of output connections
-  SizeType output_size_;
+  DimType output_dim_;
 };
 }  // namespace internal
 }  // namespace layer

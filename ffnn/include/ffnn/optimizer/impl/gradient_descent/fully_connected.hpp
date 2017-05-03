@@ -62,7 +62,7 @@ public:
     reset(layer);
 
     // Reset previous input
-    prev_input_.setZero(layer.input_size_, 1);
+    prev_input_.setZero(layer.input_dim_.size(), 1);
   }
 
   /**
@@ -72,10 +72,10 @@ public:
   virtual void reset(LayerType& layer)
   {
     // Reset weight delta
-    weight_gradient_.setZero(layer.output_size_, layer.input_size_);
+    weight_gradient_.setZero(layer.output_dim_.size(), layer.input_dim_.size());
 
     // Reset bias delta
-    bias_gradient_.setZero(layer.output_size_, 1);
+    bias_gradient_.setZero(layer.output_dim_.size(), 1);
   }
 
   /**

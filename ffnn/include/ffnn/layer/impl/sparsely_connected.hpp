@@ -39,7 +39,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE OutputsAtCompileTime>
 SparselyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::
 SparselyConnected(SizeType output_size, const Parameters& config) :
-  Base(typename Base::DimType(0), typename Base::DimType(output_size)),
+  Base(DimType(0), DimType(output_size)),
   config_(config),
   opt_(boost::make_shared<typename optimizer::None<Self>>())
 {}
@@ -56,7 +56,7 @@ template<typename ValueType,
 bool SparselyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::initialize()
 {
   // Deduce input dimensions
-  Base::input_dim_ = typename Base::DimType(Base::evaluateInputSize());
+  Base::input_dim_ = DimType(Base::evaluateInputSize());
 
   // Abort if layer is already initialized
   if (!Base::setupRequired() && Base::isInitialized())

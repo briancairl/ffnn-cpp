@@ -21,10 +21,6 @@ namespace ffnn
 {
 namespace layer
 {
-/// Dimension utility struct
-template<typename SizeType>
-struct Dimensions;
-
 /**
  * @brief A network hidden-layer object
  */
@@ -50,8 +46,8 @@ public:
   /// Offset type standardization
   typedef typename Base::OffsetType OffsetType;
 
-  /// Dimensions specifier standardization
-  typedef Dimensions<SizeType> DimType;
+  /// Dimension type standardization
+  typedef typename Base::DimType DimType;
 
   /// Input block type standardization
   typedef _InputBlockType InputBlockType;
@@ -138,7 +134,7 @@ private:
    * @brief Maps outputs of this layer to inputs of the next
    * @param next  a subsequent layer
    * @param offset  offset index of a memory location in the input buffer of the next layer
-   * @retval <code>offset + output_size_</code>
+   * @retval <code>offset + output_dim_.size()</code>
    */
   OffsetType connectToForwardLayer(const Base& next, OffsetType offset);
 };

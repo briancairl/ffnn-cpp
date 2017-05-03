@@ -38,18 +38,6 @@ bool Activation<ValueType, NeuronType, SizeAtCompileTime>::initialize()
   Base::input_dim_  = typename Base::DimType(Base::evaluateInputSize());
   Base::output_dim_ = Base::input_dim_;
 
-  // This layer has equal inputs and outputs
-  Base::input_size_  = Base::input_dim_.size();
-  Base::output_size_ = Base::output_dim_.size();
-
-  // Validate input count
-  FFNN_STATIC_ASSERT_MSG (Base::input_dim_.size() == Base::inputSize(),
-                          "Specified input size is incompatible with expected input dimensions.");
-
-  // Validate output count
-  FFNN_STATIC_ASSERT_MSG (Base::output_dim_.size() == Base::outputSize(),
-                          "Specified output size is incompatible with expected output dimensions.");
-
   // Abort if layer is already initialized
   if (!Base::setupRequired() && Base::isInitialized())
   {

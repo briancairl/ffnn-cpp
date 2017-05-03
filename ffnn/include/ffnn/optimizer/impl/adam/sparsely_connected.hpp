@@ -72,8 +72,8 @@ public:
     Base::initialize(layer);
 
     // Reset states
-    weight_gradient_states_.initialize(layer.output_size_, layer.input_size_);
-    bias_gradient_states_.initialize(layer.output_size_, layer.input_size_);
+    weight_gradient_states_.initialize(layer.output_dim_.size(), layer.input_dim_.size());
+    bias_gradient_states_.initialize(layer.output_dim_.size(), layer.input_dim_.size());
   }
 
   /**
