@@ -47,9 +47,9 @@ TEST(TestLayerFullyConnectedWithOptimizers, GradientDescent)
   static const Layer::SizeType DIM = 32;
 
   // Create layers
-  auto input = boost::make_shared<Input>(DIM);  
+  auto input = boost::make_shared<Input>(DIM);
   auto hidden = boost::make_shared<Hidden>(DIM);
-  auto output = boost::make_shared<Output>();  
+  auto output = boost::make_shared<Output>();
 
   // Set optimizer (gradient descent)
   {
@@ -137,8 +137,8 @@ TEST(TestLayerFullyConnectedActivationWithOptimizers, GradientDescent)
   static const Layer::SizeType DIM = 32;
 
   // Create layers
-  auto input = boost::make_shared<Input>(DIM);  
-  auto hidden1 = boost::make_shared<Hidden>(DIM);
+  auto input = boost::make_shared<Input>(Layer::DimType(DIM));  
+  auto hidden1 = boost::make_shared<Hidden>(Layer::DimType(DIM));
   auto hidden2 = boost::make_shared<Activation>();
   auto output = boost::make_shared<Output>();  
 

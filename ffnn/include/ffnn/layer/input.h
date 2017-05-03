@@ -43,7 +43,7 @@ public:
    * @param input_size  number of inputs supplied to network by this Layer
    */
   explicit
-  Input(const SizeType& network_input_size = NetworkInputsAtCompileTime);
+  Input(SizeType network_input_size = NetworkInputsAtCompileTime);
   virtual ~Input();
 
   /**

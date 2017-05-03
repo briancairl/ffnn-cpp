@@ -123,12 +123,6 @@ protected:
   /// Output-target error vector
   typename _OutputMappingType::Ptr forward_error_;
 
-  /// Input block-dimensions
-  DimType input_dim_;
-
-  /// Output block-dimension
-  DimType output_dim_;
-
 private:
   /**
    * @brief Maps outputs of this layer to inputs of the next

@@ -34,10 +34,6 @@ template<typename ValueType,
          FFNN_SIZE_TYPE SizeAtCompileTime>
 bool Activation<ValueType, NeuronType, SizeAtCompileTime>::initialize()
 {
-  // Deduce input dimensions
-  Base::input_dim_  = typename Base::DimType(Base::evaluateInputSize());
-  Base::output_dim_ = Base::input_dim_;
-
   // Abort if layer is already initialized
   if (!Base::setupRequired() && Base::isInitialized())
   {
@@ -48,6 +44,9 @@ bool Activation<ValueType, NeuronType, SizeAtCompileTime>::initialize()
   {
     return false;
   }
+
+  // Deduce output dimensions
+  Base::output_dim_ = Base::input_dim_;
 
   // Initialize neurons
   neurons_.resize(Base::outputSize());

@@ -32,8 +32,14 @@ struct Dimensions
   SizeType width;
   SizeType depth;
 
+  Dimensions() :
+    height(Eigen::Dynamic),
+    width(Eigen::Dynamic),
+    depth(Eigen::Dynamic)
+  {}
+
   explicit
-  Dimensions(SizeType height = Eigen::Dynamic, SizeType width = 1, SizeType depth = 1) :
+  Dimensions(SizeType height, SizeType width = 1, SizeType depth = 1) :
     height(height),
     width(width),
     depth(depth)
@@ -46,7 +52,23 @@ struct Dimensions
 
   inline bool valid() const
   {
-    return !IS_DYNAMIC_TRIPLET(height, width, depth);
+    return PROD_IF_STATIC_TRIPLET(height, width, depth) > 0;
+  }
+
+  operator SizeType() const { return size(); }
+
+  void operator=(SizeType count)
+  {
+    height = count;
+    width = 1;
+    depth = 1;
+  }
+
+  void operator=(Dimensions dim)
+  {
+    height = dim.height;
+    width = dim.width;
+    depth = dim.depth;
   }
 };
 
@@ -70,6 +92,7 @@ public:
   /// Dimension type standardization
   typedef Dimensions<SizeType> DimType;
 
+  explicit
   LayerBase(const DimType& input_dim  = DimType(Eigen::Dynamic),
             const DimType& output_dim = DimType(Eigen::Dynamic)) :
     initialized_(false),

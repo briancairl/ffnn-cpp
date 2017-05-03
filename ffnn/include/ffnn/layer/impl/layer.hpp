@@ -48,7 +48,7 @@ bool connect(const typename LayerType::Ptr& from, const typename LayerType::Ptr&
 }
 
 template<typename ValueType>
-Layer<ValueType>::Layer(DimType input_dim, DimType output_dim) :
+Layer<ValueType>::Layer(const DimType& input_dim, const DimType& output_dim) :
   Layer<ValueType>::Base(input_dim, output_dim)
 {}
 
@@ -67,13 +67,13 @@ bool Layer<ValueType>::initialize()
   }
 
   // Allocate input/error buffers
-  if (Base::inputSize() > 0 && input_buffer_.empty() && backward_error_buffer_.empty())
+  if (static_cast<SizeType>(Base::input_dim_) > 0 && input_buffer_.empty() && backward_error_buffer_.empty())
   {
     // Allocate input buffer
-    input_buffer_.resize(Base::inputSize(), 0);
+    input_buffer_.resize(static_cast<SizeType>(Base::input_dim_), 0);
 
     // Allocate backward error buffer
-    backward_error_buffer_.resize(Base::inputSize(), 0);
+    backward_error_buffer_.resize(static_cast<SizeType>(Base::input_dim_), 0);
   }
 
   // Set initialization flag

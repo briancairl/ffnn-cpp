@@ -28,7 +28,8 @@ template<typename ValueType,
 HIDDEN::Hidden(const DimType& input_dim,
                const DimType& output_dim) :
   Base(input_dim, output_dim)
-{}
+{
+}
 
 template<typename ValueType,
          FFNN_SIZE_TYPE InputsHeightAtCompileTime,
@@ -54,6 +55,8 @@ template<typename ValueType,
 typename HIDDEN::OffsetType 
 HIDDEN::connectToForwardLayer(const Base& next, OffsetType offset)
 {
+  FFNN_ASSERT_MSG (Base::output_dim_ > 0, "Output dimensions are invalid (non-positive) or unresolved.");
+
   // Map output of next layer to input buffer
   auto output_ptr = const_cast<ValueType*>(next.getInputBuffer().data()) + offset;
   output_ = _OutputMappingType::create(output_ptr,
@@ -81,8 +84,13 @@ template<typename ValueType,
          typename _OutputMappingType>
 bool HIDDEN::initialize()
 {
-  FFNN_ASSERT_MSG (Base::input_dim_.valid(),  "Input dimensions are invalid (non-positive) or unresolved.");
-  FFNN_ASSERT_MSG (Base::output_dim_.valid(), "Output dimensions are invalid (non-positive) or unresolved.");
+  // Deduce input dimensions
+  if (!Base::input_dim_.valid())
+  {
+    Base::input_dim_ = Base::evaluateInputSize();
+  }
+
+  FFNN_ASSERT_MSG (Base::input_dim_ > 0,  "Input dimensions are invalid (non-positive) or unresolved.");
 
   // Abort if layer is already initialized
   if (!Base::setupRequired() && Base::isInitialized())

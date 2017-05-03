@@ -58,7 +58,7 @@ public:
    * @param input_size  number of inputs to the Layer
    * @param output_size  number of outputs from the Layer
    */
-  Layer(DimType input_dim = 0, DimType output_dim = 0);
+  Layer(const DimType& input_dim, const DimType& output_dim);
   virtual ~Layer();
 
   /**

@@ -29,7 +29,7 @@ bool Output<ValueType, NetworkOutputsAtCompileTime>::initialize()
   }
 
   // Resolve input dimensions from previous layer output dimensions
-  Base::input_dim_ = DimType(Base::evaluateInputSize());
+  Base::input_dim_ = Base::evaluateInputSize();
 
   // Validate network input count
   FFNN_STATIC_ASSERT_MSG (NetworkOutputsAtCompileTime < 0 || Base::input_dim_.size() == NetworkOutputsAtCompileTime,

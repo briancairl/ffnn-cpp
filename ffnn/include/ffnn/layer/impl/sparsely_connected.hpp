@@ -55,9 +55,6 @@ template<typename ValueType,
          FFNN_SIZE_TYPE OutputsAtCompileTime>
 bool SparselyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::initialize()
 {
-  // Deduce input dimensions
-  Base::input_dim_ = DimType(Base::evaluateInputSize());
-
   // Abort if layer is already initialized
   if (!Base::setupRequired() && Base::isInitialized())
   {
