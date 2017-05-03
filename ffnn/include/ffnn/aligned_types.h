@@ -28,15 +28,15 @@ struct Buffer :
   using Base::Base;
 };
 
-template<typename MatrixType, typename ValueType, typename Stride>
+template<typename MatrixType, typename ValueType>
 struct MapBase;
 
-template<typename MatrixType, typename Stride>
-struct MapBase<MatrixType, float, Stride> :
-  Eigen::Map<MatrixType, 16, Stride>
+template<typename MatrixType>
+struct MapBase<MatrixType, float> :
+  Eigen::Map<MatrixType, 16>
 {
   // Inherit base type assets
-  using Base = Eigen::Map<MatrixType, 16, Stride>;
+  using Base = Eigen::Map<MatrixType, 16>;
   using Base::Base;
 
   // Scalar type standardization
@@ -51,9 +51,9 @@ struct MapBase<MatrixType, float, Stride> :
   virtual ~MapBase() {}
 };
 
-template<typename MatrixType, typename Stride>
-struct MapBase<MatrixType, double, Stride> :
-  Eigen::Map<MatrixType, 32, Stride>
+template<typename MatrixType>
+struct MapBase<MatrixType, double> :
+  Eigen::Map<MatrixType, 32>
 {
   // Inherit base type assets
   using Base = Eigen::Map<MatrixType, 32>;
@@ -72,12 +72,12 @@ struct MapBase<MatrixType, double, Stride> :
 };
 
 /// Aligned mem-mapped matrix/vector type wrapper
-template<typename MatrixType, typename Stride = Eigen::OuterStride<>>
+template<typename MatrixType>
 struct Map :
-  public MapBase<MatrixType, typename MatrixType::Scalar, Stride>
+  public MapBase<MatrixType, typename MatrixType::Scalar>
 {
   // Inherit base type assets
-  using Base = MapBase<MatrixType, typename MatrixType::Scalar, Stride>;
+  using Base = MapBase<MatrixType, typename MatrixType::Scalar>;
   using Base::Base;
 
   /// Shared resource standardization
@@ -93,12 +93,12 @@ struct Map :
    * @param cols  number of collumns represented in the buffer
    * @return shared-resource pointer
    */
-  static typename Map<MatrixType, Stride>::Ptr
+  static typename Map::Ptr
   create(typename MatrixType::Scalar* data,
          typename MatrixType::Index rows,
          typename MatrixType::Index cols = 1)
   {
-    return boost::make_shared<Map<MatrixType>>(data, rows, cols);
+    return boost::make_shared<Map>(data, rows, cols);
   }
 };
 }  // namespace aligned

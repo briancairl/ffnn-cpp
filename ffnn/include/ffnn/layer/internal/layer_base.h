@@ -42,16 +42,6 @@ public:
   {}
   virtual ~LayerBase() {}
 
-  ValueType* getInputPtr() const
-  {
-    return input_ptr_;
-  }
-
-  ValueType* getBackwardErrorPtr() const
-  {
-    return backward_error_ptr_;
-  }
-
   /**
    * @brief Returns the total number of Layer inputs
    */
@@ -129,12 +119,6 @@ protected:
 
   /// Total number of output connections
   SizeType output_size_;
-
-  /// Pointer to raw input buffer
-  ValueType* input_ptr_;
-
-  /// Point to raw forward error buffer
-  ValueType* backward_error_ptr_;
 };
 }  // namespace layer
 }  // namespace ffnn

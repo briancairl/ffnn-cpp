@@ -21,16 +21,22 @@ namespace ffnn
 {
 namespace layer
 {
+/// Dimension utility struct
+template<typename SizeType>
+struct Dimensions;
+
 /**
  * @brief A network hidden-layer object
  */
 template<typename ValueType,
-         FFNN_SIZE_TYPE InputsAtCompileTime = Eigen::Dynamic,
-         FFNN_SIZE_TYPE OutputsAtCompileTime = Eigen::Dynamic,
-         typename _InputVectorType = Eigen::Matrix<ValueType, InputsAtCompileTime, 1, Eigen::ColMajor>,
-         typename _OutputVectorType = Eigen::Matrix<ValueType, OutputsAtCompileTime, 1, Eigen::ColMajor>,
-         typename _InputMappingType = aligned::Map<_InputVectorType>,
-         typename _OutputMappingType = aligned::Map<_OutputVectorType>>
+         FFNN_SIZE_TYPE InputHeightAtCompileTime = Eigen::Dynamic,
+         FFNN_SIZE_TYPE InputWidthAtCompileTime = Eigen::Dynamic,
+         FFNN_SIZE_TYPE OutputHeightAtCompileTime = Eigen::Dynamic,
+         FFNN_SIZE_TYPE OutputWidthAtCompileTime = Eigen::Dynamic,
+         typename _InputBlockType = Eigen::Matrix<ValueType, InputHeightAtCompileTime, InputWidthAtCompileTime, Eigen::ColMajor>,
+         typename _OutputBlockType = Eigen::Matrix<ValueType, OutputHeightAtCompileTime, OutputWidthAtCompileTime, Eigen::ColMajor>,
+         typename _InputMappingType = aligned::Map<_InputBlockType>,
+         typename _OutputMappingType = aligned::Map<_OutputBlockType>>
 class Hidden :
   public Layer<ValueType>
 {
@@ -44,20 +50,25 @@ public:
   /// Offset type standardization
   typedef typename Base::OffsetType OffsetType;
 
-  /// Vectorized input type standardization
-  typedef _InputVectorType InputVectorType;
+  /// Dimensions specifier standardization
+  typedef Dimensions<SizeType> DimensionsType;
 
-  /// Vectorized output type standardization
-  typedef _OutputVectorType OutputVectorType;
+  /// Input block type standardization
+  typedef _InputBlockType InputBlockType;
+
+  /// Iutpu blockt type standardization
+  typedef _OutputBlockType OutputBlockType;
 
   /**
    * @brief Setup constructor
-   * @param input_size  number of inputs to the interface
-   * @param output_size  number of outputs from the interface
+   * @param input_height  height of the input surface
+   * @param input_width  width of the input surface
+   * @param output_height  height of the output surface
+   * @param output_width  width of the output surface
    */
   explicit
-  Hidden(SizeType input_size = InputsAtCompileTime,
-         SizeType output_size = OutputsAtCompileTime);
+  Hidden(const DimensionsType& input_dim  = DimensionsType(InputHeightAtCompileTime, InputWidthAtCompileTime),
+         const DimensionsType& output_dim = DimensionsType(OutputHeightAtCompileTime, OutputWidthAtCompileTime));
   virtual ~Hidden();
 
   /**
@@ -115,6 +126,12 @@ protected:
 
   /// Output-target error vector
   typename _OutputMappingType::Ptr forward_error_;
+
+  /// Input block-dimensions
+  const DimensionsType input_dim_;
+
+  /// Output block-dimension
+  const DimensionsType output_dim_;
 
 private:
   /**

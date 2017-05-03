@@ -74,12 +74,6 @@ bool Layer<ValueType>::initialize()
 
     // Allocate backward error buffer
     backward_error_buffer_.resize(Base::input_size_, 0);
-
-    // Setup input data-interface pointer
-    Base::input_ptr_ = const_cast<ValueType*>(input_buffer_.data());
-
-    // Setup backward error data-interface pointer
-    Base::backward_error_ptr_ = const_cast<ValueType*>(backward_error_buffer_.data());
   }
 
   // Set initialization flag

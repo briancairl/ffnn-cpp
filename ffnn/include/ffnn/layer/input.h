@@ -57,7 +57,7 @@ public:
    * @warning This method does not check element type correctness
    */
   template<typename NetworkInputType>
-  void operator<<(const NetworkInputType& input) const;
+  void operator<<(const NetworkInputType& input);
 
 private:
   /**

@@ -92,6 +92,16 @@ public:
     return true;
   }
 
+  inline const aligned::Buffer<ValueType>& getInputBuffer() const
+  {
+    return input_buffer_;
+  }
+
+  inline const aligned::Buffer<ValueType>& getBackwardErrorBuffer() const
+  {
+    return backward_error_buffer_;
+  }
+
   /**
    * @brief Maps outputs of this layer to inputs of the next
    * @param next  a subsequent layer

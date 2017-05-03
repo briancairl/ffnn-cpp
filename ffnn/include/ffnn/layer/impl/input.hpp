@@ -40,17 +40,18 @@ template<typename ValueType, FFNN_SIZE_TYPE NetworkInputsAtCompileTime>
 typename Input<ValueType, NetworkInputsAtCompileTime>::OffsetType
 Input<ValueType, NetworkInputsAtCompileTime>::connectToForwardLayer(const Base& next, OffsetType offset)
 {
-  next_ptr_ = next.getInputPtr();
+  next_ptr_ = const_cast<ValueType*>(next.getInputBuffer().data());
 
   // Return next offset after assigning buffer segments
   return this->outputSize();
 }
 
-
 template<typename ValueType, FFNN_SIZE_TYPE NetworkInputsAtCompileTime>
 template<typename NetworkInputType>
-void Input<ValueType, NetworkInputsAtCompileTime>::operator<<(const NetworkInputType& input) const
+void Input<ValueType, NetworkInputsAtCompileTime>::operator<<(const NetworkInputType& input)
 {
+  FFNN_ERROR(next_ptr_);
+
   // Check input data size
   FFNN_ASSERT_MSG(input.size() == Base::outputSize(),
                   "Input data size does not match expected network input size.");

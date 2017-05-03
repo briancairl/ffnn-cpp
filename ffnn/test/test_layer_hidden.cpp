@@ -21,16 +21,16 @@
 #include <ffnn/layer/hidden.h>
 #include <ffnn/layer/layer.h>
 
-  using M1 = Eigen::Matrix<float, 2, 5,  Eigen::ColMajor>;
-  using M2 = Eigen::Matrix<float, 5, 2, Eigen::RowMajor>;
+  using M1 = Eigen::Matrix<float, 10, 1,  Eigen::ColMajor>;
+  using M2 = Eigen::Matrix<float, 5, 2, Eigen::ColMajor>;
 
 
 class Hidden :
-  public ffnn::layer::Hidden<float, -1, -1, M1, M2>
+  public ffnn::layer::Hidden<float, 5, 2, 10, 1>
 {
 public:
-  Hidden(int32_t i, int32_t j) :
-    ffnn::layer::Hidden<float, -1, -1, M1, M2>(i, j)
+  Hidden() :
+    ffnn::layer::Hidden<float, 5, 2, 10, 1>()
   {}
 
   bool forward()
@@ -60,9 +60,9 @@ TEST(TestLayerHiddenBasic, Mapping2D)
   static const Layer::SizeType DIM = 10;
 
   // Create layers
-  auto input = boost::make_shared<Input>(DIM);  
-  auto hidden = boost::make_shared<Hidden>(DIM, DIM);
-  auto output = boost::make_shared<Output>();  
+  auto input = boost::make_shared<Input>(DIM);
+  auto hidden = boost::make_shared<Hidden>();
+  auto output = boost::make_shared<Output>();
 
   // Create network
   std::vector<Layer::Ptr> layers({input, hidden, output});
@@ -89,6 +89,7 @@ TEST(TestLayerHiddenBasic, Mapping2D)
 
   input->forward();
   hidden->forward();
+  output->forward();
 
   FFNN_ERROR(output->inputSize());
   (*output) >> input_mat;
