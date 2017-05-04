@@ -21,7 +21,7 @@
 TEST(TestLayerReceptiveVolume, InstanceDynamicColEmbedding)
 {
   // Volume-type alias
-  using Volume = ffnn::layer::ReceptiveVolume<int>;
+  using Volume = ffnn::layer::ReceptiveVolume<float>;
 
   // Dimensions supplied in constructor
   Volume volume(Volume::DimType(4, 6, 8), 12);
@@ -35,14 +35,14 @@ TEST(TestLayerReceptiveVolume, InstanceDynamicColEmbedding)
     // Columns should contain embedded depth (default)
     EXPECT_EQ(filter.rows(), 4 * 8);
     EXPECT_EQ(filter.cols(), 6);
-    FFNN_INFO('\n' << filter);
+    FFNN_DEBUG('\n' << filter);
   }
 }
 
-TEST(TestLayerReceptiveVolume, StatisDynamicRowEmbedding)
+TEST(TestLayerReceptiveVolume, StaticDynamicRowEmbedding)
 {
   // Volume-type alias
-  using Volume = ffnn::layer::ReceptiveVolume<int, 4, 6, 8, 12, ffnn::layer::RowEmbedding>;
+  using Volume = ffnn::layer::ReceptiveVolume<float, 4, 6, 8, 12, ffnn::layer::RowEmbedding>;
 
   // Dimensions inferred from template args
   Volume volume;
@@ -55,8 +55,29 @@ TEST(TestLayerReceptiveVolume, StatisDynamicRowEmbedding)
     // Rows should contain embedded depth (default)
     EXPECT_EQ(filter.rows(), 4);
     EXPECT_EQ(filter.cols(), 6 * 8);
-    FFNN_INFO('\n' << filter);
+    FFNN_DEBUG('\n' << filter);
   }
+}
+
+TEST(TestLayerReceptiveVolume, StaticDynamicRowEmbeddingForward)
+{
+  // Volume-type alias
+  using Volume = ffnn::layer::ReceptiveVolume<float, 4, 6, 8, 12>;
+
+  // Dimensions inferred from template args
+  Volume volume;
+
+  EXPECT_TRUE(volume.getFilters().empty());
+  EXPECT_TRUE(volume.initialize());
+
+  Volume::BiasVectorType output;
+  output.setZero();
+
+  Volume::KernelMatrixType input;
+  input.setOnes();
+
+  volume.forward(input, output);
+  FFNN_DEBUG('\n' << output);
 }
 
 // Run tests
