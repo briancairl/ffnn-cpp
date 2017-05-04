@@ -18,7 +18,7 @@
 // FFNN
 #include <ffnn/layer/receptive_volume.h>
 
-TEST(TestLayerReceptiveVolume, InstanceDynamicColEmbedding)
+TEST(TestLayerReceptiveVolume, DynamicInstanceColEmbedding)
 {
   // Volume-type alias
   using Volume = ffnn::layer::ReceptiveVolume<float>;
@@ -39,7 +39,7 @@ TEST(TestLayerReceptiveVolume, InstanceDynamicColEmbedding)
   }
 }
 
-TEST(TestLayerReceptiveVolume, StaticDynamicRowEmbedding)
+TEST(TestLayerReceptiveVolume, StaticInstanceRowEmbedding)
 {
   // Volume-type alias
   using Volume = ffnn::layer::ReceptiveVolume<float, 4, 6, 8, 12, ffnn::layer::RowEmbedding>;
@@ -59,7 +59,7 @@ TEST(TestLayerReceptiveVolume, StaticDynamicRowEmbedding)
   }
 }
 
-TEST(TestLayerReceptiveVolume, StaticDynamicRowEmbeddingForward)
+TEST(TestLayerReceptiveVolume, StaticInstanceRowEmbedding_Forward)
 {
   // Volume-type alias
   using Volume = ffnn::layer::ReceptiveVolume<float, 4, 6, 8, 12>;
