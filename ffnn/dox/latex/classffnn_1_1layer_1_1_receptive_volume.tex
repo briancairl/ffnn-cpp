@@ -1,0 +1,277 @@
+\hypertarget{classffnn_1_1layer_1_1_receptive_volume}{\section{ffnn\-:\-:layer\-:\-:Receptive\-Volume$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Embedding\-Mode $>$ Class Template Reference}
+\label{classffnn_1_1layer_1_1_receptive_volume}\index{ffnn\-::layer\-::\-Receptive\-Volume$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Embedding\-Mode $>$@{ffnn\-::layer\-::\-Receptive\-Volume$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Embedding\-Mode $>$}}
+}
+
+
+{\ttfamily \#include \char`\"{}receptive\-\_\-volume.\-h\char`\"{}}
+
+
+
+Inheritance diagram for ffnn\-:\-:layer\-:\-:Receptive\-Volume$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Embedding\-Mode $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{classffnn_1_1layer_1_1_receptive_volume__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ffnn\-:\-:layer\-:\-:Receptive\-Volume$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Embedding\-Mode $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{classffnn_1_1layer_1_1_receptive_volume__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structffnn_1_1layer_1_1_receptive_volume_1_1_parameters}{Parameters}
+\begin{DoxyCompactList}\small\item\em A configuration object for a \hyperlink{classffnn_1_1layer_1_1_fully_connected}{Fully\-Connected} hidden layer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \hyperlink{classffnn_1_1layer_1_1_receptive_volume_a99a6c14984f9d1cc731f1b1b6e00fb2c}{Base} = \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface}{internal\-::\-Interface}$<$ Value\-Type $>$
+\begin{DoxyCompactList}\small\item\em Base type alias. \end{DoxyCompactList}\item 
+typedef \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a7f834e3365e5199bcbcd16d9abd63941}{Base\-::\-Scalar\-Type} \hyperlink{classffnn_1_1layer_1_1_receptive_volume_a4b3e846caf0136f173b3e0ceff912eac}{Scalar\-Type}
+\begin{DoxyCompactList}\small\item\em Scalar type standardization. \end{DoxyCompactList}\item 
+typedef \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_af0567642f60c65b5e87067226a54174b}{Base\-::\-Size\-Type} \hyperlink{classffnn_1_1layer_1_1_receptive_volume_a3e9853931ec53fae609bb3fef11fa325}{Size\-Type}
+\begin{DoxyCompactList}\small\item\em Size-\/type standardization. \end{DoxyCompactList}\item 
+typedef \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_adc5bb454329ebd51ac26579a43c006fd}{Base\-::\-Offset\-Type} \hyperlink{classffnn_1_1layer_1_1_receptive_volume_a1844c5ef59193938758e778eb0530ba6}{Offset\-Type}
+\begin{DoxyCompactList}\small\item\em Offset type standardization. \end{DoxyCompactList}\item 
+typedef \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a8d121d0103f254b51e48f7b20a17681f}{Base\-::\-Dim\-Type} \hyperlink{classffnn_1_1layer_1_1_receptive_volume_ab0bd7607040aa08bf9cdfcc30e2794ef}{Dim\-Type}
+\begin{DoxyCompactList}\small\item\em Dimension type standardization. \end{DoxyCompactList}\item 
+typedef Eigen\-::\-Matrix\\*
+$<$ Value\-Type, \hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69a}{Embedding\-Mode}==\hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aa42ac01b35d45fd60256ef5008c96c049}{Col\-Embedding}?\hyperlink{receptive__volume_8h_a74feffebf310dd34521adc2adcaf64c9}{P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-P\-A\-I\-R}(Height\-At\-Compile\-Time, \\*
+Depth\-At\-Compile\-Time)\-:Height\-At\-Compile\-Time, \\*
+\hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69a}{Embedding\-Mode}==\hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aa91eb0d1f175a08e2b2991cae348c827d}{Row\-Embedding}?\hyperlink{receptive__volume_8h_a74feffebf310dd34521adc2adcaf64c9}{P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-P\-A\-I\-R}(Width\-At\-Compile\-Time, \\*
+Depth\-At\-Compile\-Time)\-:Width\-At\-Compile\-Time, \\*
+\hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69a}{Embedding\-Mode}==\hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aa42ac01b35d45fd60256ef5008c96c049}{Col\-Embedding}?Eigen\-::\-Col\-Major\-:\-Eigen\-::\-Row\-Major $>$ \hyperlink{classffnn_1_1layer_1_1_receptive_volume_af207f604ba81e52546c400dd85de014f}{Kernel\-Matrix\-Type}
+\begin{DoxyCompactList}\small\item\em Filter kernel matrix standardization. \end{DoxyCompactList}\item 
+typedef Eigen\-::\-Matrix\\*
+$<$ Value\-Type, \\*
+Filter\-Count\-At\-Compile\-Time, \\*
+1, Eigen\-::\-Col\-Major $>$ \hyperlink{classffnn_1_1layer_1_1_receptive_volume_a22ec68a5323233ca8bbcacc2b7387dbb}{Bias\-Vector\-Type}
+\begin{DoxyCompactList}\small\item\em Bias vector type standardization. \end{DoxyCompactList}\item 
+typedef std\-::vector\\*
+$<$ \hyperlink{classffnn_1_1layer_1_1_receptive_volume_af207f604ba81e52546c400dd85de014f}{Kernel\-Matrix\-Type}, \\*
+Eigen\-::aligned\-\_\-allocator\\*
+$<$ Value\-Type $>$ $>$ \hyperlink{classffnn_1_1layer_1_1_receptive_volume_a7c97795baaf3c9b1e7db3cb3841d8829}{Filter\-Bank\-Type}
+\begin{DoxyCompactList}\small\item\em Filter collection type standardization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classffnn_1_1layer_1_1_receptive_volume_ac6196e0bdd72e485c5cddd77cb8dc7ef}{Receptive\-Volume} (const \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a8d121d0103f254b51e48f7b20a17681f}{Dim\-Type} \&input\-\_\-dim=\hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a8d121d0103f254b51e48f7b20a17681f}{Dim\-Type}(Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time), \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_af0567642f60c65b5e87067226a54174b}{Size\-Type} filter\-\_\-count=Filter\-Count\-At\-Compile\-Time, const \hyperlink{structffnn_1_1layer_1_1_receptive_volume_1_1_parameters}{Parameters} \&config=\hyperlink{structffnn_1_1layer_1_1_receptive_volume_1_1_parameters}{Parameters}())
+\item 
+virtual \hyperlink{classffnn_1_1layer_1_1_receptive_volume_a3d0202e34f98d891958a40c957128c02}{$\sim$\-Receptive\-Volume} ()
+\item 
+bool \hyperlink{classffnn_1_1layer_1_1_receptive_volume_a0fc5e18276c0f5d9f052d4a92349ca48}{initialize} ()
+\begin{DoxyCompactList}\small\item\em Initialize the volume. \end{DoxyCompactList}\item 
+void \hyperlink{classffnn_1_1layer_1_1_receptive_volume_affdd2d6fe24078deedb324c979cd08e4}{reset} ()
+\begin{DoxyCompactList}\small\item\em Reset filter weights and biases. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Input\-Block\-Type , typename Output\-Block\-Type $>$ }\\void \hyperlink{classffnn_1_1layer_1_1_receptive_volume_ab4ff3f2b9bc68dfb56d8f01c53a664d8}{forward} (const Eigen\-::\-Matrix\-Base$<$ Input\-Block\-Type $>$ \&input, Eigen\-::\-Matrix\-Base$<$ Output\-Block\-Type $>$ const \&output)
+\item 
+{\footnotesize template$<$typename Input\-Block\-Type , typename Forward\-Error\-Block\-Type $>$ }\\void \hyperlink{classffnn_1_1layer_1_1_receptive_volume_a58a22d009cc7da6aa08a9e87f81a4eb3}{backward} (const Eigen\-::\-Matrix\-Base$<$ Input\-Block\-Type $>$ \&input, const Eigen\-::\-Matrix\-Base$<$ Forward\-Error\-Block\-Type $>$ \&error)
+\item 
+const \hyperlink{classffnn_1_1layer_1_1_receptive_volume_a22ec68a5323233ca8bbcacc2b7387dbb}{Bias\-Vector\-Type} \& \hyperlink{classffnn_1_1layer_1_1_receptive_volume_a8fc32191a95ef94a0fa6d0366f69cf80}{get\-Biases} () const 
+\begin{DoxyCompactList}\small\item\em Exposes internal biasing weights. \end{DoxyCompactList}\item 
+const \hyperlink{classffnn_1_1layer_1_1_receptive_volume_a7c97795baaf3c9b1e7db3cb3841d8829}{Filter\-Bank\-Type} \& \hyperlink{classffnn_1_1layer_1_1_receptive_volume_a12e9b530df6207faef15c49e63086047}{get\-Filters} () const 
+\begin{DoxyCompactList}\small\item\em Exposes internal filters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classffnn_1_1layer_1_1_receptive_volume_a9f813e0c5c60d572a296b8ec1fc25086}{save} (\hyperlink{classffnn_1_1traits_1_1_serializable_a08d986df75d363fa79506d4f6045cb9f}{Output\-Archive} \&ar, \hyperlink{classffnn_1_1traits_1_1_serializable_a08924b3b7d20cb3cb6eafe517d4f7b30}{Version\-Type} version) const 
+\begin{DoxyCompactList}\small\item\em Save serializer. \end{DoxyCompactList}\item 
+void \hyperlink{classffnn_1_1layer_1_1_receptive_volume_aebfd8f149057b061d6880669376175e3}{load} (\hyperlink{classffnn_1_1traits_1_1_serializable_a6e626759259f8f370dd4303b4441a234}{Input\-Archive} \&ar, \hyperlink{classffnn_1_1traits_1_1_serializable_a08924b3b7d20cb3cb6eafe517d4f7b30}{Version\-Type} version)
+\begin{DoxyCompactList}\small\item\em Load serializer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classffnn_1_1layer_1_1_receptive_volume_a99a6c14984f9d1cc731f1b1b6e00fb2c}{\index{ffnn\-::layer\-::\-Receptive\-Volume@{ffnn\-::layer\-::\-Receptive\-Volume}!Base@{Base}}
+\index{Base@{Base}!ffnn::layer::ReceptiveVolume@{ffnn\-::layer\-::\-Receptive\-Volume}}
+\subsubsection[{Base}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Embedding\-Mode = Col\-Embedding$>$ using {\bf ffnn\-::layer\-::\-Receptive\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, {\bf Embedding\-Mode} $>$\-::{\bf Base} =  {\bf internal\-::\-Interface}$<$Value\-Type$>$}}\label{classffnn_1_1layer_1_1_receptive_volume_a99a6c14984f9d1cc731f1b1b6e00fb2c}
+
+
+Base type alias. 
+
+\hypertarget{classffnn_1_1layer_1_1_receptive_volume_a22ec68a5323233ca8bbcacc2b7387dbb}{\index{ffnn\-::layer\-::\-Receptive\-Volume@{ffnn\-::layer\-::\-Receptive\-Volume}!Bias\-Vector\-Type@{Bias\-Vector\-Type}}
+\index{Bias\-Vector\-Type@{Bias\-Vector\-Type}!ffnn::layer::ReceptiveVolume@{ffnn\-::layer\-::\-Receptive\-Volume}}
+\subsubsection[{Bias\-Vector\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Embedding\-Mode = Col\-Embedding$>$ typedef Eigen\-::\-Matrix$<$Value\-Type, Filter\-Count\-At\-Compile\-Time, 1, Eigen\-::\-Col\-Major$>$ {\bf ffnn\-::layer\-::\-Receptive\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, {\bf Embedding\-Mode} $>$\-::{\bf Bias\-Vector\-Type}}}\label{classffnn_1_1layer_1_1_receptive_volume_a22ec68a5323233ca8bbcacc2b7387dbb}
+
+
+Bias vector type standardization. 
+
+\hypertarget{classffnn_1_1layer_1_1_receptive_volume_ab0bd7607040aa08bf9cdfcc30e2794ef}{\index{ffnn\-::layer\-::\-Receptive\-Volume@{ffnn\-::layer\-::\-Receptive\-Volume}!Dim\-Type@{Dim\-Type}}
+\index{Dim\-Type@{Dim\-Type}!ffnn::layer::ReceptiveVolume@{ffnn\-::layer\-::\-Receptive\-Volume}}
+\subsubsection[{Dim\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Embedding\-Mode = Col\-Embedding$>$ typedef {\bf Base\-::\-Dim\-Type} {\bf ffnn\-::layer\-::\-Receptive\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, {\bf Embedding\-Mode} $>$\-::{\bf Dim\-Type}}}\label{classffnn_1_1layer_1_1_receptive_volume_ab0bd7607040aa08bf9cdfcc30e2794ef}
+
+
+Dimension type standardization. 
+
+\hypertarget{classffnn_1_1layer_1_1_receptive_volume_a7c97795baaf3c9b1e7db3cb3841d8829}{\index{ffnn\-::layer\-::\-Receptive\-Volume@{ffnn\-::layer\-::\-Receptive\-Volume}!Filter\-Bank\-Type@{Filter\-Bank\-Type}}
+\index{Filter\-Bank\-Type@{Filter\-Bank\-Type}!ffnn::layer::ReceptiveVolume@{ffnn\-::layer\-::\-Receptive\-Volume}}
+\subsubsection[{Filter\-Bank\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Embedding\-Mode = Col\-Embedding$>$ typedef std\-::vector$<${\bf Kernel\-Matrix\-Type}, Eigen\-::aligned\-\_\-allocator$<$Value\-Type$>$ $>$ {\bf ffnn\-::layer\-::\-Receptive\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, {\bf Embedding\-Mode} $>$\-::{\bf Filter\-Bank\-Type}}}\label{classffnn_1_1layer_1_1_receptive_volume_a7c97795baaf3c9b1e7db3cb3841d8829}
+
+
+Filter collection type standardization. 
+
+\hypertarget{classffnn_1_1layer_1_1_receptive_volume_af207f604ba81e52546c400dd85de014f}{\index{ffnn\-::layer\-::\-Receptive\-Volume@{ffnn\-::layer\-::\-Receptive\-Volume}!Kernel\-Matrix\-Type@{Kernel\-Matrix\-Type}}
+\index{Kernel\-Matrix\-Type@{Kernel\-Matrix\-Type}!ffnn::layer::ReceptiveVolume@{ffnn\-::layer\-::\-Receptive\-Volume}}
+\subsubsection[{Kernel\-Matrix\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Embedding\-Mode = Col\-Embedding$>$ typedef Eigen\-::\-Matrix$<$Value\-Type, {\bf Embedding\-Mode} == {\bf Col\-Embedding} ? {\bf P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-P\-A\-I\-R}(Height\-At\-Compile\-Time, Depth\-At\-Compile\-Time) \-: Height\-At\-Compile\-Time, {\bf Embedding\-Mode} == {\bf Row\-Embedding} ? {\bf P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-P\-A\-I\-R}(Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time) \-: Width\-At\-Compile\-Time, {\bf Embedding\-Mode} == {\bf Col\-Embedding} ? Eigen\-::\-Col\-Major \-: Eigen\-::\-Row\-Major$>$ {\bf ffnn\-::layer\-::\-Receptive\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, {\bf Embedding\-Mode} $>$\-::{\bf Kernel\-Matrix\-Type}}}\label{classffnn_1_1layer_1_1_receptive_volume_af207f604ba81e52546c400dd85de014f}
+
+
+Filter kernel matrix standardization. 
+
+\hypertarget{classffnn_1_1layer_1_1_receptive_volume_a1844c5ef59193938758e778eb0530ba6}{\index{ffnn\-::layer\-::\-Receptive\-Volume@{ffnn\-::layer\-::\-Receptive\-Volume}!Offset\-Type@{Offset\-Type}}
+\index{Offset\-Type@{Offset\-Type}!ffnn::layer::ReceptiveVolume@{ffnn\-::layer\-::\-Receptive\-Volume}}
+\subsubsection[{Offset\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Embedding\-Mode = Col\-Embedding$>$ typedef {\bf Base\-::\-Offset\-Type} {\bf ffnn\-::layer\-::\-Receptive\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, {\bf Embedding\-Mode} $>$\-::{\bf Offset\-Type}}}\label{classffnn_1_1layer_1_1_receptive_volume_a1844c5ef59193938758e778eb0530ba6}
+
+
+Offset type standardization. 
+
+\hypertarget{classffnn_1_1layer_1_1_receptive_volume_a4b3e846caf0136f173b3e0ceff912eac}{\index{ffnn\-::layer\-::\-Receptive\-Volume@{ffnn\-::layer\-::\-Receptive\-Volume}!Scalar\-Type@{Scalar\-Type}}
+\index{Scalar\-Type@{Scalar\-Type}!ffnn::layer::ReceptiveVolume@{ffnn\-::layer\-::\-Receptive\-Volume}}
+\subsubsection[{Scalar\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Embedding\-Mode = Col\-Embedding$>$ typedef {\bf Base\-::\-Scalar\-Type} {\bf ffnn\-::layer\-::\-Receptive\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, {\bf Embedding\-Mode} $>$\-::{\bf Scalar\-Type}}}\label{classffnn_1_1layer_1_1_receptive_volume_a4b3e846caf0136f173b3e0ceff912eac}
+
+
+Scalar type standardization. 
+
+\hypertarget{classffnn_1_1layer_1_1_receptive_volume_a3e9853931ec53fae609bb3fef11fa325}{\index{ffnn\-::layer\-::\-Receptive\-Volume@{ffnn\-::layer\-::\-Receptive\-Volume}!Size\-Type@{Size\-Type}}
+\index{Size\-Type@{Size\-Type}!ffnn::layer::ReceptiveVolume@{ffnn\-::layer\-::\-Receptive\-Volume}}
+\subsubsection[{Size\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Embedding\-Mode = Col\-Embedding$>$ typedef {\bf Base\-::\-Size\-Type} {\bf ffnn\-::layer\-::\-Receptive\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, {\bf Embedding\-Mode} $>$\-::{\bf Size\-Type}}}\label{classffnn_1_1layer_1_1_receptive_volume_a3e9853931ec53fae609bb3fef11fa325}
+
+
+Size-\/type standardization. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classffnn_1_1layer_1_1_receptive_volume_ac6196e0bdd72e485c5cddd77cb8dc7ef}{\index{ffnn\-::layer\-::\-Receptive\-Volume@{ffnn\-::layer\-::\-Receptive\-Volume}!Receptive\-Volume@{Receptive\-Volume}}
+\index{Receptive\-Volume@{Receptive\-Volume}!ffnn::layer::ReceptiveVolume@{ffnn\-::layer\-::\-Receptive\-Volume}}
+\subsubsection[{Receptive\-Volume}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Embedding\-Mode = Col\-Embedding$>$ {\bf ffnn\-::layer\-::\-Receptive\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, {\bf Embedding\-Mode} $>$\-::{\bf Receptive\-Volume} (
+\begin{DoxyParamCaption}
+\item[{const {\bf Dim\-Type} \&}]{input\-\_\-dim = {\ttfamily {\bf Dim\-Type}(HeightAtCompileTime,~WidthAtCompileTime,~DepthAtCompileTime)}, }
+\item[{{\bf Size\-Type}}]{filter\-\_\-count = {\ttfamily FilterCountAtCompileTime}, }
+\item[{const {\bf Parameters} \&}]{config = {\ttfamily {\bf Parameters}()}}
+\end{DoxyParamCaption}
+)}}\label{classffnn_1_1layer_1_1_receptive_volume_ac6196e0bdd72e485c5cddd77cb8dc7ef}
+\hypertarget{classffnn_1_1layer_1_1_receptive_volume_a3d0202e34f98d891958a40c957128c02}{\index{ffnn\-::layer\-::\-Receptive\-Volume@{ffnn\-::layer\-::\-Receptive\-Volume}!$\sim$\-Receptive\-Volume@{$\sim$\-Receptive\-Volume}}
+\index{$\sim$\-Receptive\-Volume@{$\sim$\-Receptive\-Volume}!ffnn::layer::ReceptiveVolume@{ffnn\-::layer\-::\-Receptive\-Volume}}
+\subsubsection[{$\sim$\-Receptive\-Volume}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Embedding\-Mode = Col\-Embedding$>$ virtual {\bf ffnn\-::layer\-::\-Receptive\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, {\bf Embedding\-Mode} $>$\-::$\sim${\bf Receptive\-Volume} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_receptive_volume_a3d0202e34f98d891958a40c957128c02}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classffnn_1_1layer_1_1_receptive_volume_a58a22d009cc7da6aa08a9e87f81a4eb3}{\index{ffnn\-::layer\-::\-Receptive\-Volume@{ffnn\-::layer\-::\-Receptive\-Volume}!backward@{backward}}
+\index{backward@{backward}!ffnn::layer::ReceptiveVolume@{ffnn\-::layer\-::\-Receptive\-Volume}}
+\subsubsection[{backward}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Embedding\-Mode = Col\-Embedding$>$ template$<$typename Input\-Block\-Type , typename Forward\-Error\-Block\-Type $>$ void {\bf ffnn\-::layer\-::\-Receptive\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, {\bf Embedding\-Mode} $>$\-::backward (
+\begin{DoxyParamCaption}
+\item[{const Eigen\-::\-Matrix\-Base$<$ Input\-Block\-Type $>$ \&}]{input, }
+\item[{const Eigen\-::\-Matrix\-Base$<$ Forward\-Error\-Block\-Type $>$ \&}]{error}
+\end{DoxyParamCaption}
+)}}\label{classffnn_1_1layer_1_1_receptive_volume_a58a22d009cc7da6aa08a9e87f81a4eb3}
+\hypertarget{classffnn_1_1layer_1_1_receptive_volume_ab4ff3f2b9bc68dfb56d8f01c53a664d8}{\index{ffnn\-::layer\-::\-Receptive\-Volume@{ffnn\-::layer\-::\-Receptive\-Volume}!forward@{forward}}
+\index{forward@{forward}!ffnn::layer::ReceptiveVolume@{ffnn\-::layer\-::\-Receptive\-Volume}}
+\subsubsection[{forward}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Embedding\-Mode = Col\-Embedding$>$ template$<$typename Input\-Block\-Type , typename Output\-Block\-Type $>$ void {\bf ffnn\-::layer\-::\-Receptive\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, {\bf Embedding\-Mode} $>$\-::forward (
+\begin{DoxyParamCaption}
+\item[{const Eigen\-::\-Matrix\-Base$<$ Input\-Block\-Type $>$ \&}]{input, }
+\item[{Eigen\-::\-Matrix\-Base$<$ Output\-Block\-Type $>$ const \&}]{output}
+\end{DoxyParamCaption}
+)}}\label{classffnn_1_1layer_1_1_receptive_volume_ab4ff3f2b9bc68dfb56d8f01c53a664d8}
+\hypertarget{classffnn_1_1layer_1_1_receptive_volume_a8fc32191a95ef94a0fa6d0366f69cf80}{\index{ffnn\-::layer\-::\-Receptive\-Volume@{ffnn\-::layer\-::\-Receptive\-Volume}!get\-Biases@{get\-Biases}}
+\index{get\-Biases@{get\-Biases}!ffnn::layer::ReceptiveVolume@{ffnn\-::layer\-::\-Receptive\-Volume}}
+\subsubsection[{get\-Biases}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Embedding\-Mode = Col\-Embedding$>$ const {\bf Bias\-Vector\-Type}\& {\bf ffnn\-::layer\-::\-Receptive\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, {\bf Embedding\-Mode} $>$\-::get\-Biases (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1_receptive_volume_a8fc32191a95ef94a0fa6d0366f69cf80}
+
+
+Exposes internal biasing weights. 
+
+\begin{DoxyReturn}{Returns}
+input-\/biasing vector 
+\end{DoxyReturn}
+\hypertarget{classffnn_1_1layer_1_1_receptive_volume_a12e9b530df6207faef15c49e63086047}{\index{ffnn\-::layer\-::\-Receptive\-Volume@{ffnn\-::layer\-::\-Receptive\-Volume}!get\-Filters@{get\-Filters}}
+\index{get\-Filters@{get\-Filters}!ffnn::layer::ReceptiveVolume@{ffnn\-::layer\-::\-Receptive\-Volume}}
+\subsubsection[{get\-Filters}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Embedding\-Mode = Col\-Embedding$>$ const {\bf Filter\-Bank\-Type}\& {\bf ffnn\-::layer\-::\-Receptive\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, {\bf Embedding\-Mode} $>$\-::get\-Filters (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1_receptive_volume_a12e9b530df6207faef15c49e63086047}
+
+
+Exposes internal filters. 
+
+\begin{DoxyReturn}{Returns}
+filter collection 
+\end{DoxyReturn}
+\hypertarget{classffnn_1_1layer_1_1_receptive_volume_a0fc5e18276c0f5d9f052d4a92349ca48}{\index{ffnn\-::layer\-::\-Receptive\-Volume@{ffnn\-::layer\-::\-Receptive\-Volume}!initialize@{initialize}}
+\index{initialize@{initialize}!ffnn::layer::ReceptiveVolume@{ffnn\-::layer\-::\-Receptive\-Volume}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Embedding\-Mode = Col\-Embedding$>$ bool {\bf ffnn\-::layer\-::\-Receptive\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, {\bf Embedding\-Mode} $>$\-::initialize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_receptive_volume_a0fc5e18276c0f5d9f052d4a92349ca48}
+
+
+Initialize the volume. 
+
+
+
+Implements \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a4159d9d163a0bd5287cc02c91b5baba8}{ffnn\-::layer\-::internal\-::\-Interface$<$ Value\-Type $>$}.
+
+\hypertarget{classffnn_1_1layer_1_1_receptive_volume_aebfd8f149057b061d6880669376175e3}{\index{ffnn\-::layer\-::\-Receptive\-Volume@{ffnn\-::layer\-::\-Receptive\-Volume}!load@{load}}
+\index{load@{load}!ffnn::layer::ReceptiveVolume@{ffnn\-::layer\-::\-Receptive\-Volume}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Embedding\-Mode = Col\-Embedding$>$ void {\bf ffnn\-::layer\-::\-Receptive\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, {\bf Embedding\-Mode} $>$\-::load (
+\begin{DoxyParamCaption}
+\item[{{\bf Input\-Archive} \&}]{ar, }
+\item[{{\bf Version\-Type}}]{version}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_receptive_volume_aebfd8f149057b061d6880669376175e3}
+
+
+Load serializer. 
+
+
+
+Reimplemented from \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a88b5bd86aafd361d3a84dc6cba211195}{ffnn\-::layer\-::internal\-::\-Interface$<$ Value\-Type $>$}.
+
+\hypertarget{classffnn_1_1layer_1_1_receptive_volume_affdd2d6fe24078deedb324c979cd08e4}{\index{ffnn\-::layer\-::\-Receptive\-Volume@{ffnn\-::layer\-::\-Receptive\-Volume}!reset@{reset}}
+\index{reset@{reset}!ffnn::layer::ReceptiveVolume@{ffnn\-::layer\-::\-Receptive\-Volume}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Embedding\-Mode = Col\-Embedding$>$ void {\bf ffnn\-::layer\-::\-Receptive\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, {\bf Embedding\-Mode} $>$\-::reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classffnn_1_1layer_1_1_receptive_volume_affdd2d6fe24078deedb324c979cd08e4}
+
+
+Reset filter weights and biases. 
+
+\hypertarget{classffnn_1_1layer_1_1_receptive_volume_a9f813e0c5c60d572a296b8ec1fc25086}{\index{ffnn\-::layer\-::\-Receptive\-Volume@{ffnn\-::layer\-::\-Receptive\-Volume}!save@{save}}
+\index{save@{save}!ffnn::layer::ReceptiveVolume@{ffnn\-::layer\-::\-Receptive\-Volume}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Embedding\-Mode = Col\-Embedding$>$ void {\bf ffnn\-::layer\-::\-Receptive\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, {\bf Embedding\-Mode} $>$\-::save (
+\begin{DoxyParamCaption}
+\item[{{\bf Output\-Archive} \&}]{ar, }
+\item[{{\bf Version\-Type}}]{version}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_receptive_volume_a9f813e0c5c60d572a296b8ec1fc25086}
+
+
+Save serializer. 
+
+
+
+Reimplemented from \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a417d6fda112fdffed8091b0ebd78ed97}{ffnn\-::layer\-::internal\-::\-Interface$<$ Value\-Type $>$}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/\hyperlink{receptive__volume_8h}{receptive\-\_\-volume.\-h}\end{DoxyCompactItemize}

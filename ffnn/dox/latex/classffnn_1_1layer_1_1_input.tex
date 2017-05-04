@@ -1,0 +1,167 @@
+\hypertarget{classffnn_1_1layer_1_1_input}{\section{ffnn\-:\-:layer\-:\-:Input$<$ Value\-Type, Network\-Inputs\-At\-Compile\-Time $>$ Class Template Reference}
+\label{classffnn_1_1layer_1_1_input}\index{ffnn\-::layer\-::\-Input$<$ Value\-Type, Network\-Inputs\-At\-Compile\-Time $>$@{ffnn\-::layer\-::\-Input$<$ Value\-Type, Network\-Inputs\-At\-Compile\-Time $>$}}
+}
+
+
+A layer which handles network inputs.  
+
+
+
+
+{\ttfamily \#include \char`\"{}input.\-h\char`\"{}}
+
+
+
+Inheritance diagram for ffnn\-:\-:layer\-:\-:Input$<$ Value\-Type, Network\-Inputs\-At\-Compile\-Time $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{classffnn_1_1layer_1_1_input__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ffnn\-:\-:layer\-:\-:Input$<$ Value\-Type, Network\-Inputs\-At\-Compile\-Time $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{classffnn_1_1layer_1_1_input__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \hyperlink{classffnn_1_1layer_1_1_input_a7d3eef885863ffbab29a2dba5b9d6e2a}{Base} = \hyperlink{classffnn_1_1layer_1_1_layer}{Layer}$<$ Value\-Type $>$
+\begin{DoxyCompactList}\small\item\em Base type alias. \end{DoxyCompactList}\item 
+typedef \hyperlink{classffnn_1_1layer_1_1_layer_aeccac281d4220fab9cebf78b004c09d1}{Base\-::\-Size\-Type} \hyperlink{classffnn_1_1layer_1_1_input_a0d5acc89e0b0ad61f148c18325fb46f4}{Size\-Type}
+\begin{DoxyCompactList}\small\item\em Size type standardization. \end{DoxyCompactList}\item 
+typedef \hyperlink{classffnn_1_1layer_1_1_layer_a0e35ffd6e0657856f3a75323b2db9fcb}{Base\-::\-Offset\-Type} \hyperlink{classffnn_1_1layer_1_1_input_af8249b647f4c1d4404ae98741b1686e1}{Offset\-Type}
+\begin{DoxyCompactList}\small\item\em Offset type standardization. \end{DoxyCompactList}\item 
+typedef \hyperlink{classffnn_1_1layer_1_1_layer_a104a0f51427df4e03f4ac9e1ce7f6083}{Base\-::\-Dim\-Type} \hyperlink{classffnn_1_1layer_1_1_input_aac96fcbfd3e10e7f5b1d7244e66e4399}{Dim\-Type}
+\begin{DoxyCompactList}\small\item\em Dimension type standardization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classffnn_1_1layer_1_1_input_af113b95968a3c2fc28ddf6bfd735038f}{Input} (\hyperlink{classffnn_1_1layer_1_1_input_a0d5acc89e0b0ad61f148c18325fb46f4}{Size\-Type} network\-\_\-input\-\_\-size=Network\-Inputs\-At\-Compile\-Time)
+\begin{DoxyCompactList}\small\item\em Setup constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classffnn_1_1layer_1_1_input_a13d4e0701fb7ba0881cb3fdc9238adb2}{$\sim$\-Input} ()
+\item 
+bool \hyperlink{classffnn_1_1layer_1_1_input_ac3de713973a8f67dc348a088ab6dbe1c}{initialize} ()
+\begin{DoxyCompactList}\small\item\em Initialize the layer. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Network\-Input\-Type $>$ }\\void \hyperlink{classffnn_1_1layer_1_1_input_a66b1272c6ed66097bf08c6d2058888cb}{operator$<$$<$} (const Network\-Input\-Type \&input) const 
+\begin{DoxyCompactList}\small\item\em Sets network input values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Network\-Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic$>$class ffnn\-::layer\-::\-Input$<$ Value\-Type, Network\-Inputs\-At\-Compile\-Time $>$}
+
+A layer which handles network inputs. 
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classffnn_1_1layer_1_1_input_a7d3eef885863ffbab29a2dba5b9d6e2a}{\index{ffnn\-::layer\-::\-Input@{ffnn\-::layer\-::\-Input}!Base@{Base}}
+\index{Base@{Base}!ffnn::layer::Input@{ffnn\-::layer\-::\-Input}}
+\subsubsection[{Base}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Network\-Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic$>$ using {\bf ffnn\-::layer\-::\-Input}$<$ Value\-Type, Network\-Inputs\-At\-Compile\-Time $>$\-::{\bf Base} =  {\bf Layer}$<$Value\-Type$>$}}\label{classffnn_1_1layer_1_1_input_a7d3eef885863ffbab29a2dba5b9d6e2a}
+
+
+Base type alias. 
+
+\hypertarget{classffnn_1_1layer_1_1_input_aac96fcbfd3e10e7f5b1d7244e66e4399}{\index{ffnn\-::layer\-::\-Input@{ffnn\-::layer\-::\-Input}!Dim\-Type@{Dim\-Type}}
+\index{Dim\-Type@{Dim\-Type}!ffnn::layer::Input@{ffnn\-::layer\-::\-Input}}
+\subsubsection[{Dim\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Network\-Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic$>$ typedef {\bf Base\-::\-Dim\-Type} {\bf ffnn\-::layer\-::\-Input}$<$ Value\-Type, Network\-Inputs\-At\-Compile\-Time $>$\-::{\bf Dim\-Type}}}\label{classffnn_1_1layer_1_1_input_aac96fcbfd3e10e7f5b1d7244e66e4399}
+
+
+Dimension type standardization. 
+
+\hypertarget{classffnn_1_1layer_1_1_input_af8249b647f4c1d4404ae98741b1686e1}{\index{ffnn\-::layer\-::\-Input@{ffnn\-::layer\-::\-Input}!Offset\-Type@{Offset\-Type}}
+\index{Offset\-Type@{Offset\-Type}!ffnn::layer::Input@{ffnn\-::layer\-::\-Input}}
+\subsubsection[{Offset\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Network\-Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic$>$ typedef {\bf Base\-::\-Offset\-Type} {\bf ffnn\-::layer\-::\-Input}$<$ Value\-Type, Network\-Inputs\-At\-Compile\-Time $>$\-::{\bf Offset\-Type}}}\label{classffnn_1_1layer_1_1_input_af8249b647f4c1d4404ae98741b1686e1}
+
+
+Offset type standardization. 
+
+\hypertarget{classffnn_1_1layer_1_1_input_a0d5acc89e0b0ad61f148c18325fb46f4}{\index{ffnn\-::layer\-::\-Input@{ffnn\-::layer\-::\-Input}!Size\-Type@{Size\-Type}}
+\index{Size\-Type@{Size\-Type}!ffnn::layer::Input@{ffnn\-::layer\-::\-Input}}
+\subsubsection[{Size\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Network\-Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic$>$ typedef {\bf Base\-::\-Size\-Type} {\bf ffnn\-::layer\-::\-Input}$<$ Value\-Type, Network\-Inputs\-At\-Compile\-Time $>$\-::{\bf Size\-Type}}}\label{classffnn_1_1layer_1_1_input_a0d5acc89e0b0ad61f148c18325fb46f4}
+
+
+Size type standardization. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classffnn_1_1layer_1_1_input_af113b95968a3c2fc28ddf6bfd735038f}{\index{ffnn\-::layer\-::\-Input@{ffnn\-::layer\-::\-Input}!Input@{Input}}
+\index{Input@{Input}!ffnn::layer::Input@{ffnn\-::layer\-::\-Input}}
+\subsubsection[{Input}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Network\-Inputs\-At\-Compile\-Time$>$ {\bf ffnn\-::layer\-::\-Input}$<$ Value\-Type, Network\-Inputs\-At\-Compile\-Time $>$\-::{\bf Input} (
+\begin{DoxyParamCaption}
+\item[{{\bf Size\-Type}}]{network\-\_\-input\-\_\-size = {\ttfamily NetworkInputsAtCompileTime}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classffnn_1_1layer_1_1_input_af113b95968a3c2fc28ddf6bfd735038f}
+
+
+Setup constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\-\_\-size} & number of inputs supplied to network by this \hyperlink{classffnn_1_1layer_1_1_layer}{Layer} \\
+\hline
+\end{DoxyParams}
+\hypertarget{classffnn_1_1layer_1_1_input_a13d4e0701fb7ba0881cb3fdc9238adb2}{\index{ffnn\-::layer\-::\-Input@{ffnn\-::layer\-::\-Input}!$\sim$\-Input@{$\sim$\-Input}}
+\index{$\sim$\-Input@{$\sim$\-Input}!ffnn::layer::Input@{ffnn\-::layer\-::\-Input}}
+\subsubsection[{$\sim$\-Input}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Network\-Inputs\-At\-Compile\-Time$>$ {\bf ffnn\-::layer\-::\-Input}$<$ Value\-Type, Network\-Inputs\-At\-Compile\-Time $>$\-::$\sim${\bf Input} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_input_a13d4e0701fb7ba0881cb3fdc9238adb2}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classffnn_1_1layer_1_1_input_ac3de713973a8f67dc348a088ab6dbe1c}{\index{ffnn\-::layer\-::\-Input@{ffnn\-::layer\-::\-Input}!initialize@{initialize}}
+\index{initialize@{initialize}!ffnn::layer::Input@{ffnn\-::layer\-::\-Input}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Network\-Inputs\-At\-Compile\-Time$>$ bool {\bf ffnn\-::layer\-::\-Input}$<$ Value\-Type, Network\-Inputs\-At\-Compile\-Time $>$\-::initialize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_input_ac3de713973a8f67dc348a088ab6dbe1c}
+
+
+Initialize the layer. 
+
+
+
+Reimplemented from \hyperlink{classffnn_1_1layer_1_1_layer_ae8a7daa81382a7965b8ab8861da7e522}{ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$}.
+
+\hypertarget{classffnn_1_1layer_1_1_input_a66b1272c6ed66097bf08c6d2058888cb}{\index{ffnn\-::layer\-::\-Input@{ffnn\-::layer\-::\-Input}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!ffnn::layer::Input@{ffnn\-::layer\-::\-Input}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Network\-Inputs\-At\-Compile\-Time$>$ template$<$typename Network\-Input\-Type $>$ void {\bf ffnn\-::layer\-::\-Input}$<$ Value\-Type, Network\-Inputs\-At\-Compile\-Time $>$\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{const Network\-Input\-Type \&}]{input}
+\end{DoxyParamCaption}
+) const}}\label{classffnn_1_1layer_1_1_input_a66b1272c6ed66097bf08c6d2058888cb}
+
+
+Sets network input values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & network input data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+{\ttfamily Network\-Input\-Type} must have the following methods
+\begin{DoxyItemize}
+\item {\ttfamily Network\-Input\-Type\-::data()} to expose a pointer to a contiguous memory block
+\item {\ttfamily Network\-Input\-Type\-::size()} to expose the size of the memory block 
+\end{DoxyItemize}
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+This method does not check element type correctness 
+\end{DoxyWarning}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/\hyperlink{input_8h}{input.\-h}\item 
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/impl/\hyperlink{input_8hpp}{input.\-hpp}\end{DoxyCompactItemize}

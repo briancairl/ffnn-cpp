@@ -1,0 +1,100 @@
+\hypertarget{classffnn_1_1neuron_1_1_soft_sign}{\section{ffnn\-:\-:neuron\-:\-:Soft\-Sign$<$ Value\-Type $>$ Class Template Reference}
+\label{classffnn_1_1neuron_1_1_soft_sign}\index{ffnn\-::neuron\-::\-Soft\-Sign$<$ Value\-Type $>$@{ffnn\-::neuron\-::\-Soft\-Sign$<$ Value\-Type $>$}}
+}
+
+
+A soft-\/sign activation unit.  
+
+
+
+
+{\ttfamily \#include \char`\"{}soft\-\_\-sign.\-h\char`\"{}}
+
+
+
+Inheritance diagram for ffnn\-:\-:neuron\-:\-:Soft\-Sign$<$ Value\-Type $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{classffnn_1_1neuron_1_1_soft_sign__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ffnn\-:\-:neuron\-:\-:Soft\-Sign$<$ Value\-Type $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{classffnn_1_1neuron_1_1_soft_sign__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classffnn_1_1neuron_1_1_soft_sign_ac6e67e51f8879c44940ef0c419911259}{fn} (const Value\-Type \&input, Value\-Type \&output)
+\begin{DoxyCompactList}\small\item\em Computes activation output. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classffnn_1_1neuron_1_1_soft_sign_a1284d2661377557e782547613e299736}{derivative} (const Value\-Type \&input, Value\-Type \&output) const 
+\begin{DoxyCompactList}\small\item\em Computes first-\/order activation derivative. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Value\-Type$>$class ffnn\-::neuron\-::\-Soft\-Sign$<$ Value\-Type $>$}
+
+A soft-\/sign activation unit. 
+
+Represents the mapping \[ f(x) = 1 / (1 + |x|^{2}) \] 
+
+\subsection{Member Function Documentation}
+\hypertarget{classffnn_1_1neuron_1_1_soft_sign_a1284d2661377557e782547613e299736}{\index{ffnn\-::neuron\-::\-Soft\-Sign@{ffnn\-::neuron\-::\-Soft\-Sign}!derivative@{derivative}}
+\index{derivative@{derivative}!ffnn::neuron::SoftSign@{ffnn\-::neuron\-::\-Soft\-Sign}}
+\subsubsection[{derivative}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type $>$ virtual void {\bf ffnn\-::neuron\-::\-Soft\-Sign}$<$ Value\-Type $>$\-::derivative (
+\begin{DoxyParamCaption}
+\item[{const Value\-Type \&}]{input, }
+\item[{Value\-Type \&}]{output}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classffnn_1_1neuron_1_1_soft_sign_a1284d2661377557e782547613e299736}
+
+
+Computes first-\/order activation derivative. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em input} & a scalar input value \\
+\hline
+\mbox{\tt in,out}  & {\em output} & a scalar output value \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classffnn_1_1neuron_1_1_neuron_ac779b179887e6b4505dec96d0319af10}{ffnn\-::neuron\-::\-Neuron$<$ Value\-Type $>$}.
+
+\hypertarget{classffnn_1_1neuron_1_1_soft_sign_ac6e67e51f8879c44940ef0c419911259}{\index{ffnn\-::neuron\-::\-Soft\-Sign@{ffnn\-::neuron\-::\-Soft\-Sign}!fn@{fn}}
+\index{fn@{fn}!ffnn::neuron::SoftSign@{ffnn\-::neuron\-::\-Soft\-Sign}}
+\subsubsection[{fn}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type $>$ virtual void {\bf ffnn\-::neuron\-::\-Soft\-Sign}$<$ Value\-Type $>$\-::fn (
+\begin{DoxyParamCaption}
+\item[{const Value\-Type \&}]{input, }
+\item[{Value\-Type \&}]{output}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classffnn_1_1neuron_1_1_soft_sign_ac6e67e51f8879c44940ef0c419911259}
+
+
+Computes activation output. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em input} & a scalar input value \\
+\hline
+\mbox{\tt in,out}  & {\em output} & a scalar output value \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classffnn_1_1neuron_1_1_neuron_a4f03bb4fe57ffa74d70e447237b9b8fb}{ffnn\-::neuron\-::\-Neuron$<$ Value\-Type $>$}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/neuron/\hyperlink{soft__sign_8h}{soft\-\_\-sign.\-h}\end{DoxyCompactItemize}

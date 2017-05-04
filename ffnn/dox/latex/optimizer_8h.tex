@@ -1,0 +1,66 @@
+\hypertarget{optimizer_8h}{\section{/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/optimizer/optimizer.h File Reference}
+\label{optimizer_8h}\index{/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/optimizer/optimizer.\-h@{/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/optimizer/optimizer.\-h}}
+}
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$boost/make\-\_\-shared.\-hpp$>$}\\*
+{\ttfamily \#include $<$boost/shared\-\_\-ptr.\-hpp$>$}\\*
+{\ttfamily \#include $<$ffnn/config/global.\-h$>$}\\*
+{\ttfamily \#include $<$ffnn/assert.\-h$>$}\\*
+Include dependency graph for optimizer.\-h\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{optimizer_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{optimizer_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classffnn_1_1optimizer_1_1_optimizer}{ffnn\-::optimizer\-::\-Optimizer$<$ Layer\-Type $>$}
+\begin{DoxyCompactList}\small\item\em A layer-\/wise optimizer visitor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespaceffnn}{ffnn}
+\item 
+\hyperlink{namespaceffnn_1_1optimizer}{ffnn\-::optimizer}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{optimizer_8h_aee9e218ffa031741b9f3f53cc580a09f}{F\-F\-N\-N\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-O\-P\-T\-I\-M\-I\-Z\-E\-R}(layer, opt)~friend class \-::ffnn\-::optimizer\-::opt$<$layer$>$;
+\begin{DoxyCompactList}\small\item\em Registers an optimizer to a Layer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{optimizer_8h_aee9e218ffa031741b9f3f53cc580a09f}{\index{optimizer.\-h@{optimizer.\-h}!F\-F\-N\-N\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-O\-P\-T\-I\-M\-I\-Z\-E\-R@{F\-F\-N\-N\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-O\-P\-T\-I\-M\-I\-Z\-E\-R}}
+\index{F\-F\-N\-N\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-O\-P\-T\-I\-M\-I\-Z\-E\-R@{F\-F\-N\-N\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-O\-P\-T\-I\-M\-I\-Z\-E\-R}!optimizer.h@{optimizer.\-h}}
+\subsubsection[{F\-F\-N\-N\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-O\-P\-T\-I\-M\-I\-Z\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\-F\-N\-N\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-O\-P\-T\-I\-M\-I\-Z\-E\-R(
+\begin{DoxyParamCaption}
+\item[{}]{layer, }
+\item[{}]{opt}
+\end{DoxyParamCaption}
+)~friend class \-::ffnn\-::optimizer\-::opt$<$layer$>$;}}\label{optimizer_8h_aee9e218ffa031741b9f3f53cc580a09f}
+
+
+Registers an optimizer to a Layer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em layer} & layer type name \\
+\hline
+{\em opt} & Optimizer type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+An optimizer must be registered to a Layer to allow use 
+\end{DoxyNote}

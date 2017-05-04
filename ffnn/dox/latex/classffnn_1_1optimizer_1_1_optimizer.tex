@@ -1,0 +1,255 @@
+\hypertarget{classffnn_1_1optimizer_1_1_optimizer}{\section{ffnn\-:\-:optimizer\-:\-:Optimizer$<$ Layer\-Type $>$ Class Template Reference}
+\label{classffnn_1_1optimizer_1_1_optimizer}\index{ffnn\-::optimizer\-::\-Optimizer$<$ Layer\-Type $>$@{ffnn\-::optimizer\-::\-Optimizer$<$ Layer\-Type $>$}}
+}
+
+
+A layer-\/wise optimizer visitor.  
+
+
+
+
+{\ttfamily \#include \char`\"{}optimizer.\-h\char`\"{}}
+
+
+
+Inheritance diagram for ffnn\-:\-:optimizer\-:\-:Optimizer$<$ Layer\-Type $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{classffnn_1_1optimizer_1_1_optimizer__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef boost\-::shared\-\_\-ptr\\*
+$<$ \hyperlink{classffnn_1_1optimizer_1_1_optimizer}{Optimizer} $>$ \hyperlink{classffnn_1_1optimizer_1_1_optimizer_ac03e7181934bf0c12a97fc67a60484ab}{Ptr}
+\begin{DoxyCompactList}\small\item\em Shared resource standardization. \end{DoxyCompactList}\item 
+typedef boost\-::shared\-\_\-ptr\\*
+$<$ const \hyperlink{classffnn_1_1optimizer_1_1_optimizer}{Optimizer} $>$ \hyperlink{classffnn_1_1optimizer_1_1_optimizer_a5d62c55f6f830e993ffe801fb17a1c3a}{Const\-Ptr}
+\begin{DoxyCompactList}\small\item\em Constant shared resource standardization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classffnn_1_1optimizer_1_1_optimizer_a5daf7f0191df7c672247e0d5a25fbafa}{Optimizer} (const std\-::string \&\hyperlink{classffnn_1_1optimizer_1_1_optimizer_a9c472d1e2ef75decdae1cf2db7582582}{name})
+\begin{DoxyCompactList}\small\item\em Naming constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classffnn_1_1optimizer_1_1_optimizer_ad16c1cab142fcc9542da0ef98df75f47}{$\sim$\-Optimizer} ()
+\item 
+virtual void \hyperlink{classffnn_1_1optimizer_1_1_optimizer_a4302b66ba9b013ae4833eca235ff306a}{initialize} (Layer\-Type \&layer)=0
+\begin{DoxyCompactList}\small\item\em Initializes the \hyperlink{classffnn_1_1optimizer_1_1_optimizer}{Optimizer}. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classffnn_1_1optimizer_1_1_optimizer_ade04e7582eb7b833713a9bd33e0e8346}{reset} (Layer\-Type \&layer)=0
+\begin{DoxyCompactList}\small\item\em Resetrs persistent \hyperlink{classffnn_1_1optimizer_1_1_optimizer}{Optimizer} states. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classffnn_1_1optimizer_1_1_optimizer_a80505cfdeba0a3c8d1db19a2821613f2}{forward} (Layer\-Type \&layer)=0
+\begin{DoxyCompactList}\small\item\em Computes one optimizer update step. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classffnn_1_1optimizer_1_1_optimizer_ab1f9b1cae01f93f53ecf7119bedb6369}{backward} (Layer\-Type \&layer)=0
+\begin{DoxyCompactList}\small\item\em Computes one optimizer update step. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classffnn_1_1optimizer_1_1_optimizer_a7c88c2794446e03ccd41628bb25d7a07}{update} (Layer\-Type \&layer)=0
+\begin{DoxyCompactList}\small\item\em Applies optimizer update. \end{DoxyCompactList}\item 
+const std\-::string \& \hyperlink{classffnn_1_1optimizer_1_1_optimizer_a9c472d1e2ef75decdae1cf2db7582582}{name} () const 
+\begin{DoxyCompactList}\small\item\em Exposes name of the optimizer. \end{DoxyCompactList}\item 
+void \hyperlink{classffnn_1_1optimizer_1_1_optimizer_ab9aa028897eed9617b6439e1ea56a1ee}{set\-Name} (const std\-::string \&\hyperlink{classffnn_1_1optimizer_1_1_optimizer_a9c472d1e2ef75decdae1cf2db7582582}{name})
+\begin{DoxyCompactList}\small\item\em Sets name of the optimizer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Layer\-Type$>$class ffnn\-::optimizer\-::\-Optimizer$<$ Layer\-Type $>$}
+
+A layer-\/wise optimizer visitor. 
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classffnn_1_1optimizer_1_1_optimizer_a5d62c55f6f830e993ffe801fb17a1c3a}{\index{ffnn\-::optimizer\-::\-Optimizer@{ffnn\-::optimizer\-::\-Optimizer}!Const\-Ptr@{Const\-Ptr}}
+\index{Const\-Ptr@{Const\-Ptr}!ffnn::optimizer::Optimizer@{ffnn\-::optimizer\-::\-Optimizer}}
+\subsubsection[{Const\-Ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Layer\-Type$>$ typedef boost\-::shared\-\_\-ptr$<$const {\bf Optimizer}$>$ {\bf ffnn\-::optimizer\-::\-Optimizer}$<$ Layer\-Type $>$\-::{\bf Const\-Ptr}}}\label{classffnn_1_1optimizer_1_1_optimizer_a5d62c55f6f830e993ffe801fb17a1c3a}
+
+
+Constant shared resource standardization. 
+
+\hypertarget{classffnn_1_1optimizer_1_1_optimizer_ac03e7181934bf0c12a97fc67a60484ab}{\index{ffnn\-::optimizer\-::\-Optimizer@{ffnn\-::optimizer\-::\-Optimizer}!Ptr@{Ptr}}
+\index{Ptr@{Ptr}!ffnn::optimizer::Optimizer@{ffnn\-::optimizer\-::\-Optimizer}}
+\subsubsection[{Ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Layer\-Type$>$ typedef boost\-::shared\-\_\-ptr$<${\bf Optimizer}$>$ {\bf ffnn\-::optimizer\-::\-Optimizer}$<$ Layer\-Type $>$\-::{\bf Ptr}}}\label{classffnn_1_1optimizer_1_1_optimizer_ac03e7181934bf0c12a97fc67a60484ab}
+
+
+Shared resource standardization. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classffnn_1_1optimizer_1_1_optimizer_a5daf7f0191df7c672247e0d5a25fbafa}{\index{ffnn\-::optimizer\-::\-Optimizer@{ffnn\-::optimizer\-::\-Optimizer}!Optimizer@{Optimizer}}
+\index{Optimizer@{Optimizer}!ffnn::optimizer::Optimizer@{ffnn\-::optimizer\-::\-Optimizer}}
+\subsubsection[{Optimizer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Layer\-Type$>$ {\bf ffnn\-::optimizer\-::\-Optimizer}$<$ Layer\-Type $>$\-::{\bf Optimizer} (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1optimizer_1_1_optimizer_a5daf7f0191df7c672247e0d5a25fbafa}
+
+
+Naming constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & name associated with the optimizer \\
+\hline
+\end{DoxyParams}
+\hypertarget{classffnn_1_1optimizer_1_1_optimizer_ad16c1cab142fcc9542da0ef98df75f47}{\index{ffnn\-::optimizer\-::\-Optimizer@{ffnn\-::optimizer\-::\-Optimizer}!$\sim$\-Optimizer@{$\sim$\-Optimizer}}
+\index{$\sim$\-Optimizer@{$\sim$\-Optimizer}!ffnn::optimizer::Optimizer@{ffnn\-::optimizer\-::\-Optimizer}}
+\subsubsection[{$\sim$\-Optimizer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Layer\-Type$>$ virtual {\bf ffnn\-::optimizer\-::\-Optimizer}$<$ Layer\-Type $>$\-::$\sim${\bf Optimizer} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classffnn_1_1optimizer_1_1_optimizer_ad16c1cab142fcc9542da0ef98df75f47}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classffnn_1_1optimizer_1_1_optimizer_ab1f9b1cae01f93f53ecf7119bedb6369}{\index{ffnn\-::optimizer\-::\-Optimizer@{ffnn\-::optimizer\-::\-Optimizer}!backward@{backward}}
+\index{backward@{backward}!ffnn::optimizer::Optimizer@{ffnn\-::optimizer\-::\-Optimizer}}
+\subsubsection[{backward}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Layer\-Type$>$ virtual bool {\bf ffnn\-::optimizer\-::\-Optimizer}$<$ Layer\-Type $>$\-::backward (
+\begin{DoxyParamCaption}
+\item[{Layer\-Type \&}]{layer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classffnn_1_1optimizer_1_1_optimizer_ab1f9b1cae01f93f53ecf7119bedb6369}
+
+
+Computes one optimizer update step. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em layer} & Layer to optimize \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & if optimizer setp was successful \\
+\hline
+{\em false} & otherwise \\
+\hline
+\end{DoxyRetVals}
+
+
+Implemented in \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_5f7b01db2ae4d39760d70ee323649a60_a216318398f796e0b2a2522a45a4441be}{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$}, \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_sparsely_connected_3_01_value_type_00_e6c27913ab0d90f52f73031aa88c19bf_a21e3b66b2d83b356b4534cf6d789fa18}{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$}, and \hyperlink{classffnn_1_1optimizer_1_1_none_a1b8fb0b29f3f0afccc557f6b486fb3fe}{ffnn\-::optimizer\-::\-None$<$ Layer\-Type $>$}.
+
+\hypertarget{classffnn_1_1optimizer_1_1_optimizer_a80505cfdeba0a3c8d1db19a2821613f2}{\index{ffnn\-::optimizer\-::\-Optimizer@{ffnn\-::optimizer\-::\-Optimizer}!forward@{forward}}
+\index{forward@{forward}!ffnn::optimizer::Optimizer@{ffnn\-::optimizer\-::\-Optimizer}}
+\subsubsection[{forward}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Layer\-Type$>$ virtual bool {\bf ffnn\-::optimizer\-::\-Optimizer}$<$ Layer\-Type $>$\-::forward (
+\begin{DoxyParamCaption}
+\item[{Layer\-Type \&}]{layer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classffnn_1_1optimizer_1_1_optimizer_a80505cfdeba0a3c8d1db19a2821613f2}
+
+
+Computes one optimizer update step. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em layer} & Layer to optimize \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & if optimizer setp was successful \\
+\hline
+{\em false} & otherwise \\
+\hline
+\end{DoxyRetVals}
+
+
+Implemented in \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_5f7b01db2ae4d39760d70ee323649a60_afa8fe46160d16887fc7abb4de34a65e5}{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$}, \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_sparsely_connected_3_01_value_type_00_e6c27913ab0d90f52f73031aa88c19bf_a7e9882cd69c5d4ee64f5614614e9d96c}{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$}, and \hyperlink{classffnn_1_1optimizer_1_1_none_a4aa65aa33dc45fa3b5d30e7f2a7169f2}{ffnn\-::optimizer\-::\-None$<$ Layer\-Type $>$}.
+
+\hypertarget{classffnn_1_1optimizer_1_1_optimizer_a4302b66ba9b013ae4833eca235ff306a}{\index{ffnn\-::optimizer\-::\-Optimizer@{ffnn\-::optimizer\-::\-Optimizer}!initialize@{initialize}}
+\index{initialize@{initialize}!ffnn::optimizer::Optimizer@{ffnn\-::optimizer\-::\-Optimizer}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Layer\-Type$>$ virtual void {\bf ffnn\-::optimizer\-::\-Optimizer}$<$ Layer\-Type $>$\-::initialize (
+\begin{DoxyParamCaption}
+\item[{Layer\-Type \&}]{layer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classffnn_1_1optimizer_1_1_optimizer_a4302b66ba9b013ae4833eca235ff306a}
+
+
+Initializes the \hyperlink{classffnn_1_1optimizer_1_1_optimizer}{Optimizer}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em layer} & Layer to optimize \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classffnn_1_1optimizer_1_1_adam_3_01layer_1_1_fully_connected_3_01_value_type_00_01_inputs_at_co08ce471fd3ee7441a350cc42cfd35bcd_aa67f949f7a1228c221d06b1b1e03c28b}{ffnn\-::optimizer\-::\-Adam$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$}, \hyperlink{classffnn_1_1optimizer_1_1_adam_3_01layer_1_1_sparsely_connected_3_01_value_type_00_01_inputs_at5101e46d32858ec2169acdeede08d723_a3529c6f6fb1befc882cc3ae17c00ba5a}{ffnn\-::optimizer\-::\-Adam$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$}, \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_5f7b01db2ae4d39760d70ee323649a60_a2e152e94571b7948b514c9d4cbd70504}{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$}, \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_sparsely_connected_3_01_value_type_00_e6c27913ab0d90f52f73031aa88c19bf_ac3fa00e4febe86906ff6045fe77777b0}{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$}, and \hyperlink{classffnn_1_1optimizer_1_1_none_a976eb3fe07f8c23a81851e7af4169ec8}{ffnn\-::optimizer\-::\-None$<$ Layer\-Type $>$}.
+
+\hypertarget{classffnn_1_1optimizer_1_1_optimizer_a9c472d1e2ef75decdae1cf2db7582582}{\index{ffnn\-::optimizer\-::\-Optimizer@{ffnn\-::optimizer\-::\-Optimizer}!name@{name}}
+\index{name@{name}!ffnn::optimizer::Optimizer@{ffnn\-::optimizer\-::\-Optimizer}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Layer\-Type$>$ const std\-::string\& {\bf ffnn\-::optimizer\-::\-Optimizer}$<$ Layer\-Type $>$\-::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1optimizer_1_1_optimizer_a9c472d1e2ef75decdae1cf2db7582582}
+
+
+Exposes name of the optimizer. 
+
+
+
+Referenced by ffnn\-::optimizer\-::\-Optimizer$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::set\-Name().
+
+\hypertarget{classffnn_1_1optimizer_1_1_optimizer_ade04e7582eb7b833713a9bd33e0e8346}{\index{ffnn\-::optimizer\-::\-Optimizer@{ffnn\-::optimizer\-::\-Optimizer}!reset@{reset}}
+\index{reset@{reset}!ffnn::optimizer::Optimizer@{ffnn\-::optimizer\-::\-Optimizer}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Layer\-Type$>$ virtual void {\bf ffnn\-::optimizer\-::\-Optimizer}$<$ Layer\-Type $>$\-::reset (
+\begin{DoxyParamCaption}
+\item[{Layer\-Type \&}]{layer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classffnn_1_1optimizer_1_1_optimizer_ade04e7582eb7b833713a9bd33e0e8346}
+
+
+Resetrs persistent \hyperlink{classffnn_1_1optimizer_1_1_optimizer}{Optimizer} states. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em layer} & Layer to optimize \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_5f7b01db2ae4d39760d70ee323649a60_a8317088f22bb86f204108a82f9233844}{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$}, \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_sparsely_connected_3_01_value_type_00_e6c27913ab0d90f52f73031aa88c19bf_a61e4190921d10b1ec15f0a710b12df22}{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$}, and \hyperlink{classffnn_1_1optimizer_1_1_none_a10f714488a57b139b91a03939a8809ac}{ffnn\-::optimizer\-::\-None$<$ Layer\-Type $>$}.
+
+\hypertarget{classffnn_1_1optimizer_1_1_optimizer_ab9aa028897eed9617b6439e1ea56a1ee}{\index{ffnn\-::optimizer\-::\-Optimizer@{ffnn\-::optimizer\-::\-Optimizer}!set\-Name@{set\-Name}}
+\index{set\-Name@{set\-Name}!ffnn::optimizer::Optimizer@{ffnn\-::optimizer\-::\-Optimizer}}
+\subsubsection[{set\-Name}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Layer\-Type$>$ void {\bf ffnn\-::optimizer\-::\-Optimizer}$<$ Layer\-Type $>$\-::set\-Name (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1optimizer_1_1_optimizer_ab9aa028897eed9617b6439e1ea56a1ee}
+
+
+Sets name of the optimizer. 
+
+\hypertarget{classffnn_1_1optimizer_1_1_optimizer_a7c88c2794446e03ccd41628bb25d7a07}{\index{ffnn\-::optimizer\-::\-Optimizer@{ffnn\-::optimizer\-::\-Optimizer}!update@{update}}
+\index{update@{update}!ffnn::optimizer::Optimizer@{ffnn\-::optimizer\-::\-Optimizer}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Layer\-Type$>$ virtual bool {\bf ffnn\-::optimizer\-::\-Optimizer}$<$ Layer\-Type $>$\-::update (
+\begin{DoxyParamCaption}
+\item[{Layer\-Type \&}]{layer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classffnn_1_1optimizer_1_1_optimizer_a7c88c2794446e03ccd41628bb25d7a07}
+
+
+Applies optimizer update. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em layer} & Layer to optimize \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & if optimizer update was applied successfully \\
+\hline
+{\em false} & otherwise \\
+\hline
+\end{DoxyRetVals}
+
+
+Implemented in \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_sparsely_connected_3_01_value_type_00_e6c27913ab0d90f52f73031aa88c19bf_ada280929e93a2d12f0bc21e9077e75a1}{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$}, \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_5f7b01db2ae4d39760d70ee323649a60_a4e15c26f4b561a8ea3ca3de3b324e1cf}{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$}, \hyperlink{classffnn_1_1optimizer_1_1_adam_3_01layer_1_1_fully_connected_3_01_value_type_00_01_inputs_at_co08ce471fd3ee7441a350cc42cfd35bcd_ad42586e39195fc9a72057f20b657f8be}{ffnn\-::optimizer\-::\-Adam$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$}, \hyperlink{classffnn_1_1optimizer_1_1_adam_3_01layer_1_1_sparsely_connected_3_01_value_type_00_01_inputs_at5101e46d32858ec2169acdeede08d723_aaa3b2eb55a9d80d51330c132df65214b}{ffnn\-::optimizer\-::\-Adam$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$}, and \hyperlink{classffnn_1_1optimizer_1_1_none_aa2d59b906b49fb976b50a810479637fd}{ffnn\-::optimizer\-::\-None$<$ Layer\-Type $>$}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/optimizer/\hyperlink{optimizer_8h}{optimizer.\-h}\end{DoxyCompactItemize}

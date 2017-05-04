@@ -1,0 +1,76 @@
+\hypertarget{serializable_8h}{\section{/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/internal/traits/serializable.h File Reference}
+\label{serializable_8h}\index{/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/internal/traits/serializable.\-h@{/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/internal/traits/serializable.\-h}}
+}
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$ffnn/config/global.\-h$>$}\\*
+Include dependency graph for serializable.\-h\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{serializable_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{serializable_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classffnn_1_1traits_1_1_serializable}{ffnn\-::traits\-::\-Serializable}
+\begin{DoxyCompactList}\small\item\em An object which can be saved and loaded. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespaceffnn}{ffnn}
+\item 
+\hyperlink{namespaceffnn_1_1traits}{ffnn\-::traits}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{serializable_8h_a3937bc18361c33fe981fe2725f70ebc5}{F\-F\-N\-N\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-S\-E\-R\-I\-A\-L\-I\-Z\-A\-B\-L\-E}(object)
+\begin{DoxyCompactList}\small\item\em Imbues an object with objects/types for serialization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Serializable $>$ }\\void \hyperlink{namespaceffnn_a1d292f830b9e27ce3965b0c18231b7fc}{ffnn\-::save} (std\-::ostream \&os, const Serializable \&object, const typename Serializable\-::\-Version\-Type version=0)
+\item 
+{\footnotesize template$<$typename Serializable $>$ }\\void \hyperlink{namespaceffnn_a365753310c86d8142fa5b785cc16004a}{ffnn\-::load} (std\-::istream \&is, Serializable \&object, const typename Serializable\-::\-Version\-Type version=0)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{serializable_8h_a3937bc18361c33fe981fe2725f70ebc5}{\index{serializable.\-h@{serializable.\-h}!F\-F\-N\-N\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-S\-E\-R\-I\-A\-L\-I\-Z\-A\-B\-L\-E@{F\-F\-N\-N\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-S\-E\-R\-I\-A\-L\-I\-Z\-A\-B\-L\-E}}
+\index{F\-F\-N\-N\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-S\-E\-R\-I\-A\-L\-I\-Z\-A\-B\-L\-E@{F\-F\-N\-N\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-S\-E\-R\-I\-A\-L\-I\-Z\-A\-B\-L\-E}!serializable.h@{serializable.\-h}}
+\subsubsection[{F\-F\-N\-N\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-S\-E\-R\-I\-A\-L\-I\-Z\-A\-B\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\-F\-N\-N\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-S\-E\-R\-I\-A\-L\-I\-Z\-A\-B\-L\-E(
+\begin{DoxyParamCaption}
+\item[{}]{object}
+\end{DoxyParamCaption}
+)}}\label{serializable_8h_a3937bc18361c33fe981fe2725f70ebc5}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+typedef ::ffnn::traits::Serializable::VersionType VersionType;\(\backslash\)
+  typedef ::ffnn::traits::Serializable::InputArchive InputArchive;\(\backslash\)
+  typedef ::ffnn::traits::Serializable::OutputArchive OutputArchive;\(\backslash\)
+  template<typename SerializableType>\(\backslash\)
+    friend \hyperlink{namespaceffnn_a1d292f830b9e27ce3965b0c18231b7fc}{void ::ffnn::save}(std::ostream& os,\(\backslash\)
+                             \textcolor{keyword}{const} SerializableType& \textcolor{keywordtype}{object},\(\backslash\)
+                             \textcolor{keyword}{const} \textcolor{keyword}{typename} SerializableType::VersionType version);\(\backslash\)
+  template<typename SerializableType>\(\backslash\)
+    friend \hyperlink{namespaceffnn_a365753310c86d8142fa5b785cc16004a}{void ::ffnn::load}(std::istream& is,\(\backslash\)
+                             SerializableType& \textcolor{keywordtype}{object},\(\backslash\)
+                             \textcolor{keyword}{const} \textcolor{keyword}{typename} SerializableType::VersionType version);
+\end{DoxyCode}
+
+
+Imbues an object with objects/types for serialization. 
+
+\begin{DoxyWarning}{Warning}
+Must be placed in the {\ttfamily protected} portion of a class definition 
+\end{DoxyWarning}

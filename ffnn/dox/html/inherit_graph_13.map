@@ -1,0 +1,4 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node2" href="$classffnn_1_1neuron_1_1modifier_1_1_dropout.html" title="ffnn::neuron::modifier\l::Dropout\&lt; ValueType,\l NeuronType, DistributionType,\l _P, _B \&gt;" alt="" coords="147,5,351,75"/>
+<area shape="rect" id="node3" href="$classffnn_1_1neuron_1_1modifier_1_1_soft_dropout.html" title="ffnn::neuron::modifier\l::SoftDropout\&lt; ValueType,\l NeuronType, DistributionType,\l _P, _B \&gt;" alt="" coords="147,99,351,170"/>
+</map>

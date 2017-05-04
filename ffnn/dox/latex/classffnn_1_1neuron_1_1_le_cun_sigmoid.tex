@@ -1,0 +1,105 @@
+\hypertarget{classffnn_1_1neuron_1_1_le_cun_sigmoid}{\section{ffnn\-:\-:neuron\-:\-:Le\-Cun\-Sigmoid$<$ Value\-Type $>$ Class Template Reference}
+\label{classffnn_1_1neuron_1_1_le_cun_sigmoid}\index{ffnn\-::neuron\-::\-Le\-Cun\-Sigmoid$<$ Value\-Type $>$@{ffnn\-::neuron\-::\-Le\-Cun\-Sigmoid$<$ Value\-Type $>$}}
+}
+
+
+A bipolar sigmoid activation unit scaled to prevent saturation.  
+
+
+
+
+{\ttfamily \#include \char`\"{}lecun\-\_\-sigmoid.\-h\char`\"{}}
+
+
+
+Inheritance diagram for ffnn\-:\-:neuron\-:\-:Le\-Cun\-Sigmoid$<$ Value\-Type $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{classffnn_1_1neuron_1_1_le_cun_sigmoid__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ffnn\-:\-:neuron\-:\-:Le\-Cun\-Sigmoid$<$ Value\-Type $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{classffnn_1_1neuron_1_1_le_cun_sigmoid__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classffnn_1_1neuron_1_1_le_cun_sigmoid_abac0c8e08b1289c288923fd8e6f12ce2}{fn} (const Value\-Type \&input, Value\-Type \&output)
+\begin{DoxyCompactList}\small\item\em Computes activation output. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classffnn_1_1neuron_1_1_le_cun_sigmoid_a4802deb108ab8ca6a67a4d7d55124fb2}{derivative} (const Value\-Type \&input, Value\-Type \&output) const 
+\begin{DoxyCompactList}\small\item\em Computes first-\/order activation derivative. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Value\-Type$>$class ffnn\-::neuron\-::\-Le\-Cun\-Sigmoid$<$ Value\-Type $>$}
+
+A bipolar sigmoid activation unit scaled to prevent saturation. 
+
+Represents the mapping \[ f(x) = 1.7159 * tanh(2/3 x) \]
+
+\begin{DoxyNote}{Note}
+ref\-: \href{http://yann.lecun.com/exdb/publis/pdf/lecun-98b.pdf}{\tt http\-://yann.\-lecun.\-com/exdb/publis/pdf/lecun-\/98b.\-pdf} 
+\end{DoxyNote}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classffnn_1_1neuron_1_1_le_cun_sigmoid_a4802deb108ab8ca6a67a4d7d55124fb2}{\index{ffnn\-::neuron\-::\-Le\-Cun\-Sigmoid@{ffnn\-::neuron\-::\-Le\-Cun\-Sigmoid}!derivative@{derivative}}
+\index{derivative@{derivative}!ffnn::neuron::LeCunSigmoid@{ffnn\-::neuron\-::\-Le\-Cun\-Sigmoid}}
+\subsubsection[{derivative}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type $>$ virtual void {\bf ffnn\-::neuron\-::\-Le\-Cun\-Sigmoid}$<$ Value\-Type $>$\-::derivative (
+\begin{DoxyParamCaption}
+\item[{const Value\-Type \&}]{input, }
+\item[{Value\-Type \&}]{output}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classffnn_1_1neuron_1_1_le_cun_sigmoid_a4802deb108ab8ca6a67a4d7d55124fb2}
+
+
+Computes first-\/order activation derivative. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em input} & a scalar input value \\
+\hline
+\mbox{\tt in,out}  & {\em output} & a scalar output value \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classffnn_1_1neuron_1_1_neuron_ac779b179887e6b4505dec96d0319af10}{ffnn\-::neuron\-::\-Neuron$<$ Value\-Type $>$}.
+
+\hypertarget{classffnn_1_1neuron_1_1_le_cun_sigmoid_abac0c8e08b1289c288923fd8e6f12ce2}{\index{ffnn\-::neuron\-::\-Le\-Cun\-Sigmoid@{ffnn\-::neuron\-::\-Le\-Cun\-Sigmoid}!fn@{fn}}
+\index{fn@{fn}!ffnn::neuron::LeCunSigmoid@{ffnn\-::neuron\-::\-Le\-Cun\-Sigmoid}}
+\subsubsection[{fn}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type $>$ virtual void {\bf ffnn\-::neuron\-::\-Le\-Cun\-Sigmoid}$<$ Value\-Type $>$\-::fn (
+\begin{DoxyParamCaption}
+\item[{const Value\-Type \&}]{input, }
+\item[{Value\-Type \&}]{output}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classffnn_1_1neuron_1_1_le_cun_sigmoid_abac0c8e08b1289c288923fd8e6f12ce2}
+
+
+Computes activation output. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em input} & a scalar input value \\
+\hline
+\mbox{\tt in,out}  & {\em output} & a scalar output value \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classffnn_1_1neuron_1_1_neuron_a4f03bb4fe57ffa74d70e447237b9b8fb}{ffnn\-::neuron\-::\-Neuron$<$ Value\-Type $>$}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/neuron/\hyperlink{lecun__sigmoid_8h}{lecun\-\_\-sigmoid.\-h}\end{DoxyCompactItemize}

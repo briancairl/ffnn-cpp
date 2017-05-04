@@ -1,0 +1,105 @@
+\hypertarget{structffnn_1_1aligned_1_1_map}{\section{ffnn\-:\-:aligned\-:\-:Map$<$ Matrix\-Type $>$ Struct Template Reference}
+\label{structffnn_1_1aligned_1_1_map}\index{ffnn\-::aligned\-::\-Map$<$ Matrix\-Type $>$@{ffnn\-::aligned\-::\-Map$<$ Matrix\-Type $>$}}
+}
+
+
+Aligned mem-\/mapped matrix/vector type wrapper.  
+
+
+
+
+{\ttfamily \#include \char`\"{}aligned\-\_\-types.\-h\char`\"{}}
+
+
+
+Inheritance diagram for ffnn\-:\-:aligned\-:\-:Map$<$ Matrix\-Type $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{structffnn_1_1aligned_1_1_map__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ffnn\-:\-:aligned\-:\-:Map$<$ Matrix\-Type $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{structffnn_1_1aligned_1_1_map__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \hyperlink{structffnn_1_1aligned_1_1_map_ae7cf0913401f02f960a7addcf5bd60bf}{Base} = \hyperlink{structffnn_1_1aligned_1_1_map_base}{Map\-Base}$<$ Matrix\-Type, typename Matrix\-Type\-::\-Scalar $>$
+\item 
+typedef boost\-::shared\-\_\-ptr$<$ \hyperlink{structffnn_1_1aligned_1_1_map}{Map} $>$ \hyperlink{structffnn_1_1aligned_1_1_map_afe68a9534e6614c3524e95c6cdcd50fc}{Ptr}
+\begin{DoxyCompactList}\small\item\em Shared resource standardization. \end{DoxyCompactList}\item 
+typedef boost\-::shared\-\_\-ptr\\*
+$<$ const \hyperlink{structffnn_1_1aligned_1_1_map}{Map} $>$ \hyperlink{structffnn_1_1aligned_1_1_map_ad9a5f18197cbcf6691a4ee07fa389cac}{Const\-Ptr}
+\begin{DoxyCompactList}\small\item\em Constant shared resource standardization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{structffnn_1_1aligned_1_1_map_afe68a9534e6614c3524e95c6cdcd50fc}{Map\-::\-Ptr} \hyperlink{structffnn_1_1aligned_1_1_map_af52aa0bd5ed9cc5e657c4694e781ebb5}{create} (typename Matrix\-Type\-::\-Scalar $\ast$data, typename Matrix\-Type\-::\-Index rows, typename Matrix\-Type\-::\-Index cols=1)
+\begin{DoxyCompactList}\small\item\em Creates a shared-\/resource pointer to a mapped vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Matrix\-Type$>$struct ffnn\-::aligned\-::\-Map$<$ Matrix\-Type $>$}
+
+Aligned mem-\/mapped matrix/vector type wrapper. 
+
+\subsection{Member Typedef Documentation}
+\hypertarget{structffnn_1_1aligned_1_1_map_ae7cf0913401f02f960a7addcf5bd60bf}{\index{ffnn\-::aligned\-::\-Map@{ffnn\-::aligned\-::\-Map}!Base@{Base}}
+\index{Base@{Base}!ffnn::aligned::Map@{ffnn\-::aligned\-::\-Map}}
+\subsubsection[{Base}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Matrix\-Type$>$ using {\bf ffnn\-::aligned\-::\-Map}$<$ Matrix\-Type $>$\-::{\bf Base} =  {\bf Map\-Base}$<$Matrix\-Type, typename Matrix\-Type\-::\-Scalar$>$}}\label{structffnn_1_1aligned_1_1_map_ae7cf0913401f02f960a7addcf5bd60bf}
+\hypertarget{structffnn_1_1aligned_1_1_map_ad9a5f18197cbcf6691a4ee07fa389cac}{\index{ffnn\-::aligned\-::\-Map@{ffnn\-::aligned\-::\-Map}!Const\-Ptr@{Const\-Ptr}}
+\index{Const\-Ptr@{Const\-Ptr}!ffnn::aligned::Map@{ffnn\-::aligned\-::\-Map}}
+\subsubsection[{Const\-Ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Matrix\-Type$>$ typedef boost\-::shared\-\_\-ptr$<$const {\bf Map}$>$ {\bf ffnn\-::aligned\-::\-Map}$<$ Matrix\-Type $>$\-::{\bf Const\-Ptr}}}\label{structffnn_1_1aligned_1_1_map_ad9a5f18197cbcf6691a4ee07fa389cac}
+
+
+Constant shared resource standardization. 
+
+\hypertarget{structffnn_1_1aligned_1_1_map_afe68a9534e6614c3524e95c6cdcd50fc}{\index{ffnn\-::aligned\-::\-Map@{ffnn\-::aligned\-::\-Map}!Ptr@{Ptr}}
+\index{Ptr@{Ptr}!ffnn::aligned::Map@{ffnn\-::aligned\-::\-Map}}
+\subsubsection[{Ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Matrix\-Type$>$ typedef boost\-::shared\-\_\-ptr$<${\bf Map}$>$ {\bf ffnn\-::aligned\-::\-Map}$<$ Matrix\-Type $>$\-::{\bf Ptr}}}\label{structffnn_1_1aligned_1_1_map_afe68a9534e6614c3524e95c6cdcd50fc}
+
+
+Shared resource standardization. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structffnn_1_1aligned_1_1_map_af52aa0bd5ed9cc5e657c4694e781ebb5}{\index{ffnn\-::aligned\-::\-Map@{ffnn\-::aligned\-::\-Map}!create@{create}}
+\index{create@{create}!ffnn::aligned::Map@{ffnn\-::aligned\-::\-Map}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Matrix\-Type$>$ static {\bf Map\-::\-Ptr} {\bf ffnn\-::aligned\-::\-Map}$<$ Matrix\-Type $>$\-::create (
+\begin{DoxyParamCaption}
+\item[{typename Matrix\-Type\-::\-Scalar $\ast$}]{data, }
+\item[{typename Matrix\-Type\-::\-Index}]{rows, }
+\item[{typename Matrix\-Type\-::\-Index}]{cols = {\ttfamily 1}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{structffnn_1_1aligned_1_1_map_af52aa0bd5ed9cc5e657c4694e781ebb5}
+
+
+Creates a shared-\/resource pointer to a mapped vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & pointer to first element of a raw buffer \\
+\hline
+{\em rows} & number of rows represented in the buffer \\
+\hline
+{\em cols} & number of collumns represented in the buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+shared-\/resource pointer 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/\hyperlink{aligned__types_8h}{aligned\-\_\-types.\-h}\end{DoxyCompactItemize}

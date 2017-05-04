@@ -1,0 +1,100 @@
+\hypertarget{classffnn_1_1neuron_1_1_linear}{\section{ffnn\-:\-:neuron\-:\-:Linear$<$ Value\-Type $>$ Class Template Reference}
+\label{classffnn_1_1neuron_1_1_linear}\index{ffnn\-::neuron\-::\-Linear$<$ Value\-Type $>$@{ffnn\-::neuron\-::\-Linear$<$ Value\-Type $>$}}
+}
+
+
+A linear activation unit.  
+
+
+
+
+{\ttfamily \#include \char`\"{}linear.\-h\char`\"{}}
+
+
+
+Inheritance diagram for ffnn\-:\-:neuron\-:\-:Linear$<$ Value\-Type $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classffnn_1_1neuron_1_1_linear__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ffnn\-:\-:neuron\-:\-:Linear$<$ Value\-Type $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classffnn_1_1neuron_1_1_linear__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classffnn_1_1neuron_1_1_linear_a4d92b666c3e0a81865be7d09c0c4016e}{fn} (const Value\-Type \&input, Value\-Type \&output)
+\begin{DoxyCompactList}\small\item\em Computes activation output. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classffnn_1_1neuron_1_1_linear_a4656398d6a4c1bda77d25adbad148ae9}{derivative} (const Value\-Type \&input, Value\-Type \&output) const 
+\begin{DoxyCompactList}\small\item\em Computes first-\/order activation derivative. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Value\-Type$>$class ffnn\-::neuron\-::\-Linear$<$ Value\-Type $>$}
+
+A linear activation unit. 
+
+Represents the mapping \[ f(x) = x \] 
+
+\subsection{Member Function Documentation}
+\hypertarget{classffnn_1_1neuron_1_1_linear_a4656398d6a4c1bda77d25adbad148ae9}{\index{ffnn\-::neuron\-::\-Linear@{ffnn\-::neuron\-::\-Linear}!derivative@{derivative}}
+\index{derivative@{derivative}!ffnn::neuron::Linear@{ffnn\-::neuron\-::\-Linear}}
+\subsubsection[{derivative}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type $>$ virtual void {\bf ffnn\-::neuron\-::\-Linear}$<$ Value\-Type $>$\-::derivative (
+\begin{DoxyParamCaption}
+\item[{const Value\-Type \&}]{input, }
+\item[{Value\-Type \&}]{output}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classffnn_1_1neuron_1_1_linear_a4656398d6a4c1bda77d25adbad148ae9}
+
+
+Computes first-\/order activation derivative. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em input} & a scalar input value \\
+\hline
+\mbox{\tt in,out}  & {\em output} & a scalar output value \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classffnn_1_1neuron_1_1_neuron_ac779b179887e6b4505dec96d0319af10}{ffnn\-::neuron\-::\-Neuron$<$ Value\-Type $>$}.
+
+\hypertarget{classffnn_1_1neuron_1_1_linear_a4d92b666c3e0a81865be7d09c0c4016e}{\index{ffnn\-::neuron\-::\-Linear@{ffnn\-::neuron\-::\-Linear}!fn@{fn}}
+\index{fn@{fn}!ffnn::neuron::Linear@{ffnn\-::neuron\-::\-Linear}}
+\subsubsection[{fn}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type $>$ virtual void {\bf ffnn\-::neuron\-::\-Linear}$<$ Value\-Type $>$\-::fn (
+\begin{DoxyParamCaption}
+\item[{const Value\-Type \&}]{input, }
+\item[{Value\-Type \&}]{output}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classffnn_1_1neuron_1_1_linear_a4d92b666c3e0a81865be7d09c0c4016e}
+
+
+Computes activation output. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em input} & a scalar input value \\
+\hline
+\mbox{\tt in,out}  & {\em output} & a scalar output value \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classffnn_1_1neuron_1_1_neuron_a4f03bb4fe57ffa74d70e447237b9b8fb}{ffnn\-::neuron\-::\-Neuron$<$ Value\-Type $>$}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/neuron/\hyperlink{linear_8h}{linear.\-h}\end{DoxyCompactItemize}

@@ -1,0 +1,4 @@
+<map id="ffnn::optimizer::Adam&lt; layer::SparselyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt; &gt;" name="ffnn::optimizer::Adam&lt; layer::SparselyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt; &gt;">
+<area shape="rect" id="node2" href="$classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_sparsely_connected_3_01_value_type_00_e6c27913ab0d90f52f73031aa88c19bf.html" title="ffnn::optimizer::Gradient\lDescent\&lt; layer::SparselyConnected\l\&lt; ValueType, InputsAtCompileTime,\l OutputsAtCompileTime \&gt; \&gt;" alt="" coords="288,5,523,75"/>
+<area shape="rect" id="node3" href="$classffnn_1_1optimizer_1_1_optimizer.html" title="ffnn::optimizer::Optimizer\l\&lt; layer::SparselyConnected\l\&lt; ValueType, InputsAtCompileTime,\l OutputsAtCompileTime \&gt; \&gt;" alt="" coords="5,5,240,75"/>
+</map>

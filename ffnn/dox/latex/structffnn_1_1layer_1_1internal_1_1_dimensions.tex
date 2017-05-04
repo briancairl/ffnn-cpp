@@ -1,0 +1,171 @@
+\hypertarget{structffnn_1_1layer_1_1internal_1_1_dimensions}{\section{ffnn\-:\-:layer\-:\-:internal\-:\-:Dimensions$<$ Size\-Type $>$ Struct Template Reference}
+\label{structffnn_1_1layer_1_1internal_1_1_dimensions}\index{ffnn\-::layer\-::internal\-::\-Dimensions$<$ Size\-Type $>$@{ffnn\-::layer\-::internal\-::\-Dimensions$<$ Size\-Type $>$}}
+}
+
+
+{\ttfamily \#include \char`\"{}dimensions.\-h\char`\"{}}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structffnn_1_1layer_1_1internal_1_1_dimensions_a44dfec485cbd9d3dc95ddd38319b1829}{Dimensions} ()
+\item 
+\hyperlink{structffnn_1_1layer_1_1internal_1_1_dimensions_a6c07d0cdfc92bb13c34a1712c1e9f58b}{Dimensions} (Size\-Type \hyperlink{structffnn_1_1layer_1_1internal_1_1_dimensions_a49348c4b65a649c9d55284e283bfa39e}{height}, Size\-Type \hyperlink{structffnn_1_1layer_1_1internal_1_1_dimensions_a1fac884bf9c7468e9408143195afc989}{width}=1, Size\-Type \hyperlink{structffnn_1_1layer_1_1internal_1_1_dimensions_a34216373e9d09bb79b05a90ef9cec53b}{depth}=1)
+\item 
+Size\-Type \hyperlink{structffnn_1_1layer_1_1internal_1_1_dimensions_a55225c7e571ffb20efc454767bc598e1}{size} () const 
+\item 
+bool \hyperlink{structffnn_1_1layer_1_1internal_1_1_dimensions_a62d2fa9411f32b8d2f3a197cf202ec53}{valid} () const 
+\item 
+\hyperlink{structffnn_1_1layer_1_1internal_1_1_dimensions_a9f9e33a5d3c0e148f394364ca61e2b66}{operator Size\-Type} () const 
+\item 
+void \hyperlink{structffnn_1_1layer_1_1internal_1_1_dimensions_aca4f4f99d5943256d7a4c66543839cb2}{operator=} (Size\-Type count)
+\item 
+void \hyperlink{structffnn_1_1layer_1_1internal_1_1_dimensions_a7c62d6ad721cbdaf3352e63c0541df48}{operator=} (const \hyperlink{structffnn_1_1layer_1_1internal_1_1_dimensions}{Dimensions} \&dim)
+\item 
+void \hyperlink{structffnn_1_1layer_1_1internal_1_1_dimensions_a7516722990cfea99e376f41fb95847cb}{save} (Output\-Archive \&ar, Version\-Type version) const 
+\begin{DoxyCompactList}\small\item\em Save serializer. \end{DoxyCompactList}\item 
+void \hyperlink{structffnn_1_1layer_1_1internal_1_1_dimensions_af342e32d3de83adb90abfb35991d8d32}{load} (Input\-Archive \&ar, Version\-Type version)
+\begin{DoxyCompactList}\small\item\em Load serializer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Size\-Type \hyperlink{structffnn_1_1layer_1_1internal_1_1_dimensions_a49348c4b65a649c9d55284e283bfa39e}{height}
+\item 
+Size\-Type \hyperlink{structffnn_1_1layer_1_1internal_1_1_dimensions_a1fac884bf9c7468e9408143195afc989}{width}
+\item 
+Size\-Type \hyperlink{structffnn_1_1layer_1_1internal_1_1_dimensions_a34216373e9d09bb79b05a90ef9cec53b}{depth}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structffnn_1_1layer_1_1internal_1_1_dimensions_a44dfec485cbd9d3dc95ddd38319b1829}{\index{ffnn\-::layer\-::internal\-::\-Dimensions@{ffnn\-::layer\-::internal\-::\-Dimensions}!Dimensions@{Dimensions}}
+\index{Dimensions@{Dimensions}!ffnn::layer::internal::Dimensions@{ffnn\-::layer\-::internal\-::\-Dimensions}}
+\subsubsection[{Dimensions}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Size\-Type $>$ {\bf ffnn\-::layer\-::internal\-::\-Dimensions}$<$ Size\-Type $>$\-::{\bf Dimensions} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structffnn_1_1layer_1_1internal_1_1_dimensions_a44dfec485cbd9d3dc95ddd38319b1829}
+\hypertarget{structffnn_1_1layer_1_1internal_1_1_dimensions_a6c07d0cdfc92bb13c34a1712c1e9f58b}{\index{ffnn\-::layer\-::internal\-::\-Dimensions@{ffnn\-::layer\-::internal\-::\-Dimensions}!Dimensions@{Dimensions}}
+\index{Dimensions@{Dimensions}!ffnn::layer::internal::Dimensions@{ffnn\-::layer\-::internal\-::\-Dimensions}}
+\subsubsection[{Dimensions}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Size\-Type $>$ {\bf ffnn\-::layer\-::internal\-::\-Dimensions}$<$ Size\-Type $>$\-::{\bf Dimensions} (
+\begin{DoxyParamCaption}
+\item[{Size\-Type}]{height, }
+\item[{Size\-Type}]{width = {\ttfamily 1}, }
+\item[{Size\-Type}]{depth = {\ttfamily 1}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{structffnn_1_1layer_1_1internal_1_1_dimensions_a6c07d0cdfc92bb13c34a1712c1e9f58b}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structffnn_1_1layer_1_1internal_1_1_dimensions_af342e32d3de83adb90abfb35991d8d32}{\index{ffnn\-::layer\-::internal\-::\-Dimensions@{ffnn\-::layer\-::internal\-::\-Dimensions}!load@{load}}
+\index{load@{load}!ffnn::layer::internal::Dimensions@{ffnn\-::layer\-::internal\-::\-Dimensions}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Size\-Type $>$ void {\bf ffnn\-::layer\-::internal\-::\-Dimensions}$<$ Size\-Type $>$\-::load (
+\begin{DoxyParamCaption}
+\item[{Input\-Archive \&}]{ar, }
+\item[{Version\-Type}]{version}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structffnn_1_1layer_1_1internal_1_1_dimensions_af342e32d3de83adb90abfb35991d8d32}
+
+
+Load serializer. 
+
+
+
+Referenced by ffnn\-::layer\-::internal\-::\-Interface$<$ Value\-Type $>$\-::load().
+
+\hypertarget{structffnn_1_1layer_1_1internal_1_1_dimensions_a9f9e33a5d3c0e148f394364ca61e2b66}{\index{ffnn\-::layer\-::internal\-::\-Dimensions@{ffnn\-::layer\-::internal\-::\-Dimensions}!operator Size\-Type@{operator Size\-Type}}
+\index{operator Size\-Type@{operator Size\-Type}!ffnn::layer::internal::Dimensions@{ffnn\-::layer\-::internal\-::\-Dimensions}}
+\subsubsection[{operator Size\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Size\-Type $>$ {\bf ffnn\-::layer\-::internal\-::\-Dimensions}$<$ Size\-Type $>$\-::operator Size\-Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{structffnn_1_1layer_1_1internal_1_1_dimensions_a9f9e33a5d3c0e148f394364ca61e2b66}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{structffnn_1_1layer_1_1internal_1_1_dimensions_a9f9e33a5d3c0e148f394364ca61e2b66_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{structffnn_1_1layer_1_1internal_1_1_dimensions_aca4f4f99d5943256d7a4c66543839cb2}{\index{ffnn\-::layer\-::internal\-::\-Dimensions@{ffnn\-::layer\-::internal\-::\-Dimensions}!operator=@{operator=}}
+\index{operator=@{operator=}!ffnn::layer::internal::Dimensions@{ffnn\-::layer\-::internal\-::\-Dimensions}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Size\-Type $>$ void {\bf ffnn\-::layer\-::internal\-::\-Dimensions}$<$ Size\-Type $>$\-::operator= (
+\begin{DoxyParamCaption}
+\item[{Size\-Type}]{count}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structffnn_1_1layer_1_1internal_1_1_dimensions_aca4f4f99d5943256d7a4c66543839cb2}
+\hypertarget{structffnn_1_1layer_1_1internal_1_1_dimensions_a7c62d6ad721cbdaf3352e63c0541df48}{\index{ffnn\-::layer\-::internal\-::\-Dimensions@{ffnn\-::layer\-::internal\-::\-Dimensions}!operator=@{operator=}}
+\index{operator=@{operator=}!ffnn::layer::internal::Dimensions@{ffnn\-::layer\-::internal\-::\-Dimensions}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Size\-Type $>$ void {\bf ffnn\-::layer\-::internal\-::\-Dimensions}$<$ Size\-Type $>$\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Dimensions}$<$ Size\-Type $>$ \&}]{dim}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structffnn_1_1layer_1_1internal_1_1_dimensions_a7c62d6ad721cbdaf3352e63c0541df48}
+\hypertarget{structffnn_1_1layer_1_1internal_1_1_dimensions_a7516722990cfea99e376f41fb95847cb}{\index{ffnn\-::layer\-::internal\-::\-Dimensions@{ffnn\-::layer\-::internal\-::\-Dimensions}!save@{save}}
+\index{save@{save}!ffnn::layer::internal::Dimensions@{ffnn\-::layer\-::internal\-::\-Dimensions}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Size\-Type $>$ void {\bf ffnn\-::layer\-::internal\-::\-Dimensions}$<$ Size\-Type $>$\-::save (
+\begin{DoxyParamCaption}
+\item[{Output\-Archive \&}]{ar, }
+\item[{Version\-Type}]{version}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{structffnn_1_1layer_1_1internal_1_1_dimensions_a7516722990cfea99e376f41fb95847cb}
+
+
+Save serializer. 
+
+
+
+Referenced by ffnn\-::layer\-::internal\-::\-Interface$<$ Value\-Type $>$\-::save().
+
+\hypertarget{structffnn_1_1layer_1_1internal_1_1_dimensions_a55225c7e571ffb20efc454767bc598e1}{\index{ffnn\-::layer\-::internal\-::\-Dimensions@{ffnn\-::layer\-::internal\-::\-Dimensions}!size@{size}}
+\index{size@{size}!ffnn::layer::internal::Dimensions@{ffnn\-::layer\-::internal\-::\-Dimensions}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Size\-Type $>$ Size\-Type {\bf ffnn\-::layer\-::internal\-::\-Dimensions}$<$ Size\-Type $>$\-::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{structffnn_1_1layer_1_1internal_1_1_dimensions_a55225c7e571ffb20efc454767bc598e1}
+
+
+Referenced by ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::backward(), ffnn\-::layer\-::internal\-::\-Interface$<$ Value\-Type $>$\-::evaluate\-Input\-Size(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::initialize(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::initialize(), ffnn\-::optimizer\-::\-Adam$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::initialize(), ffnn\-::optimizer\-::\-Adam$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::initialize(), ffnn\-::layer\-::internal\-::\-Interface$<$ Value\-Type $>$\-::input\-Size(), ffnn\-::layer\-::internal\-::\-Dimensions$<$ Size\-Type $>$\-::operator Size\-Type(), ffnn\-::layer\-::internal\-::\-Interface$<$ Value\-Type $>$\-::output\-Size(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::reset(), and ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::reset().
+
+\hypertarget{structffnn_1_1layer_1_1internal_1_1_dimensions_a62d2fa9411f32b8d2f3a197cf202ec53}{\index{ffnn\-::layer\-::internal\-::\-Dimensions@{ffnn\-::layer\-::internal\-::\-Dimensions}!valid@{valid}}
+\index{valid@{valid}!ffnn::layer::internal::Dimensions@{ffnn\-::layer\-::internal\-::\-Dimensions}}
+\subsubsection[{valid}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Size\-Type $>$ bool {\bf ffnn\-::layer\-::internal\-::\-Dimensions}$<$ Size\-Type $>$\-::valid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{structffnn_1_1layer_1_1internal_1_1_dimensions_a62d2fa9411f32b8d2f3a197cf202ec53}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structffnn_1_1layer_1_1internal_1_1_dimensions_a34216373e9d09bb79b05a90ef9cec53b}{\index{ffnn\-::layer\-::internal\-::\-Dimensions@{ffnn\-::layer\-::internal\-::\-Dimensions}!depth@{depth}}
+\index{depth@{depth}!ffnn::layer::internal::Dimensions@{ffnn\-::layer\-::internal\-::\-Dimensions}}
+\subsubsection[{depth}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Size\-Type $>$ Size\-Type {\bf ffnn\-::layer\-::internal\-::\-Dimensions}$<$ Size\-Type $>$\-::depth}}\label{structffnn_1_1layer_1_1internal_1_1_dimensions_a34216373e9d09bb79b05a90ef9cec53b}
+
+
+Referenced by ffnn\-::layer\-::internal\-::\-Dimensions$<$ Size\-Type $>$\-::load(), ffnn\-::layer\-::internal\-::\-Dimensions$<$ Size\-Type $>$\-::operator=(), ffnn\-::layer\-::internal\-::\-Dimensions$<$ Size\-Type $>$\-::save(), ffnn\-::layer\-::internal\-::\-Dimensions$<$ Size\-Type $>$\-::size(), and ffnn\-::layer\-::internal\-::\-Dimensions$<$ Size\-Type $>$\-::valid().
+
+\hypertarget{structffnn_1_1layer_1_1internal_1_1_dimensions_a49348c4b65a649c9d55284e283bfa39e}{\index{ffnn\-::layer\-::internal\-::\-Dimensions@{ffnn\-::layer\-::internal\-::\-Dimensions}!height@{height}}
+\index{height@{height}!ffnn::layer::internal::Dimensions@{ffnn\-::layer\-::internal\-::\-Dimensions}}
+\subsubsection[{height}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Size\-Type $>$ Size\-Type {\bf ffnn\-::layer\-::internal\-::\-Dimensions}$<$ Size\-Type $>$\-::height}}\label{structffnn_1_1layer_1_1internal_1_1_dimensions_a49348c4b65a649c9d55284e283bfa39e}
+
+
+Referenced by ffnn\-::layer\-::internal\-::\-Dimensions$<$ Size\-Type $>$\-::load(), ffnn\-::layer\-::internal\-::\-Dimensions$<$ Size\-Type $>$\-::operator=(), ffnn\-::layer\-::internal\-::\-Dimensions$<$ Size\-Type $>$\-::save(), ffnn\-::layer\-::internal\-::\-Dimensions$<$ Size\-Type $>$\-::size(), and ffnn\-::layer\-::internal\-::\-Dimensions$<$ Size\-Type $>$\-::valid().
+
+\hypertarget{structffnn_1_1layer_1_1internal_1_1_dimensions_a1fac884bf9c7468e9408143195afc989}{\index{ffnn\-::layer\-::internal\-::\-Dimensions@{ffnn\-::layer\-::internal\-::\-Dimensions}!width@{width}}
+\index{width@{width}!ffnn::layer::internal::Dimensions@{ffnn\-::layer\-::internal\-::\-Dimensions}}
+\subsubsection[{width}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Size\-Type $>$ Size\-Type {\bf ffnn\-::layer\-::internal\-::\-Dimensions}$<$ Size\-Type $>$\-::width}}\label{structffnn_1_1layer_1_1internal_1_1_dimensions_a1fac884bf9c7468e9408143195afc989}
+
+
+Referenced by ffnn\-::layer\-::internal\-::\-Dimensions$<$ Size\-Type $>$\-::load(), ffnn\-::layer\-::internal\-::\-Dimensions$<$ Size\-Type $>$\-::operator=(), ffnn\-::layer\-::internal\-::\-Dimensions$<$ Size\-Type $>$\-::save(), ffnn\-::layer\-::internal\-::\-Dimensions$<$ Size\-Type $>$\-::size(), and ffnn\-::layer\-::internal\-::\-Dimensions$<$ Size\-Type $>$\-::valid().
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/internal/\hyperlink{dimensions_8h}{dimensions.\-h}\end{DoxyCompactItemize}

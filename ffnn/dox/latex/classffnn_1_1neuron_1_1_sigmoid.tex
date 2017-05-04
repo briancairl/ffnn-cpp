@@ -1,0 +1,100 @@
+\hypertarget{classffnn_1_1neuron_1_1_sigmoid}{\section{ffnn\-:\-:neuron\-:\-:Sigmoid$<$ Value\-Type $>$ Class Template Reference}
+\label{classffnn_1_1neuron_1_1_sigmoid}\index{ffnn\-::neuron\-::\-Sigmoid$<$ Value\-Type $>$@{ffnn\-::neuron\-::\-Sigmoid$<$ Value\-Type $>$}}
+}
+
+
+A bipolar sigmoid activation unit.  
+
+
+
+
+{\ttfamily \#include \char`\"{}sigmoid.\-h\char`\"{}}
+
+
+
+Inheritance diagram for ffnn\-:\-:neuron\-:\-:Sigmoid$<$ Value\-Type $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{classffnn_1_1neuron_1_1_sigmoid__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ffnn\-:\-:neuron\-:\-:Sigmoid$<$ Value\-Type $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{classffnn_1_1neuron_1_1_sigmoid__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classffnn_1_1neuron_1_1_sigmoid_a68c1cf4f268509e87a471440d11e7682}{fn} (const Value\-Type \&input, Value\-Type \&output)
+\begin{DoxyCompactList}\small\item\em Computes activation output. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classffnn_1_1neuron_1_1_sigmoid_aee2a196924df30414539d75caa6c7030}{derivative} (const Value\-Type \&input, Value\-Type \&output) const 
+\begin{DoxyCompactList}\small\item\em Computes first-\/order activation derivative. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Value\-Type$>$class ffnn\-::neuron\-::\-Sigmoid$<$ Value\-Type $>$}
+
+A bipolar sigmoid activation unit. 
+
+Represents the mapping \[ f(x) = tanh(x) \] 
+
+\subsection{Member Function Documentation}
+\hypertarget{classffnn_1_1neuron_1_1_sigmoid_aee2a196924df30414539d75caa6c7030}{\index{ffnn\-::neuron\-::\-Sigmoid@{ffnn\-::neuron\-::\-Sigmoid}!derivative@{derivative}}
+\index{derivative@{derivative}!ffnn::neuron::Sigmoid@{ffnn\-::neuron\-::\-Sigmoid}}
+\subsubsection[{derivative}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type $>$ virtual void {\bf ffnn\-::neuron\-::\-Sigmoid}$<$ Value\-Type $>$\-::derivative (
+\begin{DoxyParamCaption}
+\item[{const Value\-Type \&}]{input, }
+\item[{Value\-Type \&}]{output}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classffnn_1_1neuron_1_1_sigmoid_aee2a196924df30414539d75caa6c7030}
+
+
+Computes first-\/order activation derivative. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em input} & a scalar input value \\
+\hline
+\mbox{\tt in,out}  & {\em output} & a scalar output value \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classffnn_1_1neuron_1_1_neuron_ac779b179887e6b4505dec96d0319af10}{ffnn\-::neuron\-::\-Neuron$<$ Value\-Type $>$}.
+
+\hypertarget{classffnn_1_1neuron_1_1_sigmoid_a68c1cf4f268509e87a471440d11e7682}{\index{ffnn\-::neuron\-::\-Sigmoid@{ffnn\-::neuron\-::\-Sigmoid}!fn@{fn}}
+\index{fn@{fn}!ffnn::neuron::Sigmoid@{ffnn\-::neuron\-::\-Sigmoid}}
+\subsubsection[{fn}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type $>$ virtual void {\bf ffnn\-::neuron\-::\-Sigmoid}$<$ Value\-Type $>$\-::fn (
+\begin{DoxyParamCaption}
+\item[{const Value\-Type \&}]{input, }
+\item[{Value\-Type \&}]{output}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classffnn_1_1neuron_1_1_sigmoid_a68c1cf4f268509e87a471440d11e7682}
+
+
+Computes activation output. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em input} & a scalar input value \\
+\hline
+\mbox{\tt in,out}  & {\em output} & a scalar output value \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classffnn_1_1neuron_1_1_neuron_a4f03bb4fe57ffa74d70e447237b9b8fb}{ffnn\-::neuron\-::\-Neuron$<$ Value\-Type $>$}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/neuron/\hyperlink{sigmoid_8h}{sigmoid.\-h}\end{DoxyCompactItemize}

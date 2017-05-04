@@ -1,0 +1,138 @@
+\hypertarget{classffnn_1_1neuron_1_1_leaky_rectified_linear}{\section{ffnn\-:\-:neuron\-:\-:Leaky\-Rectified\-Linear$<$ Value\-Type, \-\_\-\-P, \-\_\-\-B $>$ Class Template Reference}
+\label{classffnn_1_1neuron_1_1_leaky_rectified_linear}\index{ffnn\-::neuron\-::\-Leaky\-Rectified\-Linear$<$ Value\-Type, \-\_\-\-P, \-\_\-\-B $>$@{ffnn\-::neuron\-::\-Leaky\-Rectified\-Linear$<$ Value\-Type, \-\_\-\-P, \-\_\-\-B $>$}}
+}
+
+
+A leaky-\/rectified linear activation unit.  
+
+
+
+
+{\ttfamily \#include \char`\"{}leaky\-\_\-rectified\-\_\-linear.\-h\char`\"{}}
+
+
+
+Inheritance diagram for ffnn\-:\-:neuron\-:\-:Leaky\-Rectified\-Linear$<$ Value\-Type, \-\_\-\-P, \-\_\-\-B $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{classffnn_1_1neuron_1_1_leaky_rectified_linear__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ffnn\-:\-:neuron\-:\-:Leaky\-Rectified\-Linear$<$ Value\-Type, \-\_\-\-P, \-\_\-\-B $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{classffnn_1_1neuron_1_1_leaky_rectified_linear__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classffnn_1_1neuron_1_1_leaky_rectified_linear_aedaef89cf5a9390b4ec610d1e7157bf8}{Leaky\-Rectified\-Linear} ()
+\begin{DoxyCompactList}\small\item\em Setup constructor. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classffnn_1_1neuron_1_1_leaky_rectified_linear_a6a96858235a3c4a8195b27699032a849}{fn} (const Value\-Type \&input, Value\-Type \&output)
+\begin{DoxyCompactList}\small\item\em Computes activation output. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classffnn_1_1neuron_1_1_leaky_rectified_linear_a1bb98dd03e854a69a7ba76b347ec4340}{derivative} (const Value\-Type \&input, Value\-Type \&output) const 
+\begin{DoxyCompactList}\small\item\em Computes first-\/order activation derivative. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const Value\-Type \hyperlink{classffnn_1_1neuron_1_1_leaky_rectified_linear_ab205c35e3123e8965efe63cd665020cb}{leak\-\_\-factor\-\_\-}
+\begin{DoxyCompactList}\small\item\em Factor in the range \mbox{[}0, 1\mbox{]} to leak when (input $<$ 0) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E \-\_\-\-P, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E \-\_\-\-B = 100$>$class ffnn\-::neuron\-::\-Leaky\-Rectified\-Linear$<$ Value\-Type, \-\_\-\-P, \-\_\-\-B $>$}
+
+A leaky-\/rectified linear activation unit. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classffnn_1_1neuron_1_1_leaky_rectified_linear_aedaef89cf5a9390b4ec610d1e7157bf8}{\index{ffnn\-::neuron\-::\-Leaky\-Rectified\-Linear@{ffnn\-::neuron\-::\-Leaky\-Rectified\-Linear}!Leaky\-Rectified\-Linear@{Leaky\-Rectified\-Linear}}
+\index{Leaky\-Rectified\-Linear@{Leaky\-Rectified\-Linear}!ffnn::neuron::LeakyRectifiedLinear@{ffnn\-::neuron\-::\-Leaky\-Rectified\-Linear}}
+\subsubsection[{Leaky\-Rectified\-Linear}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E \-\_\-\-P, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E \-\_\-\-B = 100$>$ {\bf ffnn\-::neuron\-::\-Leaky\-Rectified\-Linear}$<$ Value\-Type, \-\_\-\-P, \-\_\-\-B $>$\-::{\bf Leaky\-Rectified\-Linear} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1neuron_1_1_leaky_rectified_linear_aedaef89cf5a9390b4ec610d1e7157bf8}
+
+
+Setup constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em leak\-\_\-factor} & input to leak with (input $<$ 0) \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classffnn_1_1neuron_1_1_leaky_rectified_linear_a1bb98dd03e854a69a7ba76b347ec4340}{\index{ffnn\-::neuron\-::\-Leaky\-Rectified\-Linear@{ffnn\-::neuron\-::\-Leaky\-Rectified\-Linear}!derivative@{derivative}}
+\index{derivative@{derivative}!ffnn::neuron::LeakyRectifiedLinear@{ffnn\-::neuron\-::\-Leaky\-Rectified\-Linear}}
+\subsubsection[{derivative}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E \-\_\-\-P, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E \-\_\-\-B = 100$>$ virtual void {\bf ffnn\-::neuron\-::\-Leaky\-Rectified\-Linear}$<$ Value\-Type, \-\_\-\-P, \-\_\-\-B $>$\-::derivative (
+\begin{DoxyParamCaption}
+\item[{const Value\-Type \&}]{input, }
+\item[{Value\-Type \&}]{output}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classffnn_1_1neuron_1_1_leaky_rectified_linear_a1bb98dd03e854a69a7ba76b347ec4340}
+
+
+Computes first-\/order activation derivative. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em input} & a scalar input value \\
+\hline
+\mbox{\tt in,out}  & {\em output} & a scalar output value \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classffnn_1_1neuron_1_1_neuron_ac779b179887e6b4505dec96d0319af10}{ffnn\-::neuron\-::\-Neuron$<$ Value\-Type $>$}.
+
+\hypertarget{classffnn_1_1neuron_1_1_leaky_rectified_linear_a6a96858235a3c4a8195b27699032a849}{\index{ffnn\-::neuron\-::\-Leaky\-Rectified\-Linear@{ffnn\-::neuron\-::\-Leaky\-Rectified\-Linear}!fn@{fn}}
+\index{fn@{fn}!ffnn::neuron::LeakyRectifiedLinear@{ffnn\-::neuron\-::\-Leaky\-Rectified\-Linear}}
+\subsubsection[{fn}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E \-\_\-\-P, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E \-\_\-\-B = 100$>$ virtual void {\bf ffnn\-::neuron\-::\-Leaky\-Rectified\-Linear}$<$ Value\-Type, \-\_\-\-P, \-\_\-\-B $>$\-::fn (
+\begin{DoxyParamCaption}
+\item[{const Value\-Type \&}]{input, }
+\item[{Value\-Type \&}]{output}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classffnn_1_1neuron_1_1_leaky_rectified_linear_a6a96858235a3c4a8195b27699032a849}
+
+
+Computes activation output. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em input} & a scalar input value \\
+\hline
+\mbox{\tt in,out}  & {\em output} & a scalar output value \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classffnn_1_1neuron_1_1_neuron_a4f03bb4fe57ffa74d70e447237b9b8fb}{ffnn\-::neuron\-::\-Neuron$<$ Value\-Type $>$}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classffnn_1_1neuron_1_1_leaky_rectified_linear_ab205c35e3123e8965efe63cd665020cb}{\index{ffnn\-::neuron\-::\-Leaky\-Rectified\-Linear@{ffnn\-::neuron\-::\-Leaky\-Rectified\-Linear}!leak\-\_\-factor\-\_\-@{leak\-\_\-factor\-\_\-}}
+\index{leak\-\_\-factor\-\_\-@{leak\-\_\-factor\-\_\-}!ffnn::neuron::LeakyRectifiedLinear@{ffnn\-::neuron\-::\-Leaky\-Rectified\-Linear}}
+\subsubsection[{leak\-\_\-factor\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E \-\_\-\-P, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E \-\_\-\-B = 100$>$ const Value\-Type {\bf ffnn\-::neuron\-::\-Leaky\-Rectified\-Linear}$<$ Value\-Type, \-\_\-\-P, \-\_\-\-B $>$\-::leak\-\_\-factor\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classffnn_1_1neuron_1_1_leaky_rectified_linear_ab205c35e3123e8965efe63cd665020cb}
+
+
+Factor in the range \mbox{[}0, 1\mbox{]} to leak when (input $<$ 0) 
+
+
+
+Referenced by ffnn\-::neuron\-::\-Leaky\-Rectified\-Linear$<$ Value\-Type, \-\_\-\-P, \-\_\-\-B $>$\-::derivative(), ffnn\-::neuron\-::\-Leaky\-Rectified\-Linear$<$ Value\-Type, \-\_\-\-P, \-\_\-\-B $>$\-::fn(), and ffnn\-::neuron\-::\-Leaky\-Rectified\-Linear$<$ Value\-Type, \-\_\-\-P, \-\_\-\-B $>$\-::\-Leaky\-Rectified\-Linear().
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/neuron/\hyperlink{leaky__rectified__linear_8h}{leaky\-\_\-rectified\-\_\-linear.\-h}\end{DoxyCompactItemize}

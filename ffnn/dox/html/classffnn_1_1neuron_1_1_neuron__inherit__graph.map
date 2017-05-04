@@ -1,0 +1,8 @@
+<map id="ffnn::neuron::Neuron&lt; ValueType &gt;" name="ffnn::neuron::Neuron&lt; ValueType &gt;">
+<area shape="rect" id="node2" href="$classffnn_1_1neuron_1_1_leaky_rectified_linear.html" title="A leaky&#45;rectified linear activation unit. " alt="" coords="195,5,381,46"/>
+<area shape="rect" id="node3" href="$classffnn_1_1neuron_1_1_le_cun_sigmoid.html" title="A bipolar sigmoid activation unit scaled to prevent saturation. " alt="" coords="196,70,380,111"/>
+<area shape="rect" id="node4" href="$classffnn_1_1neuron_1_1_linear.html" title="A linear activation unit. " alt="" coords="221,135,355,177"/>
+<area shape="rect" id="node5" href="$classffnn_1_1neuron_1_1_rectified_linear.html" title="A rectified linear activation unit. " alt="" coords="195,201,381,242"/>
+<area shape="rect" id="node6" href="$classffnn_1_1neuron_1_1_sigmoid.html" title="A bipolar sigmoid activation unit. " alt="" coords="215,266,361,307"/>
+<area shape="rect" id="node7" href="$classffnn_1_1neuron_1_1_soft_sign.html" title="A soft&#45;sign activation unit. " alt="" coords="213,331,363,373"/>
+</map>

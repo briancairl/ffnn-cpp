@@ -1,0 +1,343 @@
+\hypertarget{classffnn_1_1layer_1_1_hidden}{\section{ffnn\-:\-:layer\-:\-:Hidden$<$ Value\-Type, Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type, \-\_\-\-Input\-Mapping\-Type, \-\_\-\-Output\-Mapping\-Type $>$ Class Template Reference}
+\label{classffnn_1_1layer_1_1_hidden}\index{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type, \-\_\-\-Input\-Mapping\-Type, \-\_\-\-Output\-Mapping\-Type $>$@{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type, \-\_\-\-Input\-Mapping\-Type, \-\_\-\-Output\-Mapping\-Type $>$}}
+}
+
+
+A network hidden-\/layer object.  
+
+
+
+
+{\ttfamily \#include \char`\"{}hidden.\-h\char`\"{}}
+
+
+
+Inheritance diagram for ffnn\-:\-:layer\-:\-:Hidden$<$ Value\-Type, Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type, \-\_\-\-Input\-Mapping\-Type, \-\_\-\-Output\-Mapping\-Type $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{classffnn_1_1layer_1_1_hidden__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ffnn\-:\-:layer\-:\-:Hidden$<$ Value\-Type, Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type, \-\_\-\-Input\-Mapping\-Type, \-\_\-\-Output\-Mapping\-Type $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{classffnn_1_1layer_1_1_hidden__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \hyperlink{classffnn_1_1layer_1_1_hidden_ac51b180aa7de47794148e32616f0441f}{Base} = \hyperlink{classffnn_1_1layer_1_1_layer}{Layer}$<$ Value\-Type $>$
+\begin{DoxyCompactList}\small\item\em Base type alias. \end{DoxyCompactList}\item 
+typedef \hyperlink{classffnn_1_1layer_1_1_layer_aeccac281d4220fab9cebf78b004c09d1}{Base\-::\-Size\-Type} \hyperlink{classffnn_1_1layer_1_1_hidden_a3deb1dc4b3a83b3d6749474debee025f}{Size\-Type}
+\begin{DoxyCompactList}\small\item\em Size type standardization. \end{DoxyCompactList}\item 
+typedef \hyperlink{classffnn_1_1layer_1_1_layer_a0e35ffd6e0657856f3a75323b2db9fcb}{Base\-::\-Offset\-Type} \hyperlink{classffnn_1_1layer_1_1_hidden_a4a191bc002b2545231a3d80c99004693}{Offset\-Type}
+\begin{DoxyCompactList}\small\item\em Offset type standardization. \end{DoxyCompactList}\item 
+typedef \hyperlink{classffnn_1_1layer_1_1_layer_a104a0f51427df4e03f4ac9e1ce7f6083}{Base\-::\-Dim\-Type} \hyperlink{classffnn_1_1layer_1_1_hidden_aba8b203c8b193a53d19fc26c10b14872}{Dim\-Type}
+\begin{DoxyCompactList}\small\item\em Dimension type standardization. \end{DoxyCompactList}\item 
+typedef \-\_\-\-Input\-Block\-Type \hyperlink{classffnn_1_1layer_1_1_hidden_a01b9cc4df01a7b26423dcd3a0af17b1c}{Input\-Block\-Type}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classffnn_1_1layer_1_1_input}{Input} block type standardization. \end{DoxyCompactList}\item 
+typedef \-\_\-\-Output\-Block\-Type \hyperlink{classffnn_1_1layer_1_1_hidden_abb03ddc71360cc7ebdab03cd4d1553ee}{Output\-Block\-Type}
+\begin{DoxyCompactList}\small\item\em Iutpu blockt type standardization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classffnn_1_1layer_1_1_hidden_ade54de529e6aa7fd09b1ca61fea0ccc5}{Hidden} (const \hyperlink{classffnn_1_1layer_1_1_hidden_aba8b203c8b193a53d19fc26c10b14872}{Dim\-Type} \&input\-\_\-dim=\hyperlink{classffnn_1_1layer_1_1_hidden_aba8b203c8b193a53d19fc26c10b14872}{Dim\-Type}(Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time), const \hyperlink{classffnn_1_1layer_1_1_hidden_aba8b203c8b193a53d19fc26c10b14872}{Dim\-Type} \&output\-\_\-dim=\hyperlink{classffnn_1_1layer_1_1_hidden_aba8b203c8b193a53d19fc26c10b14872}{Dim\-Type}(Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time))
+\begin{DoxyCompactList}\small\item\em Setup constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classffnn_1_1layer_1_1_hidden_a28d2c1175388ed7e9126b7e0ddd45e14}{$\sim$\-Hidden} ()
+\item 
+virtual bool \hyperlink{classffnn_1_1layer_1_1_hidden_a3b5458a771fcf2371376049d85afbc92}{initialize} ()
+\begin{DoxyCompactList}\small\item\em Initialize the layer. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classffnn_1_1layer_1_1_hidden_aed780b7869487b020c839e5a3ce1d8e6}{forward} ()
+\begin{DoxyCompactList}\small\item\em Forward value propagation. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classffnn_1_1layer_1_1_hidden_a939fc9f0c269e63220305d787fbe600c}{backward} ()
+\begin{DoxyCompactList}\small\item\em Backward value propagation. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classffnn_1_1layer_1_1_hidden_a63913f14b69485eb0c21e02c09f735d4}{update} ()
+\begin{DoxyCompactList}\small\item\em Applies layer weight updates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classffnn_1_1layer_1_1_hidden_a98305185267a0f7953f1b53c4bce4cf6}{save} (\hyperlink{classffnn_1_1traits_1_1_serializable_a08d986df75d363fa79506d4f6045cb9f}{Output\-Archive} \&ar, \hyperlink{classffnn_1_1traits_1_1_serializable_a08924b3b7d20cb3cb6eafe517d4f7b30}{Version\-Type} version) const 
+\begin{DoxyCompactList}\small\item\em Save serializer. \end{DoxyCompactList}\item 
+void \hyperlink{classffnn_1_1layer_1_1_hidden_a696f61b2d9b661b7a8d6bdb3dc32b536}{load} (\hyperlink{classffnn_1_1traits_1_1_serializable_a6e626759259f8f370dd4303b4441a234}{Input\-Archive} \&ar, \hyperlink{classffnn_1_1traits_1_1_serializable_a08924b3b7d20cb3cb6eafe517d4f7b30}{Version\-Type} version)
+\begin{DoxyCompactList}\small\item\em Load serializer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\-\_\-\-Input\-Mapping\-Type\-::\-Ptr \hyperlink{classffnn_1_1layer_1_1_hidden_a2583fadf189c4a9217ffe0146e8f2d1e}{input\-\_\-}
+\begin{DoxyCompactList}\small\item\em Memory-\/mapped input vector. \end{DoxyCompactList}\item 
+\-\_\-\-Output\-Mapping\-Type\-::\-Ptr \hyperlink{classffnn_1_1layer_1_1_hidden_a6dcd89d479af9b2a9359b1f723dae995}{output\-\_\-}
+\begin{DoxyCompactList}\small\item\em Memory-\/mapped output vector. \end{DoxyCompactList}\item 
+\-\_\-\-Input\-Mapping\-Type\-::\-Ptr \hyperlink{classffnn_1_1layer_1_1_hidden_aa9ed4266924e9b9da7faf9d53380a3e5}{backward\-\_\-error\-\_\-}
+\begin{DoxyCompactList}\small\item\em Backward error vector. \end{DoxyCompactList}\item 
+\-\_\-\-Output\-Mapping\-Type\-::\-Ptr \hyperlink{classffnn_1_1layer_1_1_hidden_a9ca7423a16607df0a278002c249e9d1b}{forward\-\_\-error\-\_\-}
+\begin{DoxyCompactList}\small\item\em Output-\/target error vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Input\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Input\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Output\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Output\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Input\-Mapping\-Type = aligned\-::\-Map$<$\-\_\-\-Input\-Block\-Type$>$, typename \-\_\-\-Output\-Mapping\-Type = aligned\-::\-Map$<$\-\_\-\-Output\-Block\-Type$>$$>$class ffnn\-::layer\-::\-Hidden$<$ Value\-Type, Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type, \-\_\-\-Input\-Mapping\-Type, \-\_\-\-Output\-Mapping\-Type $>$}
+
+A network hidden-\/layer object. 
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classffnn_1_1layer_1_1_hidden_ac51b180aa7de47794148e32616f0441f}{\index{ffnn\-::layer\-::\-Hidden@{ffnn\-::layer\-::\-Hidden}!Base@{Base}}
+\index{Base@{Base}!ffnn::layer::Hidden@{ffnn\-::layer\-::\-Hidden}}
+\subsubsection[{Base}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Input\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Input\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Output\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Output\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Input\-Mapping\-Type = aligned\-::\-Map$<$\-\_\-\-Input\-Block\-Type$>$, typename \-\_\-\-Output\-Mapping\-Type = aligned\-::\-Map$<$\-\_\-\-Output\-Block\-Type$>$$>$ using {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type, \-\_\-\-Input\-Mapping\-Type, \-\_\-\-Output\-Mapping\-Type $>$\-::{\bf Base} =  {\bf Layer}$<$Value\-Type$>$}}\label{classffnn_1_1layer_1_1_hidden_ac51b180aa7de47794148e32616f0441f}
+
+
+Base type alias. 
+
+\hypertarget{classffnn_1_1layer_1_1_hidden_aba8b203c8b193a53d19fc26c10b14872}{\index{ffnn\-::layer\-::\-Hidden@{ffnn\-::layer\-::\-Hidden}!Dim\-Type@{Dim\-Type}}
+\index{Dim\-Type@{Dim\-Type}!ffnn::layer::Hidden@{ffnn\-::layer\-::\-Hidden}}
+\subsubsection[{Dim\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Input\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Input\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Output\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Output\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Input\-Mapping\-Type = aligned\-::\-Map$<$\-\_\-\-Input\-Block\-Type$>$, typename \-\_\-\-Output\-Mapping\-Type = aligned\-::\-Map$<$\-\_\-\-Output\-Block\-Type$>$$>$ typedef {\bf Base\-::\-Dim\-Type} {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type, \-\_\-\-Input\-Mapping\-Type, \-\_\-\-Output\-Mapping\-Type $>$\-::{\bf Dim\-Type}}}\label{classffnn_1_1layer_1_1_hidden_aba8b203c8b193a53d19fc26c10b14872}
+
+
+Dimension type standardization. 
+
+\hypertarget{classffnn_1_1layer_1_1_hidden_a01b9cc4df01a7b26423dcd3a0af17b1c}{\index{ffnn\-::layer\-::\-Hidden@{ffnn\-::layer\-::\-Hidden}!Input\-Block\-Type@{Input\-Block\-Type}}
+\index{Input\-Block\-Type@{Input\-Block\-Type}!ffnn::layer::Hidden@{ffnn\-::layer\-::\-Hidden}}
+\subsubsection[{Input\-Block\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Input\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Input\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Output\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Output\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Input\-Mapping\-Type = aligned\-::\-Map$<$\-\_\-\-Input\-Block\-Type$>$, typename \-\_\-\-Output\-Mapping\-Type = aligned\-::\-Map$<$\-\_\-\-Output\-Block\-Type$>$$>$ typedef \-\_\-\-Input\-Block\-Type {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type, \-\_\-\-Input\-Mapping\-Type, \-\_\-\-Output\-Mapping\-Type $>$\-::{\bf Input\-Block\-Type}}}\label{classffnn_1_1layer_1_1_hidden_a01b9cc4df01a7b26423dcd3a0af17b1c}
+
+
+\hyperlink{classffnn_1_1layer_1_1_input}{Input} block type standardization. 
+
+\hypertarget{classffnn_1_1layer_1_1_hidden_a4a191bc002b2545231a3d80c99004693}{\index{ffnn\-::layer\-::\-Hidden@{ffnn\-::layer\-::\-Hidden}!Offset\-Type@{Offset\-Type}}
+\index{Offset\-Type@{Offset\-Type}!ffnn::layer::Hidden@{ffnn\-::layer\-::\-Hidden}}
+\subsubsection[{Offset\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Input\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Input\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Output\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Output\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Input\-Mapping\-Type = aligned\-::\-Map$<$\-\_\-\-Input\-Block\-Type$>$, typename \-\_\-\-Output\-Mapping\-Type = aligned\-::\-Map$<$\-\_\-\-Output\-Block\-Type$>$$>$ typedef {\bf Base\-::\-Offset\-Type} {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type, \-\_\-\-Input\-Mapping\-Type, \-\_\-\-Output\-Mapping\-Type $>$\-::{\bf Offset\-Type}}}\label{classffnn_1_1layer_1_1_hidden_a4a191bc002b2545231a3d80c99004693}
+
+
+Offset type standardization. 
+
+\hypertarget{classffnn_1_1layer_1_1_hidden_abb03ddc71360cc7ebdab03cd4d1553ee}{\index{ffnn\-::layer\-::\-Hidden@{ffnn\-::layer\-::\-Hidden}!Output\-Block\-Type@{Output\-Block\-Type}}
+\index{Output\-Block\-Type@{Output\-Block\-Type}!ffnn::layer::Hidden@{ffnn\-::layer\-::\-Hidden}}
+\subsubsection[{Output\-Block\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Input\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Input\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Output\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Output\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Input\-Mapping\-Type = aligned\-::\-Map$<$\-\_\-\-Input\-Block\-Type$>$, typename \-\_\-\-Output\-Mapping\-Type = aligned\-::\-Map$<$\-\_\-\-Output\-Block\-Type$>$$>$ typedef \-\_\-\-Output\-Block\-Type {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type, \-\_\-\-Input\-Mapping\-Type, \-\_\-\-Output\-Mapping\-Type $>$\-::{\bf Output\-Block\-Type}}}\label{classffnn_1_1layer_1_1_hidden_abb03ddc71360cc7ebdab03cd4d1553ee}
+
+
+Iutpu blockt type standardization. 
+
+\hypertarget{classffnn_1_1layer_1_1_hidden_a3deb1dc4b3a83b3d6749474debee025f}{\index{ffnn\-::layer\-::\-Hidden@{ffnn\-::layer\-::\-Hidden}!Size\-Type@{Size\-Type}}
+\index{Size\-Type@{Size\-Type}!ffnn::layer::Hidden@{ffnn\-::layer\-::\-Hidden}}
+\subsubsection[{Size\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Input\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Input\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Output\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Output\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Input\-Mapping\-Type = aligned\-::\-Map$<$\-\_\-\-Input\-Block\-Type$>$, typename \-\_\-\-Output\-Mapping\-Type = aligned\-::\-Map$<$\-\_\-\-Output\-Block\-Type$>$$>$ typedef {\bf Base\-::\-Size\-Type} {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type, \-\_\-\-Input\-Mapping\-Type, \-\_\-\-Output\-Mapping\-Type $>$\-::{\bf Size\-Type}}}\label{classffnn_1_1layer_1_1_hidden_a3deb1dc4b3a83b3d6749474debee025f}
+
+
+Size type standardization. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classffnn_1_1layer_1_1_hidden_ade54de529e6aa7fd09b1ca61fea0ccc5}{\index{ffnn\-::layer\-::\-Hidden@{ffnn\-::layer\-::\-Hidden}!Hidden@{Hidden}}
+\index{Hidden@{Hidden}!ffnn::layer::Hidden@{ffnn\-::layer\-::\-Hidden}}
+\subsubsection[{Hidden}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Input\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Input\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Output\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Output\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Input\-Mapping\-Type = aligned\-::\-Map$<$\-\_\-\-Input\-Block\-Type$>$, typename \-\_\-\-Output\-Mapping\-Type = aligned\-::\-Map$<$\-\_\-\-Output\-Block\-Type$>$$>$ {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type, \-\_\-\-Input\-Mapping\-Type, \-\_\-\-Output\-Mapping\-Type $>$\-::{\bf Hidden} (
+\begin{DoxyParamCaption}
+\item[{const {\bf Dim\-Type} \&}]{input\-\_\-dim = {\ttfamily {\bf Dim\-Type}(InputHeightAtCompileTime,~InputWidthAtCompileTime)}, }
+\item[{const {\bf Dim\-Type} \&}]{output\-\_\-dim = {\ttfamily {\bf Dim\-Type}(OutputHeightAtCompileTime,~OutputWidthAtCompileTime)}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classffnn_1_1layer_1_1_hidden_ade54de529e6aa7fd09b1ca61fea0ccc5}
+
+
+Setup constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\-\_\-height} & height of the input surface \\
+\hline
+{\em input\-\_\-width} & width of the input surface \\
+\hline
+{\em output\-\_\-height} & height of the output surface \\
+\hline
+{\em output\-\_\-width} & width of the output surface \\
+\hline
+\end{DoxyParams}
+\hypertarget{classffnn_1_1layer_1_1_hidden_a28d2c1175388ed7e9126b7e0ddd45e14}{\index{ffnn\-::layer\-::\-Hidden@{ffnn\-::layer\-::\-Hidden}!$\sim$\-Hidden@{$\sim$\-Hidden}}
+\index{$\sim$\-Hidden@{$\sim$\-Hidden}!ffnn::layer::Hidden@{ffnn\-::layer\-::\-Hidden}}
+\subsubsection[{$\sim$\-Hidden}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Input\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Input\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Output\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Output\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Input\-Mapping\-Type = aligned\-::\-Map$<$\-\_\-\-Input\-Block\-Type$>$, typename \-\_\-\-Output\-Mapping\-Type = aligned\-::\-Map$<$\-\_\-\-Output\-Block\-Type$>$$>$ virtual {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type, \-\_\-\-Input\-Mapping\-Type, \-\_\-\-Output\-Mapping\-Type $>$\-::$\sim${\bf Hidden} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_hidden_a28d2c1175388ed7e9126b7e0ddd45e14}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classffnn_1_1layer_1_1_hidden_a939fc9f0c269e63220305d787fbe600c}{\index{ffnn\-::layer\-::\-Hidden@{ffnn\-::layer\-::\-Hidden}!backward@{backward}}
+\index{backward@{backward}!ffnn::layer::Hidden@{ffnn\-::layer\-::\-Hidden}}
+\subsubsection[{backward}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Input\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Input\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Output\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Output\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Input\-Mapping\-Type = aligned\-::\-Map$<$\-\_\-\-Input\-Block\-Type$>$, typename \-\_\-\-Output\-Mapping\-Type = aligned\-::\-Map$<$\-\_\-\-Output\-Block\-Type$>$$>$ virtual bool {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type, \-\_\-\-Input\-Mapping\-Type, \-\_\-\-Output\-Mapping\-Type $>$\-::backward (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_hidden_a939fc9f0c269e63220305d787fbe600c}
+
+
+Backward value propagation. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & if backward-\/propagation succeeded \\
+\hline
+{\em false} & otherwise \\
+\hline
+\end{DoxyRetVals}
+
+
+Reimplemented from \hyperlink{classffnn_1_1layer_1_1_layer_a59d5f45393a1b0e4673969c65faaae2a}{ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$}.
+
+
+
+Reimplemented in \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_a597ea83c83e8f4f64a1fb7f17a1ea015}{ffnn\-::layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$}, \hyperlink{classffnn_1_1layer_1_1_fully_connected_afd5c1a006cf33a47cb7e2a982fe4cd6d}{ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$}, and \hyperlink{classffnn_1_1layer_1_1_activation_a3c4284245343f2132dd28eaf7ffbed47}{ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time $>$}.
+
+\hypertarget{classffnn_1_1layer_1_1_hidden_aed780b7869487b020c839e5a3ce1d8e6}{\index{ffnn\-::layer\-::\-Hidden@{ffnn\-::layer\-::\-Hidden}!forward@{forward}}
+\index{forward@{forward}!ffnn::layer::Hidden@{ffnn\-::layer\-::\-Hidden}}
+\subsubsection[{forward}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Input\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Input\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Output\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Output\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Input\-Mapping\-Type = aligned\-::\-Map$<$\-\_\-\-Input\-Block\-Type$>$, typename \-\_\-\-Output\-Mapping\-Type = aligned\-::\-Map$<$\-\_\-\-Output\-Block\-Type$>$$>$ virtual bool {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type, \-\_\-\-Input\-Mapping\-Type, \-\_\-\-Output\-Mapping\-Type $>$\-::forward (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_hidden_aed780b7869487b020c839e5a3ce1d8e6}
+
+
+Forward value propagation. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & if forward-\/propagation succeeded \\
+\hline
+{\em false} & otherwise \\
+\hline
+\end{DoxyRetVals}
+
+
+Reimplemented from \hyperlink{classffnn_1_1layer_1_1_layer_a832518de9beb442be0764e49ab24d78d}{ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$}.
+
+
+
+Reimplemented in \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_a53f1d9a2edfdd2e47164b24121c23acc}{ffnn\-::layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$}, \hyperlink{classffnn_1_1layer_1_1_fully_connected_ac49087ab2d66019f2d0244c76987fa50}{ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$}, and \hyperlink{classffnn_1_1layer_1_1_activation_aa7f88c8bc20589dc51d9dd615b8c4580}{ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time $>$}.
+
+\hypertarget{classffnn_1_1layer_1_1_hidden_a3b5458a771fcf2371376049d85afbc92}{\index{ffnn\-::layer\-::\-Hidden@{ffnn\-::layer\-::\-Hidden}!initialize@{initialize}}
+\index{initialize@{initialize}!ffnn::layer::Hidden@{ffnn\-::layer\-::\-Hidden}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Input\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Input\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Output\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Output\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Input\-Mapping\-Type = aligned\-::\-Map$<$\-\_\-\-Input\-Block\-Type$>$, typename \-\_\-\-Output\-Mapping\-Type = aligned\-::\-Map$<$\-\_\-\-Output\-Block\-Type$>$$>$ virtual bool {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type, \-\_\-\-Input\-Mapping\-Type, \-\_\-\-Output\-Mapping\-Type $>$\-::initialize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_hidden_a3b5458a771fcf2371376049d85afbc92}
+
+
+Initialize the layer. 
+
+
+
+Reimplemented from \hyperlink{classffnn_1_1layer_1_1_layer_ae8a7daa81382a7965b8ab8861da7e522}{ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$}.
+
+
+
+Reimplemented in \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_abb2966b5e7813c43ae2ea5448188a9fb}{ffnn\-::layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$}, \hyperlink{classffnn_1_1layer_1_1_fully_connected_aec414194202f845b866b0e8b2a51235c}{ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$}, and \hyperlink{classffnn_1_1layer_1_1_activation_ae73ef2d36d9c5ce3c219f6a51cba3c35}{ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time $>$}.
+
+\hypertarget{classffnn_1_1layer_1_1_hidden_a696f61b2d9b661b7a8d6bdb3dc32b536}{\index{ffnn\-::layer\-::\-Hidden@{ffnn\-::layer\-::\-Hidden}!load@{load}}
+\index{load@{load}!ffnn::layer::Hidden@{ffnn\-::layer\-::\-Hidden}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Input\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Input\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Output\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Output\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Input\-Mapping\-Type = aligned\-::\-Map$<$\-\_\-\-Input\-Block\-Type$>$, typename \-\_\-\-Output\-Mapping\-Type = aligned\-::\-Map$<$\-\_\-\-Output\-Block\-Type$>$$>$ void {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type, \-\_\-\-Input\-Mapping\-Type, \-\_\-\-Output\-Mapping\-Type $>$\-::load (
+\begin{DoxyParamCaption}
+\item[{{\bf Input\-Archive} \&}]{ar, }
+\item[{{\bf Version\-Type}}]{version}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_hidden_a696f61b2d9b661b7a8d6bdb3dc32b536}
+
+
+Load serializer. 
+
+
+
+Reimplemented from \hyperlink{classffnn_1_1traits_1_1_unique_af1e937c2908ed2ff707d6a7d1b5b13d2}{ffnn\-::traits\-::\-Unique}.
+
+\hypertarget{classffnn_1_1layer_1_1_hidden_a98305185267a0f7953f1b53c4bce4cf6}{\index{ffnn\-::layer\-::\-Hidden@{ffnn\-::layer\-::\-Hidden}!save@{save}}
+\index{save@{save}!ffnn::layer::Hidden@{ffnn\-::layer\-::\-Hidden}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Input\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Input\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Output\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Output\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Input\-Mapping\-Type = aligned\-::\-Map$<$\-\_\-\-Input\-Block\-Type$>$, typename \-\_\-\-Output\-Mapping\-Type = aligned\-::\-Map$<$\-\_\-\-Output\-Block\-Type$>$$>$ void {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type, \-\_\-\-Input\-Mapping\-Type, \-\_\-\-Output\-Mapping\-Type $>$\-::save (
+\begin{DoxyParamCaption}
+\item[{{\bf Output\-Archive} \&}]{ar, }
+\item[{{\bf Version\-Type}}]{version}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_hidden_a98305185267a0f7953f1b53c4bce4cf6}
+
+
+Save serializer. 
+
+
+
+Reimplemented from \hyperlink{classffnn_1_1traits_1_1_unique_ad8be6fcb9a7519603b2aab19b3c6d593}{ffnn\-::traits\-::\-Unique}.
+
+\hypertarget{classffnn_1_1layer_1_1_hidden_a63913f14b69485eb0c21e02c09f735d4}{\index{ffnn\-::layer\-::\-Hidden@{ffnn\-::layer\-::\-Hidden}!update@{update}}
+\index{update@{update}!ffnn::layer::Hidden@{ffnn\-::layer\-::\-Hidden}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Input\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Input\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Output\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Output\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Input\-Mapping\-Type = aligned\-::\-Map$<$\-\_\-\-Input\-Block\-Type$>$, typename \-\_\-\-Output\-Mapping\-Type = aligned\-::\-Map$<$\-\_\-\-Output\-Block\-Type$>$$>$ virtual bool {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type, \-\_\-\-Input\-Mapping\-Type, \-\_\-\-Output\-Mapping\-Type $>$\-::update (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_hidden_a63913f14b69485eb0c21e02c09f735d4}
+
+
+Applies layer weight updates. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & if weight update succeeded \\
+\hline
+{\em false} & otherwise \\
+\hline
+\end{DoxyRetVals}
+
+
+Reimplemented from \hyperlink{classffnn_1_1layer_1_1_layer_a25bf06cfea93baf1c80e21d0a88a5e4a}{ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$}.
+
+
+
+Reimplemented in \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_afa564d528e74917231da2d038f76e3f1}{ffnn\-::layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$}, and \hyperlink{classffnn_1_1layer_1_1_fully_connected_a3194dde96feea7d008cc0c27f30cc805}{ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classffnn_1_1layer_1_1_hidden_aa9ed4266924e9b9da7faf9d53380a3e5}{\index{ffnn\-::layer\-::\-Hidden@{ffnn\-::layer\-::\-Hidden}!backward\-\_\-error\-\_\-@{backward\-\_\-error\-\_\-}}
+\index{backward\-\_\-error\-\_\-@{backward\-\_\-error\-\_\-}!ffnn::layer::Hidden@{ffnn\-::layer\-::\-Hidden}}
+\subsubsection[{backward\-\_\-error\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Input\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Input\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Output\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Output\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Input\-Mapping\-Type = aligned\-::\-Map$<$\-\_\-\-Input\-Block\-Type$>$, typename \-\_\-\-Output\-Mapping\-Type = aligned\-::\-Map$<$\-\_\-\-Output\-Block\-Type$>$$>$ \-\_\-\-Input\-Mapping\-Type\-::\-Ptr {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type, \-\_\-\-Input\-Mapping\-Type, \-\_\-\-Output\-Mapping\-Type $>$\-::backward\-\_\-error\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classffnn_1_1layer_1_1_hidden_aa9ed4266924e9b9da7faf9d53380a3e5}
+
+
+Backward error vector. 
+
+
+
+Referenced by ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::backward(), and ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::backward().
+
+\hypertarget{classffnn_1_1layer_1_1_hidden_a9ca7423a16607df0a278002c249e9d1b}{\index{ffnn\-::layer\-::\-Hidden@{ffnn\-::layer\-::\-Hidden}!forward\-\_\-error\-\_\-@{forward\-\_\-error\-\_\-}}
+\index{forward\-\_\-error\-\_\-@{forward\-\_\-error\-\_\-}!ffnn::layer::Hidden@{ffnn\-::layer\-::\-Hidden}}
+\subsubsection[{forward\-\_\-error\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Input\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Input\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Output\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Output\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Input\-Mapping\-Type = aligned\-::\-Map$<$\-\_\-\-Input\-Block\-Type$>$, typename \-\_\-\-Output\-Mapping\-Type = aligned\-::\-Map$<$\-\_\-\-Output\-Block\-Type$>$$>$ \-\_\-\-Output\-Mapping\-Type\-::\-Ptr {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type, \-\_\-\-Input\-Mapping\-Type, \-\_\-\-Output\-Mapping\-Type $>$\-::forward\-\_\-error\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classffnn_1_1layer_1_1_hidden_a9ca7423a16607df0a278002c249e9d1b}
+
+
+Output-\/target error vector. 
+
+
+
+Referenced by ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::backward(), and ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::backward().
+
+\hypertarget{classffnn_1_1layer_1_1_hidden_a2583fadf189c4a9217ffe0146e8f2d1e}{\index{ffnn\-::layer\-::\-Hidden@{ffnn\-::layer\-::\-Hidden}!input\-\_\-@{input\-\_\-}}
+\index{input\-\_\-@{input\-\_\-}!ffnn::layer::Hidden@{ffnn\-::layer\-::\-Hidden}}
+\subsubsection[{input\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Input\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Input\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Output\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Output\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Input\-Mapping\-Type = aligned\-::\-Map$<$\-\_\-\-Input\-Block\-Type$>$, typename \-\_\-\-Output\-Mapping\-Type = aligned\-::\-Map$<$\-\_\-\-Output\-Block\-Type$>$$>$ \-\_\-\-Input\-Mapping\-Type\-::\-Ptr {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type, \-\_\-\-Input\-Mapping\-Type, \-\_\-\-Output\-Mapping\-Type $>$\-::input\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classffnn_1_1layer_1_1_hidden_a2583fadf189c4a9217ffe0146e8f2d1e}
+
+
+Memory-\/mapped input vector. 
+
+
+
+Referenced by ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::forward(), and ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::forward().
+
+\hypertarget{classffnn_1_1layer_1_1_hidden_a6dcd89d479af9b2a9359b1f723dae995}{\index{ffnn\-::layer\-::\-Hidden@{ffnn\-::layer\-::\-Hidden}!output\-\_\-@{output\-\_\-}}
+\index{output\-\_\-@{output\-\_\-}!ffnn::layer::Hidden@{ffnn\-::layer\-::\-Hidden}}
+\subsubsection[{output\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Input\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Input\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Output\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Output\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Input\-Mapping\-Type = aligned\-::\-Map$<$\-\_\-\-Input\-Block\-Type$>$, typename \-\_\-\-Output\-Mapping\-Type = aligned\-::\-Map$<$\-\_\-\-Output\-Block\-Type$>$$>$ \-\_\-\-Output\-Mapping\-Type\-::\-Ptr {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type, \-\_\-\-Input\-Mapping\-Type, \-\_\-\-Output\-Mapping\-Type $>$\-::output\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classffnn_1_1layer_1_1_hidden_a6dcd89d479af9b2a9359b1f723dae995}
+
+
+Memory-\/mapped output vector. 
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/\hyperlink{hidden_8h}{hidden.\-h}\end{DoxyCompactItemize}

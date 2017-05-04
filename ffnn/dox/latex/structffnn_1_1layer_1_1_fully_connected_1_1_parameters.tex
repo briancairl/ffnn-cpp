@@ -1,0 +1,98 @@
+\hypertarget{structffnn_1_1layer_1_1_fully_connected_1_1_parameters}{\section{ffnn\-:\-:layer\-:\-:Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-:\-:Parameters Struct Reference}
+\label{structffnn_1_1layer_1_1_fully_connected_1_1_parameters}\index{ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::\-Parameters@{ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::\-Parameters}}
+}
+
+
+A configuration object for a \hyperlink{classffnn_1_1layer_1_1_fully_connected}{Fully\-Connected} hidden layer.  
+
+
+
+
+{\ttfamily \#include \char`\"{}fully\-\_\-connected.\-h\char`\"{}}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structffnn_1_1layer_1_1_fully_connected_1_1_parameters_a21afd0086997bd7e911244e3883ca475}{Parameters} (\hyperlink{classffnn_1_1layer_1_1_fully_connected_ac3ff6f72846f84f89c0d6e10f138c7e3}{Scalar\-Type} \hyperlink{structffnn_1_1layer_1_1_fully_connected_1_1_parameters_af6ab8d97825d77b4cc2d6b4a4870759d}{init\-\_\-weight\-\_\-std}=1e-\/3, Scalar\-Type init\-\_\-bias\-\_\-std=1e-\/3, Scalar\-Type init\-\_\-weight\-\_\-mean=0.\-0, Scalar\-Type init\-\_\-bias\-\_\-mean=0.\-0)
+\begin{DoxyCompactList}\small\item\em Setup constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classffnn_1_1layer_1_1_fully_connected_ac3ff6f72846f84f89c0d6e10f138c7e3}{Scalar\-Type} \hyperlink{structffnn_1_1layer_1_1_fully_connected_1_1_parameters_af6ab8d97825d77b4cc2d6b4a4870759d}{init\-\_\-weight\-\_\-std}
+\begin{DoxyCompactList}\small\item\em Standard deviation of connection weights on init. \end{DoxyCompactList}\item 
+\hyperlink{classffnn_1_1layer_1_1_fully_connected_ac3ff6f72846f84f89c0d6e10f138c7e3}{Scalar\-Type} \hyperlink{structffnn_1_1layer_1_1_fully_connected_1_1_parameters_a9e925704885ce05e37fb6bf53a1c57c4}{init\-\_\-bias\-\_\-std}
+\begin{DoxyCompactList}\small\item\em Standard deviation of biases on init. \end{DoxyCompactList}\item 
+\hyperlink{classffnn_1_1layer_1_1_fully_connected_ac3ff6f72846f84f89c0d6e10f138c7e3}{Scalar\-Type} \hyperlink{structffnn_1_1layer_1_1_fully_connected_1_1_parameters_abd0d7b7f6e7220ece91db3f9ab3812be}{init\-\_\-weight\-\_\-mean}
+\begin{DoxyCompactList}\small\item\em Connection weight mean (bias) on init. \end{DoxyCompactList}\item 
+\hyperlink{classffnn_1_1layer_1_1_fully_connected_ac3ff6f72846f84f89c0d6e10f138c7e3}{Scalar\-Type} \hyperlink{structffnn_1_1layer_1_1_fully_connected_1_1_parameters_ada734ee2cffa841b4502f10c834571ba}{init\-\_\-bias\-\_\-mean}
+\begin{DoxyCompactList}\small\item\em Connection biasing mean (bias) on init. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic$>$struct ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::\-Parameters}
+
+A configuration object for a \hyperlink{classffnn_1_1layer_1_1_fully_connected}{Fully\-Connected} hidden layer. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structffnn_1_1layer_1_1_fully_connected_1_1_parameters_a21afd0086997bd7e911244e3883ca475}{\index{ffnn\-::layer\-::\-Fully\-Connected\-::\-Parameters@{ffnn\-::layer\-::\-Fully\-Connected\-::\-Parameters}!Parameters@{Parameters}}
+\index{Parameters@{Parameters}!ffnn::layer::FullyConnected::Parameters@{ffnn\-::layer\-::\-Fully\-Connected\-::\-Parameters}}
+\subsubsection[{Parameters}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic$>$ {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::Parameters\-::\-Parameters (
+\begin{DoxyParamCaption}
+\item[{{\bf Scalar\-Type}}]{init\-\_\-weight\-\_\-std = {\ttfamily 1e-\/3}, }
+\item[{{\bf Scalar\-Type}}]{init\-\_\-bias\-\_\-std = {\ttfamily 1e-\/3}, }
+\item[{{\bf Scalar\-Type}}]{init\-\_\-weight\-\_\-mean = {\ttfamily 0.0}, }
+\item[{{\bf Scalar\-Type}}]{init\-\_\-bias\-\_\-mean = {\ttfamily 0.0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{structffnn_1_1layer_1_1_fully_connected_1_1_parameters_a21afd0086997bd7e911244e3883ca475}
+
+
+Setup constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em init\-\_\-weight\-\_\-std} & Standard deviation of initial weights \\
+\hline
+{\em init\-\_\-bias\-\_\-std} & Standard deviation of initial weights \\
+\hline
+{\em init\-\_\-weight\-\_\-mean} & Mean of intial weights \\
+\hline
+{\em init\-\_\-bias\-\_\-mean} & Mean of intial biases \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structffnn_1_1layer_1_1_fully_connected_1_1_parameters_ada734ee2cffa841b4502f10c834571ba}{\index{ffnn\-::layer\-::\-Fully\-Connected\-::\-Parameters@{ffnn\-::layer\-::\-Fully\-Connected\-::\-Parameters}!init\-\_\-bias\-\_\-mean@{init\-\_\-bias\-\_\-mean}}
+\index{init\-\_\-bias\-\_\-mean@{init\-\_\-bias\-\_\-mean}!ffnn::layer::FullyConnected::Parameters@{ffnn\-::layer\-::\-Fully\-Connected\-::\-Parameters}}
+\subsubsection[{init\-\_\-bias\-\_\-mean}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic$>$ {\bf Scalar\-Type} {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::Parameters\-::init\-\_\-bias\-\_\-mean}}\label{structffnn_1_1layer_1_1_fully_connected_1_1_parameters_ada734ee2cffa841b4502f10c834571ba}
+
+
+Connection biasing mean (bias) on init. 
+
+\hypertarget{structffnn_1_1layer_1_1_fully_connected_1_1_parameters_a9e925704885ce05e37fb6bf53a1c57c4}{\index{ffnn\-::layer\-::\-Fully\-Connected\-::\-Parameters@{ffnn\-::layer\-::\-Fully\-Connected\-::\-Parameters}!init\-\_\-bias\-\_\-std@{init\-\_\-bias\-\_\-std}}
+\index{init\-\_\-bias\-\_\-std@{init\-\_\-bias\-\_\-std}!ffnn::layer::FullyConnected::Parameters@{ffnn\-::layer\-::\-Fully\-Connected\-::\-Parameters}}
+\subsubsection[{init\-\_\-bias\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic$>$ {\bf Scalar\-Type} {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::Parameters\-::init\-\_\-bias\-\_\-std}}\label{structffnn_1_1layer_1_1_fully_connected_1_1_parameters_a9e925704885ce05e37fb6bf53a1c57c4}
+
+
+Standard deviation of biases on init. 
+
+\hypertarget{structffnn_1_1layer_1_1_fully_connected_1_1_parameters_abd0d7b7f6e7220ece91db3f9ab3812be}{\index{ffnn\-::layer\-::\-Fully\-Connected\-::\-Parameters@{ffnn\-::layer\-::\-Fully\-Connected\-::\-Parameters}!init\-\_\-weight\-\_\-mean@{init\-\_\-weight\-\_\-mean}}
+\index{init\-\_\-weight\-\_\-mean@{init\-\_\-weight\-\_\-mean}!ffnn::layer::FullyConnected::Parameters@{ffnn\-::layer\-::\-Fully\-Connected\-::\-Parameters}}
+\subsubsection[{init\-\_\-weight\-\_\-mean}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic$>$ {\bf Scalar\-Type} {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::Parameters\-::init\-\_\-weight\-\_\-mean}}\label{structffnn_1_1layer_1_1_fully_connected_1_1_parameters_abd0d7b7f6e7220ece91db3f9ab3812be}
+
+
+Connection weight mean (bias) on init. 
+
+\hypertarget{structffnn_1_1layer_1_1_fully_connected_1_1_parameters_af6ab8d97825d77b4cc2d6b4a4870759d}{\index{ffnn\-::layer\-::\-Fully\-Connected\-::\-Parameters@{ffnn\-::layer\-::\-Fully\-Connected\-::\-Parameters}!init\-\_\-weight\-\_\-std@{init\-\_\-weight\-\_\-std}}
+\index{init\-\_\-weight\-\_\-std@{init\-\_\-weight\-\_\-std}!ffnn::layer::FullyConnected::Parameters@{ffnn\-::layer\-::\-Fully\-Connected\-::\-Parameters}}
+\subsubsection[{init\-\_\-weight\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic$>$ {\bf Scalar\-Type} {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::Parameters\-::init\-\_\-weight\-\_\-std}}\label{structffnn_1_1layer_1_1_fully_connected_1_1_parameters_af6ab8d97825d77b4cc2d6b4a4870759d}
+
+
+Standard deviation of connection weights on init. 
+
+
+
+The documentation for this struct was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/\hyperlink{fully__connected_8h}{fully\-\_\-connected.\-h}\item 
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/impl/\hyperlink{layer_2impl_2fully__connected_8hpp}{fully\-\_\-connected.\-hpp}\end{DoxyCompactItemize}

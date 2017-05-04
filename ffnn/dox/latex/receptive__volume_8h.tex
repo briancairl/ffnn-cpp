@@ -1,0 +1,76 @@
+\hypertarget{receptive__volume_8h}{\section{/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/receptive\-\_\-volume.h File Reference}
+\label{receptive__volume_8h}\index{/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/receptive\-\_\-volume.\-h@{/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/receptive\-\_\-volume.\-h}}
+}
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$ffnn/layer/internal/dimensions.\-h$>$}\\*
+{\ttfamily \#include $<$ffnn/layer/internal/interface.\-h$>$}\\*
+{\ttfamily \#include $<$ffnn/layer/impl/receptive\-\_\-volume.\-hpp$>$}\\*
+Include dependency graph for receptive\-\_\-volume.\-h\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{receptive__volume_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classffnn_1_1layer_1_1_receptive_volume}{ffnn\-::layer\-::\-Receptive\-Volume$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Embedding\-Mode $>$}
+\item 
+struct \hyperlink{structffnn_1_1layer_1_1_receptive_volume_1_1_parameters}{ffnn\-::layer\-::\-Receptive\-Volume$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Embedding\-Mode $>$\-::\-Parameters}
+\begin{DoxyCompactList}\small\item\em A configuration object for a \hyperlink{classffnn_1_1layer_1_1_fully_connected}{Fully\-Connected} hidden layer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespaceffnn}{ffnn}
+\item 
+\hyperlink{namespaceffnn_1_1layer}{ffnn\-::layer}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{receptive__volume_8h_a1888db73da403e86806b106c3b40eb29}{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-P\-A\-I\-R}(n, m)~(\hyperlink{dimensions_8h_a67c7ed133a71d197d8fca368336d5aa7}{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C}(n) $\vert$$\vert$ \hyperlink{dimensions_8h_a67c7ed133a71d197d8fca368336d5aa7}{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C}(m))
+\item 
+\#define \hyperlink{receptive__volume_8h_a74feffebf310dd34521adc2adcaf64c9}{P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-P\-A\-I\-R}(n, m)~(\hyperlink{receptive__volume_8h_a1888db73da403e86806b106c3b40eb29}{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-P\-A\-I\-R}(n, m) ? Eigen\-::\-Dynamic \-: (n$\ast$m))
+\item 
+\#define \hyperlink{receptive__volume_8h_a359151d89b7e46460e54bc364f144fa0}{R\-E\-C\-E\-P\-T\-I\-V\-E\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-T\-A\-R\-G\-S}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69a}{ffnn\-::layer\-::\-Embedding\-Mode} \{ \hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aa91eb0d1f175a08e2b2991cae348c827d}{ffnn\-::layer\-::\-Row\-Embedding} = 0, 
+\hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aa42ac01b35d45fd60256ef5008c96c049}{ffnn\-::layer\-::\-Col\-Embedding} = 1
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{receptive__volume_8h_a1888db73da403e86806b106c3b40eb29}{\index{receptive\-\_\-volume.\-h@{receptive\-\_\-volume.\-h}!I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-P\-A\-I\-R@{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-P\-A\-I\-R}}
+\index{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-P\-A\-I\-R@{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-P\-A\-I\-R}!receptive_volume.h@{receptive\-\_\-volume.\-h}}
+\subsubsection[{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-P\-A\-I\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-P\-A\-I\-R(
+\begin{DoxyParamCaption}
+\item[{}]{n, }
+\item[{}]{m}
+\end{DoxyParamCaption}
+)~({\bf I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C}(n) $\vert$$\vert$ {\bf I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C}(m))}}\label{receptive__volume_8h_a1888db73da403e86806b106c3b40eb29}
+\hypertarget{receptive__volume_8h_a74feffebf310dd34521adc2adcaf64c9}{\index{receptive\-\_\-volume.\-h@{receptive\-\_\-volume.\-h}!P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-P\-A\-I\-R@{P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-P\-A\-I\-R}}
+\index{P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-P\-A\-I\-R@{P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-P\-A\-I\-R}!receptive_volume.h@{receptive\-\_\-volume.\-h}}
+\subsubsection[{P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-P\-A\-I\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-P\-A\-I\-R(
+\begin{DoxyParamCaption}
+\item[{}]{n, }
+\item[{}]{m}
+\end{DoxyParamCaption}
+)~({\bf I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-P\-A\-I\-R}(n, m) ? Eigen\-::\-Dynamic \-: (n$\ast$m))}}\label{receptive__volume_8h_a74feffebf310dd34521adc2adcaf64c9}
+\hypertarget{receptive__volume_8h_a359151d89b7e46460e54bc364f144fa0}{\index{receptive\-\_\-volume.\-h@{receptive\-\_\-volume.\-h}!R\-E\-C\-E\-P\-T\-I\-V\-E\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-T\-A\-R\-G\-S@{R\-E\-C\-E\-P\-T\-I\-V\-E\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-T\-A\-R\-G\-S}}
+\index{R\-E\-C\-E\-P\-T\-I\-V\-E\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-T\-A\-R\-G\-S@{R\-E\-C\-E\-P\-T\-I\-V\-E\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-T\-A\-R\-G\-S}!receptive_volume.h@{receptive\-\_\-volume.\-h}}
+\subsubsection[{R\-E\-C\-E\-P\-T\-I\-V\-E\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-T\-A\-R\-G\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-E\-C\-E\-P\-T\-I\-V\-E\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-T\-A\-R\-G\-S}}\label{receptive__volume_8h_a359151d89b7e46460e54bc364f144fa0}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+ValueType,\(\backslash\)
+                               HeightAtCompileTime,\(\backslash\)
+                               WidthAtCompileTime,\(\backslash\)
+                               DepthAtCompileTime,\(\backslash\)
+                               FilterCountAtCompileTime,\hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69a}{\(\backslash\)}
+\hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69a}{                               EmbeddingMode}
+\end{DoxyCode}

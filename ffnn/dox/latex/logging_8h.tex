@@ -1,0 +1,263 @@
+\hypertarget{logging_8h}{\section{/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/logging.h File Reference}
+\label{logging_8h}\index{/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/logging.\-h@{/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/logging.\-h}}
+}
+{\ttfamily \#include $<$iostream$>$}\\*
+Include dependency graph for logging.\-h\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{logging_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{logging_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespaceffnn}{ffnn}
+\item 
+\hyperlink{namespaceffnn_1_1logging}{ffnn\-::logging}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{logging_8h_a84a92aec634f13a63f5686cc262a0815}{F\-F\-N\-N\-\_\-\-N\-A\-M\-E\-\_\-\-H\-E\-A\-D\-E\-R}(name)~\hyperlink{group___unicode_color_definitions_ga65590452b7707feb609f43a9ca306d42}{ffnn\-::logging\-::\-H\-E\-A\-D\-E\-R} $<$$<$ \char`\"{}\mbox{[}\char`\"{} $<$$<$ name $<$$<$ \char`\"{}\mbox{]} \char`\"{} $<$$<$ \hyperlink{group___unicode_color_definitions_gab21e47dcbc216f8fc7de88bd217f9f0a}{ffnn\-::logging\-::\-E\-N\-D\-C}
+\begin{DoxyCompactList}\small\item\em Named header for all {\ttfamily \-\_\-\-N\-A\-M\-E\-D} printouts. \end{DoxyCompactList}\item 
+\#define \hyperlink{logging_8h_ad17a22e477672ae24ca9afe0abf1b46f}{F\-F\-N\-N\-\_\-\-D\-E\-B\-U\-G\-\_\-\-N\-A\-M\-E\-D}(name, msg)~\{std\-::cout $<$$<$ \hyperlink{logging_8h_a84a92aec634f13a63f5686cc262a0815}{F\-F\-N\-N\-\_\-\-N\-A\-M\-E\-\_\-\-H\-E\-A\-D\-E\-R}(name) $<$$<$ \hyperlink{group___unicode_color_definitions_ga3e2c8118c023bd9d8bb394366f943cc5}{ffnn\-::logging\-::\-B\-L\-U\-E} $<$$<$ msg $<$$<$ \hyperlink{group___unicode_color_definitions_gab21e47dcbc216f8fc7de88bd217f9f0a}{ffnn\-::logging\-::\-E\-N\-D\-C} $<$$<$ std\-::endl;\}
+\begin{DoxyCompactList}\small\item\em Prints an named debug message. \end{DoxyCompactList}\item 
+\#define \hyperlink{logging_8h_aabf5ff82064ef58a239a35b444685955}{F\-F\-N\-N\-\_\-\-W\-A\-R\-N\-\_\-\-N\-A\-M\-E\-D}(name, msg)~\{std\-::cout $<$$<$ \hyperlink{logging_8h_a84a92aec634f13a63f5686cc262a0815}{F\-F\-N\-N\-\_\-\-N\-A\-M\-E\-\_\-\-H\-E\-A\-D\-E\-R}(name) $<$$<$ \hyperlink{group___unicode_color_definitions_gafc935a693ebe97569c82dd2415bb7373}{ffnn\-::logging\-::\-W\-A\-R\-N} $<$$<$ msg $<$$<$ \hyperlink{group___unicode_color_definitions_gab21e47dcbc216f8fc7de88bd217f9f0a}{ffnn\-::logging\-::\-E\-N\-D\-C} $<$$<$ std\-::endl;\}
+\begin{DoxyCompactList}\small\item\em Prints an named warning message. \end{DoxyCompactList}\item 
+\#define \hyperlink{logging_8h_abf808dbe4f5e6b88691ee1dd9f1eb2df}{F\-F\-N\-N\-\_\-\-I\-N\-F\-O\-\_\-\-N\-A\-M\-E\-D}(name, msg)~\{std\-::cout $<$$<$ \hyperlink{logging_8h_a84a92aec634f13a63f5686cc262a0815}{F\-F\-N\-N\-\_\-\-N\-A\-M\-E\-\_\-\-H\-E\-A\-D\-E\-R}(name) $<$$<$ \hyperlink{group___unicode_color_definitions_ga00119b4fa7f1c1e88aec7e09e2215298}{ffnn\-::logging\-::\-G\-R\-E\-E\-N} $<$$<$ msg $<$$<$ \hyperlink{group___unicode_color_definitions_gab21e47dcbc216f8fc7de88bd217f9f0a}{ffnn\-::logging\-::\-E\-N\-D\-C} $<$$<$ std\-::endl;\}
+\begin{DoxyCompactList}\small\item\em Prints a named general info message. \end{DoxyCompactList}\item 
+\#define \hyperlink{logging_8h_a48e2bf3dad548dafff4be40132286cbb}{F\-F\-N\-N\-\_\-\-E\-R\-R\-O\-R\-\_\-\-N\-A\-M\-E\-D}(name, msg)~\{std\-::cout $<$$<$ \hyperlink{logging_8h_a84a92aec634f13a63f5686cc262a0815}{F\-F\-N\-N\-\_\-\-N\-A\-M\-E\-\_\-\-H\-E\-A\-D\-E\-R}(name) $<$$<$ \hyperlink{group___unicode_color_definitions_ga2047db0e31e0a45c7c213845567afc06}{ffnn\-::logging\-::\-F\-A\-I\-L} $<$$<$ msg $<$$<$ \hyperlink{group___unicode_color_definitions_gab21e47dcbc216f8fc7de88bd217f9f0a}{ffnn\-::logging\-::\-E\-N\-D\-C} $<$$<$ std\-::endl;\}
+\begin{DoxyCompactList}\small\item\em Prints an named error message. \end{DoxyCompactList}\item 
+\#define \hyperlink{logging_8h_a1d6c56368e50cf741e990d8ea95b3cf4}{F\-F\-N\-N\-\_\-\-E\-R\-R\-O\-R}(msg)~\hyperlink{logging_8h_a48e2bf3dad548dafff4be40132286cbb}{F\-F\-N\-N\-\_\-\-E\-R\-R\-O\-R\-\_\-\-N\-A\-M\-E\-D}(\char`\"{}E\-R\-R\-O\-R\char`\"{}, msg)
+\begin{DoxyCompactList}\small\item\em Prints an unnamed error message. \end{DoxyCompactList}\item 
+\#define \hyperlink{logging_8h_ab12173b0787af69f3f1a39acd2bee8f1}{F\-F\-N\-N\-\_\-\-D\-E\-B\-U\-G}(msg)~\hyperlink{logging_8h_ad17a22e477672ae24ca9afe0abf1b46f}{F\-F\-N\-N\-\_\-\-D\-E\-B\-U\-G\-\_\-\-N\-A\-M\-E\-D}(\char`\"{}D\-E\-B\-U\-G\char`\"{}, msg)
+\begin{DoxyCompactList}\small\item\em Prints an unnamed debug message. \end{DoxyCompactList}\item 
+\#define \hyperlink{logging_8h_a828fa47e8eacc1dfaf7dc258feccd621}{F\-F\-N\-N\-\_\-\-W\-A\-R\-N}(msg)~\hyperlink{logging_8h_aabf5ff82064ef58a239a35b444685955}{F\-F\-N\-N\-\_\-\-W\-A\-R\-N\-\_\-\-N\-A\-M\-E\-D}(\char`\"{}-\/W\-A\-R\-N\char`\"{}, msg)
+\begin{DoxyCompactList}\small\item\em Prints an unnamed warning message. \end{DoxyCompactList}\item 
+\#define \hyperlink{logging_8h_a879b37e6a9587b32391cf514a74cc60f}{F\-F\-N\-N\-\_\-\-I\-N\-F\-O}(msg)~\hyperlink{logging_8h_abf808dbe4f5e6b88691ee1dd9f1eb2df}{F\-F\-N\-N\-\_\-\-I\-N\-F\-O\-\_\-\-N\-A\-M\-E\-D}(\char`\"{}-\/I\-N\-F\-O\char`\"{}, msg)
+\begin{DoxyCompactList}\small\item\em Prints an unnamed general info message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{group___unicode_color_definitions_ga65590452b7707feb609f43a9ca306d42}{ffnn\-::logging\-::\-H\-E\-A\-D\-E\-R} = \char`\"{}\textbackslash{}033\mbox{[}95m\char`\"{}
+\item 
+const char $\ast$ \hyperlink{group___unicode_color_definitions_ga3e2c8118c023bd9d8bb394366f943cc5}{ffnn\-::logging\-::\-B\-L\-U\-E} = \char`\"{}\textbackslash{}033\mbox{[}94m\char`\"{}
+\item 
+const char $\ast$ \hyperlink{group___unicode_color_definitions_ga00119b4fa7f1c1e88aec7e09e2215298}{ffnn\-::logging\-::\-G\-R\-E\-E\-N} = \char`\"{}\textbackslash{}033\mbox{[}92m\char`\"{}
+\item 
+const char $\ast$ \hyperlink{group___unicode_color_definitions_gafc935a693ebe97569c82dd2415bb7373}{ffnn\-::logging\-::\-W\-A\-R\-N} = \char`\"{}\textbackslash{}033\mbox{[}93m\char`\"{}
+\item 
+const char $\ast$ \hyperlink{group___unicode_color_definitions_ga2047db0e31e0a45c7c213845567afc06}{ffnn\-::logging\-::\-F\-A\-I\-L} = \char`\"{}\textbackslash{}033\mbox{[}91m\char`\"{}
+\item 
+const char $\ast$ \hyperlink{group___unicode_color_definitions_gab21e47dcbc216f8fc7de88bd217f9f0a}{ffnn\-::logging\-::\-E\-N\-D\-C} = \char`\"{}\textbackslash{}033\mbox{[}0m\char`\"{}
+\item 
+const char $\ast$ \hyperlink{group___unicode_color_definitions_ga32fca3fc24af93ce9c4ca33b4a6a3dde}{ffnn\-::logging\-::\-B\-O\-L\-D} = \char`\"{}\textbackslash{}033\mbox{[}1m\char`\"{}
+\item 
+const char $\ast$ \hyperlink{group___unicode_color_definitions_gab2b4d719c3fe8672abf96e00a37c799c}{ffnn\-::logging\-::\-U\-N\-D\-E\-R\-L\-I\-N\-E} = \char`\"{}\textbackslash{}033\mbox{[}4m\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{logging_8h_ab12173b0787af69f3f1a39acd2bee8f1}{\index{logging.\-h@{logging.\-h}!F\-F\-N\-N\-\_\-\-D\-E\-B\-U\-G@{F\-F\-N\-N\-\_\-\-D\-E\-B\-U\-G}}
+\index{F\-F\-N\-N\-\_\-\-D\-E\-B\-U\-G@{F\-F\-N\-N\-\_\-\-D\-E\-B\-U\-G}!logging.h@{logging.\-h}}
+\subsubsection[{F\-F\-N\-N\-\_\-\-D\-E\-B\-U\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\-F\-N\-N\-\_\-\-D\-E\-B\-U\-G(
+\begin{DoxyParamCaption}
+\item[{}]{msg}
+\end{DoxyParamCaption}
+)~{\bf F\-F\-N\-N\-\_\-\-D\-E\-B\-U\-G\-\_\-\-N\-A\-M\-E\-D}(\char`\"{}D\-E\-B\-U\-G\char`\"{}, msg)}}\label{logging_8h_ab12173b0787af69f3f1a39acd2bee8f1}
+
+
+Prints an unnamed debug message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & name to associate with message \\
+\hline
+{\em msg} & message to print \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+Will not log when {\ttfamily F\-F\-N\-N\-\_\-\-N\-O\-\_\-\-L\-O\-G\-G\-I\-N\-G} is defined 
+\end{DoxyWarning}
+\hypertarget{logging_8h_ad17a22e477672ae24ca9afe0abf1b46f}{\index{logging.\-h@{logging.\-h}!F\-F\-N\-N\-\_\-\-D\-E\-B\-U\-G\-\_\-\-N\-A\-M\-E\-D@{F\-F\-N\-N\-\_\-\-D\-E\-B\-U\-G\-\_\-\-N\-A\-M\-E\-D}}
+\index{F\-F\-N\-N\-\_\-\-D\-E\-B\-U\-G\-\_\-\-N\-A\-M\-E\-D@{F\-F\-N\-N\-\_\-\-D\-E\-B\-U\-G\-\_\-\-N\-A\-M\-E\-D}!logging.h@{logging.\-h}}
+\subsubsection[{F\-F\-N\-N\-\_\-\-D\-E\-B\-U\-G\-\_\-\-N\-A\-M\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\-F\-N\-N\-\_\-\-D\-E\-B\-U\-G\-\_\-\-N\-A\-M\-E\-D(
+\begin{DoxyParamCaption}
+\item[{}]{name, }
+\item[{}]{msg}
+\end{DoxyParamCaption}
+)~\{std\-::cout $<$$<$ {\bf F\-F\-N\-N\-\_\-\-N\-A\-M\-E\-\_\-\-H\-E\-A\-D\-E\-R}(name) $<$$<$ {\bf ffnn\-::logging\-::\-B\-L\-U\-E} $<$$<$ msg $<$$<$ {\bf ffnn\-::logging\-::\-E\-N\-D\-C} $<$$<$ std\-::endl;\}}}\label{logging_8h_ad17a22e477672ae24ca9afe0abf1b46f}
+
+
+Prints an named debug message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & name to associate with message \\
+\hline
+{\em msg} & message to print \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+Will not log when {\ttfamily F\-F\-N\-N\-\_\-\-N\-O\-\_\-\-L\-O\-G\-G\-I\-N\-G} is defined 
+\end{DoxyWarning}
+
+
+Referenced by ffnn\-::layer\-::connect(), ffnn\-::layer\-::\-Output$<$ Value\-Type, Network\-Outputs\-At\-Compile\-Time $>$\-::initialize(), ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time $>$\-::initialize(), ffnn\-::layer\-::\-Input$<$ Value\-Type, Network\-Inputs\-At\-Compile\-Time $>$\-::initialize(), ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::initialize(), ffnn\-::layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::initialize(), ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time $>$\-::load(), ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$\-::load(), ffnn\-::layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::load(), ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::load(), ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time $>$\-::save(), ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$\-::save(), ffnn\-::layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::save(), and ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::save().
+
+\hypertarget{logging_8h_a1d6c56368e50cf741e990d8ea95b3cf4}{\index{logging.\-h@{logging.\-h}!F\-F\-N\-N\-\_\-\-E\-R\-R\-O\-R@{F\-F\-N\-N\-\_\-\-E\-R\-R\-O\-R}}
+\index{F\-F\-N\-N\-\_\-\-E\-R\-R\-O\-R@{F\-F\-N\-N\-\_\-\-E\-R\-R\-O\-R}!logging.h@{logging.\-h}}
+\subsubsection[{F\-F\-N\-N\-\_\-\-E\-R\-R\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\-F\-N\-N\-\_\-\-E\-R\-R\-O\-R(
+\begin{DoxyParamCaption}
+\item[{}]{msg}
+\end{DoxyParamCaption}
+)~{\bf F\-F\-N\-N\-\_\-\-E\-R\-R\-O\-R\-\_\-\-N\-A\-M\-E\-D}(\char`\"{}E\-R\-R\-O\-R\char`\"{}, msg)}}\label{logging_8h_a1d6c56368e50cf741e990d8ea95b3cf4}
+
+
+Prints an unnamed error message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & name to associate with message \\
+\hline
+{\em msg} & message to print \\
+\hline
+\end{DoxyParams}
+
+
+Referenced by ffnn\-::io\-::signature\-::check(), and ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::initialize().
+
+\hypertarget{logging_8h_a48e2bf3dad548dafff4be40132286cbb}{\index{logging.\-h@{logging.\-h}!F\-F\-N\-N\-\_\-\-E\-R\-R\-O\-R\-\_\-\-N\-A\-M\-E\-D@{F\-F\-N\-N\-\_\-\-E\-R\-R\-O\-R\-\_\-\-N\-A\-M\-E\-D}}
+\index{F\-F\-N\-N\-\_\-\-E\-R\-R\-O\-R\-\_\-\-N\-A\-M\-E\-D@{F\-F\-N\-N\-\_\-\-E\-R\-R\-O\-R\-\_\-\-N\-A\-M\-E\-D}!logging.h@{logging.\-h}}
+\subsubsection[{F\-F\-N\-N\-\_\-\-E\-R\-R\-O\-R\-\_\-\-N\-A\-M\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\-F\-N\-N\-\_\-\-E\-R\-R\-O\-R\-\_\-\-N\-A\-M\-E\-D(
+\begin{DoxyParamCaption}
+\item[{}]{name, }
+\item[{}]{msg}
+\end{DoxyParamCaption}
+)~\{std\-::cout $<$$<$ {\bf F\-F\-N\-N\-\_\-\-N\-A\-M\-E\-\_\-\-H\-E\-A\-D\-E\-R}(name) $<$$<$ {\bf ffnn\-::logging\-::\-F\-A\-I\-L} $<$$<$ msg $<$$<$ {\bf ffnn\-::logging\-::\-E\-N\-D\-C} $<$$<$ std\-::endl;\}}}\label{logging_8h_a48e2bf3dad548dafff4be40132286cbb}
+
+
+Prints an named error message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & name to associate with message \\
+\hline
+{\em msg} & message to print \\
+\hline
+\end{DoxyParams}
+
+
+Referenced by ffnn\-::layer\-::connect(), ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$\-::connect\-Input\-Layers(), ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$\-::evaluate\-Input\-Size(), ffnn\-::layer\-::\-Output$<$ Value\-Type, Network\-Outputs\-At\-Compile\-Time $>$\-::initialize(), and ffnn\-::layer\-::\-Input$<$ Value\-Type, Network\-Inputs\-At\-Compile\-Time $>$\-::initialize().
+
+\hypertarget{logging_8h_a879b37e6a9587b32391cf514a74cc60f}{\index{logging.\-h@{logging.\-h}!F\-F\-N\-N\-\_\-\-I\-N\-F\-O@{F\-F\-N\-N\-\_\-\-I\-N\-F\-O}}
+\index{F\-F\-N\-N\-\_\-\-I\-N\-F\-O@{F\-F\-N\-N\-\_\-\-I\-N\-F\-O}!logging.h@{logging.\-h}}
+\subsubsection[{F\-F\-N\-N\-\_\-\-I\-N\-F\-O}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\-F\-N\-N\-\_\-\-I\-N\-F\-O(
+\begin{DoxyParamCaption}
+\item[{}]{msg}
+\end{DoxyParamCaption}
+)~{\bf F\-F\-N\-N\-\_\-\-I\-N\-F\-O\-\_\-\-N\-A\-M\-E\-D}(\char`\"{}-\/I\-N\-F\-O\char`\"{}, msg)}}\label{logging_8h_a879b37e6a9587b32391cf514a74cc60f}
+
+
+Prints an unnamed general info message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & name to associate with message \\
+\hline
+{\em msg} & message to print \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+Will not log when {\ttfamily F\-F\-N\-N\-\_\-\-N\-O\-\_\-\-L\-O\-G\-G\-I\-N\-G} is defined 
+\end{DoxyWarning}
+\hypertarget{logging_8h_abf808dbe4f5e6b88691ee1dd9f1eb2df}{\index{logging.\-h@{logging.\-h}!F\-F\-N\-N\-\_\-\-I\-N\-F\-O\-\_\-\-N\-A\-M\-E\-D@{F\-F\-N\-N\-\_\-\-I\-N\-F\-O\-\_\-\-N\-A\-M\-E\-D}}
+\index{F\-F\-N\-N\-\_\-\-I\-N\-F\-O\-\_\-\-N\-A\-M\-E\-D@{F\-F\-N\-N\-\_\-\-I\-N\-F\-O\-\_\-\-N\-A\-M\-E\-D}!logging.h@{logging.\-h}}
+\subsubsection[{F\-F\-N\-N\-\_\-\-I\-N\-F\-O\-\_\-\-N\-A\-M\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\-F\-N\-N\-\_\-\-I\-N\-F\-O\-\_\-\-N\-A\-M\-E\-D(
+\begin{DoxyParamCaption}
+\item[{}]{name, }
+\item[{}]{msg}
+\end{DoxyParamCaption}
+)~\{std\-::cout $<$$<$ {\bf F\-F\-N\-N\-\_\-\-N\-A\-M\-E\-\_\-\-H\-E\-A\-D\-E\-R}(name) $<$$<$ {\bf ffnn\-::logging\-::\-G\-R\-E\-E\-N} $<$$<$ msg $<$$<$ {\bf ffnn\-::logging\-::\-E\-N\-D\-C} $<$$<$ std\-::endl;\}}}\label{logging_8h_abf808dbe4f5e6b88691ee1dd9f1eb2df}
+
+
+Prints a named general info message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & name to associate with message \\
+\hline
+{\em msg} & message to print \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+Will not log when {\ttfamily F\-F\-N\-N\-\_\-\-N\-O\-\_\-\-L\-O\-G\-G\-I\-N\-G} is defined 
+\end{DoxyWarning}
+\hypertarget{logging_8h_a84a92aec634f13a63f5686cc262a0815}{\index{logging.\-h@{logging.\-h}!F\-F\-N\-N\-\_\-\-N\-A\-M\-E\-\_\-\-H\-E\-A\-D\-E\-R@{F\-F\-N\-N\-\_\-\-N\-A\-M\-E\-\_\-\-H\-E\-A\-D\-E\-R}}
+\index{F\-F\-N\-N\-\_\-\-N\-A\-M\-E\-\_\-\-H\-E\-A\-D\-E\-R@{F\-F\-N\-N\-\_\-\-N\-A\-M\-E\-\_\-\-H\-E\-A\-D\-E\-R}!logging.h@{logging.\-h}}
+\subsubsection[{F\-F\-N\-N\-\_\-\-N\-A\-M\-E\-\_\-\-H\-E\-A\-D\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\-F\-N\-N\-\_\-\-N\-A\-M\-E\-\_\-\-H\-E\-A\-D\-E\-R(
+\begin{DoxyParamCaption}
+\item[{}]{name}
+\end{DoxyParamCaption}
+)~{\bf ffnn\-::logging\-::\-H\-E\-A\-D\-E\-R} $<$$<$ \char`\"{}\mbox{[}\char`\"{} $<$$<$ name $<$$<$ \char`\"{}\mbox{]} \char`\"{} $<$$<$ {\bf ffnn\-::logging\-::\-E\-N\-D\-C}}}\label{logging_8h_a84a92aec634f13a63f5686cc262a0815}
+
+
+Named header for all {\ttfamily \-\_\-\-N\-A\-M\-E\-D} printouts. 
+
+\hypertarget{logging_8h_a828fa47e8eacc1dfaf7dc258feccd621}{\index{logging.\-h@{logging.\-h}!F\-F\-N\-N\-\_\-\-W\-A\-R\-N@{F\-F\-N\-N\-\_\-\-W\-A\-R\-N}}
+\index{F\-F\-N\-N\-\_\-\-W\-A\-R\-N@{F\-F\-N\-N\-\_\-\-W\-A\-R\-N}!logging.h@{logging.\-h}}
+\subsubsection[{F\-F\-N\-N\-\_\-\-W\-A\-R\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\-F\-N\-N\-\_\-\-W\-A\-R\-N(
+\begin{DoxyParamCaption}
+\item[{}]{msg}
+\end{DoxyParamCaption}
+)~{\bf F\-F\-N\-N\-\_\-\-W\-A\-R\-N\-\_\-\-N\-A\-M\-E\-D}(\char`\"{}-\/W\-A\-R\-N\char`\"{}, msg)}}\label{logging_8h_a828fa47e8eacc1dfaf7dc258feccd621}
+
+
+Prints an unnamed warning message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & name to associate with message \\
+\hline
+{\em msg} & message to print \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+Will not log when {\ttfamily F\-F\-N\-N\-\_\-\-N\-O\-\_\-\-L\-O\-G\-G\-I\-N\-G} is defined 
+\end{DoxyWarning}
+\hypertarget{logging_8h_aabf5ff82064ef58a239a35b444685955}{\index{logging.\-h@{logging.\-h}!F\-F\-N\-N\-\_\-\-W\-A\-R\-N\-\_\-\-N\-A\-M\-E\-D@{F\-F\-N\-N\-\_\-\-W\-A\-R\-N\-\_\-\-N\-A\-M\-E\-D}}
+\index{F\-F\-N\-N\-\_\-\-W\-A\-R\-N\-\_\-\-N\-A\-M\-E\-D@{F\-F\-N\-N\-\_\-\-W\-A\-R\-N\-\_\-\-N\-A\-M\-E\-D}!logging.h@{logging.\-h}}
+\subsubsection[{F\-F\-N\-N\-\_\-\-W\-A\-R\-N\-\_\-\-N\-A\-M\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\-F\-N\-N\-\_\-\-W\-A\-R\-N\-\_\-\-N\-A\-M\-E\-D(
+\begin{DoxyParamCaption}
+\item[{}]{name, }
+\item[{}]{msg}
+\end{DoxyParamCaption}
+)~\{std\-::cout $<$$<$ {\bf F\-F\-N\-N\-\_\-\-N\-A\-M\-E\-\_\-\-H\-E\-A\-D\-E\-R}(name) $<$$<$ {\bf ffnn\-::logging\-::\-W\-A\-R\-N} $<$$<$ msg $<$$<$ {\bf ffnn\-::logging\-::\-E\-N\-D\-C} $<$$<$ std\-::endl;\}}}\label{logging_8h_aabf5ff82064ef58a239a35b444685955}
+
+
+Prints an named warning message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & name to associate with message \\
+\hline
+{\em msg} & message to print \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+Will not log when {\ttfamily F\-F\-N\-N\-\_\-\-N\-O\-\_\-\-L\-O\-G\-G\-I\-N\-G} is defined 
+\end{DoxyWarning}
+
+
+Referenced by ffnn\-::layer\-::\-Output$<$ Value\-Type, Network\-Outputs\-At\-Compile\-Time $>$\-::initialize(), ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time $>$\-::initialize(), ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$\-::initialize(), ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::initialize(), and ffnn\-::layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::initialize().
+

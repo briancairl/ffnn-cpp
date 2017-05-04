@@ -1,0 +1,59 @@
+\hypertarget{classffnn_1_1distribution_1_1_distribution}{\section{ffnn\-:\-:distribution\-:\-:Distribution$<$ Value\-Type $>$ Class Template Reference}
+\label{classffnn_1_1distribution_1_1_distribution}\index{ffnn\-::distribution\-::\-Distribution$<$ Value\-Type $>$@{ffnn\-::distribution\-::\-Distribution$<$ Value\-Type $>$}}
+}
+
+
+{\ttfamily \#include \char`\"{}distribution.\-h\char`\"{}}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual Value\-Type \hyperlink{classffnn_1_1distribution_1_1_distribution_a62760bdfd46cdc21c2a7ab137b491508}{generate} ()=0
+\begin{DoxyCompactList}\small\item\em Generates a random value. \end{DoxyCompactList}\item 
+virtual Value\-Type \hyperlink{classffnn_1_1distribution_1_1_distribution_abd2db033dd692d4b78915734c5c02204}{cdf} (const Value\-Type \&value) const =0
+\begin{DoxyCompactList}\small\item\em Computes C\-D\-F of distribution at specified point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classffnn_1_1distribution_1_1_distribution_abd2db033dd692d4b78915734c5c02204}{\index{ffnn\-::distribution\-::\-Distribution@{ffnn\-::distribution\-::\-Distribution}!cdf@{cdf}}
+\index{cdf@{cdf}!ffnn::distribution::Distribution@{ffnn\-::distribution\-::\-Distribution}}
+\subsubsection[{cdf}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type $>$ virtual Value\-Type {\bf ffnn\-::distribution\-::\-Distribution}$<$ Value\-Type $>$\-::cdf (
+\begin{DoxyParamCaption}
+\item[{const Value\-Type \&}]{value}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classffnn_1_1distribution_1_1_distribution_abd2db033dd692d4b78915734c5c02204}
+
+
+Computes C\-D\-F of distribution at specified point. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em value} & C\-D\-F upper bound \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+cumulative probability 
+\end{DoxyReturn}
+\hypertarget{classffnn_1_1distribution_1_1_distribution_a62760bdfd46cdc21c2a7ab137b491508}{\index{ffnn\-::distribution\-::\-Distribution@{ffnn\-::distribution\-::\-Distribution}!generate@{generate}}
+\index{generate@{generate}!ffnn::distribution::Distribution@{ffnn\-::distribution\-::\-Distribution}}
+\subsubsection[{generate}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type $>$ virtual Value\-Type {\bf ffnn\-::distribution\-::\-Distribution}$<$ Value\-Type $>$\-::generate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classffnn_1_1distribution_1_1_distribution_a62760bdfd46cdc21c2a7ab137b491508}
+
+
+Generates a random value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em input} & a scalar input value \\
+\hline
+\mbox{\tt in,out}  & {\em output} & a scalar output value \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/distribution/\hyperlink{distribution_8h}{distribution.\-h}\end{DoxyCompactItemize}

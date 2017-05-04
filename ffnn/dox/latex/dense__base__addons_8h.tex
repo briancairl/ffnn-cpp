@@ -1,0 +1,55 @@
+\hypertarget{dense__base__addons_8h}{\section{/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/internal/eigen/dense\-\_\-base\-\_\-addons.h File Reference}
+\label{dense__base__addons_8h}\index{/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/internal/eigen/dense\-\_\-base\-\_\-addons.\-h@{/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/internal/eigen/dense\-\_\-base\-\_\-addons.\-h}}
+}
+
+
+Reference\-: \href{http://stackoverflow.com/questions/18382457/eigen-and-boostserialize}{\tt http\-://stackoverflow.\-com/questions/18382457/eigen-\/and-\/boostserialize}.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Archive $>$ }\\void \hyperlink{dense__base__addons_8h_ab948859788aa671e575e410654e07f16}{save} (Archive \&ar, const unsigned int version) const 
+\item 
+{\footnotesize template$<$class Archive $>$ }\\void \hyperlink{dense__base__addons_8h_a68dbd347886624cd725b8a26e5242ee2}{load} (Archive \&ar, const unsigned int version)
+\item 
+{\footnotesize template$<$class Archive $>$ }\\void \hyperlink{dense__base__addons_8h_a73f655537400e50ccab50a489d763f7f}{serialize} (Archive \&ar, const unsigned int file\-\_\-version)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Reference\-: \href{http://stackoverflow.com/questions/18382457/eigen-and-boostserialize}{\tt http\-://stackoverflow.\-com/questions/18382457/eigen-\/and-\/boostserialize}. Reference\-: \href{https://gist.github.com/mtao/5798888}{\tt https\-://gist.\-github.\-com/mtao/5798888}.
+
+\subsection{Function Documentation}
+\hypertarget{dense__base__addons_8h_a68dbd347886624cd725b8a26e5242ee2}{\index{dense\-\_\-base\-\_\-addons.\-h@{dense\-\_\-base\-\_\-addons.\-h}!load@{load}}
+\index{load@{load}!dense_base_addons.h@{dense\-\_\-base\-\_\-addons.\-h}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Archive $>$ void load (
+\begin{DoxyParamCaption}
+\item[{Archive \&}]{ar, }
+\item[{const unsigned int}]{version}
+\end{DoxyParamCaption}
+)}}\label{dense__base__addons_8h_a68dbd347886624cd725b8a26e5242ee2}
+
+
+Referenced by ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time $>$\-::load(), ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$\-::load(), ffnn\-::layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::load(), and ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::load().
+
+\hypertarget{dense__base__addons_8h_ab948859788aa671e575e410654e07f16}{\index{dense\-\_\-base\-\_\-addons.\-h@{dense\-\_\-base\-\_\-addons.\-h}!save@{save}}
+\index{save@{save}!dense_base_addons.h@{dense\-\_\-base\-\_\-addons.\-h}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Archive $>$ void save (
+\begin{DoxyParamCaption}
+\item[{Archive \&}]{ar, }
+\item[{const unsigned int}]{version}
+\end{DoxyParamCaption}
+) const}}\label{dense__base__addons_8h_ab948859788aa671e575e410654e07f16}
+
+
+Referenced by ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time $>$\-::save(), ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$\-::save(), ffnn\-::layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::save(), and ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::save().
+
+\hypertarget{dense__base__addons_8h_a73f655537400e50ccab50a489d763f7f}{\index{dense\-\_\-base\-\_\-addons.\-h@{dense\-\_\-base\-\_\-addons.\-h}!serialize@{serialize}}
+\index{serialize@{serialize}!dense_base_addons.h@{dense\-\_\-base\-\_\-addons.\-h}}
+\subsubsection[{serialize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Archive $>$ void serialize (
+\begin{DoxyParamCaption}
+\item[{Archive \&}]{ar, }
+\item[{const unsigned int}]{file\-\_\-version}
+\end{DoxyParamCaption}
+)}}\label{dense__base__addons_8h_a73f655537400e50ccab50a489d763f7f}

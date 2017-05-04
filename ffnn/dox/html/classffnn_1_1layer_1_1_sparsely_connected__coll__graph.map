@@ -1,0 +1,11 @@
+<map id="ffnn::layer::SparselyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt;" name="ffnn::layer::SparselyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt;">
+<area shape="rect" id="node2" href="$classffnn_1_1layer_1_1_hidden.html" title="ffnn::layer::Hidden\l\&lt; ValueType, InputsAtCompile\lTime, 1, OutputsAtCompileTime, 1 \&gt;" alt="" coords="1080,107,1317,163"/>
+<area shape="rect" id="node3" href="$classffnn_1_1layer_1_1_layer.html" title="Base object for all layer types. " alt="" coords="775,21,895,62"/>
+<area shape="rect" id="node4" href="$classffnn_1_1layer_1_1internal_1_1_interface.html" title="Base object for all layer types. " alt="" coords="457,5,623,46"/>
+<area shape="rect" id="node5" href="$classffnn_1_1traits_1_1_unique.html" title="An object with a unique ID. " alt="" coords="213,12,344,39"/>
+<area shape="rect" id="node6" href="$classffnn_1_1traits_1_1_serializable.html" title="An object which can be saved and loaded. " alt="" coords="6,12,162,39"/>
+<area shape="rect" id="node7" href="$structffnn_1_1aligned_1_1_map.html" title="ffnn::aligned::Map\l\&lt; Eigen::Matrix\&lt; ValueType,\l OutputHeightAtCompileTime,\l OutputWidthAtCompileTime,\l Eigen::ColMajor \&gt; \&gt;" alt="" coords="736,92,933,177"/>
+<area shape="rect" id="node8" href="$structffnn_1_1aligned_1_1_map_base.html" title="ffnn::aligned::MapBase\l\&lt; Eigen::Matrix\&lt; ValueType,\l OutputHeightAtCompileTime,\l OutputWidthAtCompileTime,\l Eigen::ColMajor \&gt;, Eigen::Matrix\l\&lt; ValueType, OutputHeightAtCompileTime,\l OutputWidthAtCompileTime, Eigen::ColMajor\l \&gt;::Scalar \&gt;" alt="" coords="395,70,685,199"/>
+<area shape="rect" id="node9" href="$structffnn_1_1aligned_1_1_map.html" title="ffnn::aligned::Map\l\&lt; Eigen::Matrix\&lt; ValueType,\l InputHeightAtCompileTime,\l InputWidthAtCompileTime,\l Eigen::ColMajor \&gt; \&gt;" alt="" coords="740,223,929,308"/>
+<area shape="rect" id="node10" href="$structffnn_1_1aligned_1_1_map_base.html" title="ffnn::aligned::MapBase\l\&lt; Eigen::Matrix\&lt; ValueType,\l InputHeightAtCompileTime,\l InputWidthAtCompileTime,\l Eigen::ColMajor \&gt;, Eigen::\lMatrix\&lt; ValueType, InputHeightAtCompile\lTime, InputWidthAtCompileTime, Eigen\l::ColMajor \&gt;::Scalar \&gt;" alt="" coords="406,223,674,353"/>
+</map>
