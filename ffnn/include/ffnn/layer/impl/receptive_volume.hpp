@@ -139,11 +139,13 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE EmbeddingMode>
 template<typename InputBlockType, typename OutputBlockType>
-void RECEPTIVE_VOLUME::forward(const InputBlockType& input, OutputBlockType& output)
+void RECEPTIVE_VOLUME::forward(const Eigen::MatrixBase<InputBlockType>& input,
+                               Eigen::MatrixBase<OutputBlockType> const& output)
 {
   for (size_t idx = 0; idx < filter_bank_.size(); idx++)
   {
-    output(idx) = (input.array() * filter_bank_[idx].array()).sum() + b_(idx);
+    const_cast<Eigen::MatrixBase<OutputBlockType>&>(output)(idx) =
+      (input.array() * filter_bank_[idx].array()).sum() + b_(idx);
   }
 }
 
@@ -154,7 +156,8 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE EmbeddingMode>
 template<typename InputBlockType, typename ForwardErrorBlockType>
-void RECEPTIVE_VOLUME::backward(const InputBlockType& input, const ForwardErrorBlockType& error)
+void RECEPTIVE_VOLUME::backward(const Eigen::MatrixBase<InputBlockType>& input,
+                                const Eigen::MatrixBase<ForwardErrorBlockType>& error)
 {
 
 }

@@ -117,10 +117,12 @@ public:
   void reset();
 
   template<typename InputBlockType, typename OutputBlockType>
-  void forward(const InputBlockType& input, OutputBlockType& output);
+  void forward(const Eigen::MatrixBase<InputBlockType>& input,
+               Eigen::MatrixBase<OutputBlockType> const& output);
 
   template<typename InputBlockType, typename ForwardErrorBlockType>
-  void backward(const InputBlockType& input, const ForwardErrorBlockType& error);
+  void backward(const Eigen::MatrixBase<InputBlockType>& input,
+                const Eigen::MatrixBase<ForwardErrorBlockType>& error);
 
   /**
    * @brief Exposes internal biasing weights

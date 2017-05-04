@@ -82,6 +82,31 @@ TEST(TestLayerReceptiveVolume, StaticInstanceRowEmbedding_Forward)
   FFNN_DEBUG('\n' << output);
 }
 
+TEST(TestLayerReceptiveVolume, StaticInstanceRowEmbedding_ForwardBlockInput)
+{
+  // Volume-type alias
+  using Volume = ffnn::layer::ReceptiveVolume<float, 4, 6, 8, 12>;
+
+  // Dimensions inferred from template args
+  Volume volume;
+
+  EXPECT_TRUE(volume.getFilters().empty());
+  EXPECT_TRUE(volume.initialize());
+
+  typedef Eigen::Matrix<float, 24, 2> OutputBlock;
+  OutputBlock output;
+  output.setZero();
+
+  typedef Eigen::Matrix<float, 64, 12> InputBlock;
+  InputBlock input;
+  input.setOnes();
+
+  EXPECT_NO_THROW(volume.forward(input.block<32, 6>(0, 0),  output.block<12, 1>(0, 0)));
+  FFNN_DEBUG('\n' << output);
+  EXPECT_NO_THROW(volume.forward(input.block<32, 6>(32, 0), output.block<12, 1>(12, 1)));
+  FFNN_DEBUG('\n' << output);
+}
+
 // Run tests
 int main(int argc, char** argv)
 {
