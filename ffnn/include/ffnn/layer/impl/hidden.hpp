@@ -12,9 +12,9 @@ namespace ffnn
 {
 namespace layer
 {
-#define HIDDEN_PARAMS ValueType, InputsHeightAtCompileTime, InputsWidthAtCompileTime, OutputsHeightAtCompileTime, OutputsWidthAtCompileTime
-#define HIDDEN_PARAMS_ADVANCED _InputBlockType, _OutputBlockType, _InputMappingType, _OutputMappingType
-#define HIDDEN Hidden<HIDDEN_PARAMS, HIDDEN_PARAMS_ADVANCED>
+#define HIDDEN_TARGS ValueType, InputsHeightAtCompileTime, InputsWidthAtCompileTime, OutputsHeightAtCompileTime, OutputsWidthAtCompileTime
+#define HIDDEN_TARGS_ADVANCED _InputBlockType, _OutputBlockType, _InputMappingType, _OutputMappingType
+#define HIDDEN Hidden<HIDDEN_TARGS, HIDDEN_TARGS_ADVANCED>
 
 template<typename ValueType,
          FFNN_SIZE_TYPE InputsHeightAtCompileTime,
@@ -173,8 +173,8 @@ void HIDDEN::load(typename HIDDEN::InputArchive& ar,
   FFNN_DEBUG_NAMED("layer::Hidden", "Loaded");
 }
 
-#undef HIDDEN_PARAMS
-#undef HIDDEN_PARAMS_ADVANCED
+#undef HIDDEN_TARGS
+#undef HIDDEN_TARGS_ADVANCED
 #undef HIDDEN
 }  // namespace layer
 }  // namespace ffnn

@@ -2,8 +2,8 @@
  * @author Brian Cairl
  * @date 2017
  */
-#ifndef FFNN_LAYER_INTERNAL_LAYER_BASE_H
-#define FFNN_LAYER_INTERNAL_LAYER_BASE_H
+#ifndef FFNN_LAYER_INTERNAL_INTERFACE_H
+#define FFNN_LAYER_INTERNAL_INTERFACE_H
 
 // FFNN (internal)
 #include <ffnn/internal/traits/serializable.h>
@@ -24,7 +24,7 @@ namespace internal
  * @brief Base object for all layer types
  */
 template<typename ValueType>
-class LayerBase :
+class Interface :
   public traits::Unique
 {
 public:
@@ -41,14 +41,14 @@ public:
   typedef Dimensions<SizeType> DimType;
 
   explicit
-  LayerBase(const DimType& input_dim  = DimType(Eigen::Dynamic),
+  Interface(const DimType& input_dim  = DimType(Eigen::Dynamic),
             const DimType& output_dim = DimType(Eigen::Dynamic)) :
     initialized_(false),
     setup_required_(true),
     input_dim_(input_dim),
     output_dim_(output_dim)
   {}
-  virtual ~LayerBase() {}
+  virtual ~Interface() {}
 
   /**
    * @brief Returns the total number of Layer inputs
@@ -100,12 +100,12 @@ public:
   }
 
 protected:
-  FFNN_REGISTER_SERIALIZABLE(LayerBase)
+  FFNN_REGISTER_SERIALIZABLE(Interface)
 
   /// Save serializer
   void save(OutputArchive& ar, VersionType version) const
   {
-    ffnn::io::signature::apply<LayerBase<ValueType>>(ar);
+    ffnn::io::signature::apply<Interface<ValueType>>(ar);
     traits::Unique::save(ar, version);
 
     // Save flags
@@ -119,7 +119,7 @@ protected:
   /// Load serializer
   void load(InputArchive& ar, VersionType version)
   {
-    ffnn::io::signature::check<LayerBase<ValueType>>(ar);
+    ffnn::io::signature::check<Interface<ValueType>>(ar);
     traits::Unique::load(ar, version);
 
     // Load flags
@@ -147,4 +147,4 @@ protected:
 }  // namespace internal
 }  // namespace layer
 }  // namespace ffnn
-#endif  // FFNN_LAYER_INTERNAL_LAYER_BASE_H
+#endif  // FFNN_LAYER_INTERNAL_INTERFACE_H

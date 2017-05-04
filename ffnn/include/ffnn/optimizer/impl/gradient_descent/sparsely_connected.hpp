@@ -36,10 +36,10 @@ public:
   typedef typename LayerType::OutputBlockType OutputBlockType;
 
   /// Bia vector type standardization
-  typedef typename LayerType::BiasVector BiasVector;
+  typedef typename LayerType::BiasVectorType BiasVectorType;
 
   /// Input-output weight matrix
-  typedef typename LayerType::WeightMatrix WeightMatrix;
+  typedef typename LayerType::WeightMatrixType WeightMatrixType;
 
   /**
    * @brief Setup constructor
@@ -104,10 +104,10 @@ public:
     FFNN_ASSERT_MSG(layer.isInitialized(), "Layer to optimize is not initialized.");
 
     // Compute current weight delta
-    WeightMatrix current_weight_gradient(layer.output_dim_.size(), layer.input_dim_.size());
+    WeightMatrixType current_weight_gradient(layer.output_dim_.size(), layer.input_dim_.size());
     for(SizeType idx = 0; idx < layer.w_.outerSize(); idx++)
     {
-      for(typename WeightMatrix::InnerIterator it(layer.w_, idx); it; ++it)
+      for(typename WeightMatrixType::InnerIterator it(layer.w_, idx); it; ++it)
       {
         current_weight_gradient.insert(it.row(), it.col()) =
           (*layer.forward_error_)(it.row()) * prev_input_(it.col());
@@ -151,10 +151,10 @@ protected:
   ScalarType lr_;
 
   /// Weight matrix delta
-  WeightMatrix weight_gradient_;
+  WeightMatrixType weight_gradient_;
 
   /// Total bias vector delta
-  BiasVector bias_gradient_;
+  BiasVectorType bias_gradient_;
 
   /// Previous input
   InputBlockType prev_input_;

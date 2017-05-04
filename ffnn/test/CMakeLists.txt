@@ -12,6 +12,17 @@ target_link_libraries(test_layer_hidden
   ${GTEST_LIBRARIES}
 )
 
+catkin_add_gtest(test_layer_receptive_volume
+  test_layer_receptive_volume.cpp
+)
+target_link_libraries(test_layer_receptive_volume
+  ${Boost_LIBRARIES}
+  ${catkin_LIBRARIES}
+  ${EIGEN_LIBRARIES}
+  ${GTEST_LIBRARIES}
+)
+
+
 #-------------------------------------------------------------
 # IO
 #-------------------------------------------------------------

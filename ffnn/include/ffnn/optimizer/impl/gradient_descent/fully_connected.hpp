@@ -36,10 +36,10 @@ public:
   typedef typename LayerType::OutputBlockType OutputBlockType;
 
   /// Input-output weight matrix
-  typedef typename LayerType::WeightMatrix WeightMatrix;
+  typedef typename LayerType::WeightMatrixType WeightMatrixType;
 
   /// Bia vector type standardization
-  typedef typename LayerType::BiasVector BiasVector;
+  typedef typename LayerType::BiasVectorType BiasVectorType;
 
   /**
    * @brief Setup constructor
@@ -140,10 +140,10 @@ protected:
   ScalarType lr_;
 
   /// Total weight matrix gradient
-  WeightMatrix weight_gradient_;
+  WeightMatrixType weight_gradient_;
 
   /// Total bias vector delta
-  BiasVector bias_gradient_;
+  BiasVectorType bias_gradient_;
 
   /// Previous input
   InputBlockType prev_input_;

@@ -50,11 +50,7 @@ public:
   inline SizeType outputWidth() const { return output_->cols(); }
 };
 
-
-/***********************************************************/
-//
-/***********************************************************/
-TEST(TestLayerHiddenBasic, Mapping2D)
+TEST(TestLayerHiddenBasic, IOSizing)
 {
 
   // Layer-type alias

@@ -78,7 +78,7 @@ bool Layer<ValueType>::initialize()
 
   // Set initialization flag
   Base::initialized_ = true;
-  return Base::initialized_;
+  return Base::isInitialized();
 }
 
 template<typename ValueType>

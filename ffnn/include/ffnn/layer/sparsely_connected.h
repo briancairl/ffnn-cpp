@@ -53,10 +53,10 @@ public:
   typedef typename Base::OutputBlockType OutputBlockType;
 
   /// Bia vector type standardization
-  typedef typename Base::OutputBlockType BiasVector;
+  typedef typename Base::OutputBlockType BiasVectorType;
 
   /// Input-output weight matrix
-  typedef Eigen::SparseMatrix<ValueType, Eigen::ColMajor> WeightMatrix;
+  typedef Eigen::SparseMatrix<ValueType, Eigen::ColMajor> WeightMatrixType;
 
   /// Layer optimization type standardization
   typedef optimizer::Optimizer<Self> Optimizer;
@@ -172,10 +172,10 @@ private:
   Parameters config_;
 
   /// Weight matrix
-  WeightMatrix w_;
+  WeightMatrixType w_;
 
   /// Bias vector
-  BiasVector b_;
+  BiasVectorType b_;
 
   /**
    * @brief Weight optimization resource

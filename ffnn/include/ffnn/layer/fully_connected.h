@@ -53,10 +53,10 @@ public:
   typedef typename Base::OutputBlockType OutputBlockType;
 
   /// Bia vector type standardization
-  typedef typename Base::OutputBlockType BiasVector;
+  typedef typename Base::OutputBlockType BiasVectorType;
 
   /// Input-output weight matrix
-  typedef Eigen::Matrix<ValueType, OutputsAtCompileTime, InputsAtCompileTime, Eigen::ColMajor> WeightMatrix;
+  typedef Eigen::Matrix<ValueType, OutputsAtCompileTime, InputsAtCompileTime, Eigen::ColMajor> WeightMatrixType;
 
   /// Layer optimization type standardization
   typedef optimizer::Optimizer<Self> Optimizer;
@@ -148,7 +148,7 @@ public:
    * @brief Exposes internal connection weights
    * @return input-output connection weights
    */
-  inline const WeightMatrix& getWeights() const
+  inline const WeightMatrixType& getWeights() const
   {
     return w_;
   }
@@ -157,7 +157,7 @@ public:
    * @brief Exposes internal biasing weights
    * @return input-biasing vector
    */
-  inline const BiasVector& getBiases() const
+  inline const BiasVectorType& getBiases() const
   {
     return b_;
   }
@@ -179,10 +179,10 @@ private:
   Parameters config_;
 
   /// Weight matrix
-  WeightMatrix w_;
+  WeightMatrixType w_;
 
   /// Bias vector
-  BiasVector b_;
+  BiasVectorType b_;
 
   /**
    * @brief Weight optimization resource

@@ -41,8 +41,10 @@ template <typename ValueType,
           FFNN_SIZE_TYPE EmbedAlongColumns = true>
 class Convolution :
   public Hidden<ValueType,
-                InputsAtCompileTime,
-                OutputsAtCompileTime>
+                HeightAtCompileTime,
+                WidthAtCompileTime,
+                (HeightAtCompileTime - FilterHeightAtCompileTime) / Stride + 1),
+                (WidthAtCompileTime - FilterWidthAtCompileTime) / Stride + 1)>
 {
 public:
   /// Base type alias
@@ -153,7 +155,7 @@ public:
    * @brief Exposes internal connection weights
    * @return input-output connection weights
    */
-  inline const WeightMatrix& getWeights() const
+  inline const WeightMatrixType& getWeights() const
   {
     return w_;
   }
@@ -162,7 +164,7 @@ public:
    * @brief Exposes internal biasing weights
    * @return input-biasing vector
    */
-  inline const BiasVector& getBiases() const
+  inline const BiasVectorType& getBiases() const
   {
     return b_;
   }
@@ -184,10 +186,10 @@ private:
   Parameters config_;
 
   /// Weight matrix
-  WeightMatrix w_;
+  WeightMatrixType w_;
 
   /// Bias vector
-  BiasVector b_;
+  BiasVectorType b_;
 
   /**
    * @brief Weight optimization resource

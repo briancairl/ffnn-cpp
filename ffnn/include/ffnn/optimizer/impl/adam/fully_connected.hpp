@@ -40,10 +40,10 @@ public:
   typedef typename LayerType::OutputBlockType OutputBlockType;
 
   /// Input-output weight matrix
-  typedef typename LayerType::WeightMatrix WeightMatrix;
+  typedef typename LayerType::WeightMatrixType WeightMatrixType;
 
   /// Bia vector type standardization
-  typedef typename LayerType::BiasVector BiasVector;
+  typedef typename LayerType::BiasVectorType BiasVectorType;
 
   /**
    * @brief Setup constructor
@@ -106,10 +106,10 @@ private:
   const ScalarType epsilon_;
 
   /// Running estimates of mean/variance of weight gradients
-  AdamStates<WeightMatrix> weight_gradient_states_;
+  AdamStates<WeightMatrixType> weight_gradient_states_;
 
   /// Running estimates of mean/variance of bias gradients 
-  AdamStates<BiasVector> bias_gradient_states_;
+  AdamStates<BiasVectorType> bias_gradient_states_;
 };
 }  // namespace optimizer
 }  // namespace ffnn
