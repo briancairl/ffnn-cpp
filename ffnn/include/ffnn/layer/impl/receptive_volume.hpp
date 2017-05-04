@@ -144,6 +144,7 @@ void RECEPTIVE_VOLUME::forward(const Eigen::MatrixBase<InputBlockType>& input,
 {
   for (size_t idx = 0; idx < filter_bank_.size(); idx++)
   {
+    // @see https://eigen.tuxfamily.org/dox/TopicFunctionTakingEigenTypes.html
     const_cast<Eigen::MatrixBase<OutputBlockType>&>(output)(idx) =
       (input.array() * filter_bank_[idx].array()).sum() + b_(idx);
   }
