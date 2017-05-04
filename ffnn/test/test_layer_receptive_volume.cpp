@@ -70,10 +70,12 @@ TEST(TestLayerReceptiveVolume, StaticDynamicRowEmbeddingForward)
   EXPECT_TRUE(volume.getFilters().empty());
   EXPECT_TRUE(volume.initialize());
 
-  Volume::BiasVectorType output;
+  using OutputBlock = Volume::BiasVectorType;
+  OutputBlock output;
   output.setZero();
 
-  Volume::KernelMatrixType input;
+  using InputBlock = Volume::KernelMatrixType;
+  InputBlock input;
   input.setOnes();
 
   volume.forward(input, output);
