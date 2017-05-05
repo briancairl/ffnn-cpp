@@ -1,21 +1,24 @@
 \hypertarget{convolution_8h}{\section{/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/convolution.h File Reference}
 \label{convolution_8h}\index{/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/convolution.\-h@{/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/convolution.\-h}}
 }
-{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include \char`\"{}boost/multi\-\_\-array.\-hpp\char`\"{}}\\*
 {\ttfamily \#include $<$ffnn/layer/hidden.\-h$>$}\\*
-{\ttfamily \#include $<$ffnn/layer/internal/receptive\-\_\-volume.\-h$>$}\\*
+{\ttfamily \#include $<$ffnn/layer/receptive\-\_\-volume.\-h$>$}\\*
 {\ttfamily \#include $<$ffnn/neuron/neuron.\-h$>$}\\*
-{\ttfamily \#include $<$ffnn/optimizer/optimizer.\-h$>$}\\*
 {\ttfamily \#include $<$ffnn/optimizer/fwd.\-h$>$}\\*
-{\ttfamily \#include $<$ffnn/layer/impl/fully\-\_\-connected.\-hpp$>$}\\*
-Include dependency graph for convolution.\-h\-:
-\nopagebreak
+{\ttfamily \#include $<$ffnn/optimizer/optimizer.\-h$>$}\\*
+Include dependency graph for convolution.\-h\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{convolution_8h__incl}
 \end{center}
 \end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classffnn_1_1layer_1_1_convolution}{ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride, Embedding\-Mode $>$}
+\begin{DoxyCompactList}\small\item\em A convolution layer. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
@@ -26,62 +29,68 @@ Include dependency graph for convolution.\-h\-:
 \subsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \hyperlink{convolution_8h_a67c7ed133a71d197d8fca368336d5aa7}{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C}(x)~(x == Eigen\-::\-Dynamic)
+\#define \hyperlink{convolution_8h_a994a9f10bc2645299b6d456cf51c7b6c}{C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-H\-E\-I\-G\-H\-T}~((Height\-At\-Compile\-Time -\/ Filter\-Height\-At\-Compile\-Time) / Stride + 1)
 \item 
-\#define \hyperlink{convolution_8h_a1888db73da403e86806b106c3b40eb29}{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-P\-A\-I\-R}(n, m)~(\hyperlink{dimensions_8h_a67c7ed133a71d197d8fca368336d5aa7}{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C}(n) $\vert$$\vert$ \hyperlink{dimensions_8h_a67c7ed133a71d197d8fca368336d5aa7}{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C}(m))
+\#define \hyperlink{convolution_8h_a60b63de7a979c2ced6c910f6df90356c}{C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-W\-I\-D\-T\-H}~((Width\-At\-Compile\-Time -\/ Filter\-Width\-At\-Compile\-Time) / Stride + 1)
 \item 
-\#define \hyperlink{convolution_8h_a0faa7f844e3841ae41c2baedf7680756}{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-T\-R\-I\-P\-L\-E\-T}(n, m, l)~(\hyperlink{dimensions_8h_a67c7ed133a71d197d8fca368336d5aa7}{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C}(n) $\vert$$\vert$ \hyperlink{dimensions_8h_a67c7ed133a71d197d8fca368336d5aa7}{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C}(m) $\vert$$\vert$ \hyperlink{dimensions_8h_a67c7ed133a71d197d8fca368336d5aa7}{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C}(l))
+\#define \hyperlink{convolution_8h_aa3e94b711ad76a27a1c978ffbb87ebcf}{C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-B\-A\-S\-E\-\_\-\-T\-A\-R\-G\-S}
 \item 
-\#define \hyperlink{convolution_8h_a74feffebf310dd34521adc2adcaf64c9}{P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-P\-A\-I\-R}(n, m)~(\hyperlink{receptive__volume_8h_a1888db73da403e86806b106c3b40eb29}{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-P\-A\-I\-R}(n, m) ? Eigen\-::\-Dynamic \-: (n$\ast$m))
+\#define \hyperlink{convolution_8h_af6cd5a2c0574bdc1e2ee04974964a7ac}{C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-T\-A\-R\-G\-S}
 \item 
-\#define \hyperlink{convolution_8h_a90ee0b2faa8ee8ce36a3b08bd4212fe8}{P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-T\-R\-I\-P\-L\-E\-T}(n, m, l)~(\hyperlink{dimensions_8h_a0faa7f844e3841ae41c2baedf7680756}{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-T\-R\-I\-P\-L\-E\-T}(n, m, l) ? Eigen\-::\-Dynamic \-: (n$\ast$m$\ast$l))
-\item 
-\#define \hyperlink{convolution_8h_a33e24e011da8d255a661352e5e7bda67}{R\-E\-C\-E\-P\-T\-I\-V\-E\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-I\-N\-P\-U\-T\-\_\-\-S\-I\-Z\-E}~(\hyperlink{dimensions_8h_a90ee0b2faa8ee8ce36a3b08bd4212fe8}{P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-T\-R\-I\-P\-L\-E\-T}(Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time))
+\#define \hyperlink{convolution_8h_a3aee648020398150ad88775ccd534670}{C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-T\-A\-R\-G\-S}
 \end{DoxyCompactItemize}
 
 
 \subsection{Macro Definition Documentation}
-\hypertarget{convolution_8h_a67c7ed133a71d197d8fca368336d5aa7}{\index{convolution.\-h@{convolution.\-h}!I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C@{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C}}
-\index{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C@{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C}!convolution.h@{convolution.\-h}}
-\subsubsection[{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C(
-\begin{DoxyParamCaption}
-\item[{}]{x}
-\end{DoxyParamCaption}
-)~(x == Eigen\-::\-Dynamic)}}\label{convolution_8h_a67c7ed133a71d197d8fca368336d5aa7}
-\hypertarget{convolution_8h_a1888db73da403e86806b106c3b40eb29}{\index{convolution.\-h@{convolution.\-h}!I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-P\-A\-I\-R@{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-P\-A\-I\-R}}
-\index{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-P\-A\-I\-R@{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-P\-A\-I\-R}!convolution.h@{convolution.\-h}}
-\subsubsection[{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-P\-A\-I\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-P\-A\-I\-R(
-\begin{DoxyParamCaption}
-\item[{}]{n, }
-\item[{}]{m}
-\end{DoxyParamCaption}
-)~({\bf I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C}(n) $\vert$$\vert$ {\bf I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C}(m))}}\label{convolution_8h_a1888db73da403e86806b106c3b40eb29}
-\hypertarget{convolution_8h_a0faa7f844e3841ae41c2baedf7680756}{\index{convolution.\-h@{convolution.\-h}!I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-T\-R\-I\-P\-L\-E\-T@{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-T\-R\-I\-P\-L\-E\-T}}
-\index{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-T\-R\-I\-P\-L\-E\-T@{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-T\-R\-I\-P\-L\-E\-T}!convolution.h@{convolution.\-h}}
-\subsubsection[{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-T\-R\-I\-P\-L\-E\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-T\-R\-I\-P\-L\-E\-T(
-\begin{DoxyParamCaption}
-\item[{}]{n, }
-\item[{}]{m, }
-\item[{}]{l}
-\end{DoxyParamCaption}
-)~({\bf I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C}(n) $\vert$$\vert$ {\bf I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C}(m) $\vert$$\vert$ {\bf I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C}(l))}}\label{convolution_8h_a0faa7f844e3841ae41c2baedf7680756}
-\hypertarget{convolution_8h_a74feffebf310dd34521adc2adcaf64c9}{\index{convolution.\-h@{convolution.\-h}!P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-P\-A\-I\-R@{P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-P\-A\-I\-R}}
-\index{P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-P\-A\-I\-R@{P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-P\-A\-I\-R}!convolution.h@{convolution.\-h}}
-\subsubsection[{P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-P\-A\-I\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-P\-A\-I\-R(
-\begin{DoxyParamCaption}
-\item[{}]{n, }
-\item[{}]{m}
-\end{DoxyParamCaption}
-)~({\bf I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-P\-A\-I\-R}(n, m) ? Eigen\-::\-Dynamic \-: (n$\ast$m))}}\label{convolution_8h_a74feffebf310dd34521adc2adcaf64c9}
-\hypertarget{convolution_8h_a90ee0b2faa8ee8ce36a3b08bd4212fe8}{\index{convolution.\-h@{convolution.\-h}!P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-T\-R\-I\-P\-L\-E\-T@{P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-T\-R\-I\-P\-L\-E\-T}}
-\index{P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-T\-R\-I\-P\-L\-E\-T@{P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-T\-R\-I\-P\-L\-E\-T}!convolution.h@{convolution.\-h}}
-\subsubsection[{P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-T\-R\-I\-P\-L\-E\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-T\-R\-I\-P\-L\-E\-T(
-\begin{DoxyParamCaption}
-\item[{}]{n, }
-\item[{}]{m, }
-\item[{}]{l}
-\end{DoxyParamCaption}
-)~({\bf I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-T\-R\-I\-P\-L\-E\-T}(n, m, l) ? Eigen\-::\-Dynamic \-: (n$\ast$m$\ast$l))}}\label{convolution_8h_a90ee0b2faa8ee8ce36a3b08bd4212fe8}
-\hypertarget{convolution_8h_a33e24e011da8d255a661352e5e7bda67}{\index{convolution.\-h@{convolution.\-h}!R\-E\-C\-E\-P\-T\-I\-V\-E\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-I\-N\-P\-U\-T\-\_\-\-S\-I\-Z\-E@{R\-E\-C\-E\-P\-T\-I\-V\-E\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-I\-N\-P\-U\-T\-\_\-\-S\-I\-Z\-E}}
-\index{R\-E\-C\-E\-P\-T\-I\-V\-E\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-I\-N\-P\-U\-T\-\_\-\-S\-I\-Z\-E@{R\-E\-C\-E\-P\-T\-I\-V\-E\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-I\-N\-P\-U\-T\-\_\-\-S\-I\-Z\-E}!convolution.h@{convolution.\-h}}
-\subsubsection[{R\-E\-C\-E\-P\-T\-I\-V\-E\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-I\-N\-P\-U\-T\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-E\-C\-E\-P\-T\-I\-V\-E\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-I\-N\-P\-U\-T\-\_\-\-S\-I\-Z\-E~({\bf P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-T\-R\-I\-P\-L\-E\-T}(Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time))}}\label{convolution_8h_a33e24e011da8d255a661352e5e7bda67}
+\hypertarget{convolution_8h_aa3e94b711ad76a27a1c978ffbb87ebcf}{\index{convolution.\-h@{convolution.\-h}!C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-B\-A\-S\-E\-\_\-\-T\-A\-R\-G\-S@{C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-B\-A\-S\-E\-\_\-\-T\-A\-R\-G\-S}}
+\index{C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-B\-A\-S\-E\-\_\-\-T\-A\-R\-G\-S@{C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-B\-A\-S\-E\-\_\-\-T\-A\-R\-G\-S}!convolution.h@{convolution.\-h}}
+\subsubsection[{C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-B\-A\-S\-E\-\_\-\-T\-A\-R\-G\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-B\-A\-S\-E\-\_\-\-T\-A\-R\-G\-S}}\label{convolution_8h_aa3e94b711ad76a27a1c978ffbb87ebcf}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+ValueType,\(\backslash\)
+  HeightAtCompileTime,\(\backslash\)
+  WidthAtCompileTime,\hyperlink{convolution_8h_a994a9f10bc2645299b6d456cf51c7b6c}{\(\backslash\)}
+\hyperlink{convolution_8h_a994a9f10bc2645299b6d456cf51c7b6c}{  CONVOLUTION\_OUTPUT\_HEIGHT},\hyperlink{convolution_8h_a60b63de7a979c2ced6c910f6df90356c}{\(\backslash\)}
+\hyperlink{convolution_8h_a60b63de7a979c2ced6c910f6df90356c}{  CONVOLUTION\_OUTPUT\_WIDTH}
+\end{DoxyCode}
+\hypertarget{convolution_8h_a994a9f10bc2645299b6d456cf51c7b6c}{\index{convolution.\-h@{convolution.\-h}!C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-H\-E\-I\-G\-H\-T@{C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-H\-E\-I\-G\-H\-T}}
+\index{C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-H\-E\-I\-G\-H\-T@{C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-H\-E\-I\-G\-H\-T}!convolution.h@{convolution.\-h}}
+\subsubsection[{C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-H\-E\-I\-G\-H\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-H\-E\-I\-G\-H\-T~((Height\-At\-Compile\-Time -\/ Filter\-Height\-At\-Compile\-Time) / Stride + 1)}}\label{convolution_8h_a994a9f10bc2645299b6d456cf51c7b6c}
+
+
+Referenced by ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride, Embedding\-Mode $>$\-::initialize().
+
+\hypertarget{convolution_8h_a60b63de7a979c2ced6c910f6df90356c}{\index{convolution.\-h@{convolution.\-h}!C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-W\-I\-D\-T\-H@{C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-W\-I\-D\-T\-H}}
+\index{C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-W\-I\-D\-T\-H@{C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-W\-I\-D\-T\-H}!convolution.h@{convolution.\-h}}
+\subsubsection[{C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-W\-I\-D\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-W\-I\-D\-T\-H~((Width\-At\-Compile\-Time -\/ Filter\-Width\-At\-Compile\-Time) / Stride + 1)}}\label{convolution_8h_a60b63de7a979c2ced6c910f6df90356c}
+
+
+Referenced by ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride, Embedding\-Mode $>$\-::initialize().
+
+\hypertarget{convolution_8h_a3aee648020398150ad88775ccd534670}{\index{convolution.\-h@{convolution.\-h}!C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-T\-A\-R\-G\-S@{C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-T\-A\-R\-G\-S}}
+\index{C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-T\-A\-R\-G\-S@{C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-T\-A\-R\-G\-S}!convolution.h@{convolution.\-h}}
+\subsubsection[{C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-T\-A\-R\-G\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-T\-A\-R\-G\-S}}\label{convolution_8h_a3aee648020398150ad88775ccd534670}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+ValueType,\(\backslash\)
+  HeightAtCompileTime,\(\backslash\)
+  WidthAtCompileTime,\(\backslash\)
+  DepthAtCompileTime,\(\backslash\)
+  FilterHeightAtCompileTime,\(\backslash\)
+  FilterWidthAtCompileTime,\(\backslash\)
+  FilterCountAtCompileTime,\(\backslash\)
+  Stride,\hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69a}{\(\backslash\)}
+\hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69a}{  EmbeddingMode}
+\end{DoxyCode}
+\hypertarget{convolution_8h_af6cd5a2c0574bdc1e2ee04974964a7ac}{\index{convolution.\-h@{convolution.\-h}!C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-T\-A\-R\-G\-S@{C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-T\-A\-R\-G\-S}}
+\index{C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-T\-A\-R\-G\-S@{C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-T\-A\-R\-G\-S}!convolution.h@{convolution.\-h}}
+\subsubsection[{C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-T\-A\-R\-G\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-T\-A\-R\-G\-S}}\label{convolution_8h_af6cd5a2c0574bdc1e2ee04974964a7ac}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+ValueType,\(\backslash\)
+  FilterHeightAtCompileTime,\(\backslash\)
+  FilterWidthAtCompileTime,\(\backslash\)
+  DepthAtCompileTime,\(\backslash\)
+  FilterCountAtCompileTime,\hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69a}{\(\backslash\)}
+\hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69a}{  EmbeddingMode}
+\end{DoxyCode}

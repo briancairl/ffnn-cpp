@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['unique',['Unique',['../classffnn_1_1traits_1_1_unique.html',1,'ffnn::traits']]]
+  ['triplet',['Triplet',['../class_eigen_1_1_triplet.html',1,'Eigen']]]
 ];

@@ -21,8 +21,8 @@ namespace layer
 
 enum EmbeddingMode
 {
-  RowEmbedding = 0,
-  ColEmbedding = 1,
+  RowEmbedding = 0, ///< Embed depth along filter matrix rows
+  ColEmbedding = 1, ///< Embed depth along filter matrix cols
 };
 
 template<typename ValueType,

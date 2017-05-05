@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['receptivevolume',['ReceptiveVolume',['../classffnn_1_1layer_1_1_receptive_volume.html',1,'ffnn::layer']]],
-  ['rectifiedlinear',['RectifiedLinear',['../classffnn_1_1neuron_1_1_rectified_linear.html',1,'ffnn::neuron']]]
+  ['parameters',['Parameters',['../structffnn_1_1layer_1_1_receptive_volume_1_1_parameters.html',1,'ffnn::layer::ReceptiveVolume']]],
+  ['parameters',['Parameters',['../structffnn_1_1layer_1_1_sparsely_connected_1_1_parameters.html',1,'ffnn::layer::SparselyConnected']]],
+  ['parameters',['Parameters',['../structffnn_1_1layer_1_1_fully_connected_1_1_parameters.html',1,'ffnn::layer::FullyConnected']]]
 ];

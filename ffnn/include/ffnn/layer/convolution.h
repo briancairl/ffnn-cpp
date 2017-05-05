@@ -112,7 +112,7 @@ public:
   /**
    * @brief Initialize the layer
    */
-  virtual bool initialize()
+  bool initialize()
   {
     receptors_.resize(boost::extents[CONVOLUTION_OUTPUT_HEIGHT][CONVOLUTION_OUTPUT_WIDTH]);
 

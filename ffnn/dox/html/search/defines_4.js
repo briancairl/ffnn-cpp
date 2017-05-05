@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['prod_5fif_5fstatic_5fpair',['PROD_IF_STATIC_PAIR',['../convolution_8h.html#a74feffebf310dd34521adc2adcaf64c9',1,'PROD_IF_STATIC_PAIR():&#160;convolution.h'],['../receptive__volume_8h.html#a74feffebf310dd34521adc2adcaf64c9',1,'PROD_IF_STATIC_PAIR():&#160;receptive_volume.h']]],
-  ['prod_5fif_5fstatic_5ftriplet',['PROD_IF_STATIC_TRIPLET',['../convolution_8h.html#a90ee0b2faa8ee8ce36a3b08bd4212fe8',1,'PROD_IF_STATIC_TRIPLET():&#160;convolution.h'],['../dimensions_8h.html#a90ee0b2faa8ee8ce36a3b08bd4212fe8',1,'PROD_IF_STATIC_TRIPLET():&#160;dimensions.h']]]
+  ['is_5fdynamic',['IS_DYNAMIC',['../dimensions_8h.html#a67c7ed133a71d197d8fca368336d5aa7',1,'dimensions.h']]],
+  ['is_5fdynamic_5fpair',['IS_DYNAMIC_PAIR',['../receptive__volume_8h.html#a1888db73da403e86806b106c3b40eb29',1,'receptive_volume.h']]],
+  ['is_5fdynamic_5ftriplet',['IS_DYNAMIC_TRIPLET',['../dimensions_8h.html#a0faa7f844e3841ae41c2baedf7680756',1,'dimensions.h']]]
 ];

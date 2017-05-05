@@ -7,7 +7,14 @@ var searchData=
   ['connectinputlayers',['connectInputLayers',['../classffnn_1_1layer_1_1_layer.html#a9d692bce889ddc693e5bac8dda5d4cd2',1,'ffnn::layer::Layer']]],
   ['connection_5fprobability',['connection_probability',['../structffnn_1_1layer_1_1_sparsely_connected_1_1_parameters.html#a81458846f7bd4ebdfd0b630cfecd7df0',1,'ffnn::layer::SparselyConnected::Parameters']]],
   ['connecttoforwardlayer',['connectToForwardLayer',['../classffnn_1_1layer_1_1_layer.html#a430276d228f0bf349f0b03b2bdaecba8',1,'ffnn::layer::Layer']]],
-  ['constptr',['ConstPtr',['../structffnn_1_1aligned_1_1_map.html#ad9a5f18197cbcf6691a4ee07fa389cac',1,'ffnn::aligned::Map::ConstPtr()'],['../classffnn_1_1layer_1_1_layer.html#aa1b22cc70a5ae0101cae5a9825043fbc',1,'ffnn::layer::Layer::ConstPtr()'],['../classffnn_1_1optimizer_1_1_optimizer.html#a5d62c55f6f830e993ffe801fb17a1c3a',1,'ffnn::optimizer::Optimizer::ConstPtr()']]],
+  ['constptr',['ConstPtr',['../structffnn_1_1aligned_1_1_map.html#ad9a5f18197cbcf6691a4ee07fa389cac',1,'ffnn::aligned::Map::ConstPtr()'],['../classffnn_1_1layer_1_1_layer.html#aa1b22cc70a5ae0101cae5a9825043fbc',1,'ffnn::layer::Layer::ConstPtr()'],['../classffnn_1_1layer_1_1_receptive_volume.html#ad3e48c66c8bc1b5f3bc20dc8c75f2c64',1,'ffnn::layer::ReceptiveVolume::ConstPtr()'],['../classffnn_1_1optimizer_1_1_optimizer.html#a5d62c55f6f830e993ffe801fb17a1c3a',1,'ffnn::optimizer::Optimizer::ConstPtr()']]],
+  ['convolution',['Convolution',['../classffnn_1_1layer_1_1_convolution.html#af094c91b9a3d85fe5883d158930fb8ae',1,'ffnn::layer::Convolution']]],
+  ['convolution',['Convolution',['../classffnn_1_1layer_1_1_convolution.html',1,'ffnn::layer']]],
   ['convolution_2eh',['convolution.h',['../convolution_8h.html',1,'']]],
+  ['convolution_5fbase_5ftargs',['CONVOLUTION_BASE_TARGS',['../convolution_8h.html#aa3e94b711ad76a27a1c978ffbb87ebcf',1,'convolution.h']]],
+  ['convolution_5foutput_5fheight',['CONVOLUTION_OUTPUT_HEIGHT',['../convolution_8h.html#a994a9f10bc2645299b6d456cf51c7b6c',1,'convolution.h']]],
+  ['convolution_5foutput_5fwidth',['CONVOLUTION_OUTPUT_WIDTH',['../convolution_8h.html#a60b63de7a979c2ced6c910f6df90356c',1,'convolution.h']]],
+  ['convolution_5ftargs',['CONVOLUTION_TARGS',['../convolution_8h.html#a3aee648020398150ad88775ccd534670',1,'convolution.h']]],
+  ['convolution_5fvolume_5ftargs',['CONVOLUTION_VOLUME_TARGS',['../convolution_8h.html#af6cd5a2c0574bdc1e2ee04974964a7ac',1,'convolution.h']]],
   ['create',['create',['../structffnn_1_1aligned_1_1_map.html#af52aa0bd5ed9cc5e657c4694e781ebb5',1,'ffnn::aligned::Map']]]
 ];

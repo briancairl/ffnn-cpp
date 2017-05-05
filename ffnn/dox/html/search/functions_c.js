@@ -6,5 +6,6 @@ var searchData=
   ['operator_3e_3e',['operator&gt;&gt;',['../classffnn_1_1layer_1_1_output.html#a2f4eb5c36b8b5d486410366b4cd9e7a8',1,'ffnn::layer::Output']]],
   ['optimizer',['Optimizer',['../classffnn_1_1optimizer_1_1_optimizer.html#a5daf7f0191df7c672247e0d5a25fbafa',1,'ffnn::optimizer::Optimizer']]],
   ['output',['Output',['../classffnn_1_1layer_1_1_output.html#af7d5b0ae4ac072ada556478a12fe235f',1,'ffnn::layer::Output']]],
+  ['outputdim',['outputDim',['../classffnn_1_1layer_1_1internal_1_1_interface.html#aaa3e0e1735cbc17f9032573782f4e098',1,'ffnn::layer::internal::Interface']]],
   ['outputsize',['outputSize',['../classffnn_1_1layer_1_1internal_1_1_interface.html#a3578b4137e24bd8992cdc8dd6def0745',1,'ffnn::layer::internal::Interface']]]
 ];

@@ -5,12 +5,18 @@
 {\ttfamily \#include $<$ffnn/layer/internal/dimensions.\-h$>$}\\*
 {\ttfamily \#include $<$ffnn/layer/internal/interface.\-h$>$}\\*
 {\ttfamily \#include $<$ffnn/layer/impl/receptive\-\_\-volume.\-hpp$>$}\\*
-Include dependency graph for receptive\-\_\-volume.\-h\-:
-\nopagebreak
+Include dependency graph for receptive\-\_\-volume.\-h\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{receptive__volume_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{receptive__volume_8h__dep__incl}
 \end{center}
 \end{figure}
 \subsection*{Classes}
@@ -33,8 +39,6 @@ struct \hyperlink{structffnn_1_1layer_1_1_receptive_volume_1_1_parameters}{ffnn\
 \#define \hyperlink{receptive__volume_8h_a1888db73da403e86806b106c3b40eb29}{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-P\-A\-I\-R}(n, m)~(\hyperlink{dimensions_8h_a67c7ed133a71d197d8fca368336d5aa7}{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C}(n) $\vert$$\vert$ \hyperlink{dimensions_8h_a67c7ed133a71d197d8fca368336d5aa7}{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C}(m))
 \item 
 \#define \hyperlink{receptive__volume_8h_a74feffebf310dd34521adc2adcaf64c9}{P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-P\-A\-I\-R}(n, m)~(\hyperlink{receptive__volume_8h_a1888db73da403e86806b106c3b40eb29}{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-P\-A\-I\-R}(n, m) ? Eigen\-::\-Dynamic \-: (n$\ast$m))
-\item 
-\#define \hyperlink{receptive__volume_8h_a359151d89b7e46460e54bc364f144fa0}{R\-E\-C\-E\-P\-T\-I\-V\-E\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-T\-A\-R\-G\-S}
 \end{DoxyCompactItemize}
 \subsection*{Enumerations}
 \begin{DoxyCompactItemize}
@@ -62,15 +66,3 @@ enum \hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69a}{ffnn\-
 \item[{}]{m}
 \end{DoxyParamCaption}
 )~({\bf I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-P\-A\-I\-R}(n, m) ? Eigen\-::\-Dynamic \-: (n$\ast$m))}}\label{receptive__volume_8h_a74feffebf310dd34521adc2adcaf64c9}
-\hypertarget{receptive__volume_8h_a359151d89b7e46460e54bc364f144fa0}{\index{receptive\-\_\-volume.\-h@{receptive\-\_\-volume.\-h}!R\-E\-C\-E\-P\-T\-I\-V\-E\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-T\-A\-R\-G\-S@{R\-E\-C\-E\-P\-T\-I\-V\-E\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-T\-A\-R\-G\-S}}
-\index{R\-E\-C\-E\-P\-T\-I\-V\-E\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-T\-A\-R\-G\-S@{R\-E\-C\-E\-P\-T\-I\-V\-E\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-T\-A\-R\-G\-S}!receptive_volume.h@{receptive\-\_\-volume.\-h}}
-\subsubsection[{R\-E\-C\-E\-P\-T\-I\-V\-E\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-T\-A\-R\-G\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-E\-C\-E\-P\-T\-I\-V\-E\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-T\-A\-R\-G\-S}}\label{receptive__volume_8h_a359151d89b7e46460e54bc364f144fa0}
-{\bfseries Value\-:}
-\begin{DoxyCode}
-ValueType,\(\backslash\)
-                               HeightAtCompileTime,\(\backslash\)
-                               WidthAtCompileTime,\(\backslash\)
-                               DepthAtCompileTime,\(\backslash\)
-                               FilterCountAtCompileTime,\hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69a}{\(\backslash\)}
-\hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69a}{                               EmbeddingMode}
-\end{DoxyCode}

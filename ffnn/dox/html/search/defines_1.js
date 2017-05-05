@@ -1,22 +1,5 @@
 var searchData=
 [
-  ['ffnn_5fassert',['FFNN_ASSERT',['../assert_8h.html#acebc1a2cbd18085c2c24e2fe4311451b',1,'assert.h']]],
-  ['ffnn_5fassert_5fmsg',['FFNN_ASSERT_MSG',['../assert_8h.html#a0dd452510e5d75d0f71f52ed14143c40',1,'assert.h']]],
-  ['ffnn_5fdebug',['FFNN_DEBUG',['../logging_8h.html#ab12173b0787af69f3f1a39acd2bee8f1',1,'logging.h']]],
-  ['ffnn_5fdebug_5fnamed',['FFNN_DEBUG_NAMED',['../logging_8h.html#ad17a22e477672ae24ca9afe0abf1b46f',1,'logging.h']]],
-  ['ffnn_5ferror',['FFNN_ERROR',['../logging_8h.html#a1d6c56368e50cf741e990d8ea95b3cf4',1,'logging.h']]],
-  ['ffnn_5ferror_5fnamed',['FFNN_ERROR_NAMED',['../logging_8h.html#a48e2bf3dad548dafff4be40132286cbb',1,'logging.h']]],
-  ['ffnn_5finfo',['FFNN_INFO',['../logging_8h.html#a879b37e6a9587b32391cf514a74cc60f',1,'logging.h']]],
-  ['ffnn_5finfo_5fnamed',['FFNN_INFO_NAMED',['../logging_8h.html#abf808dbe4f5e6b88691ee1dd9f1eb2df',1,'logging.h']]],
-  ['ffnn_5fname_5fheader',['FFNN_NAME_HEADER',['../logging_8h.html#a84a92aec634f13a63f5686cc262a0815',1,'logging.h']]],
-  ['ffnn_5foffset_5ftype',['FFNN_OFFSET_TYPE',['../global_8h.html#af04b6e835b960cffc7ed05dfd1685ba0',1,'global.h']]],
-  ['ffnn_5fregister_5foptimizer',['FFNN_REGISTER_OPTIMIZER',['../optimizer_8h.html#aee9e218ffa031741b9f3f53cc580a09f',1,'optimizer.h']]],
-  ['ffnn_5fregister_5fserializable',['FFNN_REGISTER_SERIALIZABLE',['../serializable_8h.html#a3937bc18361c33fe981fe2725f70ebc5',1,'serializable.h']]],
-  ['ffnn_5fserialization_5finput_5farchive_5ftype',['FFNN_SERIALIZATION_INPUT_ARCHIVE_TYPE',['../global_8h.html#aa6057cb3965fa4db202231a2817b960b',1,'global.h']]],
-  ['ffnn_5fserialization_5foutput_5farchive_5ftype',['FFNN_SERIALIZATION_OUTPUT_ARCHIVE_TYPE',['../global_8h.html#a5c59f6dbef7cac034dd58fc9752c9ea6',1,'global.h']]],
-  ['ffnn_5fserialization_5fversion_5ftype',['FFNN_SERIALIZATION_VERSION_TYPE',['../global_8h.html#a0678a9de3e627b6d8dbba2f2733b4bab',1,'global.h']]],
-  ['ffnn_5fsize_5ftype',['FFNN_SIZE_TYPE',['../global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65',1,'global.h']]],
-  ['ffnn_5fstatic_5fassert_5fmsg',['FFNN_STATIC_ASSERT_MSG',['../assert_8h.html#a2b49bd7cbe87713cc51996494f3c4fd5',1,'assert.h']]],
-  ['ffnn_5fwarn',['FFNN_WARN',['../logging_8h.html#a828fa47e8eacc1dfaf7dc258feccd621',1,'logging.h']]],
-  ['ffnn_5fwarn_5fnamed',['FFNN_WARN_NAMED',['../logging_8h.html#aabf5ff82064ef58a239a35b444685955',1,'logging.h']]]
+  ['eigen_5fdensebase_5fplugin',['EIGEN_DENSEBASE_PLUGIN',['../global_8h.html#a90ac195153d63737038c5b747962f4df',1,'global.h']]],
+  ['eigen_5fsparsematrixbase_5fplugin',['EIGEN_SPARSEMATRIXBASE_PLUGIN',['../global_8h.html#aa89f613d1f2b0a743675e959929fbf5f',1,'global.h']]]
 ];

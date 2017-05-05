@@ -1,4 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node2" href="$structffnn_1_1aligned_1_1_map_base_3_01_matrix_type_00_01double_01_4.html" title="ffnn::aligned::MapBase\l\&lt; MatrixType, double \&gt;" alt="" coords="101,5,259,46"/>
-<area shape="rect" id="node3" href="$structffnn_1_1aligned_1_1_map_base_3_01_matrix_type_00_01float_01_4.html" title="ffnn::aligned::MapBase\l\&lt; MatrixType, float \&gt;" alt="" coords="102,70,258,111"/>
+<area shape="rect" id="node1" href="$structffnn_1_1aligned_1_1_map_base.html" title="ffnn::aligned::MapBase\l\&lt; Eigen::Matrix\&lt; ValueType,\l OutputHeightAtCompileTime,\l OutputWidthAtCompileTime,\l Eigen::ColMajor \&gt;, Eigen::Matrix\l\&lt; ValueType, OutputHeightAtCompileTime,\l OutputWidthAtCompileTime, Eigen::ColMajor\l \&gt;::Scalar \&gt;" alt="" coords="5,5,296,134"/>
+<area shape="rect" id="node2" href="$structffnn_1_1aligned_1_1_map.html" title="ffnn::aligned::Map\l\&lt; Eigen::Matrix\&lt; ValueType,\l OutputHeightAtCompileTime,\l OutputWidthAtCompileTime,\l Eigen::ColMajor \&gt; \&gt;" alt="" coords="344,27,541,112"/>
 </map>

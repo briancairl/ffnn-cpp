@@ -127,6 +127,16 @@ Public Types</h2></td></tr>
 <tr class="memitem:a99a6c14984f9d1cc731f1b1b6e00fb2c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_receptive_volume.html#a99a6c14984f9d1cc731f1b1b6e00fb2c">Base</a> = <a class="el" href="classffnn_1_1layer_1_1internal_1_1_interface.html">internal::Interface</a>&lt; ValueType &gt;</td></tr>
 <tr class="memdesc:a99a6c14984f9d1cc731f1b1b6e00fb2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base type alias.  <a href="#a99a6c14984f9d1cc731f1b1b6e00fb2c">More...</a><br/></td></tr>
 <tr class="separator:a99a6c14984f9d1cc731f1b1b6e00fb2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a109443dccd1eddb55aec1b2810030606"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_receptive_volume.html#a109443dccd1eddb55aec1b2810030606">Self</a> = <a class="el" href="classffnn_1_1layer_1_1_receptive_volume.html">ReceptiveVolume</a>&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterCountAtCompileTime, <a class="el" href="namespaceffnn_1_1layer.html#a254f16beba4fb335d935e9b43bb9e69a">EmbeddingMode</a> &gt;</td></tr>
+<tr class="memdesc:a109443dccd1eddb55aec1b2810030606"><td class="mdescLeft">&#160;</td><td class="mdescRight">Self type alias.  <a href="#a109443dccd1eddb55aec1b2810030606">More...</a><br/></td></tr>
+<tr class="separator:a109443dccd1eddb55aec1b2810030606"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c32fe58cfaa6873d328d36eada78a7f"><td class="memItemLeft" align="right" valign="top">typedef boost::shared_ptr&lt; <a class="el" href="classffnn_1_1layer_1_1_receptive_volume.html#a109443dccd1eddb55aec1b2810030606">Self</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_receptive_volume.html#a1c32fe58cfaa6873d328d36eada78a7f">Ptr</a></td></tr>
+<tr class="memdesc:a1c32fe58cfaa6873d328d36eada78a7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shared resource standardization.  <a href="#a1c32fe58cfaa6873d328d36eada78a7f">More...</a><br/></td></tr>
+<tr class="separator:a1c32fe58cfaa6873d328d36eada78a7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3e48c66c8bc1b5f3bc20dc8c75f2c64"><td class="memItemLeft" align="right" valign="top">typedef boost::shared_ptr<br class="typebreak"/>
+&lt; const <a class="el" href="classffnn_1_1layer_1_1_receptive_volume.html#a109443dccd1eddb55aec1b2810030606">Self</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_receptive_volume.html#ad3e48c66c8bc1b5f3bc20dc8c75f2c64">ConstPtr</a></td></tr>
+<tr class="memdesc:ad3e48c66c8bc1b5f3bc20dc8c75f2c64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constant shared resource standardization.  <a href="#ad3e48c66c8bc1b5f3bc20dc8c75f2c64">More...</a><br/></td></tr>
+<tr class="separator:ad3e48c66c8bc1b5f3bc20dc8c75f2c64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b3e846caf0136f173b3e0ceff912eac"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classffnn_1_1layer_1_1internal_1_1_interface.html#a7f834e3365e5199bcbcd16d9abd63941">Base::ScalarType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_receptive_volume.html#a4b3e846caf0136f173b3e0ceff912eac">ScalarType</a></td></tr>
 <tr class="memdesc:a4b3e846caf0136f173b3e0ceff912eac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scalar type standardization.  <a href="#a4b3e846caf0136f173b3e0ceff912eac">More...</a><br/></td></tr>
 <tr class="separator:a4b3e846caf0136f173b3e0ceff912eac"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -216,11 +226,17 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a87499fd55b6612a35a1af5b13b851a55 inherit pub_methods_classffnn_1_1layer_1_1internal_1_1_interface"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1internal_1_1_interface.html#a87499fd55b6612a35a1af5b13b851a55">~Interface</a> ()</td></tr>
 <tr class="separator:a87499fd55b6612a35a1af5b13b851a55 inherit pub_methods_classffnn_1_1layer_1_1internal_1_1_interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6de2e5a7e17c266f52d695ccf8e0b379 inherit pub_methods_classffnn_1_1layer_1_1internal_1_1_interface"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classffnn_1_1layer_1_1internal_1_1_interface.html#af0567642f60c65b5e87067226a54174b">SizeType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1internal_1_1_interface.html#a6de2e5a7e17c266f52d695ccf8e0b379">inputSize</a> () const </td></tr>
-<tr class="memdesc:a6de2e5a7e17c266f52d695ccf8e0b379 inherit pub_methods_classffnn_1_1layer_1_1internal_1_1_interface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the total number of <a class="el" href="classffnn_1_1layer_1_1_layer.html" title="Base object for all layer types. ">Layer</a> inputs.  <a href="#a6de2e5a7e17c266f52d695ccf8e0b379">More...</a><br/></td></tr>
+<tr class="memdesc:a6de2e5a7e17c266f52d695ccf8e0b379 inherit pub_methods_classffnn_1_1layer_1_1internal_1_1_interface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the total number of <a class="el" href="classffnn_1_1layer_1_1internal_1_1_interface.html" title="Base object for all layer types. ">Interface</a> inputs.  <a href="#a6de2e5a7e17c266f52d695ccf8e0b379">More...</a><br/></td></tr>
 <tr class="separator:a6de2e5a7e17c266f52d695ccf8e0b379 inherit pub_methods_classffnn_1_1layer_1_1internal_1_1_interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3578b4137e24bd8992cdc8dd6def0745 inherit pub_methods_classffnn_1_1layer_1_1internal_1_1_interface"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classffnn_1_1layer_1_1internal_1_1_interface.html#af0567642f60c65b5e87067226a54174b">SizeType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1internal_1_1_interface.html#a3578b4137e24bd8992cdc8dd6def0745">outputSize</a> () const </td></tr>
-<tr class="memdesc:a3578b4137e24bd8992cdc8dd6def0745 inherit pub_methods_classffnn_1_1layer_1_1internal_1_1_interface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the total number of <a class="el" href="classffnn_1_1layer_1_1_layer.html" title="Base object for all layer types. ">Layer</a> outputs.  <a href="#a3578b4137e24bd8992cdc8dd6def0745">More...</a><br/></td></tr>
+<tr class="memdesc:a3578b4137e24bd8992cdc8dd6def0745 inherit pub_methods_classffnn_1_1layer_1_1internal_1_1_interface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the total number of <a class="el" href="classffnn_1_1layer_1_1internal_1_1_interface.html" title="Base object for all layer types. ">Interface</a> outputs.  <a href="#a3578b4137e24bd8992cdc8dd6def0745">More...</a><br/></td></tr>
 <tr class="separator:a3578b4137e24bd8992cdc8dd6def0745 inherit pub_methods_classffnn_1_1layer_1_1internal_1_1_interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b437482b1478c0b8fc492dd480908ea inherit pub_methods_classffnn_1_1layer_1_1internal_1_1_interface"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classffnn_1_1layer_1_1internal_1_1_interface.html#a8d121d0103f254b51e48f7b20a17681f">DimType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1internal_1_1_interface.html#a9b437482b1478c0b8fc492dd480908ea">inputDim</a> () const </td></tr>
+<tr class="memdesc:a9b437482b1478c0b8fc492dd480908ea inherit pub_methods_classffnn_1_1layer_1_1internal_1_1_interface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <a class="el" href="classffnn_1_1layer_1_1internal_1_1_interface.html" title="Base object for all layer types. ">Interface</a> input dimension oject.  <a href="#a9b437482b1478c0b8fc492dd480908ea">More...</a><br/></td></tr>
+<tr class="separator:a9b437482b1478c0b8fc492dd480908ea inherit pub_methods_classffnn_1_1layer_1_1internal_1_1_interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa3e0e1735cbc17f9032573782f4e098 inherit pub_methods_classffnn_1_1layer_1_1internal_1_1_interface"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classffnn_1_1layer_1_1internal_1_1_interface.html#a8d121d0103f254b51e48f7b20a17681f">DimType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1internal_1_1_interface.html#aaa3e0e1735cbc17f9032573782f4e098">outputDim</a> () const </td></tr>
+<tr class="memdesc:aaa3e0e1735cbc17f9032573782f4e098 inherit pub_methods_classffnn_1_1layer_1_1internal_1_1_interface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <a class="el" href="classffnn_1_1layer_1_1internal_1_1_interface.html" title="Base object for all layer types. ">Interface</a> output dimension oject.  <a href="#aaa3e0e1735cbc17f9032573782f4e098">More...</a><br/></td></tr>
+<tr class="separator:aaa3e0e1735cbc17f9032573782f4e098 inherit pub_methods_classffnn_1_1layer_1_1internal_1_1_interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae590ebe90408887805743c5e364dd45 inherit pub_methods_classffnn_1_1layer_1_1internal_1_1_interface"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classffnn_1_1layer_1_1internal_1_1_interface.html#af0567642f60c65b5e87067226a54174b">SizeType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1internal_1_1_interface.html#aae590ebe90408887805743c5e364dd45">evaluateInputSize</a> () const </td></tr>
 <tr class="memdesc:aae590ebe90408887805743c5e364dd45 inherit pub_methods_classffnn_1_1layer_1_1internal_1_1_interface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the total number counted (evaluated) inputs.  <a href="#aae590ebe90408887805743c5e364dd45">More...</a><br/></td></tr>
 <tr class="separator:aae590ebe90408887805743c5e364dd45 inherit pub_methods_classffnn_1_1layer_1_1internal_1_1_interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -302,6 +318,22 @@ template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dyn
 
 </div>
 </div>
+<a class="anchor" id="ad3e48c66c8bc1b5f3bc20dc8c75f2c64"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE DepthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE EmbeddingMode = ColEmbedding&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef boost::shared_ptr&lt;const <a class="el" href="classffnn_1_1layer_1_1_receptive_volume.html#a109443dccd1eddb55aec1b2810030606">Self</a>&gt; <a class="el" href="classffnn_1_1layer_1_1_receptive_volume.html">ffnn::layer::ReceptiveVolume</a>&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterCountAtCompileTime, <a class="el" href="namespaceffnn_1_1layer.html#a254f16beba4fb335d935e9b43bb9e69a">EmbeddingMode</a> &gt;::<a class="el" href="classffnn_1_1layer_1_1_receptive_volume.html#ad3e48c66c8bc1b5f3bc20dc8c75f2c64">ConstPtr</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constant shared resource standardization. </p>
+
+</div>
+</div>
 <a class="anchor" id="ab0bd7607040aa08bf9cdfcc30e2794ef"></a>
 <div class="memitem">
 <div class="memproto">
@@ -366,6 +398,22 @@ template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dyn
 
 </div>
 </div>
+<a class="anchor" id="a1c32fe58cfaa6873d328d36eada78a7f"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE DepthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE EmbeddingMode = ColEmbedding&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef boost::shared_ptr&lt;<a class="el" href="classffnn_1_1layer_1_1_receptive_volume.html#a109443dccd1eddb55aec1b2810030606">Self</a>&gt; <a class="el" href="classffnn_1_1layer_1_1_receptive_volume.html">ffnn::layer::ReceptiveVolume</a>&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterCountAtCompileTime, <a class="el" href="namespaceffnn_1_1layer.html#a254f16beba4fb335d935e9b43bb9e69a">EmbeddingMode</a> &gt;::<a class="el" href="classffnn_1_1layer_1_1_receptive_volume.html#a1c32fe58cfaa6873d328d36eada78a7f">Ptr</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Shared resource standardization. </p>
+
+</div>
+</div>
 <a class="anchor" id="a4b3e846caf0136f173b3e0ceff912eac"></a>
 <div class="memitem">
 <div class="memproto">
@@ -379,6 +427,22 @@ template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dyn
 </div><div class="memdoc">
 
 <p>Scalar type standardization. </p>
+
+</div>
+</div>
+<a class="anchor" id="a109443dccd1eddb55aec1b2810030606"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE DepthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE EmbeddingMode = ColEmbedding&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classffnn_1_1layer_1_1_receptive_volume.html">ffnn::layer::ReceptiveVolume</a>&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterCountAtCompileTime, <a class="el" href="namespaceffnn_1_1layer.html#a254f16beba4fb335d935e9b43bb9e69a">EmbeddingMode</a> &gt;::<a class="el" href="classffnn_1_1layer_1_1_receptive_volume.html#a109443dccd1eddb55aec1b2810030606">Self</a> =  <a class="el" href="classffnn_1_1layer_1_1_receptive_volume.html">ReceptiveVolume</a>&lt;ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterCountAtCompileTime, <a class="el" href="namespaceffnn_1_1layer.html#a254f16beba4fb335d935e9b43bb9e69a">EmbeddingMode</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Self type alias. </p>
 
 </div>
 </div>
@@ -709,7 +773,7 @@ template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dyn
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 4 2017 13:14:44 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri May 5 2017 01:46:11 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

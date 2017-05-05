@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['is_5fdynamic',['IS_DYNAMIC',['../convolution_8h.html#a67c7ed133a71d197d8fca368336d5aa7',1,'IS_DYNAMIC():&#160;convolution.h'],['../dimensions_8h.html#a67c7ed133a71d197d8fca368336d5aa7',1,'IS_DYNAMIC():&#160;dimensions.h']]],
-  ['is_5fdynamic_5fpair',['IS_DYNAMIC_PAIR',['../convolution_8h.html#a1888db73da403e86806b106c3b40eb29',1,'IS_DYNAMIC_PAIR():&#160;convolution.h'],['../receptive__volume_8h.html#a1888db73da403e86806b106c3b40eb29',1,'IS_DYNAMIC_PAIR():&#160;receptive_volume.h']]],
-  ['is_5fdynamic_5ftriplet',['IS_DYNAMIC_TRIPLET',['../convolution_8h.html#a0faa7f844e3841ae41c2baedf7680756',1,'IS_DYNAMIC_TRIPLET():&#160;convolution.h'],['../dimensions_8h.html#a0faa7f844e3841ae41c2baedf7680756',1,'IS_DYNAMIC_TRIPLET():&#160;dimensions.h']]]
+  ['hidden',['HIDDEN',['../hidden_8hpp.html#ab42ef41116f8f2fe447484e2844cf0df',1,'hidden.hpp']]],
+  ['hidden_5ftargs',['HIDDEN_TARGS',['../hidden_8hpp.html#a83c929a41e55d204f29a33daaa4279c9',1,'hidden.hpp']]],
+  ['hidden_5ftargs_5fadvanced',['HIDDEN_TARGS_ADVANCED',['../hidden_8hpp.html#ad593cb639334de0010f2c8c06e5e7265',1,'hidden.hpp']]]
 ];
