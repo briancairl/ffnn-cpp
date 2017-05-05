@@ -47,9 +47,9 @@ TEST(TestLayerActivationWithOptimizers, GradientDescent)
   static const Layer::SizeType DIM = 32;
 
   // Create layers
-  auto input = boost::make_shared<Input>(DIM);  
+  auto input = boost::make_shared<Input>(DIM);
   auto hidden = boost::make_shared<Hidden>(DIM);
-  auto output = boost::make_shared<Output>();  
+  auto output = boost::make_shared<Output>();
 
   // Set optimizer (gradient descent)
   {

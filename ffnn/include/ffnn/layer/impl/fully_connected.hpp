@@ -51,7 +51,6 @@ template<typename ValueType,
          FFNN_SIZE_TYPE OutputsAtCompileTime>
 bool FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::initialize()
 {
-  FFNN_ERROR(Base::setupRequired());
   // Abort if layer is already initialized
   if (Base::setupRequired() && Base::isInitialized())
   {

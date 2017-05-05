@@ -22,6 +22,17 @@ target_link_libraries(test_layer_receptive_volume
   ${GTEST_LIBRARIES}
 )
 
+catkin_add_gtest(test_layer_convolution
+  test_layer_convolution.cpp
+)
+target_link_libraries(test_layer_convolution
+  ${Boost_LIBRARIES}
+  ${catkin_LIBRARIES}
+  ${EIGEN_LIBRARIES}
+  ${GTEST_LIBRARIES}
+)
+
+
 
 #-------------------------------------------------------------
 # IO

@@ -51,7 +51,7 @@ public:
   virtual ~Interface() {}
 
   /**
-   * @brief Returns the total number of Layer inputs
+   * @brief Returns the total number of Interface inputs
    */
   inline SizeType inputSize() const
   {
@@ -59,12 +59,29 @@ public:
   }
 
   /**
-   * @brief Returns the total number of Layer outputs
+   * @brief Returns the total number of Interface outputs
    */
   inline SizeType outputSize() const
   {
     return output_dim_.size();
   }
+
+  /**
+   * @brief Returns the Interface input dimension oject
+   */
+  inline const DimType& inputDim() const
+  {
+    return input_dim_;
+  }
+
+  /**
+   * @brief Returns the Interface output dimension oject
+   */
+  inline const DimType& outputDim() const
+  {
+    return output_dim_;
+  }
+
 
   /**
    * @brief Returns the total number counted (evaluated) inputs

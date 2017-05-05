@@ -25,25 +25,32 @@ enum EmbeddingMode
   ColEmbedding = 1,
 };
 
-#define RECEPTIVE_VOLUME_TARGS ValueType,\
-                               HeightAtCompileTime,\
-                               WidthAtCompileTime,\
-                               DepthAtCompileTime,\
-                               FilterCountAtCompileTime,\
-                               EmbeddingMode
-
-template <typename ValueType,
-          FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic,
-          FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic,
-          FFNN_SIZE_TYPE DepthAtCompileTime = Eigen::Dynamic,
-          FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic,
-          FFNN_SIZE_TYPE EmbeddingMode = ColEmbedding>
+template<typename ValueType,
+         FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic,
+         FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic,
+         FFNN_SIZE_TYPE DepthAtCompileTime = Eigen::Dynamic,
+         FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic,
+         FFNN_SIZE_TYPE EmbeddingMode = ColEmbedding>
 class ReceptiveVolume :
   public internal::Interface<ValueType>
 {
 public:
   /// Base type alias
   using Base = internal::Interface<ValueType>;
+
+  /// Self type alias
+  using Self = ReceptiveVolume<ValueType,
+                               HeightAtCompileTime,
+                               WidthAtCompileTime,
+                               DepthAtCompileTime,
+                               FilterCountAtCompileTime,
+                               EmbeddingMode>;
+
+  /// Shared resource standardization
+  typedef boost::shared_ptr<Self> Ptr;
+
+  /// Constant shared resource standardization
+  typedef boost::shared_ptr<const Self> ConstPtr;
 
   /// Scalar type standardization
   typedef typename Base::ScalarType ScalarType;

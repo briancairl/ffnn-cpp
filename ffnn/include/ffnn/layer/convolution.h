@@ -5,56 +5,76 @@
 #ifndef FFNN_LAYER_FULLY_CONNECTED_H
 #define FFNN_LAYER_FULLY_CONNECTED_H
 
-// C++ Standard Library
-#include <vector>
+// Boost
+#include "boost/multi_array.hpp"
 
-// FFNN
+// FFNN Layer
 #include <ffnn/layer/hidden.h>
-#include <ffnn/layer/internal/receptive_volume.h>
+#include <ffnn/layer/receptive_volume.h>
 #include <ffnn/neuron/neuron.h>
-#include <ffnn/optimizer/optimizer.h>
-#include <ffnn/optimizer/fwd.h>
 
+// FFNN Optimization
+#include <ffnn/optimizer/fwd.h>
+#include <ffnn/optimizer/optimizer.h>
 
 namespace ffnn
 {
 namespace layer
 {
-#define IS_DYNAMIC(x) (x == Eigen::Dynamic)
-#define IS_DYNAMIC_PAIR(n, m) (IS_DYNAMIC(n) || IS_DYNAMIC(m))
-#define IS_DYNAMIC_TRIPLET(n, m, l) (IS_DYNAMIC(n) || IS_DYNAMIC(m) || IS_DYNAMIC(l))
-#define PROD_IF_STATIC_PAIR(n, m) (IS_DYNAMIC_PAIR(n, m) ? Eigen::Dynamic : (n*m))
-#define PROD_IF_STATIC_TRIPLET(n, m, l) (IS_DYNAMIC_TRIPLET(n, m, l) ? Eigen::Dynamic : (n*m*l))
-#define RECEPTIVE_VOLUME_INPUT_SIZE (PROD_IF_STATIC_TRIPLET(HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime))
+#define CONVOLUTION_OUTPUT_HEIGHT ((HeightAtCompileTime - FilterHeightAtCompileTime) / Stride + 1)
+#define CONVOLUTION_OUTPUT_WIDTH  ((WidthAtCompileTime - FilterWidthAtCompileTime) / Stride + 1)
+
+#define CONVOLUTION_BASE_TARGS\
+  ValueType,\
+  HeightAtCompileTime,\
+  WidthAtCompileTime,\
+  CONVOLUTION_OUTPUT_HEIGHT,\
+  CONVOLUTION_OUTPUT_WIDTH
+
+#define CONVOLUTION_VOLUME_TARGS\
+  ValueType,\
+  FilterHeightAtCompileTime,\
+  FilterWidthAtCompileTime,\
+  DepthAtCompileTime,\
+  FilterCountAtCompileTime,\
+  EmbeddingMode
+
+#define CONVOLUTION_TARGS\
+  ValueType,\
+  HeightAtCompileTime,\
+  WidthAtCompileTime,\
+  DepthAtCompileTime,\
+  FilterHeightAtCompileTime,\
+  FilterWidthAtCompileTime,\
+  FilterCountAtCompileTime,\
+  Stride,\
+  EmbeddingMode
 
 /**
- * @brief A fully-connected layer
+ * @brief A convolution layer
  */
 template <typename ValueType,
-          FFNN_SIZE_TYPE FilterCount,
           FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic,
           FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic,
           FFNN_SIZE_TYPE DepthAtCompileTime = Eigen::Dynamic,
           FFNN_SIZE_TYPE FilterHeightAtCompileTime = Eigen::Dynamic,
           FFNN_SIZE_TYPE FilterWidthAtCompileTime = Eigen::Dynamic,
+          FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic,
           FFNN_SIZE_TYPE Stride = 1,
-          FFNN_SIZE_TYPE EmbedAlongColumns = true>
+          FFNN_SIZE_TYPE EmbeddingMode = ColEmbedding>
 class Convolution :
-  public Hidden<ValueType,
-                HeightAtCompileTime,
-                WidthAtCompileTime,
-                (HeightAtCompileTime - FilterHeightAtCompileTime) / Stride + 1),
-                (WidthAtCompileTime - FilterWidthAtCompileTime) / Stride + 1)>
+  public Hidden<CONVOLUTION_BASE_TARGS>
 {
 public:
   /// Base type alias
-  using Base = Hidden<ValueType, InputsAtCompileTime, OutputsAtCompileTime>;
+  using Base = Hidden<ValueType,
+                      HeightAtCompileTime,
+                      WidthAtCompileTime,
+                      CONVOLUTION_OUTPUT_HEIGHT,
+                      CONVOLUTION_OUTPUT_WIDTH>;
 
   /// Self type alias
-  using Self = Convolution<ValueType, InputsAtCompileTime, OutputsAtCompileTime>;
-
-  /// Recptived-volume type alias
-  typedef ReceptiveVolume<ValueType, FilterCount, FilterHeightAtCompileTime, FilterWidthAtCompileTime, DepthAtCompileTime, EmbedAlongColumns> ReceptorType;
+  using Self = Convolution<CONVOLUTION_TARGS>;
 
   /// Scalar type standardization
   typedef typename Base::ScalarType ScalarType;
@@ -65,37 +85,20 @@ public:
   /// Offset type standardization
   typedef typename Base::OffsetType OffsetType;
 
+  /// Dimension type standardization
+  typedef typename Base::DimType DimType;
+
+  /// Receptive-volume type standardization
+  typedef ReceptiveVolume<CONVOLUTION_VOLUME_TARGS> ReceptiveVolumeType;
+
+  /// Recptive-volume bank standardization
+  typedef boost::multi_array<typename ReceptiveVolumeType::Ptr, 2> ReceptiveVolumeBankType;
+
   /// Layer optimization type standardization
   typedef optimizer::Optimizer<Self> Optimizer;
 
-  /// A configuration object for a Convolution hidden layer
-  struct Parameters
-  {
-    /// Standard deviation of connection weights on init
-    ScalarType init_weight_std;
-
-    /// Standard deviation of biases on init
-    ScalarType init_bias_std;
-
-    /// Connection weight mean (bias) on init
-    ScalarType init_weight_mean;
-
-    /// Connection biasing mean (bias) on init
-    ScalarType init_bias_mean;
-
-    /**
-     * @brief Setup constructor
-     * @param init_weight_std  Standard deviation of initial weights
-     * @param init_bias_std  Standard deviation of initial weights
-     * @param init_weight_mean  Mean of intial weights
-     * @param init_bias_mean  Mean of intial biases
-     */
-    explicit
-    Parameters(ScalarType init_weight_std = 1e-3,
-               ScalarType init_bias_std = 1e-3,
-               ScalarType init_weight_mean = 0.0,
-               ScalarType init_bias_mean = 0.0);
-  };
+  /// Configuration struct type alias
+  typedef typename ReceptiveVolumeType::Parameters Parameters;
 
   /**
    * @brief Setup constructor
@@ -103,21 +106,36 @@ public:
    * @param config  layer configuration struct
    */
   explicit
-  Convolution(SizeType output_size = OutputsAtCompileTime,
-                 const Parameters& config = Parameters());
-  virtual ~Convolution();
+  Convolution() {};
+  virtual ~Convolution() {};
 
   /**
    * @brief Initialize the layer
    */
-  virtual bool initialize();
+  virtual bool initialize()
+  {
+    receptors_.resize(boost::extents[CONVOLUTION_OUTPUT_HEIGHT][CONVOLUTION_OUTPUT_WIDTH]);
+
+    Base::initialized_ = true;
+    for (SizeType idx = 0; idx < CONVOLUTION_OUTPUT_HEIGHT; idx++)
+    {
+      for (SizeType jdx = 0; jdx < CONVOLUTION_OUTPUT_WIDTH; jdx++)
+      {
+        receptors_[idx][jdx] = boost::make_shared<ReceptiveVolumeType>();
+        Base::initialized_ |= receptors_[idx][jdx]->initialize();
+
+        FFNN_ASSERT_MSG(Base::initialized_, "Failed to initialize rececptor.");
+      }
+    }
+    return Base::isInitialized();
+  }
 
   /**
    * @brief Performs forward value propagation
    * @retval true  if forward-propagation succeeded
    * @retval false  otherwise
    */
-  virtual bool forward();
+  //virtual bool forward();
 
   /**
    * @brief Performs backward error propagation
@@ -127,7 +145,7 @@ public:
    * @warning Will throw if an optimizer has not been associated with this layer
    * @see setOptimizer
    */
-  virtual bool backward();
+  //virtual bool backward();
 
   /**
    * @brief Applies accumulated layer weight updates computed during optimization
@@ -136,60 +154,33 @@ public:
    * @warning Will throw if an optimizer has not been associated with this layer
    * @see setOptimizer
    */
-  virtual bool update();
+  //virtual bool update();
 
   /**
    * @brief Reset weights and biases
    */
-  void reset();
+  //void reset();
 
-  /**
-   * @brief Sets an optimizer used update network weights during back-propagation
-   * @param opt  optimizer to set
-   * @warning <code>backward</code> and <code>update</code> methods are expected to throw if an
-   *          optimizer has not been set explicitly
-   */
-  void setOptimizer(typename Optimizer::Ptr opt);
-
-  /**
-   * @brief Exposes internal connection weights
-   * @return input-output connection weights
-   */
-  inline const WeightMatrixType& getWeights() const
+  inline const ReceptiveVolumeBankType& getReceptiveVolumes() const
   {
-    return w_;
-  }
-
-  /**
-   * @brief Exposes internal biasing weights
-   * @return input-biasing vector
-   */
-  inline const BiasVectorType& getBiases() const
-  {
-    return b_;
+    return receptors_;
   }
 
 protected:
   FFNN_REGISTER_SERIALIZABLE(Convolution)
 
-  /// Save serializer
-  void save(OutputArchive& ar, VersionType version) const;
+  // /// Save serializer
+  // void save(OutputArchive& ar, VersionType version) const;
 
-  /// Load serializer
-  void load(InputArchive& ar, VersionType version);
+  // /// Load serializer
+  // void load(InputArchive& ar, VersionType version);
 
 private:
-  FFNN_REGISTER_OPTIMIZER(Convolution, Adam);
-  FFNN_REGISTER_OPTIMIZER(Convolution, GradientDescent);
+  //FFNN_REGISTER_OPTIMIZER(Convolution, Adam);
+  //FFNN_REGISTER_OPTIMIZER(Convolution, GradientDescent);
 
   /// Layer configuration parameters
-  Parameters config_;
-
-  /// Weight matrix
-  WeightMatrixType w_;
-
-  /// Bias vector
-  BiasVectorType b_;
+  ReceptiveVolumeBankType receptors_;
 
   /**
    * @brief Weight optimization resource
@@ -201,6 +192,12 @@ private:
 }  // namespace layer
 }  // namespace ffnn
 
+#undef CONVOLUTION_OUTPUT_HEIGHT
+#undef CONVOLUTION_OUTPUT_WIDTH
+#undef CONVOLUTION_BASE_TARGS
+#undef CONVOLUTION_VOLUME_TARGS
+#undef CONVOLUTION_TARGS
+
 /// FFNN (implementation)
-#include <ffnn/layer/impl/fully_connected.hpp>
+//#include <ffnn/layer/impl/fully_connected.hpp>
 #endif  // FFNN_LAYER_FULLY_CONNECTED_H
