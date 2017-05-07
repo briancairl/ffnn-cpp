@@ -23,8 +23,8 @@ TEST(TestLayerReceptiveVolume, DynamicInstanceColEmbedding)
   // Volume-type alias
   using Volume = ffnn::layer::ReceptiveVolume<float>;
 
-  // Dimensions supplied in constructor
-  Volume volume(Volume::DimType(4, 6, 8), 12);
+  // Shape supplied in constructor
+  Volume volume(Volume::ShapeType(4, 6, 8), 12);
 
   EXPECT_TRUE(volume.getFilters().empty());
   EXPECT_TRUE(volume.initialize());
@@ -44,7 +44,7 @@ TEST(TestLayerReceptiveVolume, StaticInstanceRowEmbedding)
   // Volume-type alias
   using Volume = ffnn::layer::ReceptiveVolume<float, 4, 6, 8, 12, ffnn::layer::RowEmbedding>;
 
-  // Dimensions inferred from template args
+  // Shape inferred from template args
   Volume volume;
 
   EXPECT_TRUE(volume.getFilters().empty());
@@ -64,7 +64,7 @@ TEST(TestLayerReceptiveVolume, StaticInstanceRowEmbedding_Forward)
   // Volume-type alias
   using Volume = ffnn::layer::ReceptiveVolume<float, 4, 6, 8, 12>;
 
-  // Dimensions inferred from template args
+  // Shape inferred from template args
   Volume volume;
 
   EXPECT_TRUE(volume.getFilters().empty());
@@ -87,7 +87,7 @@ TEST(TestLayerReceptiveVolume, StaticInstanceRowEmbedding_ForwardBlockInput)
   // Volume-type alias
   using Volume = ffnn::layer::ReceptiveVolume<float, 4, 6, 8, 12>;
 
-  // Dimensions inferred from template args
+  // Shape inferred from template args
   Volume volume;
 
   EXPECT_TRUE(volume.getFilters().empty());
@@ -101,7 +101,7 @@ TEST(TestLayerReceptiveVolume, StaticInstanceRowEmbedding_ForwardBlockInput)
   InputBlock input;
   input.setOnes();
 
-  EXPECT_NO_THROW(volume.forward(input.block<32, 6>(0, 0),  output.block<12, 1>(0, 0)));
+  EXPECT_NO_THROW(volume.forward(input.block(32, 6, 0, 0),  output.block<12, 1>(0, 0)));
   FFNN_DEBUG('\n' << output);
   EXPECT_NO_THROW(volume.forward(input.block<32, 6>(32, 0), output.block<12, 1>(12, 1)));
   FFNN_DEBUG('\n' << output);

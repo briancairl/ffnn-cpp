@@ -46,7 +46,7 @@ bool Activation<ValueType, NeuronType, SizeAtCompileTime>::initialize()
   }
 
   // Deduce output dimensions
-  Base::output_dim_ = Base::input_dim_;
+  Base::output_shape_ = Base::input_shape_;
 
   // Initialize neurons
   neurons_.resize(Base::outputSize());

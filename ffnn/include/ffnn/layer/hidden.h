@@ -47,7 +47,7 @@ public:
   typedef typename Base::OffsetType OffsetType;
 
   /// Dimension type standardization
-  typedef typename Base::DimType DimType;
+  typedef typename Base::ShapeType ShapeType;
 
   /// Input block type standardization
   typedef _InputBlockType InputBlockType;
@@ -63,8 +63,8 @@ public:
    * @param output_width  width of the output surface
    */
   explicit
-  Hidden(const DimType& input_dim  = DimType(InputHeightAtCompileTime, InputWidthAtCompileTime),
-         const DimType& output_dim = DimType(OutputHeightAtCompileTime, OutputWidthAtCompileTime));
+  Hidden(const ShapeType& input_shape  = ShapeType(InputHeightAtCompileTime, InputWidthAtCompileTime),
+         const ShapeType& output_shape = ShapeType(OutputHeightAtCompileTime, OutputWidthAtCompileTime));
   virtual ~Hidden();
 
   /**
@@ -128,7 +128,7 @@ private:
    * @brief Maps outputs of this layer to inputs of the next
    * @param next  a subsequent layer
    * @param offset  offset index of a memory location in the input buffer of the next layer
-   * @retval <code>offset + output_dim_.size()</code>
+   * @retval <code>offset + output_shape_.size()</code>
    */
   OffsetType connectToForwardLayer(const Base& next, OffsetType offset);
 };

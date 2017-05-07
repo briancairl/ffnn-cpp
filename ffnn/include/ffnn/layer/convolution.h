@@ -21,15 +21,16 @@ namespace ffnn
 {
 namespace layer
 {
-#define CONVOLUTION_OUTPUT_HEIGHT ((HeightAtCompileTime - FilterHeightAtCompileTime) / Stride + 1)
-#define CONVOLUTION_OUTPUT_WIDTH  ((WidthAtCompileTime - FilterWidthAtCompileTime) / Stride + 1)
-
-#define CONVOLUTION_BASE_TARGS\
+#define CONVOLUTION_TARGS\
   ValueType,\
   HeightAtCompileTime,\
   WidthAtCompileTime,\
-  CONVOLUTION_OUTPUT_HEIGHT,\
-  CONVOLUTION_OUTPUT_WIDTH
+  DepthAtCompileTime,\
+  FilterHeightAtCompileTime,\
+  FilterWidthAtCompileTime,\
+  FilterCountAtCompileTime,\
+  StrideAtCompileTime,\
+  EmbeddingMode
 
 #define CONVOLUTION_VOLUME_TARGS\
   ValueType,\
@@ -39,16 +40,16 @@ namespace layer
   FilterCountAtCompileTime,\
   EmbeddingMode
 
-#define CONVOLUTION_TARGS\
+#define RESOLVE_CONVOLUTION_OUTPUT(n, fn, s) ((n - fn) / s + 1)
+#define CONVOLUTION_OUTPUT_HEIGHT RESOLVE_CONVOLUTION_OUTPUT(HeightAtCompileTime, FilterHeightAtCompileTime, StrideAtCompileTime)
+#define CONVOLUTION_OUTPUT_WIDTH  RESOLVE_CONVOLUTION_OUTPUT(WidthAtCompileTime, FilterWidthAtCompileTime, StrideAtCompileTime)
+
+#define CONVOLUTION_BASE_TARGS\
   ValueType,\
   HeightAtCompileTime,\
   WidthAtCompileTime,\
-  DepthAtCompileTime,\
-  FilterHeightAtCompileTime,\
-  FilterWidthAtCompileTime,\
-  FilterCountAtCompileTime,\
-  Stride,\
-  EmbeddingMode
+  CONVOLUTION_OUTPUT_HEIGHT,\
+  CONVOLUTION_OUTPUT_WIDTH
 
 /**
  * @brief A convolution layer
@@ -60,7 +61,7 @@ template <typename ValueType,
           FFNN_SIZE_TYPE FilterHeightAtCompileTime = Eigen::Dynamic,
           FFNN_SIZE_TYPE FilterWidthAtCompileTime = Eigen::Dynamic,
           FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic,
-          FFNN_SIZE_TYPE Stride = 1,
+          FFNN_SIZE_TYPE StrideAtCompileTime = 1,
           FFNN_SIZE_TYPE EmbeddingMode = ColEmbedding>
 class Convolution :
   public Hidden<CONVOLUTION_BASE_TARGS>
@@ -86,7 +87,7 @@ public:
   typedef typename Base::OffsetType OffsetType;
 
   /// Dimension type standardization
-  typedef typename Base::DimType DimType;
+  typedef typename Base::ShapeType ShapeType;
 
   /// Receptive-volume type standardization
   typedef ReceptiveVolume<CONVOLUTION_VOLUME_TARGS> ReceptiveVolumeType;
@@ -106,36 +107,25 @@ public:
    * @param config  layer configuration struct
    */
   explicit
-  Convolution() {};
-  virtual ~Convolution() {};
+  Convolution(const ShapeType& input_shape = ShapeType(HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime),
+              const SizeType& filter_height = FilterHeightAtCompileTime,
+              const SizeType& filter_width = FilterWidthAtCompileTime,
+              const SizeType& filter_count = FilterCountAtCompileTime,
+              const SizeType& filter_stride = StrideAtCompileTime,
+              const Parameters& config = Parameters());
+  virtual ~Convolution();
 
   /**
    * @brief Initialize the layer
    */
-  bool initialize()
-  {
-    receptors_.resize(boost::extents[CONVOLUTION_OUTPUT_HEIGHT][CONVOLUTION_OUTPUT_WIDTH]);
-
-    Base::initialized_ = true;
-    for (SizeType idx = 0; idx < CONVOLUTION_OUTPUT_HEIGHT; idx++)
-    {
-      for (SizeType jdx = 0; jdx < CONVOLUTION_OUTPUT_WIDTH; jdx++)
-      {
-        receptors_[idx][jdx] = boost::make_shared<ReceptiveVolumeType>();
-        Base::initialized_ |= receptors_[idx][jdx]->initialize();
-
-        FFNN_ASSERT_MSG(Base::initialized_, "Failed to initialize rececptor.");
-      }
-    }
-    return Base::isInitialized();
-  }
+  bool initialize();
 
   /**
    * @brief Performs forward value propagation
    * @retval true  if forward-propagation succeeded
    * @retval false  otherwise
    */
-  //virtual bool forward();
+  bool forward();
 
   /**
    * @brief Performs backward error propagation
@@ -145,7 +135,7 @@ public:
    * @warning Will throw if an optimizer has not been associated with this layer
    * @see setOptimizer
    */
-  //virtual bool backward();
+  bool backward();
 
   /**
    * @brief Applies accumulated layer weight updates computed during optimization
@@ -154,12 +144,20 @@ public:
    * @warning Will throw if an optimizer has not been associated with this layer
    * @see setOptimizer
    */
-  //virtual bool update();
+  bool update();
 
   /**
-   * @brief Reset weights and biases
+   * @brief Reset all internal volumes
    */
-  //void reset();
+  void reset();
+
+  /**
+   * @brief Sets an optimizer used update network weights during back-propagation
+   * @param opt  optimizer to set
+   * @warning <code>backward</code> and <code>update</code> methods are expected to throw if an
+   *          optimizer has not been set explicitly
+   */
+  void setOptimizer(typename Optimizer::Ptr opt);
 
   inline const ReceptiveVolumeBankType& getReceptiveVolumes() const
   {
@@ -169,18 +167,30 @@ public:
 protected:
   FFNN_REGISTER_SERIALIZABLE(Convolution)
 
-  // /// Save serializer
-  // void save(OutputArchive& ar, VersionType version) const;
+  /// Save serializer
+  void save(OutputArchive& ar, VersionType version) const;
 
-  // /// Load serializer
-  // void load(InputArchive& ar, VersionType version);
+  /// Load serializer
+  void load(InputArchive& ar, VersionType version);
 
 private:
   //FFNN_REGISTER_OPTIMIZER(Convolution, Adam);
   //FFNN_REGISTER_OPTIMIZER(Convolution, GradientDescent);
 
+  /// Parameters config
+  Parameters config_;
+
   /// Layer configuration parameters
   ReceptiveVolumeBankType receptors_;
+
+  /// Shape of receptive fields
+  ShapeType filter_shape_;
+
+  /// Shape number of filters per recpetive field
+  SizeType filter_count_;
+
+  /// Stride between receptive fields
+  SizeType filter_stride_;
 
   /**
    * @brief Weight optimization resource
@@ -192,12 +202,12 @@ private:
 }  // namespace layer
 }  // namespace ffnn
 
+/// FFNN (implementation)
+#include <ffnn/layer/impl/convolution.hpp>
+
 #undef CONVOLUTION_OUTPUT_HEIGHT
 #undef CONVOLUTION_OUTPUT_WIDTH
 #undef CONVOLUTION_BASE_TARGS
 #undef CONVOLUTION_VOLUME_TARGS
 #undef CONVOLUTION_TARGS
-
-/// FFNN (implementation)
-//#include <ffnn/layer/impl/fully_connected.hpp>
 #endif  // FFNN_LAYER_FULLY_CONNECTED_H

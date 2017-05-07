@@ -51,14 +51,14 @@ public:
   typedef typename Base::OffsetType OffsetType;
 
   /// Dimension type standardization
-  typedef typename Base::DimType DimType;
+  typedef typename Base::ShapeType ShapeType;
 
   /**
    * @brief Setup constructor
-   * @param input_size  number of inputs to the Layer
-   * @param output_size  number of outputs from the Layer
+   * @param input_shape  number of inputs to the Layer
+   * @param output_shape  number of outputs from the Layer
    */
-  Layer(const DimType& input_dim, const DimType& output_dim);
+  Layer(const ShapeType& input_shape, const ShapeType& output_shape);
   virtual ~Layer();
 
   /**
@@ -110,7 +110,7 @@ public:
    * @brief Maps outputs of this layer to inputs of the next
    * @param next  a subsequent layer
    * @param offset  offset index of a memory location in the input buffer of the next layer
-   * @retval <code>offset + output_dim_.size()</code>
+   * @retval <code>offset + output_shape_.size()</code>
    */
   virtual OffsetType connectToForwardLayer(const Layer<ValueType>& next, OffsetType offset) = 0;
 
@@ -132,7 +132,7 @@ protected:
 
   /**
    * @brief Connects all previous layer to Layer input
-   * @retval <code>input_dim_.size()</code>
+   * @retval <code>input_shape_.size()</code>
    */
   OffsetType connectInputLayers();
 

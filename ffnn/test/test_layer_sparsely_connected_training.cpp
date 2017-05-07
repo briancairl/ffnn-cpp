@@ -59,7 +59,7 @@ TEST(TestLayerSparselyConnectedWithOptimizers, GradientDescent)
   // Connect layers
   for (size_t idx = 1UL; idx < layers.size(); idx++)
   {
-    EXPECT_TRUE(ffnn::layer::connect<Layer>(layers[idx-1UL], layers[idx]));
+    EXPECT_TRUE(ffnn::layer::connect(layers[idx-1UL], layers[idx]));
   }
 
   // Initialize and check all layers and 

@@ -25,9 +25,9 @@ template<typename ValueType,
          typename _OutputBlockType,
          typename _InputMappingType,
          typename _OutputMappingType>
-HIDDEN::Hidden(const DimType& input_dim,
-               const DimType& output_dim) :
-  Base(input_dim, output_dim)
+HIDDEN::Hidden(const ShapeType& input_shape,
+               const ShapeType& output_shape) :
+  Base(input_shape, output_shape)
 {
 }
 
@@ -55,19 +55,19 @@ template<typename ValueType,
 typename HIDDEN::OffsetType 
 HIDDEN::connectToForwardLayer(const Base& next, OffsetType offset)
 {
-  FFNN_ASSERT_MSG (Base::output_dim_ > 0, "Output dimensions are invalid (non-positive) or unresolved.");
+  FFNN_ASSERT_MSG (Base::output_shape_ > 0, "Output dimensions are invalid (non-positive) or unresolved.");
 
   // Map output of next layer to input buffer
   auto output_ptr = const_cast<ValueType*>(next.getInputBuffer().data()) + offset;
   output_ = _OutputMappingType::create(output_ptr,
-                                       Base::output_dim_.height,
-                                       Base::output_dim_.width);
+                                       Base::output_shape_.height,
+                                       Base::output_shape_.width);
 
   // Map error of next layer to backward-error buffer
   auto error_ptr = const_cast<ValueType*>(next.getBackwardErrorBuffer().data()) + offset;
   forward_error_ = _OutputMappingType::create(error_ptr,
-                                              Base::output_dim_.height,
-                                              Base::output_dim_.width);
+                                              Base::output_shape_.height,
+                                              Base::output_shape_.width);
 
   // Return next offset after assigning buffer segments
   return offset + Base::outputSize();
@@ -85,12 +85,12 @@ template<typename ValueType,
 bool HIDDEN::initialize()
 {
   // Deduce input dimensions
-  if (!Base::input_dim_.valid())
+  if (!Base::input_shape_.valid())
   {
-    Base::input_dim_ = Base::evaluateInputSize();
+    Base::input_shape_ = Base::evaluateInputSize();
   }
 
-  FFNN_ASSERT_MSG (Base::input_dim_ > 0,  "Input dimensions are invalid (non-positive) or unresolved.");
+  FFNN_ASSERT_MSG (Base::input_shape_ > 0,  "Input dimensions are invalid (non-positive) or unresolved.");
 
   // Abort if layer is already initialized
   if (Base::setupRequired() && Base::isInitialized())
@@ -105,14 +105,14 @@ bool HIDDEN::initialize()
     // Create input buffer map
     auto input_ptr = const_cast<ValueType*>(Base::getInputBuffer().data());
     input_ = _InputMappingType::create(input_ptr,
-                                       Base::input_dim_.height,
-                                       Base::input_dim_.width);
+                                       Base::input_shape_.height,
+                                       Base::input_shape_.width);
 
     // Create input buffer map
     auto error_ptr = const_cast<ValueType*>(Base::getBackwardErrorBuffer().data());
     backward_error_ = _InputMappingType::create(error_ptr,
-                                                Base::input_dim_.height,
-                                                Base::input_dim_.width);
+                                                Base::input_shape_.height,
+                                                Base::input_shape_.width);
 
     FFNN_DEBUG_NAMED("layer::Hidden", "Created forward mappings.");
 

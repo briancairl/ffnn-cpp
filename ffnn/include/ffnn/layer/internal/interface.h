@@ -9,7 +9,7 @@
 #include <ffnn/internal/traits/serializable.h>
 #include <ffnn/internal/traits/unique.h>
 #include <ffnn/internal/signature.h>
-#include <ffnn/layer/internal/dimensions.h>
+#include <ffnn/layer/internal/shape.h>
 
 // FFNN
 #include <ffnn/config/global.h>
@@ -38,15 +38,15 @@ public:
   typedef FFNN_OFFSET_TYPE OffsetType;
 
   /// Dimension type standardization
-  typedef Dimensions<SizeType> DimType;
+  typedef Shape<SizeType> ShapeType;
 
   explicit
-  Interface(const DimType& input_dim  = DimType(Eigen::Dynamic),
-            const DimType& output_dim = DimType(Eigen::Dynamic)) :
+  Interface(const ShapeType& input_shape  = ShapeType(Eigen::Dynamic),
+            const ShapeType& output_shape = ShapeType(Eigen::Dynamic)) :
     initialized_(false),
     setup_required_(true),
-    input_dim_(input_dim),
-    output_dim_(output_dim)
+    input_shape_(input_shape),
+    output_shape_(output_shape)
   {}
   virtual ~Interface() {}
 
@@ -55,7 +55,7 @@ public:
    */
   inline SizeType inputSize() const
   {
-    return input_dim_.size();
+    return input_shape_.size();
   }
 
   /**
@@ -63,32 +63,31 @@ public:
    */
   inline SizeType outputSize() const
   {
-    return output_dim_.size();
+    return output_shape_.size();
   }
 
   /**
    * @brief Returns the Interface input dimension oject
    */
-  inline const DimType& inputDim() const
+  inline const ShapeType& inputShape() const
   {
-    return input_dim_;
+    return input_shape_;
   }
 
   /**
    * @brief Returns the Interface output dimension oject
    */
-  inline const DimType& outputDim() const
+  inline const ShapeType& outputShape() const
   {
-    return output_dim_;
+    return output_shape_;
   }
-
 
   /**
    * @brief Returns the total number counted (evaluated) inputs
    */
   virtual SizeType evaluateInputSize() const
   {
-    return input_dim_.size();
+    return input_shape_.size();
   }
 
   /**
@@ -129,8 +128,8 @@ protected:
     ar & initialized_;
 
     // Save dimensions
-    input_dim_.save(ar, version);
-    output_dim_.save(ar, version);
+    input_shape_.save(ar, version);
+    output_shape_.save(ar, version);
   }
 
   /// Load serializer
@@ -143,8 +142,8 @@ protected:
     ar & initialized_;
 
     // Load dimensions
-    input_dim_.load(ar, version);
-    output_dim_.load(ar, version);
+    input_shape_.load(ar, version);
+    output_shape_.load(ar, version);
 
     setup_required_ = false;
   }
@@ -156,10 +155,10 @@ protected:
   bool setup_required_;
 
   /// Total number of input connections
-  DimType input_dim_;
+  ShapeType input_shape_;
 
   /// Total number of output connections
-  DimType output_dim_;
+  ShapeType output_shape_;
 };
 }  // namespace internal
 }  // namespace layer

@@ -2,8 +2,8 @@
  * @author Brian Cairl
  * @date 2017
  */
-#ifndef FFNN_LAYER_INTERNAL_DIMENSIONS_H
-#define FFNN_LAYER_INTERNAL_DIMENSIONS_H
+#ifndef FFNN_LAYER_INTERNAL_SHAPE_H
+#define FFNN_LAYER_INTERNAL_SHAPE_H
 
 // FFNN (internal)
 #include <ffnn/internal/traits/serializable.h>
@@ -23,22 +23,22 @@ namespace internal
 #define PROD_IF_STATIC_TRIPLET(n, m, l) (IS_DYNAMIC_TRIPLET(n, m, l) ? Eigen::Dynamic : (n*m*l))
 
 template<typename SizeType>
-struct Dimensions
+struct Shape
 {
-  FFNN_REGISTER_SERIALIZABLE(Dimensions)
+  FFNN_REGISTER_SERIALIZABLE(Shape)
 
   SizeType height;
   SizeType width;
   SizeType depth;
 
-  Dimensions() :
+  Shape() :
     height(Eigen::Dynamic),
     width(Eigen::Dynamic),
     depth(Eigen::Dynamic)
   {}
 
   explicit
-  Dimensions(SizeType height, SizeType width = 1, SizeType depth = 1) :
+  Shape(SizeType height, SizeType width = 1, SizeType depth = 1) :
     height(height),
     width(width),
     depth(depth)
@@ -63,7 +63,7 @@ struct Dimensions
     depth = 1;
   }
 
-  void operator=(const Dimensions& dim)
+  void operator=(const Shape& dim)
   {
     height = dim.height;
     width = dim.width;
@@ -73,7 +73,7 @@ struct Dimensions
   /// Save serializer
   void save(OutputArchive& ar, VersionType version) const
   {
-    ffnn::io::signature::apply<Dimensions<SizeType>>(ar);
+    ffnn::io::signature::apply<Shape<SizeType>>(ar);
     ar & height;
     ar & width;
     ar & depth;
@@ -82,7 +82,7 @@ struct Dimensions
   /// Load serializer
   void load(InputArchive& ar, VersionType version)
   {
-    ffnn::io::signature::check<Dimensions<SizeType>>(ar);
+    ffnn::io::signature::check<Shape<SizeType>>(ar);
     ar & height;
     ar & width;
     ar & depth;
@@ -90,12 +90,19 @@ struct Dimensions
 };
 
 template<typename SizeType>
-std::ostream& operator<<(std::ostream& os, const Dimensions<SizeType>& dim)
+std::ostream& operator<<(std::ostream& os, const Shape<SizeType>& dim)
 {
-  os << "<" << dim.height << " x " << dim.width << " x " << dim.depth << ">";
+  if ((dim.height * dim.width * dim.depth) > 0)
+  {
+    os << "<" << dim.height << " x " << dim.width << " x " << dim.depth << ">";
+  }
+  else
+  {
+    os << "<undefined>";
+  }
   return os;
 }
 }  // namespace internal
 }  // namespace layer
 }  // namespace ffnn
-#endif  // FFNN_LAYER_INTERNAL_DIMENSIONS_H
+#endif  // FFNN_LAYER_INTERNAL_SHAPE_H

@@ -39,7 +39,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE OutputsAtCompileTime>
 SparselyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::
 SparselyConnected(SizeType output_size, const Parameters& config) :
-  Base(DimType(0), DimType(output_size)),
+  Base(ShapeType(0), ShapeType(output_size)),
   config_(config),
   opt_(boost::make_shared<typename optimizer::None<Self>>())
 {}

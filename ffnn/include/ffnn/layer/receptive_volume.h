@@ -9,7 +9,7 @@
 #include <vector>
 
 // FFNN (internal)
-#include <ffnn/layer/internal/dimensions.h>
+#include <ffnn/layer/internal/shape.h>
 #include <ffnn/layer/internal/interface.h>
 
 namespace ffnn
@@ -62,7 +62,7 @@ public:
   typedef typename Base::OffsetType OffsetType;
 
   /// Dimension type standardization
-  typedef typename Base::DimType DimType;
+  typedef typename Base::ShapeType ShapeType;
 
   /// Filter kernel matrix standardization
   typedef Eigen::Matrix<ValueType,
@@ -108,8 +108,8 @@ public:
   /**
    * @brief
    */
-  ReceptiveVolume(const DimType& input_dim = DimType(HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime),
-                  SizeType filter_count = FilterCountAtCompileTime,
+  ReceptiveVolume(const ShapeType& filter_shape = ShapeType(HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime),
+                  const SizeType& filter_count = FilterCountAtCompileTime,
                   const Parameters& config = Parameters());
   virtual ~ReceptiveVolume();
 
@@ -149,7 +149,6 @@ public:
     return filter_bank_;
   }
 
-protected:
   FFNN_REGISTER_SERIALIZABLE(ReceptiveVolume)
 
   /// Save serializer

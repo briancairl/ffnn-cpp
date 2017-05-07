@@ -44,7 +44,7 @@ public:
   typedef typename Base::OffsetType OffsetType;
 
   /// Dimension type standardization
-  typedef typename Base::DimType DimType;
+  typedef typename Base::ShapeType ShapeType;
 
   /// Matrix type standardization
   typedef typename Base::InputBlockType InputBlockType;

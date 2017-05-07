@@ -63,7 +63,7 @@ TEST(TestLayerFullyConnectedWithOptimizers, GradientDescent)
   // Connect layers
   for (size_t idx = 1UL; idx < layers.size(); idx++)
   {
-    EXPECT_TRUE(ffnn::layer::connect<Layer>(layers[idx-1UL], layers[idx]));
+    EXPECT_TRUE(ffnn::layer::connect(layers[idx-1UL], layers[idx]));
   }
 
   // Initialize and check all layers and 
@@ -137,8 +137,8 @@ TEST(TestLayerFullyConnectedActivationWithOptimizers, GradientDescent)
   static const Layer::SizeType DIM = 32;
 
   // Create layers
-  auto input = boost::make_shared<Input>(Layer::DimType(DIM));  
-  auto hidden1 = boost::make_shared<Hidden>(Layer::DimType(DIM));
+  auto input = boost::make_shared<Input>(Layer::ShapeType(DIM));  
+  auto hidden1 = boost::make_shared<Hidden>(Layer::ShapeType(DIM));
   auto hidden2 = boost::make_shared<Activation>();
   auto output = boost::make_shared<Output>();  
 
@@ -154,7 +154,7 @@ TEST(TestLayerFullyConnectedActivationWithOptimizers, GradientDescent)
   // Connect layers
   for (size_t idx = 1UL; idx < layers.size(); idx++)
   {
-    EXPECT_TRUE(ffnn::layer::connect<Layer>(layers[idx-1UL], layers[idx]));
+    EXPECT_TRUE(ffnn::layer::connect(layers[idx-1UL], layers[idx]));
   }
 
   // Initialize and check all layers and 

@@ -62,7 +62,7 @@ public:
     reset(layer);
 
     // Initialize previous input vector
-    prev_input_.setZero(layer.input_dim_.size(), 1);
+    prev_input_.setZero(layer.input_shape_.size(), 1);
   }
 
   /**
@@ -72,10 +72,10 @@ public:
   virtual void reset(LayerType& layer)
   {
     // Reset weight delta
-    weight_gradient_.resize(layer.output_dim_.size(), layer.input_dim_.size());
+    weight_gradient_.resize(layer.output_shape_.size(), layer.input_shape_.size());
 
     // Reset bias delta
-    bias_gradient_.setZero(layer.output_dim_.size(), 1);
+    bias_gradient_.setZero(layer.output_shape_.size(), 1);
   }
 
   /**
@@ -104,7 +104,7 @@ public:
     FFNN_ASSERT_MSG(layer.isInitialized(), "Layer to optimize is not initialized.");
 
     // Compute current weight delta
-    WeightMatrixType current_weight_gradient(layer.output_dim_.size(), layer.input_dim_.size());
+    WeightMatrixType current_weight_gradient(layer.output_shape_.size(), layer.input_shape_.size());
     for(SizeType idx = 0; idx < layer.w_.outerSize(); idx++)
     {
       for(typename WeightMatrixType::InnerIterator it(layer.w_, idx); it; ++it)

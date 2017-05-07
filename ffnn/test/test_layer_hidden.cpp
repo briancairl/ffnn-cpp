@@ -27,10 +27,10 @@ class Hidden :
 {
 public:
   Hidden() :
-    ffnn::layer::Hidden<float>(Hidden::DimType(5, 2), Hidden::DimType(2, 5))
+    ffnn::layer::Hidden<float>(Hidden::ShapeType(5, 2), Hidden::ShapeType(2, 5))
   {
-    FFNN_INFO("Input  : " << input_dim_);
-    FFNN_INFO("Output : " << output_dim_);
+    FFNN_INFO("Input  : " << input_shape_);
+    FFNN_INFO("Output : " << output_shape_);
   }
 
   bool forward()
@@ -72,7 +72,7 @@ TEST(TestLayerHiddenBasic, IOSizing)
   // Connect layers
   for (size_t idx = 1UL; idx < layers.size(); idx++)
   {
-    EXPECT_TRUE(ffnn::layer::connect<Layer>(layers[idx-1UL], layers[idx]));
+    EXPECT_TRUE(ffnn::layer::connect(layers[idx-1UL], layers[idx]));
   }
 
   // Initialize and check all layers and 

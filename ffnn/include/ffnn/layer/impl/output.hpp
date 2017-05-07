@@ -11,7 +11,7 @@ namespace layer
 {
 template<typename ValueType, FFNN_SIZE_TYPE NetworkOutputsAtCompileTime>
 Output<ValueType, NetworkOutputsAtCompileTime>::Output() :
-  Base(DimType(NetworkOutputsAtCompileTime), DimType(0))
+  Base(ShapeType(NetworkOutputsAtCompileTime), ShapeType(0))
 {}
 
 template<typename ValueType, FFNN_SIZE_TYPE NetworkOutputsAtCompileTime>
@@ -29,10 +29,10 @@ bool Output<ValueType, NetworkOutputsAtCompileTime>::initialize()
   }
 
   // Resolve input dimensions from previous layer output dimensions
-  Base::input_dim_ = Base::evaluateInputSize();
+  Base::input_shape_ = Base::evaluateInputSize();
 
   // Validate network input count
-  FFNN_STATIC_ASSERT_MSG (NetworkOutputsAtCompileTime < 0 || Base::input_dim_.size() == NetworkOutputsAtCompileTime,
+  FFNN_STATIC_ASSERT_MSG (NetworkOutputsAtCompileTime < 0 || Base::input_shape_.size() == NetworkOutputsAtCompileTime,
                           "(NetworkOutputsAtCompileTime != `resolved input size`) for fixed-size layer.");
 
   // Do basic initialization and connect last hidden layer

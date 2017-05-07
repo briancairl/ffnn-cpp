@@ -48,8 +48,8 @@ template<typename ValueType,
          FFNN_SIZE_TYPE DepthAtCompileTime,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE EmbeddingMode>
-RECEPTIVE_VOLUME::ReceptiveVolume(const DimType& input_dim, SizeType filter_count, const Parameters& config) :
-  Base(input_dim, DimType(1, 1, filter_count)),
+RECEPTIVE_VOLUME::ReceptiveVolume(const ShapeType& filter_shape, const SizeType& filter_count, const Parameters& config) :
+  Base(filter_shape, ShapeType(1, 1, filter_count)),
   config_(config)
 {}
 
@@ -101,15 +101,15 @@ void RECEPTIVE_VOLUME::reset()
   // Deduce filter height
   const SizeType f_h =
     EmbeddingMode == ColEmbedding ?
-    (Base::input_dim_.height * Base::input_dim_.depth) : Base::input_dim_.height;
+    (Base::input_shape_.height * Base::input_shape_.depth) : Base::input_shape_.height;
 
   // Deduce filter width
   const SizeType f_w =
     EmbeddingMode == RowEmbedding ?
-    (Base::input_dim_.width * Base::input_dim_.depth) : Base::input_dim_.width;
+    (Base::input_shape_.width * Base::input_shape_.depth) : Base::input_shape_.width;
 
   // Resize the filter bank
-  filter_bank_.resize(Base::output_dim_.depth);
+  filter_bank_.resize(Base::output_shape_.depth);
 
   // Initializer all filters
   for (auto& filter : filter_bank_)
@@ -124,7 +124,7 @@ void RECEPTIVE_VOLUME::reset()
   }
 
   // Set uniformly random bias matrix + add biases
-  b_.setRandom(Base::output_dim_.depth, 1);
+  b_.setRandom(Base::output_shape_.depth, 1);
   b_ *= config_.init_bias_std;
   if (std::abs(config_.init_bias_mean) > 0)
   {
@@ -142,12 +142,14 @@ template<typename InputBlockType, typename OutputBlockType>
 void RECEPTIVE_VOLUME::forward(const Eigen::MatrixBase<InputBlockType>& input,
                                Eigen::MatrixBase<OutputBlockType> const& output)
 {
+  BiasVectorType out(Base::output_shape_.depth, 1);
   for (size_t idx = 0; idx < filter_bank_.size(); idx++)
   {
     // @see https://eigen.tuxfamily.org/dox/TopicFunctionTakingEigenTypes.html
-    const_cast<Eigen::MatrixBase<OutputBlockType>&>(output)(idx) =
-      (input.array() * filter_bank_[idx].array()).sum() + b_(idx);
+    out(idx) = (input.array() * filter_bank_[idx].array()).sum() + b_(idx);
   }
+
+  const_cast<Eigen::MatrixBase<OutputBlockType>&>(output) += out + b_;
 }
 
 template<typename ValueType,
@@ -159,9 +161,7 @@ template<typename ValueType,
 template<typename InputBlockType, typename ForwardErrorBlockType>
 void RECEPTIVE_VOLUME::backward(const Eigen::MatrixBase<InputBlockType>& input,
                                 const Eigen::MatrixBase<ForwardErrorBlockType>& error)
-{
-
-}
+{}
 
 template<typename ValueType,
          FFNN_SIZE_TYPE HeightAtCompileTime,
@@ -212,8 +212,8 @@ void RECEPTIVE_VOLUME::load(typename RECEPTIVE_VOLUME::InputArchive& ar,
   ar & config_.init_bias_mean;
 
   // Load filters
-  filter_bank_.resize(Base::output_dim_.depth);
-  for (SizeType idx = 0; idx < Base::output_dim_.depth; idx++)
+  filter_bank_.resize(Base::output_shape_.depth);
+  for (SizeType idx = 0; idx < Base::output_shape_.depth; idx++)
   {
     ar & filter_bank_[idx];
   }

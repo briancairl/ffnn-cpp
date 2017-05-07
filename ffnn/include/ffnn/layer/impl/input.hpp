@@ -11,7 +11,7 @@ namespace layer
 {
 template<typename ValueType, FFNN_SIZE_TYPE NetworkInputsAtCompileTime>
 Input<ValueType, NetworkInputsAtCompileTime>::Input(SizeType network_input_size) :
-  Base(DimType(0), DimType(network_input_size)),
+  Base(ShapeType(0), ShapeType(network_input_size)),
   next_ptr_(NULL)
 {}
 

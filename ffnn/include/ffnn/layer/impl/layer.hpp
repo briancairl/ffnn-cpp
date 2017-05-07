@@ -48,8 +48,8 @@ bool connect(const typename LayerType::Ptr& from, const typename LayerType::Ptr&
 }
 
 template<typename ValueType>
-Layer<ValueType>::Layer(const DimType& input_dim, const DimType& output_dim) :
-  Layer<ValueType>::Base(input_dim, output_dim)
+Layer<ValueType>::Layer(const ShapeType& input_shape, const ShapeType& output_shape) :
+  Layer<ValueType>::Base(input_shape, output_shape)
 {}
 
 template<typename ValueType>
@@ -95,7 +95,7 @@ typename Layer<ValueType>::SizeType Layer<ValueType>::evaluateInputSize() const
     }
     else
     {
-      count += connection.second->output_dim_.size();
+      count += connection.second->output_shape_.size();
     }
   }
   return count;
