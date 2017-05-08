@@ -120,16 +120,21 @@ bool Convolution<CONVOLUTION_TARGS>::forward()
   }
 
   // Compute outputs through volumes
-  for (SizeType idx = 0, sidx = 0; idx < Base::output_shape_.height; idx++, sidx += filter_stride_)
+  for (OffsetType idx = 0, sidx = 0; idx < Base::output_shape_.height; idx++, sidx += filter_stride_)
   {
-    for (SizeType jdx = 0, sjdx = 0; jdx < Base::output_shape_.width; jdx++, sjdx += filter_stride_)
+    OffsetType kdx = 0;
+    for (OffsetType jdx = 0, sjdx = 0; jdx < Base::output_shape_.width; jdx++, sjdx += filter_stride_)
     {
+      // Get block dimensions
       const auto& ris = receptors_[idx][jdx]->inputShape();
       const auto& ros = receptors_[idx][jdx]->outputShape();
+
+      // Activate receptor
       receptors_[idx][jdx]->forward(
         Base::input_->block(ris.height, ris.width, sidx, sjdx),
-        Base::output_->block(ros.depth, 1, idx, jdx)
+        Base::output_->block(ros.depth, 1, kdx, jdx)
       );
+      kdx += ros.depth;
     }
   }
   return true;
@@ -181,11 +186,26 @@ void Convolution<CONVOLUTION_TARGS>::reset()
   {
     for (SizeType jdx = 0; jdx < Base::output_shape_.width; jdx++)
     {
-      receptors_[idx][jdx] = boost::make_shared<ReceptiveVolumeType>(filter_shape_, filter_count_, config_);
-      Base::initialized_  &= receptors_[idx][jdx]->initialize();
+      receptors_[idx][jdx] = boost::make_shared<ConvolutionVolumeType>(filter_shape_, filter_count_);
+      Base::initialized_  &= receptors_[idx][jdx]->initialize(config_);
+
       FFNN_ASSERT_MSG(Base::initialized_, "Failed to initialize receptor.");
     }
   }
+}
+
+template<typename ValueType,
+         FFNN_SIZE_TYPE HeightAtCompileTime,
+         FFNN_SIZE_TYPE WidthAtCompileTime,
+         FFNN_SIZE_TYPE DepthAtCompileTime,
+         FFNN_SIZE_TYPE FilterHeightAtCompileTime,
+         FFNN_SIZE_TYPE FilterWidthAtCompileTime,
+         FFNN_SIZE_TYPE FilterCountAtCompileTime,
+         FFNN_SIZE_TYPE StrideAtCompileTime,
+         FFNN_SIZE_TYPE EmbeddingMode>
+bool Convolution<CONVOLUTION_TARGS>::computeBackwardError()
+{
+  return true;
 }
 
 template<typename ValueType,

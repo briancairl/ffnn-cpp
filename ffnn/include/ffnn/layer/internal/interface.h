@@ -128,8 +128,8 @@ protected:
     ar & initialized_;
 
     // Save dimensions
-    input_shape_.save(ar, version);
-    output_shape_.save(ar, version);
+    ar & input_shape_;
+    ar & output_shape_;
   }
 
   /// Load serializer
@@ -142,8 +142,8 @@ protected:
     ar & initialized_;
 
     // Load dimensions
-    input_shape_.load(ar, version);
-    output_shape_.load(ar, version);
+    ar & input_shape_;
+    ar & output_shape_;
 
     setup_required_ = false;
   }

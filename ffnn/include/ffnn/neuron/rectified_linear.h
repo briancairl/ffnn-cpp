@@ -25,7 +25,7 @@ public:
    * @param[in] input  a scalar input value
    * @param[in,out] output  a scalar output value
    */
-  virtual void fn(const ValueType& input, ValueType& output)
+  virtual void operator()(const ValueType& input, ValueType& output)
   {
     output = (input > 0) ? input : 0;
   }

@@ -10,7 +10,7 @@
 
 // FFNN Layer
 #include <ffnn/layer/hidden.h>
-#include <ffnn/layer/receptive_volume.h>
+#include <ffnn/layer/convolution_volume.h>
 #include <ffnn/neuron/neuron.h>
 
 // FFNN Optimization
@@ -90,16 +90,16 @@ public:
   typedef typename Base::ShapeType ShapeType;
 
   /// Receptive-volume type standardization
-  typedef ReceptiveVolume<CONVOLUTION_VOLUME_TARGS> ReceptiveVolumeType;
+  typedef ConvolutionVolume<CONVOLUTION_VOLUME_TARGS> ConvolutionVolumeType;
 
   /// Recptive-volume bank standardization
-  typedef boost::multi_array<typename ReceptiveVolumeType::Ptr, 2> ReceptiveVolumeBankType;
+  typedef boost::multi_array<typename ConvolutionVolumeType::Ptr, 2> ConvolutionVolumeBankType;
 
   /// Layer optimization type standardization
   typedef optimizer::Optimizer<Self> Optimizer;
 
   /// Configuration struct type alias
-  typedef typename ReceptiveVolumeType::Parameters Parameters;
+  typedef typename ConvolutionVolumeType::Parameters Parameters;
 
   /**
    * @brief Setup constructor
@@ -152,6 +152,11 @@ public:
   void reset();
 
   /**
+   * @brief Computes previous layer error from current layer output error
+   */ 
+  bool computeBackwardError();
+
+  /**
    * @brief Sets an optimizer used update network weights during back-propagation
    * @param opt  optimizer to set
    * @warning <code>backward</code> and <code>update</code> methods are expected to throw if an
@@ -159,7 +164,7 @@ public:
    */
   void setOptimizer(typename Optimizer::Ptr opt);
 
-  inline const ReceptiveVolumeBankType& getReceptiveVolumes() const
+  inline const ConvolutionVolumeBankType& getConvolutionVolumes() const
   {
     return receptors_;
   }
@@ -181,7 +186,7 @@ private:
   Parameters config_;
 
   /// Layer configuration parameters
-  ReceptiveVolumeBankType receptors_;
+  ConvolutionVolumeBankType receptors_;
 
   /// Shape of receptive fields
   ShapeType filter_shape_;

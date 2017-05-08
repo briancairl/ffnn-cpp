@@ -118,9 +118,8 @@ public:
     weight_gradient_ += current_weight_gradient;
     bias_gradient_.noalias() += (*layer.forward_error_);
 
-    // Compute back-propagated error
-    layer.backward_error_->noalias() = layer.w_.transpose() * (*layer.forward_error_);
-    return true;
+    // Back-prop error
+    return layer.computeBackwardError();
   }
 
   /**
@@ -139,7 +138,7 @@ public:
 
     // Update weights and biases
     layer.w_ -= weight_gradient_;
-    layer.b_.noalias() -= bias_gradient_;
+    layer.b_ -= bias_gradient_;
 
     // Reinitialize optimizer
     reset(layer);

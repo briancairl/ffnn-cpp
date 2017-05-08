@@ -103,14 +103,14 @@ public:
   /**
    * @brief Initialize the layer
    */
-  virtual bool initialize();
+  bool initialize();
 
   /**
    * @brief Performs forward value propagation
    * @retval true  if forward-propagation succeeded
    * @retval false  otherwise
    */
-  virtual bool forward();
+  bool forward();
 
   /**
    * @brief Performs backward error propagation
@@ -120,7 +120,7 @@ public:
    * @warning Will throw if an optimizer has not been associated with this layer
    * @see setOptimizer
    */
-  virtual bool backward();
+  bool backward();
 
   /**
    * @brief Applies accumulated layer weight updates computed during optimization
@@ -129,7 +129,7 @@ public:
    * @warning Will throw if an optimizer has not been associated with this layer
    * @see setOptimizer
    */
-  virtual bool update();
+  bool update();
 
   /**
    * @brief Reset weights and biases

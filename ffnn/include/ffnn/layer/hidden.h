@@ -77,30 +77,21 @@ public:
    * @retval true  if forward-propagation succeeded
    * @retval false  otherwise
    */
-  virtual bool forward()
-  {
-    return true;
-  }
+  virtual bool forward() = 0;
 
   /**
    * @brief Backward value propagation
    * @retval true  if backward-propagation succeeded
    * @retval false  otherwise
    */
-  virtual bool backward()
-  {
-    return true;
-  }
+  virtual bool backward() = 0;
 
   /**
    * @brief Applies layer weight updates
    * @retval true  if weight update succeeded
    * @retval false  otherwise
    */
-  virtual bool update()
-  {
-    return true;
-  }
+  virtual bool update() = 0;
 
 protected:
   FFNN_REGISTER_SERIALIZABLE(Hidden)
@@ -124,6 +115,7 @@ protected:
   typename _OutputMappingType::Ptr forward_error_;
 
 private:
+
   /**
    * @brief Maps outputs of this layer to inputs of the next
    * @param next  a subsequent layer

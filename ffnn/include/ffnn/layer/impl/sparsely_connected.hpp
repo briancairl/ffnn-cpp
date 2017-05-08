@@ -114,6 +114,11 @@ template<typename ValueType,
 bool SparselyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::backward()
 {
   FFNN_ASSERT_MSG(opt_, "No optimization resource set.");
+
+  // Compute backward error
+  Base::backward_error_->noalias() = w_.transpose() * (*Base::forward_error_);
+
+  // Run optimizer
   return opt_->backward(*this);
 }
 

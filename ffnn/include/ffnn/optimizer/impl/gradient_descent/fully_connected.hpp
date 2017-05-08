@@ -107,9 +107,8 @@ public:
     weight_gradient_.noalias() += (*layer.forward_error_) * prev_input_.transpose();
     bias_gradient_.noalias() += (*layer.forward_error_);
 
-    // Compute back-propagated error
-    layer.backward_error_->noalias() = layer.w_.transpose() * (*layer.forward_error_);
-    return true;
+    // Back-prop error
+    return layer.computeBackwardError();
   }
 
   /**

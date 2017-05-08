@@ -25,8 +25,6 @@ namespace internal
 template<typename SizeType>
 struct Shape
 {
-  FFNN_REGISTER_SERIALIZABLE(Shape)
-
   SizeType height;
   SizeType width;
   SizeType depth;
@@ -70,19 +68,10 @@ struct Shape
     depth = dim.depth;
   }
 
-  /// Save serializer
-  void save(OutputArchive& ar, VersionType version) const
+  /// Serializer
+  template<class Archive>
+  void serialize(Archive & ar, const unsigned int file_version)
   {
-    ffnn::io::signature::apply<Shape<SizeType>>(ar);
-    ar & height;
-    ar & width;
-    ar & depth;
-  }
-
-  /// Load serializer
-  void load(InputArchive& ar, VersionType version)
-  {
-    ffnn::io::signature::check<Shape<SizeType>>(ar);
     ar & height;
     ar & width;
     ar & depth;

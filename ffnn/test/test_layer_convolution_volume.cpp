@@ -16,12 +16,12 @@
 #include <gtest/gtest.h>
 
 // FFNN
-#include <ffnn/layer/receptive_volume.h>
+#include <ffnn/layer/convolution_volume.h>
 
-TEST(TestLayerReceptiveVolume, DynamicInstanceColEmbedding)
+TEST(TestLayerConvolutionVolume, DynamicInstanceColEmbedding)
 {
   // Volume-type alias
-  using Volume = ffnn::layer::ReceptiveVolume<float>;
+  using Volume = ffnn::layer::ConvolutionVolume<float>;
 
   // Shape supplied in constructor
   Volume volume(Volume::ShapeType(4, 6, 8), 12);
@@ -39,10 +39,10 @@ TEST(TestLayerReceptiveVolume, DynamicInstanceColEmbedding)
   }
 }
 
-TEST(TestLayerReceptiveVolume, StaticInstanceRowEmbedding)
+TEST(TestLayerConvolutionVolume, StaticInstanceRowEmbedding)
 {
   // Volume-type alias
-  using Volume = ffnn::layer::ReceptiveVolume<float, 4, 6, 8, 12, ffnn::layer::RowEmbedding>;
+  using Volume = ffnn::layer::ConvolutionVolume<float, 4, 6, 8, 12, ffnn::layer::RowEmbedding>;
 
   // Shape inferred from template args
   Volume volume;
@@ -59,10 +59,10 @@ TEST(TestLayerReceptiveVolume, StaticInstanceRowEmbedding)
   }
 }
 
-TEST(TestLayerReceptiveVolume, StaticInstanceRowEmbedding_Forward)
+TEST(TestLayerConvolutionVolume, StaticInstanceRowEmbedding_Forward)
 {
   // Volume-type alias
-  using Volume = ffnn::layer::ReceptiveVolume<float, 4, 6, 8, 12>;
+  using Volume = ffnn::layer::ConvolutionVolume<float, 4, 6, 8, 12>;
 
   // Shape inferred from template args
   Volume volume;
@@ -82,10 +82,10 @@ TEST(TestLayerReceptiveVolume, StaticInstanceRowEmbedding_Forward)
   FFNN_DEBUG('\n' << output);
 }
 
-TEST(TestLayerReceptiveVolume, StaticInstanceRowEmbedding_ForwardBlockInput)
+TEST(TestLayerConvolutionVolume, StaticInstanceRowEmbedding_ForwardBlockInput)
 {
   // Volume-type alias
-  using Volume = ffnn::layer::ReceptiveVolume<float, 4, 6, 8, 12>;
+  using Volume = ffnn::layer::ConvolutionVolume<float, 4, 6, 8, 12>;
 
   // Shape inferred from template args
   Volume volume;

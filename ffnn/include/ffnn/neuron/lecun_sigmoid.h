@@ -32,7 +32,7 @@ public:
    * @param[in] input  a scalar input value
    * @param[in,out] output  a scalar output value
    */
-  virtual void fn(const ValueType& input, ValueType& output)
+  virtual void operator()(const ValueType& input, ValueType& output)
   {
     output = 1.7159 * std::tanh(0.6666 * input);
   }

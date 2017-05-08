@@ -71,7 +71,7 @@ bool Activation<ValueType, NeuronType, SizeAtCompileTime>::forward()
   // Compute neuron outputs
   for (SizeType idx = 0; idx < Base::inputSize(); idx++)
   {
-    neurons_[idx].fn((*Base::input_)(idx), (*Base::output_)(idx));
+    neurons_[idx]((*Base::input_)(idx), (*Base::output_)(idx));
   }
   return true;
 }

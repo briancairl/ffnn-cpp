@@ -2,8 +2,8 @@
  * @note HEADER-ONLY IMPLEMENTATION FILE
  * @warn Do not include directly
  */
-#ifndef FFNN_LAYER_IMPL_RECEPTIVE_VOLUME_HPP
-#define FFNN_LAYER_IMPL_RECEPTIVE_VOLUME_HPP
+#ifndef FFNN_LAYER_IMPL_CONVOLUTION_VOLUME_HPP
+#define FFNN_LAYER_IMPL_CONVOLUTION_VOLUME_HPP
 
 // FFNN
 #include <ffnn/assert.h>
@@ -14,13 +14,13 @@ namespace ffnn
 {
 namespace layer
 {
-#define RECEPTIVE_VOLUME_TARGS ValueType,\
+#define CONVOLUTION_VOLUME_TARGS ValueType,\
                                HeightAtCompileTime,\
                                WidthAtCompileTime,\
                                DepthAtCompileTime,\
                                FilterCountAtCompileTime,\
                                EmbeddingMode
-#define RECEPTIVE_VOLUME ReceptiveVolume<RECEPTIVE_VOLUME_TARGS>
+#define CONVOLUTION_VOLUME ConvolutionVolume<CONVOLUTION_VOLUME_TARGS>
 
 template<typename ValueType,
          FFNN_SIZE_TYPE HeightAtCompileTime,
@@ -28,7 +28,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE DepthAtCompileTime,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE EmbeddingMode>
-RECEPTIVE_VOLUME::
+CONVOLUTION_VOLUME::
 Parameters::Parameters(ScalarType init_weight_std,
                        ScalarType init_bias_std,
                        ScalarType init_weight_mean,
@@ -48,9 +48,9 @@ template<typename ValueType,
          FFNN_SIZE_TYPE DepthAtCompileTime,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE EmbeddingMode>
-RECEPTIVE_VOLUME::ReceptiveVolume(const ShapeType& filter_shape, const SizeType& filter_count, const Parameters& config) :
+CONVOLUTION_VOLUME::ConvolutionVolume(const ShapeType& filter_shape, const SizeType& filter_count) :
   Base(filter_shape, ShapeType(1, 1, filter_count)),
-  config_(config)
+  bank_(filter_count)
 {}
 
 template<typename ValueType,
@@ -59,7 +59,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE DepthAtCompileTime,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE EmbeddingMode>
-RECEPTIVE_VOLUME::~ReceptiveVolume()
+CONVOLUTION_VOLUME::~ConvolutionVolume()
 {}
 
 template<typename ValueType,
@@ -68,20 +68,31 @@ template<typename ValueType,
          FFNN_SIZE_TYPE DepthAtCompileTime,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE EmbeddingMode>
-bool RECEPTIVE_VOLUME::initialize()
+bool CONVOLUTION_VOLUME::initialize()
+{
+  return initialize(Parameters());
+}
+
+template<typename ValueType,
+         FFNN_SIZE_TYPE HeightAtCompileTime,
+         FFNN_SIZE_TYPE WidthAtCompileTime,
+         FFNN_SIZE_TYPE DepthAtCompileTime,
+         FFNN_SIZE_TYPE FilterCountAtCompileTime,
+         FFNN_SIZE_TYPE EmbeddingMode>
+bool CONVOLUTION_VOLUME::initialize(const Parameters& config)
 {
   // Abort if layer is already initialized
   if (Base::setupRequired())
   {
     if (Base::isInitialized())
     {
-      FFNN_WARN_NAMED("layer::ReceptiveVolume", "<" << Base::getID() << "> already initialized.");
+      FFNN_WARN_NAMED("layer::ConvolutionVolume", "<" << Base::getID() << "> already initialized.");
       return false;
     }
     else
     {
       /// Reset all filters
-      reset();
+      reset(config);
     }
   }
 
@@ -96,7 +107,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE DepthAtCompileTime,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE EmbeddingMode>
-void RECEPTIVE_VOLUME::reset()
+void CONVOLUTION_VOLUME::reset(const Parameters& config)
 {
   // Deduce filter height
   const SizeType f_h =
@@ -108,27 +119,20 @@ void RECEPTIVE_VOLUME::reset()
     EmbeddingMode == RowEmbedding ?
     (Base::input_shape_.width * Base::input_shape_.depth) : Base::input_shape_.width;
 
-  // Resize the filter bank
-  filter_bank_.resize(Base::output_shape_.depth);
-
   // Initializer all filters
-  for (auto& filter : filter_bank_)
+  bank_.setRandom(f_h, f_w);
+  bank_ *= config.init_weight_std;
+  if (std::abs(config.init_weight_mean) > 0)
   {
-    // Set uniformly random weight matrix + add biases
-    filter.setRandom(f_h, f_w);
-    filter *= config_.init_weight_std;
-    if (std::abs(config_.init_weight_mean) > 0)
-    {
-      filter.array() += config_.init_weight_mean;
-    }
+    bank_ += config.init_weight_mean;
   }
 
   // Set uniformly random bias matrix + add biases
   b_.setRandom(Base::output_shape_.depth, 1);
-  b_ *= config_.init_bias_std;
-  if (std::abs(config_.init_bias_mean) > 0)
+  b_ *= config.init_bias_std;
+  if (std::abs(config.init_bias_mean) > 0)
   {
-    b_.array() += config_.init_bias_mean;
+    b_.array() += config.init_bias_mean;
   }
 }
 
@@ -139,17 +143,22 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE EmbeddingMode>
 template<typename InputBlockType, typename OutputBlockType>
-void RECEPTIVE_VOLUME::forward(const Eigen::MatrixBase<InputBlockType>& input,
-                               Eigen::MatrixBase<OutputBlockType> const& output)
+void CONVOLUTION_VOLUME::forward(const Eigen::MatrixBase<InputBlockType>& input,
+                                 Eigen::MatrixBase<OutputBlockType> const& output)
 {
-  BiasVectorType out(Base::output_shape_.depth, 1);
-  for (size_t idx = 0; idx < filter_bank_.size(); idx++)
+  // @see https://eigen.tuxfamily.org/dox/TopicFunctionTakingEigenTypes.html
+  auto _output = const_cast<Eigen::MatrixBase<OutputBlockType>&>(output);
+
+  // Multiply all filters
+  BiasVectorType filtered(Base::output_shape_.depth, 1);
+  for (size_t idx = 0; idx < bank_.filters.size(); idx++)
   {
-    // @see https://eigen.tuxfamily.org/dox/TopicFunctionTakingEigenTypes.html
-    out(idx) = (input.array() * filter_bank_[idx].array()).sum() + b_(idx);
+    filtered(idx) = (input.array() * bank_.filters[idx].array()).sum();
   }
 
-  const_cast<Eigen::MatrixBase<OutputBlockType>&>(output) += out + b_;
+  // @see https://eigen.tuxfamily.org/dox/TopicFunctionTakingEigenTypes.html
+  _output = filtered;
+  _output += b_;
 }
 
 template<typename ValueType,
@@ -159,8 +168,8 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE EmbeddingMode>
 template<typename InputBlockType, typename ForwardErrorBlockType>
-void RECEPTIVE_VOLUME::backward(const Eigen::MatrixBase<InputBlockType>& input,
-                                const Eigen::MatrixBase<ForwardErrorBlockType>& error)
+void CONVOLUTION_VOLUME::backward(const Eigen::MatrixBase<InputBlockType>& input,
+                                  const Eigen::MatrixBase<ForwardErrorBlockType>& error)
 {}
 
 template<typename ValueType,
@@ -169,28 +178,18 @@ template<typename ValueType,
          FFNN_SIZE_TYPE DepthAtCompileTime,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE EmbeddingMode>
-void RECEPTIVE_VOLUME::save(typename RECEPTIVE_VOLUME::OutputArchive& ar,
-                            typename RECEPTIVE_VOLUME::VersionType version) const
+void CONVOLUTION_VOLUME::save(typename CONVOLUTION_VOLUME::OutputArchive& ar,
+                              typename CONVOLUTION_VOLUME::VersionType version) const
 {
-  ffnn::io::signature::apply<RECEPTIVE_VOLUME>(ar);
+  ffnn::io::signature::apply<CONVOLUTION_VOLUME>(ar);
   Base::save(ar, version);
 
-  // Save configuration parameters
-  ar & config_.init_weight_std;
-  ar & config_.init_weight_mean;
-  ar & config_.init_bias_std;
-  ar & config_.init_bias_mean;
-
   // Save filters
-  for (const auto& filter : filter_bank_)
-  {
-    ar & filter;
-  }
 
   // Save bias matrix
   ar & b_;
 
-  FFNN_DEBUG_NAMED("layer::ReceptiveVolume", "Saved");
+  FFNN_DEBUG_NAMED("layer::ConvolutionVolume", "Saved");
 }
 
 template<typename ValueType,
@@ -199,33 +198,22 @@ template<typename ValueType,
          FFNN_SIZE_TYPE DepthAtCompileTime,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE EmbeddingMode>
-void RECEPTIVE_VOLUME::load(typename RECEPTIVE_VOLUME::InputArchive& ar,
-                            typename RECEPTIVE_VOLUME::VersionType version)
+void CONVOLUTION_VOLUME::load(typename CONVOLUTION_VOLUME::InputArchive& ar,
+                            typename CONVOLUTION_VOLUME::VersionType version)
 {
-  ffnn::io::signature::check<RECEPTIVE_VOLUME>(ar);
+  ffnn::io::signature::check<CONVOLUTION_VOLUME>(ar);
   Base::load(ar, version);
 
-  // Load configuration parameters
-  ar & config_.init_weight_std;
-  ar & config_.init_weight_mean;
-  ar & config_.init_bias_std;
-  ar & config_.init_bias_mean;
-
   // Load filters
-  filter_bank_.resize(Base::output_shape_.depth);
-  for (SizeType idx = 0; idx < Base::output_shape_.depth; idx++)
-  {
-    ar & filter_bank_[idx];
-  }
 
   // Load bias matrix
   ar & b_;
 
-  FFNN_DEBUG_NAMED("layer::ReceptiveVolume", "Loaded");
+  FFNN_DEBUG_NAMED("layer::ConvolutionVolume", "Loaded");
 }
 
-#undef RECEPTIVE_VOLUME_TARGS
-#undef RECEPTIVE_VOLUME
+#undef CONVOLUTION_VOLUME_TARGS
+#undef CONVOLUTION_VOLUME
 }  // namespace layer
 }  // namespace ffnn
-#endif  // FFNN_LAYER_IMPL_RECEPTIVE_VOLUME_HPP
+#endif  // FFNN_LAYER_IMPL_CONVOLUTION_VOLUME_HPP

@@ -2,8 +2,8 @@
  * @author Brian Cairl
  * @date 2017
  */
-#ifndef FFNN_LAYER_RECEPTIVE_VOLUME_H
-#define FFNN_LAYER_RECEPTIVE_VOLUME_H
+#ifndef FFNN_LAYER_CONVOLUTION_VOLUME_H
+#define FFNN_LAYER_CONVOLUTION_VOLUME_H
 
 // C++ Standard Library
 #include <vector>
@@ -25,13 +25,66 @@ enum EmbeddingMode
   ColEmbedding = 1, ///< Embed depth along filter matrix cols
 };
 
+template<typename KernelMatrixType>
+class FilterBank
+{
+public:
+  typedef typename KernelMatrixType::Scalar ScalarType;
+
+  typedef typename KernelMatrixType::Index SizeType;
+
+  typedef typename KernelMatrixType::Index OffsetType;
+
+  explicit
+  FilterBank(SizeType filter_count)
+  {
+    filters.resize(filter_count);
+  }
+
+  void setZero(SizeType height, SizeType width)
+  {
+    for (auto& filter : filters)
+    {
+      filter.setZero(height, width);
+    }
+  }
+
+  void setRandom(SizeType height, SizeType width)
+  {
+    for (auto& filter : filters)
+    {
+      filter.setRandom(height, width);
+    }
+  }
+
+  FilterBank& operator*=(ScalarType scalar)
+  {
+    for (auto& filter : filters)
+    {
+      filter.array() *= scalar;
+    }
+    return *this;
+  }
+
+  FilterBank& operator+=(ScalarType scalar)
+  {
+    for (auto& filter : filters)
+    {
+      filter.array() += scalar;
+    }
+    return *this;
+  }
+
+  std::vector<KernelMatrixType, Eigen::aligned_allocator<typename KernelMatrixType::Scalar>> filters;
+};
+
 template<typename ValueType,
          FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic,
          FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic,
          FFNN_SIZE_TYPE DepthAtCompileTime = Eigen::Dynamic,
          FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic,
          FFNN_SIZE_TYPE EmbeddingMode = ColEmbedding>
-class ReceptiveVolume :
+class ConvolutionVolume :
   public internal::Interface<ValueType>
 {
 public:
@@ -39,12 +92,12 @@ public:
   using Base = internal::Interface<ValueType>;
 
   /// Self type alias
-  using Self = ReceptiveVolume<ValueType,
-                               HeightAtCompileTime,
-                               WidthAtCompileTime,
-                               DepthAtCompileTime,
-                               FilterCountAtCompileTime,
-                               EmbeddingMode>;
+  using Self = ConvolutionVolume<ValueType,
+                                 HeightAtCompileTime,
+                                 WidthAtCompileTime,
+                                 DepthAtCompileTime,
+                                 FilterCountAtCompileTime,
+                                 EmbeddingMode>;
 
   /// Shared resource standardization
   typedef boost::shared_ptr<Self> Ptr;
@@ -74,7 +127,7 @@ public:
   typedef Eigen::Matrix<ValueType, FilterCountAtCompileTime, 1, Eigen::ColMajor> BiasVectorType;
 
   /// Filter collection type standardization
-  typedef std::vector<KernelMatrixType, Eigen::aligned_allocator<ValueType>> FilterBankType;
+  typedef FilterBank<KernelMatrixType> FilterBankType;
 
   /// A configuration object for a FullyConnected hidden layer
   struct Parameters
@@ -108,20 +161,21 @@ public:
   /**
    * @brief
    */
-  ReceptiveVolume(const ShapeType& filter_shape = ShapeType(HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime),
-                  const SizeType& filter_count = FilterCountAtCompileTime,
-                  const Parameters& config = Parameters());
-  virtual ~ReceptiveVolume();
+  ConvolutionVolume(const ShapeType& filter_shape = ShapeType(HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime),
+                  const SizeType& filter_count = FilterCountAtCompileTime);
+  virtual ~ConvolutionVolume();
 
   /**
    * @brief Initialize the volume
    */
   bool initialize();
+  bool initialize(const Parameters& config);
 
   /**
    * @brief Reset filter weights and biases
+   * @param config  parameter reset configuration
    */
-  void reset();
+  void reset(const Parameters& config = Parameters());
 
   template<typename InputBlockType, typename OutputBlockType>
   void forward(const Eigen::MatrixBase<InputBlockType>& input,
@@ -146,10 +200,10 @@ public:
    */
   inline const FilterBankType& getFilters() const
   {
-    return filter_bank_;
+    return bank_;
   }
 
-  FFNN_REGISTER_SERIALIZABLE(ReceptiveVolume)
+  FFNN_REGISTER_SERIALIZABLE(ConvolutionVolume)
 
   /// Save serializer
   void save(OutputArchive& ar, VersionType version) const;
@@ -162,7 +216,7 @@ private:
   Parameters config_;
 
   /// Filter bank for receptive field
-  FilterBankType filter_bank_;
+  FilterBankType bank_;
 
   /// Bias vector
   BiasVectorType b_;
@@ -174,5 +228,5 @@ private:
 }  // namespace ffnn
 
 /// FFNN (implementation)
-#include <ffnn/layer/impl/receptive_volume.hpp>
-#endif  // FFNN_LAYER_RECEPTIVE_VOLUME_H
+#include <ffnn/layer/impl/convolution_volume.hpp>
+#endif  // FFNN_LAYER_CONVOLUTION_VOLUME_H
