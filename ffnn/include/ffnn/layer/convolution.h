@@ -179,11 +179,14 @@ private:
   /// Layer configuration parameters
   ConvolutionVolumeBankType receptors_;
 
+  /// "True" shape of the ouput with no depth-embedding
+  ShapeType input_volume_shape_;
+
+  /// "True" shape of the ouput with no depth-embedding
+  ShapeType output_volume_shape_;
+
   /// Shape of receptive fields
   ShapeType filter_shape_;
-
-  /// Shape number of filters per recpetive field
-  SizeType filter_count_;
 
   /// Stride between receptive fields
   SizeType filter_stride_;

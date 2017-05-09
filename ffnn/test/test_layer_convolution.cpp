@@ -63,8 +63,8 @@ TEST(TestLayerConvolution, StaticInstanceColEmbedding_Forward)
   out_data.setZero();
   (*output) >> out_data;
 
-  Eigen::Map<Eigen::MatrixXf> om(out_data.data(), osh.height, osh.width);
-  FFNN_INFO("\n" << om);
+  //Eigen::Map<Eigen::MatrixXf> om(out_data.data(), osh.height, osh.width);
+  //FFNN_INFO("\n" << om);
 }
 
 // Run tests

@@ -163,6 +163,14 @@ public:
   virtual ~ConvolutionVolume();
 
   /**
+   * @brief Sets memory map to contiguous output buffer
+   */
+  inline void setOutputMapping(ValueType* const ptr)
+  {
+    output_ptr_ = ptr;
+  }
+
+  /**
    * @brief Initialize the volume
    */
   bool initialize();
@@ -207,10 +215,6 @@ public:
   /// Load serializer
   void load(InputArchive& ar, VersionType version);
 
-  inline void setOutputMapping(ValueType* ptr)
-  {
-    output_ptr_ = ptr;
-  }
 private:
   /// Configuration struct
   Parameters config_;

@@ -139,10 +139,9 @@ template<typename InputBlockType>
 void CONVOLUTION_VOLUME::forward(const Eigen::MatrixBase<InputBlockType>& input)
 {
   // Multiply all filters
-  for (OffsetType idx = 0; idx < 3; /*Base::output_shape_.depth;*/ idx++)
+  for (OffsetType idx = 0; idx < Base::output_shape_.depth; idx++)
   {
-    //FFNN_ERROR(filters_[idx].size());
-    output_ptr_[idx] = 1.; //input.cwiseProduct(filters_[idx]).sum(); // + b_(idx);
+    output_ptr_[idx] = input.cwiseProduct(filters_[idx]).sum() + b_(idx);
   }
 }
 

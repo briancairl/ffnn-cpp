@@ -32,9 +32,12 @@ Convolution(const ShapeType& input_shape,
                  CONV_EMBEDDED_W(input_shape.width, input_shape.depth)),
        ShapeType(CONV_EMBEDDED_H(CONV_LENGTH_WITH_STRIDE(input_shape.height, filter_height, filter_stride), filter_count),
                  CONV_EMBEDDED_W(CONV_LENGTH_WITH_STRIDE(input_shape.width,  filter_width,  filter_stride), filter_count))),
+  input_volume_shape_(input_shape),
+  output_volume_shape_(CONV_LENGTH_WITH_STRIDE(input_shape.width,  filter_width,  filter_stride),
+                       CONV_LENGTH_WITH_STRIDE(input_shape.width,  filter_width,  filter_stride),
+                       filter_count),
   filter_shape_(CONV_EMBEDDED_H(filter_height, input_shape.depth),
                 CONV_EMBEDDED_W(filter_width,  input_shape.depth)),
-  filter_count_(filter_count),
   filter_stride_(filter_stride),
   opt_(boost::make_shared<typename optimizer::None<Self>>())
 {}
@@ -105,13 +108,13 @@ bool Convolution<CONV_TARGS>::initialize(const Convolution<CONV_TARGS>::Paramete
                    "<" <<
                    Base::getID() <<
                    "> initialized as (in=" <<
-                   Base::inputShape() <<
+                   input_volume_shape_ <<
                    ", out=" <<
-                   Base::outputShape() <<
+                   output_volume_shape_ <<
                    ") (depth_embedding=" <<
                    (EmbeddingMode == ColEmbedding ? "Col" : "Row") <<
                    ", nfilters=" <<
-                   filter_count_ <<
+                   output_volume_shape_.depth <<
                    ", stride=" <<
                    filter_stride_ <<
                    ", optimizer=" <<
@@ -138,9 +141,9 @@ bool Convolution<CONV_TARGS>::forward()
 
   // Compute outputs through volumes
   OffsetType kdx = 0;
-  for (OffsetType idx = 0, idx_str = 0; idx < Base::output_shape_.height; idx++, idx_str += filter_stride_)
+  for (OffsetType idx = 0, idx_str = 0; idx < output_volume_shape_.height; idx++, idx_str += filter_stride_)
   {
-    for (OffsetType jdx = 0, jdx_str = 0; jdx < Base::output_shape_.width; jdx++, jdx_str += filter_stride_)
+    for (OffsetType jdx = 0, jdx_str = 0; jdx < output_volume_shape_.width; jdx++, jdx_str += filter_stride_)
     {
       // Get block dimensions
       const auto& ris = receptors_[idx][jdx].inputShape();
@@ -148,7 +151,7 @@ bool Convolution<CONV_TARGS>::forward()
       // Activate receptor
       receptors_[idx][jdx].forward(Base::input_.block(idx_str, jdx_str, ris.height, ris.width));
     }
-    kdx += filter_count_;
+    kdx += output_volume_shape_.depth;
   }
   return true;
 }
@@ -194,15 +197,15 @@ template<typename ValueType,
          FFNN_SIZE_TYPE EmbeddingMode>
 void Convolution<CONV_TARGS>::reset(const Convolution<CONV_TARGS>::Parameters& config)
 {
-  receptors_.resize(boost::extents[Base::output_shape_.height][Base::output_shape_.width]);
+  receptors_.resize(boost::extents[output_volume_shape_.height][output_volume_shape_.width]);
 
   OffsetType kdx = 0;
-  for (SizeType jdx = 0; jdx < Base::output_shape_.width; jdx++)
+  for (SizeType jdx = 0; jdx < output_volume_shape_.width; jdx++)
   {
-    for (SizeType idx = 0; idx < Base::output_shape_.height; idx++)
+    for (SizeType idx = 0; idx < output_volume_shape_.height; idx++)
     {
       // Create receptive field
-      new (&receptors_[idx][jdx]) ConvolutionVolumeType(filter_shape_, filter_count_);
+      new (&receptors_[idx][jdx]) ConvolutionVolumeType(filter_shape_, output_volume_shape_.depth);
 
       // Initialize field
       Base::initialized_ &= receptors_[idx][jdx].initialize(config);
@@ -260,13 +263,12 @@ Convolution<CONV_TARGS>::connectToForwardLayer(const Layer<ValueType>& next, Off
 
   // Map to individual volumes
   ValueType* ptr = const_cast<ValueType*>(next.getInputBuffer().data());
-  OffsetType kdx = 0;
-  for (SizeType jdx = 0; jdx < Base::output_shape_.width; jdx++)
+  for (SizeType jdx = 0; jdx < output_volume_shape_.width; jdx++)
   {
-    for (SizeType idx = 0; idx < Base::output_shape_.height; idx++)
+    for (SizeType idx = 0; idx < output_volume_shape_.height; idx++)
     {
+      OffsetType kdx = jdx * Base::output_shape_.height + idx * output_volume_shape_.depth;
       receptors_[idx][jdx].setOutputMapping(ptr + kdx);
-      kdx += filter_count_;
     }
   }
   return ret_offset;
@@ -289,14 +291,13 @@ void Convolution<CONV_TARGS>::
   Base::save(ar, version);
 
   // Save volumes
-  for (SizeType idx = 0; idx < Base::output_shape_.height; idx++)
+  for (SizeType idx = 0; idx < output_volume_shape_.height; idx++)
   {
-    for (SizeType jdx = 0; jdx < Base::output_shape_.width; jdx++)
+    for (SizeType jdx = 0; jdx < output_volume_shape_.width; jdx++)
     {
       receptors_[idx][jdx].save(ar, version);
     }
   }
-
   FFNN_DEBUG_NAMED("layer::Convolution", "Saved");
 }
 
@@ -318,9 +319,9 @@ void Convolution<CONV_TARGS>::
 
   // Load volumes
   reset();
-  for (SizeType idx = 0; idx < Base::output_shape_.height; idx++)
+  for (SizeType idx = 0; idx < output_volume_shape_.height; idx++)
   {
-    for (SizeType jdx = 0; jdx < Base::output_shape_.width; jdx++)
+    for (SizeType jdx = 0; jdx < output_volume_shape_.width; jdx++)
     {
       receptors_[idx][jdx].load(ar, version);
     }
