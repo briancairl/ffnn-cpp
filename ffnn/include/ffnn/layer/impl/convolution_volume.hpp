@@ -139,20 +139,15 @@ template<typename InputBlockType, typename OutputBlockType>
 void CONVOLUTION_VOLUME::forward(const Eigen::MatrixBase<InputBlockType>& input,
                                  Eigen::MatrixBase<OutputBlockType> const& output)
 {
-  // @see https://eigen.tuxfamily.org/dox/TopicFunctionTakingEigenTypes.html
-  Eigen::MatrixBase<OutputBlockType>& _output =
-    const_cast<Eigen::MatrixBase<OutputBlockType>&>(output);
-
   // Multiply all filters
   BiasVectorType filtered(Base::output_shape_.depth, 1);
-  for (size_t idx = 0; idx < filters_.size(); idx++)
+  for (OffsetType idx = 0; idx < Base::output_shape_.depth; idx++)
   {
-    filtered(idx) = (input.array() * filters_[idx].array()).sum();
+    filtered(idx) = input.cwiseProduct(filters_[idx]).sum() + b_(idx);
   }
 
   // @see https://eigen.tuxfamily.org/dox/TopicFunctionTakingEigenTypes.html
-  _output = filtered;
-  _output += b_;
+  //const_cast<Eigen::MatrixBase<OutputBlockType>&>(output) = filtered;
 }
 
 template<typename ValueType,

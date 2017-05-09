@@ -154,6 +154,7 @@ bool Convolution<CONV_TARGS>::forward()
     }
     kdx += filter_count_;
   }
+  FFNN_INFO("BLOOP");
   return true;
 }
 
@@ -213,7 +214,6 @@ void Convolution<CONV_TARGS>::reset(const Convolution<CONV_TARGS>::Parameters& c
       FFNN_ASSERT_MSG(Base::initialized_, "Failed to initialize receptor.");
     }
   }
-  FFNN_INTERNAL_DEBUG_NAMED("layer::Convolution", "Resetting.");
 }
 
 template<typename ValueType,
