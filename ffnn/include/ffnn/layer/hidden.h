@@ -14,7 +14,6 @@
 // FFNN
 #include <ffnn/config/global.h>
 #include <ffnn/assert.h>
-#include <ffnn/aligned_types.h>
 #include <ffnn/layer/layer.h>
 
 namespace ffnn
@@ -31,8 +30,8 @@ template<typename ValueType,
          FFNN_SIZE_TYPE OutputWidthAtCompileTime = Eigen::Dynamic,
          typename _InputBlockType = Eigen::Matrix<ValueType, InputHeightAtCompileTime, InputWidthAtCompileTime, Eigen::ColMajor>,
          typename _OutputBlockType = Eigen::Matrix<ValueType, OutputHeightAtCompileTime, OutputWidthAtCompileTime, Eigen::ColMajor>,
-         typename _InputMappingType = aligned::Map<_InputBlockType>,
-         typename _OutputMappingType = aligned::Map<_OutputBlockType>>
+         typename _InputMappingType = Eigen::Map<_InputBlockType>,
+         typename _OutputMappingType = Eigen::Map<_OutputBlockType>>
 class Hidden :
   public Layer<ValueType>
 {
@@ -103,16 +102,16 @@ protected:
   void load(InputArchive& ar, VersionType version);
 
   /// Memory-mapped input vector
-  typename _InputMappingType::Ptr input_;
+  _InputMappingType input_;
 
   /// Memory-mapped output vector
-  typename _OutputMappingType::Ptr output_;
+  _OutputMappingType output_;
 
   /// Backward error vector
-  typename _InputMappingType::Ptr backward_error_;
+  _InputMappingType backward_error_;
 
   /// Output-target error vector
-  typename _OutputMappingType::Ptr forward_error_;
+  _OutputMappingType forward_error_;
 
 private:
 

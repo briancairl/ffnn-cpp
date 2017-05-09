@@ -21,7 +21,7 @@ namespace ffnn
 {
 namespace layer
 {
-#define CONVOLUTION_TARGS\
+#define CONV_TARGS\
   ValueType,\
   HeightAtCompileTime,\
   WidthAtCompileTime,\
@@ -32,7 +32,7 @@ namespace layer
   StrideAtCompileTime,\
   EmbeddingMode
 
-#define CONVOLUTION_VOLUME_TARGS\
+#define CONV_VOLUME_TARGS\
   ValueType,\
   FilterHeightAtCompileTime,\
   FilterWidthAtCompileTime,\
@@ -40,16 +40,7 @@ namespace layer
   FilterCountAtCompileTime,\
   EmbeddingMode
 
-#define RESOLVE_CONVOLUTION_OUTPUT(n, fn, s) ((n - fn) / s + 1)
-#define CONVOLUTION_OUTPUT_HEIGHT RESOLVE_CONVOLUTION_OUTPUT(HeightAtCompileTime, FilterHeightAtCompileTime, StrideAtCompileTime)
-#define CONVOLUTION_OUTPUT_WIDTH  RESOLVE_CONVOLUTION_OUTPUT(WidthAtCompileTime, FilterWidthAtCompileTime, StrideAtCompileTime)
-
-#define CONVOLUTION_BASE_TARGS\
-  ValueType,\
-  HeightAtCompileTime,\
-  WidthAtCompileTime,\
-  CONVOLUTION_OUTPUT_HEIGHT,\
-  CONVOLUTION_OUTPUT_WIDTH
+#define CONV_LENGTH_WITH_STRIDE(n, fn, s) ((n - fn) / s + 1)
 
 /**
  * @brief A convolution layer
@@ -64,18 +55,22 @@ template <typename ValueType,
           FFNN_SIZE_TYPE StrideAtCompileTime = 1,
           FFNN_SIZE_TYPE EmbeddingMode = ColEmbedding>
 class Convolution :
-  public Hidden<CONVOLUTION_BASE_TARGS>
+  public Hidden<ValueType,
+                CONV_EMBEDDED_H(HeightAtCompileTime, DepthAtCompileTime),
+                CONV_EMBEDDED_W(WidthAtCompileTime,  DepthAtCompileTime),
+                CONV_EMBEDDED_H(CONV_LENGTH_WITH_STRIDE(HeightAtCompileTime, FilterHeightAtCompileTime, StrideAtCompileTime), FilterCountAtCompileTime),
+                CONV_EMBEDDED_W(CONV_LENGTH_WITH_STRIDE(WidthAtCompileTime,  FilterWidthAtCompileTime,  StrideAtCompileTime), FilterCountAtCompileTime)>
 {
 public:
   /// Base type alias
   using Base = Hidden<ValueType,
-                      HeightAtCompileTime,
-                      WidthAtCompileTime,
-                      CONVOLUTION_OUTPUT_HEIGHT,
-                      CONVOLUTION_OUTPUT_WIDTH>;
+                      CONV_EMBEDDED_H(HeightAtCompileTime, DepthAtCompileTime),
+                      CONV_EMBEDDED_W(WidthAtCompileTime,  DepthAtCompileTime),
+                      CONV_EMBEDDED_H(CONV_LENGTH_WITH_STRIDE(HeightAtCompileTime, FilterHeightAtCompileTime, StrideAtCompileTime), FilterCountAtCompileTime),
+                      CONV_EMBEDDED_W(CONV_LENGTH_WITH_STRIDE(WidthAtCompileTime,  FilterWidthAtCompileTime,  StrideAtCompileTime), FilterCountAtCompileTime)>;
 
   /// Self type alias
-  using Self = Convolution<CONVOLUTION_TARGS>;
+  using Self = Convolution<CONV_TARGS>;
 
   /// Scalar type standardization
   typedef typename Base::ScalarType ScalarType;
@@ -90,10 +85,10 @@ public:
   typedef typename Base::ShapeType ShapeType;
 
   /// Receptive-volume type standardization
-  typedef ConvolutionVolume<CONVOLUTION_VOLUME_TARGS> ConvolutionVolumeType;
+  typedef ConvolutionVolume<CONV_VOLUME_TARGS> ConvolutionVolumeType;
 
   /// Recptive-volume bank standardization
-  typedef boost::multi_array<typename ConvolutionVolumeType::Ptr, 2> ConvolutionVolumeBankType;
+  typedef boost::multi_array<ConvolutionVolumeType, 2> ConvolutionVolumeBankType;
 
   /// Layer optimization type standardization
   typedef optimizer::Optimizer<Self> Optimizer;
@@ -103,22 +98,20 @@ public:
 
   /**
    * @brief Setup constructor
-   * @param output_size  number of layer outputs
-   * @param config  layer configuration struct
    */
   explicit
   Convolution(const ShapeType& input_shape = ShapeType(HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime),
               const SizeType& filter_height = FilterHeightAtCompileTime,
               const SizeType& filter_width = FilterWidthAtCompileTime,
               const SizeType& filter_count = FilterCountAtCompileTime,
-              const SizeType& filter_stride = StrideAtCompileTime,
-              const Parameters& config = Parameters());
+              const SizeType& filter_stride = StrideAtCompileTime);
   virtual ~Convolution();
 
   /**
    * @brief Initialize the layer
    */
   bool initialize();
+  bool initialize(const Parameters& config);
 
   /**
    * @brief Performs forward value propagation
@@ -149,7 +142,7 @@ public:
   /**
    * @brief Reset all internal volumes
    */
-  void reset();
+  void reset(const Parameters& config = Parameters());
 
   /**
    * @brief Computes previous layer error from current layer output error
@@ -182,9 +175,6 @@ private:
   //FFNN_REGISTER_OPTIMIZER(Convolution, Adam);
   //FFNN_REGISTER_OPTIMIZER(Convolution, GradientDescent);
 
-  /// Parameters config
-  Parameters config_;
-
   /// Layer configuration parameters
   ConvolutionVolumeBankType receptors_;
 
@@ -210,9 +200,9 @@ private:
 /// FFNN (implementation)
 #include <ffnn/layer/impl/convolution.hpp>
 
-#undef CONVOLUTION_OUTPUT_HEIGHT
-#undef CONVOLUTION_OUTPUT_WIDTH
-#undef CONVOLUTION_BASE_TARGS
-#undef CONVOLUTION_VOLUME_TARGS
-#undef CONVOLUTION_TARGS
+#undef CONV_TARGS
+#undef CONV_VOLUME_TARGS
+#undef CONV_LENGTH_WITH_STRIDE
+#undef CONV_EMBEDDED_H
+#undef CONV_EMBEDDED_W
 #endif  // FFNN_LAYER_FULLY_CONNECTED_H

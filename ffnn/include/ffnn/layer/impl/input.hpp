@@ -17,7 +17,9 @@ Input<ValueType, NetworkInputsAtCompileTime>::Input(SizeType network_input_size)
 
 template<typename ValueType, FFNN_SIZE_TYPE NetworkInputsAtCompileTime>
 Input<ValueType, NetworkInputsAtCompileTime>::~Input()
-{}
+{
+  FFNN_INTERNAL_DEBUG_NAMED("Input", "Destroying [layer::Input] object <" << this->getID() << ">");
+}
 
 template<typename ValueType, FFNN_SIZE_TYPE NetworkInputsAtCompileTime>
 bool Input<ValueType, NetworkInputsAtCompileTime>::initialize()

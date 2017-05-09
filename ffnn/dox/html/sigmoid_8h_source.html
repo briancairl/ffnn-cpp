@@ -110,7 +110,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keyword">public</span> <a class="code" href="classffnn_1_1neuron_1_1_neuron.html">Neuron</a>&lt;ValueType&gt;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classffnn_1_1neuron_1_1_sigmoid.html#a68c1cf4f268509e87a471440d11e7682">   33</a></span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classffnn_1_1neuron_1_1_sigmoid.html#a68c1cf4f268509e87a471440d11e7682">fn</a>(<span class="keyword">const</span> ValueType&amp; input, ValueType&amp; output)</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classffnn_1_1neuron_1_1_sigmoid.html#a1176976ca74341daac6c1720f7056d39">   33</a></span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classffnn_1_1neuron_1_1_sigmoid.html#a1176976ca74341daac6c1720f7056d39">operator()</a>(<span class="keyword">const</span> ValueType&amp; input, ValueType&amp; output)</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  {</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    output = std::tanh(input);</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  }</div>
@@ -126,12 +126,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="classffnn_1_1neuron_1_1_sigmoid_html_aee2a196924df30414539d75caa6c7030"><div class="ttname"><a href="classffnn_1_1neuron_1_1_sigmoid.html#aee2a196924df30414539d75caa6c7030">ffnn::neuron::Sigmoid::derivative</a></div><div class="ttdeci">virtual void derivative(const ValueType &amp;input, ValueType &amp;output) const </div><div class="ttdoc">Computes first-order activation derivative. </div><div class="ttdef"><b>Definition:</b> sigmoid.h:43</div></div>
 <div class="ttc" id="neuron_8h_html"><div class="ttname"><a href="neuron_8h.html">neuron.h</a></div></div>
 <div class="ttc" id="classffnn_1_1neuron_1_1_neuron_html"><div class="ttname"><a href="classffnn_1_1neuron_1_1_neuron.html">ffnn::neuron::Neuron</a></div><div class="ttdoc">A basic activation unit type. </div><div class="ttdef"><b>Definition:</b> neuron.h:16</div></div>
-<div class="ttc" id="classffnn_1_1neuron_1_1_sigmoid_html_a68c1cf4f268509e87a471440d11e7682"><div class="ttname"><a href="classffnn_1_1neuron_1_1_sigmoid.html#a68c1cf4f268509e87a471440d11e7682">ffnn::neuron::Sigmoid::fn</a></div><div class="ttdeci">virtual void fn(const ValueType &amp;input, ValueType &amp;output)</div><div class="ttdoc">Computes activation output. </div><div class="ttdef"><b>Definition:</b> sigmoid.h:33</div></div>
 <div class="ttc" id="classffnn_1_1neuron_1_1_sigmoid_html"><div class="ttname"><a href="classffnn_1_1neuron_1_1_sigmoid.html">ffnn::neuron::Sigmoid</a></div><div class="ttdoc">A bipolar sigmoid activation unit. </div><div class="ttdef"><b>Definition:</b> sigmoid.h:24</div></div>
+<div class="ttc" id="classffnn_1_1neuron_1_1_sigmoid_html_a1176976ca74341daac6c1720f7056d39"><div class="ttname"><a href="classffnn_1_1neuron_1_1_sigmoid.html#a1176976ca74341daac6c1720f7056d39">ffnn::neuron::Sigmoid::operator()</a></div><div class="ttdeci">virtual void operator()(const ValueType &amp;input, ValueType &amp;output)</div><div class="ttdoc">Computes activation output. </div><div class="ttdef"><b>Definition:</b> sigmoid.h:33</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri May 5 2017 01:46:11 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon May 8 2017 23:27:41 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

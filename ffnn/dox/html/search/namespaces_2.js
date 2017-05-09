@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['aligned',['aligned',['../namespaceffnn_1_1aligned.html',1,'ffnn']]],
   ['distribution',['distribution',['../namespaceffnn_1_1distribution.html',1,'ffnn']]],
   ['ffnn',['ffnn',['../namespaceffnn.html',1,'']]],
   ['internal',['internal',['../namespaceffnn_1_1layer_1_1internal.html',1,'ffnn::layer']]],

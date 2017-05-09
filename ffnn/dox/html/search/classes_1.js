@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['buffer',['Buffer',['../structffnn_1_1aligned_1_1_buffer.html',1,'ffnn::aligned']]],
-  ['buffer_3c_20convolution_5fbase_5ftargs_20_3e',['Buffer&lt; CONVOLUTION_BASE_TARGS &gt;',['../structffnn_1_1aligned_1_1_buffer.html',1,'ffnn::aligned']]]
+  ['convolution',['Convolution',['../classffnn_1_1layer_1_1_convolution.html',1,'ffnn::layer']]],
+  ['convolutionvolume',['ConvolutionVolume',['../classffnn_1_1layer_1_1_convolution_volume.html',1,'ffnn::layer']]]
 ];

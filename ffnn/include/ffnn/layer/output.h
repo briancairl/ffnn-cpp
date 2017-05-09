@@ -10,7 +10,6 @@
 
 // FFNN
 #include <ffnn/config/global.h>
-#include <ffnn/aligned_types.h>
 #include <ffnn/layer/layer.h>
 
 namespace ffnn

@@ -18,6 +18,7 @@ const char* HEADER = "\033[95m";
 const char* BLUE = "\033[94m";
 const char* GREEN = "\033[92m";
 const char* WARN = "\033[93m";
+const char* DEEP = "\033[96m";
 const char* FAIL = "\033[91m";
 const char* ENDC = "\033[0m";
 const char* BOLD = "\033[1m";
@@ -29,6 +30,15 @@ const char* UNDERLINE = "\033[4m";
 #define FFNN_NAME_HEADER(name) ffnn::logging::HEADER << "[" << name << "] " << ffnn::logging::ENDC
 
 #ifndef FFNN_NO_LOGGING
+/**
+ * @brief Prints an named debug message
+ * @param name  name to associate with message
+ * @param msg  message to print
+ * @warning Will not log when <code>FFNN_NO_LOGGING</code> is defined
+ */
+#define FFNN_INTERNAL_DEBUG_NAMED(name, msg)\
+{std::cout << FFNN_NAME_HEADER(name) << ffnn::logging::DEEP << msg << ffnn::logging::ENDC << std::endl;}
+
 /**
  * @brief Prints an named debug message
  * @param name  name to associate with message
@@ -48,8 +58,9 @@ const char* UNDERLINE = "\033[4m";
 {std::cout << FFNN_NAME_HEADER(name) << ffnn::logging::WARN << msg << ffnn::logging::ENDC << std::endl;}
 
 #else
+#define FFNN_INTERNAL_DEBUG_NAMED(name, msg) (void(0))
 #define FFNN_DEBUG_NAMED(name, msg) (void(0))
-#define FFNN_WARN_NAMED(name, msg)  (void(0))
+#define FFNN_WARN_NAMED(name, msg) (void(0))
 #endif
 
 /**

@@ -103,8 +103,8 @@ bool SparselyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::fo
   }
 
   // Compute weighted outputs
-  Base::output_->noalias() = w_ * (*Base::input_);
-  Base::output_->noalias() += b_;
+  Base::output_.noalias() = w_ * (*Base::input_);
+  Base::output_.noalias() += b_;
   return true;
 }
 

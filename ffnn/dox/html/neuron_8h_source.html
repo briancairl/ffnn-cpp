@@ -103,20 +103,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classffnn_1_1neuron_1_1_neuron.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="classffnn_1_1neuron_1_1_neuron.html">Neuron</a></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classffnn_1_1neuron_1_1_neuron.html#a4f03bb4fe57ffa74d70e447237b9b8fb">fn</a>(<span class="keyword">const</span> ValueType&amp; input, ValueType&amp; output) = 0;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classffnn_1_1neuron_1_1_neuron.html#ae215373ce29e135cb5fd728964772a32">operator()</a>(<span class="keyword">const</span> ValueType&amp; input, ValueType&amp; output) = 0;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classffnn_1_1neuron_1_1_neuron.html#ac779b179887e6b4505dec96d0319af10">derivative</a>(<span class="keyword">const</span> ValueType&amp; input, ValueType&amp; output) <span class="keyword">const</span> = 0;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;};</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}  <span class="comment">// namespace neuron</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}  <span class="comment">// namespace ffnn</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif  // FFNN_NEURON_NEURON_H</span></div>
-<div class="ttc" id="classffnn_1_1neuron_1_1_neuron_html_a4f03bb4fe57ffa74d70e447237b9b8fb"><div class="ttname"><a href="classffnn_1_1neuron_1_1_neuron.html#a4f03bb4fe57ffa74d70e447237b9b8fb">ffnn::neuron::Neuron::fn</a></div><div class="ttdeci">virtual void fn(const ValueType &amp;input, ValueType &amp;output)=0</div><div class="ttdoc">Computes activation output. </div></div>
+<div class="ttc" id="classffnn_1_1neuron_1_1_neuron_html_ae215373ce29e135cb5fd728964772a32"><div class="ttname"><a href="classffnn_1_1neuron_1_1_neuron.html#ae215373ce29e135cb5fd728964772a32">ffnn::neuron::Neuron::operator()</a></div><div class="ttdeci">virtual void operator()(const ValueType &amp;input, ValueType &amp;output)=0</div><div class="ttdoc">Computes activation output. </div></div>
 <div class="ttc" id="classffnn_1_1neuron_1_1_neuron_html"><div class="ttname"><a href="classffnn_1_1neuron_1_1_neuron.html">ffnn::neuron::Neuron</a></div><div class="ttdoc">A basic activation unit type. </div><div class="ttdef"><b>Definition:</b> neuron.h:16</div></div>
 <div class="ttc" id="classffnn_1_1neuron_1_1_neuron_html_ac779b179887e6b4505dec96d0319af10"><div class="ttname"><a href="classffnn_1_1neuron_1_1_neuron.html#ac779b179887e6b4505dec96d0319af10">ffnn::neuron::Neuron::derivative</a></div><div class="ttdeci">virtual void derivative(const ValueType &amp;input, ValueType &amp;output) const =0</div><div class="ttdoc">Computes first-order activation derivative. </div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri May 5 2017 01:46:11 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon May 8 2017 23:27:41 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

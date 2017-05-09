@@ -35,19 +35,29 @@ public:
 
   bool forward()
   {
-    FFNN_INFO("Input  : " << input_->rows()  << " by " << input_->cols());
-    FFNN_INFO("Output : " << output_->rows() << " by " << output_->cols());
+    FFNN_INFO("Input  : " << input_.rows()  << " by " << input_.cols());
+    FFNN_INFO("Output : " << output_.rows() << " by " << output_.cols());
 
-    std::memcpy(output_->data(), input_->data(), input_->size() * sizeof(float));
-    FFNN_INFO("\n" << (*input_));
-    FFNN_INFO("\n" << (*output_));
+    std::memcpy(output_.data(), input_.data(), input_.size() * sizeof(float));
+    FFNN_INFO("\n" << input_);
+    FFNN_INFO("\n" << output_);
     return true;
   }
 
-  inline SizeType inputHeight() const { return input_->rows(); }
-  inline SizeType inputWidth() const { return input_->cols(); }
-  inline SizeType outputHeight() const { return output_->rows(); }
-  inline SizeType outputWidth() const { return output_->cols(); }
+  bool backward()
+  {
+    return true;
+  }
+
+  bool update()
+  {
+    return true;
+  }
+
+  inline SizeType inputHeight() const { return input_.rows(); }
+  inline SizeType inputWidth() const { return input_.cols(); }
+  inline SizeType outputHeight() const { return output_.rows(); }
+  inline SizeType outputWidth() const { return output_.cols(); }
 };
 
 TEST(TestLayerHiddenBasic, IOSizing)
@@ -72,7 +82,7 @@ TEST(TestLayerHiddenBasic, IOSizing)
   // Connect layers
   for (size_t idx = 1UL; idx < layers.size(); idx++)
   {
-    EXPECT_TRUE(ffnn::layer::connect(layers[idx-1UL], layers[idx]));
+    EXPECT_TRUE(ffnn::layer::connect<Layer>(layers[idx-1UL], layers[idx]));
   }
 
   // Initialize and check all layers and 

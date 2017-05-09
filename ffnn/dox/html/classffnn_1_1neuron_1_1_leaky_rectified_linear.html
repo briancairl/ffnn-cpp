@@ -122,9 +122,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aedaef89cf5a9390b4ec610d1e7157bf8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1neuron_1_1_leaky_rectified_linear.html#aedaef89cf5a9390b4ec610d1e7157bf8">LeakyRectifiedLinear</a> ()</td></tr>
 <tr class="memdesc:aedaef89cf5a9390b4ec610d1e7157bf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup constructor.  <a href="#aedaef89cf5a9390b4ec610d1e7157bf8">More...</a><br/></td></tr>
 <tr class="separator:aedaef89cf5a9390b4ec610d1e7157bf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a96858235a3c4a8195b27699032a849"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1neuron_1_1_leaky_rectified_linear.html#a6a96858235a3c4a8195b27699032a849">fn</a> (const ValueType &amp;input, ValueType &amp;output)</td></tr>
-<tr class="memdesc:a6a96858235a3c4a8195b27699032a849"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes activation output.  <a href="#a6a96858235a3c4a8195b27699032a849">More...</a><br/></td></tr>
-<tr class="separator:a6a96858235a3c4a8195b27699032a849"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a219673d306064ae1405dd9385f031380"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1neuron_1_1_leaky_rectified_linear.html#a219673d306064ae1405dd9385f031380">operator()</a> (const ValueType &amp;input, ValueType &amp;output)</td></tr>
+<tr class="memdesc:a219673d306064ae1405dd9385f031380"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes activation output.  <a href="#a219673d306064ae1405dd9385f031380">More...</a><br/></td></tr>
+<tr class="separator:a219673d306064ae1405dd9385f031380"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1bb98dd03e854a69a7ba76b347ec4340"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1neuron_1_1_leaky_rectified_linear.html#a1bb98dd03e854a69a7ba76b347ec4340">derivative</a> (const ValueType &amp;input, ValueType &amp;output) const </td></tr>
 <tr class="memdesc:a1bb98dd03e854a69a7ba76b347ec4340"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes first-order activation derivative.  <a href="#a1bb98dd03e854a69a7ba76b347ec4340">More...</a><br/></td></tr>
 <tr class="separator:a1bb98dd03e854a69a7ba76b347ec4340"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -222,7 +222,7 @@ template&lt;typename ValueType , FFNN_SIZE_TYPE _P, FFNN_SIZE_TYPE _B = 100&gt; 
 
 </div>
 </div>
-<a class="anchor" id="a6a96858235a3c4a8195b27699032a849"></a>
+<a class="anchor" id="a219673d306064ae1405dd9385f031380"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -232,7 +232,7 @@ template&lt;typename ValueType , FFNN_SIZE_TYPE _P, FFNN_SIZE_TYPE _B = 100&gt; 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="classffnn_1_1neuron_1_1_leaky_rectified_linear.html">ffnn::neuron::LeakyRectifiedLinear</a>&lt; ValueType, _P, _B &gt;::fn </td>
+          <td class="memname">virtual void <a class="el" href="classffnn_1_1neuron_1_1_leaky_rectified_linear.html">ffnn::neuron::LeakyRectifiedLinear</a>&lt; ValueType, _P, _B &gt;::operator() </td>
           <td>(</td>
           <td class="paramtype">const ValueType &amp;&#160;</td>
           <td class="paramname"><em>input</em>, </td>
@@ -265,7 +265,7 @@ template&lt;typename ValueType , FFNN_SIZE_TYPE _P, FFNN_SIZE_TYPE _B = 100&gt; 
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="classffnn_1_1neuron_1_1_neuron.html#a4f03bb4fe57ffa74d70e447237b9b8fb">ffnn::neuron::Neuron&lt; ValueType &gt;</a>.</p>
+<p>Implements <a class="el" href="classffnn_1_1neuron_1_1_neuron.html#ae215373ce29e135cb5fd728964772a32">ffnn::neuron::Neuron&lt; ValueType &gt;</a>.</p>
 
 </div>
 </div>
@@ -292,7 +292,7 @@ template&lt;typename ValueType , FFNN_SIZE_TYPE _P, FFNN_SIZE_TYPE _B = 100&gt; 
 
 <p>Factor in the range [0, 1] to leak when (input &lt; 0) </p>
 
-<p>Referenced by <a class="el" href="classffnn_1_1neuron_1_1_leaky_rectified_linear.html#a1bb98dd03e854a69a7ba76b347ec4340">ffnn::neuron::LeakyRectifiedLinear&lt; ValueType, _P, _B &gt;::derivative()</a>, <a class="el" href="classffnn_1_1neuron_1_1_leaky_rectified_linear.html#a6a96858235a3c4a8195b27699032a849">ffnn::neuron::LeakyRectifiedLinear&lt; ValueType, _P, _B &gt;::fn()</a>, and <a class="el" href="classffnn_1_1neuron_1_1_leaky_rectified_linear.html#aedaef89cf5a9390b4ec610d1e7157bf8">ffnn::neuron::LeakyRectifiedLinear&lt; ValueType, _P, _B &gt;::LeakyRectifiedLinear()</a>.</p>
+<p>Referenced by <a class="el" href="classffnn_1_1neuron_1_1_leaky_rectified_linear.html#a1bb98dd03e854a69a7ba76b347ec4340">ffnn::neuron::LeakyRectifiedLinear&lt; ValueType, _P, _B &gt;::derivative()</a>, <a class="el" href="classffnn_1_1neuron_1_1_leaky_rectified_linear.html#aedaef89cf5a9390b4ec610d1e7157bf8">ffnn::neuron::LeakyRectifiedLinear&lt; ValueType, _P, _B &gt;::LeakyRectifiedLinear()</a>, and <a class="el" href="classffnn_1_1neuron_1_1_leaky_rectified_linear.html#a219673d306064ae1405dd9385f031380">ffnn::neuron::LeakyRectifiedLinear&lt; ValueType, _P, _B &gt;::operator()()</a>.</p>
 
 </div>
 </div>
@@ -302,7 +302,7 @@ template&lt;typename ValueType , FFNN_SIZE_TYPE _P, FFNN_SIZE_TYPE _B = 100&gt; 
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri May 5 2017 01:46:11 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon May 8 2017 23:27:42 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

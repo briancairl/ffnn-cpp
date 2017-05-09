@@ -54,7 +54,9 @@ Layer<ValueType>::Layer(const ShapeType& input_shape, const ShapeType& output_sh
 
 template<typename ValueType>
 Layer<ValueType>::~Layer()
-{}
+{
+  FFNN_DEBUG_NAMED("Layer", "Destroying [layer::Layer] object <" << this->getID() << ">");
+}
 
 template<typename ValueType>
 bool Layer<ValueType>::initialize()

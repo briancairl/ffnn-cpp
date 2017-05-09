@@ -91,7 +91,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions_i.html#index_i"><span>i</span></a></li>
       <li><a href="functions_k.html#index_k"><span>k</span></a></li>
       <li><a href="functions_l.html#index_l"><span>l</span></a></li>
-      <li><a href="functions_m.html#index_m"><span>m</span></a></li>
       <li><a href="functions_n.html#index_n"><span>n</span></a></li>
       <li><a href="functions_o.html#index_o"><span>o</span></a></li>
       <li><a href="functions_p.html#index_p"><span>p</span></a></li>
@@ -124,8 +123,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h3><a class="anchor" id="index_b"></a>- b -</h3><ul>
 <li>backward()
 : <a class="el" href="classffnn_1_1layer_1_1_activation.html#a3c4284245343f2132dd28eaf7ffbed47">ffnn::layer::Activation&lt; ValueType, NeuronType, SizeAtCompileTime &gt;</a>
+, <a class="el" href="classffnn_1_1layer_1_1_convolution.html#a332b4eee045e04cee3b5ab47ad3836f1">ffnn::layer::Convolution&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterHeightAtCompileTime, FilterWidthAtCompileTime, FilterCountAtCompileTime, StrideAtCompileTime, EmbeddingMode &gt;</a>
+, <a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html#a3fbe2727503ed4fa35dcc4ddcd289134">ffnn::layer::ConvolutionVolume&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterCountAtCompileTime, EmbeddingMode &gt;</a>
 , <a class="el" href="classffnn_1_1layer_1_1_fully_connected.html#afd5c1a006cf33a47cb7e2a982fe4cd6d">ffnn::layer::FullyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt;</a>
-, <a class="el" href="classffnn_1_1layer_1_1_hidden.html#a939fc9f0c269e63220305d787fbe600c">ffnn::layer::Hidden&lt; ValueType, InputHeightAtCompileTime, InputWidthAtCompileTime, OutputHeightAtCompileTime, OutputWidthAtCompileTime, _InputBlockType, _OutputBlockType, _InputMappingType, _OutputMappingType &gt;</a>
+, <a class="el" href="classffnn_1_1layer_1_1_hidden.html#a246152dfed00bbacb94fbbd6712acea0">ffnn::layer::Hidden&lt; ValueType, InputHeightAtCompileTime, InputWidthAtCompileTime, OutputHeightAtCompileTime, OutputWidthAtCompileTime, _InputBlockType, _OutputBlockType, _InputMappingType, _OutputMappingType &gt;</a>
 , <a class="el" href="classffnn_1_1layer_1_1_layer.html#a59d5f45393a1b0e4673969c65faaae2a">ffnn::layer::Layer&lt; ValueType &gt;</a>
 , <a class="el" href="classffnn_1_1layer_1_1_receptive_volume.html#a58a22d009cc7da6aa08a9e87f81a4eb3">ffnn::layer::ReceptiveVolume&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterCountAtCompileTime, EmbeddingMode &gt;</a>
 , <a class="el" href="classffnn_1_1layer_1_1_sparsely_connected.html#a597ea83c83e8f4f64a1fb7f17a1ea015">ffnn::layer::SparselyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt;</a>
@@ -135,18 +136,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 , <a class="el" href="classffnn_1_1optimizer_1_1_optimizer.html#ab1f9b1cae01f93f53ecf7119bedb6369">ffnn::optimizer::Optimizer&lt; LayerType &gt;</a>
 </li>
 <li>backward_error_
-: <a class="el" href="classffnn_1_1layer_1_1_hidden.html#aa9ed4266924e9b9da7faf9d53380a3e5">ffnn::layer::Hidden&lt; ValueType, InputHeightAtCompileTime, InputWidthAtCompileTime, OutputHeightAtCompileTime, OutputWidthAtCompileTime, _InputBlockType, _OutputBlockType, _InputMappingType, _OutputMappingType &gt;</a>
+: <a class="el" href="classffnn_1_1layer_1_1_hidden.html#a4d615b2812b0c170e213a0b946d41e91">ffnn::layer::Hidden&lt; ValueType, InputHeightAtCompileTime, InputWidthAtCompileTime, OutputHeightAtCompileTime, OutputWidthAtCompileTime, _InputBlockType, _OutputBlockType, _InputMappingType, _OutputMappingType &gt;</a>
 </li>
 <li>backward_error_buffer_
-: <a class="el" href="classffnn_1_1layer_1_1_layer.html#a5509038fd1d1d06edd90af93013c35e1">ffnn::layer::Layer&lt; ValueType &gt;</a>
+: <a class="el" href="classffnn_1_1layer_1_1_layer.html#a79d676e9b8bd04d1a438266206d4b321">ffnn::layer::Layer&lt; ValueType &gt;</a>
 </li>
 <li>Base
-: <a class="el" href="structffnn_1_1aligned_1_1_buffer.html#af6851eeb6c392f2ecf7ad9e74fa0b650">ffnn::aligned::Buffer&lt; ValueType &gt;</a>
-, <a class="el" href="structffnn_1_1aligned_1_1_map.html#ae7cf0913401f02f960a7addcf5bd60bf">ffnn::aligned::Map&lt; MatrixType &gt;</a>
-, <a class="el" href="structffnn_1_1aligned_1_1_map_base_3_01_matrix_type_00_01double_01_4.html#a7671de2c0e41dda47c45d4c221d046dd">ffnn::aligned::MapBase&lt; MatrixType, double &gt;</a>
-, <a class="el" href="structffnn_1_1aligned_1_1_map_base_3_01_matrix_type_00_01float_01_4.html#a06ddb34196d951e0ea339d9f90326386">ffnn::aligned::MapBase&lt; MatrixType, float &gt;</a>
-, <a class="el" href="classffnn_1_1layer_1_1_activation.html#a201ec82cc70826c458c1f4dc5e7f3fdf">ffnn::layer::Activation&lt; ValueType, NeuronType, SizeAtCompileTime &gt;</a>
-, <a class="el" href="classffnn_1_1layer_1_1_convolution.html#a2be75a609f983d65867bd4b5b4e27cf2">ffnn::layer::Convolution&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterHeightAtCompileTime, FilterWidthAtCompileTime, FilterCountAtCompileTime, Stride, EmbeddingMode &gt;</a>
+: <a class="el" href="classffnn_1_1layer_1_1_activation.html#a201ec82cc70826c458c1f4dc5e7f3fdf">ffnn::layer::Activation&lt; ValueType, NeuronType, SizeAtCompileTime &gt;</a>
+, <a class="el" href="classffnn_1_1layer_1_1_convolution.html#a0c1ce0c94acedcfce2cc663262928c78">ffnn::layer::Convolution&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterHeightAtCompileTime, FilterWidthAtCompileTime, FilterCountAtCompileTime, StrideAtCompileTime, EmbeddingMode &gt;</a>
+, <a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html#a2f94a7f13a3236ad743973de4bf1f555">ffnn::layer::ConvolutionVolume&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterCountAtCompileTime, EmbeddingMode &gt;</a>
+, <a class="el" href="classffnn_1_1layer_1_1_filter_bank.html#a57f78a46d30b55129334593d977d8c10">ffnn::layer::FilterBank&lt; KernelMatrixType &gt;</a>
 , <a class="el" href="classffnn_1_1layer_1_1_fully_connected.html#a406c6254decac6bb885090f49476f72a">ffnn::layer::FullyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt;</a>
 , <a class="el" href="classffnn_1_1layer_1_1_hidden.html#ac51b180aa7de47794148e32616f0441f">ffnn::layer::Hidden&lt; ValueType, InputHeightAtCompileTime, InputWidthAtCompileTime, OutputHeightAtCompileTime, OutputWidthAtCompileTime, _InputBlockType, _OutputBlockType, _InputMappingType, _OutputMappingType &gt;</a>
 , <a class="el" href="classffnn_1_1layer_1_1_input.html#a7d3eef885863ffbab29a2dba5b9d6e2a">ffnn::layer::Input&lt; ValueType, NetworkInputsAtCompileTime &gt;</a>
@@ -162,7 +161,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 , <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_sparsely_connected_3_01_value_type_00_e6c27913ab0d90f52f73031aa88c19bf.html#a38013045946f2a6d8a30445c9048654f">ffnn::optimizer::GradientDescent&lt; layer::SparselyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt; &gt;</a>
 </li>
 <li>BiasVectorType
-: <a class="el" href="classffnn_1_1layer_1_1_fully_connected.html#a926ff519682fa1bedd4c38159d5fd4bb">ffnn::layer::FullyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt;</a>
+: <a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html#a590c7ebb2448c2636252101529337928">ffnn::layer::ConvolutionVolume&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterCountAtCompileTime, EmbeddingMode &gt;</a>
+, <a class="el" href="classffnn_1_1layer_1_1_fully_connected.html#a926ff519682fa1bedd4c38159d5fd4bb">ffnn::layer::FullyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt;</a>
 , <a class="el" href="classffnn_1_1layer_1_1_receptive_volume.html#a22ec68a5323233ca8bbcacc2b7387dbb">ffnn::layer::ReceptiveVolume&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterCountAtCompileTime, EmbeddingMode &gt;</a>
 , <a class="el" href="classffnn_1_1layer_1_1_sparsely_connected.html#ad2d566cbb6c54c8723d79737075b4a00">ffnn::layer::SparselyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt;</a>
 , <a class="el" href="classffnn_1_1optimizer_1_1_adam_3_01layer_1_1_fully_connected_3_01_value_type_00_01_inputs_at_co08ce471fd3ee7441a350cc42cfd35bcd.html#ac7a23bb92a19d1155a19feefbb5d366d">ffnn::optimizer::Adam&lt; layer::FullyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt; &gt;</a>
@@ -170,11 +170,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 , <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_5f7b01db2ae4d39760d70ee323649a60.html#aaca17a8f41752429974c4ba7e98bdb47">ffnn::optimizer::GradientDescent&lt; layer::FullyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt; &gt;</a>
 , <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_sparsely_connected_3_01_value_type_00_e6c27913ab0d90f52f73031aa88c19bf.html#a83473b9494908577009ea7edf1de1dfd">ffnn::optimizer::GradientDescent&lt; layer::SparselyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt; &gt;</a>
 </li>
+<li>BufferType
+: <a class="el" href="classffnn_1_1layer_1_1_layer.html#a3f2e9c375d9bcf80e6000e9e53ba212d">ffnn::layer::Layer&lt; ValueType &gt;</a>
+</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri May 5 2017 01:46:11 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon May 8 2017 23:27:42 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -1,0 +1,97 @@
+\hypertarget{structffnn_1_1layer_1_1_convolution_volume_1_1_parameters}{\section{ffnn\-:\-:layer\-:\-:Convolution\-Volume$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Embedding\-Mode $>$\-:\-:Parameters Struct Reference}
+\label{structffnn_1_1layer_1_1_convolution_volume_1_1_parameters}\index{ffnn\-::layer\-::\-Convolution\-Volume$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Embedding\-Mode $>$\-::\-Parameters@{ffnn\-::layer\-::\-Convolution\-Volume$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Embedding\-Mode $>$\-::\-Parameters}}
+}
+
+
+A configuration object for a \hyperlink{classffnn_1_1layer_1_1_fully_connected}{Fully\-Connected} hidden layer.  
+
+
+
+
+{\ttfamily \#include \char`\"{}convolution\-\_\-volume.\-h\char`\"{}}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structffnn_1_1layer_1_1_convolution_volume_1_1_parameters_a4ab81f22691d953e2fca2d1206cf68b5}{Parameters} (\hyperlink{classffnn_1_1layer_1_1_convolution_volume_aa9435c5ef8e0d2aa5cf57d2a2758a615}{Scalar\-Type} \hyperlink{structffnn_1_1layer_1_1_convolution_volume_1_1_parameters_a1e9fca459e2666e545cae3eaa809a7a7}{init\-\_\-weight\-\_\-std}=1e-\/3, Scalar\-Type init\-\_\-bias\-\_\-std=1e-\/3, Scalar\-Type init\-\_\-weight\-\_\-mean=0.\-0, Scalar\-Type init\-\_\-bias\-\_\-mean=0.\-0)
+\begin{DoxyCompactList}\small\item\em Setup constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classffnn_1_1layer_1_1_convolution_volume_aa9435c5ef8e0d2aa5cf57d2a2758a615}{Scalar\-Type} \hyperlink{structffnn_1_1layer_1_1_convolution_volume_1_1_parameters_a1e9fca459e2666e545cae3eaa809a7a7}{init\-\_\-weight\-\_\-std}
+\begin{DoxyCompactList}\small\item\em Standard deviation of connection weights on init. \end{DoxyCompactList}\item 
+\hyperlink{classffnn_1_1layer_1_1_convolution_volume_aa9435c5ef8e0d2aa5cf57d2a2758a615}{Scalar\-Type} \hyperlink{structffnn_1_1layer_1_1_convolution_volume_1_1_parameters_a7436c4e804e9cbd6c8bc1550bfaae5a9}{init\-\_\-bias\-\_\-std}
+\begin{DoxyCompactList}\small\item\em Standard deviation of biases on init. \end{DoxyCompactList}\item 
+\hyperlink{classffnn_1_1layer_1_1_convolution_volume_aa9435c5ef8e0d2aa5cf57d2a2758a615}{Scalar\-Type} \hyperlink{structffnn_1_1layer_1_1_convolution_volume_1_1_parameters_a9200f0ded178ab3c0bf95bb0fe2f064e}{init\-\_\-weight\-\_\-mean}
+\begin{DoxyCompactList}\small\item\em Connection weight mean (bias) on init. \end{DoxyCompactList}\item 
+\hyperlink{classffnn_1_1layer_1_1_convolution_volume_aa9435c5ef8e0d2aa5cf57d2a2758a615}{Scalar\-Type} \hyperlink{structffnn_1_1layer_1_1_convolution_volume_1_1_parameters_ab4a409ee389af3da50ee46999d4d94c2}{init\-\_\-bias\-\_\-mean}
+\begin{DoxyCompactList}\small\item\em Connection biasing mean (bias) on init. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Embedding\-Mode = Col\-Embedding$>$struct ffnn\-::layer\-::\-Convolution\-Volume$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Embedding\-Mode $>$\-::\-Parameters}
+
+A configuration object for a \hyperlink{classffnn_1_1layer_1_1_fully_connected}{Fully\-Connected} hidden layer. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structffnn_1_1layer_1_1_convolution_volume_1_1_parameters_a4ab81f22691d953e2fca2d1206cf68b5}{\index{ffnn\-::layer\-::\-Convolution\-Volume\-::\-Parameters@{ffnn\-::layer\-::\-Convolution\-Volume\-::\-Parameters}!Parameters@{Parameters}}
+\index{Parameters@{Parameters}!ffnn::layer::ConvolutionVolume::Parameters@{ffnn\-::layer\-::\-Convolution\-Volume\-::\-Parameters}}
+\subsubsection[{Parameters}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Embedding\-Mode = Col\-Embedding$>$ {\bf ffnn\-::layer\-::\-Convolution\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, {\bf Embedding\-Mode} $>$\-::Parameters\-::\-Parameters (
+\begin{DoxyParamCaption}
+\item[{{\bf Scalar\-Type}}]{init\-\_\-weight\-\_\-std = {\ttfamily 1e-\/3}, }
+\item[{{\bf Scalar\-Type}}]{init\-\_\-bias\-\_\-std = {\ttfamily 1e-\/3}, }
+\item[{{\bf Scalar\-Type}}]{init\-\_\-weight\-\_\-mean = {\ttfamily 0.0}, }
+\item[{{\bf Scalar\-Type}}]{init\-\_\-bias\-\_\-mean = {\ttfamily 0.0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{structffnn_1_1layer_1_1_convolution_volume_1_1_parameters_a4ab81f22691d953e2fca2d1206cf68b5}
+
+
+Setup constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em init\-\_\-weight\-\_\-std} & Standard deviation of initial weights \\
+\hline
+{\em init\-\_\-bias\-\_\-std} & Standard deviation of initial weights \\
+\hline
+{\em init\-\_\-weight\-\_\-mean} & Mean of intial weights \\
+\hline
+{\em init\-\_\-bias\-\_\-mean} & Mean of intial biases \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structffnn_1_1layer_1_1_convolution_volume_1_1_parameters_ab4a409ee389af3da50ee46999d4d94c2}{\index{ffnn\-::layer\-::\-Convolution\-Volume\-::\-Parameters@{ffnn\-::layer\-::\-Convolution\-Volume\-::\-Parameters}!init\-\_\-bias\-\_\-mean@{init\-\_\-bias\-\_\-mean}}
+\index{init\-\_\-bias\-\_\-mean@{init\-\_\-bias\-\_\-mean}!ffnn::layer::ConvolutionVolume::Parameters@{ffnn\-::layer\-::\-Convolution\-Volume\-::\-Parameters}}
+\subsubsection[{init\-\_\-bias\-\_\-mean}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Embedding\-Mode = Col\-Embedding$>$ {\bf Scalar\-Type} {\bf ffnn\-::layer\-::\-Convolution\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, {\bf Embedding\-Mode} $>$\-::Parameters\-::init\-\_\-bias\-\_\-mean}}\label{structffnn_1_1layer_1_1_convolution_volume_1_1_parameters_ab4a409ee389af3da50ee46999d4d94c2}
+
+
+Connection biasing mean (bias) on init. 
+
+\hypertarget{structffnn_1_1layer_1_1_convolution_volume_1_1_parameters_a7436c4e804e9cbd6c8bc1550bfaae5a9}{\index{ffnn\-::layer\-::\-Convolution\-Volume\-::\-Parameters@{ffnn\-::layer\-::\-Convolution\-Volume\-::\-Parameters}!init\-\_\-bias\-\_\-std@{init\-\_\-bias\-\_\-std}}
+\index{init\-\_\-bias\-\_\-std@{init\-\_\-bias\-\_\-std}!ffnn::layer::ConvolutionVolume::Parameters@{ffnn\-::layer\-::\-Convolution\-Volume\-::\-Parameters}}
+\subsubsection[{init\-\_\-bias\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Embedding\-Mode = Col\-Embedding$>$ {\bf Scalar\-Type} {\bf ffnn\-::layer\-::\-Convolution\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, {\bf Embedding\-Mode} $>$\-::Parameters\-::init\-\_\-bias\-\_\-std}}\label{structffnn_1_1layer_1_1_convolution_volume_1_1_parameters_a7436c4e804e9cbd6c8bc1550bfaae5a9}
+
+
+Standard deviation of biases on init. 
+
+\hypertarget{structffnn_1_1layer_1_1_convolution_volume_1_1_parameters_a9200f0ded178ab3c0bf95bb0fe2f064e}{\index{ffnn\-::layer\-::\-Convolution\-Volume\-::\-Parameters@{ffnn\-::layer\-::\-Convolution\-Volume\-::\-Parameters}!init\-\_\-weight\-\_\-mean@{init\-\_\-weight\-\_\-mean}}
+\index{init\-\_\-weight\-\_\-mean@{init\-\_\-weight\-\_\-mean}!ffnn::layer::ConvolutionVolume::Parameters@{ffnn\-::layer\-::\-Convolution\-Volume\-::\-Parameters}}
+\subsubsection[{init\-\_\-weight\-\_\-mean}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Embedding\-Mode = Col\-Embedding$>$ {\bf Scalar\-Type} {\bf ffnn\-::layer\-::\-Convolution\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, {\bf Embedding\-Mode} $>$\-::Parameters\-::init\-\_\-weight\-\_\-mean}}\label{structffnn_1_1layer_1_1_convolution_volume_1_1_parameters_a9200f0ded178ab3c0bf95bb0fe2f064e}
+
+
+Connection weight mean (bias) on init. 
+
+\hypertarget{structffnn_1_1layer_1_1_convolution_volume_1_1_parameters_a1e9fca459e2666e545cae3eaa809a7a7}{\index{ffnn\-::layer\-::\-Convolution\-Volume\-::\-Parameters@{ffnn\-::layer\-::\-Convolution\-Volume\-::\-Parameters}!init\-\_\-weight\-\_\-std@{init\-\_\-weight\-\_\-std}}
+\index{init\-\_\-weight\-\_\-std@{init\-\_\-weight\-\_\-std}!ffnn::layer::ConvolutionVolume::Parameters@{ffnn\-::layer\-::\-Convolution\-Volume\-::\-Parameters}}
+\subsubsection[{init\-\_\-weight\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Embedding\-Mode = Col\-Embedding$>$ {\bf Scalar\-Type} {\bf ffnn\-::layer\-::\-Convolution\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, {\bf Embedding\-Mode} $>$\-::Parameters\-::init\-\_\-weight\-\_\-std}}\label{structffnn_1_1layer_1_1_convolution_volume_1_1_parameters_a1e9fca459e2666e545cae3eaa809a7a7}
+
+
+Standard deviation of connection weights on init. 
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/\hyperlink{convolution__volume_8h}{convolution\-\_\-volume.\-h}\end{DoxyCompactItemize}

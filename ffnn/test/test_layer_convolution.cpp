@@ -49,7 +49,22 @@ TEST(TestLayerConvolution, StaticInstanceColEmbedding_Forward)
   FFNN_INFO(output->inputShape());
   FFNN_INFO(output->outputShape());
 
+  const auto& ish = convolution->inputShape();
+  Eigen::VectorXf in_data(ish.size(), 1);
+  in_data.setOnes();
+
+  (*input) << in_data;
+  input->forward();
   convolution->forward();
+  output->forward();
+
+  const auto& osh = convolution->outputShape();
+  Eigen::VectorXf out_data(osh.size(), 1);
+  out_data.setZero();
+  (*output) >> out_data;
+
+  Eigen::Map<Eigen::MatrixXf> om(out_data.data(), osh.height, osh.width);
+  //FFNN_INFO("\n" << om);
 }
 
 // Run tests

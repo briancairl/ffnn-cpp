@@ -1,11 +1,5 @@
 var searchData=
 [
-  ['operator_20sizetype',['operator SizeType',['../structffnn_1_1layer_1_1internal_1_1_dimensions.html#a9f9e33a5d3c0e148f394364ca61e2b66',1,'ffnn::layer::internal::Dimensions']]],
-  ['operator_3c_3c',['operator&lt;&lt;',['../classffnn_1_1layer_1_1_input.html#a66b1272c6ed66097bf08c6d2058888cb',1,'ffnn::layer::Input::operator&lt;&lt;()'],['../classffnn_1_1layer_1_1_output.html#ab37eb595864f42089dc2d0556b1f68ef',1,'ffnn::layer::Output::operator&lt;&lt;()'],['../namespaceffnn_1_1layer_1_1internal.html#a0cba567cc16e50f4e1db183533536ee4',1,'ffnn::layer::internal::operator&lt;&lt;()']]],
-  ['operator_3d',['operator=',['../structffnn_1_1layer_1_1internal_1_1_dimensions.html#aca4f4f99d5943256d7a4c66543839cb2',1,'ffnn::layer::internal::Dimensions::operator=(SizeType count)'],['../structffnn_1_1layer_1_1internal_1_1_dimensions.html#a7c62d6ad721cbdaf3352e63c0541df48',1,'ffnn::layer::internal::Dimensions::operator=(const Dimensions &amp;dim)']]],
-  ['operator_3e_3e',['operator&gt;&gt;',['../classffnn_1_1layer_1_1_output.html#a2f4eb5c36b8b5d486410366b4cd9e7a8',1,'ffnn::layer::Output']]],
-  ['optimizer',['Optimizer',['../classffnn_1_1optimizer_1_1_optimizer.html#a5daf7f0191df7c672247e0d5a25fbafa',1,'ffnn::optimizer::Optimizer']]],
-  ['output',['Output',['../classffnn_1_1layer_1_1_output.html#af7d5b0ae4ac072ada556478a12fe235f',1,'ffnn::layer::Output']]],
-  ['outputdim',['outputDim',['../classffnn_1_1layer_1_1internal_1_1_interface.html#aaa3e0e1735cbc17f9032573782f4e098',1,'ffnn::layer::internal::Interface']]],
-  ['outputsize',['outputSize',['../classffnn_1_1layer_1_1internal_1_1_interface.html#a3578b4137e24bd8992cdc8dd6def0745',1,'ffnn::layer::internal::Interface']]]
+  ['parameters',['Parameters',['../structffnn_1_1layer_1_1_convolution_volume_1_1_parameters.html#a4ab81f22691d953e2fca2d1206cf68b5',1,'ffnn::layer::ConvolutionVolume::Parameters::Parameters()'],['../structffnn_1_1layer_1_1_fully_connected_1_1_parameters.html#a21afd0086997bd7e911244e3883ca475',1,'ffnn::layer::FullyConnected::Parameters::Parameters()'],['../structffnn_1_1layer_1_1_receptive_volume_1_1_parameters.html#ae1dd9fa72bd4871addcec9b5ffd3a188',1,'ffnn::layer::ReceptiveVolume::Parameters::Parameters()'],['../structffnn_1_1layer_1_1_sparsely_connected_1_1_parameters.html#acf0d0c7c3a01f292c035994e0bdda75d',1,'ffnn::layer::SparselyConnected::Parameters::Parameters()']]],
+  ['prune',['prune',['../classffnn_1_1layer_1_1_sparsely_connected.html#a5ad877d8a61e22e66b040915fe5cb045',1,'ffnn::layer::SparselyConnected']]]
 ];

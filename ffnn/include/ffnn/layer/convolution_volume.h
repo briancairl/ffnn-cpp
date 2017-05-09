@@ -18,6 +18,8 @@ namespace layer
 {
 #define IS_DYNAMIC_PAIR(n, m) (IS_DYNAMIC(n) || IS_DYNAMIC(m))
 #define PROD_IF_STATIC_PAIR(n, m) (IS_DYNAMIC_PAIR(n, m) ? Eigen::Dynamic : (n*m))
+#define CONV_EMBEDDED_H(h, d) EmbeddingMode == ColEmbedding ? PROD_IF_STATIC_PAIR(h, d) : h
+#define CONV_EMBEDDED_W(w, d) EmbeddingMode == RowEmbedding ? PROD_IF_STATIC_PAIR(w, d) : w
 
 enum EmbeddingMode
 {
@@ -26,9 +28,12 @@ enum EmbeddingMode
 };
 
 template<typename KernelMatrixType>
-class FilterBank
+class FilterBank :
+  public std::vector<KernelMatrixType, Eigen::aligned_allocator<typename KernelMatrixType::Scalar>>
 {
 public:
+  using Base = std::vector<KernelMatrixType, Eigen::aligned_allocator<typename KernelMatrixType::Scalar>>;
+
   typedef typename KernelMatrixType::Scalar ScalarType;
 
   typedef typename KernelMatrixType::Index SizeType;
@@ -38,12 +43,12 @@ public:
   explicit
   FilterBank(SizeType filter_count)
   {
-    filters.resize(filter_count);
+    Base::resize(filter_count);
   }
 
   void setZero(SizeType height, SizeType width)
   {
-    for (auto& filter : filters)
+    for (auto& filter : *this)
     {
       filter.setZero(height, width);
     }
@@ -51,7 +56,7 @@ public:
 
   void setRandom(SizeType height, SizeType width)
   {
-    for (auto& filter : filters)
+    for (auto& filter : *this)
     {
       filter.setRandom(height, width);
     }
@@ -59,7 +64,7 @@ public:
 
   FilterBank& operator*=(ScalarType scalar)
   {
-    for (auto& filter : filters)
+    for (auto& filter : *this)
     {
       filter.array() *= scalar;
     }
@@ -68,14 +73,12 @@ public:
 
   FilterBank& operator+=(ScalarType scalar)
   {
-    for (auto& filter : filters)
+    for (auto& filter : *this)
     {
       filter.array() += scalar;
     }
     return *this;
   }
-
-  std::vector<KernelMatrixType, Eigen::aligned_allocator<typename KernelMatrixType::Scalar>> filters;
 };
 
 template<typename ValueType,
@@ -99,12 +102,6 @@ public:
                                  FilterCountAtCompileTime,
                                  EmbeddingMode>;
 
-  /// Shared resource standardization
-  typedef boost::shared_ptr<Self> Ptr;
-
-  /// Constant shared resource standardization
-  typedef boost::shared_ptr<const Self> ConstPtr;
-
   /// Scalar type standardization
   typedef typename Base::ScalarType ScalarType;
 
@@ -119,8 +116,8 @@ public:
 
   /// Filter kernel matrix standardization
   typedef Eigen::Matrix<ValueType,
-                        EmbeddingMode == ColEmbedding ? PROD_IF_STATIC_PAIR(HeightAtCompileTime, DepthAtCompileTime) : HeightAtCompileTime,
-                        EmbeddingMode == RowEmbedding ? PROD_IF_STATIC_PAIR(WidthAtCompileTime,  DepthAtCompileTime) : WidthAtCompileTime,
+                        CONV_EMBEDDED_H(HeightAtCompileTime, DepthAtCompileTime),
+                        CONV_EMBEDDED_W(WidthAtCompileTime, DepthAtCompileTime),
                         EmbeddingMode == ColEmbedding ? Eigen::ColMajor : Eigen::RowMajor> KernelMatrixType;
 
   /// Bias vector type standardization
@@ -200,7 +197,7 @@ public:
    */
   inline const FilterBankType& getFilters() const
   {
-    return bank_;
+    return filters_;
   }
 
   FFNN_REGISTER_SERIALIZABLE(ConvolutionVolume)
@@ -216,7 +213,7 @@ private:
   Parameters config_;
 
   /// Filter bank for receptive field
-  FilterBankType bank_;
+  FilterBankType filters_;
 
   /// Bias vector
   BiasVectorType b_;

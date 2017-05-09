@@ -1,4 +1,4 @@
 <map id="ffnn::optimizer::GradientDescent&lt; layer::FullyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt; &gt;::initialize" name="ffnn::optimizer::GradientDescent&lt; layer::FullyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt; &gt;::initialize">
 <area shape="rect" id="node2" href="$classffnn_1_1layer_1_1internal_1_1_interface.html#a67cf9f89a90eadca6f9ec82dd66bd940" title="Returns true if layer has been initialized. " alt="" coords="296,5,451,46"/>
-<area shape="rect" id="node3" href="$structffnn_1_1layer_1_1internal_1_1_dimensions.html#a55225c7e571ffb20efc454767bc598e1" title="ffnn::layer::internal\l::Dimensions::size" alt="" coords="308,70,439,111"/>
+<area shape="rect" id="node3" href="$structffnn_1_1layer_1_1internal_1_1_shape.html#a12c68148f45338261ebff941384e4c6a" title="ffnn::layer::internal\l::Shape::size" alt="" coords="308,70,439,111"/>
 </map>

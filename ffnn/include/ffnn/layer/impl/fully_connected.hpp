@@ -44,7 +44,9 @@ template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
          FFNN_SIZE_TYPE OutputsAtCompileTime>
 FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::~FullyConnected()
-{}
+{
+  FFNN_INTERNAL_DEBUG_NAMED("FullyConnected", "Destroying [layer::FullyConnected] object <" << this->getID() << ">");
+}
 
 template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
@@ -98,7 +100,7 @@ bool FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::forwa
   }
 
   // Compute weighted + biased outputs
-  Base::output_->noalias() = w_ * (*Base::input_) + b_;
+  Base::output_.noalias() = w_ * (*Base::input_) + b_;
   return true;
 }
 

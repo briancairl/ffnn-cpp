@@ -111,9 +111,9 @@ Inheritance diagram for ffnn::neuron::Neuron&lt; ValueType &gt;:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4f03bb4fe57ffa74d70e447237b9b8fb"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1neuron_1_1_neuron.html#a4f03bb4fe57ffa74d70e447237b9b8fb">fn</a> (const ValueType &amp;input, ValueType &amp;output)=0</td></tr>
-<tr class="memdesc:a4f03bb4fe57ffa74d70e447237b9b8fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes activation output.  <a href="#a4f03bb4fe57ffa74d70e447237b9b8fb">More...</a><br/></td></tr>
-<tr class="separator:a4f03bb4fe57ffa74d70e447237b9b8fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae215373ce29e135cb5fd728964772a32"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1neuron_1_1_neuron.html#ae215373ce29e135cb5fd728964772a32">operator()</a> (const ValueType &amp;input, ValueType &amp;output)=0</td></tr>
+<tr class="memdesc:ae215373ce29e135cb5fd728964772a32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes activation output.  <a href="#ae215373ce29e135cb5fd728964772a32">More...</a><br/></td></tr>
+<tr class="separator:ae215373ce29e135cb5fd728964772a32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac779b179887e6b4505dec96d0319af10"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1neuron_1_1_neuron.html#ac779b179887e6b4505dec96d0319af10">derivative</a> (const ValueType &amp;input, ValueType &amp;output) const =0</td></tr>
 <tr class="memdesc:ac779b179887e6b4505dec96d0319af10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes first-order activation derivative.  <a href="#ac779b179887e6b4505dec96d0319af10">More...</a><br/></td></tr>
 <tr class="separator:ac779b179887e6b4505dec96d0319af10"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -171,7 +171,7 @@ template&lt;typename ValueType &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a4f03bb4fe57ffa74d70e447237b9b8fb"></a>
+<a class="anchor" id="ae215373ce29e135cb5fd728964772a32"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -181,7 +181,7 @@ template&lt;typename ValueType &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void <a class="el" href="classffnn_1_1neuron_1_1_neuron.html">ffnn::neuron::Neuron</a>&lt; ValueType &gt;::fn </td>
+          <td class="memname">virtual void <a class="el" href="classffnn_1_1neuron_1_1_neuron.html">ffnn::neuron::Neuron</a>&lt; ValueType &gt;::operator() </td>
           <td>(</td>
           <td class="paramtype">const ValueType &amp;&#160;</td>
           <td class="paramname"><em>input</em>, </td>
@@ -214,7 +214,7 @@ template&lt;typename ValueType &gt; </div>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classffnn_1_1neuron_1_1_leaky_rectified_linear.html#a6a96858235a3c4a8195b27699032a849">ffnn::neuron::LeakyRectifiedLinear&lt; ValueType, _P, _B &gt;</a>, <a class="el" href="classffnn_1_1neuron_1_1_le_cun_sigmoid.html#abac0c8e08b1289c288923fd8e6f12ce2">ffnn::neuron::LeCunSigmoid&lt; ValueType &gt;</a>, <a class="el" href="classffnn_1_1neuron_1_1_sigmoid.html#a68c1cf4f268509e87a471440d11e7682">ffnn::neuron::Sigmoid&lt; ValueType &gt;</a>, <a class="el" href="classffnn_1_1neuron_1_1_soft_sign.html#ac6e67e51f8879c44940ef0c419911259">ffnn::neuron::SoftSign&lt; ValueType &gt;</a>, <a class="el" href="classffnn_1_1neuron_1_1_linear.html#a4d92b666c3e0a81865be7d09c0c4016e">ffnn::neuron::Linear&lt; ValueType &gt;</a>, and <a class="el" href="classffnn_1_1neuron_1_1_rectified_linear.html#aa6f5d5fab4b2468fa36e208ed885782c">ffnn::neuron::RectifiedLinear&lt; ValueType &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classffnn_1_1neuron_1_1_leaky_rectified_linear.html#a219673d306064ae1405dd9385f031380">ffnn::neuron::LeakyRectifiedLinear&lt; ValueType, _P, _B &gt;</a>, <a class="el" href="classffnn_1_1neuron_1_1_le_cun_sigmoid.html#ae1a0a4b086a8983f31fb320e7c3088dc">ffnn::neuron::LeCunSigmoid&lt; ValueType &gt;</a>, <a class="el" href="classffnn_1_1neuron_1_1_sigmoid.html#a1176976ca74341daac6c1720f7056d39">ffnn::neuron::Sigmoid&lt; ValueType &gt;</a>, <a class="el" href="classffnn_1_1neuron_1_1_soft_sign.html#a1d3ecb32d2eeea06b988ef4f779303e0">ffnn::neuron::SoftSign&lt; ValueType &gt;</a>, <a class="el" href="classffnn_1_1neuron_1_1_linear.html#aa59814449ab3e63d2cbd4f01fd500044">ffnn::neuron::Linear&lt; ValueType &gt;</a>, and <a class="el" href="classffnn_1_1neuron_1_1_rectified_linear.html#a11584934d68646ccced2c0c1c382960d">ffnn::neuron::RectifiedLinear&lt; ValueType &gt;</a>.</p>
 
 </div>
 </div>
@@ -224,7 +224,7 @@ template&lt;typename ValueType &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri May 5 2017 01:46:11 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon May 8 2017 23:27:42 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

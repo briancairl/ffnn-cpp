@@ -107,7 +107,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keyword">public</span> <a class="code" href="classffnn_1_1neuron_1_1_neuron.html">Neuron</a>&lt;ValueType&gt;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classffnn_1_1neuron_1_1_rectified_linear.html#aa6f5d5fab4b2468fa36e208ed885782c">   28</a></span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classffnn_1_1neuron_1_1_rectified_linear.html#aa6f5d5fab4b2468fa36e208ed885782c">fn</a>(<span class="keyword">const</span> ValueType&amp; input, ValueType&amp; output)</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classffnn_1_1neuron_1_1_rectified_linear.html#a11584934d68646ccced2c0c1c382960d">   28</a></span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classffnn_1_1neuron_1_1_rectified_linear.html#a11584934d68646ccced2c0c1c382960d">operator()</a>(<span class="keyword">const</span> ValueType&amp; input, ValueType&amp; output)</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  {</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    output = (input &gt; 0) ? input : 0;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  }</div>
@@ -121,14 +121,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}  <span class="comment">// namespace ffnn</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#endif  // FFNN_NEURON_RECTIFIED_LINEAR_H</span></div>
 <div class="ttc" id="classffnn_1_1neuron_1_1_rectified_linear_html_a8c45f64142bf994a96f4987cdd81e32f"><div class="ttname"><a href="classffnn_1_1neuron_1_1_rectified_linear.html#a8c45f64142bf994a96f4987cdd81e32f">ffnn::neuron::RectifiedLinear::derivative</a></div><div class="ttdeci">virtual void derivative(const ValueType &amp;input, ValueType &amp;output) const </div><div class="ttdoc">Computes first-order activation derivative. </div><div class="ttdef"><b>Definition:</b> rectified_linear.h:38</div></div>
-<div class="ttc" id="classffnn_1_1neuron_1_1_rectified_linear_html_aa6f5d5fab4b2468fa36e208ed885782c"><div class="ttname"><a href="classffnn_1_1neuron_1_1_rectified_linear.html#aa6f5d5fab4b2468fa36e208ed885782c">ffnn::neuron::RectifiedLinear::fn</a></div><div class="ttdeci">virtual void fn(const ValueType &amp;input, ValueType &amp;output)</div><div class="ttdoc">Computes activation output. </div><div class="ttdef"><b>Definition:</b> rectified_linear.h:28</div></div>
 <div class="ttc" id="neuron_8h_html"><div class="ttname"><a href="neuron_8h.html">neuron.h</a></div></div>
 <div class="ttc" id="classffnn_1_1neuron_1_1_rectified_linear_html"><div class="ttname"><a href="classffnn_1_1neuron_1_1_rectified_linear.html">ffnn::neuron::RectifiedLinear</a></div><div class="ttdoc">A rectified linear activation unit. </div><div class="ttdef"><b>Definition:</b> rectified_linear.h:19</div></div>
+<div class="ttc" id="classffnn_1_1neuron_1_1_rectified_linear_html_a11584934d68646ccced2c0c1c382960d"><div class="ttname"><a href="classffnn_1_1neuron_1_1_rectified_linear.html#a11584934d68646ccced2c0c1c382960d">ffnn::neuron::RectifiedLinear::operator()</a></div><div class="ttdeci">virtual void operator()(const ValueType &amp;input, ValueType &amp;output)</div><div class="ttdoc">Computes activation output. </div><div class="ttdef"><b>Definition:</b> rectified_linear.h:28</div></div>
 <div class="ttc" id="classffnn_1_1neuron_1_1_neuron_html"><div class="ttname"><a href="classffnn_1_1neuron_1_1_neuron.html">ffnn::neuron::Neuron</a></div><div class="ttdoc">A basic activation unit type. </div><div class="ttdef"><b>Definition:</b> neuron.h:16</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri May 5 2017 01:46:11 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon May 8 2017 23:27:41 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

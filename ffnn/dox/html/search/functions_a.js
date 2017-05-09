@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['mapbase',['MapBase',['../structffnn_1_1aligned_1_1_map_base_3_01_matrix_type_00_01float_01_4.html#a81922af94456b6f2e48532d6c6e1314d',1,'ffnn::aligned::MapBase&lt; MatrixType, float &gt;::MapBase()'],['../structffnn_1_1aligned_1_1_map_base_3_01_matrix_type_00_01double_01_4.html#a24d9a12db54c27df4b1a5c5c908d5140',1,'ffnn::aligned::MapBase&lt; MatrixType, double &gt;::MapBase()']]]
+  ['name',['name',['../classffnn_1_1optimizer_1_1_optimizer.html#a9c472d1e2ef75decdae1cf2db7582582',1,'ffnn::optimizer::Optimizer']]],
+  ['none',['None',['../classffnn_1_1optimizer_1_1_none.html#ae5ba72205a7f11508de871d6c3f1081f',1,'ffnn::optimizer::None']]]
 ];

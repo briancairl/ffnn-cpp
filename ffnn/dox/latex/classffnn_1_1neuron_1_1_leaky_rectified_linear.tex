@@ -33,7 +33,7 @@ Collaboration diagram for ffnn\-:\-:neuron\-:\-:Leaky\-Rectified\-Linear$<$ Valu
 \item 
 \hyperlink{classffnn_1_1neuron_1_1_leaky_rectified_linear_aedaef89cf5a9390b4ec610d1e7157bf8}{Leaky\-Rectified\-Linear} ()
 \begin{DoxyCompactList}\small\item\em Setup constructor. \end{DoxyCompactList}\item 
-virtual void \hyperlink{classffnn_1_1neuron_1_1_leaky_rectified_linear_a6a96858235a3c4a8195b27699032a849}{fn} (const Value\-Type \&input, Value\-Type \&output)
+virtual void \hyperlink{classffnn_1_1neuron_1_1_leaky_rectified_linear_a219673d306064ae1405dd9385f031380}{operator()} (const Value\-Type \&input, Value\-Type \&output)
 \begin{DoxyCompactList}\small\item\em Computes activation output. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classffnn_1_1neuron_1_1_leaky_rectified_linear_a1bb98dd03e854a69a7ba76b347ec4340}{derivative} (const Value\-Type \&input, Value\-Type \&output) const 
 \begin{DoxyCompactList}\small\item\em Computes first-\/order activation derivative. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -92,14 +92,14 @@ Computes first-\/order activation derivative.
 
 Implements \hyperlink{classffnn_1_1neuron_1_1_neuron_ac779b179887e6b4505dec96d0319af10}{ffnn\-::neuron\-::\-Neuron$<$ Value\-Type $>$}.
 
-\hypertarget{classffnn_1_1neuron_1_1_leaky_rectified_linear_a6a96858235a3c4a8195b27699032a849}{\index{ffnn\-::neuron\-::\-Leaky\-Rectified\-Linear@{ffnn\-::neuron\-::\-Leaky\-Rectified\-Linear}!fn@{fn}}
-\index{fn@{fn}!ffnn::neuron::LeakyRectifiedLinear@{ffnn\-::neuron\-::\-Leaky\-Rectified\-Linear}}
-\subsubsection[{fn}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E \-\_\-\-P, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E \-\_\-\-B = 100$>$ virtual void {\bf ffnn\-::neuron\-::\-Leaky\-Rectified\-Linear}$<$ Value\-Type, \-\_\-\-P, \-\_\-\-B $>$\-::fn (
+\hypertarget{classffnn_1_1neuron_1_1_leaky_rectified_linear_a219673d306064ae1405dd9385f031380}{\index{ffnn\-::neuron\-::\-Leaky\-Rectified\-Linear@{ffnn\-::neuron\-::\-Leaky\-Rectified\-Linear}!operator()@{operator()}}
+\index{operator()@{operator()}!ffnn::neuron::LeakyRectifiedLinear@{ffnn\-::neuron\-::\-Leaky\-Rectified\-Linear}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E \-\_\-\-P, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E \-\_\-\-B = 100$>$ virtual void {\bf ffnn\-::neuron\-::\-Leaky\-Rectified\-Linear}$<$ Value\-Type, \-\_\-\-P, \-\_\-\-B $>$\-::operator() (
 \begin{DoxyParamCaption}
 \item[{const Value\-Type \&}]{input, }
 \item[{Value\-Type \&}]{output}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classffnn_1_1neuron_1_1_leaky_rectified_linear_a6a96858235a3c4a8195b27699032a849}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classffnn_1_1neuron_1_1_leaky_rectified_linear_a219673d306064ae1405dd9385f031380}
 
 
 Computes activation output. 
@@ -113,7 +113,7 @@ Computes activation output.
 \end{DoxyParams}
 
 
-Implements \hyperlink{classffnn_1_1neuron_1_1_neuron_a4f03bb4fe57ffa74d70e447237b9b8fb}{ffnn\-::neuron\-::\-Neuron$<$ Value\-Type $>$}.
+Implements \hyperlink{classffnn_1_1neuron_1_1_neuron_ae215373ce29e135cb5fd728964772a32}{ffnn\-::neuron\-::\-Neuron$<$ Value\-Type $>$}.
 
 
 
@@ -127,7 +127,7 @@ Factor in the range \mbox{[}0, 1\mbox{]} to leak when (input $<$ 0)
 
 
 
-Referenced by ffnn\-::neuron\-::\-Leaky\-Rectified\-Linear$<$ Value\-Type, \-\_\-\-P, \-\_\-\-B $>$\-::derivative(), ffnn\-::neuron\-::\-Leaky\-Rectified\-Linear$<$ Value\-Type, \-\_\-\-P, \-\_\-\-B $>$\-::fn(), and ffnn\-::neuron\-::\-Leaky\-Rectified\-Linear$<$ Value\-Type, \-\_\-\-P, \-\_\-\-B $>$\-::\-Leaky\-Rectified\-Linear().
+Referenced by ffnn\-::neuron\-::\-Leaky\-Rectified\-Linear$<$ Value\-Type, \-\_\-\-P, \-\_\-\-B $>$\-::derivative(), ffnn\-::neuron\-::\-Leaky\-Rectified\-Linear$<$ Value\-Type, \-\_\-\-P, \-\_\-\-B $>$\-::\-Leaky\-Rectified\-Linear(), and ffnn\-::neuron\-::\-Leaky\-Rectified\-Linear$<$ Value\-Type, \-\_\-\-P, \-\_\-\-B $>$\-::operator()().
 
 
 

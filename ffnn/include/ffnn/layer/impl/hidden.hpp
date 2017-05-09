@@ -27,7 +27,11 @@ template<typename ValueType,
          typename _OutputMappingType>
 HIDDEN::Hidden(const ShapeType& input_shape,
                const ShapeType& output_shape) :
-  Base(input_shape, output_shape)
+  Base(input_shape, output_shape),
+  input_(NULL, InputsHeightAtCompileTime, InputsWidthAtCompileTime),
+  output_(NULL, OutputsHeightAtCompileTime, OutputsWidthAtCompileTime),
+  backward_error_(NULL, InputsHeightAtCompileTime, InputsWidthAtCompileTime),
+  forward_error_(NULL, OutputsHeightAtCompileTime, OutputsWidthAtCompileTime)
 {
 }
 
@@ -41,7 +45,9 @@ template<typename ValueType,
          typename _InputMappingType,
          typename _OutputMappingType>
 HIDDEN::~Hidden()
-{}
+{
+  FFNN_INTERNAL_DEBUG_NAMED("Hidden", "Destroying [layer::Hidden] object <" << this->getID() << ">");
+}
 
 template<typename ValueType,
          FFNN_SIZE_TYPE InputsHeightAtCompileTime,
@@ -59,15 +65,11 @@ HIDDEN::connectToForwardLayer(const Base& next, OffsetType offset)
 
   // Map output of next layer to input buffer
   auto output_ptr = const_cast<ValueType*>(next.getInputBuffer().data()) + offset;
-  output_ = _OutputMappingType::create(output_ptr,
-                                       Base::output_shape_.height,
-                                       Base::output_shape_.width);
+  new (&output_) _OutputMappingType(output_ptr, Base::output_shape_.height, Base::output_shape_.width);
 
   // Map error of next layer to backward-error buffer
   auto error_ptr = const_cast<ValueType*>(next.getBackwardErrorBuffer().data()) + offset;
-  forward_error_ = _OutputMappingType::create(error_ptr,
-                                              Base::output_shape_.height,
-                                              Base::output_shape_.width);
+  new (&forward_error_) _OutputMappingType(error_ptr, Base::output_shape_.height, Base::output_shape_.width);
 
   // Return next offset after assigning buffer segments
   return offset + Base::outputSize();
@@ -104,17 +106,11 @@ bool HIDDEN::initialize()
   {
     // Create input buffer map
     auto input_ptr = const_cast<ValueType*>(Base::getInputBuffer().data());
-    input_ = _InputMappingType::create(input_ptr,
-                                       Base::input_shape_.height,
-                                       Base::input_shape_.width);
+    new (&input_) _InputMappingType(input_ptr, Base::input_shape_.height, Base::input_shape_.width);
 
     // Create input buffer map
     auto error_ptr = const_cast<ValueType*>(Base::getBackwardErrorBuffer().data());
-    backward_error_ = _InputMappingType::create(error_ptr,
-                                                Base::input_shape_.height,
-                                                Base::input_shape_.width);
-
-    FFNN_DEBUG_NAMED("layer::Hidden", "Created forward mappings.");
+    new (&backward_error_) _InputMappingType(error_ptr, Base::input_shape_.height, Base::input_shape_.width);
 
     // Resolve previous layer output buffers
     if (Base::connectInputLayers() == Base::inputSize())

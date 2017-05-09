@@ -12,7 +12,6 @@
 #include <ffnn/internal/traits/serializable.h>
 
 // FFNN
-#include <ffnn/aligned_types.h>
 #include <ffnn/config/global.h>
 #include <ffnn/layer/internal/interface.h>
 
@@ -40,6 +39,9 @@ public:
 
   /// Constant shared resource standardization
   typedef boost::shared_ptr<const Layer> ConstPtr;
+
+  /// Buffer type standardization
+  typedef std::vector<ValueType, Eigen::aligned_allocator<ValueType>> BufferType;
 
   /// Scalar type standardization
   typedef typename Base::ScalarType ScalarType;
@@ -96,12 +98,12 @@ public:
     return true;
   }
 
-  inline const aligned::Buffer<ValueType>& getInputBuffer() const
+  inline const BufferType& getInputBuffer() const
   {
     return input_buffer_;
   }
 
-  inline const aligned::Buffer<ValueType>& getBackwardErrorBuffer() const
+  inline const BufferType& getBackwardErrorBuffer() const
   {
     return backward_error_buffer_;
   }
@@ -140,10 +142,10 @@ protected:
   std::map<std::string, typename Layer<ValueType>::Ptr> prev_;
 
   /// Raw input value buffer
-  aligned::Buffer<ValueType> input_buffer_;
+  BufferType input_buffer_;
 
   /// Raw bakward error value buffer
-  aligned::Buffer<ValueType> backward_error_buffer_;
+  BufferType backward_error_buffer_;
 };
 }  // namespace layer
 }  // namespace ffnn

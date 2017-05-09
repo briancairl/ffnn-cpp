@@ -1,0 +1,82 @@
+\hypertarget{shape_8h}{\section{/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/internal/shape.h File Reference}
+\label{shape_8h}\index{/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/internal/shape.\-h@{/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/internal/shape.\-h}}
+}
+{\ttfamily \#include $<$ffnn/internal/traits/serializable.\-h$>$}\\*
+{\ttfamily \#include $<$ffnn/internal/signature.\-h$>$}\\*
+{\ttfamily \#include $<$ffnn/config/global.\-h$>$}\\*
+Include dependency graph for shape.\-h\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{shape_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{shape_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structffnn_1_1layer_1_1internal_1_1_shape}{ffnn\-::layer\-::internal\-::\-Shape$<$ Size\-Type $>$}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespaceffnn}{ffnn}
+\item 
+\hyperlink{namespaceffnn_1_1layer}{ffnn\-::layer}
+\item 
+\hyperlink{namespaceffnn_1_1layer_1_1internal}{ffnn\-::layer\-::internal}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{shape_8h_a67c7ed133a71d197d8fca368336d5aa7}{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C}(x)~(x == Eigen\-::\-Dynamic)
+\item 
+\#define \hyperlink{shape_8h_a0faa7f844e3841ae41c2baedf7680756}{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-T\-R\-I\-P\-L\-E\-T}(n, m, l)~(\hyperlink{shape_8h_a67c7ed133a71d197d8fca368336d5aa7}{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C}(n) $\vert$$\vert$ \hyperlink{shape_8h_a67c7ed133a71d197d8fca368336d5aa7}{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C}(m) $\vert$$\vert$ \hyperlink{shape_8h_a67c7ed133a71d197d8fca368336d5aa7}{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C}(l))
+\item 
+\#define \hyperlink{shape_8h_a90ee0b2faa8ee8ce36a3b08bd4212fe8}{P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-T\-R\-I\-P\-L\-E\-T}(n, m, l)~(\hyperlink{shape_8h_a0faa7f844e3841ae41c2baedf7680756}{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-T\-R\-I\-P\-L\-E\-T}(n, m, l) ? Eigen\-::\-Dynamic \-: (n$\ast$m$\ast$l))
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Size\-Type $>$ }\\std\-::ostream \& \hyperlink{namespaceffnn_1_1layer_1_1internal_a60e6be53b5701e3389204e5b1aaaf9ae}{ffnn\-::layer\-::internal\-::operator$<$$<$} (std\-::ostream \&os, const Shape$<$ Size\-Type $>$ \&dim)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{shape_8h_a67c7ed133a71d197d8fca368336d5aa7}{\index{shape.\-h@{shape.\-h}!I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C@{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C}}
+\index{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C@{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C}!shape.h@{shape.\-h}}
+\subsubsection[{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~(x == Eigen\-::\-Dynamic)}}\label{shape_8h_a67c7ed133a71d197d8fca368336d5aa7}
+\hypertarget{shape_8h_a0faa7f844e3841ae41c2baedf7680756}{\index{shape.\-h@{shape.\-h}!I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-T\-R\-I\-P\-L\-E\-T@{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-T\-R\-I\-P\-L\-E\-T}}
+\index{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-T\-R\-I\-P\-L\-E\-T@{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-T\-R\-I\-P\-L\-E\-T}!shape.h@{shape.\-h}}
+\subsubsection[{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-T\-R\-I\-P\-L\-E\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-T\-R\-I\-P\-L\-E\-T(
+\begin{DoxyParamCaption}
+\item[{}]{n, }
+\item[{}]{m, }
+\item[{}]{l}
+\end{DoxyParamCaption}
+)~({\bf I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C}(n) $\vert$$\vert$ {\bf I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C}(m) $\vert$$\vert$ {\bf I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C}(l))}}\label{shape_8h_a0faa7f844e3841ae41c2baedf7680756}
+\hypertarget{shape_8h_a90ee0b2faa8ee8ce36a3b08bd4212fe8}{\index{shape.\-h@{shape.\-h}!P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-T\-R\-I\-P\-L\-E\-T@{P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-T\-R\-I\-P\-L\-E\-T}}
+\index{P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-T\-R\-I\-P\-L\-E\-T@{P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-T\-R\-I\-P\-L\-E\-T}!shape.h@{shape.\-h}}
+\subsubsection[{P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-T\-R\-I\-P\-L\-E\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-T\-R\-I\-P\-L\-E\-T(
+\begin{DoxyParamCaption}
+\item[{}]{n, }
+\item[{}]{m, }
+\item[{}]{l}
+\end{DoxyParamCaption}
+)~({\bf I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-T\-R\-I\-P\-L\-E\-T}(n, m, l) ? Eigen\-::\-Dynamic \-: (n$\ast$m$\ast$l))}}\label{shape_8h_a90ee0b2faa8ee8ce36a3b08bd4212fe8}
+
+
+Referenced by ffnn\-::layer\-::internal\-::\-Shape$<$ Size\-Type $>$\-::size(), and ffnn\-::layer\-::internal\-::\-Shape$<$ Size\-Type $>$\-::valid().
+

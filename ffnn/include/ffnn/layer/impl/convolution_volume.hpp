@@ -50,7 +50,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE EmbeddingMode>
 CONVOLUTION_VOLUME::ConvolutionVolume(const ShapeType& filter_shape, const SizeType& filter_count) :
   Base(filter_shape, ShapeType(1, 1, filter_count)),
-  bank_(filter_count)
+  filters_(filter_count)
 {}
 
 template<typename ValueType,
@@ -60,7 +60,9 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE EmbeddingMode>
 CONVOLUTION_VOLUME::~ConvolutionVolume()
-{}
+{
+  FFNN_INTERNAL_DEBUG_NAMED("ConvolutionVolume", "Destroying [layer::ConvolutionVolume] object <" << this->getID() << ">");
+}
 
 template<typename ValueType,
          FFNN_SIZE_TYPE HeightAtCompileTime,
@@ -120,11 +122,11 @@ void CONVOLUTION_VOLUME::reset(const Parameters& config)
     (Base::input_shape_.width * Base::input_shape_.depth) : Base::input_shape_.width;
 
   // Initializer all filters
-  bank_.setRandom(f_h, f_w);
-  bank_ *= config.init_weight_std;
+  filters_.setRandom(f_h, f_w);
+  filters_ *= config.init_weight_std;
   if (std::abs(config.init_weight_mean) > 0)
   {
-    bank_ += config.init_weight_mean;
+    filters_ += config.init_weight_mean;
   }
 
   // Set uniformly random bias matrix + add biases
@@ -147,13 +149,14 @@ void CONVOLUTION_VOLUME::forward(const Eigen::MatrixBase<InputBlockType>& input,
                                  Eigen::MatrixBase<OutputBlockType> const& output)
 {
   // @see https://eigen.tuxfamily.org/dox/TopicFunctionTakingEigenTypes.html
-  auto _output = const_cast<Eigen::MatrixBase<OutputBlockType>&>(output);
+  Eigen::MatrixBase<OutputBlockType>& _output =
+    const_cast<Eigen::MatrixBase<OutputBlockType>&>(output);
 
   // Multiply all filters
   BiasVectorType filtered(Base::output_shape_.depth, 1);
-  for (size_t idx = 0; idx < bank_.filters.size(); idx++)
+  for (size_t idx = 0; idx < filters_.size(); idx++)
   {
-    filtered(idx) = (input.array() * bank_.filters[idx].array()).sum();
+    filtered(idx) = (input.array() * filters_[idx].array()).sum();
   }
 
   // @see https://eigen.tuxfamily.org/dox/TopicFunctionTakingEigenTypes.html
@@ -199,7 +202,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE EmbeddingMode>
 void CONVOLUTION_VOLUME::load(typename CONVOLUTION_VOLUME::InputArchive& ar,
-                            typename CONVOLUTION_VOLUME::VersionType version)
+                              typename CONVOLUTION_VOLUME::VersionType version)
 {
   ffnn::io::signature::check<CONVOLUTION_VOLUME>(ar);
   Base::load(ar, version);

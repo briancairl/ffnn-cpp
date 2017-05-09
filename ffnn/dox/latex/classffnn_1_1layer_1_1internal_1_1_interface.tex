@@ -12,7 +12,8 @@ Base object for all layer types.
 
 
 
-Inheritance diagram for ffnn\-:\-:layer\-:\-:internal\-:\-:Interface$<$ Value\-Type $>$\-:\nopagebreak
+Inheritance diagram for ffnn\-:\-:layer\-:\-:internal\-:\-:Interface$<$ Value\-Type $>$\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -37,12 +38,12 @@ typedef \hyperlink{global_8h_aab5a5a098c5bf31f4176f4a141d2ef65}{F\-F\-N\-N\-\_\-
 \begin{DoxyCompactList}\small\item\em Size type standardization. \end{DoxyCompactList}\item 
 typedef \hyperlink{global_8h_af04b6e835b960cffc7ed05dfd1685ba0}{F\-F\-N\-N\-\_\-\-O\-F\-F\-S\-E\-T\-\_\-\-T\-Y\-P\-E} \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_adc5bb454329ebd51ac26579a43c006fd}{Offset\-Type}
 \begin{DoxyCompactList}\small\item\em Offset type standardization. \end{DoxyCompactList}\item 
-typedef \hyperlink{structffnn_1_1layer_1_1internal_1_1_dimensions}{Dimensions}$<$ \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_af0567642f60c65b5e87067226a54174b}{Size\-Type} $>$ \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a8d121d0103f254b51e48f7b20a17681f}{Dim\-Type}
+typedef \hyperlink{structffnn_1_1layer_1_1internal_1_1_shape}{Shape}$<$ \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_af0567642f60c65b5e87067226a54174b}{Size\-Type} $>$ \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a945709b1d0ea54a51539b80d04485f5f}{Shape\-Type}
 \begin{DoxyCompactList}\small\item\em Dimension type standardization. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_aa99ab267db32eb48f2a3f9a2b76a2412}{Interface} (const \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a8d121d0103f254b51e48f7b20a17681f}{Dim\-Type} \&input\-\_\-dim=\hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a8d121d0103f254b51e48f7b20a17681f}{Dim\-Type}(Eigen\-::\-Dynamic), const \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a8d121d0103f254b51e48f7b20a17681f}{Dim\-Type} \&output\-\_\-dim=\hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a8d121d0103f254b51e48f7b20a17681f}{Dim\-Type}(Eigen\-::\-Dynamic))
+\hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a8cd5a34202113edec18a64518d67b76f}{Interface} (const \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a945709b1d0ea54a51539b80d04485f5f}{Shape\-Type} \&input\-\_\-shape=\hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a945709b1d0ea54a51539b80d04485f5f}{Shape\-Type}(Eigen\-::\-Dynamic), const \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a945709b1d0ea54a51539b80d04485f5f}{Shape\-Type} \&output\-\_\-shape=\hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a945709b1d0ea54a51539b80d04485f5f}{Shape\-Type}(Eigen\-::\-Dynamic))
 \item 
 virtual \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a87499fd55b6612a35a1af5b13b851a55}{$\sim$\-Interface} ()
 \item 
@@ -50,9 +51,9 @@ virtual \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a87499fd55b6612a
 \begin{DoxyCompactList}\small\item\em Returns the total number of \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface}{Interface} inputs. \end{DoxyCompactList}\item 
 \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_af0567642f60c65b5e87067226a54174b}{Size\-Type} \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a3578b4137e24bd8992cdc8dd6def0745}{output\-Size} () const 
 \begin{DoxyCompactList}\small\item\em Returns the total number of \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface}{Interface} outputs. \end{DoxyCompactList}\item 
-const \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a8d121d0103f254b51e48f7b20a17681f}{Dim\-Type} \& \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a9b437482b1478c0b8fc492dd480908ea}{input\-Dim} () const 
+const \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a945709b1d0ea54a51539b80d04485f5f}{Shape\-Type} \& \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_ac1fdda72086fe9c9bb05c2211fc9f050}{input\-Shape} () const 
 \begin{DoxyCompactList}\small\item\em Returns the \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface}{Interface} input dimension oject. \end{DoxyCompactList}\item 
-const \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a8d121d0103f254b51e48f7b20a17681f}{Dim\-Type} \& \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_aaa3e0e1735cbc17f9032573782f4e098}{output\-Dim} () const 
+const \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a945709b1d0ea54a51539b80d04485f5f}{Shape\-Type} \& \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a05233a4b8e763ea17c58f45c480add35}{output\-Shape} () const 
 \begin{DoxyCompactList}\small\item\em Returns the \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface}{Interface} output dimension oject. \end{DoxyCompactList}\item 
 virtual \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_af0567642f60c65b5e87067226a54174b}{Size\-Type} \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_aae590ebe90408887805743c5e364dd45}{evaluate\-Input\-Size} () const 
 \begin{DoxyCompactList}\small\item\em Returns the total number counted (evaluated) inputs. \end{DoxyCompactList}\item 
@@ -76,9 +77,9 @@ bool \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a48c80e6608e9e20dfe
 \begin{DoxyCompactList}\small\item\em Flags which indicated that layer has been initialized. \end{DoxyCompactList}\item 
 bool \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a57f0de55599c9b6621a66096b5662ca8}{setup\-\_\-required\-\_\-}
 \begin{DoxyCompactList}\small\item\em Flags which indicates that layer should be initialized normally. \end{DoxyCompactList}\item 
-\hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a8d121d0103f254b51e48f7b20a17681f}{Dim\-Type} \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_aa011c369e00d2b78a87b94904e596f15}{input\-\_\-dim\-\_\-}
+\hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a945709b1d0ea54a51539b80d04485f5f}{Shape\-Type} \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a3b9f183881a6aed198c566ecbf0177f7}{input\-\_\-shape\-\_\-}
 \begin{DoxyCompactList}\small\item\em Total number of input connections. \end{DoxyCompactList}\item 
-\hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a8d121d0103f254b51e48f7b20a17681f}{Dim\-Type} \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a2540e4455843a2100efe4c7de9a62df0}{output\-\_\-dim\-\_\-}
+\hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a945709b1d0ea54a51539b80d04485f5f}{Shape\-Type} \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_aac8cae47508ba37964d11754e181813a}{output\-\_\-shape\-\_\-}
 \begin{DoxyCompactList}\small\item\em Total number of output connections. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -88,13 +89,6 @@ bool \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a57f0de55599c9b6621
 Base object for all layer types. 
 
 \subsection{Member Typedef Documentation}
-\hypertarget{classffnn_1_1layer_1_1internal_1_1_interface_a8d121d0103f254b51e48f7b20a17681f}{\index{ffnn\-::layer\-::internal\-::\-Interface@{ffnn\-::layer\-::internal\-::\-Interface}!Dim\-Type@{Dim\-Type}}
-\index{Dim\-Type@{Dim\-Type}!ffnn::layer::internal::Interface@{ffnn\-::layer\-::internal\-::\-Interface}}
-\subsubsection[{Dim\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type$>$ typedef {\bf Dimensions}$<${\bf Size\-Type}$>$ {\bf ffnn\-::layer\-::internal\-::\-Interface}$<$ Value\-Type $>$\-::{\bf Dim\-Type}}}\label{classffnn_1_1layer_1_1internal_1_1_interface_a8d121d0103f254b51e48f7b20a17681f}
-
-
-Dimension type standardization. 
-
 \hypertarget{classffnn_1_1layer_1_1internal_1_1_interface_adc5bb454329ebd51ac26579a43c006fd}{\index{ffnn\-::layer\-::internal\-::\-Interface@{ffnn\-::layer\-::internal\-::\-Interface}!Offset\-Type@{Offset\-Type}}
 \index{Offset\-Type@{Offset\-Type}!ffnn::layer::internal::Interface@{ffnn\-::layer\-::internal\-::\-Interface}}
 \subsubsection[{Offset\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type$>$ typedef {\bf F\-F\-N\-N\-\_\-\-O\-F\-F\-S\-E\-T\-\_\-\-T\-Y\-P\-E} {\bf ffnn\-::layer\-::internal\-::\-Interface}$<$ Value\-Type $>$\-::{\bf Offset\-Type}}}\label{classffnn_1_1layer_1_1internal_1_1_interface_adc5bb454329ebd51ac26579a43c006fd}
@@ -109,6 +103,13 @@ Offset type standardization.
 
 Scalar type standardization. 
 
+\hypertarget{classffnn_1_1layer_1_1internal_1_1_interface_a945709b1d0ea54a51539b80d04485f5f}{\index{ffnn\-::layer\-::internal\-::\-Interface@{ffnn\-::layer\-::internal\-::\-Interface}!Shape\-Type@{Shape\-Type}}
+\index{Shape\-Type@{Shape\-Type}!ffnn::layer::internal::Interface@{ffnn\-::layer\-::internal\-::\-Interface}}
+\subsubsection[{Shape\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type$>$ typedef {\bf Shape}$<${\bf Size\-Type}$>$ {\bf ffnn\-::layer\-::internal\-::\-Interface}$<$ Value\-Type $>$\-::{\bf Shape\-Type}}}\label{classffnn_1_1layer_1_1internal_1_1_interface_a945709b1d0ea54a51539b80d04485f5f}
+
+
+Dimension type standardization. 
+
 \hypertarget{classffnn_1_1layer_1_1internal_1_1_interface_af0567642f60c65b5e87067226a54174b}{\index{ffnn\-::layer\-::internal\-::\-Interface@{ffnn\-::layer\-::internal\-::\-Interface}!Size\-Type@{Size\-Type}}
 \index{Size\-Type@{Size\-Type}!ffnn::layer::internal::Interface@{ffnn\-::layer\-::internal\-::\-Interface}}
 \subsubsection[{Size\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type$>$ typedef {\bf F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E} {\bf ffnn\-::layer\-::internal\-::\-Interface}$<$ Value\-Type $>$\-::{\bf Size\-Type}}}\label{classffnn_1_1layer_1_1internal_1_1_interface_af0567642f60c65b5e87067226a54174b}
@@ -119,14 +120,14 @@ Size type standardization.
 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classffnn_1_1layer_1_1internal_1_1_interface_aa99ab267db32eb48f2a3f9a2b76a2412}{\index{ffnn\-::layer\-::internal\-::\-Interface@{ffnn\-::layer\-::internal\-::\-Interface}!Interface@{Interface}}
+\hypertarget{classffnn_1_1layer_1_1internal_1_1_interface_a8cd5a34202113edec18a64518d67b76f}{\index{ffnn\-::layer\-::internal\-::\-Interface@{ffnn\-::layer\-::internal\-::\-Interface}!Interface@{Interface}}
 \index{Interface@{Interface}!ffnn::layer::internal::Interface@{ffnn\-::layer\-::internal\-::\-Interface}}
 \subsubsection[{Interface}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type$>$ {\bf ffnn\-::layer\-::internal\-::\-Interface}$<$ Value\-Type $>$\-::{\bf Interface} (
 \begin{DoxyParamCaption}
-\item[{const {\bf Dim\-Type} \&}]{input\-\_\-dim = {\ttfamily {\bf Dim\-Type}(Eigen\-:\-:Dynamic)}, }
-\item[{const {\bf Dim\-Type} \&}]{output\-\_\-dim = {\ttfamily {\bf Dim\-Type}(Eigen\-:\-:Dynamic)}}
+\item[{const {\bf Shape\-Type} \&}]{input\-\_\-shape = {\ttfamily {\bf Shape\-Type}(Eigen\-:\-:Dynamic)}, }
+\item[{const {\bf Shape\-Type} \&}]{output\-\_\-shape = {\ttfamily {\bf Shape\-Type}(Eigen\-:\-:Dynamic)}}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{classffnn_1_1layer_1_1internal_1_1_interface_aa99ab267db32eb48f2a3f9a2b76a2412}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{classffnn_1_1layer_1_1internal_1_1_interface_a8cd5a34202113edec18a64518d67b76f}
 \hypertarget{classffnn_1_1layer_1_1internal_1_1_interface_a87499fd55b6612a35a1af5b13b851a55}{\index{ffnn\-::layer\-::internal\-::\-Interface@{ffnn\-::layer\-::internal\-::\-Interface}!$\sim$\-Interface@{$\sim$\-Interface}}
 \index{$\sim$\-Interface@{$\sim$\-Interface}!ffnn::layer::internal::Interface@{ffnn\-::layer\-::internal\-::\-Interface}}
 \subsubsection[{$\sim$\-Interface}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type$>$ virtual {\bf ffnn\-::layer\-::internal\-::\-Interface}$<$ Value\-Type $>$\-::$\sim${\bf Interface} (
@@ -150,7 +151,19 @@ Returns the total number counted (evaluated) inputs.
 
 
 
-Reimplemented in \hyperlink{classffnn_1_1layer_1_1_layer_afdc489e04b2b1e716940f598ac474e4c}{ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$}, and \hyperlink{classffnn_1_1layer_1_1_layer_afdc489e04b2b1e716940f598ac474e4c}{ffnn\-::layer\-::\-Layer$<$ C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-B\-A\-S\-E\-\_\-\-T\-A\-R\-G\-S $>$}.
+Reimplemented in \hyperlink{classffnn_1_1layer_1_1_layer_afdc489e04b2b1e716940f598ac474e4c}{ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$}.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classffnn_1_1layer_1_1internal_1_1_interface_aae590ebe90408887805743c5e364dd45_cgraph}
+\end{center}
+\end{figure}
+
 
 \hypertarget{classffnn_1_1layer_1_1internal_1_1_interface_a4159d9d163a0bd5287cc02c91b5baba8}{\index{ffnn\-::layer\-::internal\-::\-Interface@{ffnn\-::layer\-::internal\-::\-Interface}!initialize@{initialize}}
 \index{initialize@{initialize}!ffnn::layer::internal::Interface@{ffnn\-::layer\-::internal\-::\-Interface}}
@@ -165,15 +178,15 @@ Initialize the layer.
 
 
 
-Implemented in \hyperlink{classffnn_1_1layer_1_1_receptive_volume_a0fc5e18276c0f5d9f052d4a92349ca48}{ffnn\-::layer\-::\-Receptive\-Volume$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Embedding\-Mode $>$}, \hyperlink{classffnn_1_1layer_1_1_convolution_a158af9a753113ac55730abd7b56b8684}{ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride, Embedding\-Mode $>$}, \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_abb2966b5e7813c43ae2ea5448188a9fb}{ffnn\-::layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$}, \hyperlink{classffnn_1_1layer_1_1_fully_connected_aec414194202f845b866b0e8b2a51235c}{ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$}, \hyperlink{classffnn_1_1layer_1_1_hidden_a3b5458a771fcf2371376049d85afbc92}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type, \-\_\-\-Input\-Mapping\-Type, \-\_\-\-Output\-Mapping\-Type $>$}, \hyperlink{classffnn_1_1layer_1_1_hidden_a3b5458a771fcf2371376049d85afbc92}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, Inputs\-At\-Compile\-Time, 1, Outputs\-At\-Compile\-Time, 1 $>$}, \hyperlink{classffnn_1_1layer_1_1_hidden_a3b5458a771fcf2371376049d85afbc92}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, Size\-At\-Compile\-Time, 1, Size\-At\-Compile\-Time, 1 $>$}, \hyperlink{classffnn_1_1layer_1_1_hidden_a3b5458a771fcf2371376049d85afbc92}{ffnn\-::layer\-::\-Hidden$<$ C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-B\-A\-S\-E\-\_\-\-T\-A\-R\-G\-S $>$}, \hyperlink{classffnn_1_1layer_1_1_layer_ae8a7daa81382a7965b8ab8861da7e522}{ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$}, \hyperlink{classffnn_1_1layer_1_1_layer_ae8a7daa81382a7965b8ab8861da7e522}{ffnn\-::layer\-::\-Layer$<$ C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-B\-A\-S\-E\-\_\-\-T\-A\-R\-G\-S $>$}, \hyperlink{classffnn_1_1layer_1_1_input_ac3de713973a8f67dc348a088ab6dbe1c}{ffnn\-::layer\-::\-Input$<$ Value\-Type, Network\-Inputs\-At\-Compile\-Time $>$}, \hyperlink{classffnn_1_1layer_1_1_activation_ae73ef2d36d9c5ce3c219f6a51cba3c35}{ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time $>$}, and \hyperlink{classffnn_1_1layer_1_1_output_ab9ebd05595bc6b75718191aa48e70ad2}{ffnn\-::layer\-::\-Output$<$ Value\-Type, Network\-Outputs\-At\-Compile\-Time $>$}.
+Implemented in \hyperlink{classffnn_1_1layer_1_1_convolution_volume_aff627131f0cd431b30ee95686c7c317e}{ffnn\-::layer\-::\-Convolution\-Volume$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Embedding\-Mode $>$}, \hyperlink{classffnn_1_1layer_1_1_receptive_volume_a0fc5e18276c0f5d9f052d4a92349ca48}{ffnn\-::layer\-::\-Receptive\-Volume$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Embedding\-Mode $>$}, \hyperlink{classffnn_1_1layer_1_1_convolution_aaeb9c11d69a2d37fbbe4d8d3313953d5}{ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Embedding\-Mode $>$}, \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_abb2966b5e7813c43ae2ea5448188a9fb}{ffnn\-::layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$}, \hyperlink{classffnn_1_1layer_1_1_fully_connected_aec414194202f845b866b0e8b2a51235c}{ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$}, \hyperlink{classffnn_1_1layer_1_1_hidden_a3b5458a771fcf2371376049d85afbc92}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type, \-\_\-\-Input\-Mapping\-Type, \-\_\-\-Output\-Mapping\-Type $>$}, \hyperlink{classffnn_1_1layer_1_1_hidden_a3b5458a771fcf2371376049d85afbc92}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, C\-O\-N\-V\-\_\-\-E\-M\-B\-E\-D\-D\-E\-D\-\_\-\-H(\-Height\-At\-Compile\-Time, Depth\-At\-Compile\-Time), C\-O\-N\-V\-\_\-\-E\-M\-B\-E\-D\-D\-E\-D\-\_\-\-W(\-Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time), C\-O\-N\-V\-\_\-\-E\-M\-B\-E\-D\-D\-E\-D\-\_\-\-H(\-C\-O\-N\-V\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-W\-I\-T\-H\-\_\-\-S\-T\-R\-I\-D\-E(\-Height\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Stride\-At\-Compile\-Time), Filter\-Count\-At\-Compile\-Time), C\-O\-N\-V\-\_\-\-E\-M\-B\-E\-D\-D\-E\-D\-\_\-\-W(\-C\-O\-N\-V\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-W\-I\-T\-H\-\_\-\-S\-T\-R\-I\-D\-E(\-Width\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Stride\-At\-Compile\-Time), Filter\-Count\-At\-Compile\-Time)$>$}, \hyperlink{classffnn_1_1layer_1_1_hidden_a3b5458a771fcf2371376049d85afbc92}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, Inputs\-At\-Compile\-Time, 1, Outputs\-At\-Compile\-Time, 1 $>$}, \hyperlink{classffnn_1_1layer_1_1_hidden_a3b5458a771fcf2371376049d85afbc92}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, Size\-At\-Compile\-Time, 1, Size\-At\-Compile\-Time, 1 $>$}, \hyperlink{classffnn_1_1layer_1_1_layer_ae8a7daa81382a7965b8ab8861da7e522}{ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$}, \hyperlink{classffnn_1_1layer_1_1_input_ac3de713973a8f67dc348a088ab6dbe1c}{ffnn\-::layer\-::\-Input$<$ Value\-Type, Network\-Inputs\-At\-Compile\-Time $>$}, \hyperlink{classffnn_1_1layer_1_1_activation_ae73ef2d36d9c5ce3c219f6a51cba3c35}{ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time $>$}, and \hyperlink{classffnn_1_1layer_1_1_output_ab9ebd05595bc6b75718191aa48e70ad2}{ffnn\-::layer\-::\-Output$<$ Value\-Type, Network\-Outputs\-At\-Compile\-Time $>$}.
 
-\hypertarget{classffnn_1_1layer_1_1internal_1_1_interface_a9b437482b1478c0b8fc492dd480908ea}{\index{ffnn\-::layer\-::internal\-::\-Interface@{ffnn\-::layer\-::internal\-::\-Interface}!input\-Dim@{input\-Dim}}
-\index{input\-Dim@{input\-Dim}!ffnn::layer::internal::Interface@{ffnn\-::layer\-::internal\-::\-Interface}}
-\subsubsection[{input\-Dim}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type$>$ const {\bf Dim\-Type}\& {\bf ffnn\-::layer\-::internal\-::\-Interface}$<$ Value\-Type $>$\-::input\-Dim (
+\hypertarget{classffnn_1_1layer_1_1internal_1_1_interface_ac1fdda72086fe9c9bb05c2211fc9f050}{\index{ffnn\-::layer\-::internal\-::\-Interface@{ffnn\-::layer\-::internal\-::\-Interface}!input\-Shape@{input\-Shape}}
+\index{input\-Shape@{input\-Shape}!ffnn::layer::internal::Interface@{ffnn\-::layer\-::internal\-::\-Interface}}
+\subsubsection[{input\-Shape}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type$>$ const {\bf Shape\-Type}\& {\bf ffnn\-::layer\-::internal\-::\-Interface}$<$ Value\-Type $>$\-::input\-Shape (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1internal_1_1_interface_a9b437482b1478c0b8fc492dd480908ea}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1internal_1_1_interface_ac1fdda72086fe9c9bb05c2211fc9f050}
 
 
 Returns the \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface}{Interface} input dimension oject. 
@@ -188,6 +201,18 @@ Returns the \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface}{Interface} 
 
 
 Returns the total number of \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface}{Interface} inputs. 
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{classffnn_1_1layer_1_1internal_1_1_interface_a6de2e5a7e17c266f52d695ccf8e0b379_cgraph}
+\end{center}
+\end{figure}
+
 
 \hypertarget{classffnn_1_1layer_1_1internal_1_1_interface_a67cf9f89a90eadca6f9ec82dd66bd940}{\index{ffnn\-::layer\-::internal\-::\-Interface@{ffnn\-::layer\-::internal\-::\-Interface}!is\-Initialized@{is\-Initialized}}
 \index{is\-Initialized@{is\-Initialized}!ffnn::layer::internal::Interface@{ffnn\-::layer\-::internal\-::\-Interface}}
@@ -209,7 +234,7 @@ Returns true if layer has been initialized.
 \end{DoxyRetVals}
 
 
-Referenced by ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::backward(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::backward(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::forward(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::forward(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::initialize(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::initialize(), ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride, Embedding\-Mode $>$\-::initialize(), ffnn\-::optimizer\-::\-Adam$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::update(), ffnn\-::optimizer\-::\-Adam$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::update(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::update(), and ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::update().
+Referenced by ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::backward(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::backward(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::forward(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::forward(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::initialize(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::initialize(), ffnn\-::optimizer\-::\-Adam$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::update(), ffnn\-::optimizer\-::\-Adam$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::update(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::update(), and ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::update().
 
 \hypertarget{classffnn_1_1layer_1_1internal_1_1_interface_a88b5bd86aafd361d3a84dc6cba211195}{\index{ffnn\-::layer\-::internal\-::\-Interface@{ffnn\-::layer\-::internal\-::\-Interface}!load@{load}}
 \index{load@{load}!ffnn::layer::internal::Interface@{ffnn\-::layer\-::internal\-::\-Interface}}
@@ -229,15 +254,27 @@ Reimplemented from \hyperlink{classffnn_1_1traits_1_1_unique_af1e937c2908ed2ff70
 
 
 
-Reimplemented in \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_a0996cd78dc2f76cab36fac2ec5c8f323}{ffnn\-::layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$}, \hyperlink{classffnn_1_1layer_1_1_receptive_volume_aebfd8f149057b061d6880669376175e3}{ffnn\-::layer\-::\-Receptive\-Volume$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Embedding\-Mode $>$}, \hyperlink{classffnn_1_1layer_1_1_layer_a23f5f3c958d888632010327471c7b012}{ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$}, \hyperlink{classffnn_1_1layer_1_1_layer_a23f5f3c958d888632010327471c7b012}{ffnn\-::layer\-::\-Layer$<$ C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-B\-A\-S\-E\-\_\-\-T\-A\-R\-G\-S $>$}, \hyperlink{classffnn_1_1layer_1_1_hidden_a696f61b2d9b661b7a8d6bdb3dc32b536}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, Inputs\-At\-Compile\-Time, 1, Outputs\-At\-Compile\-Time, 1 $>$}, and \hyperlink{classffnn_1_1layer_1_1_hidden_a696f61b2d9b661b7a8d6bdb3dc32b536}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, Size\-At\-Compile\-Time, 1, Size\-At\-Compile\-Time, 1 $>$}.
+Reimplemented in \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_a0996cd78dc2f76cab36fac2ec5c8f323}{ffnn\-::layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$}, \hyperlink{classffnn_1_1layer_1_1_receptive_volume_aebfd8f149057b061d6880669376175e3}{ffnn\-::layer\-::\-Receptive\-Volume$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Embedding\-Mode $>$}, \hyperlink{classffnn_1_1layer_1_1_layer_a23f5f3c958d888632010327471c7b012}{ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$}, \hyperlink{classffnn_1_1layer_1_1_hidden_a696f61b2d9b661b7a8d6bdb3dc32b536}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, C\-O\-N\-V\-\_\-\-E\-M\-B\-E\-D\-D\-E\-D\-\_\-\-H(\-Height\-At\-Compile\-Time, Depth\-At\-Compile\-Time), C\-O\-N\-V\-\_\-\-E\-M\-B\-E\-D\-D\-E\-D\-\_\-\-W(\-Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time), C\-O\-N\-V\-\_\-\-E\-M\-B\-E\-D\-D\-E\-D\-\_\-\-H(\-C\-O\-N\-V\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-W\-I\-T\-H\-\_\-\-S\-T\-R\-I\-D\-E(\-Height\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Stride\-At\-Compile\-Time), Filter\-Count\-At\-Compile\-Time), C\-O\-N\-V\-\_\-\-E\-M\-B\-E\-D\-D\-E\-D\-\_\-\-W(\-C\-O\-N\-V\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-W\-I\-T\-H\-\_\-\-S\-T\-R\-I\-D\-E(\-Width\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Stride\-At\-Compile\-Time), Filter\-Count\-At\-Compile\-Time)$>$}, \hyperlink{classffnn_1_1layer_1_1_hidden_a696f61b2d9b661b7a8d6bdb3dc32b536}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, Inputs\-At\-Compile\-Time, 1, Outputs\-At\-Compile\-Time, 1 $>$}, and \hyperlink{classffnn_1_1layer_1_1_hidden_a696f61b2d9b661b7a8d6bdb3dc32b536}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, Size\-At\-Compile\-Time, 1, Size\-At\-Compile\-Time, 1 $>$}.
 
-\hypertarget{classffnn_1_1layer_1_1internal_1_1_interface_aaa3e0e1735cbc17f9032573782f4e098}{\index{ffnn\-::layer\-::internal\-::\-Interface@{ffnn\-::layer\-::internal\-::\-Interface}!output\-Dim@{output\-Dim}}
-\index{output\-Dim@{output\-Dim}!ffnn::layer::internal::Interface@{ffnn\-::layer\-::internal\-::\-Interface}}
-\subsubsection[{output\-Dim}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type$>$ const {\bf Dim\-Type}\& {\bf ffnn\-::layer\-::internal\-::\-Interface}$<$ Value\-Type $>$\-::output\-Dim (
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{classffnn_1_1layer_1_1internal_1_1_interface_a88b5bd86aafd361d3a84dc6cba211195_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classffnn_1_1layer_1_1internal_1_1_interface_a05233a4b8e763ea17c58f45c480add35}{\index{ffnn\-::layer\-::internal\-::\-Interface@{ffnn\-::layer\-::internal\-::\-Interface}!output\-Shape@{output\-Shape}}
+\index{output\-Shape@{output\-Shape}!ffnn::layer::internal::Interface@{ffnn\-::layer\-::internal\-::\-Interface}}
+\subsubsection[{output\-Shape}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type$>$ const {\bf Shape\-Type}\& {\bf ffnn\-::layer\-::internal\-::\-Interface}$<$ Value\-Type $>$\-::output\-Shape (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1internal_1_1_interface_aaa3e0e1735cbc17f9032573782f4e098}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1internal_1_1_interface_a05233a4b8e763ea17c58f45c480add35}
 
 
 Returns the \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface}{Interface} output dimension oject. 
@@ -252,6 +289,18 @@ Returns the \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface}{Interface} 
 
 
 Returns the total number of \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface}{Interface} outputs. 
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{classffnn_1_1layer_1_1internal_1_1_interface_a3578b4137e24bd8992cdc8dd6def0745_cgraph}
+\end{center}
+\end{figure}
+
 
 \hypertarget{classffnn_1_1layer_1_1internal_1_1_interface_a417d6fda112fdffed8091b0ebd78ed97}{\index{ffnn\-::layer\-::internal\-::\-Interface@{ffnn\-::layer\-::internal\-::\-Interface}!save@{save}}
 \index{save@{save}!ffnn::layer::internal::Interface@{ffnn\-::layer\-::internal\-::\-Interface}}
@@ -271,7 +320,19 @@ Reimplemented from \hyperlink{classffnn_1_1traits_1_1_unique_ad8be6fcb9a7519603b
 
 
 
-Reimplemented in \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_aa8ae358e7cf06b58f3d33be2851d0260}{ffnn\-::layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$}, \hyperlink{classffnn_1_1layer_1_1_receptive_volume_a9f813e0c5c60d572a296b8ec1fc25086}{ffnn\-::layer\-::\-Receptive\-Volume$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Embedding\-Mode $>$}, \hyperlink{classffnn_1_1layer_1_1_layer_ac265fc929a178b111337226dd1cb62b6}{ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$}, \hyperlink{classffnn_1_1layer_1_1_layer_ac265fc929a178b111337226dd1cb62b6}{ffnn\-::layer\-::\-Layer$<$ C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-B\-A\-S\-E\-\_\-\-T\-A\-R\-G\-S $>$}, \hyperlink{classffnn_1_1layer_1_1_hidden_a98305185267a0f7953f1b53c4bce4cf6}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, Inputs\-At\-Compile\-Time, 1, Outputs\-At\-Compile\-Time, 1 $>$}, and \hyperlink{classffnn_1_1layer_1_1_hidden_a98305185267a0f7953f1b53c4bce4cf6}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, Size\-At\-Compile\-Time, 1, Size\-At\-Compile\-Time, 1 $>$}.
+Reimplemented in \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_aa8ae358e7cf06b58f3d33be2851d0260}{ffnn\-::layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$}, \hyperlink{classffnn_1_1layer_1_1_receptive_volume_a9f813e0c5c60d572a296b8ec1fc25086}{ffnn\-::layer\-::\-Receptive\-Volume$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Embedding\-Mode $>$}, \hyperlink{classffnn_1_1layer_1_1_layer_ac265fc929a178b111337226dd1cb62b6}{ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$}, \hyperlink{classffnn_1_1layer_1_1_hidden_a98305185267a0f7953f1b53c4bce4cf6}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, C\-O\-N\-V\-\_\-\-E\-M\-B\-E\-D\-D\-E\-D\-\_\-\-H(\-Height\-At\-Compile\-Time, Depth\-At\-Compile\-Time), C\-O\-N\-V\-\_\-\-E\-M\-B\-E\-D\-D\-E\-D\-\_\-\-W(\-Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time), C\-O\-N\-V\-\_\-\-E\-M\-B\-E\-D\-D\-E\-D\-\_\-\-H(\-C\-O\-N\-V\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-W\-I\-T\-H\-\_\-\-S\-T\-R\-I\-D\-E(\-Height\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Stride\-At\-Compile\-Time), Filter\-Count\-At\-Compile\-Time), C\-O\-N\-V\-\_\-\-E\-M\-B\-E\-D\-D\-E\-D\-\_\-\-W(\-C\-O\-N\-V\-\_\-\-L\-E\-N\-G\-T\-H\-\_\-\-W\-I\-T\-H\-\_\-\-S\-T\-R\-I\-D\-E(\-Width\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Stride\-At\-Compile\-Time), Filter\-Count\-At\-Compile\-Time)$>$}, \hyperlink{classffnn_1_1layer_1_1_hidden_a98305185267a0f7953f1b53c4bce4cf6}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, Inputs\-At\-Compile\-Time, 1, Outputs\-At\-Compile\-Time, 1 $>$}, and \hyperlink{classffnn_1_1layer_1_1_hidden_a98305185267a0f7953f1b53c4bce4cf6}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, Size\-At\-Compile\-Time, 1, Size\-At\-Compile\-Time, 1 $>$}.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{classffnn_1_1layer_1_1internal_1_1_interface_a417d6fda112fdffed8091b0ebd78ed97_cgraph}
+\end{center}
+\end{figure}
+
 
 \hypertarget{classffnn_1_1layer_1_1internal_1_1_interface_a6e7c83f8328e5c5f49fdba28abfba7c1}{\index{ffnn\-::layer\-::internal\-::\-Interface@{ffnn\-::layer\-::internal\-::\-Interface}!setup\-Required@{setup\-Required}}
 \index{setup\-Required@{setup\-Required}!ffnn::layer::internal::Interface@{ffnn\-::layer\-::internal\-::\-Interface}}
@@ -303,29 +364,29 @@ Flags which indicated that layer has been initialized.
 
 
 
-Referenced by ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride, Embedding\-Mode $>$\-::initialize(), ffnn\-::layer\-::internal\-::\-Interface$<$ C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-B\-A\-S\-E\-\_\-\-T\-A\-R\-G\-S $>$\-::is\-Initialized(), ffnn\-::layer\-::internal\-::\-Interface$<$ C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-B\-A\-S\-E\-\_\-\-T\-A\-R\-G\-S $>$\-::load(), and ffnn\-::layer\-::internal\-::\-Interface$<$ C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-B\-A\-S\-E\-\_\-\-T\-A\-R\-G\-S $>$\-::save().
+Referenced by ffnn\-::layer\-::internal\-::\-Interface$<$ Value\-Type $>$\-::is\-Initialized(), ffnn\-::layer\-::internal\-::\-Interface$<$ Value\-Type $>$\-::load(), and ffnn\-::layer\-::internal\-::\-Interface$<$ Value\-Type $>$\-::save().
 
-\hypertarget{classffnn_1_1layer_1_1internal_1_1_interface_aa011c369e00d2b78a87b94904e596f15}{\index{ffnn\-::layer\-::internal\-::\-Interface@{ffnn\-::layer\-::internal\-::\-Interface}!input\-\_\-dim\-\_\-@{input\-\_\-dim\-\_\-}}
-\index{input\-\_\-dim\-\_\-@{input\-\_\-dim\-\_\-}!ffnn::layer::internal::Interface@{ffnn\-::layer\-::internal\-::\-Interface}}
-\subsubsection[{input\-\_\-dim\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type$>$ {\bf Dim\-Type} {\bf ffnn\-::layer\-::internal\-::\-Interface}$<$ Value\-Type $>$\-::input\-\_\-dim\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classffnn_1_1layer_1_1internal_1_1_interface_aa011c369e00d2b78a87b94904e596f15}
+\hypertarget{classffnn_1_1layer_1_1internal_1_1_interface_a3b9f183881a6aed198c566ecbf0177f7}{\index{ffnn\-::layer\-::internal\-::\-Interface@{ffnn\-::layer\-::internal\-::\-Interface}!input\-\_\-shape\-\_\-@{input\-\_\-shape\-\_\-}}
+\index{input\-\_\-shape\-\_\-@{input\-\_\-shape\-\_\-}!ffnn::layer::internal::Interface@{ffnn\-::layer\-::internal\-::\-Interface}}
+\subsubsection[{input\-\_\-shape\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type$>$ {\bf Shape\-Type} {\bf ffnn\-::layer\-::internal\-::\-Interface}$<$ Value\-Type $>$\-::input\-\_\-shape\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classffnn_1_1layer_1_1internal_1_1_interface_a3b9f183881a6aed198c566ecbf0177f7}
 
 
 Total number of input connections. 
 
 
 
-Referenced by ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::backward(), ffnn\-::layer\-::internal\-::\-Interface$<$ C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-B\-A\-S\-E\-\_\-\-T\-A\-R\-G\-S $>$\-::evaluate\-Input\-Size(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::initialize(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::initialize(), ffnn\-::optimizer\-::\-Adam$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::initialize(), ffnn\-::optimizer\-::\-Adam$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::initialize(), ffnn\-::layer\-::internal\-::\-Interface$<$ C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-B\-A\-S\-E\-\_\-\-T\-A\-R\-G\-S $>$\-::input\-Dim(), ffnn\-::layer\-::internal\-::\-Interface$<$ C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-B\-A\-S\-E\-\_\-\-T\-A\-R\-G\-S $>$\-::input\-Size(), ffnn\-::layer\-::internal\-::\-Interface$<$ C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-B\-A\-S\-E\-\_\-\-T\-A\-R\-G\-S $>$\-::load(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::reset(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::reset(), and ffnn\-::layer\-::internal\-::\-Interface$<$ C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-B\-A\-S\-E\-\_\-\-T\-A\-R\-G\-S $>$\-::save().
+Referenced by ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::backward(), ffnn\-::layer\-::internal\-::\-Interface$<$ Value\-Type $>$\-::evaluate\-Input\-Size(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::initialize(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::initialize(), ffnn\-::optimizer\-::\-Adam$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::initialize(), ffnn\-::optimizer\-::\-Adam$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::initialize(), ffnn\-::layer\-::internal\-::\-Interface$<$ Value\-Type $>$\-::input\-Shape(), ffnn\-::layer\-::internal\-::\-Interface$<$ Value\-Type $>$\-::input\-Size(), ffnn\-::layer\-::internal\-::\-Interface$<$ Value\-Type $>$\-::load(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::reset(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::reset(), and ffnn\-::layer\-::internal\-::\-Interface$<$ Value\-Type $>$\-::save().
 
-\hypertarget{classffnn_1_1layer_1_1internal_1_1_interface_a2540e4455843a2100efe4c7de9a62df0}{\index{ffnn\-::layer\-::internal\-::\-Interface@{ffnn\-::layer\-::internal\-::\-Interface}!output\-\_\-dim\-\_\-@{output\-\_\-dim\-\_\-}}
-\index{output\-\_\-dim\-\_\-@{output\-\_\-dim\-\_\-}!ffnn::layer::internal::Interface@{ffnn\-::layer\-::internal\-::\-Interface}}
-\subsubsection[{output\-\_\-dim\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type$>$ {\bf Dim\-Type} {\bf ffnn\-::layer\-::internal\-::\-Interface}$<$ Value\-Type $>$\-::output\-\_\-dim\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classffnn_1_1layer_1_1internal_1_1_interface_a2540e4455843a2100efe4c7de9a62df0}
+\hypertarget{classffnn_1_1layer_1_1internal_1_1_interface_aac8cae47508ba37964d11754e181813a}{\index{ffnn\-::layer\-::internal\-::\-Interface@{ffnn\-::layer\-::internal\-::\-Interface}!output\-\_\-shape\-\_\-@{output\-\_\-shape\-\_\-}}
+\index{output\-\_\-shape\-\_\-@{output\-\_\-shape\-\_\-}!ffnn::layer::internal::Interface@{ffnn\-::layer\-::internal\-::\-Interface}}
+\subsubsection[{output\-\_\-shape\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type$>$ {\bf Shape\-Type} {\bf ffnn\-::layer\-::internal\-::\-Interface}$<$ Value\-Type $>$\-::output\-\_\-shape\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classffnn_1_1layer_1_1internal_1_1_interface_aac8cae47508ba37964d11754e181813a}
 
 
 Total number of output connections. 
 
 
 
-Referenced by ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::backward(), ffnn\-::optimizer\-::\-Adam$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::initialize(), ffnn\-::optimizer\-::\-Adam$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::initialize(), ffnn\-::layer\-::internal\-::\-Interface$<$ C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-B\-A\-S\-E\-\_\-\-T\-A\-R\-G\-S $>$\-::load(), ffnn\-::layer\-::internal\-::\-Interface$<$ C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-B\-A\-S\-E\-\_\-\-T\-A\-R\-G\-S $>$\-::output\-Dim(), ffnn\-::layer\-::internal\-::\-Interface$<$ C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-B\-A\-S\-E\-\_\-\-T\-A\-R\-G\-S $>$\-::output\-Size(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::reset(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::reset(), and ffnn\-::layer\-::internal\-::\-Interface$<$ C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-B\-A\-S\-E\-\_\-\-T\-A\-R\-G\-S $>$\-::save().
+Referenced by ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::backward(), ffnn\-::optimizer\-::\-Adam$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::initialize(), ffnn\-::optimizer\-::\-Adam$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::initialize(), ffnn\-::layer\-::internal\-::\-Interface$<$ Value\-Type $>$\-::load(), ffnn\-::layer\-::internal\-::\-Interface$<$ Value\-Type $>$\-::output\-Shape(), ffnn\-::layer\-::internal\-::\-Interface$<$ Value\-Type $>$\-::output\-Size(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::reset(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::reset(), and ffnn\-::layer\-::internal\-::\-Interface$<$ Value\-Type $>$\-::save().
 
 \hypertarget{classffnn_1_1layer_1_1internal_1_1_interface_a57f0de55599c9b6621a66096b5662ca8}{\index{ffnn\-::layer\-::internal\-::\-Interface@{ffnn\-::layer\-::internal\-::\-Interface}!setup\-\_\-required\-\_\-@{setup\-\_\-required\-\_\-}}
 \index{setup\-\_\-required\-\_\-@{setup\-\_\-required\-\_\-}!ffnn::layer::internal::Interface@{ffnn\-::layer\-::internal\-::\-Interface}}
@@ -336,7 +397,7 @@ Flags which indicates that layer should be initialized normally.
 
 
 
-Referenced by ffnn\-::layer\-::internal\-::\-Interface$<$ C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-B\-A\-S\-E\-\_\-\-T\-A\-R\-G\-S $>$\-::load(), and ffnn\-::layer\-::internal\-::\-Interface$<$ C\-O\-N\-V\-O\-L\-U\-T\-I\-O\-N\-\_\-\-B\-A\-S\-E\-\_\-\-T\-A\-R\-G\-S $>$\-::setup\-Required().
+Referenced by ffnn\-::layer\-::internal\-::\-Interface$<$ Value\-Type $>$\-::load(), and ffnn\-::layer\-::internal\-::\-Interface$<$ Value\-Type $>$\-::setup\-Required().
 
 
 

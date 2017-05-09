@@ -83,7 +83,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="#index_i"><span>i</span></a></li>
       <li><a href="#index_l"><span>l</span></a></li>
       <li><a href="#index_p"><span>p</span></a></li>
-      <li><a href="#index_r"><span>r</span></a></li>
       <li class="current"><a href="#index_s"><span>s</span></a></li>
     </ul>
   </div>
@@ -106,20 +105,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="textblock">Here is a list of all file members with links to the files they belong to:</div>
 
 <h3><a class="anchor" id="index_c"></a>- c -</h3><ul>
-<li>CONVOLUTION_BASE_TARGS
-: <a class="el" href="convolution_8h.html#aa3e94b711ad76a27a1c978ffbb87ebcf">convolution.h</a>
+<li>CONV_EMBEDDED_H
+: <a class="el" href="convolution_8h.html#aa3e0ccfe3f80f1cbfd2883afcd39bba1">convolution.h</a>
 </li>
-<li>CONVOLUTION_OUTPUT_HEIGHT
-: <a class="el" href="convolution_8h.html#a994a9f10bc2645299b6d456cf51c7b6c">convolution.h</a>
+<li>CONV_EMBEDDED_W
+: <a class="el" href="convolution_8h.html#a0fc2446589d9cda3500aeca0c3ab5dbc">convolution.h</a>
 </li>
-<li>CONVOLUTION_OUTPUT_WIDTH
-: <a class="el" href="convolution_8h.html#a60b63de7a979c2ced6c910f6df90356c">convolution.h</a>
+<li>CONV_LENGTH_WITH_STRIDE
+: <a class="el" href="convolution_8h.html#a33855ffebcdb1997625c0592f537b32c">convolution.h</a>
 </li>
-<li>CONVOLUTION_TARGS
-: <a class="el" href="convolution_8h.html#a3aee648020398150ad88775ccd534670">convolution.h</a>
+<li>CONV_TARGS
+: <a class="el" href="convolution_8h.html#a30c3dcfd336a244f4421fe701352d1e4">convolution.h</a>
+</li>
+<li>CONV_VOLUME_TARGS
+: <a class="el" href="convolution_8h.html#a054b25d3efc67e1baaedfbc7305f8f50">convolution.h</a>
+</li>
+<li>CONVOLUTION_VOLUME
+: <a class="el" href="convolution__volume_8hpp.html#aaa7cdd6e5c7ad277b5abf4e20835a23c">convolution_volume.hpp</a>
 </li>
 <li>CONVOLUTION_VOLUME_TARGS
-: <a class="el" href="convolution_8h.html#af6cd5a2c0574bdc1e2ee04974964a7ac">convolution.h</a>
+: <a class="el" href="convolution__volume_8hpp.html#af6cd5a2c0574bdc1e2ee04974964a7ac">convolution_volume.hpp</a>
 </li>
 </ul>
 
@@ -210,13 +215,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <h3><a class="anchor" id="index_i"></a>- i -</h3><ul>
 <li>IS_DYNAMIC
-: <a class="el" href="dimensions_8h.html#a67c7ed133a71d197d8fca368336d5aa7">dimensions.h</a>
+: <a class="el" href="shape_8h.html#a67c7ed133a71d197d8fca368336d5aa7">shape.h</a>
 </li>
 <li>IS_DYNAMIC_PAIR
-: <a class="el" href="receptive__volume_8h.html#a1888db73da403e86806b106c3b40eb29">receptive_volume.h</a>
+: <a class="el" href="convolution__volume_8h.html#a1888db73da403e86806b106c3b40eb29">convolution_volume.h</a>
+, <a class="el" href="receptive__volume_8h.html#a1888db73da403e86806b106c3b40eb29">receptive_volume.h</a>
 </li>
 <li>IS_DYNAMIC_TRIPLET
-: <a class="el" href="dimensions_8h.html#a0faa7f844e3841ae41c2baedf7680756">dimensions.h</a>
+: <a class="el" href="shape_8h.html#a0faa7f844e3841ae41c2baedf7680756">shape.h</a>
 </li>
 </ul>
 
@@ -231,20 +237,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <h3><a class="anchor" id="index_p"></a>- p -</h3><ul>
 <li>PROD_IF_STATIC_PAIR
-: <a class="el" href="receptive__volume_8h.html#a74feffebf310dd34521adc2adcaf64c9">receptive_volume.h</a>
+: <a class="el" href="convolution__volume_8h.html#a74feffebf310dd34521adc2adcaf64c9">convolution_volume.h</a>
+, <a class="el" href="receptive__volume_8h.html#a74feffebf310dd34521adc2adcaf64c9">receptive_volume.h</a>
 </li>
 <li>PROD_IF_STATIC_TRIPLET
-: <a class="el" href="dimensions_8h.html#a90ee0b2faa8ee8ce36a3b08bd4212fe8">dimensions.h</a>
-</li>
-</ul>
-
-
-<h3><a class="anchor" id="index_r"></a>- r -</h3><ul>
-<li>RECEPTIVE_VOLUME
-: <a class="el" href="receptive__volume_8hpp.html#aa65eef4aa3862368e3563d82b12f6b39">receptive_volume.hpp</a>
-</li>
-<li>RECEPTIVE_VOLUME_TARGS
-: <a class="el" href="receptive__volume_8hpp.html#a359151d89b7e46460e54bc364f144fa0">receptive_volume.hpp</a>
+: <a class="el" href="shape_8h.html#a90ee0b2faa8ee8ce36a3b08bd4212fe8">shape.h</a>
 </li>
 </ul>
 
@@ -262,7 +259,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri May 5 2017 01:46:11 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon May 8 2017 23:27:42 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

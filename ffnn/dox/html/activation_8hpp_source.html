@@ -135,7 +135,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  }</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="comment">// Deduce output dimensions</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  Base::output_dim_ = Base::input_dim_;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  Base::output_shape_ = Base::input_shape_;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="comment">// Initialize neurons</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  neurons_.resize(Base::outputSize());</div>
@@ -160,7 +160,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="comment">// Compute neuron outputs</span></div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordflow">for</span> (<a class="code" href="classffnn_1_1layer_1_1_activation.html#ab3635bf431b97e8f1b51704f20d60d34">SizeType</a> idx = 0; idx &lt; Base::inputSize(); idx++)</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  {</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    neurons_[idx].fn((*Base::input_)(idx), (*Base::output_)(idx));</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    neurons_[idx]((*Base::input_)(idx), (*Base::output_)(idx));</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  }</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
@@ -230,7 +230,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri May 5 2017 01:46:11 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon May 8 2017 23:27:41 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

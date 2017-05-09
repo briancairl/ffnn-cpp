@@ -1,0 +1,114 @@
+\hypertarget{classffnn_1_1layer_1_1_filter_bank}{\section{ffnn\-:\-:layer\-:\-:Filter\-Bank$<$ Kernel\-Matrix\-Type $>$ Class Template Reference}
+\label{classffnn_1_1layer_1_1_filter_bank}\index{ffnn\-::layer\-::\-Filter\-Bank$<$ Kernel\-Matrix\-Type $>$@{ffnn\-::layer\-::\-Filter\-Bank$<$ Kernel\-Matrix\-Type $>$}}
+}
+
+
+{\ttfamily \#include \char`\"{}convolution\-\_\-volume.\-h\char`\"{}}
+
+
+
+Inheritance diagram for ffnn\-:\-:layer\-:\-:Filter\-Bank$<$ Kernel\-Matrix\-Type $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classffnn_1_1layer_1_1_filter_bank__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ffnn\-:\-:layer\-:\-:Filter\-Bank$<$ Kernel\-Matrix\-Type $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classffnn_1_1layer_1_1_filter_bank__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \hyperlink{classffnn_1_1layer_1_1_filter_bank_a57f78a46d30b55129334593d977d8c10}{Base} = std\-::vector$<$ Kernel\-Matrix\-Type, Eigen\-::aligned\-\_\-allocator$<$ typename Kernel\-Matrix\-Type\-::\-Scalar $>$$>$
+\item 
+typedef Kernel\-Matrix\-Type\-::\-Scalar \hyperlink{classffnn_1_1layer_1_1_filter_bank_a9520eb8417c9c124f33c1136d40842d4}{Scalar\-Type}
+\item 
+typedef Kernel\-Matrix\-Type\-::\-Index \hyperlink{classffnn_1_1layer_1_1_filter_bank_afd78272ebca97ce2f34596ffb9dc6cd9}{Size\-Type}
+\item 
+typedef Kernel\-Matrix\-Type\-::\-Index \hyperlink{classffnn_1_1layer_1_1_filter_bank_a87d15738c0864b171f2b605af7330432}{Offset\-Type}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classffnn_1_1layer_1_1_filter_bank_a5b057c2a52caabd6b53e9398c2969318}{Filter\-Bank} (\hyperlink{classffnn_1_1layer_1_1_filter_bank_afd78272ebca97ce2f34596ffb9dc6cd9}{Size\-Type} filter\-\_\-count)
+\item 
+void \hyperlink{classffnn_1_1layer_1_1_filter_bank_ae72e590b79040f0a420d87167e6f313e}{set\-Zero} (\hyperlink{classffnn_1_1layer_1_1_filter_bank_afd78272ebca97ce2f34596ffb9dc6cd9}{Size\-Type} height, \hyperlink{classffnn_1_1layer_1_1_filter_bank_afd78272ebca97ce2f34596ffb9dc6cd9}{Size\-Type} width)
+\item 
+void \hyperlink{classffnn_1_1layer_1_1_filter_bank_a3cdf8172fc5ccd23f6a0f08473372f5e}{set\-Random} (\hyperlink{classffnn_1_1layer_1_1_filter_bank_afd78272ebca97ce2f34596ffb9dc6cd9}{Size\-Type} height, \hyperlink{classffnn_1_1layer_1_1_filter_bank_afd78272ebca97ce2f34596ffb9dc6cd9}{Size\-Type} width)
+\item 
+\hyperlink{classffnn_1_1layer_1_1_filter_bank}{Filter\-Bank} \& \hyperlink{classffnn_1_1layer_1_1_filter_bank_aefb499d343c3e36126e3337752f3f8e8}{operator$\ast$=} (\hyperlink{classffnn_1_1layer_1_1_filter_bank_a9520eb8417c9c124f33c1136d40842d4}{Scalar\-Type} scalar)
+\item 
+\hyperlink{classffnn_1_1layer_1_1_filter_bank}{Filter\-Bank} \& \hyperlink{classffnn_1_1layer_1_1_filter_bank_af2b30e023be802fad63a26512c138fe6}{operator+=} (\hyperlink{classffnn_1_1layer_1_1_filter_bank_a9520eb8417c9c124f33c1136d40842d4}{Scalar\-Type} scalar)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classffnn_1_1layer_1_1_filter_bank_a57f78a46d30b55129334593d977d8c10}{\index{ffnn\-::layer\-::\-Filter\-Bank@{ffnn\-::layer\-::\-Filter\-Bank}!Base@{Base}}
+\index{Base@{Base}!ffnn::layer::FilterBank@{ffnn\-::layer\-::\-Filter\-Bank}}
+\subsubsection[{Base}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Kernel\-Matrix\-Type $>$ using {\bf ffnn\-::layer\-::\-Filter\-Bank}$<$ Kernel\-Matrix\-Type $>$\-::{\bf Base} =  std\-::vector$<$Kernel\-Matrix\-Type, Eigen\-::aligned\-\_\-allocator$<$typename Kernel\-Matrix\-Type\-::\-Scalar$>$$>$}}\label{classffnn_1_1layer_1_1_filter_bank_a57f78a46d30b55129334593d977d8c10}
+\hypertarget{classffnn_1_1layer_1_1_filter_bank_a87d15738c0864b171f2b605af7330432}{\index{ffnn\-::layer\-::\-Filter\-Bank@{ffnn\-::layer\-::\-Filter\-Bank}!Offset\-Type@{Offset\-Type}}
+\index{Offset\-Type@{Offset\-Type}!ffnn::layer::FilterBank@{ffnn\-::layer\-::\-Filter\-Bank}}
+\subsubsection[{Offset\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Kernel\-Matrix\-Type $>$ typedef Kernel\-Matrix\-Type\-::\-Index {\bf ffnn\-::layer\-::\-Filter\-Bank}$<$ Kernel\-Matrix\-Type $>$\-::{\bf Offset\-Type}}}\label{classffnn_1_1layer_1_1_filter_bank_a87d15738c0864b171f2b605af7330432}
+\hypertarget{classffnn_1_1layer_1_1_filter_bank_a9520eb8417c9c124f33c1136d40842d4}{\index{ffnn\-::layer\-::\-Filter\-Bank@{ffnn\-::layer\-::\-Filter\-Bank}!Scalar\-Type@{Scalar\-Type}}
+\index{Scalar\-Type@{Scalar\-Type}!ffnn::layer::FilterBank@{ffnn\-::layer\-::\-Filter\-Bank}}
+\subsubsection[{Scalar\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Kernel\-Matrix\-Type $>$ typedef Kernel\-Matrix\-Type\-::\-Scalar {\bf ffnn\-::layer\-::\-Filter\-Bank}$<$ Kernel\-Matrix\-Type $>$\-::{\bf Scalar\-Type}}}\label{classffnn_1_1layer_1_1_filter_bank_a9520eb8417c9c124f33c1136d40842d4}
+\hypertarget{classffnn_1_1layer_1_1_filter_bank_afd78272ebca97ce2f34596ffb9dc6cd9}{\index{ffnn\-::layer\-::\-Filter\-Bank@{ffnn\-::layer\-::\-Filter\-Bank}!Size\-Type@{Size\-Type}}
+\index{Size\-Type@{Size\-Type}!ffnn::layer::FilterBank@{ffnn\-::layer\-::\-Filter\-Bank}}
+\subsubsection[{Size\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Kernel\-Matrix\-Type $>$ typedef Kernel\-Matrix\-Type\-::\-Index {\bf ffnn\-::layer\-::\-Filter\-Bank}$<$ Kernel\-Matrix\-Type $>$\-::{\bf Size\-Type}}}\label{classffnn_1_1layer_1_1_filter_bank_afd78272ebca97ce2f34596ffb9dc6cd9}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classffnn_1_1layer_1_1_filter_bank_a5b057c2a52caabd6b53e9398c2969318}{\index{ffnn\-::layer\-::\-Filter\-Bank@{ffnn\-::layer\-::\-Filter\-Bank}!Filter\-Bank@{Filter\-Bank}}
+\index{Filter\-Bank@{Filter\-Bank}!ffnn::layer::FilterBank@{ffnn\-::layer\-::\-Filter\-Bank}}
+\subsubsection[{Filter\-Bank}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Kernel\-Matrix\-Type $>$ {\bf ffnn\-::layer\-::\-Filter\-Bank}$<$ Kernel\-Matrix\-Type $>$\-::{\bf Filter\-Bank} (
+\begin{DoxyParamCaption}
+\item[{{\bf Size\-Type}}]{filter\-\_\-count}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{classffnn_1_1layer_1_1_filter_bank_a5b057c2a52caabd6b53e9398c2969318}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classffnn_1_1layer_1_1_filter_bank_aefb499d343c3e36126e3337752f3f8e8}{\index{ffnn\-::layer\-::\-Filter\-Bank@{ffnn\-::layer\-::\-Filter\-Bank}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!ffnn::layer::FilterBank@{ffnn\-::layer\-::\-Filter\-Bank}}
+\subsubsection[{operator$\ast$=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Kernel\-Matrix\-Type $>$ {\bf Filter\-Bank}\& {\bf ffnn\-::layer\-::\-Filter\-Bank}$<$ Kernel\-Matrix\-Type $>$\-::operator$\ast$= (
+\begin{DoxyParamCaption}
+\item[{{\bf Scalar\-Type}}]{scalar}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1_filter_bank_aefb499d343c3e36126e3337752f3f8e8}
+\hypertarget{classffnn_1_1layer_1_1_filter_bank_af2b30e023be802fad63a26512c138fe6}{\index{ffnn\-::layer\-::\-Filter\-Bank@{ffnn\-::layer\-::\-Filter\-Bank}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!ffnn::layer::FilterBank@{ffnn\-::layer\-::\-Filter\-Bank}}
+\subsubsection[{operator+=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Kernel\-Matrix\-Type $>$ {\bf Filter\-Bank}\& {\bf ffnn\-::layer\-::\-Filter\-Bank}$<$ Kernel\-Matrix\-Type $>$\-::operator+= (
+\begin{DoxyParamCaption}
+\item[{{\bf Scalar\-Type}}]{scalar}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1_filter_bank_af2b30e023be802fad63a26512c138fe6}
+\hypertarget{classffnn_1_1layer_1_1_filter_bank_a3cdf8172fc5ccd23f6a0f08473372f5e}{\index{ffnn\-::layer\-::\-Filter\-Bank@{ffnn\-::layer\-::\-Filter\-Bank}!set\-Random@{set\-Random}}
+\index{set\-Random@{set\-Random}!ffnn::layer::FilterBank@{ffnn\-::layer\-::\-Filter\-Bank}}
+\subsubsection[{set\-Random}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Kernel\-Matrix\-Type $>$ void {\bf ffnn\-::layer\-::\-Filter\-Bank}$<$ Kernel\-Matrix\-Type $>$\-::set\-Random (
+\begin{DoxyParamCaption}
+\item[{{\bf Size\-Type}}]{height, }
+\item[{{\bf Size\-Type}}]{width}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1_filter_bank_a3cdf8172fc5ccd23f6a0f08473372f5e}
+\hypertarget{classffnn_1_1layer_1_1_filter_bank_ae72e590b79040f0a420d87167e6f313e}{\index{ffnn\-::layer\-::\-Filter\-Bank@{ffnn\-::layer\-::\-Filter\-Bank}!set\-Zero@{set\-Zero}}
+\index{set\-Zero@{set\-Zero}!ffnn::layer::FilterBank@{ffnn\-::layer\-::\-Filter\-Bank}}
+\subsubsection[{set\-Zero}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Kernel\-Matrix\-Type $>$ void {\bf ffnn\-::layer\-::\-Filter\-Bank}$<$ Kernel\-Matrix\-Type $>$\-::set\-Zero (
+\begin{DoxyParamCaption}
+\item[{{\bf Size\-Type}}]{height, }
+\item[{{\bf Size\-Type}}]{width}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1_filter_bank_ae72e590b79040f0a420d87167e6f313e}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/\hyperlink{convolution__volume_8h}{convolution\-\_\-volume.\-h}\end{DoxyCompactItemize}

@@ -22,7 +22,7 @@ Inheritance diagram for ffnn\-:\-:neuron\-:\-:Neuron$<$ Value\-Type $>$\-:\nopag
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-virtual void \hyperlink{classffnn_1_1neuron_1_1_neuron_a4f03bb4fe57ffa74d70e447237b9b8fb}{fn} (const Value\-Type \&input, Value\-Type \&output)=0
+virtual void \hyperlink{classffnn_1_1neuron_1_1_neuron_ae215373ce29e135cb5fd728964772a32}{operator()} (const Value\-Type \&input, Value\-Type \&output)=0
 \begin{DoxyCompactList}\small\item\em Computes activation output. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classffnn_1_1neuron_1_1_neuron_ac779b179887e6b4505dec96d0319af10}{derivative} (const Value\-Type \&input, Value\-Type \&output) const =0
 \begin{DoxyCompactList}\small\item\em Computes first-\/order activation derivative. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -57,14 +57,14 @@ Computes first-\/order activation derivative.
 
 Implemented in \hyperlink{classffnn_1_1neuron_1_1_leaky_rectified_linear_a1bb98dd03e854a69a7ba76b347ec4340}{ffnn\-::neuron\-::\-Leaky\-Rectified\-Linear$<$ Value\-Type, \-\_\-\-P, \-\_\-\-B $>$}, \hyperlink{classffnn_1_1neuron_1_1_le_cun_sigmoid_a4802deb108ab8ca6a67a4d7d55124fb2}{ffnn\-::neuron\-::\-Le\-Cun\-Sigmoid$<$ Value\-Type $>$}, \hyperlink{classffnn_1_1neuron_1_1_sigmoid_aee2a196924df30414539d75caa6c7030}{ffnn\-::neuron\-::\-Sigmoid$<$ Value\-Type $>$}, \hyperlink{classffnn_1_1neuron_1_1_soft_sign_a1284d2661377557e782547613e299736}{ffnn\-::neuron\-::\-Soft\-Sign$<$ Value\-Type $>$}, \hyperlink{classffnn_1_1neuron_1_1_linear_a4656398d6a4c1bda77d25adbad148ae9}{ffnn\-::neuron\-::\-Linear$<$ Value\-Type $>$}, and \hyperlink{classffnn_1_1neuron_1_1_rectified_linear_a8c45f64142bf994a96f4987cdd81e32f}{ffnn\-::neuron\-::\-Rectified\-Linear$<$ Value\-Type $>$}.
 
-\hypertarget{classffnn_1_1neuron_1_1_neuron_a4f03bb4fe57ffa74d70e447237b9b8fb}{\index{ffnn\-::neuron\-::\-Neuron@{ffnn\-::neuron\-::\-Neuron}!fn@{fn}}
-\index{fn@{fn}!ffnn::neuron::Neuron@{ffnn\-::neuron\-::\-Neuron}}
-\subsubsection[{fn}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type $>$ virtual void {\bf ffnn\-::neuron\-::\-Neuron}$<$ Value\-Type $>$\-::fn (
+\hypertarget{classffnn_1_1neuron_1_1_neuron_ae215373ce29e135cb5fd728964772a32}{\index{ffnn\-::neuron\-::\-Neuron@{ffnn\-::neuron\-::\-Neuron}!operator()@{operator()}}
+\index{operator()@{operator()}!ffnn::neuron::Neuron@{ffnn\-::neuron\-::\-Neuron}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type $>$ virtual void {\bf ffnn\-::neuron\-::\-Neuron}$<$ Value\-Type $>$\-::operator() (
 \begin{DoxyParamCaption}
 \item[{const Value\-Type \&}]{input, }
 \item[{Value\-Type \&}]{output}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classffnn_1_1neuron_1_1_neuron_a4f03bb4fe57ffa74d70e447237b9b8fb}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classffnn_1_1neuron_1_1_neuron_ae215373ce29e135cb5fd728964772a32}
 
 
 Computes activation output. 
@@ -78,7 +78,7 @@ Computes activation output.
 \end{DoxyParams}
 
 
-Implemented in \hyperlink{classffnn_1_1neuron_1_1_leaky_rectified_linear_a6a96858235a3c4a8195b27699032a849}{ffnn\-::neuron\-::\-Leaky\-Rectified\-Linear$<$ Value\-Type, \-\_\-\-P, \-\_\-\-B $>$}, \hyperlink{classffnn_1_1neuron_1_1_le_cun_sigmoid_abac0c8e08b1289c288923fd8e6f12ce2}{ffnn\-::neuron\-::\-Le\-Cun\-Sigmoid$<$ Value\-Type $>$}, \hyperlink{classffnn_1_1neuron_1_1_sigmoid_a68c1cf4f268509e87a471440d11e7682}{ffnn\-::neuron\-::\-Sigmoid$<$ Value\-Type $>$}, \hyperlink{classffnn_1_1neuron_1_1_soft_sign_ac6e67e51f8879c44940ef0c419911259}{ffnn\-::neuron\-::\-Soft\-Sign$<$ Value\-Type $>$}, \hyperlink{classffnn_1_1neuron_1_1_linear_a4d92b666c3e0a81865be7d09c0c4016e}{ffnn\-::neuron\-::\-Linear$<$ Value\-Type $>$}, and \hyperlink{classffnn_1_1neuron_1_1_rectified_linear_aa6f5d5fab4b2468fa36e208ed885782c}{ffnn\-::neuron\-::\-Rectified\-Linear$<$ Value\-Type $>$}.
+Implemented in \hyperlink{classffnn_1_1neuron_1_1_leaky_rectified_linear_a219673d306064ae1405dd9385f031380}{ffnn\-::neuron\-::\-Leaky\-Rectified\-Linear$<$ Value\-Type, \-\_\-\-P, \-\_\-\-B $>$}, \hyperlink{classffnn_1_1neuron_1_1_le_cun_sigmoid_ae1a0a4b086a8983f31fb320e7c3088dc}{ffnn\-::neuron\-::\-Le\-Cun\-Sigmoid$<$ Value\-Type $>$}, \hyperlink{classffnn_1_1neuron_1_1_sigmoid_a1176976ca74341daac6c1720f7056d39}{ffnn\-::neuron\-::\-Sigmoid$<$ Value\-Type $>$}, \hyperlink{classffnn_1_1neuron_1_1_soft_sign_a1d3ecb32d2eeea06b988ef4f779303e0}{ffnn\-::neuron\-::\-Soft\-Sign$<$ Value\-Type $>$}, \hyperlink{classffnn_1_1neuron_1_1_linear_aa59814449ab3e63d2cbd4f01fd500044}{ffnn\-::neuron\-::\-Linear$<$ Value\-Type $>$}, and \hyperlink{classffnn_1_1neuron_1_1_rectified_linear_a11584934d68646ccced2c0c1c382960d}{ffnn\-::neuron\-::\-Rectified\-Linear$<$ Value\-Type $>$}.
 
 
 

@@ -48,7 +48,10 @@ public:
     input_shape_(input_shape),
     output_shape_(output_shape)
   {}
-  virtual ~Interface() {}
+  virtual ~Interface()
+  {
+    FFNN_DEBUG_NAMED("Interface", "Destroying [layer::Interface] object <" << this->getID() << ">");
+  }
 
   /**
    * @brief Returns the total number of Interface inputs

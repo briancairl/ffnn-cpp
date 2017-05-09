@@ -1,0 +1,74 @@
+\hypertarget{convolution__volume_8h}{\section{/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/convolution\-\_\-volume.h File Reference}
+\label{convolution__volume_8h}\index{/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/convolution\-\_\-volume.\-h@{/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/convolution\-\_\-volume.\-h}}
+}
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$ffnn/layer/internal/shape.\-h$>$}\\*
+{\ttfamily \#include $<$ffnn/layer/internal/interface.\-h$>$}\\*
+{\ttfamily \#include $<$ffnn/layer/impl/convolution\-\_\-volume.\-hpp$>$}\\*
+Include dependency graph for convolution\-\_\-volume.\-h\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{convolution__volume_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{convolution__volume_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classffnn_1_1layer_1_1_filter_bank}{ffnn\-::layer\-::\-Filter\-Bank$<$ Kernel\-Matrix\-Type $>$}
+\item 
+class \hyperlink{classffnn_1_1layer_1_1_convolution_volume}{ffnn\-::layer\-::\-Convolution\-Volume$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Embedding\-Mode $>$}
+\item 
+struct \hyperlink{structffnn_1_1layer_1_1_convolution_volume_1_1_parameters}{ffnn\-::layer\-::\-Convolution\-Volume$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Embedding\-Mode $>$\-::\-Parameters}
+\begin{DoxyCompactList}\small\item\em A configuration object for a \hyperlink{classffnn_1_1layer_1_1_fully_connected}{Fully\-Connected} hidden layer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespaceffnn}{ffnn}
+\item 
+\hyperlink{namespaceffnn_1_1layer}{ffnn\-::layer}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{convolution__volume_8h_a1888db73da403e86806b106c3b40eb29}{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-P\-A\-I\-R}(n, m)~(\hyperlink{shape_8h_a67c7ed133a71d197d8fca368336d5aa7}{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C}(n) $\vert$$\vert$ \hyperlink{shape_8h_a67c7ed133a71d197d8fca368336d5aa7}{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C}(m))
+\item 
+\#define \hyperlink{convolution__volume_8h_a74feffebf310dd34521adc2adcaf64c9}{P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-P\-A\-I\-R}(n, m)~(\hyperlink{receptive__volume_8h_a1888db73da403e86806b106c3b40eb29}{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-P\-A\-I\-R}(n, m) ? Eigen\-::\-Dynamic \-: (n$\ast$m))
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69a}{ffnn\-::layer\-::\-Embedding\-Mode} \{ \hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aa56bf723aeae4562f2fe05ae5e675da92}{ffnn\-::layer\-::\-Row\-Embedding} = 0, 
+\hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aaede1065f5863208cae7e55561966a182}{ffnn\-::layer\-::\-Col\-Embedding} = 1, 
+\hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aa56bf723aeae4562f2fe05ae5e675da92}{ffnn\-::layer\-::\-Row\-Embedding} = 0, 
+\hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aaede1065f5863208cae7e55561966a182}{ffnn\-::layer\-::\-Col\-Embedding} = 1
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{convolution__volume_8h_a1888db73da403e86806b106c3b40eb29}{\index{convolution\-\_\-volume.\-h@{convolution\-\_\-volume.\-h}!I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-P\-A\-I\-R@{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-P\-A\-I\-R}}
+\index{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-P\-A\-I\-R@{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-P\-A\-I\-R}!convolution_volume.h@{convolution\-\_\-volume.\-h}}
+\subsubsection[{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-P\-A\-I\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-P\-A\-I\-R(
+\begin{DoxyParamCaption}
+\item[{}]{n, }
+\item[{}]{m}
+\end{DoxyParamCaption}
+)~({\bf I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C}(n) $\vert$$\vert$ {\bf I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C}(m))}}\label{convolution__volume_8h_a1888db73da403e86806b106c3b40eb29}
+\hypertarget{convolution__volume_8h_a74feffebf310dd34521adc2adcaf64c9}{\index{convolution\-\_\-volume.\-h@{convolution\-\_\-volume.\-h}!P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-P\-A\-I\-R@{P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-P\-A\-I\-R}}
+\index{P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-P\-A\-I\-R@{P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-P\-A\-I\-R}!convolution_volume.h@{convolution\-\_\-volume.\-h}}
+\subsubsection[{P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-P\-A\-I\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-P\-A\-I\-R(
+\begin{DoxyParamCaption}
+\item[{}]{n, }
+\item[{}]{m}
+\end{DoxyParamCaption}
+)~({\bf I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-P\-A\-I\-R}(n, m) ? Eigen\-::\-Dynamic \-: (n$\ast$m))}}\label{convolution__volume_8h_a74feffebf310dd34521adc2adcaf64c9}
