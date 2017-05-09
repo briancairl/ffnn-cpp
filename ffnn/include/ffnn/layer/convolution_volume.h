@@ -123,6 +123,9 @@ public:
   /// Bias vector type standardization
   typedef Eigen::Matrix<ValueType, FilterCountAtCompileTime, 1, Eigen::ColMajor> BiasVectorType;
 
+  /// Output vector type standardization
+  typedef Eigen::Matrix<ValueType, FilterCountAtCompileTime, 1, Eigen::ColMajor> OutputVectorType;
+
   /// Filter collection type standardization
   typedef FilterBank<KernelMatrixType> FilterBankType;
 
@@ -159,14 +162,16 @@ public:
    * @brief
    */
   ConvolutionVolume(const ShapeType& filter_shape = ShapeType(HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime),
-                  const SizeType& filter_count = FilterCountAtCompileTime);
+                    const SizeType& filter_count = FilterCountAtCompileTime);
   virtual ~ConvolutionVolume();
 
   /**
    * @brief Initialize the volume
    */
   bool initialize();
-  bool initialize(const Parameters& config);
+
+  template<typename ArgPointerType>
+  bool initialize(ArgPointerType data, const Parameters& config);
 
   /**
    * @brief Reset filter weights and biases
@@ -174,9 +179,8 @@ public:
    */
   void reset(const Parameters& config = Parameters());
 
-  template<typename InputBlockType, typename OutputBlockType>
-  void forward(const Eigen::MatrixBase<InputBlockType>& input,
-               Eigen::MatrixBase<OutputBlockType> const& output);
+  template<typename InputBlockType>
+  void forward(const Eigen::MatrixBase<InputBlockType>& input);
 
   template<typename InputBlockType, typename ForwardErrorBlockType>
   void backward(const Eigen::MatrixBase<InputBlockType>& input,
@@ -217,6 +221,9 @@ private:
 
   /// Bias vector
   BiasVectorType b_;
+
+  // Output mapping
+  Eigen::Map<OutputVectorType> output_;
 
   /// Number of filters associated with the field
   SizeType filter_count_;

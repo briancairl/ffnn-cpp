@@ -144,13 +144,9 @@ bool Convolution<CONV_TARGS>::forward()
     {
       // Get block dimensions
       const auto& ris = receptors_[idx][jdx].inputShape();
-      const auto& ros = receptors_[idx][jdx].outputShape();
 
       // Activate receptor
-      receptors_[idx][jdx].forward(
-        Base::input_.block(idx_str, jdx_str, ris.height, ris.width),
-        Base::output_.block(kdx, jdx, ros.depth, 1)
-      );
+      receptors_[idx][jdx].forward(Base::input_.block(idx_str, jdx_str, ris.height, ris.width));
     }
     kdx += filter_count_;
   }
@@ -199,19 +195,25 @@ template<typename ValueType,
          FFNN_SIZE_TYPE EmbeddingMode>
 void Convolution<CONV_TARGS>::reset(const Convolution<CONV_TARGS>::Parameters& config)
 {
+  ValueType* ptr = const_cast<ValueType*>(Base::input_buffer_.data());
+
   receptors_.resize(boost::extents[Base::output_shape_.height][Base::output_shape_.width]);
-  for (SizeType idx = 0; idx < Base::output_shape_.height; idx++)
+
+  OffsetType kdx = 0;
+  for (SizeType jdx = 0; jdx < Base::output_shape_.width; jdx++)
   {
-    for (SizeType jdx = 0; jdx < Base::output_shape_.width; jdx++)
+    for (SizeType idx = 0; idx < Base::output_shape_.height; idx++)
     {
       // Create receptive field
       new (&receptors_[idx][jdx]) ConvolutionVolumeType(filter_shape_, filter_count_);
 
       // Initialize field
-      Base::initialized_ &= receptors_[idx][jdx].initialize(config);
+      Base::initialized_ &= receptors_[idx][jdx].initialize(ptr + kdx, config);
 
       // Check that last created field was initialized properly
       FFNN_ASSERT_MSG(Base::initialized_, "Failed to initialize receptor.");
+
+      kdx += filter_count_;
     }
   }
 }

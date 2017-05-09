@@ -50,7 +50,8 @@ template<typename ValueType,
          FFNN_SIZE_TYPE EmbeddingMode>
 CONVOLUTION_VOLUME::ConvolutionVolume(const ShapeType& filter_shape, const SizeType& filter_count) :
   Base(filter_shape, ShapeType(1, 1, filter_count)),
-  filters_(filter_count)
+  filters_(filter_count),
+  output_(NULL, filter_shape.depth, 1)
 {}
 
 template<typename ValueType,
@@ -72,7 +73,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE EmbeddingMode>
 bool CONVOLUTION_VOLUME::initialize()
 {
-  return initialize(Parameters());
+  return false;
 }
 
 template<typename ValueType,
@@ -81,7 +82,8 @@ template<typename ValueType,
          FFNN_SIZE_TYPE DepthAtCompileTime,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE EmbeddingMode>
-bool CONVOLUTION_VOLUME::initialize(const Parameters& config)
+template<typename ArgPointerType>
+bool CONVOLUTION_VOLUME::initialize(ArgPointerType data, const Parameters& config)
 {
   // Abort if layer is already initialized
   if (Base::setupRequired())
@@ -97,6 +99,9 @@ bool CONVOLUTION_VOLUME::initialize(const Parameters& config)
       reset(config);
     }
   }
+  FFNN_INFO(Base::output_shape_);
+  new (&output_) Eigen::Map<OutputVectorType>(data, Base::output_shape_.depth, 1);
+  FFNN_INFO(output_);
 
   // Set initialization flag
   Base::initialized_ = true;
@@ -135,19 +140,14 @@ template<typename ValueType,
          FFNN_SIZE_TYPE DepthAtCompileTime,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE EmbeddingMode>
-template<typename InputBlockType, typename OutputBlockType>
-void CONVOLUTION_VOLUME::forward(const Eigen::MatrixBase<InputBlockType>& input,
-                                 Eigen::MatrixBase<OutputBlockType> const& output)
+template<typename InputBlockType>
+void CONVOLUTION_VOLUME::forward(const Eigen::MatrixBase<InputBlockType>& input)
 {
   // Multiply all filters
-  BiasVectorType filtered(Base::output_shape_.depth, 1);
   for (OffsetType idx = 0; idx < Base::output_shape_.depth; idx++)
   {
-    filtered(idx) = input.cwiseProduct(filters_[idx]).sum() + b_(idx);
+    output_(idx) = input.cwiseProduct(filters_[idx]).sum() + b_(idx);
   }
-
-  // @see https://eigen.tuxfamily.org/dox/TopicFunctionTakingEigenTypes.html
-  //const_cast<Eigen::MatrixBase<OutputBlockType>&>(output) = filtered;
 }
 
 template<typename ValueType,
