@@ -58,8 +58,8 @@ template<typename ValueType,
          typename _OutputBlockType,
          typename _InputMappingType,
          typename _OutputMappingType>
-typename HIDDEN::OffsetType 
-HIDDEN::connectToForwardLayer(const Base& next, OffsetType offset)
+typename HIDDEN::OffsetType
+HIDDEN::connectToForwardLayer(const Layer<ValueType>& next, OffsetType offset)
 {
   FFNN_ASSERT_MSG (Base::output_shape_ > 0, "Output dimensions are invalid (non-positive) or unresolved.");
 

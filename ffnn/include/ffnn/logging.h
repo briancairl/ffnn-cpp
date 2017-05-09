@@ -29,7 +29,7 @@ const char* UNDERLINE = "\033[4m";
 /// Named header for all <code>_NAMED</code> printouts
 #define FFNN_NAME_HEADER(name) ffnn::logging::HEADER << "[" << name << "] " << ffnn::logging::ENDC
 
-#ifndef FFNN_NO_LOGGING
+#ifdef FFNN_LOGGING_INTERNAL
 /**
  * @brief Prints an named debug message
  * @param name  name to associate with message
@@ -38,7 +38,11 @@ const char* UNDERLINE = "\033[4m";
  */
 #define FFNN_INTERNAL_DEBUG_NAMED(name, msg)\
 {std::cout << FFNN_NAME_HEADER(name) << ffnn::logging::DEEP << msg << ffnn::logging::ENDC << std::endl;}
+#else
+#define FFNN_INTERNAL_DEBUG_NAMED(name, msg) (void(0))
+#endif
 
+#ifndef FFNN_NO_LOGGING
 /**
  * @brief Prints an named debug message
  * @param name  name to associate with message
@@ -58,7 +62,6 @@ const char* UNDERLINE = "\033[4m";
 {std::cout << FFNN_NAME_HEADER(name) << ffnn::logging::WARN << msg << ffnn::logging::ENDC << std::endl;}
 
 #else
-#define FFNN_INTERNAL_DEBUG_NAMED(name, msg) (void(0))
 #define FFNN_DEBUG_NAMED(name, msg) (void(0))
 #define FFNN_WARN_NAMED(name, msg) (void(0))
 #endif

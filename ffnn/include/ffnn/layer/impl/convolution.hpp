@@ -150,7 +150,6 @@ bool Convolution<CONV_TARGS>::forward()
     }
     kdx += filter_count_;
   }
-  FFNN_INFO("BLOOP");
   return true;
 }
 
@@ -195,8 +194,6 @@ template<typename ValueType,
          FFNN_SIZE_TYPE EmbeddingMode>
 void Convolution<CONV_TARGS>::reset(const Convolution<CONV_TARGS>::Parameters& config)
 {
-  ValueType* ptr = const_cast<ValueType*>(Base::input_buffer_.data());
-
   receptors_.resize(boost::extents[Base::output_shape_.height][Base::output_shape_.width]);
 
   OffsetType kdx = 0;
@@ -208,12 +205,10 @@ void Convolution<CONV_TARGS>::reset(const Convolution<CONV_TARGS>::Parameters& c
       new (&receptors_[idx][jdx]) ConvolutionVolumeType(filter_shape_, filter_count_);
 
       // Initialize field
-      Base::initialized_ &= receptors_[idx][jdx].initialize(ptr + kdx, config);
+      Base::initialized_ &= receptors_[idx][jdx].initialize(config);
 
       // Check that last created field was initialized properly
       FFNN_ASSERT_MSG(Base::initialized_, "Failed to initialize receptor.");
-
-      kdx += filter_count_;
     }
   }
 }
@@ -246,6 +241,35 @@ void Convolution<CONV_TARGS>::
 {
   FFNN_ASSERT_MSG(opt, "Input optimizer object is an empty resource.");
   opt_ = opt;
+}
+
+template<typename ValueType,
+         FFNN_SIZE_TYPE HeightAtCompileTime,
+         FFNN_SIZE_TYPE WidthAtCompileTime,
+         FFNN_SIZE_TYPE DepthAtCompileTime,
+         FFNN_SIZE_TYPE FilterHeightAtCompileTime,
+         FFNN_SIZE_TYPE FilterWidthAtCompileTime,
+         FFNN_SIZE_TYPE FilterCountAtCompileTime,
+         FFNN_SIZE_TYPE StrideAtCompileTime,
+         FFNN_SIZE_TYPE EmbeddingMode>
+typename Convolution<CONV_TARGS>::OffsetType
+Convolution<CONV_TARGS>::connectToForwardLayer(const Layer<ValueType>& next, OffsetType offset)
+{
+  // Connect outputs
+  OffsetType ret_offset = Base::connectToForwardLayer(next, offset);
+
+  // Map to individual volumes
+  ValueType* ptr = const_cast<ValueType*>(next.getInputBuffer().data());
+  OffsetType kdx = 0;
+  for (SizeType jdx = 0; jdx < Base::output_shape_.width; jdx++)
+  {
+    for (SizeType idx = 0; idx < Base::output_shape_.height; idx++)
+    {
+      receptors_[idx][jdx].setOutputMapping(ptr + kdx);
+      kdx += filter_count_;
+    }
+  }
+  return ret_offset;
 }
 
 template<typename ValueType,

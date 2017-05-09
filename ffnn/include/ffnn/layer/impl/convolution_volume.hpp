@@ -50,8 +50,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE EmbeddingMode>
 CONVOLUTION_VOLUME::ConvolutionVolume(const ShapeType& filter_shape, const SizeType& filter_count) :
   Base(filter_shape, ShapeType(1, 1, filter_count)),
-  filters_(filter_count),
-  output_(NULL, filter_shape.depth, 1)
+  filters_(filter_count)
 {}
 
 template<typename ValueType,
@@ -82,8 +81,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE DepthAtCompileTime,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE EmbeddingMode>
-template<typename ArgPointerType>
-bool CONVOLUTION_VOLUME::initialize(ArgPointerType data, const Parameters& config)
+bool CONVOLUTION_VOLUME::initialize(const Parameters& config)
 {
   // Abort if layer is already initialized
   if (Base::setupRequired())
@@ -99,9 +97,6 @@ bool CONVOLUTION_VOLUME::initialize(ArgPointerType data, const Parameters& confi
       reset(config);
     }
   }
-  FFNN_INFO(Base::output_shape_);
-  new (&output_) Eigen::Map<OutputVectorType>(data, Base::output_shape_.depth, 1);
-  FFNN_INFO(output_);
 
   // Set initialization flag
   Base::initialized_ = true;
@@ -144,9 +139,10 @@ template<typename InputBlockType>
 void CONVOLUTION_VOLUME::forward(const Eigen::MatrixBase<InputBlockType>& input)
 {
   // Multiply all filters
-  for (OffsetType idx = 0; idx < Base::output_shape_.depth; idx++)
+  for (OffsetType idx = 0; idx < 2; /*Base::output_shape_.depth;*/ idx++)
   {
-    output_(idx) = input.cwiseProduct(filters_[idx]).sum() + b_(idx);
+    //FFNN_ERROR(filters_[idx].size());
+    output_ptr_[idx] = 1.; //input.cwiseProduct(filters_[idx]).sum(); // + b_(idx);
   }
 }
 

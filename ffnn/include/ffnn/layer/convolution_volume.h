@@ -123,9 +123,6 @@ public:
   /// Bias vector type standardization
   typedef Eigen::Matrix<ValueType, FilterCountAtCompileTime, 1, Eigen::ColMajor> BiasVectorType;
 
-  /// Output vector type standardization
-  typedef Eigen::Matrix<ValueType, FilterCountAtCompileTime, 1, Eigen::ColMajor> OutputVectorType;
-
   /// Filter collection type standardization
   typedef FilterBank<KernelMatrixType> FilterBankType;
 
@@ -169,9 +166,7 @@ public:
    * @brief Initialize the volume
    */
   bool initialize();
-
-  template<typename ArgPointerType>
-  bool initialize(ArgPointerType data, const Parameters& config);
+  bool initialize(const Parameters& config);
 
   /**
    * @brief Reset filter weights and biases
@@ -212,6 +207,10 @@ public:
   /// Load serializer
   void load(InputArchive& ar, VersionType version);
 
+  inline void setOutputMapping(ValueType* ptr)
+  {
+    output_ptr_ = ptr;
+  }
 private:
   /// Configuration struct
   Parameters config_;
@@ -223,7 +222,7 @@ private:
   BiasVectorType b_;
 
   // Output mapping
-  Eigen::Map<OutputVectorType> output_;
+  ValueType* output_ptr_;
 
   /// Number of filters associated with the field
   SizeType filter_count_;

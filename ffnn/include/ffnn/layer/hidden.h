@@ -113,15 +113,13 @@ protected:
   /// Output-target error vector
   _OutputMappingType forward_error_;
 
-private:
-
   /**
    * @brief Maps outputs of this layer to inputs of the next
    * @param next  a subsequent layer
    * @param offset  offset index of a memory location in the input buffer of the next layer
    * @retval <code>offset + output_shape_.size()</code>
    */
-  OffsetType connectToForwardLayer(const Base& next, OffsetType offset);
+  virtual OffsetType connectToForwardLayer(const Layer<ValueType>& next, OffsetType offset);
 };
 }  // namespace layer
 }  // namespace ffnn

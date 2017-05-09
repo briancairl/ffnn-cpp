@@ -9,6 +9,7 @@
 #include "boost/multi_array.hpp"
 
 // FFNN Layer
+#include <ffnn/layer/layer.h>
 #include <ffnn/layer/hidden.h>
 #include <ffnn/layer/convolution_volume.h>
 #include <ffnn/neuron/neuron.h>
@@ -193,6 +194,14 @@ private:
    * @see   setOptimizer
    */
   typename Optimizer::Ptr opt_;
+
+  /**
+   * @brief Maps outputs of this layer to inputs of the next
+   * @param next  a subsequent layer
+   * @param offset  offset index of a memory location in the input buffer of the next layer
+   * @retval <code>offset + output_shape_.size()</code>
+   */
+  OffsetType connectToForwardLayer(const Layer<ValueType>& next, OffsetType offset);
 };
 }  // namespace layer
 }  // namespace ffnn
