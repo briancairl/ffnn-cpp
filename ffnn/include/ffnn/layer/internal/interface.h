@@ -50,7 +50,7 @@ public:
   {}
   virtual ~Interface()
   {
-    FFNN_DEBUG_NAMED("Interface", "Destroying [layer::Interface] object <" << this->getID() << ">");
+    FFNN_INTERNAL_DEBUG_NAMED("layer::Interface", "Destroying [layer::Interface] object <" << this->getID() << ">");
   }
 
   /**

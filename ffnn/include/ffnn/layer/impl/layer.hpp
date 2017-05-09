@@ -40,7 +40,7 @@ bool connect(const typename LayerType::Ptr& from, const typename LayerType::Ptr&
   }
   else
   {
-    FFNN_DEBUG_NAMED("layer::connect", "<" << from->getID() << "> connection to " <<
+    FFNN_DEBUG_NAMED("layer::connect", "<" << from->getID() << "> connected to " <<
                                        "<" << to->getID() << "> created.");
     to->prev_.emplace(from->getID(), from);
   }
@@ -55,7 +55,7 @@ Layer<ValueType>::Layer(const ShapeType& input_shape, const ShapeType& output_sh
 template<typename ValueType>
 Layer<ValueType>::~Layer()
 {
-  FFNN_DEBUG_NAMED("Layer", "Destroying [layer::Layer] object <" << this->getID() << ">");
+  FFNN_DEBUG_NAMED("layer::Layer", "Destroying [layer::Layer] object <" << this->getID() << ">");
 }
 
 template<typename ValueType>

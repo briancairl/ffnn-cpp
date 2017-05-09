@@ -50,7 +50,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE EmbeddingMode>
 Convolution<CONV_TARGS>::~Convolution()
 {
-  FFNN_INTERNAL_DEBUG_NAMED("Convolution", "Destroying [layer::Convolution] object");
+  FFNN_INTERNAL_DEBUG_NAMED("layer::Convolution", "Destroying [layer::Convolution] object <" << this->getID() << ">");
 }
 
 template<typename ValueType,
@@ -213,6 +213,7 @@ void Convolution<CONV_TARGS>::reset(const Convolution<CONV_TARGS>::Parameters& c
       FFNN_ASSERT_MSG(Base::initialized_, "Failed to initialize receptor.");
     }
   }
+  FFNN_INTERNAL_DEBUG_NAMED("layer::Convolution", "Resetting.");
 }
 
 template<typename ValueType,

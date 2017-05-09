@@ -17,7 +17,7 @@ Output<ValueType, NetworkOutputsAtCompileTime>::Output() :
 template<typename ValueType, FFNN_SIZE_TYPE NetworkOutputsAtCompileTime>
 Output<ValueType, NetworkOutputsAtCompileTime>::~Output()
 {
-  FFNN_INTERNAL_DEBUG_NAMED("Output", "Destroying [layer::Output] object <" << this->getID() << ">");
+  FFNN_INTERNAL_DEBUG_NAMED("layer::Output", "Destroying [layer::Output] object <" << this->getID() << ">");
 }
 
 template<typename ValueType, FFNN_SIZE_TYPE NetworkOutputsAtCompileTime>

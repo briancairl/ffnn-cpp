@@ -45,7 +45,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE OutputsAtCompileTime>
 FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::~FullyConnected()
 {
-  FFNN_INTERNAL_DEBUG_NAMED("FullyConnected", "Destroying [layer::FullyConnected] object <" << this->getID() << ">");
+  FFNN_INTERNAL_DEBUG_NAMED("layer::FullyConnected", "Destroying [layer::FullyConnected] object <" << this->getID() << ">");
 }
 
 template<typename ValueType,

@@ -61,7 +61,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE EmbeddingMode>
 CONVOLUTION_VOLUME::~ConvolutionVolume()
 {
-  FFNN_INTERNAL_DEBUG_NAMED("ConvolutionVolume", "Destroying [layer::ConvolutionVolume] object <" << this->getID() << ">");
+  FFNN_INTERNAL_DEBUG_NAMED("layer::ConvolutionVolume", "Destroying [layer::ConvolutionVolume] object <" << this->getID() << ">");
 }
 
 template<typename ValueType,

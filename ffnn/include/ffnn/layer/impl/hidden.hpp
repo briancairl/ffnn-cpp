@@ -46,7 +46,7 @@ template<typename ValueType,
          typename _OutputMappingType>
 HIDDEN::~Hidden()
 {
-  FFNN_INTERNAL_DEBUG_NAMED("Hidden", "Destroying [layer::Hidden] object <" << this->getID() << ">");
+  FFNN_INTERNAL_DEBUG_NAMED("layer::Hidden", "Destroying [layer::Hidden] object <" << this->getID() << ">");
 }
 
 template<typename ValueType,
