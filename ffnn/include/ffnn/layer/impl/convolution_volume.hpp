@@ -111,18 +111,9 @@ template<typename ValueType,
          FFNN_SIZE_TYPE EmbeddingMode>
 void CONVOLUTION_VOLUME::reset(const Parameters& config)
 {
-  // Deduce filter height
-  const SizeType f_h =
-    EmbeddingMode == ColEmbedding ?
-    (Base::input_shape_.height * Base::input_shape_.depth) : Base::input_shape_.height;
-
-  // Deduce filter width
-  const SizeType f_w =
-    EmbeddingMode == RowEmbedding ?
-    (Base::input_shape_.width * Base::input_shape_.depth) : Base::input_shape_.width;
-
   // Initializer all filters
-  filters_.setRandom(f_h, f_w);
+  filters_.setRandom(CONV_EMBEDDED_H(Base::input_shape_.height, Base::input_shape_.depth),
+                     CONV_EMBEDDED_W(Base::input_shape_.width,  Base::input_shape_.depth));
   filters_ *= config.init_weight_std;
   if (std::abs(config.init_weight_mean) > 0)
   {
