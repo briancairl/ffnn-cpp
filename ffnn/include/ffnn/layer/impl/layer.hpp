@@ -47,19 +47,19 @@ bool connect(const typename LayerType::Ptr& from, const typename LayerType::Ptr&
   return true;
 }
 
-template<typename ValueType>
-Layer<ValueType>::Layer(const ShapeType& input_shape, const ShapeType& output_shape) :
-  Layer<ValueType>::Base(input_shape, output_shape)
+template<typename ValueType, class EnableAlignment>
+Layer<ValueType, EnableAlignment>::Layer(const ShapeType& input_shape, const ShapeType& output_shape) :
+  Layer<ValueType, EnableAlignment>::Base(input_shape, output_shape)
 {}
 
-template<typename ValueType>
-Layer<ValueType>::~Layer()
+template<typename ValueType, class EnableAlignment>
+Layer<ValueType, EnableAlignment>::~Layer()
 {
   FFNN_INTERNAL_DEBUG_NAMED("layer::Layer", "Destroying [layer::Layer] object <" << this->getID() << ">");
 }
 
-template<typename ValueType>
-bool Layer<ValueType>::initialize()
+template<typename ValueType, class EnableAlignment>
+bool Layer<ValueType, EnableAlignment>::initialize()
 {
   // Abort if layer is already initialized
   if (Base::setupRequired() && Base::isInitialized())
@@ -83,8 +83,8 @@ bool Layer<ValueType>::initialize()
   return Base::isInitialized();
 }
 
-template<typename ValueType>
-typename Layer<ValueType>::SizeType Layer<ValueType>::evaluateInputSize() const
+template<typename ValueType, class EnableAlignment>
+typename Layer<ValueType, EnableAlignment>::SizeType Layer<ValueType, EnableAlignment>::evaluateInputSize() const
 {
   SizeType count(0);
   for (const auto& connection : prev_)
@@ -103,8 +103,8 @@ typename Layer<ValueType>::SizeType Layer<ValueType>::evaluateInputSize() const
   return count;
 }
 
-template<typename ValueType>
-typename Layer<ValueType>::OffsetType Layer<ValueType>::connectInputLayers()
+template<typename ValueType, class EnableAlignment>
+typename Layer<ValueType, EnableAlignment>::OffsetType Layer<ValueType, EnableAlignment>::connectInputLayers()
 {
   // Resolve previous layer output buffers
   OffsetType offset(0);
@@ -123,9 +123,9 @@ typename Layer<ValueType>::OffsetType Layer<ValueType>::connectInputLayers()
   return offset;
 }
 
-template<typename ValueType>
-void Layer<ValueType>::save(typename Layer<ValueType>::OutputArchive& ar,
-                            typename Layer<ValueType>::VersionType version) const
+template<typename ValueType, class EnableAlignment>
+void Layer<ValueType, EnableAlignment>::save(typename Layer<ValueType, EnableAlignment>::OutputArchive& ar,
+                                             typename Layer<ValueType, EnableAlignment>::VersionType version) const
 {
   ffnn::io::signature::apply<Layer<ValueType>>(ar);
   Base::save(ar, version);
@@ -141,9 +141,9 @@ void Layer<ValueType>::save(typename Layer<ValueType>::OutputArchive& ar,
   FFNN_DEBUG_NAMED("layer::Layer", "Saved");
 }
 
-template<typename ValueType>
-void Layer<ValueType>::load(typename Layer<ValueType>::InputArchive& ar,
-                            typename Layer<ValueType>::VersionType version)
+template<typename ValueType, class EnableAlignment>
+void Layer<ValueType, EnableAlignment>::load(typename Layer<ValueType, EnableAlignment>::InputArchive& ar,
+                                             typename Layer<ValueType, EnableAlignment>::VersionType version)
 {
   ffnn::io::signature::check<Layer<ValueType>>(ar);
   Base::load(ar, version);
@@ -158,7 +158,7 @@ void Layer<ValueType>::load(typename Layer<ValueType>::InputArchive& ar,
     ar & id;
 
     // Create connection with empty layer data (promise)
-    prev_.emplace(id, typename Layer<ValueType>::Ptr());
+    prev_.emplace(id, typename Self::Ptr());
   }
   FFNN_DEBUG_NAMED("layer::Layer", "Loaded");
 }

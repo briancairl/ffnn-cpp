@@ -23,7 +23,8 @@ namespace layer
 /**
  * @brief Base object for all layer types
  */
-template<typename ValueType>
+template<typename ValueType,
+         class EnableAlignment = std::false_type>
 class Layer :
   public internal::Interface<ValueType>
 {
@@ -36,7 +37,7 @@ public:
   using Base = internal::Interface<ValueType>;
 
   /// Self type alias
-  using Self = Layer<ValueType>;
+  using Self = Layer<ValueType, EnableAlignment>;
 
   /// Shared resource standardization
   typedef boost::shared_ptr<Self> Ptr;
@@ -46,7 +47,7 @@ public:
 
   /// Buffer type standardization
   typedef typename std::conditional<
-    std::is_floating_point<ValueType>::value,
+    EnableAlignment::value,
     std::vector<ValueType, Eigen::aligned_allocator<ValueType>>,
     std::vector<ValueType>
   >::type BufferType;
@@ -106,11 +107,17 @@ public:
     return true;
   }
 
+  /**
+   * @brief Exposes const reference to raw data input buffer
+   */
   inline const BufferType& getInputBuffer() const
   {
     return input_buffer_;
   }
 
+  /**
+   * @brief Exposes const reference to raw data backward-error buffer
+   */
   inline const BufferType& getBackwardErrorBuffer() const
   {
     return backward_error_buffer_;
