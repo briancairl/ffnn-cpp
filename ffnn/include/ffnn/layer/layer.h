@@ -7,6 +7,7 @@
 
 // C++ Standard Library
 #include <map>
+#include <type_traits>
 
 // FFNN (internal)
 #include <ffnn/internal/traits/serializable.h>
@@ -34,14 +35,21 @@ public:
   /// Base type alias
   using Base = internal::Interface<ValueType>;
 
+  /// Self type alias
+  using Self = Layer<ValueType>;
+
   /// Shared resource standardization
-  typedef boost::shared_ptr<Layer> Ptr;
+  typedef boost::shared_ptr<Self> Ptr;
 
   /// Constant shared resource standardization
-  typedef boost::shared_ptr<const Layer> ConstPtr;
+  typedef boost::shared_ptr<const Self> ConstPtr;
 
   /// Buffer type standardization
-  typedef std::vector<ValueType, Eigen::aligned_allocator<ValueType>> BufferType;
+  typedef typename std::conditional<
+    std::is_floating_point<ValueType>::value,
+    std::vector<ValueType, Eigen::aligned_allocator<ValueType>>,
+    std::vector<ValueType>
+  >::type BufferType;
 
   /// Scalar type standardization
   typedef typename Base::ScalarType ScalarType;
@@ -114,7 +122,7 @@ public:
    * @param offset  offset index of a memory location in the input buffer of the next layer
    * @retval <code>offset + output_shape_.size()</code>
    */
-  virtual OffsetType connectToForwardLayer(const Layer<ValueType>& next, OffsetType offset) = 0;
+  virtual OffsetType connectToForwardLayer(const Self& next, OffsetType offset) = 0;
 
 protected:
   // Register serialization material
@@ -139,7 +147,7 @@ protected:
   OffsetType connectInputLayers();
 
   /// Pointers to previous layers
-  std::map<std::string, typename Layer<ValueType>::Ptr> prev_;
+  std::map<std::string, typename Self::Ptr> prev_;
 
   /// Raw input value buffer
   BufferType input_buffer_;
