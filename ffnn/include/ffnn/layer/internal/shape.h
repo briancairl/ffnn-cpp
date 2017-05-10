@@ -21,9 +21,36 @@ namespace layer
 {
 namespace internal
 {
-#define IS_DYNAMIC(x) (x == Eigen::Dynamic)
-#define IS_DYNAMIC_TRIPLET(n, m, l) (IS_DYNAMIC(n) || IS_DYNAMIC(m) || IS_DYNAMIC(l))
-#define PROD_IF_STATIC_TRIPLET(n, m, l) (IS_DYNAMIC_TRIPLET(n, m, l) ? Eigen::Dynamic : (n*m*l))
+
+template<typename SizeType>
+constexpr bool is_dynamic(SizeType n)
+{
+  return n == Eigen::Dynamic;
+}
+
+template<typename SizeType>
+constexpr bool is_dynamic(SizeType n, SizeType m)
+{
+  return is_dynamic(n) || is_dynamic(m);
+}
+
+template<typename SizeType>
+constexpr bool is_dynamic(SizeType n, SizeType m, SizeType l)
+{
+  return is_dynamic(n, m) || is_dynamic(l);
+}
+
+template<typename SizeType>
+constexpr SizeType multiply_if_not_dynamic_sizes(SizeType n, SizeType m)
+{
+  return is_dynamic(n, m) ? Eigen::Dynamic : (n * m);
+}
+
+template<typename SizeType>
+constexpr SizeType multiply_if_not_dynamic_sizes(SizeType n, SizeType m, SizeType l)
+{
+  return is_dynamic(n, m, l) ? Eigen::Dynamic : (n * m  * l);
+}
 
 template<typename SizeType>
 struct Shape
@@ -47,12 +74,12 @@ struct Shape
 
   inline SizeType size() const
   {
-    return PROD_IF_STATIC_TRIPLET(height, width, depth);
+    return multiply_if_not_dynamic_sizes(height, width, depth);
   }
 
   inline bool valid() const
   {
-    return PROD_IF_STATIC_TRIPLET(height, width, depth) > 0;
+    return not is_dynamic(size());
   }
 
   operator SizeType() const { return size(); }

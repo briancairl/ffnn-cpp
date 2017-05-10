@@ -45,16 +45,10 @@ struct is_dynamic_pair :
   >::type
 {};
 
-template<typename SizeType>
-constexpr SizeType mult_if_not_eigen_dynamic_size(SizeType n, SizeType m)
-{
-  return ((n == Eigen::Dynamic) || (m == Eigen::Dynamic)) ? Eigen::Dynamic : (n * m);
-}
-
 template<EmbeddingMode mode, EmbeddingMode ref, typename SizeType>
 constexpr SizeType embed_dimension(SizeType n, SizeType m)
 {
-  return (mode == ref) ? mult_if_not_eigen_dynamic_size<SizeType>(n, m) : n;
+  return (mode == ref) ? multiply_if_not_dynamic_sizes<SizeType>(n, m) : n;
 }
 
 template<typename SizeType>
