@@ -7,7 +7,6 @@
 
 // C++ Standard Library
 #include <map>
-#include <type_traits>
 
 // FFNN (internal)
 #include <ffnn/internal/traits/serializable.h>
