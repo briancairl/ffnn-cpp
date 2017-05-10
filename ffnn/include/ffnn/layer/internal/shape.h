@@ -5,6 +5,9 @@
 #ifndef FFNN_LAYER_INTERNAL_SHAPE_H
 #define FFNN_LAYER_INTERNAL_SHAPE_H
 
+// C++ Standard Library
+#include <type_traits>
+
 // FFNN (internal)
 #include <ffnn/internal/traits/serializable.h>
 #include <ffnn/internal/signature.h>

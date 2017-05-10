@@ -7,6 +7,7 @@
 
 // C++ Standard Library
 #include <vector>
+#include <type_traits>
 
 // FFNN (internal)
 #include <ffnn/layer/internal/shape.h>
@@ -16,10 +17,18 @@ namespace ffnn
 {
 namespace layer
 {
+template<FFNN_SIZE_TYPE SizeN>
+struct is_dynamic :
+  std::conditional<SizeN == Eigen::Dynamic, std::true_type, std::false_type>::type
+{};
+
+
 #define IS_DYNAMIC_PAIR(n, m) (IS_DYNAMIC(n) || IS_DYNAMIC(m))
 #define PROD_IF_STATIC_PAIR(n, m) (IS_DYNAMIC_PAIR(n, m) ? Eigen::Dynamic : (n*m))
 #define CONV_EMBEDDED_H(h, d) EmbeddingMode == ColEmbedding ? PROD_IF_STATIC_PAIR(h, d) : h
 #define CONV_EMBEDDED_W(w, d) EmbeddingMode == RowEmbedding ? PROD_IF_STATIC_PAIR(w, d) : w
+
+
 
 enum EmbeddingMode
 {
@@ -27,13 +36,22 @@ enum EmbeddingMode
   ColEmbedding = 1, ///< Embed depth along filter matrix cols
 };
 
+template<class BlockType>
+struct is_alignable_128 :
+  std::conditional<(sizeof(BlockType)%16) == 0, std::true_type, std::false_type>::type
+{};
+
+
 template<typename KernelMatrixType>
 class FilterBank :
-  public std::vector<KernelMatrixType, Eigen::aligned_allocator<typename KernelMatrixType::Scalar>>
+  public std::conditional
+  <
+    is_alignable_128<KernelMatrixType>::value,
+    std::vector<KernelMatrixType, Eigen::aligned_allocator<typename KernelMatrixType::Scalar>>,
+    std::vector<KernelMatrixType>
+  >::type
 {
 public:
-  using Base = std::vector<KernelMatrixType, Eigen::aligned_allocator<typename KernelMatrixType::Scalar>>;
-
   typedef typename KernelMatrixType::Scalar ScalarType;
 
   typedef typename KernelMatrixType::Index SizeType;
@@ -43,7 +61,7 @@ public:
   explicit
   FilterBank(SizeType filter_count)
   {
-    Base::resize(filter_count);
+    this->resize(filter_count);
   }
 
   void setZero(SizeType height, SizeType width)
@@ -171,6 +189,14 @@ public:
   }
 
   /**
+   * @brief Sets memory map to contiguous backward-error buffer
+   */
+  inline void setBackwardErrorMapping(ValueType* const ptr)
+  {
+    backward_error_ptr_ = ptr;
+  }
+
+  /**
    * @brief Initialize the volume
    */
   bool initialize();
@@ -182,12 +208,21 @@ public:
    */
   void reset(const Parameters& config = Parameters());
 
+  /**
+   * @brief Performs forward value propagation
+   * @param input  a block (matrix; depth embedded) of input values
+   */
   template<typename InputBlockType>
   void forward(const Eigen::MatrixBase<InputBlockType>& input);
 
+  /**
+   * @brief Performs backward error propagation
+   * @param input  a block (matrix; depth embedded) of input values
+   * @param forward_error  a block (matrix; depth embedded) of layer-output error values
+   */
   template<typename InputBlockType, typename ForwardErrorBlockType>
   void backward(const Eigen::MatrixBase<InputBlockType>& input,
-                const Eigen::MatrixBase<ForwardErrorBlockType>& error);
+                const Eigen::MatrixBase<ForwardErrorBlockType>& forward_error);
 
   /**
    * @brief Exposes internal biasing weights
@@ -228,8 +263,14 @@ private:
   // Output mapping
   ValueType* output_ptr_;
 
+  // Backward-error mapping
+  ValueType* backward_error_ptr_;
+
   /// Number of filters associated with the field
   SizeType filter_count_;
+
+public:
+  EIGEN_MAKE_ALIGNED_OPERATOR_NEW_IF(is_alignable_128<BiasVectorType>::value);
 };
 }  // namespace layer
 }  // namespace ffnn

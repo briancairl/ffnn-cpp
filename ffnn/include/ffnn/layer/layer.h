@@ -24,7 +24,7 @@ namespace layer
  * @brief Base object for all layer types
  */
 template<typename ValueType,
-         class EnableAlignment = std::false_type>
+         class EnableAlignment = std::true_type>
 class Layer :
   public internal::Interface<ValueType>
 {
