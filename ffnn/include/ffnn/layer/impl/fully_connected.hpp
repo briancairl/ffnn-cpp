@@ -80,9 +80,9 @@ bool FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::initi
                    "<" <<
                    Base::getID() <<
                    "> initialized as (in=" <<
-                   Base::inputSize() <<
+                   Base::inputShape().size() <<
                    ", out=" <<
-                   Base::outputSize() <<
+                   Base::outputShape().size() <<
                    ") [with 1 biasing input] (optimizer=" <<
                    opt_->name() <<
                    ")");
@@ -135,7 +135,7 @@ void FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::reset
   FFNN_ASSERT_MSG(Base::isInitialized(), "Layer is not initialized.");
 
   // Set uniformly random weight matrix + add biases
-  w_.setRandom(Base::outputSize(), Base::inputSize());
+  w_.setRandom(Base::outputShape().size(), Base::inputShape().size());
   w_ *= config_.init_weight_std;
   if (std::abs(config_.init_weight_mean) > 0)
   {
@@ -143,7 +143,7 @@ void FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::reset
   }
 
   // Set uniformly random bias matrix + add biases
-  b_.setRandom(Base::outputSize(), 1);
+  b_.setRandom(Base::outputShape().size(), 1);
   b_ *= config_.init_bias_std;
   if (std::abs(config_.init_bias_mean) > 0)
   {

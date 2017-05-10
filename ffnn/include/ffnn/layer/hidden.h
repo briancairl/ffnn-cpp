@@ -7,6 +7,7 @@
 
 // C++ Standard Library
 #include <vector>
+#include <type_traits>
 
 // FFNN (internal)
 #include <ffnn/internal/traits/serializable.h>

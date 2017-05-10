@@ -69,13 +69,13 @@ bool Layer<ValueType, EnableAlignment>::initialize()
   }
 
   // Allocate input/error buffers
-  if (Base::inputSize() > 0 && input_buffer_.empty() && backward_error_buffer_.empty())
+  if (Base::inputShape().size() > 0 && input_buffer_.empty() && backward_error_buffer_.empty())
   {
     // Allocate input buffer
-    input_buffer_.resize(Base::inputSize(), 0);
+    input_buffer_.resize(Base::inputShape().size(), 0);
 
     // Allocate backward error buffer
-    backward_error_buffer_.resize(Base::inputSize(), 0);
+    backward_error_buffer_.resize(Base::inputShape().size(), 0);
   }
 
   // Set initialization flag

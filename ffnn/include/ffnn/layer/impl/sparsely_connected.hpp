@@ -82,9 +82,9 @@ bool SparselyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::in
                    "<" <<
                    Base::getID() <<
                    "> initialized as (in=" <<
-                   Base::inputSize() <<
+                   Base::inputShape().size() <<
                    ", out=" <<
-                   Base::outputSize() <<
+                   Base::outputShape().size() <<
                    ") [with 1 biasing input] (optimizer=" <<
                    opt_->name() <<
                    ")");
@@ -141,14 +141,14 @@ void SparselyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::re
   FFNN_ASSERT_MSG(Base::isInitialized(), "Layer is not initialized.");
 
   // Create random value matrix
-  RandMatrix random(Base::outputSize(), Base::inputSize());
-  random.setRandom(Base::outputSize(), Base::inputSize());
+  RandMatrix random(Base::outputShape().size(), Base::inputShape().size());
+  random.setRandom(Base::outputShape().size(), Base::inputShape().size());
 
   // Build weight matrix
-  w_.resize(Base::outputSize(), Base::inputSize());
-  for (SizeType idx = 0; idx < Base::outputSize(); idx++)
+  w_.resize(Base::outputShape().size(), Base::inputShape().size());
+  for (SizeType idx = 0; idx < Base::outputShape().size(); idx++)
   {
-    for (SizeType jdx = 0; jdx < Base::inputSize(); jdx++)
+    for (SizeType jdx = 0; jdx < Base::inputShape().size(); jdx++)
     {
       const ValueType p = (random(idx, jdx) + 1) / 2;
       if (p < config_.connection_probability)
@@ -160,7 +160,7 @@ void SparselyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::re
   }
 
   // Set uniformly random bias matrix + add biases
-  b_.setRandom(Base::outputSize(), 1);
+  b_.setRandom(Base::outputShape().size(), 1);
   b_ *= config_.init_bias_std;
   if (std::abs(config_.init_bias_mean) > 0)
   {

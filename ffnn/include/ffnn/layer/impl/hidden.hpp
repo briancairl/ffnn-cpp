@@ -72,7 +72,7 @@ HIDDEN::connectToForwardLayer(const Layer<ValueType>& next, OffsetType offset)
   new (&forward_error_) _OutputMappingType(error_ptr, Base::output_shape_.height, Base::output_shape_.width);
 
   // Return next offset after assigning buffer segments
-  return offset + Base::outputSize();
+  return offset + Base::outputShape().size();
 }
 
 template<typename ValueType,
@@ -113,15 +113,15 @@ bool HIDDEN::initialize()
     new (&backward_error_) _InputMappingType(error_ptr, Base::input_shape_.height, Base::input_shape_.width);
 
     // Resolve previous layer output buffers
-    if (Base::connectInputLayers() == Base::inputSize())
+    if (Base::connectInputLayers() == Base::inputShape().size())
     {
       FFNN_DEBUG_NAMED("layer::Hidden",
                        "<" <<
                        Base::getID() <<
                        "> initialized as (in=" <<
-                       Base::inputSize()  <<
+                       Base::inputShape().size()  <<
                        ", out=" <<
-                       Base::outputSize() <<
+                       Base::outputShape().size() <<
                        ")");
       return Base::isInitialized();
     }

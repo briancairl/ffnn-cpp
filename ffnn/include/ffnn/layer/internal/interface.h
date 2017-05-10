@@ -54,22 +54,6 @@ public:
   }
 
   /**
-   * @brief Returns the total number of Interface inputs
-   */
-  inline SizeType inputSize() const
-  {
-    return input_shape_.size();
-  }
-
-  /**
-   * @brief Returns the total number of Interface outputs
-   */
-  inline SizeType outputSize() const
-  {
-    return output_shape_.size();
-  }
-
-  /**
    * @brief Returns the Interface input dimension oject
    */
   inline const ShapeType& inputShape() const
