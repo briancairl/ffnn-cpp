@@ -10,8 +10,6 @@
 #include <cmath>
 
 // Boost
-#include <boost/shared_ptr.hpp>
-#include <boost/make_shared.hpp>
 #include <boost/random.hpp>
 #include <boost/random/normal_distribution.hpp>
 #include <boost/math/special_functions/erf.hpp>
@@ -21,7 +19,7 @@ namespace ffnn
 namespace distribution
 {
 
-template<typename ValueType>
+template<typename ValueType, class ParametersType>
 class Normal
 {
 public:
@@ -31,15 +29,9 @@ public:
   /// Variate generator type standardization
   typedef boost::variate_generator<boost::mt19937&, DistributionType> GeneratorType;
 
-  Normal(ValueType mean, ValueType scale) : 
-    distribution_(mean, scale)
-  {
-    static boost::mt19937 rng;
-    if (!variate_generator_)
-    {
-      variate_generator_ = boost::make_shared<GeneratorType>(rng, distribution_);
-    }
-  }
+  Normal() : 
+    distribution_(ParametersType::mean, ParametersType::scale)
+  {}
 
   /**
    * @brief Generates a random value
@@ -48,7 +40,9 @@ public:
    */
   ValueType generate()
   {
-    return (*variate_generator_)();
+    static boost::mt19937 rng;
+    static GeneratorType gen(rng, distribution_);
+    return gen();
   }
 
   /**
@@ -63,26 +57,19 @@ public:
 
 private:
   DistributionType distribution_;
-  static boost::shared_ptr<GeneratorType> variate_generator_;
 };
-
 
 template<typename ValueType>
-struct StandardNormal : Normal<ValueType>
+struct StandardNormalParameters
 {
-  /// Base-type aliad
-  using Base = Normal<ValueType>;
-
-  /// Distribution type standardization
-  typedef typename Base::DistributionType DistributionType;
-
-  /// Variate generator type standardization
-  typedef typename Base::GeneratorType GeneratorType;
-
-  StandardNormal() : 
-    Base(0.0, 1.0)
-  {}
+  constexpr static const ValueType mean  = 0.0;
+  constexpr static const ValueType scale = 1.0;
 };
+
+template<typename ValueType>
+struct StandardNormal :
+  Normal<ValueType, StandardNormalParameters<ValueType>> {};
+
 }  // namespace distribution
 }  // namespace ffnn
 #endif  // FFNN_DISTRIBUTION_NORMAL_H
