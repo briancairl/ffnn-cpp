@@ -23,7 +23,7 @@ namespace layer
 template <typename ConnectType, typename BiasType>
 class LayerParameters
 {
-  /// Require that ScalarType is floating point
+  /// Require that ScalarType is same between Connecting/Biasing types
   static_assert(std::is_same<typename ConnectType::Scalar, typename BiasType::Scalar>::value,
                 "Scalar representation used by [ConnectionType] and [BiasType] must match.");
 
