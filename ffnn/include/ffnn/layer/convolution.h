@@ -31,7 +31,7 @@ namespace layer
   FilterWidthAtCompileTime,\
   FilterCountAtCompileTime,\
   StrideAtCompileTime,\
-  EmbeddingMode
+  Mode
 
 #define CONV_VOLUME_TARGS\
   ValueType,\
@@ -39,9 +39,7 @@ namespace layer
   FilterWidthAtCompileTime,\
   DepthAtCompileTime,\
   FilterCountAtCompileTime,\
-  EmbeddingMode
-
-#define CONV_LENGTH_WITH_STRIDE(n, fn, s) ((n - fn) / s + 1)
+  Mode
 
 /**
  * @brief A convolution layer
@@ -54,21 +52,21 @@ template <typename ValueType,
           FFNN_SIZE_TYPE FilterWidthAtCompileTime = Eigen::Dynamic,
           FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic,
           FFNN_SIZE_TYPE StrideAtCompileTime = 1,
-          FFNN_SIZE_TYPE EmbeddingMode = ColEmbedding>
+          EmbeddingMode Mode = ColEmbedding>
 class Convolution :
   public Hidden<ValueType,
-                CONV_EMBEDDED_H(HeightAtCompileTime, DepthAtCompileTime),
-                CONV_EMBEDDED_W(WidthAtCompileTime,  DepthAtCompileTime),
-                CONV_EMBEDDED_H(CONV_LENGTH_WITH_STRIDE(HeightAtCompileTime, FilterHeightAtCompileTime, StrideAtCompileTime), FilterCountAtCompileTime),
-                CONV_EMBEDDED_W(CONV_LENGTH_WITH_STRIDE(WidthAtCompileTime,  FilterWidthAtCompileTime,  StrideAtCompileTime), FilterCountAtCompileTime)>
+                embed_dimension<Mode, ColEmbedding>(HeightAtCompileTime, DepthAtCompileTime),
+                embed_dimension<Mode, RowEmbedding>(WidthAtCompileTime,  DepthAtCompileTime),
+                embed_dimension<Mode, ColEmbedding>(output_dimension(HeightAtCompileTime, FilterHeightAtCompileTime, StrideAtCompileTime), FilterCountAtCompileTime),
+                embed_dimension<Mode, RowEmbedding>(output_dimension(WidthAtCompileTime,  FilterWidthAtCompileTime,  StrideAtCompileTime), FilterCountAtCompileTime)>
 {
 public:
   /// Base type alias
   using Base = Hidden<ValueType,
-                      CONV_EMBEDDED_H(HeightAtCompileTime, DepthAtCompileTime),
-                      CONV_EMBEDDED_W(WidthAtCompileTime,  DepthAtCompileTime),
-                      CONV_EMBEDDED_H(CONV_LENGTH_WITH_STRIDE(HeightAtCompileTime, FilterHeightAtCompileTime, StrideAtCompileTime), FilterCountAtCompileTime),
-                      CONV_EMBEDDED_W(CONV_LENGTH_WITH_STRIDE(WidthAtCompileTime,  FilterWidthAtCompileTime,  StrideAtCompileTime), FilterCountAtCompileTime)>;
+                      embed_dimension<Mode, ColEmbedding>(HeightAtCompileTime, DepthAtCompileTime),
+                      embed_dimension<Mode, RowEmbedding>(WidthAtCompileTime,  DepthAtCompileTime),
+                      embed_dimension<Mode, ColEmbedding>(output_dimension(HeightAtCompileTime, FilterHeightAtCompileTime, StrideAtCompileTime), FilterCountAtCompileTime),
+                      embed_dimension<Mode, RowEmbedding>(output_dimension(WidthAtCompileTime,  FilterWidthAtCompileTime,  StrideAtCompileTime), FilterCountAtCompileTime)>;
 
   /// Self type alias
   using Self = Convolution<CONV_TARGS>;
@@ -214,7 +212,4 @@ private:
 
 #undef CONV_TARGS
 #undef CONV_VOLUME_TARGS
-#undef CONV_LENGTH_WITH_STRIDE
-#undef CONV_EMBEDDED_H
-#undef CONV_EMBEDDED_W
 #endif  // FFNN_LAYER_FULLY_CONNECTED_H

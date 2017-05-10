@@ -15,11 +15,11 @@ namespace ffnn
 namespace layer
 {
 #define CONVOLUTION_VOLUME_TARGS ValueType,\
-                               HeightAtCompileTime,\
-                               WidthAtCompileTime,\
-                               DepthAtCompileTime,\
-                               FilterCountAtCompileTime,\
-                               EmbeddingMode
+                                 HeightAtCompileTime,\
+                                 WidthAtCompileTime,\
+                                 DepthAtCompileTime,\
+                                 FilterCountAtCompileTime,\
+                                 Mode
 #define CONVOLUTION_VOLUME ConvolutionVolume<CONVOLUTION_VOLUME_TARGS>
 
 template<typename ValueType,
@@ -27,7 +27,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE WidthAtCompileTime,
          FFNN_SIZE_TYPE DepthAtCompileTime,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
-         FFNN_SIZE_TYPE EmbeddingMode>
+         EmbeddingMode Mode>
 CONVOLUTION_VOLUME::
 Parameters::Parameters(ScalarType init_weight_std,
                        ScalarType init_bias_std,
@@ -47,7 +47,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE WidthAtCompileTime,
          FFNN_SIZE_TYPE DepthAtCompileTime,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
-         FFNN_SIZE_TYPE EmbeddingMode>
+         EmbeddingMode Mode>
 CONVOLUTION_VOLUME::ConvolutionVolume(const ShapeType& filter_shape, const SizeType& filter_count) :
   Base(filter_shape, ShapeType(1, 1, filter_count)),
   filters_(filter_count)
@@ -58,7 +58,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE WidthAtCompileTime,
          FFNN_SIZE_TYPE DepthAtCompileTime,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
-         FFNN_SIZE_TYPE EmbeddingMode>
+         EmbeddingMode Mode>
 CONVOLUTION_VOLUME::~ConvolutionVolume()
 {
   FFNN_INTERNAL_DEBUG_NAMED("layer::ConvolutionVolume", "Destroying [layer::ConvolutionVolume] object <" << this->getID() << ">");
@@ -69,7 +69,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE WidthAtCompileTime,
          FFNN_SIZE_TYPE DepthAtCompileTime,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
-         FFNN_SIZE_TYPE EmbeddingMode>
+         EmbeddingMode Mode>
 bool CONVOLUTION_VOLUME::initialize()
 {
   return false;
@@ -80,7 +80,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE WidthAtCompileTime,
          FFNN_SIZE_TYPE DepthAtCompileTime,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
-         FFNN_SIZE_TYPE EmbeddingMode>
+         EmbeddingMode Mode>
 bool CONVOLUTION_VOLUME::initialize(const Parameters& config)
 {
   // Abort if layer is already initialized
@@ -108,12 +108,12 @@ template<typename ValueType,
          FFNN_SIZE_TYPE WidthAtCompileTime,
          FFNN_SIZE_TYPE DepthAtCompileTime,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
-         FFNN_SIZE_TYPE EmbeddingMode>
+         EmbeddingMode Mode>
 void CONVOLUTION_VOLUME::reset(const Parameters& config)
 {
   // Initializer all filters
-  filters_.setRandom(CONV_EMBEDDED_H(Base::input_shape_.height, Base::input_shape_.depth),
-                     CONV_EMBEDDED_W(Base::input_shape_.width,  Base::input_shape_.depth));
+  filters_.setRandom(embed_dimension<Mode, ColEmbedding>(Base::input_shape_.height, Base::input_shape_.depth),
+                     embed_dimension<Mode, RowEmbedding>(Base::input_shape_.width,  Base::input_shape_.depth));
   filters_ *= config.init_weight_std;
   if (std::abs(config.init_weight_mean) > 0)
   {
@@ -134,7 +134,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE WidthAtCompileTime,
          FFNN_SIZE_TYPE DepthAtCompileTime,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
-         FFNN_SIZE_TYPE EmbeddingMode>
+         EmbeddingMode Mode>
 template<typename InputBlockType>
 void CONVOLUTION_VOLUME::forward(const Eigen::MatrixBase<InputBlockType>& input)
 {
@@ -150,7 +150,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE WidthAtCompileTime,
          FFNN_SIZE_TYPE DepthAtCompileTime,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
-         FFNN_SIZE_TYPE EmbeddingMode>
+         EmbeddingMode Mode>
 template<typename InputBlockType, typename ForwardErrorBlockType>
 void CONVOLUTION_VOLUME::backward(const Eigen::MatrixBase<InputBlockType>& input,
                                   const Eigen::MatrixBase<ForwardErrorBlockType>& error)
@@ -161,7 +161,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE WidthAtCompileTime,
          FFNN_SIZE_TYPE DepthAtCompileTime,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
-         FFNN_SIZE_TYPE EmbeddingMode>
+         EmbeddingMode Mode>
 void CONVOLUTION_VOLUME::save(typename CONVOLUTION_VOLUME::OutputArchive& ar,
                               typename CONVOLUTION_VOLUME::VersionType version) const
 {
@@ -181,7 +181,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE WidthAtCompileTime,
          FFNN_SIZE_TYPE DepthAtCompileTime,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
-         FFNN_SIZE_TYPE EmbeddingMode>
+         EmbeddingMode Mode>
 void CONVOLUTION_VOLUME::load(typename CONVOLUTION_VOLUME::InputArchive& ar,
                               typename CONVOLUTION_VOLUME::VersionType version)
 {

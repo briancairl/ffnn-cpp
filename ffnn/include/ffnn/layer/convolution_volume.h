@@ -17,30 +17,60 @@ namespace ffnn
 {
 namespace layer
 {
-template<FFNN_SIZE_TYPE SizeN>
-struct is_dynamic :
-  std::conditional<SizeN == Eigen::Dynamic, std::true_type, std::false_type>::type
-{};
 
 
 #define IS_DYNAMIC_PAIR(n, m) (IS_DYNAMIC(n) || IS_DYNAMIC(m))
 #define PROD_IF_STATIC_PAIR(n, m) (IS_DYNAMIC_PAIR(n, m) ? Eigen::Dynamic : (n*m))
-#define CONV_EMBEDDED_H(h, d) EmbeddingMode == ColEmbedding ? PROD_IF_STATIC_PAIR(h, d) : h
-#define CONV_EMBEDDED_W(w, d) EmbeddingMode == RowEmbedding ? PROD_IF_STATIC_PAIR(w, d) : w
+#define CONV_EMBEDDED_H(h, d) Mode == ColEmbedding ? PROD_IF_STATIC_PAIR(h, d) : h
+#define CONV_EMBEDDED_W(w, d) Mode == RowEmbedding ? PROD_IF_STATIC_PAIR(w, d) : w
 
-
-
-enum EmbeddingMode
+typedef enum
 {
   RowEmbedding = 0, ///< Embed depth along filter matrix rows
   ColEmbedding = 1, ///< Embed depth along filter matrix cols
-};
+}
+EmbeddingMode;
+
+template<FFNN_SIZE_TYPE Size>
+struct is_dynamic :
+  std::conditional<Size == Eigen::Dynamic, std::true_type, std::false_type>::type
+{};
+
+template<FFNN_SIZE_TYPE SizeN, FFNN_SIZE_TYPE SizeM>
+struct is_dynamic_pair :
+  std::conditional<
+    is_dynamic<SizeN>::value and is_dynamic<SizeM>::value,
+    std::true_type,
+    std::false_type
+  >::type
+{};
+
+template<typename SizeType>
+constexpr SizeType mult_if_not_eigen_dynamic_size(SizeType n, SizeType m)
+{
+  return ((n == Eigen::Dynamic) || (m == Eigen::Dynamic)) ? Eigen::Dynamic : (n * m);
+}
+
+template<EmbeddingMode mode, EmbeddingMode ref, typename SizeType>
+constexpr SizeType embed_dimension(SizeType n, SizeType m)
+{
+  return (mode == ref) ? mult_if_not_eigen_dynamic_size<SizeType>(n, m) : n;
+}
+
+template<typename SizeType>
+constexpr SizeType output_dimension(SizeType n, SizeType fn, SizeType stride)
+{
+  return (n - fn) / stride + 1;
+}
 
 template<class BlockType>
 struct is_alignable_128 :
-  std::conditional<(sizeof(BlockType)%16) == 0, std::true_type, std::false_type>::type
+  std::conditional<
+    (sizeof(BlockType)%16) == 0,
+    std::true_type,
+    std::false_type
+  >::type
 {};
-
 
 template<typename KernelMatrixType>
 class FilterBank :
@@ -104,7 +134,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic,
          FFNN_SIZE_TYPE DepthAtCompileTime = Eigen::Dynamic,
          FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic,
-         FFNN_SIZE_TYPE EmbeddingMode = ColEmbedding>
+         EmbeddingMode Mode = ColEmbedding>
 class ConvolutionVolume :
   public internal::Interface<ValueType>
 {
@@ -118,7 +148,7 @@ public:
                                  WidthAtCompileTime,
                                  DepthAtCompileTime,
                                  FilterCountAtCompileTime,
-                                 EmbeddingMode>;
+                                 Mode>;
 
   /// Scalar type standardization
   typedef typename Base::ScalarType ScalarType;
@@ -134,9 +164,9 @@ public:
 
   /// Filter kernel matrix standardization
   typedef Eigen::Matrix<ValueType,
-                        CONV_EMBEDDED_H(HeightAtCompileTime, DepthAtCompileTime),
-                        CONV_EMBEDDED_W(WidthAtCompileTime, DepthAtCompileTime),
-                        EmbeddingMode == ColEmbedding ? Eigen::ColMajor : Eigen::RowMajor> KernelMatrixType;
+                        embed_dimension<Mode, ColEmbedding>(HeightAtCompileTime, DepthAtCompileTime),
+                        embed_dimension<Mode, RowEmbedding>(WidthAtCompileTime,  DepthAtCompileTime),
+                        Mode == ColEmbedding ? Eigen::ColMajor : Eigen::RowMajor> KernelMatrixType;
 
   /// Bias vector type standardization
   typedef Eigen::Matrix<ValueType, FilterCountAtCompileTime, 1, Eigen::ColMajor> BiasVectorType;
