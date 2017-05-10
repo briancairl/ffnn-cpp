@@ -7,6 +7,7 @@
 
 // C++ Standard Library
 #include <vector>
+#include <type_traits>
 
 // FFNN
 #include <ffnn/layer/hidden.h>
@@ -18,6 +19,57 @@ namespace ffnn
 {
 namespace layer
 {
+
+template <typename ConnectType, typename BiasType>
+class LayerParameters
+{
+  /// Require that ScalarType is floating point
+  static_assert(std::is_same<typename ConnectType::Scalar, typename BiasType::Scalar>::value,
+                "Scalar representation used by [ConnectionType] and [BiasType] must match.");
+
+  /// Require that ScalarType is floating point
+  static_assert(std::is_floating_point<typename ConnectType::Scalar>::value,
+                "ScalarType [ValueType] must be a floating point type.");
+public:
+  /**
+   * @brief Scalar-type standardization
+   * @warning  Scalar-type consistency between ConnectType and BiasType is enforced
+   * @warning  Scalar-type enforced as floating-point type
+   */
+  typedef typename ConnectType::Scalar ScalarType;
+
+  /**
+   * @brief An initialization configuration object used for setting up a LayerParameters object
+   */
+  struct InitConfig
+  {
+    /// Standard deviation of connection weights on init
+    ScalarType init_connection_std;
+
+    /// Standard deviation of biases on init
+    ScalarType init_bias_std;
+
+    /// Connection weight mean (bias) on init
+    ScalarType init_connection_mean;
+
+    /// Connection biasing mean (bias) on init
+    ScalarType init_bias_mean;
+
+    /**
+     * @brief Setup constructor
+     * @param init_connection_std  Standard deviation of initial weights
+     * @param init_bias_std  Standard deviation of initial weights
+     * @param init_connection_mean  Mean of intial weights
+     * @param init_bias_mean  Mean of intial biases
+     */
+    explicit
+    InitConfig(ScalarType init_connection_std = 1e-3,
+               ScalarType init_bias_std = 1e-3,
+               ScalarType init_connection_mean = 0.0,
+               ScalarType init_bias_mean = 0.0)
+  };
+};
+
 /**
  * @brief A fully-connected layer
  */
@@ -57,6 +109,9 @@ public:
 
   /// Input-output weight matrix
   typedef Eigen::Matrix<ValueType, OutputsAtCompileTime, InputsAtCompileTime, Eigen::ColMajor> WeightMatrixType;
+
+  /// Layer parameter type
+  typedef LayerParameters<WeightMatrixType, BiasVectorType> LayerParameterType;
 
   /// Layer optimization type standardization
   typedef optimizer::Optimizer<Self> Optimizer;

@@ -35,7 +35,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE OutputsAtCompileTime>
 FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::
 FullyConnected(SizeType output_size, const Parameters& config) :
-  Base(DimType(InputsAtCompileTime), DimType(output_size)),
+  Base(ShapeType(InputsAtCompileTime), ShapeType(output_size)),
   config_(config),
   opt_(boost::make_shared<typename optimizer::None<Self>>())
 {}
@@ -100,7 +100,7 @@ bool FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::forwa
   }
 
   // Compute weighted + biased outputs
-  Base::output_.noalias() = w_ * (*Base::input_) + b_;
+  Base::output_.noalias() = w_ * Base::input_ + b_;
   return true;
 }
 
@@ -112,7 +112,7 @@ bool FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::backw
   FFNN_ASSERT_MSG(opt_, "No optimization resource set.");
 
   // Compute backward error
-  Base::backward_error_->noalias() = w_.transpose() * (*Base::forward_error_);
+  Base::backward_error_.noalias() = w_.transpose() * Base::forward_error_;
 
   // Run optimizer
   return opt_->backward(*this);

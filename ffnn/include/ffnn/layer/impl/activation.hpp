@@ -71,7 +71,7 @@ bool Activation<ValueType, NeuronType, SizeAtCompileTime>::forward()
   // Compute neuron outputs
   for (SizeType idx = 0; idx < Base::inputShape().size(); idx++)
   {
-    neurons_[idx]((*Base::input_)(idx), (*Base::output_)(idx));
+    neurons_[idx](Base::input_(idx), (*Base::output_)(idx));
   }
   return true;
 }
@@ -82,14 +82,14 @@ template<typename ValueType,
 bool Activation<ValueType, NeuronType, SizeAtCompileTime>::backward()
 {
   // Compute neuron derivatives
-  Base::backward_error_->noalias() = *Base::output_;
+  Base::backward_error_.noalias() = *Base::output_;
   for (SizeType idx = 0; idx < Base::outputShape().size(); idx++)
   {
-    neurons_[idx].derivative((*Base::input_)(idx), (*Base::backward_error_)(idx));
+    neurons_[idx].derivative(Base::input_(idx), (*Base::backward_error_)(idx));
   }
 
   // Incorporate error
-  Base::backward_error_->array() *= Base::forward_error_->array();
+  Base::backward_error_.array() *= Base::forward_error_->array();
   return true;
 }
 

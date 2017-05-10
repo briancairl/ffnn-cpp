@@ -103,7 +103,7 @@ bool SparselyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::fo
   }
 
   // Compute weighted outputs
-  Base::output_.noalias() = w_ * (*Base::input_);
+  Base::output_.noalias() = w_ * Base::input_;
   Base::output_.noalias() += b_;
   return true;
 }
@@ -116,7 +116,7 @@ bool SparselyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::ba
   FFNN_ASSERT_MSG(opt_, "No optimization resource set.");
 
   // Compute backward error
-  Base::backward_error_->noalias() = w_.transpose() * (*Base::forward_error_);
+  Base::backward_error_.noalias() = w_.transpose() * Base::forward_error_;
 
   // Run optimizer
   return opt_->backward(*this);
