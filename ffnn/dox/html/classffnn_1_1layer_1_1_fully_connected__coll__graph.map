@@ -1,6 +1,6 @@
 <map id="ffnn::layer::FullyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt;" name="ffnn::layer::FullyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt;">
 <area shape="rect" id="node2" href="$classffnn_1_1layer_1_1_hidden.html" title="ffnn::layer::Hidden\l\&lt; ValueType, InputsAtCompile\lTime, 1, OutputsAtCompileTime, 1 \&gt;" alt="" coords="773,4,1011,60"/>
-<area shape="rect" id="node3" href="$classffnn_1_1layer_1_1_layer.html" title="Base object for all layer types. " alt="" coords="605,11,725,53"/>
+<area shape="rect" id="node3" href="$classffnn_1_1layer_1_1_layer.html" title="ffnn::layer::Layer\l\&lt; ValueType \&gt;" alt="" coords="605,11,725,53"/>
 <area shape="rect" id="node4" href="$classffnn_1_1layer_1_1internal_1_1_interface.html" title="Base object for all layer types. " alt="" coords="390,11,557,53"/>
 <area shape="rect" id="node5" href="$classffnn_1_1traits_1_1_unique.html" title="An object with a unique ID. " alt="" coords="211,19,341,45"/>
 <area shape="rect" id="node6" href="$classffnn_1_1traits_1_1_serializable.html" title="An object which can be saved and loaded. " alt="" coords="6,19,162,45"/>

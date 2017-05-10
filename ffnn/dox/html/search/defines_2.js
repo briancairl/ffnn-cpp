@@ -8,6 +8,7 @@ var searchData=
   ['ffnn_5ferror_5fnamed',['FFNN_ERROR_NAMED',['../logging_8h.html#a48e2bf3dad548dafff4be40132286cbb',1,'logging.h']]],
   ['ffnn_5finfo',['FFNN_INFO',['../logging_8h.html#a879b37e6a9587b32391cf514a74cc60f',1,'logging.h']]],
   ['ffnn_5finfo_5fnamed',['FFNN_INFO_NAMED',['../logging_8h.html#abf808dbe4f5e6b88691ee1dd9f1eb2df',1,'logging.h']]],
+  ['ffnn_5finternal_5fdebug_5fnamed',['FFNN_INTERNAL_DEBUG_NAMED',['../logging_8h.html#a6423579b7bc28bf29f9d3c60a2066c48',1,'logging.h']]],
   ['ffnn_5fname_5fheader',['FFNN_NAME_HEADER',['../logging_8h.html#a84a92aec634f13a63f5686cc262a0815',1,'logging.h']]],
   ['ffnn_5foffset_5ftype',['FFNN_OFFSET_TYPE',['../global_8h.html#af04b6e835b960cffc7ed05dfd1685ba0',1,'global.h']]],
   ['ffnn_5fregister_5foptimizer',['FFNN_REGISTER_OPTIMIZER',['../optimizer_8h.html#aee9e218ffa031741b9f3f53cc580a09f',1,'optimizer.h']]],

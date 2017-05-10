@@ -29,6 +29,8 @@ This graph shows which files directly or indirectly include this file\-:
 \item 
 \#define \hyperlink{logging_8h_a84a92aec634f13a63f5686cc262a0815}{F\-F\-N\-N\-\_\-\-N\-A\-M\-E\-\_\-\-H\-E\-A\-D\-E\-R}(name)~\hyperlink{group___unicode_color_definitions_ga65590452b7707feb609f43a9ca306d42}{ffnn\-::logging\-::\-H\-E\-A\-D\-E\-R} $<$$<$ \char`\"{}\mbox{[}\char`\"{} $<$$<$ name $<$$<$ \char`\"{}\mbox{]} \char`\"{} $<$$<$ \hyperlink{group___unicode_color_definitions_gab21e47dcbc216f8fc7de88bd217f9f0a}{ffnn\-::logging\-::\-E\-N\-D\-C}
 \begin{DoxyCompactList}\small\item\em Named header for all {\ttfamily \-\_\-\-N\-A\-M\-E\-D} printouts. \end{DoxyCompactList}\item 
+\#define \hyperlink{logging_8h_a6423579b7bc28bf29f9d3c60a2066c48}{F\-F\-N\-N\-\_\-\-I\-N\-T\-E\-R\-N\-A\-L\-\_\-\-D\-E\-B\-U\-G\-\_\-\-N\-A\-M\-E\-D}(name, msg)~(void(0))
+\item 
 \#define \hyperlink{logging_8h_ad17a22e477672ae24ca9afe0abf1b46f}{F\-F\-N\-N\-\_\-\-D\-E\-B\-U\-G\-\_\-\-N\-A\-M\-E\-D}(name, msg)~\{std\-::cout $<$$<$ \hyperlink{logging_8h_a84a92aec634f13a63f5686cc262a0815}{F\-F\-N\-N\-\_\-\-N\-A\-M\-E\-\_\-\-H\-E\-A\-D\-E\-R}(name) $<$$<$ \hyperlink{group___unicode_color_definitions_ga3e2c8118c023bd9d8bb394366f943cc5}{ffnn\-::logging\-::\-B\-L\-U\-E} $<$$<$ msg $<$$<$ \hyperlink{group___unicode_color_definitions_gab21e47dcbc216f8fc7de88bd217f9f0a}{ffnn\-::logging\-::\-E\-N\-D\-C} $<$$<$ std\-::endl;\}
 \begin{DoxyCompactList}\small\item\em Prints an named debug message. \end{DoxyCompactList}\item 
 \#define \hyperlink{logging_8h_aabf5ff82064ef58a239a35b444685955}{F\-F\-N\-N\-\_\-\-W\-A\-R\-N\-\_\-\-N\-A\-M\-E\-D}(name, msg)~\{std\-::cout $<$$<$ \hyperlink{logging_8h_a84a92aec634f13a63f5686cc262a0815}{F\-F\-N\-N\-\_\-\-N\-A\-M\-E\-\_\-\-H\-E\-A\-D\-E\-R}(name) $<$$<$ \hyperlink{group___unicode_color_definitions_gafc935a693ebe97569c82dd2415bb7373}{ffnn\-::logging\-::\-W\-A\-R\-N} $<$$<$ msg $<$$<$ \hyperlink{group___unicode_color_definitions_gab21e47dcbc216f8fc7de88bd217f9f0a}{ffnn\-::logging\-::\-E\-N\-D\-C} $<$$<$ std\-::endl;\}
@@ -55,6 +57,8 @@ const char $\ast$ \hyperlink{group___unicode_color_definitions_ga3e2c8118c023bd9
 const char $\ast$ \hyperlink{group___unicode_color_definitions_ga00119b4fa7f1c1e88aec7e09e2215298}{ffnn\-::logging\-::\-G\-R\-E\-E\-N} = \char`\"{}\textbackslash{}033\mbox{[}92m\char`\"{}
 \item 
 const char $\ast$ \hyperlink{group___unicode_color_definitions_gafc935a693ebe97569c82dd2415bb7373}{ffnn\-::logging\-::\-W\-A\-R\-N} = \char`\"{}\textbackslash{}033\mbox{[}93m\char`\"{}
+\item 
+const char $\ast$ \hyperlink{group___unicode_color_definitions_gaf7e0109fd04ef8852f6e1fa5c96057e1}{ffnn\-::logging\-::\-D\-E\-E\-P} = \char`\"{}\textbackslash{}033\mbox{[}96m\char`\"{}
 \item 
 const char $\ast$ \hyperlink{group___unicode_color_definitions_ga2047db0e31e0a45c7c213845567afc06}{ffnn\-::logging\-::\-F\-A\-I\-L} = \char`\"{}\textbackslash{}033\mbox{[}91m\char`\"{}
 \item 
@@ -88,10 +92,6 @@ Prints an unnamed debug message.
 \begin{DoxyWarning}{Warning}
 Will not log when {\ttfamily F\-F\-N\-N\-\_\-\-N\-O\-\_\-\-L\-O\-G\-G\-I\-N\-G} is defined 
 \end{DoxyWarning}
-
-
-Referenced by ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Embedding\-Mode $>$\-::forward().
-
 \hypertarget{logging_8h_ad17a22e477672ae24ca9afe0abf1b46f}{\index{logging.\-h@{logging.\-h}!F\-F\-N\-N\-\_\-\-D\-E\-B\-U\-G\-\_\-\-N\-A\-M\-E\-D@{F\-F\-N\-N\-\_\-\-D\-E\-B\-U\-G\-\_\-\-N\-A\-M\-E\-D}}
 \index{F\-F\-N\-N\-\_\-\-D\-E\-B\-U\-G\-\_\-\-N\-A\-M\-E\-D@{F\-F\-N\-N\-\_\-\-D\-E\-B\-U\-G\-\_\-\-N\-A\-M\-E\-D}!logging.h@{logging.\-h}}
 \subsubsection[{F\-F\-N\-N\-\_\-\-D\-E\-B\-U\-G\-\_\-\-N\-A\-M\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\-F\-N\-N\-\_\-\-D\-E\-B\-U\-G\-\_\-\-N\-A\-M\-E\-D(
@@ -116,7 +116,7 @@ Will not log when {\ttfamily F\-F\-N\-N\-\_\-\-N\-O\-\_\-\-L\-O\-G\-G\-I\-N\-G} 
 \end{DoxyWarning}
 
 
-Referenced by ffnn\-::layer\-::connect(), ffnn\-::layer\-::\-Output$<$ Value\-Type, Network\-Outputs\-At\-Compile\-Time $>$\-::initialize(), ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time $>$\-::initialize(), ffnn\-::layer\-::\-Input$<$ Value\-Type, Network\-Inputs\-At\-Compile\-Time $>$\-::initialize(), ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::initialize(), ffnn\-::layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::initialize(), ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Embedding\-Mode $>$\-::initialize(), ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time $>$\-::load(), ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$\-::load(), ffnn\-::layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::load(), ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::load(), ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Embedding\-Mode $>$\-::load(), ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time $>$\-::save(), ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$\-::save(), ffnn\-::layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::save(), ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::save(), and ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Embedding\-Mode $>$\-::save().
+Referenced by ffnn\-::layer\-::connect(), ffnn\-::layer\-::\-Output$<$ Value\-Type, Network\-Outputs\-At\-Compile\-Time $>$\-::initialize(), ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time $>$\-::initialize(), ffnn\-::layer\-::\-Input$<$ Value\-Type, Network\-Inputs\-At\-Compile\-Time $>$\-::initialize(), ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::initialize(), ffnn\-::layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::initialize(), ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time $>$\-::load(), ffnn\-::layer\-::\-Layer$<$ Value\-Type, Enable\-Alignment $>$\-::load(), ffnn\-::layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::load(), ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode $>$\-::load(), ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::load(), ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time $>$\-::save(), ffnn\-::layer\-::\-Layer$<$ Value\-Type, Enable\-Alignment $>$\-::save(), ffnn\-::layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::save(), ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode $>$\-::save(), and ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::save().
 
 \hypertarget{logging_8h_a1d6c56368e50cf741e990d8ea95b3cf4}{\index{logging.\-h@{logging.\-h}!F\-F\-N\-N\-\_\-\-E\-R\-R\-O\-R@{F\-F\-N\-N\-\_\-\-E\-R\-R\-O\-R}}
 \index{F\-F\-N\-N\-\_\-\-E\-R\-R\-O\-R@{F\-F\-N\-N\-\_\-\-E\-R\-R\-O\-R}!logging.h@{logging.\-h}}
@@ -161,7 +161,7 @@ Prints an named error message.
 \end{DoxyParams}
 
 
-Referenced by ffnn\-::layer\-::connect(), ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$\-::connect\-Input\-Layers(), ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$\-::evaluate\-Input\-Size(), ffnn\-::layer\-::\-Output$<$ Value\-Type, Network\-Outputs\-At\-Compile\-Time $>$\-::initialize(), and ffnn\-::layer\-::\-Input$<$ Value\-Type, Network\-Inputs\-At\-Compile\-Time $>$\-::initialize().
+Referenced by ffnn\-::layer\-::connect(), ffnn\-::layer\-::\-Layer$<$ Value\-Type, Enable\-Alignment $>$\-::connect\-Input\-Layers(), ffnn\-::layer\-::\-Layer$<$ Value\-Type, Enable\-Alignment $>$\-::evaluate\-Input\-Size(), ffnn\-::layer\-::\-Output$<$ Value\-Type, Network\-Outputs\-At\-Compile\-Time $>$\-::initialize(), and ffnn\-::layer\-::\-Input$<$ Value\-Type, Network\-Inputs\-At\-Compile\-Time $>$\-::initialize().
 
 \hypertarget{logging_8h_a879b37e6a9587b32391cf514a74cc60f}{\index{logging.\-h@{logging.\-h}!F\-F\-N\-N\-\_\-\-I\-N\-F\-O@{F\-F\-N\-N\-\_\-\-I\-N\-F\-O}}
 \index{F\-F\-N\-N\-\_\-\-I\-N\-F\-O@{F\-F\-N\-N\-\_\-\-I\-N\-F\-O}!logging.h@{logging.\-h}}
@@ -206,6 +206,18 @@ Prints a named general info message.
 \begin{DoxyWarning}{Warning}
 Will not log when {\ttfamily F\-F\-N\-N\-\_\-\-N\-O\-\_\-\-L\-O\-G\-G\-I\-N\-G} is defined 
 \end{DoxyWarning}
+\hypertarget{logging_8h_a6423579b7bc28bf29f9d3c60a2066c48}{\index{logging.\-h@{logging.\-h}!F\-F\-N\-N\-\_\-\-I\-N\-T\-E\-R\-N\-A\-L\-\_\-\-D\-E\-B\-U\-G\-\_\-\-N\-A\-M\-E\-D@{F\-F\-N\-N\-\_\-\-I\-N\-T\-E\-R\-N\-A\-L\-\_\-\-D\-E\-B\-U\-G\-\_\-\-N\-A\-M\-E\-D}}
+\index{F\-F\-N\-N\-\_\-\-I\-N\-T\-E\-R\-N\-A\-L\-\_\-\-D\-E\-B\-U\-G\-\_\-\-N\-A\-M\-E\-D@{F\-F\-N\-N\-\_\-\-I\-N\-T\-E\-R\-N\-A\-L\-\_\-\-D\-E\-B\-U\-G\-\_\-\-N\-A\-M\-E\-D}!logging.h@{logging.\-h}}
+\subsubsection[{F\-F\-N\-N\-\_\-\-I\-N\-T\-E\-R\-N\-A\-L\-\_\-\-D\-E\-B\-U\-G\-\_\-\-N\-A\-M\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\-F\-N\-N\-\_\-\-I\-N\-T\-E\-R\-N\-A\-L\-\_\-\-D\-E\-B\-U\-G\-\_\-\-N\-A\-M\-E\-D(
+\begin{DoxyParamCaption}
+\item[{}]{name, }
+\item[{}]{msg}
+\end{DoxyParamCaption}
+)~(void(0))}}\label{logging_8h_a6423579b7bc28bf29f9d3c60a2066c48}
+
+
+Referenced by ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode $>$\-::$\sim$\-Convolution(), ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::$\sim$\-Fully\-Connected(), ffnn\-::layer\-::\-Input$<$ Value\-Type, Network\-Inputs\-At\-Compile\-Time $>$\-::$\sim$\-Input(), ffnn\-::layer\-::internal\-::\-Interface$<$ Value\-Type $>$\-::$\sim$\-Interface(), ffnn\-::layer\-::\-Layer$<$ Value\-Type, Enable\-Alignment $>$\-::$\sim$\-Layer(), and ffnn\-::layer\-::\-Output$<$ Value\-Type, Network\-Outputs\-At\-Compile\-Time $>$\-::$\sim$\-Output().
+
 \hypertarget{logging_8h_a84a92aec634f13a63f5686cc262a0815}{\index{logging.\-h@{logging.\-h}!F\-F\-N\-N\-\_\-\-N\-A\-M\-E\-\_\-\-H\-E\-A\-D\-E\-R@{F\-F\-N\-N\-\_\-\-N\-A\-M\-E\-\_\-\-H\-E\-A\-D\-E\-R}}
 \index{F\-F\-N\-N\-\_\-\-N\-A\-M\-E\-\_\-\-H\-E\-A\-D\-E\-R@{F\-F\-N\-N\-\_\-\-N\-A\-M\-E\-\_\-\-H\-E\-A\-D\-E\-R}!logging.h@{logging.\-h}}
 \subsubsection[{F\-F\-N\-N\-\_\-\-N\-A\-M\-E\-\_\-\-H\-E\-A\-D\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\-F\-N\-N\-\_\-\-N\-A\-M\-E\-\_\-\-H\-E\-A\-D\-E\-R(
@@ -262,5 +274,5 @@ Will not log when {\ttfamily F\-F\-N\-N\-\_\-\-N\-O\-\_\-\-L\-O\-G\-G\-I\-N\-G} 
 \end{DoxyWarning}
 
 
-Referenced by ffnn\-::layer\-::\-Output$<$ Value\-Type, Network\-Outputs\-At\-Compile\-Time $>$\-::initialize(), ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time $>$\-::initialize(), ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$\-::initialize(), ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::initialize(), ffnn\-::layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::initialize(), and ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Embedding\-Mode $>$\-::initialize().
+Referenced by ffnn\-::layer\-::\-Output$<$ Value\-Type, Network\-Outputs\-At\-Compile\-Time $>$\-::initialize(), ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time $>$\-::initialize(), ffnn\-::layer\-::\-Layer$<$ Value\-Type, Enable\-Alignment $>$\-::initialize(), ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::initialize(), and ffnn\-::layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::initialize().
 

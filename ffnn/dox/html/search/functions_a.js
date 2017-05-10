@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['name',['name',['../classffnn_1_1optimizer_1_1_optimizer.html#a9c472d1e2ef75decdae1cf2db7582582',1,'ffnn::optimizer::Optimizer']]],
-  ['none',['None',['../classffnn_1_1optimizer_1_1_none.html#ae5ba72205a7f11508de871d6c3f1081f',1,'ffnn::optimizer::None']]]
+  ['mult_5fif_5fnot_5feigen_5fdynamic_5fsize',['mult_if_not_eigen_dynamic_size',['../namespaceffnn_1_1layer.html#adec527cca25d8f9bb34d0efe280bc164',1,'ffnn::layer']]]
 ];

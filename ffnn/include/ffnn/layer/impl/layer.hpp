@@ -47,19 +47,19 @@ bool connect(const typename LayerType::Ptr& from, const typename LayerType::Ptr&
   return true;
 }
 
-template<typename ValueType, class EnableAlignment>
-Layer<ValueType, EnableAlignment>::Layer(const ShapeType& input_shape, const ShapeType& output_shape) :
-  Layer<ValueType, EnableAlignment>::Base(input_shape, output_shape)
+template<typename ValueType>
+Layer<ValueType>::Layer(const ShapeType& input_shape, const ShapeType& output_shape) :
+  Layer<ValueType>::Base(input_shape, output_shape)
 {}
 
-template<typename ValueType, class EnableAlignment>
-Layer<ValueType, EnableAlignment>::~Layer()
+template<typename ValueType>
+Layer<ValueType>::~Layer()
 {
   FFNN_INTERNAL_DEBUG_NAMED("layer::Layer", "Destroying [layer::Layer] object <" << this->getID() << ">");
 }
 
-template<typename ValueType, class EnableAlignment>
-bool Layer<ValueType, EnableAlignment>::initialize()
+template<typename ValueType>
+bool Layer<ValueType>::initialize()
 {
   // Abort if layer is already initialized
   if (Base::setupRequired() && Base::isInitialized())
@@ -83,8 +83,8 @@ bool Layer<ValueType, EnableAlignment>::initialize()
   return Base::isInitialized();
 }
 
-template<typename ValueType, class EnableAlignment>
-typename Layer<ValueType, EnableAlignment>::SizeType Layer<ValueType, EnableAlignment>::evaluateInputSize() const
+template<typename ValueType>
+typename Layer<ValueType>::SizeType Layer<ValueType>::evaluateInputSize() const
 {
   SizeType count(0);
   for (const auto& connection : prev_)
@@ -103,8 +103,8 @@ typename Layer<ValueType, EnableAlignment>::SizeType Layer<ValueType, EnableAlig
   return count;
 }
 
-template<typename ValueType, class EnableAlignment>
-typename Layer<ValueType, EnableAlignment>::OffsetType Layer<ValueType, EnableAlignment>::connectInputLayers()
+template<typename ValueType>
+typename Layer<ValueType>::OffsetType Layer<ValueType>::connectInputLayers()
 {
   // Resolve previous layer output buffers
   OffsetType offset(0);
@@ -123,9 +123,9 @@ typename Layer<ValueType, EnableAlignment>::OffsetType Layer<ValueType, EnableAl
   return offset;
 }
 
-template<typename ValueType, class EnableAlignment>
-void Layer<ValueType, EnableAlignment>::save(typename Layer<ValueType, EnableAlignment>::OutputArchive& ar,
-                                             typename Layer<ValueType, EnableAlignment>::VersionType version) const
+template<typename ValueType>
+void Layer<ValueType>::save(typename Layer<ValueType>::OutputArchive& ar,
+                            typename Layer<ValueType>::VersionType version) const
 {
   ffnn::io::signature::apply<Layer<ValueType>>(ar);
   Base::save(ar, version);
@@ -141,9 +141,9 @@ void Layer<ValueType, EnableAlignment>::save(typename Layer<ValueType, EnableAli
   FFNN_DEBUG_NAMED("layer::Layer", "Saved");
 }
 
-template<typename ValueType, class EnableAlignment>
-void Layer<ValueType, EnableAlignment>::load(typename Layer<ValueType, EnableAlignment>::InputArchive& ar,
-                                             typename Layer<ValueType, EnableAlignment>::VersionType version)
+template<typename ValueType>
+void Layer<ValueType>::load(typename Layer<ValueType>::InputArchive& ar,
+                            typename Layer<ValueType>::VersionType version)
 {
   ffnn::io::signature::check<Layer<ValueType>>(ar);
   Base::load(ar, version);

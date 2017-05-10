@@ -96,6 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;boost/multi_array.hpp&quot;</code><br/>
+<code>#include &lt;<a class="el" href="layer_8h_source.html">ffnn/layer/layer.h</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="hidden_8h_source.html">ffnn/layer/hidden.h</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="convolution__volume_8h_source.html">ffnn/layer/convolution_volume.h</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="neuron_8h_source.html">ffnn/neuron/neuron.h</a>&gt;</code><br/>
@@ -107,14 +108,14 @@ Include dependency graph for convolution.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="convolution_8h__incl.png" border="0" usemap="#_2home_2briancairl_2packages_2src_2ffnn-cpp_2ffnn_2include_2ffnn_2layer_2convolution_8h" alt=""/></div>
 <map name="_2home_2briancairl_2packages_2src_2ffnn-cpp_2ffnn_2include_2ffnn_2layer_2convolution_8h" id="_2home_2briancairl_2packages_2src_2ffnn-cpp_2ffnn_2include_2ffnn_2layer_2convolution_8h">
-<area shape="rect" id="node3" href="hidden_8h.html" title="ffnn/layer/hidden.h" alt="" coords="1151,109,1280,136"/><area shape="rect" id="node36" href="convolution__volume_8h.html" title="ffnn/layer/convolution\l_volume.h" alt="" coords="1032,185,1179,226"/><area shape="rect" id="node38" href="neuron_8h.html" title="ffnn/neuron/neuron.h" alt="" coords="1304,109,1444,136"/><area shape="rect" id="node39" href="fwd_8h.html" title="ffnn/optimizer/fwd.h" alt="" coords="1470,109,1607,136"/><area shape="rect" id="node40" href="optimizer_8h.html" title="ffnn/optimizer/optimizer.h" alt="" coords="1767,373,1936,400"/><area shape="rect" id="node43" href="convolution_8hpp.html" title="ffnn/layer/impl/convolution.hpp" alt="" coords="2026,192,2224,219"/><area shape="rect" id="node5" href="serializable_8h.html" title="ffnn/internal/traits\l/serializable.h" alt="" coords="172,457,295,498"/><area shape="rect" id="node7" href="global_8h.html" title="ffnn/config/global.h" alt="" coords="841,547,972,573"/><area shape="rect" id="node19" href="assert_8h.html" title="ffnn/assert.h" alt="" coords="2007,464,2101,491"/><area shape="rect" id="node21" href="layer_8h.html" title="ffnn/layer/layer.h" alt="" coords="439,192,557,219"/><area shape="rect" id="node35" href="hidden_8hpp.html" title="ffnn/layer/impl/hidden.hpp" alt="" coords="1521,373,1692,400"/><area shape="rect" id="node9" href="logging_8h.html" title="ffnn/logging.h" alt="" coords="1473,629,1572,656"/><area shape="rect" id="node15" href="sparse__triplet__serialization_8h.html" title="ffnn/internal/eigen\l/sparse_triplet_serialization.h" alt="" coords="649,622,839,663"/><area shape="rect" id="node23" href="interface_8h.html" title="ffnn/layer/internal\l/interface.h" alt="" coords="629,275,752,317"/><area shape="rect" id="node33" href="layer_8hpp.html" title="ffnn/layer/impl/layer.hpp" alt="" coords="1034,373,1195,400"/><area shape="rect" id="node24" href="unique_8h.html" title="ffnn/internal/traits\l/unique.h" alt="" coords="629,366,752,407"/><area shape="rect" id="node29" href="internal_2signature_8h.html" title="ffnn/internal/signature.h" alt="" coords="1237,464,1395,491"/><area shape="rect" id="node32" href="shape_8h.html" title="ffnn/layer/internal\l/shape.h" alt="" coords="836,366,959,407"/><area shape="rect" id="node37" href="convolution__volume_8hpp.html" title="ffnn/layer/impl/convolution\l_volume.hpp" alt="" coords="1322,366,1496,407"/><area shape="rect" id="node44" href="none_8h.html" title="ffnn/optimizer/none.h" alt="" coords="1796,283,1940,309"/></map>
+<area shape="rect" id="node3" href="layer_8h.html" title="ffnn/layer/layer.h" alt="" coords="271,192,389,219"/><area shape="rect" id="node34" href="hidden_8h.html" title="ffnn/layer/hidden.h" alt="" coords="829,109,958,136"/><area shape="rect" id="node37" href="convolution__volume_8h.html" title="ffnn/layer/convolution\l_volume.h" alt="" coords="706,185,853,226"/><area shape="rect" id="node39" href="neuron_8h.html" title="ffnn/neuron/neuron.h" alt="" coords="1975,109,2115,136"/><area shape="rect" id="node40" href="fwd_8h.html" title="ffnn/optimizer/fwd.h" alt="" coords="2141,109,2278,136"/><area shape="rect" id="node41" href="optimizer_8h.html" title="ffnn/optimizer/optimizer.h" alt="" coords="1857,373,2026,400"/><area shape="rect" id="node44" href="convolution_8hpp.html" title="ffnn/layer/impl/convolution.hpp" alt="" coords="1703,192,1901,219"/><area shape="rect" id="node6" href="serializable_8h.html" title="ffnn/internal/traits\l/serializable.h" alt="" coords="217,457,339,498"/><area shape="rect" id="node8" href="global_8h.html" title="ffnn/config/global.h" alt="" coords="519,547,650,573"/><area shape="rect" id="node20" href="interface_8h.html" title="ffnn/layer/internal\l/interface.h" alt="" coords="465,275,587,317"/><area shape="rect" id="node31" href="layer_8hpp.html" title="ffnn/layer/impl/layer.hpp" alt="" coords="972,373,1133,400"/><area shape="rect" id="node10" href="logging_8h.html" title="ffnn/logging.h" alt="" coords="1533,629,1633,656"/><area shape="rect" id="node16" href="sparse__triplet__serialization_8h.html" title="ffnn/internal/eigen\l/sparse_triplet_serialization.h" alt="" coords="35,622,225,663"/><area shape="rect" id="node21" href="unique_8h.html" title="ffnn/internal/traits\l/unique.h" alt="" coords="825,366,947,407"/><area shape="rect" id="node26" href="internal_2signature_8h.html" title="ffnn/internal/signature.h" alt="" coords="1387,464,1545,491"/><area shape="rect" id="node30" href="shape_8h.html" title="ffnn/layer/internal\l/shape.h" alt="" coords="465,366,587,407"/><area shape="rect" id="node33" href="assert_8h.html" title="ffnn/assert.h" alt="" coords="1621,464,1715,491"/><area shape="rect" id="node36" href="hidden_8hpp.html" title="ffnn/layer/impl/hidden.hpp" alt="" coords="1259,373,1430,400"/><area shape="rect" id="node38" href="convolution__volume_8hpp.html" title="ffnn/layer/impl/convolution\l_volume.hpp" alt="" coords="1455,366,1629,407"/><area shape="rect" id="node45" href="none_8h.html" title="ffnn/optimizer/none.h" alt="" coords="1755,283,1899,309"/></map>
 </div>
 </div>
 <p><a href="convolution_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution.html">ffnn::layer::Convolution&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterHeightAtCompileTime, FilterWidthAtCompileTime, FilterCountAtCompileTime, StrideAtCompileTime, EmbeddingMode &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution.html">ffnn::layer::Convolution&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterHeightAtCompileTime, FilterWidthAtCompileTime, FilterCountAtCompileTime, StrideAtCompileTime, Mode &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A convolution layer.  <a href="classffnn_1_1layer_1_1_convolution.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -131,98 +132,8 @@ Macros</h2></td></tr>
 <tr class="separator:a30c3dcfd336a244f4421fe701352d1e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a054b25d3efc67e1baaedfbc7305f8f50"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="convolution_8h.html#a054b25d3efc67e1baaedfbc7305f8f50">CONV_VOLUME_TARGS</a></td></tr>
 <tr class="separator:a054b25d3efc67e1baaedfbc7305f8f50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33855ffebcdb1997625c0592f537b32c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="convolution_8h.html#a33855ffebcdb1997625c0592f537b32c">CONV_LENGTH_WITH_STRIDE</a>(n, fn, s)&#160;&#160;&#160;((n - fn) / s + 1)</td></tr>
-<tr class="separator:a33855ffebcdb1997625c0592f537b32c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3e0ccfe3f80f1cbfd2883afcd39bba1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="convolution_8h.html#aa3e0ccfe3f80f1cbfd2883afcd39bba1">CONV_EMBEDDED_H</a>(h, d)&#160;&#160;&#160;EmbeddingMode == ColEmbedding ? <a class="el" href="receptive__volume_8h.html#a74feffebf310dd34521adc2adcaf64c9">PROD_IF_STATIC_PAIR</a>(h, d) : h</td></tr>
-<tr class="separator:aa3e0ccfe3f80f1cbfd2883afcd39bba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0fc2446589d9cda3500aeca0c3ab5dbc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="convolution_8h.html#a0fc2446589d9cda3500aeca0c3ab5dbc">CONV_EMBEDDED_W</a>(w, d)&#160;&#160;&#160;EmbeddingMode == RowEmbedding ? <a class="el" href="receptive__volume_8h.html#a74feffebf310dd34521adc2adcaf64c9">PROD_IF_STATIC_PAIR</a>(w, d) : w</td></tr>
-<tr class="separator:a0fc2446589d9cda3500aeca0c3ab5dbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="aa3e0ccfe3f80f1cbfd2883afcd39bba1"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CONV_EMBEDDED_H</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">h, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">d&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;EmbeddingMode == ColEmbedding ? <a class="el" href="receptive__volume_8h.html#a74feffebf310dd34521adc2adcaf64c9">PROD_IF_STATIC_PAIR</a>(h, d) : h</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a0fc2446589d9cda3500aeca0c3ab5dbc"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CONV_EMBEDDED_W</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">w, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">d&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;EmbeddingMode == RowEmbedding ? <a class="el" href="receptive__volume_8h.html#a74feffebf310dd34521adc2adcaf64c9">PROD_IF_STATIC_PAIR</a>(w, d) : w</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a33855ffebcdb1997625c0592f537b32c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CONV_LENGTH_WITH_STRIDE</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">n, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">fn, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">s&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;((n - fn) / s + 1)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="a30c3dcfd336a244f4421fe701352d1e4"></a>
 <div class="memitem">
 <div class="memproto">
@@ -239,9 +150,8 @@ Macros</h2></td></tr>
 <div class="line">  FilterHeightAtCompileTime,\</div>
 <div class="line">  FilterWidthAtCompileTime,\</div>
 <div class="line">  FilterCountAtCompileTime,\</div>
-<div class="line">  StrideAtCompileTime,<a class="code" href="namespaceffnn_1_1layer.html#a254f16beba4fb335d935e9b43bb9e69a">\</a></div>
-<div class="line"><a class="code" href="namespaceffnn_1_1layer.html#a254f16beba4fb335d935e9b43bb9e69a">  EmbeddingMode</a></div>
-<div class="ttc" id="namespaceffnn_1_1layer_html_a254f16beba4fb335d935e9b43bb9e69a"><div class="ttname"><a href="namespaceffnn_1_1layer.html#a254f16beba4fb335d935e9b43bb9e69a">ffnn::layer::EmbeddingMode</a></div><div class="ttdeci">EmbeddingMode</div><div class="ttdef"><b>Definition:</b> convolution_volume.h:22</div></div>
+<div class="line">  StrideAtCompileTime,\</div>
+<div class="line">  Mode</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -258,16 +168,15 @@ Macros</h2></td></tr>
 <div class="line">  FilterHeightAtCompileTime,\</div>
 <div class="line">  FilterWidthAtCompileTime,\</div>
 <div class="line">  DepthAtCompileTime,\</div>
-<div class="line">  FilterCountAtCompileTime,<a class="code" href="namespaceffnn_1_1layer.html#a254f16beba4fb335d935e9b43bb9e69a">\</a></div>
-<div class="line"><a class="code" href="namespaceffnn_1_1layer.html#a254f16beba4fb335d935e9b43bb9e69a">  EmbeddingMode</a></div>
-<div class="ttc" id="namespaceffnn_1_1layer_html_a254f16beba4fb335d935e9b43bb9e69a"><div class="ttname"><a href="namespaceffnn_1_1layer.html#a254f16beba4fb335d935e9b43bb9e69a">ffnn::layer::EmbeddingMode</a></div><div class="ttdeci">EmbeddingMode</div><div class="ttdef"><b>Definition:</b> convolution_volume.h:22</div></div>
+<div class="line">  FilterCountAtCompileTime,\</div>
+<div class="line">  Mode</div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 8 2017 23:27:41 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 10 2017 13:05:02 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

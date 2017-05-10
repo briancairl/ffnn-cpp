@@ -12,7 +12,8 @@ A fully-\/connected layer.
 
 
 
-Inheritance diagram for ffnn\-:\-:layer\-:\-:Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-:\nopagebreak
+Inheritance diagram for ffnn\-:\-:layer\-:\-:Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -43,15 +44,15 @@ using \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_ad27c96a5f26e2f44fb25
 \begin{DoxyCompactList}\small\item\em Self type alias. \end{DoxyCompactList}\item 
 typedef \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a7f834e3365e5199bcbcd16d9abd63941}{Base\-::\-Scalar\-Type} \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_abe2b75254f39c0bec9f02b2e906e7919}{Scalar\-Type}
 \begin{DoxyCompactList}\small\item\em Scalar type standardization. \end{DoxyCompactList}\item 
-typedef \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_af0567642f60c65b5e87067226a54174b}{Base\-::\-Size\-Type} \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_a86b75c2723c1f8b6771224257f5eb1c1}{Size\-Type}
+typedef \hyperlink{classffnn_1_1layer_1_1_hidden_a3deb1dc4b3a83b3d6749474debee025f}{Base\-::\-Size\-Type} \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_a86b75c2723c1f8b6771224257f5eb1c1}{Size\-Type}
 \begin{DoxyCompactList}\small\item\em Size type standardization. \end{DoxyCompactList}\item 
-typedef \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_adc5bb454329ebd51ac26579a43c006fd}{Base\-::\-Offset\-Type} \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_aca8272f02c6417eea3c77dc0cb2bb49e}{Offset\-Type}
+typedef \hyperlink{classffnn_1_1layer_1_1_hidden_a4a191bc002b2545231a3d80c99004693}{Base\-::\-Offset\-Type} \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_aca8272f02c6417eea3c77dc0cb2bb49e}{Offset\-Type}
 \begin{DoxyCompactList}\small\item\em Offset type standardization. \end{DoxyCompactList}\item 
-typedef \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a945709b1d0ea54a51539b80d04485f5f}{Base\-::\-Shape\-Type} \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_aafb3514023fb9b1eaa11e4c4dbff4c99}{Shape\-Type}
+typedef \hyperlink{classffnn_1_1layer_1_1_hidden_a7ed1a797fcb7bfb43d66c0eb24967882}{Base\-::\-Shape\-Type} \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_aafb3514023fb9b1eaa11e4c4dbff4c99}{Shape\-Type}
 \begin{DoxyCompactList}\small\item\em Dimension type standardization. \end{DoxyCompactList}\item 
-typedef Base\-::\-Input\-Block\-Type \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_ad90fd9b4c687e4dc515cf8ca2796043c}{Input\-Block\-Type}
+typedef \hyperlink{classffnn_1_1layer_1_1_hidden_a01b9cc4df01a7b26423dcd3a0af17b1c}{Base\-::\-Input\-Block\-Type} \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_ad90fd9b4c687e4dc515cf8ca2796043c}{Input\-Block\-Type}
 \begin{DoxyCompactList}\small\item\em Matrix type standardization. \end{DoxyCompactList}\item 
-typedef Base\-::\-Output\-Block\-Type \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_aacf4fb49a3f57aba90e55d8d3c63cf45}{Output\-Block\-Type}
+typedef \hyperlink{classffnn_1_1layer_1_1_hidden_abb03ddc71360cc7ebdab03cd4d1553ee}{Base\-::\-Output\-Block\-Type} \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_aacf4fb49a3f57aba90e55d8d3c63cf45}{Output\-Block\-Type}
 \begin{DoxyCompactList}\small\item\em Matrix type standardization. \end{DoxyCompactList}\item 
 typedef \hyperlink{classffnn_1_1layer_1_1_hidden_abb03ddc71360cc7ebdab03cd4d1553ee}{Base\-::\-Output\-Block\-Type} \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_ad2d566cbb6c54c8723d79737075b4a00}{Bias\-Vector\-Type}
 \begin{DoxyCompactList}\small\item\em Bia vector type standardization. \end{DoxyCompactList}\item 
@@ -114,7 +115,7 @@ Bia vector type standardization.
 
 \hypertarget{classffnn_1_1layer_1_1_sparsely_connected_ad90fd9b4c687e4dc515cf8ca2796043c}{\index{ffnn\-::layer\-::\-Sparsely\-Connected@{ffnn\-::layer\-::\-Sparsely\-Connected}!Input\-Block\-Type@{Input\-Block\-Type}}
 \index{Input\-Block\-Type@{Input\-Block\-Type}!ffnn::layer::SparselyConnected@{ffnn\-::layer\-::\-Sparsely\-Connected}}
-\subsubsection[{Input\-Block\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic$>$ typedef Base\-::\-Input\-Block\-Type {\bf ffnn\-::layer\-::\-Sparsely\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::{\bf Input\-Block\-Type}}}\label{classffnn_1_1layer_1_1_sparsely_connected_ad90fd9b4c687e4dc515cf8ca2796043c}
+\subsubsection[{Input\-Block\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic$>$ typedef {\bf Base\-::\-Input\-Block\-Type} {\bf ffnn\-::layer\-::\-Sparsely\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::{\bf Input\-Block\-Type}}}\label{classffnn_1_1layer_1_1_sparsely_connected_ad90fd9b4c687e4dc515cf8ca2796043c}
 
 
 Matrix type standardization. 
@@ -135,7 +136,7 @@ Offset type standardization.
 
 \hypertarget{classffnn_1_1layer_1_1_sparsely_connected_aacf4fb49a3f57aba90e55d8d3c63cf45}{\index{ffnn\-::layer\-::\-Sparsely\-Connected@{ffnn\-::layer\-::\-Sparsely\-Connected}!Output\-Block\-Type@{Output\-Block\-Type}}
 \index{Output\-Block\-Type@{Output\-Block\-Type}!ffnn::layer::SparselyConnected@{ffnn\-::layer\-::\-Sparsely\-Connected}}
-\subsubsection[{Output\-Block\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic$>$ typedef Base\-::\-Output\-Block\-Type {\bf ffnn\-::layer\-::\-Sparsely\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::{\bf Output\-Block\-Type}}}\label{classffnn_1_1layer_1_1_sparsely_connected_aacf4fb49a3f57aba90e55d8d3c63cf45}
+\subsubsection[{Output\-Block\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic$>$ typedef {\bf Base\-::\-Output\-Block\-Type} {\bf ffnn\-::layer\-::\-Sparsely\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::{\bf Output\-Block\-Type}}}\label{classffnn_1_1layer_1_1_sparsely_connected_aacf4fb49a3f57aba90e55d8d3c63cf45}
 
 
 Matrix type standardization. 
@@ -288,7 +289,7 @@ Load serializer.
 
 
 
-Reimplemented from \hyperlink{classffnn_1_1layer_1_1_layer_a23f5f3c958d888632010327471c7b012}{ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$}.
+Reimplemented from \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a88b5bd86aafd361d3a84dc6cba211195}{ffnn\-::layer\-::internal\-::\-Interface$<$ Value\-Type $>$}.
 
 
 
@@ -342,7 +343,7 @@ Save serializer.
 
 
 
-Reimplemented from \hyperlink{classffnn_1_1layer_1_1_layer_ac265fc929a178b111337226dd1cb62b6}{ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$}.
+Reimplemented from \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a417d6fda112fdffed8091b0ebd78ed97}{ffnn\-::layer\-::internal\-::\-Interface$<$ Value\-Type $>$}.
 
 
 

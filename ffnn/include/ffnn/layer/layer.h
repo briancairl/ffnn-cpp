@@ -23,8 +23,7 @@ namespace layer
 /**
  * @brief Base object for all layer types
  */
-template<typename ValueType,
-         class EnableAlignment = std::true_type>
+template<typename ValueType>
 class Layer :
   public internal::Interface<ValueType>
 {
@@ -37,7 +36,7 @@ public:
   using Base = internal::Interface<ValueType>;
 
   /// Self type alias
-  using Self = Layer<ValueType, EnableAlignment>;
+  using Self = Layer<ValueType>;
 
   /// Shared resource standardization
   typedef boost::shared_ptr<Self> Ptr;
@@ -46,11 +45,7 @@ public:
   typedef boost::shared_ptr<const Self> ConstPtr;
 
   /// Buffer type standardization
-  typedef typename std::conditional<
-    EnableAlignment::value,
-    std::vector<ValueType, Eigen::aligned_allocator<ValueType>>,
-    std::vector<ValueType>
-  >::type BufferType;
+  typedef std::vector<ValueType, Eigen::aligned_allocator<ValueType>> BufferType;
 
   /// Scalar type standardization
   typedef typename Base::ScalarType ScalarType;

@@ -13,6 +13,12 @@ class \hyperlink{classffnn_1_1layer_1_1_activation}{Activation}
 \begin{DoxyCompactList}\small\item\em \hyperlink{classffnn_1_1layer_1_1_activation}{Activation} layer. \end{DoxyCompactList}\item 
 class \hyperlink{classffnn_1_1layer_1_1_convolution}{Convolution}
 \begin{DoxyCompactList}\small\item\em A convolution layer. \end{DoxyCompactList}\item 
+struct \hyperlink{structffnn_1_1layer_1_1is__dynamic}{is\-\_\-dynamic}
+\item 
+struct \hyperlink{structffnn_1_1layer_1_1is__dynamic__pair}{is\-\_\-dynamic\-\_\-pair}
+\item 
+struct \hyperlink{structffnn_1_1layer_1_1is__alignable__128}{is\-\_\-alignable\-\_\-128}
+\item 
 class \hyperlink{classffnn_1_1layer_1_1_filter_bank}{Filter\-Bank}
 \item 
 class \hyperlink{classffnn_1_1layer_1_1_convolution_volume}{Convolution\-Volume}
@@ -48,6 +54,12 @@ enum \hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69a}{Embedd
 \end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Size\-Type $>$ }\\constexpr Size\-Type \hyperlink{namespaceffnn_1_1layer_adec527cca25d8f9bb34d0efe280bc164}{mult\-\_\-if\-\_\-not\-\_\-eigen\-\_\-dynamic\-\_\-size} (Size\-Type n, Size\-Type m)
+\item 
+{\footnotesize template$<$Embedding\-Mode mode, Embedding\-Mode ref, typename Size\-Type $>$ }\\constexpr Size\-Type \hyperlink{namespaceffnn_1_1layer_ad128f693900faa5bcf2cdd0ef8e7eee6}{embed\-\_\-dimension} (Size\-Type n, Size\-Type m)
+\item 
+{\footnotesize template$<$typename Size\-Type $>$ }\\constexpr Size\-Type \hyperlink{namespaceffnn_1_1layer_ac1d8b4e852293231055d1257f1e83e60}{output\-\_\-dimension} (Size\-Type n, Size\-Type fn, Size\-Type stride)
 \item 
 {\footnotesize template$<$typename Layer\-Type $>$ }\\bool \hyperlink{namespaceffnn_1_1layer_a33fc9c6c7eb5fbdef14e0aa0db97dd13}{connect} (const typename Layer\-Type\-::\-Ptr \&from, const typename Layer\-Type\-::\-Ptr \&to)
 \end{DoxyCompactItemize}
@@ -97,3 +109,28 @@ enum \hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69a}{Embedd
 \item[{const typename Layer\-Type\-::\-Ptr \&}]{to}
 \end{DoxyParamCaption}
 )}}\label{namespaceffnn_1_1layer_a33fc9c6c7eb5fbdef14e0aa0db97dd13}
+\hypertarget{namespaceffnn_1_1layer_ad128f693900faa5bcf2cdd0ef8e7eee6}{\index{ffnn\-::layer@{ffnn\-::layer}!embed\-\_\-dimension@{embed\-\_\-dimension}}
+\index{embed\-\_\-dimension@{embed\-\_\-dimension}!ffnn::layer@{ffnn\-::layer}}
+\subsubsection[{embed\-\_\-dimension}]{\setlength{\rightskip}{0pt plus 5cm}template$<$Embedding\-Mode mode, Embedding\-Mode ref, typename Size\-Type $>$ constexpr Size\-Type ffnn\-::layer\-::embed\-\_\-dimension (
+\begin{DoxyParamCaption}
+\item[{Size\-Type}]{n, }
+\item[{Size\-Type}]{m}
+\end{DoxyParamCaption}
+)}}\label{namespaceffnn_1_1layer_ad128f693900faa5bcf2cdd0ef8e7eee6}
+\hypertarget{namespaceffnn_1_1layer_adec527cca25d8f9bb34d0efe280bc164}{\index{ffnn\-::layer@{ffnn\-::layer}!mult\-\_\-if\-\_\-not\-\_\-eigen\-\_\-dynamic\-\_\-size@{mult\-\_\-if\-\_\-not\-\_\-eigen\-\_\-dynamic\-\_\-size}}
+\index{mult\-\_\-if\-\_\-not\-\_\-eigen\-\_\-dynamic\-\_\-size@{mult\-\_\-if\-\_\-not\-\_\-eigen\-\_\-dynamic\-\_\-size}!ffnn::layer@{ffnn\-::layer}}
+\subsubsection[{mult\-\_\-if\-\_\-not\-\_\-eigen\-\_\-dynamic\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Size\-Type $>$ constexpr Size\-Type ffnn\-::layer\-::mult\-\_\-if\-\_\-not\-\_\-eigen\-\_\-dynamic\-\_\-size (
+\begin{DoxyParamCaption}
+\item[{Size\-Type}]{n, }
+\item[{Size\-Type}]{m}
+\end{DoxyParamCaption}
+)}}\label{namespaceffnn_1_1layer_adec527cca25d8f9bb34d0efe280bc164}
+\hypertarget{namespaceffnn_1_1layer_ac1d8b4e852293231055d1257f1e83e60}{\index{ffnn\-::layer@{ffnn\-::layer}!output\-\_\-dimension@{output\-\_\-dimension}}
+\index{output\-\_\-dimension@{output\-\_\-dimension}!ffnn::layer@{ffnn\-::layer}}
+\subsubsection[{output\-\_\-dimension}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Size\-Type $>$ constexpr Size\-Type ffnn\-::layer\-::output\-\_\-dimension (
+\begin{DoxyParamCaption}
+\item[{Size\-Type}]{n, }
+\item[{Size\-Type}]{fn, }
+\item[{Size\-Type}]{stride}
+\end{DoxyParamCaption}
+)}}\label{namespaceffnn_1_1layer_ac1d8b4e852293231055d1257f1e83e60}
