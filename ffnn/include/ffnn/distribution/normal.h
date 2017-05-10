@@ -19,7 +19,7 @@ namespace ffnn
 namespace distribution
 {
 
-template<typename ValueType, class ParametersType>
+template<typename ValueType, class _DistributionParameters>
 class Normal
 {
 public:
@@ -30,7 +30,8 @@ public:
   typedef boost::variate_generator<boost::mt19937&, DistributionType> GeneratorType;
 
   Normal() : 
-    distribution_(ParametersType::mean, ParametersType::scale)
+    distribution_(_DistributionParameters::mean,
+                  _DistributionParameters::scale)
   {}
 
   /**
