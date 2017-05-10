@@ -89,7 +89,7 @@ public:
     FFNN_ASSERT_MSG(layer.isInitialized(), "Layer to optimize is not initialized.");
 
     // Copy current input for updating
-    prev_input_.noalias() = *layer.input_;
+    prev_input_.noalias() = layer.input_;
     return true;
   }
 
@@ -110,13 +110,13 @@ public:
       for(typename WeightMatrixType::InnerIterator it(layer.w_, idx); it; ++it)
       {
         current_weight_gradient.insert(it.row(), it.col()) =
-          (*layer.forward_error_)(it.row()) * prev_input_(it.col());
+          layer.forward_error_(it.row()) * prev_input_(it.col());
       }
     }
 
     // Accumulate weight delta
     weight_gradient_ += current_weight_gradient;
-    bias_gradient_.noalias() += (*layer.forward_error_);
+    bias_gradient_.noalias() += layer.forward_error_;
 
     // Back-prop error
     return layer.computeBackwardError();

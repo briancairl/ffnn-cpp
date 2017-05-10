@@ -20,6 +20,15 @@ namespace ffnn
 namespace layer
 {
 
+template<class BlockType>
+struct is_alignable_128 :
+  std::conditional<
+    (sizeof(BlockType)%16) == 0,
+    std::true_type,
+    std::false_type
+  >::type
+{};
+
 template <typename ConnectType, typename BiasType>
 class LayerParameters
 {
@@ -66,8 +75,12 @@ public:
     InitConfiguration(ScalarType init_connection_std = 1e-3,
                       ScalarType init_bias_std = 1e-3,
                       ScalarType init_connection_mean = 0.0,
-                      ScalarType init_bias_mean = 0.0)
+                      ScalarType init_bias_mean = 0.0);
   };
+
+public:
+  EIGEN_MAKE_ALIGNED_OPERATOR_NEW_IF(is_alignable_128<ConnectType>::value ||
+                                     is_alignable_128<BiasType>::value);
 };
 
 /**

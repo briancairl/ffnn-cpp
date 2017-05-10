@@ -26,7 +26,7 @@
 #include <ffnn/neuron/modifier/dropout.h>
 #include <ffnn/neuron/modifier/soft_dropout.h>
 #include <ffnn/optimizer/gradient_descent.h>
-#include <ffnn/distribution/standard_normal.h>
+#include <ffnn/distribution/normal.h>
 
 /// Create a neuron with dropout
 template<typename ValueType>
@@ -81,7 +81,7 @@ TEST(TestLayerFullyConnectedDropoutActivationWithOptimizers, GradientDescent)
   // Connect layers
   for (size_t idx = 1UL; idx < layers.size(); idx++)
   {
-    EXPECT_TRUE(ffnn::layer::connect(layers[idx-1UL], layers[idx]));
+    EXPECT_TRUE(ffnn::layer::connect<Layer>(layers[idx-1UL], layers[idx]));
   }
 
   // Initialize and check all layers and 

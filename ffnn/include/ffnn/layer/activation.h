@@ -48,21 +48,31 @@ public:
   /**
    * @brief Initialize the layer
    */
-  virtual bool initialize();
+  bool initialize();
 
   /**
    * @brief Forward value propagation
    * @retval true  if forward-propagation succeeded
    * @retval false  otherwise
    */
-  virtual bool forward();
+  bool forward();
 
   /**
    * @brief Performs backward error propagation
    * @retval true  if backward-propagation succeeded
    * @retval false  otherwise
    */
-  virtual bool backward();
+  bool backward();
+
+  /**
+   * @brief Does nothing
+   * @retval true  always
+   * @note The activation layer has no parameters to update
+   */
+  bool update()
+  {
+    return true;
+  }
 
 protected:
   FFNN_REGISTER_SERIALIZABLE(Activation)

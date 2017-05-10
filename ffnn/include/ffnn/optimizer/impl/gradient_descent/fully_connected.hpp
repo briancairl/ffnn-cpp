@@ -89,7 +89,7 @@ public:
     FFNN_ASSERT_MSG(layer.isInitialized(), "Layer to optimize is not initialized.");
 
     // Copy current input for updating
-    prev_input_.noalias() = *layer.input_;
+    prev_input_.noalias() = layer.input_;
     return true;
   }
 
@@ -104,11 +104,11 @@ public:
     FFNN_ASSERT_MSG(layer.isInitialized(), "Layer to optimize is not initialized.");
 
     // Compute and accumulate new gradient
-    weight_gradient_.noalias() += (*layer.forward_error_) * prev_input_.transpose();
-    bias_gradient_.noalias() += (*layer.forward_error_);
+    weight_gradient_.noalias() += layer.forward_error_ * prev_input_.transpose();
+    bias_gradient_.noalias() += layer.forward_error_;
 
     // Back-prop error
-    return layer.computeBackwardError();
+    return true;
   }
 
   /**

@@ -10,6 +10,8 @@
 #include <cmath>
 
 // Boost
+#include <boost/shared_ptr.hpp>
+#include <boost/make_shared.hpp>
 #include <boost/random.hpp>
 #include <boost/random/normal_distribution.hpp>
 #include <boost/math/special_functions/erf.hpp>
@@ -20,7 +22,7 @@ namespace distribution
 {
 
 template<typename ValueType>
-class StandardNormal
+class Normal
 {
 public:
   /// Distribution type standardization
@@ -29,15 +31,14 @@ public:
   /// Variate generator type standardization
   typedef boost::variate_generator<boost::mt19937&, DistributionType> GeneratorType;
 
-  StandardNormal() : 
-    distribution_(0.0, 1.0)
+  Normal(ValueType mean, ValueType scale) : 
+    distribution_(mean, scale)
   {
     static boost::mt19937 rng;
-    variate_generator_ = new GeneratorType(rng, distribution_);
-  }
-  virtual ~StandardNormal()
-  {
-    delete variate_generator_; 
+    if (!variate_generator_)
+    {
+      variate_generator_ = boost::make_shared<GeneratorType>(rng, distribution_);
+    }
   }
 
   /**
@@ -62,8 +63,25 @@ public:
 
 private:
   DistributionType distribution_;
+  static boost::shared_ptr<GeneratorType> variate_generator_;
+};
 
-  GeneratorType* variate_generator_;
+
+template<typename ValueType>
+struct StandardNormal : Normal<ValueType>
+{
+  /// Base-type aliad
+  using Base = Normal<ValueType>;
+
+  /// Distribution type standardization
+  typedef typename Base::DistributionType DistributionType;
+
+  /// Variate generator type standardization
+  typedef typename Base::GeneratorType GeneratorType;
+
+  StandardNormal() : 
+    Base(0.0, 1.0)
+  {}
 };
 }  // namespace distribution
 }  // namespace ffnn

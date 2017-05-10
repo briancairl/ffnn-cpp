@@ -13,6 +13,9 @@ namespace distribution
 template<typename ValueType>
 class Distribution
 {
+  /// Require that ValueType is floating point
+  static_assert(std::is_floating_point<ValueType>::value,
+                "Distribution value representation must be a floating point type.");
 public:
   /**
    * @brief Generates a random value
