@@ -21,6 +21,19 @@ namespace ffnn
 {
 namespace layer
 {
+
+template<FFNN_SIZE_TYPE InputHeightAtCompileTime,
+         FFNN_SIZE_TYPE InputWidthAtCompileTime,
+         FFNN_SIZE_TYPE OutputHeightAtCompileTime,
+         FFNN_SIZE_TYPE OutputWidthAtCompileTime>
+struct hidden_size_evaluator
+{
+  constexpr static FFNN_SIZE_TYPE input_height  = InputHeightAtCompileTime;
+  constexpr static FFNN_SIZE_TYPE input_width   = InputWidthAtCompileTime;
+  constexpr static FFNN_SIZE_TYPE output_height = OutputHeightAtCompileTime;
+  constexpr static FFNN_SIZE_TYPE output_width  = OutputWidthAtCompileTime;
+};
+
 /**
  * @brief A network hidden-layer object
  */

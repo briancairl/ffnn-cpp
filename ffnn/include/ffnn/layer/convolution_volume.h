@@ -48,7 +48,7 @@ struct is_dynamic_pair :
 template<EmbeddingMode mode, EmbeddingMode ref, typename SizeType>
 constexpr SizeType embed_dimension(SizeType n, SizeType m)
 {
-  return (mode == ref) ? multiply_if_not_dynamic_sizes<SizeType>(n, m) : n;
+  return (mode == ref) ? internal::multiply_if_not_dynamic_sizes<SizeType>(n, m) : n;
 }
 
 template<typename SizeType>

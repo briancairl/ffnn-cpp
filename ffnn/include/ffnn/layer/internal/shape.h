@@ -79,7 +79,7 @@ struct Shape
 
   inline bool valid() const
   {
-    return not is_dynamic(size());
+    return size() > 0;
   }
 
   operator SizeType() const { return size(); }
@@ -111,7 +111,7 @@ struct Shape
 template<typename SizeType>
 std::ostream& operator<<(std::ostream& os, const Shape<SizeType>& dim)
 {
-  if ((dim.height * dim.width * dim.depth) > 0)
+  if (dim.valid())
   {
     os << "<" << dim.height << " x " << dim.width << " x " << dim.depth << ">";
   }

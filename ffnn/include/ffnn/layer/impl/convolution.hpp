@@ -21,7 +21,8 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterWidthAtCompileTime,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
-         EmbeddingMode Mode>
+         EmbeddingMode Mode,
+         class _HSize>
 Convolution<CONV_TARGS>::
 Convolution(const ShapeType& input_shape,
             const SizeType& filter_height,
@@ -50,7 +51,8 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterWidthAtCompileTime,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
-         EmbeddingMode Mode>
+         EmbeddingMode Mode,
+         class _HSize>
 Convolution<CONV_TARGS>::~Convolution()
 {
   FFNN_INTERNAL_DEBUG_NAMED("layer::Convolution", "Destroying [layer::Convolution] object <" << this->getID() << ">");
@@ -64,7 +66,8 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterWidthAtCompileTime,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
-         EmbeddingMode Mode>
+         EmbeddingMode Mode,
+         class _HSize>
 bool Convolution<CONV_TARGS>::initialize()
 {
   return initialize(Convolution<CONV_TARGS>::Parameters());
@@ -78,7 +81,8 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterWidthAtCompileTime,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
-         EmbeddingMode Mode>
+         EmbeddingMode Mode,
+         class _HSize>
 bool Convolution<CONV_TARGS>::initialize(const Convolution<CONV_TARGS>::Parameters& config)
 {
   // Abort if layer is already initialized
@@ -131,7 +135,8 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterWidthAtCompileTime,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
-         EmbeddingMode Mode>
+         EmbeddingMode Mode,
+         class _HSize>
 bool Convolution<CONV_TARGS>::forward()
 {
   if (!opt_->forward(*this))
@@ -164,7 +169,8 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterWidthAtCompileTime,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
-         EmbeddingMode Mode>
+         EmbeddingMode Mode,
+         class _HSize>
 bool Convolution<CONV_TARGS>::backward()
 {
   FFNN_ASSERT_MSG(opt_, "No optimization resource set.");
@@ -179,7 +185,8 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterWidthAtCompileTime,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
-         EmbeddingMode Mode>
+         EmbeddingMode Mode,
+         class _HSize>
 bool Convolution<CONV_TARGS>::update()
 {
   FFNN_ASSERT_MSG(opt_, "No optimization resource set.");
@@ -194,7 +201,8 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterWidthAtCompileTime,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
-         EmbeddingMode Mode>
+         EmbeddingMode Mode,
+         class _HSize>
 void Convolution<CONV_TARGS>::reset(const Convolution<CONV_TARGS>::Parameters& config)
 {
   receptors_.resize(boost::extents[output_volume_shape_.height][output_volume_shape_.width]);
@@ -224,7 +232,8 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterWidthAtCompileTime,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
-         EmbeddingMode Mode>
+         EmbeddingMode Mode,
+         class _HSize>
 bool Convolution<CONV_TARGS>::computeBackwardError()
 {
   return true;
@@ -238,7 +247,8 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterWidthAtCompileTime,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
-         EmbeddingMode Mode>
+         EmbeddingMode Mode,
+         class _HSize>
 void Convolution<CONV_TARGS>::
   setOptimizer(typename Optimizer::Ptr opt)
 {
@@ -254,12 +264,13 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterWidthAtCompileTime,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
-         EmbeddingMode Mode>
+         EmbeddingMode Mode,
+         class _HSize>
 typename Convolution<CONV_TARGS>::OffsetType
 Convolution<CONV_TARGS>::connectToForwardLayer(const Layer<ValueType>& next, OffsetType offset)
 {
   // Connect outputs
-  OffsetType ret_offset = Base::connectToForwardLayer(next, offset);
+  OffsetType offset_after_connect = Base::connectToForwardLayer(next, offset);
 
   // Map to individual volumes
   ValueType* output_ptr = const_cast<ValueType*>(next.getInputBuffer().data());
@@ -278,7 +289,7 @@ Convolution<CONV_TARGS>::connectToForwardLayer(const Layer<ValueType>& next, Off
       receptors_[idx][jdx].setBackwardErrorMapping(error_ptr + kdx);
     }
   }
-  return ret_offset;
+  return offset_after_connect;
 }
 
 template<typename ValueType,
@@ -289,7 +300,8 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterWidthAtCompileTime,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
-         EmbeddingMode Mode>
+         EmbeddingMode Mode,
+         class _HSize>
 void Convolution<CONV_TARGS>::
   save(typename Convolution<CONV_TARGS>::OutputArchive& ar,
        typename Convolution<CONV_TARGS>::VersionType version) const
@@ -316,7 +328,8 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterWidthAtCompileTime,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
-         EmbeddingMode Mode>
+         EmbeddingMode Mode,
+         class _HSize>
 void Convolution<CONV_TARGS>::
   load(typename Convolution<CONV_TARGS>::InputArchive& ar,
        typename Convolution<CONV_TARGS>::VersionType version)

@@ -2,8 +2,8 @@
  * @author Brian Cairl
  * @date 2017
  */
-#ifndef FFNN_LAYER_FULLY_CONNECTED_H
-#define FFNN_LAYER_FULLY_CONNECTED_H
+#ifndef FFNN_LAYER_CONVOLUTION_H
+#define FFNN_LAYER_CONVOLUTION_H
 
 // Boost
 #include "boost/multi_array.hpp"
@@ -31,7 +31,8 @@ namespace layer
   FilterWidthAtCompileTime,\
   FilterCountAtCompileTime,\
   StrideAtCompileTime,\
-  Mode
+  Mode,\
+  _HSize
 
 #define CONV_VOLUME_TARGS\
   ValueType,\
@@ -52,21 +53,19 @@ template <typename ValueType,
           FFNN_SIZE_TYPE FilterWidthAtCompileTime = Eigen::Dynamic,
           FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic,
           FFNN_SIZE_TYPE StrideAtCompileTime = 1,
-          EmbeddingMode Mode = ColEmbedding>
+          EmbeddingMode Mode = ColEmbedding,
+          class _HSize =
+            hidden_size_evaluator<
+              embed_dimension<Mode, ColEmbedding>(HeightAtCompileTime, DepthAtCompileTime),
+              embed_dimension<Mode, RowEmbedding>(WidthAtCompileTime,  DepthAtCompileTime),
+              embed_dimension<Mode, ColEmbedding>(output_dimension(HeightAtCompileTime, FilterHeightAtCompileTime, StrideAtCompileTime), FilterCountAtCompileTime),
+              embed_dimension<Mode, RowEmbedding>(output_dimension(WidthAtCompileTime,  FilterWidthAtCompileTime,  StrideAtCompileTime), FilterCountAtCompileTime)>>
 class Convolution :
-  public Hidden<ValueType,
-                embed_dimension<Mode, ColEmbedding>(HeightAtCompileTime, DepthAtCompileTime),
-                embed_dimension<Mode, RowEmbedding>(WidthAtCompileTime,  DepthAtCompileTime),
-                embed_dimension<Mode, ColEmbedding>(output_dimension(HeightAtCompileTime, FilterHeightAtCompileTime, StrideAtCompileTime), FilterCountAtCompileTime),
-                embed_dimension<Mode, RowEmbedding>(output_dimension(WidthAtCompileTime,  FilterWidthAtCompileTime,  StrideAtCompileTime), FilterCountAtCompileTime)>
+  public Hidden<ValueType, _HSize::input_height, _HSize::input_width, _HSize::output_height, _HSize::output_width>
 {
 public:
   /// Base type alias
-  using Base = Hidden<ValueType,
-                      embed_dimension<Mode, ColEmbedding>(HeightAtCompileTime, DepthAtCompileTime),
-                      embed_dimension<Mode, RowEmbedding>(WidthAtCompileTime,  DepthAtCompileTime),
-                      embed_dimension<Mode, ColEmbedding>(output_dimension(HeightAtCompileTime, FilterHeightAtCompileTime, StrideAtCompileTime), FilterCountAtCompileTime),
-                      embed_dimension<Mode, RowEmbedding>(output_dimension(WidthAtCompileTime,  FilterWidthAtCompileTime,  StrideAtCompileTime), FilterCountAtCompileTime)>;
+  using Base = Hidden<ValueType, _HSize::input_height, _HSize::input_width, _HSize::output_height, _HSize::output_width>;
 
   /// Self type alias
   using Self = Convolution<CONV_TARGS>;
@@ -210,6 +209,7 @@ private:
 /// FFNN (implementation)
 #include <ffnn/layer/impl/convolution.hpp>
 
+// Cleanup definitions
 #undef CONV_TARGS
 #undef CONV_VOLUME_TARGS
-#endif  // FFNN_LAYER_FULLY_CONNECTED_H
+#endif  // FFNN_LAYER_CONVOLUTION_H
