@@ -29,7 +29,7 @@ class LayerParameters
 
   /// Require that ScalarType is floating point
   static_assert(std::is_floating_point<typename ConnectType::Scalar>::value,
-                "ScalarType [ValueType] must be a floating point type.");
+                "Scalar representation must be a floating point type.");
 public:
   /**
    * @brief Scalar-type standardization
@@ -41,7 +41,7 @@ public:
   /**
    * @brief An initialization configuration object used for setting up a LayerParameters object
    */
-  struct InitConfig
+  struct InitConfiguration
   {
     /// Standard deviation of connection weights on init
     ScalarType init_connection_std;
@@ -63,10 +63,10 @@ public:
      * @param init_bias_mean  Mean of intial biases
      */
     explicit
-    InitConfig(ScalarType init_connection_std = 1e-3,
-               ScalarType init_bias_std = 1e-3,
-               ScalarType init_connection_mean = 0.0,
-               ScalarType init_bias_mean = 0.0)
+    InitConfiguration(ScalarType init_connection_std = 1e-3,
+                      ScalarType init_bias_std = 1e-3,
+                      ScalarType init_connection_mean = 0.0,
+                      ScalarType init_bias_mean = 0.0)
   };
 };
 
