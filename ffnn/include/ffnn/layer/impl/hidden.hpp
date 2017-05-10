@@ -13,7 +13,7 @@ namespace ffnn
 namespace layer
 {
 #define HIDDEN_TARGS ValueType, InputsHeightAtCompileTime, InputsWidthAtCompileTime, OutputsHeightAtCompileTime, OutputsWidthAtCompileTime
-#define HIDDEN_TARGS_ADVANCED _InputBlockType, _OutputBlockType, _InputMappingType, _OutputMappingType
+#define HIDDEN_TARGS_ADVANCED _InputBlockType, _OutputBlockType
 #define HIDDEN Hidden<HIDDEN_TARGS, HIDDEN_TARGS_ADVANCED>
 
 template<typename ValueType,
@@ -22,9 +22,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE OutputsHeightAtCompileTime,
          FFNN_SIZE_TYPE OutputsWidthAtCompileTime,
          typename _InputBlockType,
-         typename _OutputBlockType,
-         typename _InputMappingType,
-         typename _OutputMappingType>
+         typename _OutputBlockType>
 HIDDEN::Hidden(const ShapeType& input_shape,
                const ShapeType& output_shape) :
   Base(input_shape, output_shape),
@@ -41,9 +39,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE OutputsHeightAtCompileTime,
          FFNN_SIZE_TYPE OutputsWidthAtCompileTime,
          typename _InputBlockType,
-         typename _OutputBlockType,
-         typename _InputMappingType,
-         typename _OutputMappingType>
+         typename _OutputBlockType>
 HIDDEN::~Hidden()
 {
   FFNN_INTERNAL_DEBUG_NAMED("layer::Hidden", "Destroying [layer::Hidden] object <" << this->getID() << ">");
@@ -55,9 +51,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE OutputsHeightAtCompileTime,
          FFNN_SIZE_TYPE OutputsWidthAtCompileTime,
          typename _InputBlockType,
-         typename _OutputBlockType,
-         typename _InputMappingType,
-         typename _OutputMappingType>
+         typename _OutputBlockType>
 typename HIDDEN::OffsetType
 HIDDEN::connectToForwardLayer(const Layer<ValueType>& next, OffsetType offset)
 {
@@ -65,11 +59,11 @@ HIDDEN::connectToForwardLayer(const Layer<ValueType>& next, OffsetType offset)
 
   // Map output of next layer to input buffer
   auto output_ptr = const_cast<ValueType*>(next.getInputBuffer().data()) + offset;
-  new (&output_) _OutputMappingType(output_ptr, Base::output_shape_.height, Base::output_shape_.width);
+  new (&output_) OutputMappingType(output_ptr, Base::output_shape_.height, Base::output_shape_.width);
 
   // Map error of next layer to backward-error buffer
   auto error_ptr = const_cast<ValueType*>(next.getBackwardErrorBuffer().data()) + offset;
-  new (&forward_error_) _OutputMappingType(error_ptr, Base::output_shape_.height, Base::output_shape_.width);
+  new (&forward_error_) OutputMappingType(error_ptr, Base::output_shape_.height, Base::output_shape_.width);
 
   // Return next offset after assigning buffer segments
   return offset + Base::outputShape().size();
@@ -81,9 +75,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE OutputsHeightAtCompileTime,
          FFNN_SIZE_TYPE OutputsWidthAtCompileTime,
          typename _InputBlockType,
-         typename _OutputBlockType,
-         typename _InputMappingType,
-         typename _OutputMappingType>
+         typename _OutputBlockType>
 bool HIDDEN::initialize()
 {
   // Deduce input dimensions
@@ -106,11 +98,11 @@ bool HIDDEN::initialize()
   {
     // Create input buffer map
     auto input_ptr = const_cast<ValueType*>(Base::getInputBuffer().data());
-    new (&input_) _InputMappingType(input_ptr, Base::input_shape_.height, Base::input_shape_.width);
+    new (&input_) InputMappingType(input_ptr, Base::input_shape_.height, Base::input_shape_.width);
 
     // Create input buffer map
     auto error_ptr = const_cast<ValueType*>(Base::getBackwardErrorBuffer().data());
-    new (&backward_error_) _InputMappingType(error_ptr, Base::input_shape_.height, Base::input_shape_.width);
+    new (&backward_error_) InputMappingType(error_ptr, Base::input_shape_.height, Base::input_shape_.width);
 
     // Resolve previous layer output buffers
     if (Base::connectInputLayers() == Base::inputShape().size())
@@ -141,9 +133,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE OutputsHeightAtCompileTime,
          FFNN_SIZE_TYPE OutputsWidthAtCompileTime,
          typename _InputBlockType,
-         typename _OutputBlockType,
-         typename _InputMappingType,
-         typename _OutputMappingType>
+         typename _OutputBlockType>
 void HIDDEN::save(typename HIDDEN::OutputArchive& ar,
                   typename HIDDEN::VersionType version) const
 {
@@ -158,9 +148,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE OutputsHeightAtCompileTime,
          FFNN_SIZE_TYPE OutputsWidthAtCompileTime,
          typename _InputBlockType,
-         typename _OutputBlockType,
-         typename _InputMappingType,
-         typename _OutputMappingType>
+         typename _OutputBlockType>
 void HIDDEN::load(typename HIDDEN::InputArchive& ar,
                   typename HIDDEN::VersionType version)
 {

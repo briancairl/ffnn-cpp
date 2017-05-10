@@ -30,9 +30,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE OutputHeightAtCompileTime = Eigen::Dynamic,
          FFNN_SIZE_TYPE OutputWidthAtCompileTime = Eigen::Dynamic,
          typename _InputBlockType = Eigen::Matrix<ValueType, InputHeightAtCompileTime, InputWidthAtCompileTime, Eigen::ColMajor>,
-         typename _OutputBlockType = Eigen::Matrix<ValueType, OutputHeightAtCompileTime, OutputWidthAtCompileTime, Eigen::ColMajor>,
-         typename _InputMappingType = Eigen::Map<_InputBlockType>,
-         typename _OutputMappingType = Eigen::Map<_OutputBlockType>>
+         typename _OutputBlockType = Eigen::Matrix<ValueType, OutputHeightAtCompileTime, OutputWidthAtCompileTime, Eigen::ColMajor>>
 class Hidden :
   public Layer<ValueType>
 {
@@ -52,8 +50,14 @@ public:
   /// Input block type standardization
   typedef _InputBlockType InputBlockType;
 
-  /// Iutpu blockt type standardization
+  /// Output block type standardization
   typedef _OutputBlockType OutputBlockType;
+
+  /// Input block-mapping type standardization
+  typedef Eigen::Map<InputBlockType, 16> InputMappingType;
+
+  /// Output block-mapping type standardization
+  typedef Eigen::Map<OutputBlockType, 16> OutputMappingType;
 
   /**
    * @brief Setup constructor
@@ -63,7 +67,7 @@ public:
    * @param output_width  width of the output surface
    */
   explicit
-  Hidden(const ShapeType& input_shape  = ShapeType(InputHeightAtCompileTime, InputWidthAtCompileTime),
+  Hidden(const ShapeType& input_shape  = ShapeType(InputHeightAtCompileTime,  InputWidthAtCompileTime),
          const ShapeType& output_shape = ShapeType(OutputHeightAtCompileTime, OutputWidthAtCompileTime));
   virtual ~Hidden();
 
@@ -103,16 +107,16 @@ protected:
   void load(InputArchive& ar, VersionType version);
 
   /// Memory-mapped input vector
-  _InputMappingType input_;
+  InputMappingType input_;
 
   /// Memory-mapped output vector
-  _OutputMappingType output_;
+  OutputMappingType output_;
 
   /// Backward error vector
-  _InputMappingType backward_error_;
+  InputMappingType backward_error_;
 
   /// Output-target error vector
-  _OutputMappingType forward_error_;
+  OutputMappingType forward_error_;
 
   /**
    * @brief Maps outputs of this layer to inputs of the next
