@@ -2,8 +2,8 @@
  * @note HEADER-ONLY IMPLEMENTATION FILE
  * @warn Do not include directly
  */
-#ifndef FFNN_LAYER_IMPL_LAYER_HPP
-#define FFNN_LAYER_IMPL_LAYER_HPP
+#ifndef FFNN_LAYER_IMPL_OUTPUT_HPP
+#define FFNN_LAYER_IMPL_OUTPUT_HPP
 
 // FFNN
 #include <ffnn/logging.h>
@@ -101,4 +101,4 @@ void Output<TARGS>::operator<<(const NetworkTargetType& target)
 }  // namespace layer
 }  // namespace ffnn
 #undef TARGS
-#endif  // FFNN_LAYER_IMPL_LAYER_HPP
+#endif  // FFNN_LAYER_IMPL_OUTPUT_HPP
