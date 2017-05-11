@@ -155,16 +155,15 @@ public:
    * @param input  a block (matrix; depth embedded) of input values
    */
   template<typename InputBlockType>
-  void forward(const Eigen::MatrixBase<InputBlockType>& input);
+  void forward(const Eigen::Block<InputBlockType>& input);
 
   /**
    * @brief Performs backward error propagation
    * @param input  a block (matrix; depth embedded) of input values
-   * @param forward_error  a block (matrix; depth embedded) of layer-output error values
+   * @param[out] backward_error  a block (matrix; depth embedded) of previous layer output error values
    */
-  template<typename InputBlockType, typename ForwardErrorBlockType>
-  void backward(const Eigen::MatrixBase<InputBlockType>& input,
-                const Eigen::MatrixBase<ForwardErrorBlockType>& forward_error);
+  template<typename InputBlockType, typename BackwardErrorBlockPtr>
+  void backward(const Eigen::Block<InputBlockType>& input, BackwardErrorBlockPtr backward_error_ptr);
 
   /**
    * @brief Exposes internal biasing weights

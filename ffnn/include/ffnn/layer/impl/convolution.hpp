@@ -42,7 +42,8 @@ Convolution(const ShapeType& input_shape,
                        filter_count),
   filter_shape_(embed_dimension<Mode, ColEmbedding>(filter_height, input_shape.depth),
                 embed_dimension<Mode, RowEmbedding>(filter_width,  input_shape.depth)),
-  filter_stride_(filter_stride),
+  filter_stride_(embed_dimension<Mode, ColEmbedding>(filter_stride, input_shape.depth),
+                 embed_dimension<Mode, RowEmbedding>(filter_stride, input_shape.depth)),
   opt_(boost::make_shared<typename optimizer::None<Self>>())
 {}
 
@@ -171,10 +172,9 @@ bool Convolution<CONV_TARGS>::forward()
   }
 
   // Compute outputs through volumes
-  OffsetType kdx = 0;
-  for (OffsetType idx = 0, idx_str = 0; idx < output_volume_shape_.height; idx++, idx_str += filter_stride_)
+  for (OffsetType idx = 0, idx_str = 0; idx < output_volume_shape_.height; idx++, idx_str += filter_stride_.height)
   {
-    for (OffsetType jdx = 0, jdx_str = 0; jdx < output_volume_shape_.width; jdx++, jdx_str += filter_stride_)
+    for (OffsetType jdx = 0, jdx_str = 0; jdx < output_volume_shape_.width; jdx++, jdx_str += filter_stride_.width)
     {
       // Get block dimensions
       const auto& ris = receptors_[idx][jdx].inputShape();
@@ -182,7 +182,6 @@ bool Convolution<CONV_TARGS>::forward()
       // Activate receptor
       receptors_[idx][jdx].forward(Base::input_.block(idx_str, jdx_str, ris.height, ris.width));
     }
-    kdx += output_volume_shape_.depth;
   }
   return true;
 }
@@ -200,7 +199,22 @@ template<typename ValueType,
 bool Convolution<CONV_TARGS>::backward()
 {
   FFNN_ASSERT_MSG(opt_, "No optimization resource set.");
-  return opt_->backward(*this);
+
+  Base::backward_error_.setZero();
+
+  // Compute outputs through volumes
+  for (OffsetType idx = 0, idx_str = 0; idx < output_volume_shape_.height; idx++, idx_str += filter_stride_.height)
+  {
+    for (OffsetType jdx = 0, jdx_str = 0; jdx < output_volume_shape_.width; jdx++, jdx_str += filter_stride_.width)
+    {
+      // Sum over all filters
+      for (const auto& filter : receptors_[idx][jdx].getFilters())
+      {
+        Base::backward_error_.block(idx_str, jdx_str, filter.rows(), filter.cols()) += filter;
+      }
+    }
+  }
+  return true;
 }
 
 template<typename ValueType,

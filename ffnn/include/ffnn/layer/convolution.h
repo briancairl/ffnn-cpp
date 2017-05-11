@@ -200,7 +200,7 @@ private:
   ShapeType filter_shape_;
 
   /// Stride between receptive fields
-  SizeType filter_stride_;
+  ShapeType filter_stride_;
 
   /**
    * @brief Weight optimization resource
