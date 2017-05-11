@@ -158,6 +158,15 @@ public:
   void forward(const Eigen::MatrixBase<InputBlockType>& input);
 
   /**
+   * @brief Performs backward error propagation
+   * @param input  a block (matrix; depth embedded) of input values
+   * @param forward_error  a block (matrix; depth embedded) of layer-output error values
+   */
+  template<typename InputBlockType, typename ForwardErrorBlockType>
+  void backward(const Eigen::MatrixBase<InputBlockType>& input,
+                const Eigen::MatrixBase<ForwardErrorBlockType>& forward_error);
+
+  /**
    * @brief Exposes internal biasing weights
    * @return input-biasing vector
    */
@@ -183,6 +192,14 @@ public:
     output_ptr_ = ptr;
   }
 
+  /**
+   * @brief Sets memory map to contiguous backward-error buffer
+   */
+  inline void setForwardErrorMapping(ValueType* const ptr)
+  {
+    forward_error_ptr_ = ptr;
+  }
+
 private:
   /**
    * @brief Reset filter weights and biases
@@ -202,6 +219,9 @@ private:
 
   // Output mapping
   ValueType* output_ptr_;
+
+  // Backward-error mapping
+  ValueType* forward_error_ptr_;
 
   /// Number of filters associated with the field
   SizeType filter_count_;
