@@ -9,6 +9,9 @@
 #include <vector>
 #include <type_traits>
 
+// FFNN (internal)
+#include <ffnn/layer/internal/shape.h>
+
 // FFNN
 #include <ffnn/layer/hidden.h>
 #include <ffnn/neuron/neuron.h>
@@ -19,18 +22,6 @@ namespace ffnn
 {
 namespace layer
 {
-
-template<class BlockType>
-struct is_alignable_128 :
-  std::conditional<
-    (sizeof(BlockType)%16) == 0,
-    std::true_type,
-    std::false_type
-  >::type
-{};
-
-
-
 /**
  * @brief A fully-connected layer
  */
@@ -186,6 +177,10 @@ private:
    * @see   setOptimizer
    */
   typename Optimizer::Ptr opt_;
+
+public:
+  EIGEN_MAKE_ALIGNED_OPERATOR_NEW_IF(internal::is_alignable_128<WeightMatrixType>::value ||
+                                     internal::is_alignable_128<BiasVectorType>::value);
 };
 }  // namespace layer
 }  // namespace ffnn

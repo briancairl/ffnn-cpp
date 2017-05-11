@@ -166,6 +166,9 @@ private:
    * @see   setOptimizer
    */
   typename Optimizer::Ptr opt_;
+
+public:
+  EIGEN_MAKE_ALIGNED_OPERATOR_NEW_IF(internal::is_alignable_128<BiasVectorType>::value);
 };
 }  // namespace layer
 }  // namespace ffnn

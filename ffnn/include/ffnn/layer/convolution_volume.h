@@ -17,33 +17,12 @@ namespace ffnn
 {
 namespace layer
 {
-
-
-#define IS_DYNAMIC_PAIR(n, m) (IS_DYNAMIC(n) || IS_DYNAMIC(m))
-#define PROD_IF_STATIC_PAIR(n, m) (IS_DYNAMIC_PAIR(n, m) ? Eigen::Dynamic : (n*m))
-#define CONV_EMBEDDED_H(h, d) Mode == ColEmbedding ? PROD_IF_STATIC_PAIR(h, d) : h
-#define CONV_EMBEDDED_W(w, d) Mode == RowEmbedding ? PROD_IF_STATIC_PAIR(w, d) : w
-
 typedef enum
 {
   RowEmbedding = 0, ///< Embed depth along filter matrix rows
   ColEmbedding = 1, ///< Embed depth along filter matrix cols
 }
 EmbeddingMode;
-
-template<FFNN_SIZE_TYPE Size>
-struct is_dynamic :
-  std::conditional<Size == Eigen::Dynamic, std::true_type, std::false_type>::type
-{};
-
-template<FFNN_SIZE_TYPE SizeN, FFNN_SIZE_TYPE SizeM>
-struct is_dynamic_pair :
-  std::conditional<
-    is_dynamic<SizeN>::value and is_dynamic<SizeM>::value,
-    std::true_type,
-    std::false_type
-  >::type
-{};
 
 template<EmbeddingMode mode, EmbeddingMode ref, typename SizeType>
 constexpr SizeType embed_dimension(SizeType n, SizeType m)
@@ -57,20 +36,12 @@ constexpr SizeType output_dimension(SizeType n, SizeType fn, SizeType stride)
   return (n - fn) / stride + 1;
 }
 
-template<class BlockType>
-struct is_alignable_128 :
-  std::conditional<
-    (sizeof(BlockType)%16) == 0,
-    std::true_type,
-    std::false_type
-  >::type
-{};
 
 template<typename KernelMatrixType>
 class FilterBank :
   public std::conditional
   <
-    is_alignable_128<KernelMatrixType>::value,
+    internal::is_alignable_128<KernelMatrixType>::value,
     std::vector<KernelMatrixType, Eigen::aligned_allocator<typename KernelMatrixType::Scalar>>,
     std::vector<KernelMatrixType>
   >::type
@@ -93,14 +64,6 @@ public:
     for (auto& filter : *this)
     {
       filter.setZero(height, width);
-    }
-  }
-
-  void setRandom(SizeType height, SizeType width)
-  {
-    for (auto& filter : *this)
-    {
-      filter.setRandom(height, width);
     }
   }
 
@@ -168,40 +131,11 @@ public:
   /// Filter collection type standardization
   typedef FilterBank<KernelMatrixType> FilterBankType;
 
-  /// A configuration object for a FullyConnected hidden layer
-  struct Parameters
-  {
-    /// Standard deviation of connection weights on init
-    ScalarType init_weight_std;
-
-    /// Standard deviation of biases on init
-    ScalarType init_bias_std;
-
-    /// Connection weight mean (bias) on init
-    ScalarType init_weight_mean;
-
-    /// Connection biasing mean (bias) on init
-    ScalarType init_bias_mean;
-
-    /**
-     * @brief Setup constructor
-     * @param init_weight_std  Standard deviation of initial weights
-     * @param init_bias_std  Standard deviation of initial weights
-     * @param init_weight_mean  Mean of intial weights
-     * @param init_bias_mean  Mean of intial biases
-     */
-    explicit
-    Parameters(ScalarType init_weight_std = 1e-3,
-               ScalarType init_bias_std = 1e-3,
-               ScalarType init_weight_mean = 0.0,
-               ScalarType init_bias_mean = 0.0);
-  };
-
   /**
    * @brief
    */
   ConvolutionVolume(const ShapeType& filter_shape = ShapeType(HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime),
-                    const SizeType& filter_count = FilterCountAtCompileTime);
+                    const SizeType& filter_count  = FilterCountAtCompileTime);
   virtual ~ConvolutionVolume();
 
   /**
@@ -221,16 +155,21 @@ public:
   }
 
   /**
-   * @brief Initialize the volume
+   * @brief Initialize volume weights and biases according to particular distributions
+   * @param wd  distribution to sample for connection weights
+   * @param bd  distribution to sample for biases
+   * @retval false otherwise
+   *
+   * @warning If volume is a loaded instance, this method will initialize volume sizings
+   *          but weights will not be reset according to the given distributions
    */
-  bool initialize();
-  bool initialize(const Parameters& config);
+  template<typename WeightDistribution, typename BiasDistribution>
+  bool initialize(const WeightDistribution& wd, const BiasDistribution& bd);
 
   /**
    * @brief Reset filter weights and biases
-   * @param config  parameter reset configuration
    */
-  void reset(const Parameters& config = Parameters());
+  void reset();
 
   /**
    * @brief Performs forward value propagation
@@ -275,9 +214,6 @@ public:
   void load(InputArchive& ar, VersionType version);
 
 private:
-  /// Configuration struct
-  Parameters config_;
-
   /// Filter bank for receptive field
   FilterBankType filters_;
 
@@ -293,8 +229,13 @@ private:
   /// Number of filters associated with the field
   SizeType filter_count_;
 
+  /**
+   * @brief Unused; does nothing
+   */
+  bool initialize();
+
 public:
-  EIGEN_MAKE_ALIGNED_OPERATOR_NEW_IF(is_alignable_128<BiasVectorType>::value);
+  EIGEN_MAKE_ALIGNED_OPERATOR_NEW_IF(internal::is_alignable_128<BiasVectorType>::value);
 };
 }  // namespace layer
 }  // namespace ffnn

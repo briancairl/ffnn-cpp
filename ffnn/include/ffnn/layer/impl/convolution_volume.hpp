@@ -5,6 +5,12 @@
 #ifndef FFNN_LAYER_IMPL_CONVOLUTION_VOLUME_HPP
 #define FFNN_LAYER_IMPL_CONVOLUTION_VOLUME_HPP
 
+// C++ Standard Library
+#include <exception>
+
+// Boost
+#include <boost/bind.hpp>
+
 // FFNN
 #include <ffnn/assert.h>
 #include <ffnn/logging.h>
@@ -21,26 +27,6 @@ namespace layer
                                  FilterCountAtCompileTime,\
                                  Mode
 #define CONVOLUTION_VOLUME ConvolutionVolume<CONVOLUTION_VOLUME_TARGS>
-
-template<typename ValueType,
-         FFNN_SIZE_TYPE HeightAtCompileTime,
-         FFNN_SIZE_TYPE WidthAtCompileTime,
-         FFNN_SIZE_TYPE DepthAtCompileTime,
-         FFNN_SIZE_TYPE FilterCountAtCompileTime,
-         EmbeddingMode Mode>
-CONVOLUTION_VOLUME::
-Parameters::Parameters(ScalarType init_weight_std,
-                       ScalarType init_bias_std,
-                       ScalarType init_weight_mean,
-                       ScalarType init_bias_mean) :
-  init_weight_std(init_weight_std),
-  init_bias_std(init_bias_std),
-  init_weight_mean(init_weight_mean),
-  init_bias_mean(init_bias_mean)
-{
-  FFNN_ASSERT_MSG(init_bias_std > 0, "[init_bias_std] should be positive");
-  FFNN_ASSERT_MSG(init_weight_std > 0, "[init_weight_std] should be positive");
-}
 
 template<typename ValueType,
          FFNN_SIZE_TYPE HeightAtCompileTime,
@@ -72,6 +58,7 @@ template<typename ValueType,
          EmbeddingMode Mode>
 bool CONVOLUTION_VOLUME::initialize()
 {
+  throw std::logic_error("ConvolutionVolume objects should not be initialized this way.");
   return false;
 }
 
@@ -81,7 +68,9 @@ template<typename ValueType,
          FFNN_SIZE_TYPE DepthAtCompileTime,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          EmbeddingMode Mode>
-bool CONVOLUTION_VOLUME::initialize(const Parameters& config)
+template<typename WeightDistribution,
+         typename BiasDistribution>
+bool CONVOLUTION_VOLUME::initialize(const WeightDistribution& wd, const BiasDistribution& bd)
 {
   // Abort if layer is already initialized
   if (Base::setupRequired())
@@ -91,10 +80,29 @@ bool CONVOLUTION_VOLUME::initialize(const Parameters& config)
       FFNN_WARN_NAMED("layer::ConvolutionVolume", "<" << Base::getID() << "> already initialized.");
       return false;
     }
-    else
+
+    /// Reset all filters
+    reset();
+
+    // Set filter connections weights
     {
-      /// Reset all filters
-      reset(config);
+      auto coeffInitfn = [](ValueType x, const WeightDistribution& dist)
+      {
+        return dist.generate();
+      };
+      for (auto& filter : filters_)
+      {
+        filter = filter.unaryExpr(boost::bind<ValueType>(coeffInitfn, _1, wd));
+      }
+    }
+
+    // Set layer biases
+    {
+      auto coeffInitfn = [](ValueType x, const BiasDistribution& dist)
+      {
+        return dist.generate();
+      };
+      b_ = b_.unaryExpr(boost::bind<ValueType>(coeffInitfn, _1, bd));
     }
   }
 
@@ -109,24 +117,12 @@ template<typename ValueType,
          FFNN_SIZE_TYPE DepthAtCompileTime,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          EmbeddingMode Mode>
-void CONVOLUTION_VOLUME::reset(const Parameters& config)
+void CONVOLUTION_VOLUME::reset()
 {
-  // Initializer all filters
-  filters_.setRandom(embed_dimension<Mode, ColEmbedding>(Base::input_shape_.height, Base::input_shape_.depth),
-                     embed_dimension<Mode, RowEmbedding>(Base::input_shape_.width,  Base::input_shape_.depth));
-  filters_ *= config.init_weight_std;
-  if (std::abs(config.init_weight_mean) > 0)
-  {
-    filters_ += config.init_weight_mean;
-  }
-
-  // Set uniformly random bias matrix + add biases
-  b_.setRandom(Base::output_shape_.depth, 1);
-  b_ *= config.init_bias_std;
-  if (std::abs(config.init_bias_mean) > 0)
-  {
-    b_.array() += config.init_bias_mean;
-  }
+  // Initiliaze all filters and biases
+  filters_.setZero(embed_dimension<Mode, ColEmbedding>(Base::input_shape_.height, Base::input_shape_.depth),
+                   embed_dimension<Mode, RowEmbedding>(Base::input_shape_.width,  Base::input_shape_.depth));
+  b_.setZero(Base::output_shape_.depth, 1);
 }
 
 template<typename ValueType,
@@ -141,7 +137,8 @@ void CONVOLUTION_VOLUME::forward(const Eigen::MatrixBase<InputBlockType>& input)
   // Multiply all filters
   for (OffsetType idx = 0; idx < Base::output_shape_.depth; idx++)
   {
-    output_ptr_[idx] = input.cwiseProduct(filters_[idx]).sum() + b_(idx);
+    output_ptr_[idx]  = input.cwiseProduct(filters_[idx]).sum() + b_(idx);
+    output_ptr_[idx] += b_(idx);
   }
 }
 

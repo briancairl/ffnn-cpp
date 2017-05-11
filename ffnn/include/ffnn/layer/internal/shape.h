@@ -21,6 +21,14 @@ namespace layer
 {
 namespace internal
 {
+template<class BlockType>
+struct is_alignable_128 :
+  std::conditional<
+    (sizeof(BlockType)%16) == 0,
+    std::true_type,
+    std::false_type
+  >::type
+{};
 
 template<typename SizeType>
 constexpr bool is_dynamic(SizeType n)

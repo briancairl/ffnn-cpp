@@ -17,6 +17,7 @@
 
 // FFNN
 #include <ffnn/layer/convolution_volume.h>
+#include <ffnn/distribution/normal.h>
 
 TEST(TestLayerConvolutionVolume, DynamicInstanceColEmbedding)
 {
@@ -26,9 +27,9 @@ TEST(TestLayerConvolutionVolume, DynamicInstanceColEmbedding)
   // Shape supplied in constructor
   Volume volume(Volume::ShapeType(4, 6, 8), 12);
 
-  EXPECT_TRUE(volume.getFilters().empty());
-  EXPECT_TRUE(volume.initialize());
   EXPECT_EQ(volume.getFilters().size(), 12);
+  EXPECT_TRUE(volume.initialize(ffnn::distribution::StandardNormal<float>(),
+                                ffnn::distribution::StandardNormal<float>()));
 
   for (const auto& filter : volume.getFilters())
   {
@@ -47,8 +48,9 @@ TEST(TestLayerConvolutionVolume, StaticInstanceRowEmbedding)
   // Shape inferred from template args
   Volume volume;
 
-  EXPECT_TRUE(volume.getFilters().empty());
-  EXPECT_TRUE(volume.initialize());
+  EXPECT_EQ(volume.getFilters().size(), 12);
+  EXPECT_TRUE(volume.initialize(ffnn::distribution::StandardNormal<float>(),
+                                ffnn::distribution::StandardNormal<float>()));
 
   for (const auto& filter : volume.getFilters())
   {
@@ -57,54 +59,6 @@ TEST(TestLayerConvolutionVolume, StaticInstanceRowEmbedding)
     EXPECT_EQ(filter.cols(), 6 * 8);
     FFNN_DEBUG('\n' << filter);
   }
-}
-
-TEST(TestLayerConvolutionVolume, StaticInstanceRowEmbedding_Forward)
-{
-  // Volume-type alias
-  using Volume = ffnn::layer::ConvolutionVolume<float, 4, 6, 8, 12>;
-
-  // Shape inferred from template args
-  Volume volume;
-
-  EXPECT_TRUE(volume.getFilters().empty());
-  EXPECT_TRUE(volume.initialize());
-
-  using OutputBlock = Volume::BiasVectorType;
-  OutputBlock output;
-  output.setZero();
-
-  using InputBlock = Volume::KernelMatrixType;
-  InputBlock input;
-  input.setOnes();
-
-  volume.forward(input, output);
-  FFNN_DEBUG('\n' << output);
-}
-
-TEST(TestLayerConvolutionVolume, StaticInstanceRowEmbedding_ForwardBlockInput)
-{
-  // Volume-type alias
-  using Volume = ffnn::layer::ConvolutionVolume<float, 4, 6, 8, 12>;
-
-  // Shape inferred from template args
-  Volume volume;
-
-  EXPECT_TRUE(volume.getFilters().empty());
-  EXPECT_TRUE(volume.initialize());
-
-  typedef Eigen::Matrix<float, 24, 2> OutputBlock;
-  OutputBlock output;
-  output.setZero();
-
-  typedef Eigen::Matrix<float, 64, 12> InputBlock;
-  InputBlock input;
-  input.setOnes();
-
-  EXPECT_NO_THROW(volume.forward(input.block(32, 6, 0, 0),  output.block<12, 1>(0, 0)));
-  FFNN_DEBUG('\n' << output);
-  EXPECT_NO_THROW(volume.forward(input.block<32, 6>(32, 0), output.block<12, 1>(12, 1)));
-  FFNN_DEBUG('\n' << output);
 }
 
 // Run tests
