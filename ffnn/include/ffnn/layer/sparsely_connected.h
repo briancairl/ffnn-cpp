@@ -23,13 +23,14 @@ namespace layer
  */
 template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime = Eigen::Dynamic,
-         FFNN_SIZE_TYPE OutputsAtCompileTime = Eigen::Dynamic>
+         FFNN_SIZE_TYPE OutputsAtCompileTime = Eigen::Dynamic,
+         typename _HiddenLayerShape = hidden_layer_shape<InputsAtCompileTime, 1, OutputsAtCompileTime, 1>>
 class SparselyConnected :
-  public Hidden<ValueType, InputsAtCompileTime, 1, OutputsAtCompileTime, 1>
+  public Hidden<ValueType, _HiddenLayerShape>
 {
 public:
   /// Base type alias
-  using Base = Hidden<ValueType, InputsAtCompileTime, 1, OutputsAtCompileTime, 1>;
+  using Base = Hidden<ValueType, _HiddenLayerShape>;
 
   /// Self type alias
   using Self = SparselyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>;

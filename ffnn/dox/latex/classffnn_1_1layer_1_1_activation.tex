@@ -1,5 +1,5 @@
-\hypertarget{classffnn_1_1layer_1_1_activation}{\section{ffnn\-:\-:layer\-:\-:Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time $>$ Class Template Reference}
-\label{classffnn_1_1layer_1_1_activation}\index{ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time $>$@{ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time $>$}}
+\hypertarget{classffnn_1_1layer_1_1_activation}{\section{ffnn\-:\-:layer\-:\-:Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$ Class Template Reference}
+\label{classffnn_1_1layer_1_1_activation}\index{ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$@{ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}}
 }
 
 
@@ -12,34 +12,34 @@
 
 
 
-Inheritance diagram for ffnn\-:\-:layer\-:\-:Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time $>$\-:
+Inheritance diagram for ffnn\-:\-:layer\-:\-:Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=242pt]{classffnn_1_1layer_1_1_activation__inherit__graph}
+\includegraphics[width=254pt]{classffnn_1_1layer_1_1_activation__inherit__graph}
 \end{center}
 \end{figure}
 
 
-Collaboration diagram for ffnn\-:\-:layer\-:\-:Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time $>$\-:
+Collaboration diagram for ffnn\-:\-:layer\-:\-:Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=242pt]{classffnn_1_1layer_1_1_activation__coll__graph}
+\includegraphics[width=254pt]{classffnn_1_1layer_1_1_activation__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-using \hyperlink{classffnn_1_1layer_1_1_activation_a201ec82cc70826c458c1f4dc5e7f3fdf}{Base} = \hyperlink{classffnn_1_1layer_1_1_hidden}{Hidden}$<$ Value\-Type, Size\-At\-Compile\-Time, 1, Size\-At\-Compile\-Time, 1 $>$
+using \hyperlink{classffnn_1_1layer_1_1_activation_a2f462178d98a5439e13962796c483459}{Base} = \hyperlink{classffnn_1_1layer_1_1_hidden}{Hidden}$<$ Value\-Type, \-\_\-\-Hidden\-Layer\-Shape $>$
 \begin{DoxyCompactList}\small\item\em Base type alias. \end{DoxyCompactList}\item 
-typedef \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a7f834e3365e5199bcbcd16d9abd63941}{Base\-::\-Scalar\-Type} \hyperlink{classffnn_1_1layer_1_1_activation_ad864a6480079601f9723311a686550c3}{Scalar\-Type}
+typedef \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a7f834e3365e5199bcbcd16d9abd63941}{Base\-::\-Scalar\-Type} \hyperlink{classffnn_1_1layer_1_1_activation_a4ca1ce43c5be7e5b8950af7cb262daca}{Scalar\-Type}
 \begin{DoxyCompactList}\small\item\em Scalar type standardization. \end{DoxyCompactList}\item 
-typedef \hyperlink{classffnn_1_1layer_1_1_hidden_a3deb1dc4b3a83b3d6749474debee025f}{Base\-::\-Size\-Type} \hyperlink{classffnn_1_1layer_1_1_activation_ab3635bf431b97e8f1b51704f20d60d34}{Size\-Type}
+typedef \hyperlink{classffnn_1_1layer_1_1_hidden_ac148012cb544a39841675601090cd4c8}{Base\-::\-Size\-Type} \hyperlink{classffnn_1_1layer_1_1_activation_a6a7b6dd86eb70b72a179ce9951fb1149}{Size\-Type}
 \begin{DoxyCompactList}\small\item\em Size type standardization. \end{DoxyCompactList}\item 
-typedef \hyperlink{classffnn_1_1layer_1_1_hidden_a4a191bc002b2545231a3d80c99004693}{Base\-::\-Offset\-Type} \hyperlink{classffnn_1_1layer_1_1_activation_aff203e6e98860cf5887ecc18894619fb}{Offset\-Type}
+typedef \hyperlink{classffnn_1_1layer_1_1_hidden_ae2409b970adafb0ebc9b2eec62c4aac4}{Base\-::\-Offset\-Type} \hyperlink{classffnn_1_1layer_1_1_activation_aac891b2d2a76bcf6035f53ed6abb94dc}{Offset\-Type}
 \begin{DoxyCompactList}\small\item\em Offset type standardization. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -48,12 +48,14 @@ typedef \hyperlink{classffnn_1_1layer_1_1_hidden_a4a191bc002b2545231a3d80c990046
 \begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
 virtual \hyperlink{classffnn_1_1layer_1_1_activation_a4b353acb2031fff2e7a15cf0895d346d}{$\sim$\-Activation} ()
 \item 
-virtual bool \hyperlink{classffnn_1_1layer_1_1_activation_ae73ef2d36d9c5ce3c219f6a51cba3c35}{initialize} ()
+bool \hyperlink{classffnn_1_1layer_1_1_activation_ae73ef2d36d9c5ce3c219f6a51cba3c35}{initialize} ()
 \begin{DoxyCompactList}\small\item\em Initialize the layer. \end{DoxyCompactList}\item 
-virtual bool \hyperlink{classffnn_1_1layer_1_1_activation_aa7f88c8bc20589dc51d9dd615b8c4580}{forward} ()
+bool \hyperlink{classffnn_1_1layer_1_1_activation_aa7f88c8bc20589dc51d9dd615b8c4580}{forward} ()
 \begin{DoxyCompactList}\small\item\em Forward value propagation. \end{DoxyCompactList}\item 
-virtual bool \hyperlink{classffnn_1_1layer_1_1_activation_a3c4284245343f2132dd28eaf7ffbed47}{backward} ()
-\begin{DoxyCompactList}\small\item\em Performs backward error propagation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+bool \hyperlink{classffnn_1_1layer_1_1_activation_a3c4284245343f2132dd28eaf7ffbed47}{backward} ()
+\begin{DoxyCompactList}\small\item\em Performs backward error propagation. \end{DoxyCompactList}\item 
+bool \hyperlink{classffnn_1_1layer_1_1_activation_a24a044458729f72466af06153851f5b2}{update} ()
+\begin{DoxyCompactList}\small\item\em Does nothing. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -65,35 +67,35 @@ void \hyperlink{classffnn_1_1layer_1_1_activation_a045ecc330b67cdc3a41d6d7fc3a8d
 
 
 \subsection{Detailed Description}
-\subsubsection*{template$<$typename Value\-Type, template$<$ class $>$ class Neuron\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Size\-At\-Compile\-Time = Eigen\-::\-Dynamic$>$class ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time $>$}
+\subsubsection*{template$<$typename Value\-Type, typename Neuron\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Size\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Hidden\-Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$\-Size\-At\-Compile\-Time, 1, Size\-At\-Compile\-Time, 1$>$$>$class ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}
 
 \hyperlink{classffnn_1_1layer_1_1_activation}{Activation} layer. 
 
 \subsection{Member Typedef Documentation}
-\hypertarget{classffnn_1_1layer_1_1_activation_a201ec82cc70826c458c1f4dc5e7f3fdf}{\index{ffnn\-::layer\-::\-Activation@{ffnn\-::layer\-::\-Activation}!Base@{Base}}
+\hypertarget{classffnn_1_1layer_1_1_activation_a2f462178d98a5439e13962796c483459}{\index{ffnn\-::layer\-::\-Activation@{ffnn\-::layer\-::\-Activation}!Base@{Base}}
 \index{Base@{Base}!ffnn::layer::Activation@{ffnn\-::layer\-::\-Activation}}
-\subsubsection[{Base}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, template$<$ class $>$ class Neuron\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Size\-At\-Compile\-Time = Eigen\-::\-Dynamic$>$ using {\bf ffnn\-::layer\-::\-Activation}$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time $>$\-::{\bf Base} =  {\bf Hidden}$<$Value\-Type, Size\-At\-Compile\-Time, 1, Size\-At\-Compile\-Time, 1$>$}}\label{classffnn_1_1layer_1_1_activation_a201ec82cc70826c458c1f4dc5e7f3fdf}
+\subsubsection[{Base}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Neuron\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Size\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Hidden\-Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$\-Size\-At\-Compile\-Time, 1, Size\-At\-Compile\-Time, 1$>$$>$ using {\bf ffnn\-::layer\-::\-Activation}$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-::{\bf Base} =  {\bf Hidden}$<$Value\-Type, \-\_\-\-Hidden\-Layer\-Shape$>$}}\label{classffnn_1_1layer_1_1_activation_a2f462178d98a5439e13962796c483459}
 
 
 Base type alias. 
 
-\hypertarget{classffnn_1_1layer_1_1_activation_aff203e6e98860cf5887ecc18894619fb}{\index{ffnn\-::layer\-::\-Activation@{ffnn\-::layer\-::\-Activation}!Offset\-Type@{Offset\-Type}}
+\hypertarget{classffnn_1_1layer_1_1_activation_aac891b2d2a76bcf6035f53ed6abb94dc}{\index{ffnn\-::layer\-::\-Activation@{ffnn\-::layer\-::\-Activation}!Offset\-Type@{Offset\-Type}}
 \index{Offset\-Type@{Offset\-Type}!ffnn::layer::Activation@{ffnn\-::layer\-::\-Activation}}
-\subsubsection[{Offset\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, template$<$ class $>$ class Neuron\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Size\-At\-Compile\-Time = Eigen\-::\-Dynamic$>$ typedef {\bf Base\-::\-Offset\-Type} {\bf ffnn\-::layer\-::\-Activation}$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time $>$\-::{\bf Offset\-Type}}}\label{classffnn_1_1layer_1_1_activation_aff203e6e98860cf5887ecc18894619fb}
+\subsubsection[{Offset\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Neuron\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Size\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Hidden\-Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$\-Size\-At\-Compile\-Time, 1, Size\-At\-Compile\-Time, 1$>$$>$ typedef {\bf Base\-::\-Offset\-Type} {\bf ffnn\-::layer\-::\-Activation}$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-::{\bf Offset\-Type}}}\label{classffnn_1_1layer_1_1_activation_aac891b2d2a76bcf6035f53ed6abb94dc}
 
 
 Offset type standardization. 
 
-\hypertarget{classffnn_1_1layer_1_1_activation_ad864a6480079601f9723311a686550c3}{\index{ffnn\-::layer\-::\-Activation@{ffnn\-::layer\-::\-Activation}!Scalar\-Type@{Scalar\-Type}}
+\hypertarget{classffnn_1_1layer_1_1_activation_a4ca1ce43c5be7e5b8950af7cb262daca}{\index{ffnn\-::layer\-::\-Activation@{ffnn\-::layer\-::\-Activation}!Scalar\-Type@{Scalar\-Type}}
 \index{Scalar\-Type@{Scalar\-Type}!ffnn::layer::Activation@{ffnn\-::layer\-::\-Activation}}
-\subsubsection[{Scalar\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, template$<$ class $>$ class Neuron\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Size\-At\-Compile\-Time = Eigen\-::\-Dynamic$>$ typedef {\bf Base\-::\-Scalar\-Type} {\bf ffnn\-::layer\-::\-Activation}$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time $>$\-::{\bf Scalar\-Type}}}\label{classffnn_1_1layer_1_1_activation_ad864a6480079601f9723311a686550c3}
+\subsubsection[{Scalar\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Neuron\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Size\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Hidden\-Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$\-Size\-At\-Compile\-Time, 1, Size\-At\-Compile\-Time, 1$>$$>$ typedef {\bf Base\-::\-Scalar\-Type} {\bf ffnn\-::layer\-::\-Activation}$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-::{\bf Scalar\-Type}}}\label{classffnn_1_1layer_1_1_activation_a4ca1ce43c5be7e5b8950af7cb262daca}
 
 
 Scalar type standardization. 
 
-\hypertarget{classffnn_1_1layer_1_1_activation_ab3635bf431b97e8f1b51704f20d60d34}{\index{ffnn\-::layer\-::\-Activation@{ffnn\-::layer\-::\-Activation}!Size\-Type@{Size\-Type}}
+\hypertarget{classffnn_1_1layer_1_1_activation_a6a7b6dd86eb70b72a179ce9951fb1149}{\index{ffnn\-::layer\-::\-Activation@{ffnn\-::layer\-::\-Activation}!Size\-Type@{Size\-Type}}
 \index{Size\-Type@{Size\-Type}!ffnn::layer::Activation@{ffnn\-::layer\-::\-Activation}}
-\subsubsection[{Size\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, template$<$ class $>$ class Neuron\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Size\-At\-Compile\-Time = Eigen\-::\-Dynamic$>$ typedef {\bf Base\-::\-Size\-Type} {\bf ffnn\-::layer\-::\-Activation}$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time $>$\-::{\bf Size\-Type}}}\label{classffnn_1_1layer_1_1_activation_ab3635bf431b97e8f1b51704f20d60d34}
+\subsubsection[{Size\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Neuron\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Size\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Hidden\-Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$\-Size\-At\-Compile\-Time, 1, Size\-At\-Compile\-Time, 1$>$$>$ typedef {\bf Base\-::\-Size\-Type} {\bf ffnn\-::layer\-::\-Activation}$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-::{\bf Size\-Type}}}\label{classffnn_1_1layer_1_1_activation_a6a7b6dd86eb70b72a179ce9951fb1149}
 
 
 Size type standardization. 
@@ -142,7 +144,7 @@ Performs backward error propagation.
 \end{DoxyRetVals}
 
 
-Implements \hyperlink{classffnn_1_1layer_1_1_hidden_a246152dfed00bbacb94fbbd6712acea0}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, Size\-At\-Compile\-Time, 1, Size\-At\-Compile\-Time, 1 $>$}.
+Implements \hyperlink{classffnn_1_1layer_1_1_hidden_aac0ee89390b02ff4731678883dd402dd}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, \-\_\-\-Hidden\-Layer\-Shape $>$}.
 
 \hypertarget{classffnn_1_1layer_1_1_activation_aa7f88c8bc20589dc51d9dd615b8c4580}{\index{ffnn\-::layer\-::\-Activation@{ffnn\-::layer\-::\-Activation}!forward@{forward}}
 \index{forward@{forward}!ffnn::layer::Activation@{ffnn\-::layer\-::\-Activation}}
@@ -164,7 +166,7 @@ Forward value propagation.
 \end{DoxyRetVals}
 
 
-Implements \hyperlink{classffnn_1_1layer_1_1_hidden_a41fdfb60b5340c0af46c7c731237e280}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, Size\-At\-Compile\-Time, 1, Size\-At\-Compile\-Time, 1 $>$}.
+Implements \hyperlink{classffnn_1_1layer_1_1_hidden_a600b86d72826e8be3eafa53e040e9cbe}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, \-\_\-\-Hidden\-Layer\-Shape $>$}.
 
 \hypertarget{classffnn_1_1layer_1_1_activation_ae73ef2d36d9c5ce3c219f6a51cba3c35}{\index{ffnn\-::layer\-::\-Activation@{ffnn\-::layer\-::\-Activation}!initialize@{initialize}}
 \index{initialize@{initialize}!ffnn::layer::Activation@{ffnn\-::layer\-::\-Activation}}
@@ -179,11 +181,11 @@ Initialize the layer.
 
 
 
-Reimplemented from \hyperlink{classffnn_1_1layer_1_1_hidden_a3b5458a771fcf2371376049d85afbc92}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, Size\-At\-Compile\-Time, 1, Size\-At\-Compile\-Time, 1 $>$}.
+Reimplemented from \hyperlink{classffnn_1_1layer_1_1_hidden_a0bf259cd8d070ce21c90a34d86b173ee}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, \-\_\-\-Hidden\-Layer\-Shape $>$}.
 
 \hypertarget{classffnn_1_1layer_1_1_activation_a045ecc330b67cdc3a41d6d7fc3a8dbf2}{\index{ffnn\-::layer\-::\-Activation@{ffnn\-::layer\-::\-Activation}!load@{load}}
 \index{load@{load}!ffnn::layer::Activation@{ffnn\-::layer\-::\-Activation}}
-\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, template$<$ class $>$ class Neuron\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Size\-At\-Compile\-Time = Eigen\-::\-Dynamic$>$ void {\bf ffnn\-::layer\-::\-Activation}$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time $>$\-::load (
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Neuron\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Size\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Hidden\-Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$\-Size\-At\-Compile\-Time, 1, Size\-At\-Compile\-Time, 1$>$$>$ void {\bf ffnn\-::layer\-::\-Activation}$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time $>$\-::load (
 \begin{DoxyParamCaption}
 \item[{{\bf Input\-Archive} \&}]{ar, }
 \item[{{\bf Version\-Type}}]{version}
@@ -210,7 +212,7 @@ Here is the call graph for this function\-:\nopagebreak
 
 \hypertarget{classffnn_1_1layer_1_1_activation_ab5525e49c08fc593856b9c95e0eba1ee}{\index{ffnn\-::layer\-::\-Activation@{ffnn\-::layer\-::\-Activation}!save@{save}}
 \index{save@{save}!ffnn::layer::Activation@{ffnn\-::layer\-::\-Activation}}
-\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, template$<$ class $>$ class Neuron\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Size\-At\-Compile\-Time = Eigen\-::\-Dynamic$>$ void {\bf ffnn\-::layer\-::\-Activation}$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time $>$\-::save (
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Neuron\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Size\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Hidden\-Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$\-Size\-At\-Compile\-Time, 1, Size\-At\-Compile\-Time, 1$>$$>$ void {\bf ffnn\-::layer\-::\-Activation}$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time $>$\-::save (
 \begin{DoxyParamCaption}
 \item[{{\bf Output\-Archive} \&}]{ar, }
 \item[{{\bf Version\-Type}}]{version}
@@ -234,6 +236,29 @@ Here is the call graph for this function\-:\nopagebreak
 \end{center}
 \end{figure}
 
+
+\hypertarget{classffnn_1_1layer_1_1_activation_a24a044458729f72466af06153851f5b2}{\index{ffnn\-::layer\-::\-Activation@{ffnn\-::layer\-::\-Activation}!update@{update}}
+\index{update@{update}!ffnn::layer::Activation@{ffnn\-::layer\-::\-Activation}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Neuron\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Size\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Hidden\-Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$\-Size\-At\-Compile\-Time, 1, Size\-At\-Compile\-Time, 1$>$$>$ bool {\bf ffnn\-::layer\-::\-Activation}$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-::update (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_activation_a24a044458729f72466af06153851f5b2}
+
+
+Does nothing. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & always \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyNote}{Note}
+The activation layer has no parameters to update 
+\end{DoxyNote}
+
+
+Implements \hyperlink{classffnn_1_1layer_1_1_hidden_ae038d2a1e64fcbbde6166df7d0573ef8}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, \-\_\-\-Hidden\-Layer\-Shape $>$}.
 
 
 

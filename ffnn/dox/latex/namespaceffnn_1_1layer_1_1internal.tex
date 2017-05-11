@@ -11,11 +11,114 @@ struct \hyperlink{structffnn_1_1layer_1_1internal_1_1_shape}{Shape}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
+{\footnotesize template$<$typename Size\-Type $>$ }\\constexpr bool \hyperlink{namespaceffnn_1_1layer_1_1internal_a80747f67832029051c2f96d3a1586e98}{is\-\_\-dynamic} (Size\-Type n)
+\item 
+{\footnotesize template$<$typename Size\-Type $>$ }\\constexpr bool \hyperlink{namespaceffnn_1_1layer_1_1internal_af66c362036e43d1d913b6c43d90f6c3e}{is\-\_\-dynamic} (Size\-Type n, Size\-Type m)
+\item 
+{\footnotesize template$<$typename Size\-Type $>$ }\\constexpr bool \hyperlink{namespaceffnn_1_1layer_1_1internal_ab770642661e0d57c0113788a5e127f57}{is\-\_\-dynamic} (Size\-Type n, Size\-Type m, Size\-Type l)
+\item 
+{\footnotesize template$<$typename Size\-Type $>$ }\\constexpr Size\-Type \hyperlink{namespaceffnn_1_1layer_1_1internal_ab5b2ac985b32bc289c8748933e2ba113}{multiply\-\_\-if\-\_\-not\-\_\-dynamic\-\_\-sizes} (Size\-Type n, Size\-Type m)
+\item 
+{\footnotesize template$<$typename Size\-Type $>$ }\\constexpr Size\-Type \hyperlink{namespaceffnn_1_1layer_1_1internal_a93d6cc4da6e3aa83fda7f6beb6eb07f5}{multiply\-\_\-if\-\_\-not\-\_\-dynamic\-\_\-sizes} (Size\-Type n, Size\-Type m, Size\-Type l)
+\item 
 {\footnotesize template$<$typename Size\-Type $>$ }\\std\-::ostream \& \hyperlink{namespaceffnn_1_1layer_1_1internal_a60e6be53b5701e3389204e5b1aaaf9ae}{operator$<$$<$} (std\-::ostream \&os, const \hyperlink{structffnn_1_1layer_1_1internal_1_1_shape}{Shape}$<$ Size\-Type $>$ \&dim)
 \end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
+\hypertarget{namespaceffnn_1_1layer_1_1internal_a80747f67832029051c2f96d3a1586e98}{\index{ffnn\-::layer\-::internal@{ffnn\-::layer\-::internal}!is\-\_\-dynamic@{is\-\_\-dynamic}}
+\index{is\-\_\-dynamic@{is\-\_\-dynamic}!ffnn::layer::internal@{ffnn\-::layer\-::internal}}
+\subsubsection[{is\-\_\-dynamic}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Size\-Type $>$ constexpr bool ffnn\-::layer\-::internal\-::is\-\_\-dynamic (
+\begin{DoxyParamCaption}
+\item[{Size\-Type}]{n}
+\end{DoxyParamCaption}
+)}}\label{namespaceffnn_1_1layer_1_1internal_a80747f67832029051c2f96d3a1586e98}
+
+
+Referenced by is\-\_\-dynamic(), and multiply\-\_\-if\-\_\-not\-\_\-dynamic\-\_\-sizes().
+
+\hypertarget{namespaceffnn_1_1layer_1_1internal_af66c362036e43d1d913b6c43d90f6c3e}{\index{ffnn\-::layer\-::internal@{ffnn\-::layer\-::internal}!is\-\_\-dynamic@{is\-\_\-dynamic}}
+\index{is\-\_\-dynamic@{is\-\_\-dynamic}!ffnn::layer::internal@{ffnn\-::layer\-::internal}}
+\subsubsection[{is\-\_\-dynamic}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Size\-Type $>$ constexpr bool ffnn\-::layer\-::internal\-::is\-\_\-dynamic (
+\begin{DoxyParamCaption}
+\item[{Size\-Type}]{n, }
+\item[{Size\-Type}]{m}
+\end{DoxyParamCaption}
+)}}\label{namespaceffnn_1_1layer_1_1internal_af66c362036e43d1d913b6c43d90f6c3e}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{namespaceffnn_1_1layer_1_1internal_af66c362036e43d1d913b6c43d90f6c3e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{namespaceffnn_1_1layer_1_1internal_ab770642661e0d57c0113788a5e127f57}{\index{ffnn\-::layer\-::internal@{ffnn\-::layer\-::internal}!is\-\_\-dynamic@{is\-\_\-dynamic}}
+\index{is\-\_\-dynamic@{is\-\_\-dynamic}!ffnn::layer::internal@{ffnn\-::layer\-::internal}}
+\subsubsection[{is\-\_\-dynamic}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Size\-Type $>$ constexpr bool ffnn\-::layer\-::internal\-::is\-\_\-dynamic (
+\begin{DoxyParamCaption}
+\item[{Size\-Type}]{n, }
+\item[{Size\-Type}]{m, }
+\item[{Size\-Type}]{l}
+\end{DoxyParamCaption}
+)}}\label{namespaceffnn_1_1layer_1_1internal_ab770642661e0d57c0113788a5e127f57}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{namespaceffnn_1_1layer_1_1internal_ab770642661e0d57c0113788a5e127f57_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{namespaceffnn_1_1layer_1_1internal_ab5b2ac985b32bc289c8748933e2ba113}{\index{ffnn\-::layer\-::internal@{ffnn\-::layer\-::internal}!multiply\-\_\-if\-\_\-not\-\_\-dynamic\-\_\-sizes@{multiply\-\_\-if\-\_\-not\-\_\-dynamic\-\_\-sizes}}
+\index{multiply\-\_\-if\-\_\-not\-\_\-dynamic\-\_\-sizes@{multiply\-\_\-if\-\_\-not\-\_\-dynamic\-\_\-sizes}!ffnn::layer::internal@{ffnn\-::layer\-::internal}}
+\subsubsection[{multiply\-\_\-if\-\_\-not\-\_\-dynamic\-\_\-sizes}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Size\-Type $>$ constexpr Size\-Type ffnn\-::layer\-::internal\-::multiply\-\_\-if\-\_\-not\-\_\-dynamic\-\_\-sizes (
+\begin{DoxyParamCaption}
+\item[{Size\-Type}]{n, }
+\item[{Size\-Type}]{m}
+\end{DoxyParamCaption}
+)}}\label{namespaceffnn_1_1layer_1_1internal_ab5b2ac985b32bc289c8748933e2ba113}
+
+
+Referenced by ffnn\-::layer\-::internal\-::\-Shape$<$ Size\-Type $>$\-::size().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceffnn_1_1layer_1_1internal_ab5b2ac985b32bc289c8748933e2ba113_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{namespaceffnn_1_1layer_1_1internal_a93d6cc4da6e3aa83fda7f6beb6eb07f5}{\index{ffnn\-::layer\-::internal@{ffnn\-::layer\-::internal}!multiply\-\_\-if\-\_\-not\-\_\-dynamic\-\_\-sizes@{multiply\-\_\-if\-\_\-not\-\_\-dynamic\-\_\-sizes}}
+\index{multiply\-\_\-if\-\_\-not\-\_\-dynamic\-\_\-sizes@{multiply\-\_\-if\-\_\-not\-\_\-dynamic\-\_\-sizes}!ffnn::layer::internal@{ffnn\-::layer\-::internal}}
+\subsubsection[{multiply\-\_\-if\-\_\-not\-\_\-dynamic\-\_\-sizes}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Size\-Type $>$ constexpr Size\-Type ffnn\-::layer\-::internal\-::multiply\-\_\-if\-\_\-not\-\_\-dynamic\-\_\-sizes (
+\begin{DoxyParamCaption}
+\item[{Size\-Type}]{n, }
+\item[{Size\-Type}]{m, }
+\item[{Size\-Type}]{l}
+\end{DoxyParamCaption}
+)}}\label{namespaceffnn_1_1layer_1_1internal_a93d6cc4da6e3aa83fda7f6beb6eb07f5}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespaceffnn_1_1layer_1_1internal_a93d6cc4da6e3aa83fda7f6beb6eb07f5_cgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{namespaceffnn_1_1layer_1_1internal_a60e6be53b5701e3389204e5b1aaaf9ae}{\index{ffnn\-::layer\-::internal@{ffnn\-::layer\-::internal}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!ffnn::layer::internal@{ffnn\-::layer\-::internal}}
 \subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Size\-Type $>$ std\-::ostream\& ffnn\-::layer\-::internal\-::operator$<$$<$ (

@@ -1,5 +1,5 @@
 <map id="ffnn::layer::Output&lt; ValueType, NetworkOutputsAtCompileTime &gt;" name="ffnn::layer::Output&lt; ValueType, NetworkOutputsAtCompileTime &gt;">
-<area shape="rect" id="node2" href="$classffnn_1_1layer_1_1_layer.html" title="ffnn::layer::Layer\l\&lt; ValueType \&gt;" alt="" coords="44,246,164,287"/>
+<area shape="rect" id="node2" href="$classffnn_1_1layer_1_1_layer.html" title="Base object for all layer types. " alt="" coords="44,246,164,287"/>
 <area shape="rect" id="node3" href="$classffnn_1_1layer_1_1internal_1_1_interface.html" title="Base object for all layer types. " alt="" coords="21,155,187,197"/>
 <area shape="rect" id="node4" href="$classffnn_1_1traits_1_1_unique.html" title="An object with a unique ID. " alt="" coords="39,80,168,107"/>
 <area shape="rect" id="node5" href="$classffnn_1_1traits_1_1_serializable.html" title="An object which can be saved and loaded. " alt="" coords="26,5,181,32"/>

@@ -12,32 +12,26 @@ namespace ffnn
 {
 namespace layer
 {
-#define HIDDEN_TARGS ValueType, InputsHeightAtCompileTime, InputsWidthAtCompileTime, OutputsHeightAtCompileTime, OutputsWidthAtCompileTime
+#define HIDDEN_TARGS ValueType, LayerShape
 #define HIDDEN_TARGS_ADVANCED _InputBlockType, _OutputBlockType
 #define HIDDEN Hidden<HIDDEN_TARGS, HIDDEN_TARGS_ADVANCED>
 
 template<typename ValueType,
-         FFNN_SIZE_TYPE InputsHeightAtCompileTime,
-         FFNN_SIZE_TYPE InputsWidthAtCompileTime,
-         FFNN_SIZE_TYPE OutputsHeightAtCompileTime,
-         FFNN_SIZE_TYPE OutputsWidthAtCompileTime,
+         typename LayerShape,
          typename _InputBlockType,
          typename _OutputBlockType>
 HIDDEN::Hidden(const ShapeType& input_shape,
                const ShapeType& output_shape) :
   Base(input_shape, output_shape),
-  input_(NULL, InputsHeightAtCompileTime, InputsWidthAtCompileTime),
-  output_(NULL, OutputsHeightAtCompileTime, OutputsWidthAtCompileTime),
-  backward_error_(NULL, InputsHeightAtCompileTime, InputsWidthAtCompileTime),
-  forward_error_(NULL, OutputsHeightAtCompileTime, OutputsWidthAtCompileTime)
+  input_(NULL, LayerShape::input_height, LayerShape::input_width),
+  output_(NULL, LayerShape::output_height, LayerShape::output_width),
+  backward_error_(NULL, LayerShape::input_height, LayerShape::input_width),
+  forward_error_(NULL, LayerShape::output_height, LayerShape::output_width)
 {
 }
 
 template<typename ValueType,
-         FFNN_SIZE_TYPE InputsHeightAtCompileTime,
-         FFNN_SIZE_TYPE InputsWidthAtCompileTime,
-         FFNN_SIZE_TYPE OutputsHeightAtCompileTime,
-         FFNN_SIZE_TYPE OutputsWidthAtCompileTime,
+         typename LayerShape,
          typename _InputBlockType,
          typename _OutputBlockType>
 HIDDEN::~Hidden()
@@ -46,10 +40,7 @@ HIDDEN::~Hidden()
 }
 
 template<typename ValueType,
-         FFNN_SIZE_TYPE InputsHeightAtCompileTime,
-         FFNN_SIZE_TYPE InputsWidthAtCompileTime,
-         FFNN_SIZE_TYPE OutputsHeightAtCompileTime,
-         FFNN_SIZE_TYPE OutputsWidthAtCompileTime,
+         typename LayerShape,
          typename _InputBlockType,
          typename _OutputBlockType>
 typename HIDDEN::OffsetType
@@ -70,10 +61,7 @@ HIDDEN::connectToForwardLayer(const Layer<ValueType>& next, OffsetType offset)
 }
 
 template<typename ValueType,
-         FFNN_SIZE_TYPE InputsHeightAtCompileTime,
-         FFNN_SIZE_TYPE InputsWidthAtCompileTime,
-         FFNN_SIZE_TYPE OutputsHeightAtCompileTime,
-         FFNN_SIZE_TYPE OutputsWidthAtCompileTime,
+         typename LayerShape,
          typename _InputBlockType,
          typename _OutputBlockType>
 bool HIDDEN::initialize()
@@ -128,10 +116,7 @@ bool HIDDEN::initialize()
 }
 
 template<typename ValueType,
-         FFNN_SIZE_TYPE InputsHeightAtCompileTime,
-         FFNN_SIZE_TYPE InputsWidthAtCompileTime,
-         FFNN_SIZE_TYPE OutputsHeightAtCompileTime,
-         FFNN_SIZE_TYPE OutputsWidthAtCompileTime,
+         typename LayerShape,
          typename _InputBlockType,
          typename _OutputBlockType>
 void HIDDEN::save(typename HIDDEN::OutputArchive& ar,
@@ -143,10 +128,7 @@ void HIDDEN::save(typename HIDDEN::OutputArchive& ar,
 }
 
 template<typename ValueType,
-         FFNN_SIZE_TYPE InputsHeightAtCompileTime,
-         FFNN_SIZE_TYPE InputsWidthAtCompileTime,
-         FFNN_SIZE_TYPE OutputsHeightAtCompileTime,
-         FFNN_SIZE_TYPE OutputsWidthAtCompileTime,
+         typename LayerShape,
          typename _InputBlockType,
          typename _OutputBlockType>
 void HIDDEN::load(typename HIDDEN::InputArchive& ar,

@@ -101,168 +101,138 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span>layer</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="hidden_8hpp.html#a83c929a41e55d204f29a33daaa4279c9">   15</a></span>&#160;<span class="preprocessor">#define HIDDEN_TARGS ValueType, InputsHeightAtCompileTime, InputsWidthAtCompileTime, OutputsHeightAtCompileTime, OutputsWidthAtCompileTime</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="hidden_8hpp.html#ad593cb639334de0010f2c8c06e5e7265">   16</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define HIDDEN_TARGS_ADVANCED _InputBlockType, _OutputBlockType, _InputMappingType, _OutputMappingType</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="hidden_8hpp.html#a83c929a41e55d204f29a33daaa4279c9">   15</a></span>&#160;<span class="preprocessor">#define HIDDEN_TARGS ValueType, LayerShape</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="hidden_8hpp.html#ad593cb639334de0010f2c8c06e5e7265">   16</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define HIDDEN_TARGS_ADVANCED _InputBlockType, _OutputBlockType</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="hidden_8hpp.html#ab42ef41116f8f2fe447484e2844cf0df">   17</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define HIDDEN Hidden&lt;HIDDEN_TARGS, HIDDEN_TARGS_ADVANCED&gt;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> InputsHeightAtCompileTime,</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> InputsWidthAtCompileTime,</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> OutputsHeightAtCompileTime,</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> OutputsWidthAtCompileTime,</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;         <span class="keyword">typename</span> _InputBlockType,</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;         <span class="keyword">typename</span> _OutputBlockType,</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;         <span class="keyword">typename</span> _InputMappingType,</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;         <span class="keyword">typename</span> _OutputMappingType&gt;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;HIDDEN::Hidden(<span class="keyword">const</span> ShapeType&amp; input_shape,</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;               <span class="keyword">const</span> ShapeType&amp; output_shape) :</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  Base(input_shape, output_shape),</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  input_(NULL, InputsHeightAtCompileTime, InputsWidthAtCompileTime),</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  output_(NULL, OutputsHeightAtCompileTime, OutputsWidthAtCompileTime),</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  backward_error_(NULL, InputsHeightAtCompileTime, InputsWidthAtCompileTime),</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  forward_error_(NULL, OutputsHeightAtCompileTime, OutputsWidthAtCompileTime)</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> InputsHeightAtCompileTime,</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> InputsWidthAtCompileTime,</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> OutputsHeightAtCompileTime,</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> OutputsWidthAtCompileTime,</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;         <span class="keyword">typename</span> _InputBlockType,</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;         <span class="keyword">typename</span> _OutputBlockType,</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;         <span class="keyword">typename</span> _InputMappingType,</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;         <span class="keyword">typename</span> _OutputMappingType&gt;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;HIDDEN::~Hidden()</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;         <span class="keyword">typename</span> LayerShape,</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;         <span class="keyword">typename</span> _InputBlockType,</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;         <span class="keyword">typename</span> _OutputBlockType&gt;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;HIDDEN::Hidden(<span class="keyword">const</span> ShapeType&amp; input_shape,</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;               <span class="keyword">const</span> ShapeType&amp; output_shape) :</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  Base(input_shape, output_shape),</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  input_(NULL, LayerShape::input_height, LayerShape::input_width),</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  output_(NULL, LayerShape::output_height, LayerShape::output_width),</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  backward_error_(NULL, LayerShape::input_height, LayerShape::input_width),</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  forward_error_(NULL, LayerShape::output_height, LayerShape::output_width)</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;         <span class="keyword">typename</span> LayerShape,</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;         <span class="keyword">typename</span> _InputBlockType,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;         <span class="keyword">typename</span> _OutputBlockType&gt;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;HIDDEN::~Hidden()</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <a class="code" href="logging_8h.html#a6423579b7bc28bf29f9d3c60a2066c48">FFNN_INTERNAL_DEBUG_NAMED</a>(<span class="stringliteral">&quot;layer::Hidden&quot;</span>, <span class="stringliteral">&quot;Destroying [layer::Hidden] object &lt;&quot;</span> &lt;&lt; this-&gt;getID() &lt;&lt; <span class="stringliteral">&quot;&gt;&quot;</span>);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;         <span class="keyword">typename</span> LayerShape,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;         <span class="keyword">typename</span> _InputBlockType,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;         <span class="keyword">typename</span> _OutputBlockType&gt;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">typename</span> HIDDEN::OffsetType</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;HIDDEN::connectToForwardLayer(<span class="keyword">const</span> Layer&lt;ValueType&gt;&amp; next, OffsetType offset)</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;{</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <a class="code" href="logging_8h.html#a6423579b7bc28bf29f9d3c60a2066c48">FFNN_INTERNAL_DEBUG_NAMED</a>(<span class="stringliteral">&quot;layer::Hidden&quot;</span>, <span class="stringliteral">&quot;Destroying [layer::Hidden] object &lt;&quot;</span> &lt;&lt; this-&gt;getID() &lt;&lt; <span class="stringliteral">&quot;&gt;&quot;</span>);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> InputsHeightAtCompileTime,</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> InputsWidthAtCompileTime,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> OutputsHeightAtCompileTime,</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> OutputsWidthAtCompileTime,</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;         <span class="keyword">typename</span> _InputBlockType,</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;         <span class="keyword">typename</span> _OutputBlockType,</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;         <span class="keyword">typename</span> _InputMappingType,</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;         <span class="keyword">typename</span> _OutputMappingType&gt;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">typename</span> HIDDEN::OffsetType</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;HIDDEN::connectToForwardLayer(<span class="keyword">const</span> Layer&lt;ValueType&gt;&amp; next, OffsetType offset)</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;{</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <a class="code" href="assert_8h.html#a0dd452510e5d75d0f71f52ed14143c40">FFNN_ASSERT_MSG</a> (Base::output_shape_ &gt; 0, <span class="stringliteral">&quot;Output dimensions are invalid (non-positive) or unresolved.&quot;</span>);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="comment">// Map output of next layer to input buffer</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keyword">auto</span> output_ptr = <span class="keyword">const_cast&lt;</span>ValueType*<span class="keyword">&gt;</span>(next.getInputBuffer().data()) + offset;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keyword">new</span> (&amp;output_) _OutputMappingType(output_ptr, Base::output_shape_.height, Base::output_shape_.width);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="comment">// Map error of next layer to backward-error buffer</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keyword">auto</span> error_ptr = <span class="keyword">const_cast&lt;</span>ValueType*<span class="keyword">&gt;</span>(next.getBackwardErrorBuffer().data()) + offset;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keyword">new</span> (&amp;forward_error_) _OutputMappingType(error_ptr, Base::output_shape_.height, Base::output_shape_.width);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="comment">// Return next offset after assigning buffer segments</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordflow">return</span> offset + Base::outputShape().size();</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> InputsHeightAtCompileTime,</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> InputsWidthAtCompileTime,</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> OutputsHeightAtCompileTime,</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> OutputsWidthAtCompileTime,</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;         <span class="keyword">typename</span> _InputBlockType,</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;         <span class="keyword">typename</span> _OutputBlockType,</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;         <span class="keyword">typename</span> _InputMappingType,</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;         <span class="keyword">typename</span> _OutputMappingType&gt;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keywordtype">bool</span> HIDDEN::initialize()</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;{</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="comment">// Deduce input dimensions</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keywordflow">if</span> (!Base::input_shape_.valid())</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  {</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    Base::input_shape_ = Base::evaluateInputSize();</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <a class="code" href="assert_8h.html#a0dd452510e5d75d0f71f52ed14143c40">FFNN_ASSERT_MSG</a> (Base::output_shape_ &gt; 0, <span class="stringliteral">&quot;Output dimensions are invalid (non-positive) or unresolved.&quot;</span>);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="comment">// Map output of next layer to input buffer</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keyword">auto</span> output_ptr = <span class="keyword">const_cast&lt;</span>ValueType*<span class="keyword">&gt;</span>(next.getInputBuffer().data()) + offset;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keyword">new</span> (&amp;output_) OutputMappingType(output_ptr, Base::output_shape_.height, Base::output_shape_.width);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="comment">// Map error of next layer to backward-error buffer</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keyword">auto</span> error_ptr = <span class="keyword">const_cast&lt;</span>ValueType*<span class="keyword">&gt;</span>(next.getBackwardErrorBuffer().data()) + offset;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keyword">new</span> (&amp;forward_error_) OutputMappingType(error_ptr, Base::output_shape_.height, Base::output_shape_.width);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="comment">// Return next offset after assigning buffer segments</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordflow">return</span> offset + Base::outputShape().size();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;         <span class="keyword">typename</span> LayerShape,</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;         <span class="keyword">typename</span> _InputBlockType,</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;         <span class="keyword">typename</span> _OutputBlockType&gt;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keywordtype">bool</span> HIDDEN::initialize()</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;{</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="comment">// Deduce input dimensions</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordflow">if</span> (!Base::input_shape_.valid())</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    Base::input_shape_ = Base::evaluateInputSize();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <a class="code" href="assert_8h.html#a0dd452510e5d75d0f71f52ed14143c40">FFNN_ASSERT_MSG</a> (Base::input_shape_ &gt; 0,  <span class="stringliteral">&quot;Input dimensions are invalid (non-positive) or unresolved.&quot;</span>);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="comment">// Abort if layer is already initialized</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keywordflow">if</span> (Base::setupRequired() &amp;&amp; Base::isInitialized())</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="logging_8h.html#aabf5ff82064ef58a239a35b444685955">FFNN_WARN_NAMED</a>(<span class="stringliteral">&quot;layer::Hidden&quot;</span>, <span class="stringliteral">&quot;&lt;&quot;</span> &lt;&lt; Base::getID() &lt;&lt; <span class="stringliteral">&quot;&gt; already initialized.&quot;</span>);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="comment">// Do basic initialization</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordflow">if</span> (Base::initialize())</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">// Create input buffer map</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keyword">auto</span> input_ptr = <span class="keyword">const_cast&lt;</span>ValueType*<span class="keyword">&gt;</span>(Base::getInputBuffer().data());</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keyword">new</span> (&amp;input_) InputMappingType(input_ptr, Base::input_shape_.height, Base::input_shape_.width);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">// Create input buffer map</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keyword">auto</span> error_ptr = <span class="keyword">const_cast&lt;</span>ValueType*<span class="keyword">&gt;</span>(Base::getBackwardErrorBuffer().data());</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keyword">new</span> (&amp;backward_error_) InputMappingType(error_ptr, Base::input_shape_.height, Base::input_shape_.width);</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <a class="code" href="assert_8h.html#a0dd452510e5d75d0f71f52ed14143c40">FFNN_ASSERT_MSG</a> (Base::input_shape_ &gt; 0,  <span class="stringliteral">&quot;Input dimensions are invalid (non-positive) or unresolved.&quot;</span>);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <span class="comment">// Abort if layer is already initialized</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keywordflow">if</span> (Base::setupRequired() &amp;&amp; Base::isInitialized())</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  {</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <a class="code" href="logging_8h.html#aabf5ff82064ef58a239a35b444685955">FFNN_WARN_NAMED</a>(<span class="stringliteral">&quot;layer::Hidden&quot;</span>, <span class="stringliteral">&quot;&lt;&quot;</span> &lt;&lt; Base::getID() &lt;&lt; <span class="stringliteral">&quot;&gt; already initialized.&quot;</span>);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  }</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <span class="comment">// Do basic initialization</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <span class="keywordflow">if</span> (Base::initialize())</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  {</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="comment">// Create input buffer map</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keyword">auto</span> input_ptr = <span class="keyword">const_cast&lt;</span>ValueType*<span class="keyword">&gt;</span>(Base::getInputBuffer().data());</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keyword">new</span> (&amp;input_) _InputMappingType(input_ptr, Base::input_shape_.height, Base::input_shape_.width);</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="comment">// Create input buffer map</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keyword">auto</span> error_ptr = <span class="keyword">const_cast&lt;</span>ValueType*<span class="keyword">&gt;</span>(Base::getBackwardErrorBuffer().data());</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keyword">new</span> (&amp;backward_error_) _InputMappingType(error_ptr, Base::input_shape_.height, Base::input_shape_.width);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="comment">// Resolve previous layer output buffers</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordflow">if</span> (Base::connectInputLayers() == Base::inputShape().size())</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    {</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;      <a class="code" href="logging_8h.html#ad17a22e477672ae24ca9afe0abf1b46f">FFNN_DEBUG_NAMED</a>(<span class="stringliteral">&quot;layer::Hidden&quot;</span>,</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                       <span class="stringliteral">&quot;&lt;&quot;</span> &lt;&lt;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                       Base::getID() &lt;&lt;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                       <span class="stringliteral">&quot;&gt; initialized as (in=&quot;</span> &lt;&lt;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                       Base::inputShape().size()  &lt;&lt;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                       <span class="stringliteral">&quot;, out=&quot;</span> &lt;&lt;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                       Base::outputShape().size() &lt;&lt;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                       <span class="stringliteral">&quot;)&quot;</span>);</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;      <span class="keywordflow">return</span> Base::isInitialized();</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    }</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="comment">// Initialization failed</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    Base::initialized_ = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <a class="code" href="logging_8h.html#a48e2bf3dad548dafff4be40132286cbb">FFNN_ERROR_NAMED</a>(<span class="stringliteral">&quot;layer::Hidden&quot;</span>, <span class="stringliteral">&quot;&lt;&quot;</span> &lt;&lt; Base::getID() &lt;&lt; <span class="stringliteral">&quot;&gt; bad input count after input resolution.&quot;</span>);</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  }</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  <span class="comment">// Error initializing</span></div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  <a class="code" href="logging_8h.html#a48e2bf3dad548dafff4be40132286cbb">FFNN_ERROR_NAMED</a>(<span class="stringliteral">&quot;layer::Hidden&quot;</span>, <span class="stringliteral">&quot;&lt;&quot;</span> &lt;&lt; Base::getID() &lt;&lt; <span class="stringliteral">&quot;&gt; failed to initialize.&quot;</span>);</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;}</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> InputsHeightAtCompileTime,</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> InputsWidthAtCompileTime,</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> OutputsHeightAtCompileTime,</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> OutputsWidthAtCompileTime,</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;         <span class="keyword">typename</span> _InputBlockType,</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;         <span class="keyword">typename</span> _OutputBlockType,</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;         <span class="keyword">typename</span> _InputMappingType,</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;         <span class="keyword">typename</span> _OutputMappingType&gt;</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="keywordtype">void</span> <a class="code" href="dense__base__addons_8h.html#ab948859788aa671e575e410654e07f16">HIDDEN::save</a>(<span class="keyword">typename</span> HIDDEN::OutputArchive&amp; ar,</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                  <span class="keyword">typename</span> HIDDEN::VersionType version)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  ffnn::io::signature::apply&lt;HIDDEN&gt;(ar);</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  <a class="code" href="dense__base__addons_8h.html#ab948859788aa671e575e410654e07f16">Base::save</a>(ar, version);</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  <a class="code" href="logging_8h.html#ad17a22e477672ae24ca9afe0abf1b46f">FFNN_DEBUG_NAMED</a>(<span class="stringliteral">&quot;layer::Hidden&quot;</span>, <span class="stringliteral">&quot;Saved&quot;</span>);</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;}</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> InputsHeightAtCompileTime,</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> InputsWidthAtCompileTime,</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> OutputsHeightAtCompileTime,</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> OutputsWidthAtCompileTime,</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;         <span class="keyword">typename</span> _InputBlockType,</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;         <span class="keyword">typename</span> _OutputBlockType,</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;         <span class="keyword">typename</span> _InputMappingType,</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;         <span class="keyword">typename</span> _OutputMappingType&gt;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="keywordtype">void</span> <a class="code" href="dense__base__addons_8h.html#a68dbd347886624cd725b8a26e5242ee2">HIDDEN::load</a>(<span class="keyword">typename</span> HIDDEN::InputArchive&amp; ar,</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                  <span class="keyword">typename</span> HIDDEN::VersionType version)</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;{</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  ffnn::io::signature::check&lt;HIDDEN&gt;(ar);</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  <a class="code" href="dense__base__addons_8h.html#a68dbd347886624cd725b8a26e5242ee2">Base::load</a>(ar, version);</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  <a class="code" href="logging_8h.html#ad17a22e477672ae24ca9afe0abf1b46f">FFNN_DEBUG_NAMED</a>(<span class="stringliteral">&quot;layer::Hidden&quot;</span>, <span class="stringliteral">&quot;Loaded&quot;</span>);</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;}</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="preprocessor">#undef HIDDEN_TARGS</span></div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#undef HIDDEN_TARGS_ADVANCED</span></div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#undef HIDDEN</span></div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="preprocessor"></span>}  <span class="comment">// namespace layer</span></div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;}  <span class="comment">// namespace ffnn</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="comment">// Resolve previous layer output buffers</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">if</span> (Base::connectInputLayers() == Base::inputShape().size())</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;      <a class="code" href="logging_8h.html#ad17a22e477672ae24ca9afe0abf1b46f">FFNN_DEBUG_NAMED</a>(<span class="stringliteral">&quot;layer::Hidden&quot;</span>,</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                       <span class="stringliteral">&quot;&lt;&quot;</span> &lt;&lt;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                       Base::getID() &lt;&lt;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                       <span class="stringliteral">&quot;&gt; initialized as (in=&quot;</span> &lt;&lt;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                       Base::inputShape().size()  &lt;&lt;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                       <span class="stringliteral">&quot;, out=&quot;</span> &lt;&lt;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                       Base::outputShape().size() &lt;&lt;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                       <span class="stringliteral">&quot;)&quot;</span>);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;      <span class="keywordflow">return</span> Base::isInitialized();</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="comment">// Initialization failed</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    Base::initialized_ = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <a class="code" href="logging_8h.html#a48e2bf3dad548dafff4be40132286cbb">FFNN_ERROR_NAMED</a>(<span class="stringliteral">&quot;layer::Hidden&quot;</span>, <span class="stringliteral">&quot;&lt;&quot;</span> &lt;&lt; Base::getID() &lt;&lt; <span class="stringliteral">&quot;&gt; bad input count after input resolution.&quot;</span>);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <span class="comment">// Error initializing</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <a class="code" href="logging_8h.html#a48e2bf3dad548dafff4be40132286cbb">FFNN_ERROR_NAMED</a>(<span class="stringliteral">&quot;layer::Hidden&quot;</span>, <span class="stringliteral">&quot;&lt;&quot;</span> &lt;&lt; Base::getID() &lt;&lt; <span class="stringliteral">&quot;&gt; failed to initialize.&quot;</span>);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;         <span class="keyword">typename</span> LayerShape,</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;         <span class="keyword">typename</span> _InputBlockType,</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;         <span class="keyword">typename</span> _OutputBlockType&gt;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="keywordtype">void</span> <a class="code" href="dense__base__addons_8h.html#ab948859788aa671e575e410654e07f16">HIDDEN::save</a>(<span class="keyword">typename</span> HIDDEN::OutputArchive&amp; ar,</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                  <span class="keyword">typename</span> HIDDEN::VersionType version)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  ffnn::io::signature::apply&lt;HIDDEN&gt;(ar);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <a class="code" href="dense__base__addons_8h.html#ab948859788aa671e575e410654e07f16">Base::save</a>(ar, version);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  <a class="code" href="logging_8h.html#ad17a22e477672ae24ca9afe0abf1b46f">FFNN_DEBUG_NAMED</a>(<span class="stringliteral">&quot;layer::Hidden&quot;</span>, <span class="stringliteral">&quot;Saved&quot;</span>);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;}</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;         <span class="keyword">typename</span> LayerShape,</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;         <span class="keyword">typename</span> _InputBlockType,</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;         <span class="keyword">typename</span> _OutputBlockType&gt;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="keywordtype">void</span> <a class="code" href="dense__base__addons_8h.html#a68dbd347886624cd725b8a26e5242ee2">HIDDEN::load</a>(<span class="keyword">typename</span> HIDDEN::InputArchive&amp; ar,</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                  <span class="keyword">typename</span> HIDDEN::VersionType version)</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;{</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  ffnn::io::signature::check&lt;HIDDEN&gt;(ar);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  <a class="code" href="dense__base__addons_8h.html#a68dbd347886624cd725b8a26e5242ee2">Base::load</a>(ar, version);</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  <a class="code" href="logging_8h.html#ad17a22e477672ae24ca9afe0abf1b46f">FFNN_DEBUG_NAMED</a>(<span class="stringliteral">&quot;layer::Hidden&quot;</span>, <span class="stringliteral">&quot;Loaded&quot;</span>);</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;}</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="preprocessor">#undef HIDDEN_TARGS</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#undef HIDDEN_TARGS_ADVANCED</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#undef HIDDEN</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="preprocessor"></span>}  <span class="comment">// namespace layer</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;}  <span class="comment">// namespace ffnn</span></div>
 <div class="ttc" id="logging_8h_html_a48e2bf3dad548dafff4be40132286cbb"><div class="ttname"><a href="logging_8h.html#a48e2bf3dad548dafff4be40132286cbb">FFNN_ERROR_NAMED</a></div><div class="ttdeci">#define FFNN_ERROR_NAMED(name, msg)</div><div class="ttdoc">Prints an named error message. </div><div class="ttdef"><b>Definition:</b> logging.h:86</div></div>
 <div class="ttc" id="dense__base__addons_8h_html_a68dbd347886624cd725b8a26e5242ee2"><div class="ttname"><a href="dense__base__addons_8h.html#a68dbd347886624cd725b8a26e5242ee2">load</a></div><div class="ttdeci">void load(Archive &amp;ar, const unsigned int version)</div><div class="ttdef"><b>Definition:</b> dense_base_addons.h:26</div></div>
 <div class="ttc" id="logging_8h_html"><div class="ttname"><a href="logging_8h.html">logging.h</a></div></div>
@@ -271,13 +241,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="assert_8h_html"><div class="ttname"><a href="assert_8h.html">assert.h</a></div></div>
 <div class="ttc" id="internal_2signature_8h_html"><div class="ttname"><a href="internal_2signature_8h.html">signature.h</a></div></div>
 <div class="ttc" id="logging_8h_html_ad17a22e477672ae24ca9afe0abf1b46f"><div class="ttname"><a href="logging_8h.html#ad17a22e477672ae24ca9afe0abf1b46f">FFNN_DEBUG_NAMED</a></div><div class="ttdeci">#define FFNN_DEBUG_NAMED(name, msg)</div><div class="ttdoc">Prints an named debug message. </div><div class="ttdef"><b>Definition:</b> logging.h:52</div></div>
-<div class="ttc" id="global_8h_html_aab5a5a098c5bf31f4176f4a141d2ef65"><div class="ttname"><a href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a></div><div class="ttdeci">#define FFNN_SIZE_TYPE</div><div class="ttdef"><b>Definition:</b> global.h:38</div></div>
 <div class="ttc" id="logging_8h_html_a6423579b7bc28bf29f9d3c60a2066c48"><div class="ttname"><a href="logging_8h.html#a6423579b7bc28bf29f9d3c60a2066c48">FFNN_INTERNAL_DEBUG_NAMED</a></div><div class="ttdeci">#define FFNN_INTERNAL_DEBUG_NAMED(name, msg)</div><div class="ttdef"><b>Definition:</b> logging.h:42</div></div>
 <div class="ttc" id="dense__base__addons_8h_html_ab948859788aa671e575e410654e07f16"><div class="ttname"><a href="dense__base__addons_8h.html#ab948859788aa671e575e410654e07f16">save</a></div><div class="ttdeci">void save(Archive &amp;ar, const unsigned int version) const </div><div class="ttdef"><b>Definition:</b> dense_base_addons.h:9</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed May 10 2017 13:05:02 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 10 2017 17:22:46 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

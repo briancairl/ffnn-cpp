@@ -18,7 +18,10 @@
 #endif
 
 /// Static assertion definition
-#define FFNN_STATIC_ASSERT_MSG(cond, msg)\
+#define FFNN_STATIC_ASSERT_MSG(cond, msg) static_assert(cond, msg)
+
+/// Static (runtime) assertion definition
+#define FFNN_STATIC_RUNTIME_ASSERT_MSG(cond, msg)\
         {if (!static_cast<bool>(cond))\
         {\
             FFNN_ERROR_NAMED("FILE:" << __FILE__ << " LN:" << __LINE__, "\n>> [ASSERTION FAILED]: " << msg);\
@@ -27,7 +30,7 @@
 
 #ifdef  FFNN_NO_ASSERT
 /// Debug assert defintion with description
-#define FFNN_ASSERT_MSG(cond, msg) FFNN_STATIC_ASSERT_MSG(cond, msg)
+#define FFNN_ASSERT_MSG(cond, msg) FFNN_STATIC_RUNTIME_ASSERT_MSG(cond, msg)
 #else
 #define FFNN_ASSERT_MSG(cond, msg) (void(0))
 #endif

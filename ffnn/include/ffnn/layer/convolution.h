@@ -32,7 +32,7 @@ namespace layer
   FilterCountAtCompileTime,\
   StrideAtCompileTime,\
   Mode,\
-  _HSize
+  _HiddenLayerShape
 
 #define CONV_VOLUME_TARGS\
   ValueType,\
@@ -54,18 +54,18 @@ template <typename ValueType,
           FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic,
           FFNN_SIZE_TYPE StrideAtCompileTime = 1,
           EmbeddingMode Mode = ColEmbedding,
-          class _HSize =
-            hidden_size_evaluator<
+          class _HiddenLayerShape =
+            hidden_layer_shape<
               embed_dimension<Mode, ColEmbedding>(HeightAtCompileTime, DepthAtCompileTime),
               embed_dimension<Mode, RowEmbedding>(WidthAtCompileTime,  DepthAtCompileTime),
               embed_dimension<Mode, ColEmbedding>(output_dimension(HeightAtCompileTime, FilterHeightAtCompileTime, StrideAtCompileTime), FilterCountAtCompileTime),
               embed_dimension<Mode, RowEmbedding>(output_dimension(WidthAtCompileTime,  FilterWidthAtCompileTime,  StrideAtCompileTime), FilterCountAtCompileTime)>>
 class Convolution :
-  public Hidden<ValueType, _HSize::input_height, _HSize::input_width, _HSize::output_height, _HSize::output_width>
+  public Hidden<ValueType, _HiddenLayerShape>
 {
 public:
   /// Base type alias
-  using Base = Hidden<ValueType, _HSize::input_height, _HSize::input_width, _HSize::output_height, _HSize::output_width>;
+  using Base = Hidden<ValueType, _HiddenLayerShape>;
 
   /// Self type alias
   using Self = Convolution<CONV_TARGS>;

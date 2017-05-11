@@ -1,0 +1,4 @@
+<map id="ffnn::layer::internal::Shape::size" name="ffnn::layer::internal::Shape::size">
+<area shape="rect" id="node2" href="$namespaceffnn_1_1layer_1_1internal.html#ab5b2ac985b32bc289c8748933e2ba113" title="ffnn::layer::internal\l::multiply_if_not_dynamic_sizes" alt="" coords="184,5,392,46"/>
+<area shape="rect" id="node3" href="$namespaceffnn_1_1layer_1_1internal.html#a80747f67832029051c2f96d3a1586e98" title="ffnn::layer::internal\l::is_dynamic" alt="" coords="440,5,571,46"/>
+</map>

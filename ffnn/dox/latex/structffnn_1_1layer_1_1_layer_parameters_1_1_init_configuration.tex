@@ -1,0 +1,97 @@
+\hypertarget{structffnn_1_1layer_1_1_layer_parameters_1_1_init_configuration}{\section{ffnn\-:\-:layer\-:\-:Layer\-Parameters$<$ Connect\-Type, Bias\-Type $>$\-:\-:Init\-Configuration Struct Reference}
+\label{structffnn_1_1layer_1_1_layer_parameters_1_1_init_configuration}\index{ffnn\-::layer\-::\-Layer\-Parameters$<$ Connect\-Type, Bias\-Type $>$\-::\-Init\-Configuration@{ffnn\-::layer\-::\-Layer\-Parameters$<$ Connect\-Type, Bias\-Type $>$\-::\-Init\-Configuration}}
+}
+
+
+An initialization configuration object used for setting up a \hyperlink{classffnn_1_1layer_1_1_layer_parameters}{Layer\-Parameters} object.  
+
+
+
+
+{\ttfamily \#include \char`\"{}fully\-\_\-connected.\-h\char`\"{}}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structffnn_1_1layer_1_1_layer_parameters_1_1_init_configuration_a64e407c571df70f766f073671284f6b3}{Init\-Configuration} (\hyperlink{classffnn_1_1layer_1_1_layer_parameters_a3dd1354de05cbf7c05d82a8ed653714e}{Scalar\-Type} \hyperlink{structffnn_1_1layer_1_1_layer_parameters_1_1_init_configuration_ad8f3d53cb4491d2db5378d929bddfcb6}{init\-\_\-connection\-\_\-std}=1e-\/3, Scalar\-Type init\-\_\-bias\-\_\-std=1e-\/3, Scalar\-Type init\-\_\-connection\-\_\-mean=0.\-0, Scalar\-Type init\-\_\-bias\-\_\-mean=0.\-0)
+\begin{DoxyCompactList}\small\item\em Setup constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classffnn_1_1layer_1_1_layer_parameters_a3dd1354de05cbf7c05d82a8ed653714e}{Scalar\-Type} \hyperlink{structffnn_1_1layer_1_1_layer_parameters_1_1_init_configuration_ad8f3d53cb4491d2db5378d929bddfcb6}{init\-\_\-connection\-\_\-std}
+\begin{DoxyCompactList}\small\item\em Standard deviation of connection weights on init. \end{DoxyCompactList}\item 
+\hyperlink{classffnn_1_1layer_1_1_layer_parameters_a3dd1354de05cbf7c05d82a8ed653714e}{Scalar\-Type} \hyperlink{structffnn_1_1layer_1_1_layer_parameters_1_1_init_configuration_a1b25823d71be5fe04f8fb392fc287c3f}{init\-\_\-bias\-\_\-std}
+\begin{DoxyCompactList}\small\item\em Standard deviation of biases on init. \end{DoxyCompactList}\item 
+\hyperlink{classffnn_1_1layer_1_1_layer_parameters_a3dd1354de05cbf7c05d82a8ed653714e}{Scalar\-Type} \hyperlink{structffnn_1_1layer_1_1_layer_parameters_1_1_init_configuration_ab89ad5ae8ddd69c7eb55e14ca6c59186}{init\-\_\-connection\-\_\-mean}
+\begin{DoxyCompactList}\small\item\em Connection weight mean (bias) on init. \end{DoxyCompactList}\item 
+\hyperlink{classffnn_1_1layer_1_1_layer_parameters_a3dd1354de05cbf7c05d82a8ed653714e}{Scalar\-Type} \hyperlink{structffnn_1_1layer_1_1_layer_parameters_1_1_init_configuration_aed70a26d27b82dabc6bd427e2e3cbc40}{init\-\_\-bias\-\_\-mean}
+\begin{DoxyCompactList}\small\item\em Connection biasing mean (bias) on init. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Connect\-Type, typename Bias\-Type$>$struct ffnn\-::layer\-::\-Layer\-Parameters$<$ Connect\-Type, Bias\-Type $>$\-::\-Init\-Configuration}
+
+An initialization configuration object used for setting up a \hyperlink{classffnn_1_1layer_1_1_layer_parameters}{Layer\-Parameters} object. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structffnn_1_1layer_1_1_layer_parameters_1_1_init_configuration_a64e407c571df70f766f073671284f6b3}{\index{ffnn\-::layer\-::\-Layer\-Parameters\-::\-Init\-Configuration@{ffnn\-::layer\-::\-Layer\-Parameters\-::\-Init\-Configuration}!Init\-Configuration@{Init\-Configuration}}
+\index{Init\-Configuration@{Init\-Configuration}!ffnn::layer::LayerParameters::InitConfiguration@{ffnn\-::layer\-::\-Layer\-Parameters\-::\-Init\-Configuration}}
+\subsubsection[{Init\-Configuration}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Connect\-Type , typename Bias\-Type $>$ {\bf ffnn\-::layer\-::\-Layer\-Parameters}$<$ Connect\-Type, Bias\-Type $>$\-::Init\-Configuration\-::\-Init\-Configuration (
+\begin{DoxyParamCaption}
+\item[{{\bf Scalar\-Type}}]{init\-\_\-connection\-\_\-std = {\ttfamily 1e-\/3}, }
+\item[{{\bf Scalar\-Type}}]{init\-\_\-bias\-\_\-std = {\ttfamily 1e-\/3}, }
+\item[{{\bf Scalar\-Type}}]{init\-\_\-connection\-\_\-mean = {\ttfamily 0.0}, }
+\item[{{\bf Scalar\-Type}}]{init\-\_\-bias\-\_\-mean = {\ttfamily 0.0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{structffnn_1_1layer_1_1_layer_parameters_1_1_init_configuration_a64e407c571df70f766f073671284f6b3}
+
+
+Setup constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em init\-\_\-connection\-\_\-std} & Standard deviation of initial weights \\
+\hline
+{\em init\-\_\-bias\-\_\-std} & Standard deviation of initial weights \\
+\hline
+{\em init\-\_\-connection\-\_\-mean} & Mean of intial weights \\
+\hline
+{\em init\-\_\-bias\-\_\-mean} & Mean of intial biases \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structffnn_1_1layer_1_1_layer_parameters_1_1_init_configuration_aed70a26d27b82dabc6bd427e2e3cbc40}{\index{ffnn\-::layer\-::\-Layer\-Parameters\-::\-Init\-Configuration@{ffnn\-::layer\-::\-Layer\-Parameters\-::\-Init\-Configuration}!init\-\_\-bias\-\_\-mean@{init\-\_\-bias\-\_\-mean}}
+\index{init\-\_\-bias\-\_\-mean@{init\-\_\-bias\-\_\-mean}!ffnn::layer::LayerParameters::InitConfiguration@{ffnn\-::layer\-::\-Layer\-Parameters\-::\-Init\-Configuration}}
+\subsubsection[{init\-\_\-bias\-\_\-mean}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Connect\-Type , typename Bias\-Type $>$ {\bf Scalar\-Type} {\bf ffnn\-::layer\-::\-Layer\-Parameters}$<$ Connect\-Type, Bias\-Type $>$\-::Init\-Configuration\-::init\-\_\-bias\-\_\-mean}}\label{structffnn_1_1layer_1_1_layer_parameters_1_1_init_configuration_aed70a26d27b82dabc6bd427e2e3cbc40}
+
+
+Connection biasing mean (bias) on init. 
+
+\hypertarget{structffnn_1_1layer_1_1_layer_parameters_1_1_init_configuration_a1b25823d71be5fe04f8fb392fc287c3f}{\index{ffnn\-::layer\-::\-Layer\-Parameters\-::\-Init\-Configuration@{ffnn\-::layer\-::\-Layer\-Parameters\-::\-Init\-Configuration}!init\-\_\-bias\-\_\-std@{init\-\_\-bias\-\_\-std}}
+\index{init\-\_\-bias\-\_\-std@{init\-\_\-bias\-\_\-std}!ffnn::layer::LayerParameters::InitConfiguration@{ffnn\-::layer\-::\-Layer\-Parameters\-::\-Init\-Configuration}}
+\subsubsection[{init\-\_\-bias\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Connect\-Type , typename Bias\-Type $>$ {\bf Scalar\-Type} {\bf ffnn\-::layer\-::\-Layer\-Parameters}$<$ Connect\-Type, Bias\-Type $>$\-::Init\-Configuration\-::init\-\_\-bias\-\_\-std}}\label{structffnn_1_1layer_1_1_layer_parameters_1_1_init_configuration_a1b25823d71be5fe04f8fb392fc287c3f}
+
+
+Standard deviation of biases on init. 
+
+\hypertarget{structffnn_1_1layer_1_1_layer_parameters_1_1_init_configuration_ab89ad5ae8ddd69c7eb55e14ca6c59186}{\index{ffnn\-::layer\-::\-Layer\-Parameters\-::\-Init\-Configuration@{ffnn\-::layer\-::\-Layer\-Parameters\-::\-Init\-Configuration}!init\-\_\-connection\-\_\-mean@{init\-\_\-connection\-\_\-mean}}
+\index{init\-\_\-connection\-\_\-mean@{init\-\_\-connection\-\_\-mean}!ffnn::layer::LayerParameters::InitConfiguration@{ffnn\-::layer\-::\-Layer\-Parameters\-::\-Init\-Configuration}}
+\subsubsection[{init\-\_\-connection\-\_\-mean}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Connect\-Type , typename Bias\-Type $>$ {\bf Scalar\-Type} {\bf ffnn\-::layer\-::\-Layer\-Parameters}$<$ Connect\-Type, Bias\-Type $>$\-::Init\-Configuration\-::init\-\_\-connection\-\_\-mean}}\label{structffnn_1_1layer_1_1_layer_parameters_1_1_init_configuration_ab89ad5ae8ddd69c7eb55e14ca6c59186}
+
+
+Connection weight mean (bias) on init. 
+
+\hypertarget{structffnn_1_1layer_1_1_layer_parameters_1_1_init_configuration_ad8f3d53cb4491d2db5378d929bddfcb6}{\index{ffnn\-::layer\-::\-Layer\-Parameters\-::\-Init\-Configuration@{ffnn\-::layer\-::\-Layer\-Parameters\-::\-Init\-Configuration}!init\-\_\-connection\-\_\-std@{init\-\_\-connection\-\_\-std}}
+\index{init\-\_\-connection\-\_\-std@{init\-\_\-connection\-\_\-std}!ffnn::layer::LayerParameters::InitConfiguration@{ffnn\-::layer\-::\-Layer\-Parameters\-::\-Init\-Configuration}}
+\subsubsection[{init\-\_\-connection\-\_\-std}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Connect\-Type , typename Bias\-Type $>$ {\bf Scalar\-Type} {\bf ffnn\-::layer\-::\-Layer\-Parameters}$<$ Connect\-Type, Bias\-Type $>$\-::Init\-Configuration\-::init\-\_\-connection\-\_\-std}}\label{structffnn_1_1layer_1_1_layer_parameters_1_1_init_configuration_ad8f3d53cb4491d2db5378d929bddfcb6}
+
+
+Standard deviation of connection weights on init. 
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/\hyperlink{fully__connected_8h}{fully\-\_\-connected.\-h}\end{DoxyCompactItemize}

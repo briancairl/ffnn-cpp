@@ -120,8 +120,12 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html">ConvolutionVolume</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_layer_parameters.html">LayerParameters</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_fully_connected.html">FullyConnected</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A fully-connected layer.  <a href="classffnn_1_1layer_1_1_fully_connected.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structffnn_1_1layer_1_1hidden__layer__shape.html">hidden_layer_shape</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html">Hidden</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A network hidden-layer object.  <a href="classffnn_1_1layer_1_1_hidden.html#details">More...</a><br/></td></tr>
@@ -158,9 +162,6 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:adec527cca25d8f9bb34d0efe280bc164"><td class="memTemplParams" colspan="2">template&lt;typename SizeType &gt; </td></tr>
-<tr class="memitem:adec527cca25d8f9bb34d0efe280bc164"><td class="memTemplItemLeft" align="right" valign="top">constexpr SizeType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceffnn_1_1layer.html#adec527cca25d8f9bb34d0efe280bc164">mult_if_not_eigen_dynamic_size</a> (SizeType n, SizeType m)</td></tr>
-<tr class="separator:adec527cca25d8f9bb34d0efe280bc164"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad128f693900faa5bcf2cdd0ef8e7eee6"><td class="memTemplParams" colspan="2">template&lt;EmbeddingMode mode, EmbeddingMode ref, typename SizeType &gt; </td></tr>
 <tr class="memitem:ad128f693900faa5bcf2cdd0ef8e7eee6"><td class="memTemplItemLeft" align="right" valign="top">constexpr SizeType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceffnn_1_1layer.html#ad128f693900faa5bcf2cdd0ef8e7eee6">embed_dimension</a> (SizeType n, SizeType m)</td></tr>
 <tr class="separator:ad128f693900faa5bcf2cdd0ef8e7eee6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -281,34 +282,6 @@ template&lt;EmbeddingMode mode, EmbeddingMode ref, typename SizeType &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="adec527cca25d8f9bb34d0efe280bc164"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename SizeType &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr SizeType ffnn::layer::mult_if_not_eigen_dynamic_size </td>
-          <td>(</td>
-          <td class="paramtype">SizeType&#160;</td>
-          <td class="paramname"><em>n</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">SizeType&#160;</td>
-          <td class="paramname"><em>m</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="ac1d8b4e852293231055d1257f1e83e60"></a>
 <div class="memitem">
 <div class="memproto">
@@ -346,7 +319,7 @@ template&lt;typename SizeType &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed May 10 2017 13:05:02 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 10 2017 17:22:47 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

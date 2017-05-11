@@ -22,7 +22,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
          EmbeddingMode Mode,
-         class _HSize>
+         class _LShape>
 Convolution<CONV_TARGS>::
 Convolution(const ShapeType& input_shape,
             const SizeType& filter_height,
@@ -52,7 +52,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
          EmbeddingMode Mode,
-         class _HSize>
+         class _LShape>
 Convolution<CONV_TARGS>::~Convolution()
 {
   FFNN_INTERNAL_DEBUG_NAMED("layer::Convolution", "Destroying [layer::Convolution] object <" << this->getID() << ">");
@@ -67,7 +67,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
          EmbeddingMode Mode,
-         class _HSize>
+         class _LShape>
 bool Convolution<CONV_TARGS>::initialize()
 {
   return initialize(Convolution<CONV_TARGS>::Parameters());
@@ -82,7 +82,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
          EmbeddingMode Mode,
-         class _HSize>
+         class _LShape>
 bool Convolution<CONV_TARGS>::initialize(const Convolution<CONV_TARGS>::Parameters& config)
 {
   // Abort if layer is already initialized
@@ -136,7 +136,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
          EmbeddingMode Mode,
-         class _HSize>
+         class _LShape>
 bool Convolution<CONV_TARGS>::forward()
 {
   if (!opt_->forward(*this))
@@ -170,7 +170,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
          EmbeddingMode Mode,
-         class _HSize>
+         class _LShape>
 bool Convolution<CONV_TARGS>::backward()
 {
   FFNN_ASSERT_MSG(opt_, "No optimization resource set.");
@@ -186,7 +186,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
          EmbeddingMode Mode,
-         class _HSize>
+         class _LShape>
 bool Convolution<CONV_TARGS>::update()
 {
   FFNN_ASSERT_MSG(opt_, "No optimization resource set.");
@@ -202,7 +202,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
          EmbeddingMode Mode,
-         class _HSize>
+         class _LShape>
 void Convolution<CONV_TARGS>::reset(const Convolution<CONV_TARGS>::Parameters& config)
 {
   receptors_.resize(boost::extents[output_volume_shape_.height][output_volume_shape_.width]);
@@ -233,7 +233,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
          EmbeddingMode Mode,
-         class _HSize>
+         class _LShape>
 bool Convolution<CONV_TARGS>::computeBackwardError()
 {
   return true;
@@ -248,7 +248,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
          EmbeddingMode Mode,
-         class _HSize>
+         class _LShape>
 void Convolution<CONV_TARGS>::
   setOptimizer(typename Optimizer::Ptr opt)
 {
@@ -265,7 +265,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
          EmbeddingMode Mode,
-         class _HSize>
+         class _LShape>
 typename Convolution<CONV_TARGS>::OffsetType
 Convolution<CONV_TARGS>::connectToForwardLayer(const Layer<ValueType>& next, OffsetType offset)
 {
@@ -301,7 +301,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
          EmbeddingMode Mode,
-         class _HSize>
+         class _LShape>
 void Convolution<CONV_TARGS>::
   save(typename Convolution<CONV_TARGS>::OutputArchive& ar,
        typename Convolution<CONV_TARGS>::VersionType version) const
@@ -329,7 +329,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
          EmbeddingMode Mode,
-         class _HSize>
+         class _LShape>
 void Convolution<CONV_TARGS>::
   load(typename Convolution<CONV_TARGS>::InputArchive& ar,
        typename Convolution<CONV_TARGS>::VersionType version)

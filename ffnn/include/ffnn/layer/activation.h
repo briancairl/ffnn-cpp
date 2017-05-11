@@ -21,14 +21,17 @@ namespace layer
  * @brief Activation layer
  */
 template<typename ValueType,
-         template<class> class NeuronType,
-         FFNN_SIZE_TYPE SizeAtCompileTime = Eigen::Dynamic>
+         typename NeuronType,
+         FFNN_SIZE_TYPE SizeAtCompileTime = Eigen::Dynamic,
+         typename _HiddenLayerShape = hidden_layer_shape<SizeAtCompileTime, 1, SizeAtCompileTime, 1>>
 class Activation :
-  public Hidden<ValueType, SizeAtCompileTime, 1, SizeAtCompileTime, 1>
+  public Hidden<ValueType, _HiddenLayerShape>
 {
+  FFNN_STATIC_ASSERT_MSG(neuron::is_neuron<NeuronType>::value, "NeuronType is not a valid Neuron object.");
+
 public:
   /// Base type alias
-  using Base = Hidden<ValueType, SizeAtCompileTime, 1, SizeAtCompileTime, 1>;
+  using Base = Hidden<ValueType, _HiddenLayerShape>;
 
   /// Scalar type standardization
   typedef typename Base::ScalarType ScalarType;
@@ -85,7 +88,7 @@ protected:
 
 private:
   /// Layer activation units
-  std::vector<NeuronType<ValueType>> neurons_;
+  std::vector<NeuronType> neurons_;
 };
 }  // namespace layer
 }  // namespace ffnn

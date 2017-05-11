@@ -21,12 +21,11 @@ namespace ffnn
 {
 namespace layer
 {
-
-template<FFNN_SIZE_TYPE InputHeightAtCompileTime,
-         FFNN_SIZE_TYPE InputWidthAtCompileTime,
-         FFNN_SIZE_TYPE OutputHeightAtCompileTime,
-         FFNN_SIZE_TYPE OutputWidthAtCompileTime>
-struct hidden_size_evaluator
+template<FFNN_SIZE_TYPE InputHeightAtCompileTime  = Eigen::Dynamic,
+         FFNN_SIZE_TYPE InputWidthAtCompileTime   = Eigen::Dynamic,
+         FFNN_SIZE_TYPE OutputHeightAtCompileTime = Eigen::Dynamic,
+         FFNN_SIZE_TYPE OutputWidthAtCompileTime  = Eigen::Dynamic>
+struct hidden_layer_shape
 {
   constexpr static FFNN_SIZE_TYPE input_height  = InputHeightAtCompileTime;
   constexpr static FFNN_SIZE_TYPE input_width   = InputWidthAtCompileTime;
@@ -38,12 +37,9 @@ struct hidden_size_evaluator
  * @brief A network hidden-layer object
  */
 template<typename ValueType,
-         FFNN_SIZE_TYPE InputHeightAtCompileTime = Eigen::Dynamic,
-         FFNN_SIZE_TYPE InputWidthAtCompileTime = Eigen::Dynamic,
-         FFNN_SIZE_TYPE OutputHeightAtCompileTime = Eigen::Dynamic,
-         FFNN_SIZE_TYPE OutputWidthAtCompileTime = Eigen::Dynamic,
-         typename _InputBlockType = Eigen::Matrix<ValueType, InputHeightAtCompileTime, InputWidthAtCompileTime, Eigen::ColMajor>,
-         typename _OutputBlockType = Eigen::Matrix<ValueType, OutputHeightAtCompileTime, OutputWidthAtCompileTime, Eigen::ColMajor>>
+         typename LayerShape = hidden_layer_shape<>,
+         typename _InputBlockType  = Eigen::Matrix<ValueType, LayerShape::input_height, LayerShape::input_height, Eigen::ColMajor>,
+         typename _OutputBlockType = Eigen::Matrix<ValueType, LayerShape::output_height, LayerShape::output_height, Eigen::ColMajor>>
 class Hidden :
   public Layer<ValueType>
 {
@@ -80,8 +76,8 @@ public:
    * @param output_width  width of the output surface
    */
   explicit
-  Hidden(const ShapeType& input_shape  = ShapeType(InputHeightAtCompileTime,  InputWidthAtCompileTime),
-         const ShapeType& output_shape = ShapeType(OutputHeightAtCompileTime, OutputWidthAtCompileTime));
+  Hidden(const ShapeType& input_shape  = ShapeType(LayerShape::input_height,  LayerShape::input_width),
+         const ShapeType& output_shape = ShapeType(LayerShape::output_height, LayerShape::output_width));
   virtual ~Hidden();
 
   /**

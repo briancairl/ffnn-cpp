@@ -17,22 +17,29 @@ namespace ffnn
 {
 namespace layer
 {
+#define ACTIVATION_TARGS ValueType, NeuronType, SizeAtCompileTime
+#define ACTIVATION_TARGS_ADVANCED _HiddenLayerShape
+#define ACTIVATION Activation<ACTIVATION_TARGS, ACTIVATION_TARGS_ADVANCED>
+
 template<typename ValueType,
-         template<class> class NeuronType,
-         FFNN_SIZE_TYPE SizeAtCompileTime>
-Activation<ValueType, NeuronType, SizeAtCompileTime>::Activation()
+         typename NeuronType,
+         FFNN_SIZE_TYPE SizeAtCompileTime,
+         typename _HiddenLayerShape>
+ACTIVATION::Activation()
 {}
 
 template<typename ValueType,
-         template<class> class NeuronType,
-         FFNN_SIZE_TYPE SizeAtCompileTime>
-Activation<ValueType, NeuronType, SizeAtCompileTime>::~Activation()
+         typename NeuronType,
+         FFNN_SIZE_TYPE SizeAtCompileTime,
+         typename _HiddenLayerShape>
+ACTIVATION::~Activation()
 {}
 
 template<typename ValueType,
-         template<class> class NeuronType,
-         FFNN_SIZE_TYPE SizeAtCompileTime>
-bool Activation<ValueType, NeuronType, SizeAtCompileTime>::initialize()
+         typename NeuronType,
+         FFNN_SIZE_TYPE SizeAtCompileTime,
+         typename _HiddenLayerShape>
+bool ACTIVATION::initialize()
 {
   // Abort if layer is already initialized
   if (Base::setupRequired() && Base::isInitialized())
@@ -64,9 +71,10 @@ bool Activation<ValueType, NeuronType, SizeAtCompileTime>::initialize()
 }
 
 template<typename ValueType,
-         template<class> class NeuronType,
-         FFNN_SIZE_TYPE SizeAtCompileTime>
-bool Activation<ValueType, NeuronType, SizeAtCompileTime>::forward()
+         typename NeuronType,
+         FFNN_SIZE_TYPE SizeAtCompileTime,
+         typename _HiddenLayerShape>
+bool ACTIVATION::forward()
 {
   // Compute neuron outputs
   for (SizeType idx = 0; idx < Base::inputShape().size(); idx++)
@@ -77,9 +85,10 @@ bool Activation<ValueType, NeuronType, SizeAtCompileTime>::forward()
 }
 
 template<typename ValueType,
-         template<class> class NeuronType,
-         FFNN_SIZE_TYPE SizeAtCompileTime>
-bool Activation<ValueType, NeuronType, SizeAtCompileTime>::backward()
+         typename NeuronType,
+         FFNN_SIZE_TYPE SizeAtCompileTime,
+         typename _HiddenLayerShape>
+bool ACTIVATION::backward()
 {
   // Compute neuron derivatives
   Base::backward_error_.noalias() = Base::output_;
@@ -94,25 +103,27 @@ bool Activation<ValueType, NeuronType, SizeAtCompileTime>::backward()
 }
 
 template<typename ValueType,
-         template<class> class NeuronType,
-         FFNN_SIZE_TYPE SizeAtCompileTime>
-void Activation<ValueType, NeuronType, SizeAtCompileTime>::
-  save(typename Activation<ValueType, NeuronType, SizeAtCompileTime>::OutputArchive& ar,
-       typename Activation<ValueType, NeuronType, SizeAtCompileTime>::VersionType version) const
+         typename NeuronType,
+         FFNN_SIZE_TYPE SizeAtCompileTime,
+         typename _HiddenLayerShape>
+void ACTIVATION::
+  save(typename ACTIVATION::OutputArchive& ar,
+       typename ACTIVATION::VersionType version) const
 {
-  ffnn::io::signature::apply<Activation<ValueType, NeuronType, SizeAtCompileTime>>(ar);
+  ffnn::io::signature::apply<ACTIVATION>(ar);
   Base::save(ar, version);
   FFNN_DEBUG_NAMED("layer::Activation", "Saved");
 }
 
 template<typename ValueType,
-         template<class> class NeuronType,
-         FFNN_SIZE_TYPE SizeAtCompileTime>
-void Activation<ValueType, NeuronType, SizeAtCompileTime>::
-  load(typename Activation<ValueType, NeuronType, SizeAtCompileTime>::InputArchive& ar,
-       typename Activation<ValueType, NeuronType, SizeAtCompileTime>::VersionType version)
+         typename NeuronType,
+         FFNN_SIZE_TYPE SizeAtCompileTime,
+         typename _HiddenLayerShape>
+void ACTIVATION::
+  load(typename ACTIVATION::InputArchive& ar,
+       typename ACTIVATION::VersionType version)
 {
-  ffnn::io::signature::check<Activation<ValueType, NeuronType, SizeAtCompileTime>>(ar);
+  ffnn::io::signature::check<ACTIVATION>(ar);
   Base::load(ar, version);
   FFNN_DEBUG_NAMED("layer::Activation", "Loaded");
 }

@@ -1,5 +1,5 @@
-\hypertarget{classffnn_1_1layer_1_1_layer}{\section{ffnn\-:\-:layer\-:\-:Layer$<$ Value\-Type, Enable\-Alignment $>$ Class Template Reference}
-\label{classffnn_1_1layer_1_1_layer}\index{ffnn\-::layer\-::\-Layer$<$ Value\-Type, Enable\-Alignment $>$@{ffnn\-::layer\-::\-Layer$<$ Value\-Type, Enable\-Alignment $>$}}
+\hypertarget{classffnn_1_1layer_1_1_layer}{\section{ffnn\-:\-:layer\-:\-:Layer$<$ Value\-Type $>$ Class Template Reference}
+\label{classffnn_1_1layer_1_1_layer}\index{ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$@{ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$}}
 }
 
 
@@ -12,92 +12,88 @@ Base object for all layer types.
 
 
 
-Inheritance diagram for ffnn\-:\-:layer\-:\-:Layer$<$ Value\-Type, Enable\-Alignment $>$\-:
+Inheritance diagram for ffnn\-:\-:layer\-:\-:Layer$<$ Value\-Type $>$\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=240pt]{classffnn_1_1layer_1_1_layer__inherit__graph}
+\includegraphics[width=350pt]{classffnn_1_1layer_1_1_layer__inherit__graph}
 \end{center}
 \end{figure}
 
 
-Collaboration diagram for ffnn\-:\-:layer\-:\-:Layer$<$ Value\-Type, Enable\-Alignment $>$\-:
-\nopagebreak
+Collaboration diagram for ffnn\-:\-:layer\-:\-:Layer$<$ Value\-Type $>$\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=240pt]{classffnn_1_1layer_1_1_layer__coll__graph}
+\includegraphics[width=204pt]{classffnn_1_1layer_1_1_layer__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-using \hyperlink{classffnn_1_1layer_1_1_layer_aef88481ace189a82a4576931ef964f7d}{Base} = \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface}{internal\-::\-Interface}$<$ Value\-Type $>$
+using \hyperlink{classffnn_1_1layer_1_1_layer_a54b8c1b013fe141fbfc7f4dc63ab6882}{Base} = \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface}{internal\-::\-Interface}$<$ Value\-Type $>$
 \begin{DoxyCompactList}\small\item\em Base type alias. \end{DoxyCompactList}\item 
-using \hyperlink{classffnn_1_1layer_1_1_layer_af2600ebac2bf33f5a1fb3307d7ef1dbc}{Self} = \hyperlink{classffnn_1_1layer_1_1_layer}{Layer}$<$ Value\-Type, Enable\-Alignment $>$
+using \hyperlink{classffnn_1_1layer_1_1_layer_a1d461b24632a849b2c26a5051a9cdbeb}{Self} = \hyperlink{classffnn_1_1layer_1_1_layer}{Layer}$<$ Value\-Type $>$
 \begin{DoxyCompactList}\small\item\em Self type alias. \end{DoxyCompactList}\item 
-typedef boost\-::shared\-\_\-ptr$<$ \hyperlink{classffnn_1_1layer_1_1_layer_af2600ebac2bf33f5a1fb3307d7ef1dbc}{Self} $>$ \hyperlink{classffnn_1_1layer_1_1_layer_a0efb2ac9125e1fa8f905bd4eed765201}{Ptr}
+typedef boost\-::shared\-\_\-ptr$<$ \hyperlink{classffnn_1_1layer_1_1_layer_a1d461b24632a849b2c26a5051a9cdbeb}{Self} $>$ \hyperlink{classffnn_1_1layer_1_1_layer_ac336e7cc01ccf0117c5a4a2baf98add4}{Ptr}
 \begin{DoxyCompactList}\small\item\em Shared resource standardization. \end{DoxyCompactList}\item 
 typedef boost\-::shared\-\_\-ptr\\*
-$<$ const \hyperlink{classffnn_1_1layer_1_1_layer_af2600ebac2bf33f5a1fb3307d7ef1dbc}{Self} $>$ \hyperlink{classffnn_1_1layer_1_1_layer_a6a0d0adbe331d1682e79d0c734fd3c72}{Const\-Ptr}
+$<$ const \hyperlink{classffnn_1_1layer_1_1_layer_a1d461b24632a849b2c26a5051a9cdbeb}{Self} $>$ \hyperlink{classffnn_1_1layer_1_1_layer_ad7c9ea196243e78b9c1e4a3a1a17988b}{Const\-Ptr}
 \begin{DoxyCompactList}\small\item\em Constant shared resource standardization. \end{DoxyCompactList}\item 
-typedef std\-::conditional\\*
-$<$ Enable\-Alignment\-::value, \\*
-std\-::vector$<$ Value\-Type, \\*
+typedef std\-::vector$<$ Value\-Type, \\*
 Eigen\-::aligned\-\_\-allocator\\*
-$<$ Value\-Type $>$ $>$, std\-::vector\\*
-$<$ Value\-Type $>$ $>$\-::type \hyperlink{classffnn_1_1layer_1_1_layer_a981f9bea21513a7b61222b1cda9294e7}{Buffer\-Type}
+$<$ Value\-Type $>$ $>$ \hyperlink{classffnn_1_1layer_1_1_layer_a3f2e9c375d9bcf80e6000e9e53ba212d}{Buffer\-Type}
 \begin{DoxyCompactList}\small\item\em Buffer type standardization. \end{DoxyCompactList}\item 
-typedef \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a7f834e3365e5199bcbcd16d9abd63941}{Base\-::\-Scalar\-Type} \hyperlink{classffnn_1_1layer_1_1_layer_acec0144b094cc88faf0771b7ca8ce54c}{Scalar\-Type}
+typedef \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a7f834e3365e5199bcbcd16d9abd63941}{Base\-::\-Scalar\-Type} \hyperlink{classffnn_1_1layer_1_1_layer_ab63020e6e3d9270a748cb22c2432c93a}{Scalar\-Type}
 \begin{DoxyCompactList}\small\item\em Scalar type standardization. \end{DoxyCompactList}\item 
-typedef \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_af0567642f60c65b5e87067226a54174b}{Base\-::\-Size\-Type} \hyperlink{classffnn_1_1layer_1_1_layer_a109e7a20f18d04e6d6f029c816b0958a}{Size\-Type}
+typedef \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_af0567642f60c65b5e87067226a54174b}{Base\-::\-Size\-Type} \hyperlink{classffnn_1_1layer_1_1_layer_aeccac281d4220fab9cebf78b004c09d1}{Size\-Type}
 \begin{DoxyCompactList}\small\item\em Size type standardization. \end{DoxyCompactList}\item 
-typedef \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_adc5bb454329ebd51ac26579a43c006fd}{Base\-::\-Offset\-Type} \hyperlink{classffnn_1_1layer_1_1_layer_a5ed88ceefa1814e88fbccfdded6c9999}{Offset\-Type}
+typedef \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_adc5bb454329ebd51ac26579a43c006fd}{Base\-::\-Offset\-Type} \hyperlink{classffnn_1_1layer_1_1_layer_a0e35ffd6e0657856f3a75323b2db9fcb}{Offset\-Type}
 \begin{DoxyCompactList}\small\item\em Offset type standardization. \end{DoxyCompactList}\item 
-typedef \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a945709b1d0ea54a51539b80d04485f5f}{Base\-::\-Shape\-Type} \hyperlink{classffnn_1_1layer_1_1_layer_a83bc836aeacb312f6507ce1b47f8f7eb}{Shape\-Type}
+typedef \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a945709b1d0ea54a51539b80d04485f5f}{Base\-::\-Shape\-Type} \hyperlink{classffnn_1_1layer_1_1_layer_ab0b09d33e24cc8ea2b4e236ca4016ab9}{Shape\-Type}
 \begin{DoxyCompactList}\small\item\em Dimension type standardization. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classffnn_1_1layer_1_1_layer_a7f4c075aeb084e8479c9a188181d51e8}{Layer} (const \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a945709b1d0ea54a51539b80d04485f5f}{Shape\-Type} \&input\-\_\-shape, const \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a945709b1d0ea54a51539b80d04485f5f}{Shape\-Type} \&output\-\_\-shape)
+\hyperlink{classffnn_1_1layer_1_1_layer_a0c766a6f5770ea0ae8a7e660523eb413}{Layer} (const \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a945709b1d0ea54a51539b80d04485f5f}{Shape\-Type} \&input\-\_\-shape, const \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a945709b1d0ea54a51539b80d04485f5f}{Shape\-Type} \&output\-\_\-shape)
 \begin{DoxyCompactList}\small\item\em Setup constructor. \end{DoxyCompactList}\item 
-virtual \hyperlink{classffnn_1_1layer_1_1_layer_a9bcc2f1e58199ee9ba7ae279d12fc177}{$\sim$\-Layer} ()
+virtual \hyperlink{classffnn_1_1layer_1_1_layer_aa466bcb2ac40d059e9b6e40be157d1b4}{$\sim$\-Layer} ()
 \item 
-virtual bool \hyperlink{classffnn_1_1layer_1_1_layer_af4d17333f47c016a379748b9318c7b50}{initialize} ()
+virtual bool \hyperlink{classffnn_1_1layer_1_1_layer_ae8a7daa81382a7965b8ab8861da7e522}{initialize} ()
 \begin{DoxyCompactList}\small\item\em Initialize the layer. \end{DoxyCompactList}\item 
-virtual bool \hyperlink{classffnn_1_1layer_1_1_layer_a5e7b9e250678604ce373ab2b82cdb8e1}{forward} ()
+virtual bool \hyperlink{classffnn_1_1layer_1_1_layer_a832518de9beb442be0764e49ab24d78d}{forward} ()
 \begin{DoxyCompactList}\small\item\em Forward value propagation. \end{DoxyCompactList}\item 
-virtual bool \hyperlink{classffnn_1_1layer_1_1_layer_ad5dc8961ffb0446f31952adc1da62746}{backward} ()
+virtual bool \hyperlink{classffnn_1_1layer_1_1_layer_a59d5f45393a1b0e4673969c65faaae2a}{backward} ()
 \begin{DoxyCompactList}\small\item\em Backward value propagation. \end{DoxyCompactList}\item 
-virtual bool \hyperlink{classffnn_1_1layer_1_1_layer_a0e87cf29789204037c4678ee4bfc8756}{update} ()
+virtual bool \hyperlink{classffnn_1_1layer_1_1_layer_a25bf06cfea93baf1c80e21d0a88a5e4a}{update} ()
 \begin{DoxyCompactList}\small\item\em Applies layer weight updates. \end{DoxyCompactList}\item 
-const \hyperlink{classffnn_1_1layer_1_1_layer_a981f9bea21513a7b61222b1cda9294e7}{Buffer\-Type} \& \hyperlink{classffnn_1_1layer_1_1_layer_a6c330b4b356e0ed768248943e763b87f}{get\-Input\-Buffer} () const 
+const \hyperlink{classffnn_1_1layer_1_1_layer_a3f2e9c375d9bcf80e6000e9e53ba212d}{Buffer\-Type} \& \hyperlink{classffnn_1_1layer_1_1_layer_a8049c939bc452bd5453227d1ce1a35f3}{get\-Input\-Buffer} () const 
 \begin{DoxyCompactList}\small\item\em Exposes const reference to raw data input buffer. \end{DoxyCompactList}\item 
-const \hyperlink{classffnn_1_1layer_1_1_layer_a981f9bea21513a7b61222b1cda9294e7}{Buffer\-Type} \& \hyperlink{classffnn_1_1layer_1_1_layer_a3f3adf7407280fcc52b529a01b265020}{get\-Backward\-Error\-Buffer} () const 
+const \hyperlink{classffnn_1_1layer_1_1_layer_a3f2e9c375d9bcf80e6000e9e53ba212d}{Buffer\-Type} \& \hyperlink{classffnn_1_1layer_1_1_layer_a0caad62750e9610e607fb18d87df63b8}{get\-Backward\-Error\-Buffer} () const 
 \begin{DoxyCompactList}\small\item\em Exposes const reference to raw data backward-\/error buffer. \end{DoxyCompactList}\item 
-virtual \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_adc5bb454329ebd51ac26579a43c006fd}{Offset\-Type} \hyperlink{classffnn_1_1layer_1_1_layer_a6e3b760b6e6fa491b78f4ed0551fda85}{connect\-To\-Forward\-Layer} (const \hyperlink{classffnn_1_1layer_1_1_layer_af2600ebac2bf33f5a1fb3307d7ef1dbc}{Self} \&next, \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_adc5bb454329ebd51ac26579a43c006fd}{Offset\-Type} offset)=0
+virtual \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_adc5bb454329ebd51ac26579a43c006fd}{Offset\-Type} \hyperlink{classffnn_1_1layer_1_1_layer_a42b960e503830c5ab13905f3e7faa939}{connect\-To\-Forward\-Layer} (const \hyperlink{classffnn_1_1layer_1_1_layer_a1d461b24632a849b2c26a5051a9cdbeb}{Self} \&next, \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_adc5bb454329ebd51ac26579a43c006fd}{Offset\-Type} offset)=0
 \begin{DoxyCompactList}\small\item\em Maps outputs of this layer to inputs of the next. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{classffnn_1_1layer_1_1_layer_a5091f6ccef4d80254dd8caf72d13d136}{save} (\hyperlink{classffnn_1_1traits_1_1_serializable_a08d986df75d363fa79506d4f6045cb9f}{Output\-Archive} \&ar, \hyperlink{classffnn_1_1traits_1_1_serializable_a08924b3b7d20cb3cb6eafe517d4f7b30}{Version\-Type} version) const 
+void \hyperlink{classffnn_1_1layer_1_1_layer_ac265fc929a178b111337226dd1cb62b6}{save} (\hyperlink{classffnn_1_1traits_1_1_serializable_a08d986df75d363fa79506d4f6045cb9f}{Output\-Archive} \&ar, \hyperlink{classffnn_1_1traits_1_1_serializable_a08924b3b7d20cb3cb6eafe517d4f7b30}{Version\-Type} version) const 
 \begin{DoxyCompactList}\small\item\em Save serializer. \end{DoxyCompactList}\item 
-void \hyperlink{classffnn_1_1layer_1_1_layer_a66c56645e54f6e864fb716fdc8858828}{load} (\hyperlink{classffnn_1_1traits_1_1_serializable_a6e626759259f8f370dd4303b4441a234}{Input\-Archive} \&ar, \hyperlink{classffnn_1_1traits_1_1_serializable_a08924b3b7d20cb3cb6eafe517d4f7b30}{Version\-Type} version)
+void \hyperlink{classffnn_1_1layer_1_1_layer_a23f5f3c958d888632010327471c7b012}{load} (\hyperlink{classffnn_1_1traits_1_1_serializable_a6e626759259f8f370dd4303b4441a234}{Input\-Archive} \&ar, \hyperlink{classffnn_1_1traits_1_1_serializable_a08924b3b7d20cb3cb6eafe517d4f7b30}{Version\-Type} version)
 \begin{DoxyCompactList}\small\item\em Load serializer. \end{DoxyCompactList}\item 
-\hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_af0567642f60c65b5e87067226a54174b}{Size\-Type} \hyperlink{classffnn_1_1layer_1_1_layer_ad1ca9fa504ca3fc9847d5489dc392ea8}{evaluate\-Input\-Size} () const 
+\hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_af0567642f60c65b5e87067226a54174b}{Size\-Type} \hyperlink{classffnn_1_1layer_1_1_layer_afdc489e04b2b1e716940f598ac474e4c}{evaluate\-Input\-Size} () const 
 \begin{DoxyCompactList}\small\item\em Counts the number of inputs from outputs of previous layers. \end{DoxyCompactList}\item 
-\hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_adc5bb454329ebd51ac26579a43c006fd}{Offset\-Type} \hyperlink{classffnn_1_1layer_1_1_layer_a303d4fc17e59e1cc3081e5a28d6d9417}{connect\-Input\-Layers} ()
+\hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_adc5bb454329ebd51ac26579a43c006fd}{Offset\-Type} \hyperlink{classffnn_1_1layer_1_1_layer_a9d692bce889ddc693e5bac8dda5d4cd2}{connect\-Input\-Layers} ()
 \begin{DoxyCompactList}\small\item\em Connects all previous layer to \hyperlink{classffnn_1_1layer_1_1_layer}{Layer} input. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 std\-::map$<$ std\-::string, \\*
-typename \hyperlink{classffnn_1_1layer_1_1_layer_a0efb2ac9125e1fa8f905bd4eed765201}{Self\-::\-Ptr} $>$ \hyperlink{classffnn_1_1layer_1_1_layer_ad665f209da80c13770f2b6a790d3ed4f}{prev\-\_\-}
+typename \hyperlink{classffnn_1_1layer_1_1_layer_ac336e7cc01ccf0117c5a4a2baf98add4}{Self\-::\-Ptr} $>$ \hyperlink{classffnn_1_1layer_1_1_layer_abe139156722efe30288b00becbd52cb9}{prev\-\_\-}
 \begin{DoxyCompactList}\small\item\em Pointers to previous layers. \end{DoxyCompactList}\item 
-\hyperlink{classffnn_1_1layer_1_1_layer_a981f9bea21513a7b61222b1cda9294e7}{Buffer\-Type} \hyperlink{classffnn_1_1layer_1_1_layer_a8595d0898a1530aaec71aec487037655}{input\-\_\-buffer\-\_\-}
+\hyperlink{classffnn_1_1layer_1_1_layer_a3f2e9c375d9bcf80e6000e9e53ba212d}{Buffer\-Type} \hyperlink{classffnn_1_1layer_1_1_layer_ad4b5ac0708d6ada04d62df4fad377f1a}{input\-\_\-buffer\-\_\-}
 \begin{DoxyCompactList}\small\item\em Raw input value buffer. \end{DoxyCompactList}\item 
-\hyperlink{classffnn_1_1layer_1_1_layer_a981f9bea21513a7b61222b1cda9294e7}{Buffer\-Type} \hyperlink{classffnn_1_1layer_1_1_layer_a1be25b9933d64c2964b4260db770ad48}{backward\-\_\-error\-\_\-buffer\-\_\-}
+\hyperlink{classffnn_1_1layer_1_1_layer_a3f2e9c375d9bcf80e6000e9e53ba212d}{Buffer\-Type} \hyperlink{classffnn_1_1layer_1_1_layer_a79d676e9b8bd04d1a438266206d4b321}{backward\-\_\-error\-\_\-buffer\-\_\-}
 \begin{DoxyCompactList}\small\item\em Raw bakward error value buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
@@ -107,70 +103,70 @@ typename \hyperlink{classffnn_1_1layer_1_1_layer_a0efb2ac9125e1fa8f905bd4eed7652
 
 
 \subsection{Detailed Description}
-\subsubsection*{template$<$typename Value\-Type, class Enable\-Alignment = std\-::true\-\_\-type$>$class ffnn\-::layer\-::\-Layer$<$ Value\-Type, Enable\-Alignment $>$}
+\subsubsection*{template$<$typename Value\-Type$>$class ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$}
 
 Base object for all layer types. 
 
 \subsection{Member Typedef Documentation}
-\hypertarget{classffnn_1_1layer_1_1_layer_aef88481ace189a82a4576931ef964f7d}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!Base@{Base}}
+\hypertarget{classffnn_1_1layer_1_1_layer_a54b8c1b013fe141fbfc7f4dc63ab6882}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!Base@{Base}}
 \index{Base@{Base}!ffnn::layer::Layer@{ffnn\-::layer\-::\-Layer}}
-\subsubsection[{Base}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, class Enable\-Alignment = std\-::true\-\_\-type$>$ using {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type, Enable\-Alignment $>$\-::{\bf Base} =  {\bf internal\-::\-Interface}$<$Value\-Type$>$}}\label{classffnn_1_1layer_1_1_layer_aef88481ace189a82a4576931ef964f7d}
+\subsubsection[{Base}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type$>$ using {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type $>$\-::{\bf Base} =  {\bf internal\-::\-Interface}$<$Value\-Type$>$}}\label{classffnn_1_1layer_1_1_layer_a54b8c1b013fe141fbfc7f4dc63ab6882}
 
 
 Base type alias. 
 
-\hypertarget{classffnn_1_1layer_1_1_layer_a981f9bea21513a7b61222b1cda9294e7}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!Buffer\-Type@{Buffer\-Type}}
+\hypertarget{classffnn_1_1layer_1_1_layer_a3f2e9c375d9bcf80e6000e9e53ba212d}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!Buffer\-Type@{Buffer\-Type}}
 \index{Buffer\-Type@{Buffer\-Type}!ffnn::layer::Layer@{ffnn\-::layer\-::\-Layer}}
-\subsubsection[{Buffer\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, class Enable\-Alignment = std\-::true\-\_\-type$>$ typedef std\-::conditional$<$ Enable\-Alignment\-::value, std\-::vector$<$Value\-Type, Eigen\-::aligned\-\_\-allocator$<$Value\-Type$>$ $>$, std\-::vector$<$Value\-Type$>$ $>$\-::type {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type, Enable\-Alignment $>$\-::{\bf Buffer\-Type}}}\label{classffnn_1_1layer_1_1_layer_a981f9bea21513a7b61222b1cda9294e7}
+\subsubsection[{Buffer\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type$>$ typedef std\-::vector$<$Value\-Type, Eigen\-::aligned\-\_\-allocator$<$Value\-Type$>$ $>$ {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type $>$\-::{\bf Buffer\-Type}}}\label{classffnn_1_1layer_1_1_layer_a3f2e9c375d9bcf80e6000e9e53ba212d}
 
 
 Buffer type standardization. 
 
-\hypertarget{classffnn_1_1layer_1_1_layer_a6a0d0adbe331d1682e79d0c734fd3c72}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!Const\-Ptr@{Const\-Ptr}}
+\hypertarget{classffnn_1_1layer_1_1_layer_ad7c9ea196243e78b9c1e4a3a1a17988b}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!Const\-Ptr@{Const\-Ptr}}
 \index{Const\-Ptr@{Const\-Ptr}!ffnn::layer::Layer@{ffnn\-::layer\-::\-Layer}}
-\subsubsection[{Const\-Ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, class Enable\-Alignment = std\-::true\-\_\-type$>$ typedef boost\-::shared\-\_\-ptr$<$const {\bf Self}$>$ {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type, Enable\-Alignment $>$\-::{\bf Const\-Ptr}}}\label{classffnn_1_1layer_1_1_layer_a6a0d0adbe331d1682e79d0c734fd3c72}
+\subsubsection[{Const\-Ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type$>$ typedef boost\-::shared\-\_\-ptr$<$const {\bf Self}$>$ {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type $>$\-::{\bf Const\-Ptr}}}\label{classffnn_1_1layer_1_1_layer_ad7c9ea196243e78b9c1e4a3a1a17988b}
 
 
 Constant shared resource standardization. 
 
-\hypertarget{classffnn_1_1layer_1_1_layer_a5ed88ceefa1814e88fbccfdded6c9999}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!Offset\-Type@{Offset\-Type}}
+\hypertarget{classffnn_1_1layer_1_1_layer_a0e35ffd6e0657856f3a75323b2db9fcb}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!Offset\-Type@{Offset\-Type}}
 \index{Offset\-Type@{Offset\-Type}!ffnn::layer::Layer@{ffnn\-::layer\-::\-Layer}}
-\subsubsection[{Offset\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, class Enable\-Alignment = std\-::true\-\_\-type$>$ typedef {\bf Base\-::\-Offset\-Type} {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type, Enable\-Alignment $>$\-::{\bf Offset\-Type}}}\label{classffnn_1_1layer_1_1_layer_a5ed88ceefa1814e88fbccfdded6c9999}
+\subsubsection[{Offset\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type$>$ typedef {\bf Base\-::\-Offset\-Type} {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type $>$\-::{\bf Offset\-Type}}}\label{classffnn_1_1layer_1_1_layer_a0e35ffd6e0657856f3a75323b2db9fcb}
 
 
 Offset type standardization. 
 
-\hypertarget{classffnn_1_1layer_1_1_layer_a0efb2ac9125e1fa8f905bd4eed765201}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!Ptr@{Ptr}}
+\hypertarget{classffnn_1_1layer_1_1_layer_ac336e7cc01ccf0117c5a4a2baf98add4}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!Ptr@{Ptr}}
 \index{Ptr@{Ptr}!ffnn::layer::Layer@{ffnn\-::layer\-::\-Layer}}
-\subsubsection[{Ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, class Enable\-Alignment = std\-::true\-\_\-type$>$ typedef boost\-::shared\-\_\-ptr$<${\bf Self}$>$ {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type, Enable\-Alignment $>$\-::{\bf Ptr}}}\label{classffnn_1_1layer_1_1_layer_a0efb2ac9125e1fa8f905bd4eed765201}
+\subsubsection[{Ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type$>$ typedef boost\-::shared\-\_\-ptr$<${\bf Self}$>$ {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type $>$\-::{\bf Ptr}}}\label{classffnn_1_1layer_1_1_layer_ac336e7cc01ccf0117c5a4a2baf98add4}
 
 
 Shared resource standardization. 
 
-\hypertarget{classffnn_1_1layer_1_1_layer_acec0144b094cc88faf0771b7ca8ce54c}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!Scalar\-Type@{Scalar\-Type}}
+\hypertarget{classffnn_1_1layer_1_1_layer_ab63020e6e3d9270a748cb22c2432c93a}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!Scalar\-Type@{Scalar\-Type}}
 \index{Scalar\-Type@{Scalar\-Type}!ffnn::layer::Layer@{ffnn\-::layer\-::\-Layer}}
-\subsubsection[{Scalar\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, class Enable\-Alignment = std\-::true\-\_\-type$>$ typedef {\bf Base\-::\-Scalar\-Type} {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type, Enable\-Alignment $>$\-::{\bf Scalar\-Type}}}\label{classffnn_1_1layer_1_1_layer_acec0144b094cc88faf0771b7ca8ce54c}
+\subsubsection[{Scalar\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type$>$ typedef {\bf Base\-::\-Scalar\-Type} {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type $>$\-::{\bf Scalar\-Type}}}\label{classffnn_1_1layer_1_1_layer_ab63020e6e3d9270a748cb22c2432c93a}
 
 
 Scalar type standardization. 
 
-\hypertarget{classffnn_1_1layer_1_1_layer_af2600ebac2bf33f5a1fb3307d7ef1dbc}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!Self@{Self}}
+\hypertarget{classffnn_1_1layer_1_1_layer_a1d461b24632a849b2c26a5051a9cdbeb}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!Self@{Self}}
 \index{Self@{Self}!ffnn::layer::Layer@{ffnn\-::layer\-::\-Layer}}
-\subsubsection[{Self}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, class Enable\-Alignment = std\-::true\-\_\-type$>$ using {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type, Enable\-Alignment $>$\-::{\bf Self} =  {\bf Layer}$<$Value\-Type, Enable\-Alignment$>$}}\label{classffnn_1_1layer_1_1_layer_af2600ebac2bf33f5a1fb3307d7ef1dbc}
+\subsubsection[{Self}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type$>$ using {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type $>$\-::{\bf Self} =  {\bf Layer}$<$Value\-Type$>$}}\label{classffnn_1_1layer_1_1_layer_a1d461b24632a849b2c26a5051a9cdbeb}
 
 
 Self type alias. 
 
-\hypertarget{classffnn_1_1layer_1_1_layer_a83bc836aeacb312f6507ce1b47f8f7eb}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!Shape\-Type@{Shape\-Type}}
+\hypertarget{classffnn_1_1layer_1_1_layer_ab0b09d33e24cc8ea2b4e236ca4016ab9}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!Shape\-Type@{Shape\-Type}}
 \index{Shape\-Type@{Shape\-Type}!ffnn::layer::Layer@{ffnn\-::layer\-::\-Layer}}
-\subsubsection[{Shape\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, class Enable\-Alignment = std\-::true\-\_\-type$>$ typedef {\bf Base\-::\-Shape\-Type} {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type, Enable\-Alignment $>$\-::{\bf Shape\-Type}}}\label{classffnn_1_1layer_1_1_layer_a83bc836aeacb312f6507ce1b47f8f7eb}
+\subsubsection[{Shape\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type$>$ typedef {\bf Base\-::\-Shape\-Type} {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type $>$\-::{\bf Shape\-Type}}}\label{classffnn_1_1layer_1_1_layer_ab0b09d33e24cc8ea2b4e236ca4016ab9}
 
 
 Dimension type standardization. 
 
-\hypertarget{classffnn_1_1layer_1_1_layer_a109e7a20f18d04e6d6f029c816b0958a}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!Size\-Type@{Size\-Type}}
+\hypertarget{classffnn_1_1layer_1_1_layer_aeccac281d4220fab9cebf78b004c09d1}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!Size\-Type@{Size\-Type}}
 \index{Size\-Type@{Size\-Type}!ffnn::layer::Layer@{ffnn\-::layer\-::\-Layer}}
-\subsubsection[{Size\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, class Enable\-Alignment = std\-::true\-\_\-type$>$ typedef {\bf Base\-::\-Size\-Type} {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type, Enable\-Alignment $>$\-::{\bf Size\-Type}}}\label{classffnn_1_1layer_1_1_layer_a109e7a20f18d04e6d6f029c816b0958a}
+\subsubsection[{Size\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type$>$ typedef {\bf Base\-::\-Size\-Type} {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type $>$\-::{\bf Size\-Type}}}\label{classffnn_1_1layer_1_1_layer_aeccac281d4220fab9cebf78b004c09d1}
 
 
 Size type standardization. 
@@ -178,14 +174,14 @@ Size type standardization.
 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classffnn_1_1layer_1_1_layer_a7f4c075aeb084e8479c9a188181d51e8}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!Layer@{Layer}}
+\hypertarget{classffnn_1_1layer_1_1_layer_a0c766a6f5770ea0ae8a7e660523eb413}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!Layer@{Layer}}
 \index{Layer@{Layer}!ffnn::layer::Layer@{ffnn\-::layer\-::\-Layer}}
-\subsubsection[{Layer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , class Enable\-Alignment $>$ {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type, Enable\-Alignment $>$\-::{\bf Layer} (
+\subsubsection[{Layer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type $>$ {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type $>$\-::{\bf Layer} (
 \begin{DoxyParamCaption}
 \item[{const {\bf Shape\-Type} \&}]{input\-\_\-shape, }
 \item[{const {\bf Shape\-Type} \&}]{output\-\_\-shape}
 \end{DoxyParamCaption}
-)}}\label{classffnn_1_1layer_1_1_layer_a7f4c075aeb084e8479c9a188181d51e8}
+)}}\label{classffnn_1_1layer_1_1_layer_a0c766a6f5770ea0ae8a7e660523eb413}
 
 
 Setup constructor. 
@@ -197,23 +193,23 @@ Setup constructor.
 {\em output\-\_\-shape} & number of outputs from the \hyperlink{classffnn_1_1layer_1_1_layer}{Layer} \\
 \hline
 \end{DoxyParams}
-\hypertarget{classffnn_1_1layer_1_1_layer_a9bcc2f1e58199ee9ba7ae279d12fc177}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!$\sim$\-Layer@{$\sim$\-Layer}}
+\hypertarget{classffnn_1_1layer_1_1_layer_aa466bcb2ac40d059e9b6e40be157d1b4}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!$\sim$\-Layer@{$\sim$\-Layer}}
 \index{$\sim$\-Layer@{$\sim$\-Layer}!ffnn::layer::Layer@{ffnn\-::layer\-::\-Layer}}
-\subsubsection[{$\sim$\-Layer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , class Enable\-Alignment $>$ {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type, Enable\-Alignment $>$\-::$\sim${\bf Layer} (
+\subsubsection[{$\sim$\-Layer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type $>$ {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type $>$\-::$\sim${\bf Layer} (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_layer_a9bcc2f1e58199ee9ba7ae279d12fc177}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_layer_aa466bcb2ac40d059e9b6e40be157d1b4}
 
 
 \subsection{Member Function Documentation}
-\hypertarget{classffnn_1_1layer_1_1_layer_ad5dc8961ffb0446f31952adc1da62746}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!backward@{backward}}
+\hypertarget{classffnn_1_1layer_1_1_layer_a59d5f45393a1b0e4673969c65faaae2a}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!backward@{backward}}
 \index{backward@{backward}!ffnn::layer::Layer@{ffnn\-::layer\-::\-Layer}}
-\subsubsection[{backward}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, class Enable\-Alignment = std\-::true\-\_\-type$>$ virtual bool {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type, Enable\-Alignment $>$\-::backward (
+\subsubsection[{backward}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type$>$ virtual bool {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type $>$\-::backward (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_layer_ad5dc8961ffb0446f31952adc1da62746}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_layer_a59d5f45393a1b0e4673969c65faaae2a}
 
 
 Backward value propagation. 
@@ -227,15 +223,15 @@ Backward value propagation.
 \end{DoxyRetVals}
 
 
-Reimplemented in \hyperlink{classffnn_1_1layer_1_1_convolution_af079973fdb795f4ccd902a00c4d96d3b}{ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode $>$}, \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_a597ea83c83e8f4f64a1fb7f17a1ea015}{ffnn\-::layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$}, \hyperlink{classffnn_1_1layer_1_1_fully_connected_afd5c1a006cf33a47cb7e2a982fe4cd6d}{ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$}, \hyperlink{classffnn_1_1layer_1_1_hidden_a246152dfed00bbacb94fbbd6712acea0}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type, \-\_\-\-Input\-Mapping\-Type, \-\_\-\-Output\-Mapping\-Type $>$}, \hyperlink{classffnn_1_1layer_1_1_hidden_a246152dfed00bbacb94fbbd6712acea0}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, Inputs\-At\-Compile\-Time, 1, Outputs\-At\-Compile\-Time, 1 $>$}, \hyperlink{classffnn_1_1layer_1_1_hidden_a246152dfed00bbacb94fbbd6712acea0}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, Size\-At\-Compile\-Time, 1, Size\-At\-Compile\-Time, 1 $>$}, \hyperlink{classffnn_1_1layer_1_1_hidden_a246152dfed00bbacb94fbbd6712acea0}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, embed\-\_\-dimension$<$ Mode, Col\-Embedding $>$(\-Height\-At\-Compile\-Time, Depth\-At\-Compile\-Time), embed\-\_\-dimension$<$ Mode, Row\-Embedding $>$(\-Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time), embed\-\_\-dimension$<$ Mode, Col\-Embedding $>$(output\-\_\-dimension(\-Height\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Stride\-At\-Compile\-Time), Filter\-Count\-At\-Compile\-Time), embed\-\_\-dimension$<$ Mode, Row\-Embedding $>$(output\-\_\-dimension(\-Width\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Stride\-At\-Compile\-Time), Filter\-Count\-At\-Compile\-Time)$>$}, and \hyperlink{classffnn_1_1layer_1_1_activation_a3c4284245343f2132dd28eaf7ffbed47}{ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time $>$}.
+Reimplemented in \hyperlink{classffnn_1_1layer_1_1_fully_connected_ab4a63eb87bd3f2288258b341fcfd165f}{ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}, \hyperlink{classffnn_1_1layer_1_1_convolution_ab3b7e1b317090930a52712723cd822aa}{ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode, \-\_\-\-Hidden\-Layer\-Shape $>$}, \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_a597ea83c83e8f4f64a1fb7f17a1ea015}{ffnn\-::layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}, \hyperlink{classffnn_1_1layer_1_1_hidden_aac0ee89390b02ff4731678883dd402dd}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, Layer\-Shape, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type $>$}, \hyperlink{classffnn_1_1layer_1_1_hidden_aac0ee89390b02ff4731678883dd402dd}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, \-\_\-\-Hidden\-Layer\-Shape $>$}, and \hyperlink{classffnn_1_1layer_1_1_activation_a3c4284245343f2132dd28eaf7ffbed47}{ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}.
 
-\hypertarget{classffnn_1_1layer_1_1_layer_a303d4fc17e59e1cc3081e5a28d6d9417}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!connect\-Input\-Layers@{connect\-Input\-Layers}}
+\hypertarget{classffnn_1_1layer_1_1_layer_a9d692bce889ddc693e5bac8dda5d4cd2}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!connect\-Input\-Layers@{connect\-Input\-Layers}}
 \index{connect\-Input\-Layers@{connect\-Input\-Layers}!ffnn::layer::Layer@{ffnn\-::layer\-::\-Layer}}
-\subsubsection[{connect\-Input\-Layers}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , class Enable\-Alignment $>$ {\bf Layer}$<$ Value\-Type, Enable\-Alignment $>$\-::{\bf Offset\-Type} {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type, Enable\-Alignment $>$\-::connect\-Input\-Layers (
+\subsubsection[{connect\-Input\-Layers}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type $>$ {\bf Layer}$<$ Value\-Type $>$\-::{\bf Offset\-Type} {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type $>$\-::connect\-Input\-Layers (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classffnn_1_1layer_1_1_layer_a303d4fc17e59e1cc3081e5a28d6d9417}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classffnn_1_1layer_1_1_layer_a9d692bce889ddc693e5bac8dda5d4cd2}
 
 
 Connects all previous layer to \hyperlink{classffnn_1_1layer_1_1_layer}{Layer} input. 
@@ -245,14 +241,14 @@ Connects all previous layer to \hyperlink{classffnn_1_1layer_1_1_layer}{Layer} i
 {\em $<$code$>$input\-\_\-shape\-\_\-.\-size()$<$/code$>$} & \\
 \hline
 \end{DoxyRetVals}
-\hypertarget{classffnn_1_1layer_1_1_layer_a6e3b760b6e6fa491b78f4ed0551fda85}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!connect\-To\-Forward\-Layer@{connect\-To\-Forward\-Layer}}
+\hypertarget{classffnn_1_1layer_1_1_layer_a42b960e503830c5ab13905f3e7faa939}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!connect\-To\-Forward\-Layer@{connect\-To\-Forward\-Layer}}
 \index{connect\-To\-Forward\-Layer@{connect\-To\-Forward\-Layer}!ffnn::layer::Layer@{ffnn\-::layer\-::\-Layer}}
-\subsubsection[{connect\-To\-Forward\-Layer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, class Enable\-Alignment = std\-::true\-\_\-type$>$ virtual {\bf Offset\-Type} {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type, Enable\-Alignment $>$\-::connect\-To\-Forward\-Layer (
+\subsubsection[{connect\-To\-Forward\-Layer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type$>$ virtual {\bf Offset\-Type} {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type $>$\-::connect\-To\-Forward\-Layer (
 \begin{DoxyParamCaption}
 \item[{const {\bf Self} \&}]{next, }
 \item[{{\bf Offset\-Type}}]{offset}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classffnn_1_1layer_1_1_layer_a6e3b760b6e6fa491b78f4ed0551fda85}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classffnn_1_1layer_1_1_layer_a42b960e503830c5ab13905f3e7faa939}
 
 
 Maps outputs of this layer to inputs of the next. 
@@ -269,13 +265,17 @@ Maps outputs of this layer to inputs of the next.
 {\em $<$code$>$offset} & + output\-\_\-shape\-\_\-.\-size() \\
 \hline
 \end{DoxyRetVals}
-\hypertarget{classffnn_1_1layer_1_1_layer_ad1ca9fa504ca3fc9847d5489dc392ea8}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!evaluate\-Input\-Size@{evaluate\-Input\-Size}}
+
+
+Implemented in \hyperlink{classffnn_1_1layer_1_1_hidden_ab832b0f6450b963fcb54cd28d1c88e39}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, \-\_\-\-Hidden\-Layer\-Shape $>$}.
+
+\hypertarget{classffnn_1_1layer_1_1_layer_afdc489e04b2b1e716940f598ac474e4c}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!evaluate\-Input\-Size@{evaluate\-Input\-Size}}
 \index{evaluate\-Input\-Size@{evaluate\-Input\-Size}!ffnn::layer::Layer@{ffnn\-::layer\-::\-Layer}}
-\subsubsection[{evaluate\-Input\-Size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , class Enable\-Alignment $>$ {\bf Layer}$<$ Value\-Type, Enable\-Alignment $>$\-::{\bf Size\-Type} {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type, Enable\-Alignment $>$\-::evaluate\-Input\-Size (
+\subsubsection[{evaluate\-Input\-Size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type $>$ {\bf Layer}$<$ Value\-Type $>$\-::{\bf Size\-Type} {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type $>$\-::evaluate\-Input\-Size (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_layer_ad1ca9fa504ca3fc9847d5489dc392ea8}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_layer_afdc489e04b2b1e716940f598ac474e4c}
 
 
 Counts the number of inputs from outputs of previous layers. 
@@ -287,13 +287,13 @@ total input count
 
 Reimplemented from \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_aae590ebe90408887805743c5e364dd45}{ffnn\-::layer\-::internal\-::\-Interface$<$ Value\-Type $>$}.
 
-\hypertarget{classffnn_1_1layer_1_1_layer_a5e7b9e250678604ce373ab2b82cdb8e1}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!forward@{forward}}
+\hypertarget{classffnn_1_1layer_1_1_layer_a832518de9beb442be0764e49ab24d78d}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!forward@{forward}}
 \index{forward@{forward}!ffnn::layer::Layer@{ffnn\-::layer\-::\-Layer}}
-\subsubsection[{forward}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, class Enable\-Alignment = std\-::true\-\_\-type$>$ virtual bool {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type, Enable\-Alignment $>$\-::forward (
+\subsubsection[{forward}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type$>$ virtual bool {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type $>$\-::forward (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_layer_a5e7b9e250678604ce373ab2b82cdb8e1}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_layer_a832518de9beb442be0764e49ab24d78d}
 
 
 Forward value propagation. 
@@ -307,37 +307,37 @@ Forward value propagation.
 \end{DoxyRetVals}
 
 
-Reimplemented in \hyperlink{classffnn_1_1layer_1_1_convolution_a7da09bc158b4c6f61bc02ea3bc6f8cee}{ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode $>$}, \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_a53f1d9a2edfdd2e47164b24121c23acc}{ffnn\-::layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$}, \hyperlink{classffnn_1_1layer_1_1_fully_connected_ac49087ab2d66019f2d0244c76987fa50}{ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$}, \hyperlink{classffnn_1_1layer_1_1_hidden_a41fdfb60b5340c0af46c7c731237e280}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type, \-\_\-\-Input\-Mapping\-Type, \-\_\-\-Output\-Mapping\-Type $>$}, \hyperlink{classffnn_1_1layer_1_1_hidden_a41fdfb60b5340c0af46c7c731237e280}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, Inputs\-At\-Compile\-Time, 1, Outputs\-At\-Compile\-Time, 1 $>$}, \hyperlink{classffnn_1_1layer_1_1_hidden_a41fdfb60b5340c0af46c7c731237e280}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, Size\-At\-Compile\-Time, 1, Size\-At\-Compile\-Time, 1 $>$}, \hyperlink{classffnn_1_1layer_1_1_hidden_a41fdfb60b5340c0af46c7c731237e280}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, embed\-\_\-dimension$<$ Mode, Col\-Embedding $>$(\-Height\-At\-Compile\-Time, Depth\-At\-Compile\-Time), embed\-\_\-dimension$<$ Mode, Row\-Embedding $>$(\-Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time), embed\-\_\-dimension$<$ Mode, Col\-Embedding $>$(output\-\_\-dimension(\-Height\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Stride\-At\-Compile\-Time), Filter\-Count\-At\-Compile\-Time), embed\-\_\-dimension$<$ Mode, Row\-Embedding $>$(output\-\_\-dimension(\-Width\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Stride\-At\-Compile\-Time), Filter\-Count\-At\-Compile\-Time)$>$}, and \hyperlink{classffnn_1_1layer_1_1_activation_aa7f88c8bc20589dc51d9dd615b8c4580}{ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time $>$}.
+Reimplemented in \hyperlink{classffnn_1_1layer_1_1_fully_connected_a350e7910bd416f67d30113425ea74f59}{ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}, \hyperlink{classffnn_1_1layer_1_1_convolution_a09216fc4ade0c00c2ddf97e5eacadec1}{ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode, \-\_\-\-Hidden\-Layer\-Shape $>$}, \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_a53f1d9a2edfdd2e47164b24121c23acc}{ffnn\-::layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}, \hyperlink{classffnn_1_1layer_1_1_hidden_a600b86d72826e8be3eafa53e040e9cbe}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, Layer\-Shape, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type $>$}, \hyperlink{classffnn_1_1layer_1_1_hidden_a600b86d72826e8be3eafa53e040e9cbe}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, \-\_\-\-Hidden\-Layer\-Shape $>$}, and \hyperlink{classffnn_1_1layer_1_1_activation_aa7f88c8bc20589dc51d9dd615b8c4580}{ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}.
 
-\hypertarget{classffnn_1_1layer_1_1_layer_a3f3adf7407280fcc52b529a01b265020}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!get\-Backward\-Error\-Buffer@{get\-Backward\-Error\-Buffer}}
+\hypertarget{classffnn_1_1layer_1_1_layer_a0caad62750e9610e607fb18d87df63b8}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!get\-Backward\-Error\-Buffer@{get\-Backward\-Error\-Buffer}}
 \index{get\-Backward\-Error\-Buffer@{get\-Backward\-Error\-Buffer}!ffnn::layer::Layer@{ffnn\-::layer\-::\-Layer}}
-\subsubsection[{get\-Backward\-Error\-Buffer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, class Enable\-Alignment = std\-::true\-\_\-type$>$ const {\bf Buffer\-Type}\& {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type, Enable\-Alignment $>$\-::get\-Backward\-Error\-Buffer (
+\subsubsection[{get\-Backward\-Error\-Buffer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type$>$ const {\bf Buffer\-Type}\& {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type $>$\-::get\-Backward\-Error\-Buffer (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1_layer_a3f3adf7407280fcc52b529a01b265020}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1_layer_a0caad62750e9610e607fb18d87df63b8}
 
 
 Exposes const reference to raw data backward-\/error buffer. 
 
-\hypertarget{classffnn_1_1layer_1_1_layer_a6c330b4b356e0ed768248943e763b87f}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!get\-Input\-Buffer@{get\-Input\-Buffer}}
+\hypertarget{classffnn_1_1layer_1_1_layer_a8049c939bc452bd5453227d1ce1a35f3}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!get\-Input\-Buffer@{get\-Input\-Buffer}}
 \index{get\-Input\-Buffer@{get\-Input\-Buffer}!ffnn::layer::Layer@{ffnn\-::layer\-::\-Layer}}
-\subsubsection[{get\-Input\-Buffer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, class Enable\-Alignment = std\-::true\-\_\-type$>$ const {\bf Buffer\-Type}\& {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type, Enable\-Alignment $>$\-::get\-Input\-Buffer (
+\subsubsection[{get\-Input\-Buffer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type$>$ const {\bf Buffer\-Type}\& {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type $>$\-::get\-Input\-Buffer (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1_layer_a6c330b4b356e0ed768248943e763b87f}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1_layer_a8049c939bc452bd5453227d1ce1a35f3}
 
 
 Exposes const reference to raw data input buffer. 
 
-\hypertarget{classffnn_1_1layer_1_1_layer_af4d17333f47c016a379748b9318c7b50}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!initialize@{initialize}}
+\hypertarget{classffnn_1_1layer_1_1_layer_ae8a7daa81382a7965b8ab8861da7e522}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!initialize@{initialize}}
 \index{initialize@{initialize}!ffnn::layer::Layer@{ffnn\-::layer\-::\-Layer}}
-\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , class Enable\-Alignment $>$ bool {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type, Enable\-Alignment $>$\-::initialize (
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type $>$ bool {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type $>$\-::initialize (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_layer_af4d17333f47c016a379748b9318c7b50}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_layer_ae8a7daa81382a7965b8ab8861da7e522}
 
 
 Initialize the layer. 
@@ -348,16 +348,16 @@ Implements \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a4159d9d163a0
 
 
 
-Reimplemented in \hyperlink{classffnn_1_1layer_1_1_convolution_ad438bd0584804863bd064a493e2892a1}{ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode $>$}, \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_abb2966b5e7813c43ae2ea5448188a9fb}{ffnn\-::layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$}, \hyperlink{classffnn_1_1layer_1_1_fully_connected_aec414194202f845b866b0e8b2a51235c}{ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$}, \hyperlink{classffnn_1_1layer_1_1_hidden_a3b5458a771fcf2371376049d85afbc92}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type, \-\_\-\-Input\-Mapping\-Type, \-\_\-\-Output\-Mapping\-Type $>$}, \hyperlink{classffnn_1_1layer_1_1_hidden_a3b5458a771fcf2371376049d85afbc92}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, Inputs\-At\-Compile\-Time, 1, Outputs\-At\-Compile\-Time, 1 $>$}, \hyperlink{classffnn_1_1layer_1_1_hidden_a3b5458a771fcf2371376049d85afbc92}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, Size\-At\-Compile\-Time, 1, Size\-At\-Compile\-Time, 1 $>$}, \hyperlink{classffnn_1_1layer_1_1_hidden_a3b5458a771fcf2371376049d85afbc92}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, embed\-\_\-dimension$<$ Mode, Col\-Embedding $>$(\-Height\-At\-Compile\-Time, Depth\-At\-Compile\-Time), embed\-\_\-dimension$<$ Mode, Row\-Embedding $>$(\-Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time), embed\-\_\-dimension$<$ Mode, Col\-Embedding $>$(output\-\_\-dimension(\-Height\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Stride\-At\-Compile\-Time), Filter\-Count\-At\-Compile\-Time), embed\-\_\-dimension$<$ Mode, Row\-Embedding $>$(output\-\_\-dimension(\-Width\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Stride\-At\-Compile\-Time), Filter\-Count\-At\-Compile\-Time)$>$}, \hyperlink{classffnn_1_1layer_1_1_input_ac3de713973a8f67dc348a088ab6dbe1c}{ffnn\-::layer\-::\-Input$<$ Value\-Type, Network\-Inputs\-At\-Compile\-Time $>$}, \hyperlink{classffnn_1_1layer_1_1_activation_ae73ef2d36d9c5ce3c219f6a51cba3c35}{ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time $>$}, and \hyperlink{classffnn_1_1layer_1_1_output_ab9ebd05595bc6b75718191aa48e70ad2}{ffnn\-::layer\-::\-Output$<$ Value\-Type, Network\-Outputs\-At\-Compile\-Time $>$}.
+Reimplemented in \hyperlink{classffnn_1_1layer_1_1_fully_connected_a55089e2810d6848950da5ca33000da8a}{ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}, \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_abb2966b5e7813c43ae2ea5448188a9fb}{ffnn\-::layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}, \hyperlink{classffnn_1_1layer_1_1_convolution_a2ae5762f45886e132eef09c8550e950a}{ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode, \-\_\-\-Hidden\-Layer\-Shape $>$}, \hyperlink{classffnn_1_1layer_1_1_hidden_a0bf259cd8d070ce21c90a34d86b173ee}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, Layer\-Shape, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type $>$}, \hyperlink{classffnn_1_1layer_1_1_hidden_a0bf259cd8d070ce21c90a34d86b173ee}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, \-\_\-\-Hidden\-Layer\-Shape $>$}, \hyperlink{classffnn_1_1layer_1_1_activation_ae73ef2d36d9c5ce3c219f6a51cba3c35}{ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}, \hyperlink{classffnn_1_1layer_1_1_input_ac3de713973a8f67dc348a088ab6dbe1c}{ffnn\-::layer\-::\-Input$<$ Value\-Type, Network\-Inputs\-At\-Compile\-Time $>$}, and \hyperlink{classffnn_1_1layer_1_1_output_ab9ebd05595bc6b75718191aa48e70ad2}{ffnn\-::layer\-::\-Output$<$ Value\-Type, Network\-Outputs\-At\-Compile\-Time $>$}.
 
-\hypertarget{classffnn_1_1layer_1_1_layer_a66c56645e54f6e864fb716fdc8858828}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!load@{load}}
+\hypertarget{classffnn_1_1layer_1_1_layer_a23f5f3c958d888632010327471c7b012}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!load@{load}}
 \index{load@{load}!ffnn::layer::Layer@{ffnn\-::layer\-::\-Layer}}
-\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, class Enable\-Alignment = std\-::true\-\_\-type$>$ void {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type, Enable\-Alignment $>$\-::load (
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type$>$ void {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type $>$\-::load (
 \begin{DoxyParamCaption}
 \item[{{\bf Input\-Archive} \&}]{ar, }
 \item[{{\bf Version\-Type}}]{version}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_layer_a66c56645e54f6e864fb716fdc8858828}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_layer_a23f5f3c958d888632010327471c7b012}
 
 
 Load serializer. 
@@ -368,24 +368,27 @@ Reimplemented from \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a88b5
 
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Reimplemented in \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_a0996cd78dc2f76cab36fac2ec5c8f323}{ffnn\-::layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}, and \hyperlink{classffnn_1_1layer_1_1_hidden_a4ab88bd0c94d86b6d17f63e054cc907c}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, \-\_\-\-Hidden\-Layer\-Shape $>$}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=242pt]{classffnn_1_1layer_1_1_layer_a66c56645e54f6e864fb716fdc8858828_cgraph}
+\includegraphics[width=242pt]{classffnn_1_1layer_1_1_layer_a23f5f3c958d888632010327471c7b012_cgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{classffnn_1_1layer_1_1_layer_a5091f6ccef4d80254dd8caf72d13d136}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!save@{save}}
+\hypertarget{classffnn_1_1layer_1_1_layer_ac265fc929a178b111337226dd1cb62b6}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!save@{save}}
 \index{save@{save}!ffnn::layer::Layer@{ffnn\-::layer\-::\-Layer}}
-\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, class Enable\-Alignment = std\-::true\-\_\-type$>$ void {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type, Enable\-Alignment $>$\-::save (
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type$>$ void {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type $>$\-::save (
 \begin{DoxyParamCaption}
 \item[{{\bf Output\-Archive} \&}]{ar, }
 \item[{{\bf Version\-Type}}]{version}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_layer_a5091f6ccef4d80254dd8caf72d13d136}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_layer_ac265fc929a178b111337226dd1cb62b6}
 
 
 Save serializer. 
@@ -396,23 +399,26 @@ Reimplemented from \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a417d
 
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Reimplemented in \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_aa8ae358e7cf06b58f3d33be2851d0260}{ffnn\-::layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}, and \hyperlink{classffnn_1_1layer_1_1_hidden_a184844a0eadeb1aa27e29b24cbb0008c}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, \-\_\-\-Hidden\-Layer\-Shape $>$}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=304pt]{classffnn_1_1layer_1_1_layer_a5091f6ccef4d80254dd8caf72d13d136_cgraph}
+\includegraphics[width=304pt]{classffnn_1_1layer_1_1_layer_ac265fc929a178b111337226dd1cb62b6_cgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{classffnn_1_1layer_1_1_layer_a0e87cf29789204037c4678ee4bfc8756}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!update@{update}}
+\hypertarget{classffnn_1_1layer_1_1_layer_a25bf06cfea93baf1c80e21d0a88a5e4a}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!update@{update}}
 \index{update@{update}!ffnn::layer::Layer@{ffnn\-::layer\-::\-Layer}}
-\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, class Enable\-Alignment = std\-::true\-\_\-type$>$ virtual bool {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type, Enable\-Alignment $>$\-::update (
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type$>$ virtual bool {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type $>$\-::update (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_layer_a0e87cf29789204037c4678ee4bfc8756}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_layer_a25bf06cfea93baf1c80e21d0a88a5e4a}
 
 
 Applies layer weight updates. 
@@ -426,14 +432,14 @@ Applies layer weight updates.
 \end{DoxyRetVals}
 
 
-Reimplemented in \hyperlink{classffnn_1_1layer_1_1_convolution_a398b063c5e953e0cb21a827f139a2540}{ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode $>$}, \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_afa564d528e74917231da2d038f76e3f1}{ffnn\-::layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$}, \hyperlink{classffnn_1_1layer_1_1_fully_connected_a3194dde96feea7d008cc0c27f30cc805}{ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$}, \hyperlink{classffnn_1_1layer_1_1_hidden_ace039624b0b202413e068fd523f26884}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type, \-\_\-\-Input\-Mapping\-Type, \-\_\-\-Output\-Mapping\-Type $>$}, \hyperlink{classffnn_1_1layer_1_1_hidden_ace039624b0b202413e068fd523f26884}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, Inputs\-At\-Compile\-Time, 1, Outputs\-At\-Compile\-Time, 1 $>$}, \hyperlink{classffnn_1_1layer_1_1_hidden_ace039624b0b202413e068fd523f26884}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, Size\-At\-Compile\-Time, 1, Size\-At\-Compile\-Time, 1 $>$}, and \hyperlink{classffnn_1_1layer_1_1_hidden_ace039624b0b202413e068fd523f26884}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, embed\-\_\-dimension$<$ Mode, Col\-Embedding $>$(\-Height\-At\-Compile\-Time, Depth\-At\-Compile\-Time), embed\-\_\-dimension$<$ Mode, Row\-Embedding $>$(\-Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time), embed\-\_\-dimension$<$ Mode, Col\-Embedding $>$(output\-\_\-dimension(\-Height\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Stride\-At\-Compile\-Time), Filter\-Count\-At\-Compile\-Time), embed\-\_\-dimension$<$ Mode, Row\-Embedding $>$(output\-\_\-dimension(\-Width\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Stride\-At\-Compile\-Time), Filter\-Count\-At\-Compile\-Time)$>$}.
+Reimplemented in \hyperlink{classffnn_1_1layer_1_1_fully_connected_a7dd4dbe010c3d290c131b21b35f6301e}{ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}, \hyperlink{classffnn_1_1layer_1_1_convolution_aa56059e379a152efee3de409a217d1e1}{ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode, \-\_\-\-Hidden\-Layer\-Shape $>$}, \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_afa564d528e74917231da2d038f76e3f1}{ffnn\-::layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}, \hyperlink{classffnn_1_1layer_1_1_hidden_ae038d2a1e64fcbbde6166df7d0573ef8}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, Layer\-Shape, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type $>$}, \hyperlink{classffnn_1_1layer_1_1_hidden_ae038d2a1e64fcbbde6166df7d0573ef8}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, \-\_\-\-Hidden\-Layer\-Shape $>$}, and \hyperlink{classffnn_1_1layer_1_1_activation_a24a044458729f72466af06153851f5b2}{ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}.
 
 
 
 \subsection{Friends And Related Function Documentation}
 \hypertarget{classffnn_1_1layer_1_1_layer_afbf91ff52dc8c3e894968dcc27cdecd5}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!connect@{connect}}
 \index{connect@{connect}!ffnn::layer::Layer@{ffnn\-::layer\-::\-Layer}}
-\subsubsection[{connect}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, class Enable\-Alignment = std\-::true\-\_\-type$>$ template$<$typename Layer\-Type $>$ bool connect (
+\subsubsection[{connect}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type$>$ template$<$typename Layer\-Type $>$ bool connect (
 \begin{DoxyParamCaption}
 \item[{const typename Layer\-Type\-::\-Ptr \&}]{from, }
 \item[{const typename Layer\-Type\-::\-Ptr \&}]{to}
@@ -446,9 +452,9 @@ Connects \hyperlink{classffnn_1_1layer_1_1_layer}{Layer} objects.
 
 
 \subsection{Member Data Documentation}
-\hypertarget{classffnn_1_1layer_1_1_layer_a1be25b9933d64c2964b4260db770ad48}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!backward\-\_\-error\-\_\-buffer\-\_\-@{backward\-\_\-error\-\_\-buffer\-\_\-}}
+\hypertarget{classffnn_1_1layer_1_1_layer_a79d676e9b8bd04d1a438266206d4b321}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!backward\-\_\-error\-\_\-buffer\-\_\-@{backward\-\_\-error\-\_\-buffer\-\_\-}}
 \index{backward\-\_\-error\-\_\-buffer\-\_\-@{backward\-\_\-error\-\_\-buffer\-\_\-}!ffnn::layer::Layer@{ffnn\-::layer\-::\-Layer}}
-\subsubsection[{backward\-\_\-error\-\_\-buffer\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, class Enable\-Alignment = std\-::true\-\_\-type$>$ {\bf Buffer\-Type} {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type, Enable\-Alignment $>$\-::backward\-\_\-error\-\_\-buffer\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classffnn_1_1layer_1_1_layer_a1be25b9933d64c2964b4260db770ad48}
+\subsubsection[{backward\-\_\-error\-\_\-buffer\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type$>$ {\bf Buffer\-Type} {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type $>$\-::backward\-\_\-error\-\_\-buffer\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classffnn_1_1layer_1_1_layer_a79d676e9b8bd04d1a438266206d4b321}
 
 
 Raw bakward error value buffer. 
@@ -457,9 +463,9 @@ Raw bakward error value buffer.
 
 Referenced by ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$\-::get\-Backward\-Error\-Buffer().
 
-\hypertarget{classffnn_1_1layer_1_1_layer_a8595d0898a1530aaec71aec487037655}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!input\-\_\-buffer\-\_\-@{input\-\_\-buffer\-\_\-}}
+\hypertarget{classffnn_1_1layer_1_1_layer_ad4b5ac0708d6ada04d62df4fad377f1a}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!input\-\_\-buffer\-\_\-@{input\-\_\-buffer\-\_\-}}
 \index{input\-\_\-buffer\-\_\-@{input\-\_\-buffer\-\_\-}!ffnn::layer::Layer@{ffnn\-::layer\-::\-Layer}}
-\subsubsection[{input\-\_\-buffer\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, class Enable\-Alignment = std\-::true\-\_\-type$>$ {\bf Buffer\-Type} {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type, Enable\-Alignment $>$\-::input\-\_\-buffer\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classffnn_1_1layer_1_1_layer_a8595d0898a1530aaec71aec487037655}
+\subsubsection[{input\-\_\-buffer\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type$>$ {\bf Buffer\-Type} {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type $>$\-::input\-\_\-buffer\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classffnn_1_1layer_1_1_layer_ad4b5ac0708d6ada04d62df4fad377f1a}
 
 
 Raw input value buffer. 
@@ -468,9 +474,9 @@ Raw input value buffer.
 
 Referenced by ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$\-::get\-Input\-Buffer().
 
-\hypertarget{classffnn_1_1layer_1_1_layer_ad665f209da80c13770f2b6a790d3ed4f}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!prev\-\_\-@{prev\-\_\-}}
+\hypertarget{classffnn_1_1layer_1_1_layer_abe139156722efe30288b00becbd52cb9}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!prev\-\_\-@{prev\-\_\-}}
 \index{prev\-\_\-@{prev\-\_\-}!ffnn::layer::Layer@{ffnn\-::layer\-::\-Layer}}
-\subsubsection[{prev\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, class Enable\-Alignment = std\-::true\-\_\-type$>$ std\-::map$<$std\-::string, typename {\bf Self\-::\-Ptr}$>$ {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type, Enable\-Alignment $>$\-::prev\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classffnn_1_1layer_1_1_layer_ad665f209da80c13770f2b6a790d3ed4f}
+\subsubsection[{prev\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type$>$ std\-::map$<$std\-::string, typename {\bf Self\-::\-Ptr}$>$ {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type $>$\-::prev\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classffnn_1_1layer_1_1_layer_abe139156722efe30288b00becbd52cb9}
 
 
 Pointers to previous layers. 

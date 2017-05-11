@@ -34,7 +34,7 @@ bool Output<ValueType, NetworkOutputsAtCompileTime>::initialize()
   Base::input_shape_ = Base::evaluateInputSize();
 
   // Validate network input count
-  FFNN_STATIC_ASSERT_MSG (NetworkOutputsAtCompileTime < 0 || Base::input_shape_.size() == NetworkOutputsAtCompileTime,
+  FFNN_STATIC_RUNTIME_ASSERT_MSG (NetworkOutputsAtCompileTime < 0 || Base::input_shape_.size() == NetworkOutputsAtCompileTime,
                           "(NetworkOutputsAtCompileTime != `resolved input size`) for fixed-size layer.");
 
   // Do basic initialization and connect last hidden layer

@@ -15,8 +15,9 @@ namespace layer
 {
 template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
-         FFNN_SIZE_TYPE OutputsAtCompileTime>
-FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::
+         FFNN_SIZE_TYPE OutputsAtCompileTime,
+         typename _HiddenLayerShape>
+FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape>::
 Parameters::Parameters(ScalarType init_weight_std,
                        ScalarType init_bias_std,
                        ScalarType init_weight_mean,
@@ -32,8 +33,9 @@ Parameters::Parameters(ScalarType init_weight_std,
 
 template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
-         FFNN_SIZE_TYPE OutputsAtCompileTime>
-FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::
+         FFNN_SIZE_TYPE OutputsAtCompileTime,
+         typename _HiddenLayerShape>
+FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape>::
 FullyConnected(SizeType output_size, const Parameters& config) :
   Base(ShapeType(InputsAtCompileTime), ShapeType(output_size)),
   config_(config),
@@ -42,16 +44,19 @@ FullyConnected(SizeType output_size, const Parameters& config) :
 
 template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
-         FFNN_SIZE_TYPE OutputsAtCompileTime>
-FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::~FullyConnected()
+         FFNN_SIZE_TYPE OutputsAtCompileTime,
+         typename _HiddenLayerShape>
+FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape>::
+~FullyConnected()
 {
   FFNN_INTERNAL_DEBUG_NAMED("layer::FullyConnected", "Destroying [layer::FullyConnected] object <" << this->getID() << ">");
 }
 
 template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
-         FFNN_SIZE_TYPE OutputsAtCompileTime>
-bool FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::initialize()
+         FFNN_SIZE_TYPE OutputsAtCompileTime,
+         typename _HiddenLayerShape>
+bool FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape>::initialize()
 {
   // Abort if layer is already initialized
   if (Base::setupRequired() && Base::isInitialized())
@@ -91,8 +96,9 @@ bool FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::initi
 
 template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
-         FFNN_SIZE_TYPE OutputsAtCompileTime>
-bool FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::forward()
+         FFNN_SIZE_TYPE OutputsAtCompileTime,
+         typename _HiddenLayerShape>
+bool FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape>::forward()
 {
   if (!opt_->forward(*this))
   {
@@ -106,8 +112,9 @@ bool FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::forwa
 
 template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
-         FFNN_SIZE_TYPE OutputsAtCompileTime>
-bool FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::backward()
+         FFNN_SIZE_TYPE OutputsAtCompileTime,
+         typename _HiddenLayerShape>
+bool FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape>::backward()
 {
   FFNN_ASSERT_MSG(opt_, "No optimization resource set.");
 
@@ -120,8 +127,9 @@ bool FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::backw
 
 template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
-         FFNN_SIZE_TYPE OutputsAtCompileTime>
-bool FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::update()
+         FFNN_SIZE_TYPE OutputsAtCompileTime,
+         typename _HiddenLayerShape>
+bool FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape>::update()
 {
   FFNN_ASSERT_MSG(opt_, "No optimization resource set.");
   return opt_->update(*this);
@@ -129,8 +137,9 @@ bool FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::updat
 
 template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
-         FFNN_SIZE_TYPE OutputsAtCompileTime>
-void FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::reset()
+         FFNN_SIZE_TYPE OutputsAtCompileTime,
+         typename _HiddenLayerShape>
+void FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape>::reset()
 {
   FFNN_ASSERT_MSG(Base::isInitialized(), "Layer is not initialized.");
 
@@ -153,8 +162,9 @@ void FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::reset
 
 template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
-         FFNN_SIZE_TYPE OutputsAtCompileTime>
-void FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::
+         FFNN_SIZE_TYPE OutputsAtCompileTime,
+         typename _HiddenLayerShape>
+void FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape>::
   setOptimizer(typename Optimizer::Ptr opt)
 {
   FFNN_ASSERT_MSG(opt, "Input optimizer object is an empty resource.");
@@ -163,12 +173,13 @@ void FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::
 
 template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
-         FFNN_SIZE_TYPE OutputsAtCompileTime>
-void FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::
-  save(typename FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::OutputArchive& ar,
-       typename FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::VersionType version) const
+         FFNN_SIZE_TYPE OutputsAtCompileTime,
+         typename _HiddenLayerShape>
+void FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape>::
+  save(typename FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape>::OutputArchive& ar,
+       typename FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape>::VersionType version) const
 {
-  ffnn::io::signature::apply<FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>>(ar);
+  ffnn::io::signature::apply<FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape>>(ar);
   Base::save(ar, version);
 
   // Save configuration parameters
@@ -186,12 +197,13 @@ void FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::
 
 template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
-         FFNN_SIZE_TYPE OutputsAtCompileTime>
-void FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::
-  load(typename FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::InputArchive& ar,
-       typename FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>::VersionType version)
+         FFNN_SIZE_TYPE OutputsAtCompileTime,
+         typename _HiddenLayerShape>
+void FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape>::
+  load(typename FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape>::InputArchive& ar,
+       typename FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape>::VersionType version)
 {
-  ffnn::io::signature::check<FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>>(ar);
+  ffnn::io::signature::check<FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape>>(ar);
   Base::load(ar, version);
 
   // Save configuration parameters

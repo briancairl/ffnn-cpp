@@ -127,7 +127,7 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a1888db73da403e86806b106c3b40eb29"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="receptive__volume_8h.html#a1888db73da403e86806b106c3b40eb29">IS_DYNAMIC_PAIR</a>(n, m)&#160;&#160;&#160;(<a class="el" href="shape_8h.html#a67c7ed133a71d197d8fca368336d5aa7">IS_DYNAMIC</a>(n) || <a class="el" href="shape_8h.html#a67c7ed133a71d197d8fca368336d5aa7">IS_DYNAMIC</a>(m))</td></tr>
+<tr class="memitem:a1888db73da403e86806b106c3b40eb29"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="receptive__volume_8h.html#a1888db73da403e86806b106c3b40eb29">IS_DYNAMIC_PAIR</a>(n, m)&#160;&#160;&#160;(IS_DYNAMIC(n) || IS_DYNAMIC(m))</td></tr>
 <tr class="separator:a1888db73da403e86806b106c3b40eb29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a74feffebf310dd34521adc2adcaf64c9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="receptive__volume_8h.html#a74feffebf310dd34521adc2adcaf64c9">PROD_IF_STATIC_PAIR</a>(n, m)&#160;&#160;&#160;(<a class="el" href="receptive__volume_8h.html#a1888db73da403e86806b106c3b40eb29">IS_DYNAMIC_PAIR</a>(n, m) ? Eigen::Dynamic : (n*m))</td></tr>
 <tr class="separator:a74feffebf310dd34521adc2adcaf64c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -161,7 +161,7 @@ Enumerations</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;(<a class="el" href="shape_8h.html#a67c7ed133a71d197d8fca368336d5aa7">IS_DYNAMIC</a>(n) || <a class="el" href="shape_8h.html#a67c7ed133a71d197d8fca368336d5aa7">IS_DYNAMIC</a>(m))</td>
+          <td></td><td>&#160;&#160;&#160;(IS_DYNAMIC(n) || IS_DYNAMIC(m))</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -197,7 +197,7 @@ Enumerations</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed May 10 2017 13:05:02 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 10 2017 17:22:47 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

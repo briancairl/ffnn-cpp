@@ -90,7 +90,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">shape.h File Reference</div>  </div>
@@ -131,108 +130,31 @@ Namespaces</h2></td></tr>
 <tr class="memitem:namespaceffnn_1_1layer_1_1internal"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceffnn_1_1layer_1_1internal.html">ffnn::layer::internal</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a67c7ed133a71d197d8fca368336d5aa7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="shape_8h.html#a67c7ed133a71d197d8fca368336d5aa7">IS_DYNAMIC</a>(x)&#160;&#160;&#160;(x == Eigen::Dynamic)</td></tr>
-<tr class="separator:a67c7ed133a71d197d8fca368336d5aa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0faa7f844e3841ae41c2baedf7680756"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="shape_8h.html#a0faa7f844e3841ae41c2baedf7680756">IS_DYNAMIC_TRIPLET</a>(n, m, l)&#160;&#160;&#160;(<a class="el" href="shape_8h.html#a67c7ed133a71d197d8fca368336d5aa7">IS_DYNAMIC</a>(n) || <a class="el" href="shape_8h.html#a67c7ed133a71d197d8fca368336d5aa7">IS_DYNAMIC</a>(m) || <a class="el" href="shape_8h.html#a67c7ed133a71d197d8fca368336d5aa7">IS_DYNAMIC</a>(l))</td></tr>
-<tr class="separator:a0faa7f844e3841ae41c2baedf7680756"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90ee0b2faa8ee8ce36a3b08bd4212fe8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="shape_8h.html#a90ee0b2faa8ee8ce36a3b08bd4212fe8">PROD_IF_STATIC_TRIPLET</a>(n, m, l)&#160;&#160;&#160;(<a class="el" href="shape_8h.html#a0faa7f844e3841ae41c2baedf7680756">IS_DYNAMIC_TRIPLET</a>(n, m, l) ? Eigen::Dynamic : (n*m*l))</td></tr>
-<tr class="separator:a90ee0b2faa8ee8ce36a3b08bd4212fe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a80747f67832029051c2f96d3a1586e98"><td class="memTemplParams" colspan="2">template&lt;typename SizeType &gt; </td></tr>
+<tr class="memitem:a80747f67832029051c2f96d3a1586e98"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceffnn_1_1layer_1_1internal.html#a80747f67832029051c2f96d3a1586e98">ffnn::layer::internal::is_dynamic</a> (SizeType n)</td></tr>
+<tr class="separator:a80747f67832029051c2f96d3a1586e98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af66c362036e43d1d913b6c43d90f6c3e"><td class="memTemplParams" colspan="2">template&lt;typename SizeType &gt; </td></tr>
+<tr class="memitem:af66c362036e43d1d913b6c43d90f6c3e"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceffnn_1_1layer_1_1internal.html#af66c362036e43d1d913b6c43d90f6c3e">ffnn::layer::internal::is_dynamic</a> (SizeType n, SizeType m)</td></tr>
+<tr class="separator:af66c362036e43d1d913b6c43d90f6c3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab770642661e0d57c0113788a5e127f57"><td class="memTemplParams" colspan="2">template&lt;typename SizeType &gt; </td></tr>
+<tr class="memitem:ab770642661e0d57c0113788a5e127f57"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceffnn_1_1layer_1_1internal.html#ab770642661e0d57c0113788a5e127f57">ffnn::layer::internal::is_dynamic</a> (SizeType n, SizeType m, SizeType l)</td></tr>
+<tr class="separator:ab770642661e0d57c0113788a5e127f57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5b2ac985b32bc289c8748933e2ba113"><td class="memTemplParams" colspan="2">template&lt;typename SizeType &gt; </td></tr>
+<tr class="memitem:ab5b2ac985b32bc289c8748933e2ba113"><td class="memTemplItemLeft" align="right" valign="top">constexpr SizeType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceffnn_1_1layer_1_1internal.html#ab5b2ac985b32bc289c8748933e2ba113">ffnn::layer::internal::multiply_if_not_dynamic_sizes</a> (SizeType n, SizeType m)</td></tr>
+<tr class="separator:ab5b2ac985b32bc289c8748933e2ba113"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93d6cc4da6e3aa83fda7f6beb6eb07f5"><td class="memTemplParams" colspan="2">template&lt;typename SizeType &gt; </td></tr>
+<tr class="memitem:a93d6cc4da6e3aa83fda7f6beb6eb07f5"><td class="memTemplItemLeft" align="right" valign="top">constexpr SizeType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceffnn_1_1layer_1_1internal.html#a93d6cc4da6e3aa83fda7f6beb6eb07f5">ffnn::layer::internal::multiply_if_not_dynamic_sizes</a> (SizeType n, SizeType m, SizeType l)</td></tr>
+<tr class="separator:a93d6cc4da6e3aa83fda7f6beb6eb07f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a60e6be53b5701e3389204e5b1aaaf9ae"><td class="memTemplParams" colspan="2">template&lt;typename SizeType &gt; </td></tr>
 <tr class="memitem:a60e6be53b5701e3389204e5b1aaaf9ae"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceffnn_1_1layer_1_1internal.html#a60e6be53b5701e3389204e5b1aaaf9ae">ffnn::layer::internal::operator&lt;&lt;</a> (std::ostream &amp;os, const Shape&lt; SizeType &gt; &amp;dim)</td></tr>
 <tr class="separator:a60e6be53b5701e3389204e5b1aaaf9ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="a67c7ed133a71d197d8fca368336d5aa7"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define IS_DYNAMIC</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;(x == Eigen::Dynamic)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a0faa7f844e3841ae41c2baedf7680756"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define IS_DYNAMIC_TRIPLET</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">n, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">m, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">l&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;(<a class="el" href="shape_8h.html#a67c7ed133a71d197d8fca368336d5aa7">IS_DYNAMIC</a>(n) || <a class="el" href="shape_8h.html#a67c7ed133a71d197d8fca368336d5aa7">IS_DYNAMIC</a>(m) || <a class="el" href="shape_8h.html#a67c7ed133a71d197d8fca368336d5aa7">IS_DYNAMIC</a>(l))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a90ee0b2faa8ee8ce36a3b08bd4212fe8"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define PROD_IF_STATIC_TRIPLET</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">n, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">m, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">l&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;(<a class="el" href="shape_8h.html#a0faa7f844e3841ae41c2baedf7680756">IS_DYNAMIC_TRIPLET</a>(n, m, l) ? Eigen::Dynamic : (n*m*l))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Referenced by <a class="el" href="structffnn_1_1layer_1_1internal_1_1_shape.html#a12c68148f45338261ebff941384e4c6a">ffnn::layer::internal::Shape&lt; SizeType &gt;::size()</a>, and <a class="el" href="structffnn_1_1layer_1_1internal_1_1_shape.html#acc533095c9443af724b842ff31da4233">ffnn::layer::internal::Shape&lt; SizeType &gt;::valid()</a>.</p>
-
-</div>
-</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed May 10 2017 13:05:02 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 10 2017 17:22:47 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

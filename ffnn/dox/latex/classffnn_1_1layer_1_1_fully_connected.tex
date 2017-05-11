@@ -1,5 +1,5 @@
-\hypertarget{classffnn_1_1layer_1_1_fully_connected}{\section{ffnn\-:\-:layer\-:\-:Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ Class Template Reference}
-\label{classffnn_1_1layer_1_1_fully_connected}\index{ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$@{ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$}}
+\hypertarget{classffnn_1_1layer_1_1_fully_connected}{\section{ffnn\-:\-:layer\-:\-:Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$ Class Template Reference}
+\label{classffnn_1_1layer_1_1_fully_connected}\index{ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$@{ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}}
 }
 
 
@@ -12,22 +12,22 @@ A fully-\/connected layer.
 
 
 
-Inheritance diagram for ffnn\-:\-:layer\-:\-:Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-:
+Inheritance diagram for ffnn\-:\-:layer\-:\-:Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classffnn_1_1layer_1_1_fully_connected__inherit__graph}
+\includegraphics[width=302pt]{classffnn_1_1layer_1_1_fully_connected__inherit__graph}
 \end{center}
 \end{figure}
 
 
-Collaboration diagram for ffnn\-:\-:layer\-:\-:Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-:
+Collaboration diagram for ffnn\-:\-:layer\-:\-:Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classffnn_1_1layer_1_1_fully_connected__coll__graph}
+\includegraphics[width=302pt]{classffnn_1_1layer_1_1_fully_connected__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Classes}
@@ -38,145 +38,156 @@ struct \hyperlink{structffnn_1_1layer_1_1_fully_connected_1_1_parameters}{Parame
 \subsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-using \hyperlink{classffnn_1_1layer_1_1_fully_connected_a406c6254decac6bb885090f49476f72a}{Base} = \hyperlink{classffnn_1_1layer_1_1_hidden}{Hidden}$<$ Value\-Type, Inputs\-At\-Compile\-Time, 1, Outputs\-At\-Compile\-Time, 1 $>$
+using \hyperlink{classffnn_1_1layer_1_1_fully_connected_ad49d4e88823497be658d01c44eeef3f2}{Base} = \hyperlink{classffnn_1_1layer_1_1_hidden}{Hidden}$<$ Value\-Type, \-\_\-\-Hidden\-Layer\-Shape $>$
 \begin{DoxyCompactList}\small\item\em Base type alias. \end{DoxyCompactList}\item 
-using \hyperlink{classffnn_1_1layer_1_1_fully_connected_a34f862e03a4a2d070013c6c732563a5f}{Self} = \hyperlink{classffnn_1_1layer_1_1_fully_connected}{Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$
+using \hyperlink{classffnn_1_1layer_1_1_fully_connected_ac41b1867a1a4e8c9c9eaa892db2ab805}{Self} = \hyperlink{classffnn_1_1layer_1_1_fully_connected}{Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$
 \begin{DoxyCompactList}\small\item\em Self type alias. \end{DoxyCompactList}\item 
-typedef \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a7f834e3365e5199bcbcd16d9abd63941}{Base\-::\-Scalar\-Type} \hyperlink{classffnn_1_1layer_1_1_fully_connected_ac3ff6f72846f84f89c0d6e10f138c7e3}{Scalar\-Type}
+typedef \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a7f834e3365e5199bcbcd16d9abd63941}{Base\-::\-Scalar\-Type} \hyperlink{classffnn_1_1layer_1_1_fully_connected_aa5e1875ec3ea63c90655419e7dd32a55}{Scalar\-Type}
 \begin{DoxyCompactList}\small\item\em Scalar type standardization. \end{DoxyCompactList}\item 
-typedef \hyperlink{classffnn_1_1layer_1_1_hidden_a3deb1dc4b3a83b3d6749474debee025f}{Base\-::\-Size\-Type} \hyperlink{classffnn_1_1layer_1_1_fully_connected_ae1b5e64828482a4c3eea0e2b0ba3f826}{Size\-Type}
+typedef \hyperlink{classffnn_1_1layer_1_1_hidden_ac148012cb544a39841675601090cd4c8}{Base\-::\-Size\-Type} \hyperlink{classffnn_1_1layer_1_1_fully_connected_a2924c85b3cc3e79db3f271cd22cac32c}{Size\-Type}
 \begin{DoxyCompactList}\small\item\em Size type standardization. \end{DoxyCompactList}\item 
-typedef \hyperlink{classffnn_1_1layer_1_1_hidden_a4a191bc002b2545231a3d80c99004693}{Base\-::\-Offset\-Type} \hyperlink{classffnn_1_1layer_1_1_fully_connected_a2f79588f597650dc086dfecfc3875d4f}{Offset\-Type}
+typedef \hyperlink{classffnn_1_1layer_1_1_hidden_ae2409b970adafb0ebc9b2eec62c4aac4}{Base\-::\-Offset\-Type} \hyperlink{classffnn_1_1layer_1_1_fully_connected_a0f5ae1a0bd038f404410ce2af1054833}{Offset\-Type}
 \begin{DoxyCompactList}\small\item\em Offset type standardization. \end{DoxyCompactList}\item 
-typedef \hyperlink{classffnn_1_1layer_1_1_hidden_a7ed1a797fcb7bfb43d66c0eb24967882}{Base\-::\-Shape\-Type} \hyperlink{classffnn_1_1layer_1_1_fully_connected_a6087b3dca79894a83be146674d5eb99e}{Shape\-Type}
+typedef \hyperlink{classffnn_1_1layer_1_1_hidden_abdfcf81b3846fae3b19a207424695df0}{Base\-::\-Shape\-Type} \hyperlink{classffnn_1_1layer_1_1_fully_connected_a938c80efb16baa531fb424626f339333}{Shape\-Type}
 \begin{DoxyCompactList}\small\item\em Dimension type standardization. \end{DoxyCompactList}\item 
-typedef \hyperlink{classffnn_1_1layer_1_1_hidden_a01b9cc4df01a7b26423dcd3a0af17b1c}{Base\-::\-Input\-Block\-Type} \hyperlink{classffnn_1_1layer_1_1_fully_connected_a8fb8f9b598085d3a05214f38f70adfc7}{Input\-Block\-Type}
+typedef \hyperlink{classffnn_1_1layer_1_1_hidden_ae401b1af7763caf09a0dffcaf4f2d5e9}{Base\-::\-Input\-Block\-Type} \hyperlink{classffnn_1_1layer_1_1_fully_connected_a1360eaafde26c8b36ddb6fe4095b6119}{Input\-Block\-Type}
 \begin{DoxyCompactList}\small\item\em Matrix type standardization. \end{DoxyCompactList}\item 
-typedef \hyperlink{classffnn_1_1layer_1_1_hidden_abb03ddc71360cc7ebdab03cd4d1553ee}{Base\-::\-Output\-Block\-Type} \hyperlink{classffnn_1_1layer_1_1_fully_connected_ac8c5ba1f20f470095c2c37f881f49814}{Output\-Block\-Type}
+typedef \hyperlink{classffnn_1_1layer_1_1_hidden_a9b9e276188ef490ea5301f553225c735}{Base\-::\-Output\-Block\-Type} \hyperlink{classffnn_1_1layer_1_1_fully_connected_a23903ba58825efec173f318ffdc3b998}{Output\-Block\-Type}
 \begin{DoxyCompactList}\small\item\em Matrix type standardization. \end{DoxyCompactList}\item 
-typedef \hyperlink{classffnn_1_1layer_1_1_hidden_abb03ddc71360cc7ebdab03cd4d1553ee}{Base\-::\-Output\-Block\-Type} \hyperlink{classffnn_1_1layer_1_1_fully_connected_a926ff519682fa1bedd4c38159d5fd4bb}{Bias\-Vector\-Type}
+typedef \hyperlink{classffnn_1_1layer_1_1_hidden_a9b9e276188ef490ea5301f553225c735}{Base\-::\-Output\-Block\-Type} \hyperlink{classffnn_1_1layer_1_1_fully_connected_afd08719c4360bd1447d1108396b07e57}{Bias\-Vector\-Type}
 \begin{DoxyCompactList}\small\item\em Bia vector type standardization. \end{DoxyCompactList}\item 
 typedef Eigen\-::\-Matrix\\*
 $<$ Value\-Type, \\*
 Outputs\-At\-Compile\-Time, \\*
 Inputs\-At\-Compile\-Time, \\*
-Eigen\-::\-Col\-Major $>$ \hyperlink{classffnn_1_1layer_1_1_fully_connected_a4ceb72064ac9a73a0907cc369d229da0}{Weight\-Matrix\-Type}
+Eigen\-::\-Col\-Major $>$ \hyperlink{classffnn_1_1layer_1_1_fully_connected_aef17d91a349bf83f5e5a20462ebb3c81}{Weight\-Matrix\-Type}
 \begin{DoxyCompactList}\small\item\em Input-\/output weight matrix. \end{DoxyCompactList}\item 
+typedef \hyperlink{classffnn_1_1layer_1_1_layer_parameters}{Layer\-Parameters}\\*
+$<$ \hyperlink{classffnn_1_1layer_1_1_fully_connected_aef17d91a349bf83f5e5a20462ebb3c81}{Weight\-Matrix\-Type}, \\*
+\hyperlink{classffnn_1_1layer_1_1_fully_connected_afd08719c4360bd1447d1108396b07e57}{Bias\-Vector\-Type} $>$ \hyperlink{classffnn_1_1layer_1_1_fully_connected_af51b16e8e07c9d65ab9b20fd886e1780}{Layer\-Parameter\-Type}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classffnn_1_1layer_1_1_layer}{Layer} parameter type. \end{DoxyCompactList}\item 
 typedef \hyperlink{classffnn_1_1optimizer_1_1_optimizer}{optimizer\-::\-Optimizer}\\*
-$<$ \hyperlink{classffnn_1_1layer_1_1_fully_connected_a34f862e03a4a2d070013c6c732563a5f}{Self} $>$ \hyperlink{classffnn_1_1layer_1_1_fully_connected_a1d4b9ddaf2b993d3c9a62d7b3cca495f}{Optimizer}
+$<$ \hyperlink{classffnn_1_1layer_1_1_fully_connected_ac41b1867a1a4e8c9c9eaa892db2ab805}{Self} $>$ \hyperlink{classffnn_1_1layer_1_1_fully_connected_abae398e6ffb06d183654e5ff11857a03}{Optimizer}
 \begin{DoxyCompactList}\small\item\em \hyperlink{classffnn_1_1layer_1_1_layer}{Layer} optimization type standardization. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classffnn_1_1layer_1_1_fully_connected_a7cb4ce3e1ed29c4c7f7f4ef8f9ee9259}{Fully\-Connected} (\hyperlink{classffnn_1_1layer_1_1_fully_connected_ae1b5e64828482a4c3eea0e2b0ba3f826}{Size\-Type} output\-\_\-size=Outputs\-At\-Compile\-Time, const \hyperlink{structffnn_1_1layer_1_1_fully_connected_1_1_parameters}{Parameters} \&config=\hyperlink{structffnn_1_1layer_1_1_fully_connected_1_1_parameters}{Parameters}())
+\hyperlink{classffnn_1_1layer_1_1_fully_connected_a5a21e1d38fd064184b55adb8474a6d71}{Fully\-Connected} (\hyperlink{classffnn_1_1layer_1_1_fully_connected_a2924c85b3cc3e79db3f271cd22cac32c}{Size\-Type} output\-\_\-size=Outputs\-At\-Compile\-Time, const \hyperlink{structffnn_1_1layer_1_1_fully_connected_1_1_parameters}{Parameters} \&config=\hyperlink{structffnn_1_1layer_1_1_fully_connected_1_1_parameters}{Parameters}())
 \begin{DoxyCompactList}\small\item\em Setup constructor. \end{DoxyCompactList}\item 
-virtual \hyperlink{classffnn_1_1layer_1_1_fully_connected_a0973b3b3d33d5e3597f440d907e709f7}{$\sim$\-Fully\-Connected} ()
+virtual \hyperlink{classffnn_1_1layer_1_1_fully_connected_ad95d27ee5f609c3a9e5c734aed55b935}{$\sim$\-Fully\-Connected} ()
 \item 
-bool \hyperlink{classffnn_1_1layer_1_1_fully_connected_aec414194202f845b866b0e8b2a51235c}{initialize} ()
+bool \hyperlink{classffnn_1_1layer_1_1_fully_connected_a55089e2810d6848950da5ca33000da8a}{initialize} ()
 \begin{DoxyCompactList}\small\item\em Initialize the layer. \end{DoxyCompactList}\item 
-bool \hyperlink{classffnn_1_1layer_1_1_fully_connected_ac49087ab2d66019f2d0244c76987fa50}{forward} ()
+bool \hyperlink{classffnn_1_1layer_1_1_fully_connected_a350e7910bd416f67d30113425ea74f59}{forward} ()
 \begin{DoxyCompactList}\small\item\em Performs forward value propagation. \end{DoxyCompactList}\item 
-bool \hyperlink{classffnn_1_1layer_1_1_fully_connected_afd5c1a006cf33a47cb7e2a982fe4cd6d}{backward} ()
+bool \hyperlink{classffnn_1_1layer_1_1_fully_connected_ab4a63eb87bd3f2288258b341fcfd165f}{backward} ()
 \begin{DoxyCompactList}\small\item\em Performs backward error propagation. \end{DoxyCompactList}\item 
-bool \hyperlink{classffnn_1_1layer_1_1_fully_connected_a3194dde96feea7d008cc0c27f30cc805}{update} ()
+bool \hyperlink{classffnn_1_1layer_1_1_fully_connected_a7dd4dbe010c3d290c131b21b35f6301e}{update} ()
 \begin{DoxyCompactList}\small\item\em Applies accumulated layer weight updates computed during optimization. \end{DoxyCompactList}\item 
-void \hyperlink{classffnn_1_1layer_1_1_fully_connected_a66c69f57c587558acfa5d32110baba57}{reset} ()
+void \hyperlink{classffnn_1_1layer_1_1_fully_connected_aaeb55e214173a632b297d3ddac76fc24}{reset} ()
 \begin{DoxyCompactList}\small\item\em Reset weights and biases. \end{DoxyCompactList}\item 
-void \hyperlink{classffnn_1_1layer_1_1_fully_connected_a9f54f83b0b95aea9ec9b9f300ee24e0f}{set\-Optimizer} (typename \hyperlink{classffnn_1_1optimizer_1_1_optimizer_ac03e7181934bf0c12a97fc67a60484ab}{Optimizer\-::\-Ptr} opt)
+void \hyperlink{classffnn_1_1layer_1_1_fully_connected_ae57e6eedc1808825635a1c04aa018992}{set\-Optimizer} (typename \hyperlink{classffnn_1_1optimizer_1_1_optimizer_ac03e7181934bf0c12a97fc67a60484ab}{Optimizer\-::\-Ptr} opt)
 \begin{DoxyCompactList}\small\item\em Sets an optimizer used update network weights during back-\/propagation. \end{DoxyCompactList}\item 
-const \hyperlink{classffnn_1_1layer_1_1_fully_connected_a4ceb72064ac9a73a0907cc369d229da0}{Weight\-Matrix\-Type} \& \hyperlink{classffnn_1_1layer_1_1_fully_connected_a055cc07f210b47e31278bc0bf6b8e909}{get\-Weights} () const 
+const \hyperlink{classffnn_1_1layer_1_1_fully_connected_aef17d91a349bf83f5e5a20462ebb3c81}{Weight\-Matrix\-Type} \& \hyperlink{classffnn_1_1layer_1_1_fully_connected_a96e00e6f6fec19f22a8830e5342bc7ef}{get\-Weights} () const 
 \begin{DoxyCompactList}\small\item\em Exposes internal connection weights. \end{DoxyCompactList}\item 
-const \hyperlink{classffnn_1_1layer_1_1_fully_connected_a926ff519682fa1bedd4c38159d5fd4bb}{Bias\-Vector\-Type} \& \hyperlink{classffnn_1_1layer_1_1_fully_connected_a54ab6b0b965d3593525817752fd39c39}{get\-Biases} () const 
+const \hyperlink{classffnn_1_1layer_1_1_fully_connected_afd08719c4360bd1447d1108396b07e57}{Bias\-Vector\-Type} \& \hyperlink{classffnn_1_1layer_1_1_fully_connected_af7492d5d678fd45466d7768ab187a41e}{get\-Biases} () const 
 \begin{DoxyCompactList}\small\item\em Exposes internal biasing weights. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{classffnn_1_1layer_1_1_fully_connected_a858f04f0752096d74e4d9876edb4c73e}{save} (\hyperlink{classffnn_1_1traits_1_1_serializable_a08d986df75d363fa79506d4f6045cb9f}{Output\-Archive} \&ar, \hyperlink{classffnn_1_1traits_1_1_serializable_a08924b3b7d20cb3cb6eafe517d4f7b30}{Version\-Type} version) const 
+void \hyperlink{classffnn_1_1layer_1_1_fully_connected_a7c79eb99c638b61f76ea34b725c0aeef}{save} (\hyperlink{classffnn_1_1traits_1_1_serializable_a08d986df75d363fa79506d4f6045cb9f}{Output\-Archive} \&ar, \hyperlink{classffnn_1_1traits_1_1_serializable_a08924b3b7d20cb3cb6eafe517d4f7b30}{Version\-Type} version) const 
 \begin{DoxyCompactList}\small\item\em Save serializer. \end{DoxyCompactList}\item 
-void \hyperlink{classffnn_1_1layer_1_1_fully_connected_a4d449a95d01e3ad04a7813d70d296e0c}{load} (\hyperlink{classffnn_1_1traits_1_1_serializable_a6e626759259f8f370dd4303b4441a234}{Input\-Archive} \&ar, \hyperlink{classffnn_1_1traits_1_1_serializable_a08924b3b7d20cb3cb6eafe517d4f7b30}{Version\-Type} version)
+void \hyperlink{classffnn_1_1layer_1_1_fully_connected_a1ff2a601cdf315ce46a2812b4e6fe354}{load} (\hyperlink{classffnn_1_1traits_1_1_serializable_a6e626759259f8f370dd4303b4441a234}{Input\-Archive} \&ar, \hyperlink{classffnn_1_1traits_1_1_serializable_a08924b3b7d20cb3cb6eafe517d4f7b30}{Version\-Type} version)
 \begin{DoxyCompactList}\small\item\em Load serializer. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
 \subsection{Detailed Description}
-\subsubsection*{template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic$>$class ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$}
+\subsubsection*{template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Hidden\-Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$\-Inputs\-At\-Compile\-Time, 1, Outputs\-At\-Compile\-Time, 1$>$$>$class ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}
 
 A fully-\/connected layer. 
 
 \subsection{Member Typedef Documentation}
-\hypertarget{classffnn_1_1layer_1_1_fully_connected_a406c6254decac6bb885090f49476f72a}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!Base@{Base}}
+\hypertarget{classffnn_1_1layer_1_1_fully_connected_ad49d4e88823497be658d01c44eeef3f2}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!Base@{Base}}
 \index{Base@{Base}!ffnn::layer::FullyConnected@{ffnn\-::layer\-::\-Fully\-Connected}}
-\subsubsection[{Base}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic$>$ using {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::{\bf Base} =  {\bf Hidden}$<$Value\-Type, Inputs\-At\-Compile\-Time, 1, Outputs\-At\-Compile\-Time, 1$>$}}\label{classffnn_1_1layer_1_1_fully_connected_a406c6254decac6bb885090f49476f72a}
+\subsubsection[{Base}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Hidden\-Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$\-Inputs\-At\-Compile\-Time, 1, Outputs\-At\-Compile\-Time, 1$>$$>$ using {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-::{\bf Base} =  {\bf Hidden}$<$Value\-Type, \-\_\-\-Hidden\-Layer\-Shape$>$}}\label{classffnn_1_1layer_1_1_fully_connected_ad49d4e88823497be658d01c44eeef3f2}
 
 
 Base type alias. 
 
-\hypertarget{classffnn_1_1layer_1_1_fully_connected_a926ff519682fa1bedd4c38159d5fd4bb}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!Bias\-Vector\-Type@{Bias\-Vector\-Type}}
+\hypertarget{classffnn_1_1layer_1_1_fully_connected_afd08719c4360bd1447d1108396b07e57}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!Bias\-Vector\-Type@{Bias\-Vector\-Type}}
 \index{Bias\-Vector\-Type@{Bias\-Vector\-Type}!ffnn::layer::FullyConnected@{ffnn\-::layer\-::\-Fully\-Connected}}
-\subsubsection[{Bias\-Vector\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic$>$ typedef {\bf Base\-::\-Output\-Block\-Type} {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::{\bf Bias\-Vector\-Type}}}\label{classffnn_1_1layer_1_1_fully_connected_a926ff519682fa1bedd4c38159d5fd4bb}
+\subsubsection[{Bias\-Vector\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Hidden\-Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$\-Inputs\-At\-Compile\-Time, 1, Outputs\-At\-Compile\-Time, 1$>$$>$ typedef {\bf Base\-::\-Output\-Block\-Type} {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-::{\bf Bias\-Vector\-Type}}}\label{classffnn_1_1layer_1_1_fully_connected_afd08719c4360bd1447d1108396b07e57}
 
 
 Bia vector type standardization. 
 
-\hypertarget{classffnn_1_1layer_1_1_fully_connected_a8fb8f9b598085d3a05214f38f70adfc7}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!Input\-Block\-Type@{Input\-Block\-Type}}
+\hypertarget{classffnn_1_1layer_1_1_fully_connected_a1360eaafde26c8b36ddb6fe4095b6119}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!Input\-Block\-Type@{Input\-Block\-Type}}
 \index{Input\-Block\-Type@{Input\-Block\-Type}!ffnn::layer::FullyConnected@{ffnn\-::layer\-::\-Fully\-Connected}}
-\subsubsection[{Input\-Block\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic$>$ typedef {\bf Base\-::\-Input\-Block\-Type} {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::{\bf Input\-Block\-Type}}}\label{classffnn_1_1layer_1_1_fully_connected_a8fb8f9b598085d3a05214f38f70adfc7}
+\subsubsection[{Input\-Block\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Hidden\-Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$\-Inputs\-At\-Compile\-Time, 1, Outputs\-At\-Compile\-Time, 1$>$$>$ typedef {\bf Base\-::\-Input\-Block\-Type} {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-::{\bf Input\-Block\-Type}}}\label{classffnn_1_1layer_1_1_fully_connected_a1360eaafde26c8b36ddb6fe4095b6119}
 
 
 Matrix type standardization. 
 
-\hypertarget{classffnn_1_1layer_1_1_fully_connected_a2f79588f597650dc086dfecfc3875d4f}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!Offset\-Type@{Offset\-Type}}
+\hypertarget{classffnn_1_1layer_1_1_fully_connected_af51b16e8e07c9d65ab9b20fd886e1780}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!Layer\-Parameter\-Type@{Layer\-Parameter\-Type}}
+\index{Layer\-Parameter\-Type@{Layer\-Parameter\-Type}!ffnn::layer::FullyConnected@{ffnn\-::layer\-::\-Fully\-Connected}}
+\subsubsection[{Layer\-Parameter\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Hidden\-Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$\-Inputs\-At\-Compile\-Time, 1, Outputs\-At\-Compile\-Time, 1$>$$>$ typedef {\bf Layer\-Parameters}$<${\bf Weight\-Matrix\-Type}, {\bf Bias\-Vector\-Type}$>$ {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-::{\bf Layer\-Parameter\-Type}}}\label{classffnn_1_1layer_1_1_fully_connected_af51b16e8e07c9d65ab9b20fd886e1780}
+
+
+\hyperlink{classffnn_1_1layer_1_1_layer}{Layer} parameter type. 
+
+\hypertarget{classffnn_1_1layer_1_1_fully_connected_a0f5ae1a0bd038f404410ce2af1054833}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!Offset\-Type@{Offset\-Type}}
 \index{Offset\-Type@{Offset\-Type}!ffnn::layer::FullyConnected@{ffnn\-::layer\-::\-Fully\-Connected}}
-\subsubsection[{Offset\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic$>$ typedef {\bf Base\-::\-Offset\-Type} {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::{\bf Offset\-Type}}}\label{classffnn_1_1layer_1_1_fully_connected_a2f79588f597650dc086dfecfc3875d4f}
+\subsubsection[{Offset\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Hidden\-Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$\-Inputs\-At\-Compile\-Time, 1, Outputs\-At\-Compile\-Time, 1$>$$>$ typedef {\bf Base\-::\-Offset\-Type} {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-::{\bf Offset\-Type}}}\label{classffnn_1_1layer_1_1_fully_connected_a0f5ae1a0bd038f404410ce2af1054833}
 
 
 Offset type standardization. 
 
-\hypertarget{classffnn_1_1layer_1_1_fully_connected_a1d4b9ddaf2b993d3c9a62d7b3cca495f}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!Optimizer@{Optimizer}}
+\hypertarget{classffnn_1_1layer_1_1_fully_connected_abae398e6ffb06d183654e5ff11857a03}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!Optimizer@{Optimizer}}
 \index{Optimizer@{Optimizer}!ffnn::layer::FullyConnected@{ffnn\-::layer\-::\-Fully\-Connected}}
-\subsubsection[{Optimizer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic$>$ typedef {\bf optimizer\-::\-Optimizer}$<${\bf Self}$>$ {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::{\bf Optimizer}}}\label{classffnn_1_1layer_1_1_fully_connected_a1d4b9ddaf2b993d3c9a62d7b3cca495f}
+\subsubsection[{Optimizer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Hidden\-Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$\-Inputs\-At\-Compile\-Time, 1, Outputs\-At\-Compile\-Time, 1$>$$>$ typedef {\bf optimizer\-::\-Optimizer}$<${\bf Self}$>$ {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-::{\bf Optimizer}}}\label{classffnn_1_1layer_1_1_fully_connected_abae398e6ffb06d183654e5ff11857a03}
 
 
 \hyperlink{classffnn_1_1layer_1_1_layer}{Layer} optimization type standardization. 
 
-\hypertarget{classffnn_1_1layer_1_1_fully_connected_ac8c5ba1f20f470095c2c37f881f49814}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!Output\-Block\-Type@{Output\-Block\-Type}}
+\hypertarget{classffnn_1_1layer_1_1_fully_connected_a23903ba58825efec173f318ffdc3b998}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!Output\-Block\-Type@{Output\-Block\-Type}}
 \index{Output\-Block\-Type@{Output\-Block\-Type}!ffnn::layer::FullyConnected@{ffnn\-::layer\-::\-Fully\-Connected}}
-\subsubsection[{Output\-Block\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic$>$ typedef {\bf Base\-::\-Output\-Block\-Type} {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::{\bf Output\-Block\-Type}}}\label{classffnn_1_1layer_1_1_fully_connected_ac8c5ba1f20f470095c2c37f881f49814}
+\subsubsection[{Output\-Block\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Hidden\-Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$\-Inputs\-At\-Compile\-Time, 1, Outputs\-At\-Compile\-Time, 1$>$$>$ typedef {\bf Base\-::\-Output\-Block\-Type} {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-::{\bf Output\-Block\-Type}}}\label{classffnn_1_1layer_1_1_fully_connected_a23903ba58825efec173f318ffdc3b998}
 
 
 Matrix type standardization. 
 
-\hypertarget{classffnn_1_1layer_1_1_fully_connected_ac3ff6f72846f84f89c0d6e10f138c7e3}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!Scalar\-Type@{Scalar\-Type}}
+\hypertarget{classffnn_1_1layer_1_1_fully_connected_aa5e1875ec3ea63c90655419e7dd32a55}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!Scalar\-Type@{Scalar\-Type}}
 \index{Scalar\-Type@{Scalar\-Type}!ffnn::layer::FullyConnected@{ffnn\-::layer\-::\-Fully\-Connected}}
-\subsubsection[{Scalar\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic$>$ typedef {\bf Base\-::\-Scalar\-Type} {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::{\bf Scalar\-Type}}}\label{classffnn_1_1layer_1_1_fully_connected_ac3ff6f72846f84f89c0d6e10f138c7e3}
+\subsubsection[{Scalar\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Hidden\-Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$\-Inputs\-At\-Compile\-Time, 1, Outputs\-At\-Compile\-Time, 1$>$$>$ typedef {\bf Base\-::\-Scalar\-Type} {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-::{\bf Scalar\-Type}}}\label{classffnn_1_1layer_1_1_fully_connected_aa5e1875ec3ea63c90655419e7dd32a55}
 
 
 Scalar type standardization. 
 
-\hypertarget{classffnn_1_1layer_1_1_fully_connected_a34f862e03a4a2d070013c6c732563a5f}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!Self@{Self}}
+\hypertarget{classffnn_1_1layer_1_1_fully_connected_ac41b1867a1a4e8c9c9eaa892db2ab805}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!Self@{Self}}
 \index{Self@{Self}!ffnn::layer::FullyConnected@{ffnn\-::layer\-::\-Fully\-Connected}}
-\subsubsection[{Self}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic$>$ using {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::{\bf Self} =  {\bf Fully\-Connected}$<$Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time$>$}}\label{classffnn_1_1layer_1_1_fully_connected_a34f862e03a4a2d070013c6c732563a5f}
+\subsubsection[{Self}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Hidden\-Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$\-Inputs\-At\-Compile\-Time, 1, Outputs\-At\-Compile\-Time, 1$>$$>$ using {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-::{\bf Self} =  {\bf Fully\-Connected}$<$Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time$>$}}\label{classffnn_1_1layer_1_1_fully_connected_ac41b1867a1a4e8c9c9eaa892db2ab805}
 
 
 Self type alias. 
 
-\hypertarget{classffnn_1_1layer_1_1_fully_connected_a6087b3dca79894a83be146674d5eb99e}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!Shape\-Type@{Shape\-Type}}
+\hypertarget{classffnn_1_1layer_1_1_fully_connected_a938c80efb16baa531fb424626f339333}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!Shape\-Type@{Shape\-Type}}
 \index{Shape\-Type@{Shape\-Type}!ffnn::layer::FullyConnected@{ffnn\-::layer\-::\-Fully\-Connected}}
-\subsubsection[{Shape\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic$>$ typedef {\bf Base\-::\-Shape\-Type} {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::{\bf Shape\-Type}}}\label{classffnn_1_1layer_1_1_fully_connected_a6087b3dca79894a83be146674d5eb99e}
+\subsubsection[{Shape\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Hidden\-Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$\-Inputs\-At\-Compile\-Time, 1, Outputs\-At\-Compile\-Time, 1$>$$>$ typedef {\bf Base\-::\-Shape\-Type} {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-::{\bf Shape\-Type}}}\label{classffnn_1_1layer_1_1_fully_connected_a938c80efb16baa531fb424626f339333}
 
 
 Dimension type standardization. 
 
-\hypertarget{classffnn_1_1layer_1_1_fully_connected_ae1b5e64828482a4c3eea0e2b0ba3f826}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!Size\-Type@{Size\-Type}}
+\hypertarget{classffnn_1_1layer_1_1_fully_connected_a2924c85b3cc3e79db3f271cd22cac32c}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!Size\-Type@{Size\-Type}}
 \index{Size\-Type@{Size\-Type}!ffnn::layer::FullyConnected@{ffnn\-::layer\-::\-Fully\-Connected}}
-\subsubsection[{Size\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic$>$ typedef {\bf Base\-::\-Size\-Type} {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::{\bf Size\-Type}}}\label{classffnn_1_1layer_1_1_fully_connected_ae1b5e64828482a4c3eea0e2b0ba3f826}
+\subsubsection[{Size\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Hidden\-Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$\-Inputs\-At\-Compile\-Time, 1, Outputs\-At\-Compile\-Time, 1$>$$>$ typedef {\bf Base\-::\-Size\-Type} {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-::{\bf Size\-Type}}}\label{classffnn_1_1layer_1_1_fully_connected_a2924c85b3cc3e79db3f271cd22cac32c}
 
 
 Size type standardization. 
 
-\hypertarget{classffnn_1_1layer_1_1_fully_connected_a4ceb72064ac9a73a0907cc369d229da0}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!Weight\-Matrix\-Type@{Weight\-Matrix\-Type}}
+\hypertarget{classffnn_1_1layer_1_1_fully_connected_aef17d91a349bf83f5e5a20462ebb3c81}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!Weight\-Matrix\-Type@{Weight\-Matrix\-Type}}
 \index{Weight\-Matrix\-Type@{Weight\-Matrix\-Type}!ffnn::layer::FullyConnected@{ffnn\-::layer\-::\-Fully\-Connected}}
-\subsubsection[{Weight\-Matrix\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic$>$ typedef Eigen\-::\-Matrix$<$Value\-Type, Outputs\-At\-Compile\-Time, Inputs\-At\-Compile\-Time, Eigen\-::\-Col\-Major$>$ {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::{\bf Weight\-Matrix\-Type}}}\label{classffnn_1_1layer_1_1_fully_connected_a4ceb72064ac9a73a0907cc369d229da0}
+\subsubsection[{Weight\-Matrix\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Hidden\-Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$\-Inputs\-At\-Compile\-Time, 1, Outputs\-At\-Compile\-Time, 1$>$$>$ typedef Eigen\-::\-Matrix$<$Value\-Type, Outputs\-At\-Compile\-Time, Inputs\-At\-Compile\-Time, Eigen\-::\-Col\-Major$>$ {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-::{\bf Weight\-Matrix\-Type}}}\label{classffnn_1_1layer_1_1_fully_connected_aef17d91a349bf83f5e5a20462ebb3c81}
 
 
 Input-\/output weight matrix. 
@@ -184,14 +195,14 @@ Input-\/output weight matrix.
 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classffnn_1_1layer_1_1_fully_connected_a7cb4ce3e1ed29c4c7f7f4ef8f9ee9259}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!Fully\-Connected@{Fully\-Connected}}
+\hypertarget{classffnn_1_1layer_1_1_fully_connected_a5a21e1d38fd064184b55adb8474a6d71}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!Fully\-Connected@{Fully\-Connected}}
 \index{Fully\-Connected@{Fully\-Connected}!ffnn::layer::FullyConnected@{ffnn\-::layer\-::\-Fully\-Connected}}
-\subsubsection[{Fully\-Connected}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time$>$ {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::{\bf Fully\-Connected} (
+\subsubsection[{Fully\-Connected}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time, typename \-\_\-\-Hidden\-Layer\-Shape $>$ {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-::{\bf Fully\-Connected} (
 \begin{DoxyParamCaption}
 \item[{{\bf Size\-Type}}]{output\-\_\-size = {\ttfamily OutputsAtCompileTime}, }
 \item[{const {\bf Parameters} \&}]{config = {\ttfamily {\bf Parameters}()}}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classffnn_1_1layer_1_1_fully_connected_a7cb4ce3e1ed29c4c7f7f4ef8f9ee9259}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classffnn_1_1layer_1_1_fully_connected_a5a21e1d38fd064184b55adb8474a6d71}
 
 
 Setup constructor. 
@@ -203,23 +214,23 @@ Setup constructor.
 {\em config} & layer configuration struct \\
 \hline
 \end{DoxyParams}
-\hypertarget{classffnn_1_1layer_1_1_fully_connected_a0973b3b3d33d5e3597f440d907e709f7}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!$\sim$\-Fully\-Connected@{$\sim$\-Fully\-Connected}}
+\hypertarget{classffnn_1_1layer_1_1_fully_connected_ad95d27ee5f609c3a9e5c734aed55b935}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!$\sim$\-Fully\-Connected@{$\sim$\-Fully\-Connected}}
 \index{$\sim$\-Fully\-Connected@{$\sim$\-Fully\-Connected}!ffnn::layer::FullyConnected@{ffnn\-::layer\-::\-Fully\-Connected}}
-\subsubsection[{$\sim$\-Fully\-Connected}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time$>$ {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::$\sim${\bf Fully\-Connected} (
+\subsubsection[{$\sim$\-Fully\-Connected}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time, typename \-\_\-\-Hidden\-Layer\-Shape $>$ {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-::$\sim${\bf Fully\-Connected} (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_fully_connected_a0973b3b3d33d5e3597f440d907e709f7}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_fully_connected_ad95d27ee5f609c3a9e5c734aed55b935}
 
 
 \subsection{Member Function Documentation}
-\hypertarget{classffnn_1_1layer_1_1_fully_connected_afd5c1a006cf33a47cb7e2a982fe4cd6d}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!backward@{backward}}
+\hypertarget{classffnn_1_1layer_1_1_fully_connected_ab4a63eb87bd3f2288258b341fcfd165f}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!backward@{backward}}
 \index{backward@{backward}!ffnn::layer::FullyConnected@{ffnn\-::layer\-::\-Fully\-Connected}}
-\subsubsection[{backward}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time$>$ bool {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::backward (
+\subsubsection[{backward}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time, typename \-\_\-\-Hidden\-Layer\-Shape $>$ bool {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-::backward (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_fully_connected_afd5c1a006cf33a47cb7e2a982fe4cd6d}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_fully_connected_ab4a63eb87bd3f2288258b341fcfd165f}
 
 
 Performs backward error propagation. 
@@ -237,19 +248,19 @@ Does not apply layer weight updates
 Will throw if an optimizer has not been associated with this layer 
 \end{DoxyWarning}
 \begin{DoxySeeAlso}{See Also}
-\hyperlink{classffnn_1_1layer_1_1_fully_connected_a9f54f83b0b95aea9ec9b9f300ee24e0f}{set\-Optimizer} 
+\hyperlink{classffnn_1_1layer_1_1_fully_connected_ae57e6eedc1808825635a1c04aa018992}{set\-Optimizer} 
 \end{DoxySeeAlso}
 
 
-Implements \hyperlink{classffnn_1_1layer_1_1_hidden_a246152dfed00bbacb94fbbd6712acea0}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, Inputs\-At\-Compile\-Time, 1, Outputs\-At\-Compile\-Time, 1 $>$}.
+Implements \hyperlink{classffnn_1_1layer_1_1_hidden_aac0ee89390b02ff4731678883dd402dd}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, \-\_\-\-Hidden\-Layer\-Shape $>$}.
 
-\hypertarget{classffnn_1_1layer_1_1_fully_connected_ac49087ab2d66019f2d0244c76987fa50}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!forward@{forward}}
+\hypertarget{classffnn_1_1layer_1_1_fully_connected_a350e7910bd416f67d30113425ea74f59}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!forward@{forward}}
 \index{forward@{forward}!ffnn::layer::FullyConnected@{ffnn\-::layer\-::\-Fully\-Connected}}
-\subsubsection[{forward}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time$>$ bool {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::forward (
+\subsubsection[{forward}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time, typename \-\_\-\-Hidden\-Layer\-Shape $>$ bool {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-::forward (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_fully_connected_ac49087ab2d66019f2d0244c76987fa50}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_fully_connected_a350e7910bd416f67d30113425ea74f59}
 
 
 Performs forward value propagation. 
@@ -263,15 +274,15 @@ Performs forward value propagation.
 \end{DoxyRetVals}
 
 
-Implements \hyperlink{classffnn_1_1layer_1_1_hidden_a41fdfb60b5340c0af46c7c731237e280}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, Inputs\-At\-Compile\-Time, 1, Outputs\-At\-Compile\-Time, 1 $>$}.
+Implements \hyperlink{classffnn_1_1layer_1_1_hidden_a600b86d72826e8be3eafa53e040e9cbe}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, \-\_\-\-Hidden\-Layer\-Shape $>$}.
 
-\hypertarget{classffnn_1_1layer_1_1_fully_connected_a54ab6b0b965d3593525817752fd39c39}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!get\-Biases@{get\-Biases}}
+\hypertarget{classffnn_1_1layer_1_1_fully_connected_af7492d5d678fd45466d7768ab187a41e}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!get\-Biases@{get\-Biases}}
 \index{get\-Biases@{get\-Biases}!ffnn::layer::FullyConnected@{ffnn\-::layer\-::\-Fully\-Connected}}
-\subsubsection[{get\-Biases}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic$>$ const {\bf Bias\-Vector\-Type}\& {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::get\-Biases (
+\subsubsection[{get\-Biases}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Hidden\-Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$\-Inputs\-At\-Compile\-Time, 1, Outputs\-At\-Compile\-Time, 1$>$$>$ const {\bf Bias\-Vector\-Type}\& {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-::get\-Biases (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1_fully_connected_a54ab6b0b965d3593525817752fd39c39}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1_fully_connected_af7492d5d678fd45466d7768ab187a41e}
 
 
 Exposes internal biasing weights. 
@@ -279,13 +290,13 @@ Exposes internal biasing weights.
 \begin{DoxyReturn}{Returns}
 input-\/biasing vector 
 \end{DoxyReturn}
-\hypertarget{classffnn_1_1layer_1_1_fully_connected_a055cc07f210b47e31278bc0bf6b8e909}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!get\-Weights@{get\-Weights}}
+\hypertarget{classffnn_1_1layer_1_1_fully_connected_a96e00e6f6fec19f22a8830e5342bc7ef}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!get\-Weights@{get\-Weights}}
 \index{get\-Weights@{get\-Weights}!ffnn::layer::FullyConnected@{ffnn\-::layer\-::\-Fully\-Connected}}
-\subsubsection[{get\-Weights}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic$>$ const {\bf Weight\-Matrix\-Type}\& {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::get\-Weights (
+\subsubsection[{get\-Weights}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Hidden\-Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$\-Inputs\-At\-Compile\-Time, 1, Outputs\-At\-Compile\-Time, 1$>$$>$ const {\bf Weight\-Matrix\-Type}\& {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-::get\-Weights (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1_fully_connected_a055cc07f210b47e31278bc0bf6b8e909}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1_fully_connected_a96e00e6f6fec19f22a8830e5342bc7ef}
 
 
 Exposes internal connection weights. 
@@ -293,29 +304,29 @@ Exposes internal connection weights.
 \begin{DoxyReturn}{Returns}
 input-\/output connection weights 
 \end{DoxyReturn}
-\hypertarget{classffnn_1_1layer_1_1_fully_connected_aec414194202f845b866b0e8b2a51235c}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!initialize@{initialize}}
+\hypertarget{classffnn_1_1layer_1_1_fully_connected_a55089e2810d6848950da5ca33000da8a}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!initialize@{initialize}}
 \index{initialize@{initialize}!ffnn::layer::FullyConnected@{ffnn\-::layer\-::\-Fully\-Connected}}
-\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time$>$ bool {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::initialize (
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time, typename \-\_\-\-Hidden\-Layer\-Shape $>$ bool {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-::initialize (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_fully_connected_aec414194202f845b866b0e8b2a51235c}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_fully_connected_a55089e2810d6848950da5ca33000da8a}
 
 
 Initialize the layer. 
 
 
 
-Reimplemented from \hyperlink{classffnn_1_1layer_1_1_hidden_a3b5458a771fcf2371376049d85afbc92}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, Inputs\-At\-Compile\-Time, 1, Outputs\-At\-Compile\-Time, 1 $>$}.
+Reimplemented from \hyperlink{classffnn_1_1layer_1_1_hidden_a0bf259cd8d070ce21c90a34d86b173ee}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, \-\_\-\-Hidden\-Layer\-Shape $>$}.
 
-\hypertarget{classffnn_1_1layer_1_1_fully_connected_a4d449a95d01e3ad04a7813d70d296e0c}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!load@{load}}
+\hypertarget{classffnn_1_1layer_1_1_fully_connected_a1ff2a601cdf315ce46a2812b4e6fe354}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!load@{load}}
 \index{load@{load}!ffnn::layer::FullyConnected@{ffnn\-::layer\-::\-Fully\-Connected}}
-\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic$>$ void {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::load (
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Hidden\-Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$\-Inputs\-At\-Compile\-Time, 1, Outputs\-At\-Compile\-Time, 1$>$$>$ void {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-::load (
 \begin{DoxyParamCaption}
 \item[{{\bf Input\-Archive} \&}]{ar, }
 \item[{{\bf Version\-Type}}]{version}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_fully_connected_a4d449a95d01e3ad04a7813d70d296e0c}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_fully_connected_a1ff2a601cdf315ce46a2812b4e6fe354}
 
 
 Load serializer. 
@@ -326,34 +337,35 @@ Reimplemented from \hyperlink{classffnn_1_1traits_1_1_unique_af1e937c2908ed2ff70
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=286pt]{classffnn_1_1layer_1_1_fully_connected_a4d449a95d01e3ad04a7813d70d296e0c_cgraph}
+\includegraphics[width=286pt]{classffnn_1_1layer_1_1_fully_connected_a1ff2a601cdf315ce46a2812b4e6fe354_cgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{classffnn_1_1layer_1_1_fully_connected_a66c69f57c587558acfa5d32110baba57}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!reset@{reset}}
+\hypertarget{classffnn_1_1layer_1_1_fully_connected_aaeb55e214173a632b297d3ddac76fc24}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!reset@{reset}}
 \index{reset@{reset}!ffnn::layer::FullyConnected@{ffnn\-::layer\-::\-Fully\-Connected}}
-\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time$>$ void {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::reset (
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time, typename \-\_\-\-Hidden\-Layer\-Shape $>$ void {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-::reset (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{classffnn_1_1layer_1_1_fully_connected_a66c69f57c587558acfa5d32110baba57}
+)}}\label{classffnn_1_1layer_1_1_fully_connected_aaeb55e214173a632b297d3ddac76fc24}
 
 
 Reset weights and biases. 
 
-\hypertarget{classffnn_1_1layer_1_1_fully_connected_a858f04f0752096d74e4d9876edb4c73e}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!save@{save}}
+\hypertarget{classffnn_1_1layer_1_1_fully_connected_a7c79eb99c638b61f76ea34b725c0aeef}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!save@{save}}
 \index{save@{save}!ffnn::layer::FullyConnected@{ffnn\-::layer\-::\-Fully\-Connected}}
-\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic$>$ void {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::save (
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Hidden\-Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$\-Inputs\-At\-Compile\-Time, 1, Outputs\-At\-Compile\-Time, 1$>$$>$ void {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-::save (
 \begin{DoxyParamCaption}
 \item[{{\bf Output\-Archive} \&}]{ar, }
 \item[{{\bf Version\-Type}}]{version}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_fully_connected_a858f04f0752096d74e4d9876edb4c73e}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_fully_connected_a7c79eb99c638b61f76ea34b725c0aeef}
 
 
 Save serializer. 
@@ -364,22 +376,23 @@ Reimplemented from \hyperlink{classffnn_1_1traits_1_1_unique_ad8be6fcb9a7519603b
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=288pt]{classffnn_1_1layer_1_1_fully_connected_a858f04f0752096d74e4d9876edb4c73e_cgraph}
+\includegraphics[width=288pt]{classffnn_1_1layer_1_1_fully_connected_a7c79eb99c638b61f76ea34b725c0aeef_cgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{classffnn_1_1layer_1_1_fully_connected_a9f54f83b0b95aea9ec9b9f300ee24e0f}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!set\-Optimizer@{set\-Optimizer}}
+\hypertarget{classffnn_1_1layer_1_1_fully_connected_ae57e6eedc1808825635a1c04aa018992}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!set\-Optimizer@{set\-Optimizer}}
 \index{set\-Optimizer@{set\-Optimizer}!ffnn::layer::FullyConnected@{ffnn\-::layer\-::\-Fully\-Connected}}
-\subsubsection[{set\-Optimizer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time$>$ void {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::set\-Optimizer (
+\subsubsection[{set\-Optimizer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time, typename \-\_\-\-Hidden\-Layer\-Shape $>$ void {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-::set\-Optimizer (
 \begin{DoxyParamCaption}
 \item[{typename {\bf Optimizer\-::\-Ptr}}]{opt}
 \end{DoxyParamCaption}
-)}}\label{classffnn_1_1layer_1_1_fully_connected_a9f54f83b0b95aea9ec9b9f300ee24e0f}
+)}}\label{classffnn_1_1layer_1_1_fully_connected_ae57e6eedc1808825635a1c04aa018992}
 
 
 Sets an optimizer used update network weights during back-\/propagation. 
@@ -392,13 +405,13 @@ Sets an optimizer used update network weights during back-\/propagation.
 \begin{DoxyWarning}{Warning}
 {\ttfamily backward} and {\ttfamily update} methods are expected to throw if an optimizer has not been set explicitly 
 \end{DoxyWarning}
-\hypertarget{classffnn_1_1layer_1_1_fully_connected_a3194dde96feea7d008cc0c27f30cc805}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!update@{update}}
+\hypertarget{classffnn_1_1layer_1_1_fully_connected_a7dd4dbe010c3d290c131b21b35f6301e}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!update@{update}}
 \index{update@{update}!ffnn::layer::FullyConnected@{ffnn\-::layer\-::\-Fully\-Connected}}
-\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time$>$ bool {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::update (
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time, typename \-\_\-\-Hidden\-Layer\-Shape $>$ bool {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-::update (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_fully_connected_a3194dde96feea7d008cc0c27f30cc805}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_fully_connected_a7dd4dbe010c3d290c131b21b35f6301e}
 
 
 Applies accumulated layer weight updates computed during optimization. 
@@ -414,11 +427,11 @@ Applies accumulated layer weight updates computed during optimization.
 Will throw if an optimizer has not been associated with this layer 
 \end{DoxyWarning}
 \begin{DoxySeeAlso}{See Also}
-\hyperlink{classffnn_1_1layer_1_1_fully_connected_a9f54f83b0b95aea9ec9b9f300ee24e0f}{set\-Optimizer} 
+\hyperlink{classffnn_1_1layer_1_1_fully_connected_ae57e6eedc1808825635a1c04aa018992}{set\-Optimizer} 
 \end{DoxySeeAlso}
 
 
-Implements \hyperlink{classffnn_1_1layer_1_1_hidden_ace039624b0b202413e068fd523f26884}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, Inputs\-At\-Compile\-Time, 1, Outputs\-At\-Compile\-Time, 1 $>$}.
+Implements \hyperlink{classffnn_1_1layer_1_1_hidden_ae038d2a1e64fcbbde6166df7d0573ef8}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, \-\_\-\-Hidden\-Layer\-Shape $>$}.
 
 
 

@@ -5,10 +5,19 @@
 #ifndef FFNN_NEURON_NEURON_H
 #define FFNN_NEURON_NEURON_H
 
+// C++ Standard Library
+#include <type_traits>
+
 namespace ffnn
 {
 namespace neuron
 {
+template<typename NeuronType>
+struct is_neuron
+{
+  constexpr static bool value = NeuronType::IsNeuron;
+};
+
 /**
  * @brief A basic activation unit type
  */
@@ -16,6 +25,8 @@ template<typename ValueType>
 class Neuron
 {
 public:
+  enum {IsNeuron = true};
+
   /**
    * @brief Computes activation output
    * @param[in] input  a scalar input value

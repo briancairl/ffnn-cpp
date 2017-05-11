@@ -91,6 +91,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions_i.html#index_i"><span>i</span></a></li>
       <li><a href="functions_k.html#index_k"><span>k</span></a></li>
       <li><a href="functions_l.html#index_l"><span>l</span></a></li>
+      <li><a href="functions_m.html#index_m"><span>m</span></a></li>
       <li><a href="functions_n.html#index_n"><span>n</span></a></li>
       <li><a href="functions_o.html#index_o"><span>o</span></a></li>
       <li><a href="functions_p.html#index_p"><span>p</span></a></li>
@@ -132,30 +133,30 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 , <a class="el" href="classffnn_1_1layer_1_1_receptive_volume.html#a7c97795baaf3c9b1e7db3cb3841d8829">ffnn::layer::ReceptiveVolume&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterCountAtCompileTime, EmbeddingMode &gt;</a>
 </li>
 <li>forward()
-: <a class="el" href="classffnn_1_1layer_1_1_activation.html#aa7f88c8bc20589dc51d9dd615b8c4580">ffnn::layer::Activation&lt; ValueType, NeuronType, SizeAtCompileTime &gt;</a>
-, <a class="el" href="classffnn_1_1layer_1_1_convolution.html#a7da09bc158b4c6f61bc02ea3bc6f8cee">ffnn::layer::Convolution&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterHeightAtCompileTime, FilterWidthAtCompileTime, FilterCountAtCompileTime, StrideAtCompileTime, Mode &gt;</a>
+: <a class="el" href="classffnn_1_1layer_1_1_activation.html#aa7f88c8bc20589dc51d9dd615b8c4580">ffnn::layer::Activation&lt; ValueType, NeuronType, SizeAtCompileTime, _HiddenLayerShape &gt;</a>
+, <a class="el" href="classffnn_1_1layer_1_1_convolution.html#a09216fc4ade0c00c2ddf97e5eacadec1">ffnn::layer::Convolution&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterHeightAtCompileTime, FilterWidthAtCompileTime, FilterCountAtCompileTime, StrideAtCompileTime, Mode, _HiddenLayerShape &gt;</a>
 , <a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html#a0145b555b05e8f0e5d7e5a740f21a890">ffnn::layer::ConvolutionVolume&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterCountAtCompileTime, Mode &gt;</a>
-, <a class="el" href="classffnn_1_1layer_1_1_fully_connected.html#ac49087ab2d66019f2d0244c76987fa50">ffnn::layer::FullyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt;</a>
-, <a class="el" href="classffnn_1_1layer_1_1_hidden.html#a41fdfb60b5340c0af46c7c731237e280">ffnn::layer::Hidden&lt; ValueType, InputHeightAtCompileTime, InputWidthAtCompileTime, OutputHeightAtCompileTime, OutputWidthAtCompileTime, _InputBlockType, _OutputBlockType, _InputMappingType, _OutputMappingType &gt;</a>
-, <a class="el" href="classffnn_1_1layer_1_1_layer.html#a5e7b9e250678604ce373ab2b82cdb8e1">ffnn::layer::Layer&lt; ValueType, EnableAlignment &gt;</a>
+, <a class="el" href="classffnn_1_1layer_1_1_fully_connected.html#a350e7910bd416f67d30113425ea74f59">ffnn::layer::FullyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape &gt;</a>
+, <a class="el" href="classffnn_1_1layer_1_1_hidden.html#a600b86d72826e8be3eafa53e040e9cbe">ffnn::layer::Hidden&lt; ValueType, LayerShape, _InputBlockType, _OutputBlockType &gt;</a>
+, <a class="el" href="classffnn_1_1layer_1_1_layer.html#a832518de9beb442be0764e49ab24d78d">ffnn::layer::Layer&lt; ValueType &gt;</a>
 , <a class="el" href="classffnn_1_1layer_1_1_receptive_volume.html#ab4ff3f2b9bc68dfb56d8f01c53a664d8">ffnn::layer::ReceptiveVolume&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterCountAtCompileTime, EmbeddingMode &gt;</a>
-, <a class="el" href="classffnn_1_1layer_1_1_sparsely_connected.html#a53f1d9a2edfdd2e47164b24121c23acc">ffnn::layer::SparselyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt;</a>
+, <a class="el" href="classffnn_1_1layer_1_1_sparsely_connected.html#a53f1d9a2edfdd2e47164b24121c23acc">ffnn::layer::SparselyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape &gt;</a>
 , <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_5f7b01db2ae4d39760d70ee323649a60.html#afa8fe46160d16887fc7abb4de34a65e5">ffnn::optimizer::GradientDescent&lt; layer::FullyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt; &gt;</a>
 , <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_sparsely_connected_3_01_value_type_00_e6c27913ab0d90f52f73031aa88c19bf.html#a7e9882cd69c5d4ee64f5614614e9d96c">ffnn::optimizer::GradientDescent&lt; layer::SparselyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt; &gt;</a>
 , <a class="el" href="classffnn_1_1optimizer_1_1_none.html#a4aa65aa33dc45fa3b5d30e7f2a7169f2">ffnn::optimizer::None&lt; LayerType &gt;</a>
 , <a class="el" href="classffnn_1_1optimizer_1_1_optimizer.html#a80505cfdeba0a3c8d1db19a2821613f2">ffnn::optimizer::Optimizer&lt; LayerType &gt;</a>
 </li>
 <li>forward_error_
-: <a class="el" href="classffnn_1_1layer_1_1_hidden.html#ae1671dbf7f91d9ae21d307761c0e930e">ffnn::layer::Hidden&lt; ValueType, InputHeightAtCompileTime, InputWidthAtCompileTime, OutputHeightAtCompileTime, OutputWidthAtCompileTime, _InputBlockType, _OutputBlockType, _InputMappingType, _OutputMappingType &gt;</a>
+: <a class="el" href="classffnn_1_1layer_1_1_hidden.html#af1f439bdd3645a5ee444455d822b5143">ffnn::layer::Hidden&lt; ValueType, LayerShape, _InputBlockType, _OutputBlockType &gt;</a>
 </li>
 <li>FullyConnected()
-: <a class="el" href="classffnn_1_1layer_1_1_fully_connected.html#a7cb4ce3e1ed29c4c7f7f4ef8f9ee9259">ffnn::layer::FullyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt;</a>
+: <a class="el" href="classffnn_1_1layer_1_1_fully_connected.html#a5a21e1d38fd064184b55adb8474a6d71">ffnn::layer::FullyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape &gt;</a>
 </li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed May 10 2017 13:05:03 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 10 2017 17:22:47 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

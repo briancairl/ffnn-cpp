@@ -33,8 +33,8 @@ template<typename ValueType>
 class LinearStandardNormalDropout:
   public ffnn::neuron::modifier::Dropout<
     ValueType,
-    ffnn::neuron::Linear,
-    ffnn::distribution::StandardNormal, 5>
+    ffnn::neuron::Linear<ValueType>,
+    ffnn::distribution::StandardNormal<ValueType>, 5>
 {};
 
 /***********************************************************/
@@ -56,22 +56,22 @@ TEST(TestLayerFullyConnectedDropoutActivationWithOptimizers, GradientDescent)
   // Layer-type alias
   using Layer  = ffnn::layer::Layer<float>;
   using Input  = ffnn::layer::Input<float>;
-  using Hidden = ffnn::layer::FullyConnected<float>;
-  using Activation = ffnn::layer::Activation<float, LinearStandardNormalDropout>;
+  using Hidden1 = ffnn::layer::FullyConnected<float>;
+  using Activation = ffnn::layer::Activation<float, LinearStandardNormalDropout<float>>;
   using Output = ffnn::layer::Output<float>;
 
   // Layer sizes
   static const Layer::SizeType DIM = 32;
 
   // Create layers
-  auto input = boost::make_shared<Input>(DIM);  
-  auto hidden1 = boost::make_shared<Hidden>(DIM);
+  auto input = boost::make_shared<Input>(DIM);
+  auto hidden1 = boost::make_shared<Hidden1>(DIM);
   auto hidden2 = boost::make_shared<Activation>();
-  auto output = boost::make_shared<Output>();  
+  auto output = boost::make_shared<Output>();
 
   // Set optimizer (gradient descent)
   {
-    using Optimizer = ffnn::optimizer::GradientDescent<Hidden>;
+    using Optimizer = ffnn::optimizer::GradientDescent<Hidden1>;
     hidden1->setOptimizer(boost::make_shared<Optimizer>(1e-5));
   }
 
@@ -92,13 +92,13 @@ TEST(TestLayerFullyConnectedDropoutActivationWithOptimizers, GradientDescent)
   }
 
   // Create some data
-  Hidden::InputBlockType target_data = Hidden::InputBlockType::Ones(DIM);
-  Hidden::InputBlockType output_data(DIM, 1);
+  Hidden1::InputBlockType target_data = Hidden1::InputBlockType::Ones(DIM, 1);
+  Hidden1::InputBlockType output_data(DIM, 1);
 
   // Check that error montonically decreases
   float prev_error = std::numeric_limits<float>::infinity();
   size_t lt_count = 0;
-  for (size_t idx = 0UL; idx < 50; idx++)
+  for (size_t idx = 0UL; idx < 500; idx++)
   {
     // Forward activate
     (*input) << target_data;

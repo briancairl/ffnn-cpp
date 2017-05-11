@@ -18,13 +18,14 @@ namespace modifier
  * @brief
  */
 template<typename ValueType,
-         template<class> class NeuronType,
-         template<class> class DistributionType,
+         typename NeuronType,
+         typename DistributionType,
          FFNN_SIZE_TYPE _P,
          FFNN_SIZE_TYPE _B = 100>
 class Dropout :
-  public NeuronType<ValueType>
+  public NeuronType
 {
+  FFNN_STATIC_ASSERT_MSG(is_neuron<NeuronType>::value, "NeuronType is not a valid Neuron object.");
 public:
   /// Default constructor
   Dropout() :
@@ -40,7 +41,7 @@ public:
   virtual void operator()(const ValueType& input, ValueType& output)
   {
     // Create distribution to draw from
-    static DistributionType<ValueType> dist_;
+    static DistributionType dist_;
     
     // Generate value and compute its probability  
     const ValueType v(dist_.generate());
@@ -52,7 +53,7 @@ public:
     // Activate
     if (connected_)
     {
-      NeuronType<ValueType>::operator()(input, output);
+      NeuronType::operator()(input, output);
     }
     else
     {
@@ -69,7 +70,7 @@ public:
   {
     if (connected_)
     {
-      NeuronType<ValueType>::derivative(input, output);
+      NeuronType::derivative(input, output);
     }
     else
     {
