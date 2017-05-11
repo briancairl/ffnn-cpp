@@ -38,7 +38,7 @@ struct hidden_layer_shape
  */
 template<typename ValueType,
          typename LayerShape = hidden_layer_shape<>,
-         typename _InputBlockType  = Eigen::Matrix<ValueType, LayerShape::input_height, LayerShape::input_height, Eigen::ColMajor>,
+         typename _InputBlockType  = Eigen::Matrix<ValueType, LayerShape::input_height,  LayerShape::input_height,  Eigen::ColMajor>,
          typename _OutputBlockType = Eigen::Matrix<ValueType, LayerShape::output_height, LayerShape::output_height, Eigen::ColMajor>>
 class Hidden :
   public Layer<ValueType>

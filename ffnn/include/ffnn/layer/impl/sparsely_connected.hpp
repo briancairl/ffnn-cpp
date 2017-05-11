@@ -3,6 +3,9 @@
  * @warn Do not include directly
  */
 
+// Boost
+#include <boost/bind.hpp>
+
 // FFNN
 #include <ffnn/assert.h>
 #include <ffnn/logging.h>
@@ -22,31 +25,8 @@ template<typename ValueType,
          FFNN_SIZE_TYPE OutputsAtCompileTime,
          typename _HiddenLayerShape>
 SPARSELY_CONNECTED::
-Parameters::Parameters(ScalarType connection_probability,
-                       ScalarType init_weight_std,
-                       ScalarType init_bias_std,
-                       ScalarType init_weight_mean,
-                       ScalarType init_bias_mean) :
-  connection_probability(connection_probability),
-  init_weight_std(init_weight_std),
-  init_bias_std(init_bias_std),
-  init_weight_mean(init_weight_mean),
-  init_bias_mean(init_bias_mean)
-{
-  FFNN_ASSERT_MSG(connection_probability > 0, "[connection_probability] should be in the range (0, 1)");
-  FFNN_ASSERT_MSG(connection_probability < 1, "[connection_probability] should be in the range (0, 1)");
-  FFNN_ASSERT_MSG(init_bias_std > 0, "[init_bias_std] should be positive");
-  FFNN_ASSERT_MSG(init_weight_std > 0, "[init_weight_std] should be positive");
-}
-
-template<typename ValueType,
-         FFNN_SIZE_TYPE InputsAtCompileTime,
-         FFNN_SIZE_TYPE OutputsAtCompileTime,
-         typename _HiddenLayerShape>
-SPARSELY_CONNECTED::
-SparselyConnected(SizeType output_size, const Parameters& config) :
+SparselyConnected(SizeType output_size) :
   Base(ShapeType(0), ShapeType(output_size)),
-  config_(config),
   opt_(boost::make_shared<typename optimizer::None<Self>>())
 {}
 
@@ -103,6 +83,52 @@ template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
          FFNN_SIZE_TYPE OutputsAtCompileTime,
          typename _HiddenLayerShape>
+template<typename WeightDistribution,
+         typename BiasDistribution,
+         typename ConnectionDistribution>
+bool SPARSELY_CONNECTED::initialize(const WeightDistribution& wd,
+                                    const BiasDistribution& bd,
+                                    const ConnectionDistribution& cd,
+                                    ValueType connection_probability)
+{
+  if (initialize())
+  {
+    if (Base::setupRequired())
+    {
+      // Build weight matrix
+      for (SizeType idx = 0; idx < Base::outputShape().size(); idx++)
+      {
+        for (SizeType jdx = 0; jdx < Base::inputShape().size(); jdx++)
+        {
+          if (cd.cdf(cd.generate()) < connection_probability)
+          {
+            w_.insert(idx, jdx) = wd.generate();
+          }
+        }
+      }
+
+      // Set layer biases
+      {
+        auto coeffInitfn = [](ValueType x, const BiasDistribution& dist)
+        {
+          return dist.generate();
+        };
+        b_ = b_.unaryExpr(boost::bind<ValueType>(coeffInitfn, _1, bd));
+      }
+      return true;
+    }
+    FFNN_WARN_NAMED("layer::SparselyConnected",
+                    "Layer was previously loaded. Trained parameters will not be reset.");
+    return false;
+  }
+  return false;
+}
+
+
+template<typename ValueType,
+         FFNN_SIZE_TYPE InputsAtCompileTime,
+         FFNN_SIZE_TYPE OutputsAtCompileTime,
+         typename _HiddenLayerShape>
 bool SPARSELY_CONNECTED::forward()
 {
   FFNN_ASSERT_MSG(opt_, "No optimization resource set.");
@@ -113,7 +139,7 @@ bool SPARSELY_CONNECTED::forward()
 
   // Compute weighted outputs
   Base::output_.noalias() = w_ * Base::input_;
-  Base::output_.noalias() += b_;
+  Base::output_ += b_;
   return true;
 }
 
@@ -148,36 +174,9 @@ template<typename ValueType,
          typename _HiddenLayerShape>
 void SPARSELY_CONNECTED::reset()
 {
-  typedef Eigen::Matrix<ValueType, OutputsAtCompileTime, InputsAtCompileTime> RandMatrix;
-
-  FFNN_ASSERT_MSG(Base::isInitialized(), "Layer is not initialized.");
-
-  // Create random value matrix
-  RandMatrix random(Base::outputShape().size(), Base::inputShape().size());
-  random.setRandom(Base::outputShape().size(), Base::inputShape().size());
-
-  // Build weight matrix
+  // Zero out connection weights and biases with appropriate size
   w_.resize(Base::outputShape().size(), Base::inputShape().size());
-  for (SizeType idx = 0; idx < Base::outputShape().size(); idx++)
-  {
-    for (SizeType jdx = 0; jdx < Base::inputShape().size(); jdx++)
-    {
-      const ValueType p = (random(idx, jdx) + 1) / 2;
-      if (p < config_.connection_probability)
-      {
-        w_.insert(idx, jdx) =
-          config_.init_weight_mean + random(idx, jdx) * config_.init_weight_std;
-      }
-    }
-  }
-
-  // Set uniformly random bias matrix + add biases
   b_.setRandom(Base::outputShape().size(), 1);
-  b_ *= config_.init_bias_std;
-  if (std::abs(config_.init_bias_mean) > 0)
-  {
-    b_.array() += config_.init_bias_mean;
-  }
 }
 
 template<typename ValueType,
@@ -211,13 +210,6 @@ void SPARSELY_CONNECTED::
   ffnn::io::signature::apply<SPARSELY_CONNECTED>(ar);
   Base::save(ar, version);
 
-  // Save configuration parameters
-  ar & config_.connection_probability;
-  ar & config_.init_weight_std;
-  ar & config_.init_weight_mean;
-  ar & config_.init_bias_std;
-  ar & config_.init_bias_mean;
-
   // Save weight/bias matrix
   ar & w_;
   ar & b_;
@@ -235,13 +227,6 @@ void SPARSELY_CONNECTED::
 {
   ffnn::io::signature::check<SPARSELY_CONNECTED>(ar);
   Base::load(ar, version);
-
-  // Save configuration parameters
-  ar & config_.connection_probability;
-  ar & config_.init_weight_std;
-  ar & config_.init_weight_mean;
-  ar & config_.init_bias_std;
-  ar & config_.init_bias_mean;
 
   // Save weight/bias matrix
   ar & w_;

@@ -84,10 +84,15 @@ TEST(TestLayerFullyConnectedDropoutActivationWithOptimizers, GradientDescent)
     EXPECT_TRUE(ffnn::layer::connect<Layer>(layers[idx-1UL], layers[idx]));
   }
 
-  // Initialize and check all layers and 
+  EXPECT_TRUE(input->initialize());
+  EXPECT_TRUE(hidden1->initialize(ffnn::distribution::StandardNormal<float>(),
+                                  ffnn::distribution::StandardNormal<float>()));
+  EXPECT_TRUE(hidden2->initialize());
+  EXPECT_TRUE(output->initialize());
+
+  // Initialize and check all layers and
   for(const auto& layer : layers)
   {
-    EXPECT_TRUE(layer->initialize());
     EXPECT_TRUE(layer->isInitialized());
   }
 

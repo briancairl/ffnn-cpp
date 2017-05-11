@@ -3,6 +3,9 @@
  * @warn Do not include directly
  */
 
+// Boost
+#include <boost/bind.hpp>
+
 // FFNN
 #include <ffnn/assert.h>
 #include <ffnn/logging.h>
@@ -13,32 +16,18 @@ namespace ffnn
 {
 namespace layer
 {
-template<typename ValueType,
-         FFNN_SIZE_TYPE InputsAtCompileTime,
-         FFNN_SIZE_TYPE OutputsAtCompileTime,
-         typename _HiddenLayerShape>
-FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape>::
-Parameters::Parameters(ScalarType init_weight_std,
-                       ScalarType init_bias_std,
-                       ScalarType init_weight_mean,
-                       ScalarType init_bias_mean) :
-  init_weight_std(init_weight_std),
-  init_bias_std(init_bias_std),
-  init_weight_mean(init_weight_mean),
-  init_bias_mean(init_bias_mean)
-{
-  FFNN_ASSERT_MSG(init_bias_std > 0, "[init_bias_std] should be positive");
-  FFNN_ASSERT_MSG(init_weight_std > 0, "[init_weight_std] should be positive");
-}
+#define FULLY_CONNECTED_TARGS ValueType,\
+                              InputsAtCompileTime,\
+                              OutputsAtCompileTime,\
+                              _HiddenLayerShape
+#define FULLY_CONNECTED FullyConnected<FULLY_CONNECTED_TARGS>
 
 template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
          FFNN_SIZE_TYPE OutputsAtCompileTime,
          typename _HiddenLayerShape>
-FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape>::
-FullyConnected(SizeType output_size, const Parameters& config) :
+FULLY_CONNECTED::FullyConnected(SizeType output_size) :
   Base(ShapeType(InputsAtCompileTime), ShapeType(output_size)),
-  config_(config),
   opt_(boost::make_shared<typename optimizer::None<Self>>())
 {}
 
@@ -46,8 +35,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
          FFNN_SIZE_TYPE OutputsAtCompileTime,
          typename _HiddenLayerShape>
-FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape>::
-~FullyConnected()
+FULLY_CONNECTED::~FullyConnected()
 {
   FFNN_INTERNAL_DEBUG_NAMED("layer::FullyConnected", "Destroying [layer::FullyConnected] object <" << this->getID() << ">");
 }
@@ -56,7 +44,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
          FFNN_SIZE_TYPE OutputsAtCompileTime,
          typename _HiddenLayerShape>
-bool FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape>::initialize()
+bool FULLY_CONNECTED::initialize()
 {
   // Abort if layer is already initialized
   if (Base::setupRequired() && Base::isInitialized())
@@ -98,7 +86,45 @@ template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
          FFNN_SIZE_TYPE OutputsAtCompileTime,
          typename _HiddenLayerShape>
-bool FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape>::forward()
+template<typename WeightDistribution,
+         typename BiasDistribution>
+bool FULLY_CONNECTED::initialize(const WeightDistribution& wd, const BiasDistribution& bd)
+{
+  if (initialize())
+  {
+    if (Base::setupRequired())
+    {
+      // Set layer connections weights
+      {
+        auto coeffInitfn = [](ValueType x, const WeightDistribution& dist)
+        {
+          return dist.generate();
+        };
+        w_ = w_.unaryExpr(boost::bind<ValueType>(coeffInitfn, _1, wd));
+      }
+
+      // Set layer biases
+      {
+        auto coeffInitfn = [](ValueType x, const BiasDistribution& dist)
+        {
+          return dist.generate();
+        };
+        b_ = b_.unaryExpr(boost::bind<ValueType>(coeffInitfn, _1, bd));
+      }
+      return true;
+    }
+    FFNN_WARN_NAMED("layer::FullyConnected",
+                    "Layer was previously loaded. Trained parameters will not be reset.");
+    return false;
+  }
+  return false;
+}
+
+template<typename ValueType,
+         FFNN_SIZE_TYPE InputsAtCompileTime,
+         FFNN_SIZE_TYPE OutputsAtCompileTime,
+         typename _HiddenLayerShape>
+bool FULLY_CONNECTED::forward()
 {
   if (!opt_->forward(*this))
   {
@@ -106,7 +132,8 @@ bool FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _Hidde
   }
 
   // Compute weighted + biased outputs
-  Base::output_.noalias() = w_ * Base::input_ + b_;
+  Base::output_.noalias() = w_ * Base::input_;
+  Base::output_ += b_;
   return true;
 }
 
@@ -114,7 +141,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
          FFNN_SIZE_TYPE OutputsAtCompileTime,
          typename _HiddenLayerShape>
-bool FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape>::backward()
+bool FULLY_CONNECTED::backward()
 {
   FFNN_ASSERT_MSG(opt_, "No optimization resource set.");
 
@@ -129,7 +156,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
          FFNN_SIZE_TYPE OutputsAtCompileTime,
          typename _HiddenLayerShape>
-bool FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape>::update()
+bool FULLY_CONNECTED::update()
 {
   FFNN_ASSERT_MSG(opt_, "No optimization resource set.");
   return opt_->update(*this);
@@ -139,33 +166,18 @@ template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
          FFNN_SIZE_TYPE OutputsAtCompileTime,
          typename _HiddenLayerShape>
-void FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape>::reset()
+void FULLY_CONNECTED::reset()
 {
-  FFNN_ASSERT_MSG(Base::isInitialized(), "Layer is not initialized.");
-
-  // Set uniformly random weight matrix + add biases
-  w_.setRandom(Base::outputShape().size(), Base::inputShape().size());
-  w_ *= config_.init_weight_std;
-  if (std::abs(config_.init_weight_mean) > 0)
-  {
-    w_.array() += config_.init_weight_mean;
-  }
-
-  // Set uniformly random bias matrix + add biases
-  b_.setRandom(Base::outputShape().size(), 1);
-  b_ *= config_.init_bias_std;
-  if (std::abs(config_.init_bias_mean) > 0)
-  {
-    b_.array() += config_.init_bias_mean;
-  }
+  // Zero out connection weights and biases with appropriate size
+  w_.setZero(Base::outputShape().size(), Base::inputShape().size());
+  b_.setZero(Base::outputShape().size(), 1);
 }
 
 template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
          FFNN_SIZE_TYPE OutputsAtCompileTime,
          typename _HiddenLayerShape>
-void FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape>::
-  setOptimizer(typename Optimizer::Ptr opt)
+void FULLY_CONNECTED::setOptimizer(typename Optimizer::Ptr opt)
 {
   FFNN_ASSERT_MSG(opt, "Input optimizer object is an empty resource.");
   opt_ = opt;
@@ -175,18 +187,11 @@ template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
          FFNN_SIZE_TYPE OutputsAtCompileTime,
          typename _HiddenLayerShape>
-void FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape>::
-  save(typename FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape>::OutputArchive& ar,
-       typename FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape>::VersionType version) const
+void FULLY_CONNECTED::save(typename FULLY_CONNECTED::OutputArchive& ar,
+                           typename FULLY_CONNECTED::VersionType version) const
 {
   ffnn::io::signature::apply<FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape>>(ar);
   Base::save(ar, version);
-
-  // Save configuration parameters
-  ar & config_.init_weight_std;
-  ar & config_.init_weight_mean;
-  ar & config_.init_bias_std;
-  ar & config_.init_bias_mean;
 
   // Save weight/bias matrix
   ar & w_;
@@ -199,18 +204,11 @@ template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
          FFNN_SIZE_TYPE OutputsAtCompileTime,
          typename _HiddenLayerShape>
-void FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape>::
-  load(typename FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape>::InputArchive& ar,
-       typename FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape>::VersionType version)
+void FULLY_CONNECTED::load(typename FULLY_CONNECTED::InputArchive& ar,
+                           typename FULLY_CONNECTED::VersionType version)
 {
   ffnn::io::signature::check<FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape>>(ar);
   Base::load(ar, version);
-
-  // Save configuration parameters
-  ar & config_.init_weight_std;
-  ar & config_.init_weight_mean;
-  ar & config_.init_bias_std;
-  ar & config_.init_bias_mean;
 
   // Save weight/bias matrix
   ar & w_;

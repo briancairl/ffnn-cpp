@@ -62,61 +62,46 @@ public:
   /// Layer optimization type standardization
   typedef optimizer::Optimizer<Self> Optimizer;
 
-  /// A configuration object for a SparselyConnected hidden layer
-  struct Parameters
-  {
-    /// Probability that a connection exists between any input/output pair
-    ScalarType connection_probability;
-
-    /// Standard deviation of connection weights on init
-    ScalarType init_weight_std;
-
-    /// Standard deviation of biases on init
-    ScalarType init_bias_std;
-
-    /// Connection weight mean (bias) on init
-    ScalarType init_weight_mean;
-
-    /// Connection biasing mean (bias) on init
-    ScalarType init_bias_mean;
-
-    /**
-     * @brief Setup constructor
-     * @param connection_probability  Probability a connection will exist between any input/output pair
-     * @param init_weight_std  Standard deviation of initial weights
-     * @param init_bias_std  Standard deviation of initial weights
-     * @param init_weight_mean  Mean of intial weights
-     * @param init_bias_mean  Mean of intial biases
-     */
-    explicit
-    Parameters(ScalarType connection_probability = 0.5,
-               ScalarType init_weight_std = 1e-3,
-               ScalarType init_bias_std = 1e-3,
-               ScalarType init_weight_mean = 0.0,
-               ScalarType init_bias_mean = 0.0);
-  };
-
   /**
    * @brief Setup constructor
    * @param output_size  number of outputs from the layer
-   * @param config  layer configuration struct
    */
-  explicit
-  SparselyConnected(SizeType output_size = OutputsAtCompileTime,
-                    const Parameters& config = Parameters());
+  explicit SparselyConnected(SizeType output_size = OutputsAtCompileTime);
   virtual ~SparselyConnected();
 
   /**
    * @brief Initialize the layer
+   * @retval true  if layer was initialized successfully
+   * @retval false otherwise
+   *
+   * @warning If layer is not loaded instance, this method will initialize layer sizings
+   *          but weights and biases will be zero
    */
-  virtual bool initialize();
+  bool initialize();
+
+  /**
+   * @brief Initialize layer weights and biases according to particular distributions
+   * @param wd  distribution to sample for connection weights
+   * @param bd  distribution to sample for biases
+   * @param cd  distribution used to detrmine connectedness
+   * @param connection_probability  probability of connection between neurons, according to 'cd'
+   * @retval false otherwise
+   *
+   * @warning If layer is a loaded instance, this method will initialize layer sizings
+   *          but weights will not be reset according to the given distributions
+   */
+  template<typename WeightDistribution, typename BiasDistribution, typename ConnectionDistribution>
+  bool initialize(const WeightDistribution& wd,
+                  const BiasDistribution& bd,
+                  const ConnectionDistribution& cd,
+                  ValueType connection_probability = 0.5);
 
   /**
    * @brief Performs forward value propagation
    * @retval true  if forward-propagation succeeded
    * @retval false  otherwise
    */
-  virtual bool forward();
+  bool forward();
 
   /**
    * @brief Performs backward error propagation
@@ -126,7 +111,7 @@ public:
    * @warning Will throw if an optimizer has not been associated with this layer
    * @see setOptimizer
    */
-  virtual bool backward();
+  bool backward();
 
   /**
    * @brief Applies accumulated layer weight updates computed during optimization
@@ -135,10 +120,10 @@ public:
    * @warning Will throw if an optimizer has not been associated with this layer
    * @see setOptimizer
    */
-  virtual bool update();
+  bool update();
 
   /**
-   * @brief Reset weights and biases
+   * @brief Reset weights and biases to zero
    */
   void reset();
 
@@ -168,9 +153,6 @@ protected:
 private:
   FFNN_REGISTER_OPTIMIZER(SparselyConnected, Adam);
   FFNN_REGISTER_OPTIMIZER(SparselyConnected, GradientDescent);
-
-  /// Layer configuration parameters
-  Parameters config_;
 
   /// Weight matrix
   WeightMatrixType w_;

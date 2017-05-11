@@ -119,7 +119,7 @@ public:
     bias_gradient_.noalias() += layer.forward_error_;
 
     // Back-prop error
-    return layer.computeBackwardError();
+    return true;
   }
 
   /**

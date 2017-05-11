@@ -53,7 +53,7 @@ TEST(TestSpareslyConnectedLayerIO, SaveDynamicSize)
   // Connect layers
   for (size_t idx = 1UL; idx < layers.size(); idx++)
   {
-    EXPECT_TRUE(ffnn::layer::connect(layers[idx-1UL], layers[idx]));
+    EXPECT_TRUE(ffnn::layer::connect<Layer>(layers[idx-1UL], layers[idx]));
   }
 
   // Initialize and check all layers and 
@@ -117,9 +117,9 @@ TEST(TestSpareslyConnectedLayerIO, LoadDynamicSize)
   // Check input/output sizes and connect layers
   for (size_t idx = 1UL; idx < layers.size(); idx++)
   {
-    EXPECT_EQ(layers[idx-1]->outputSize(), DIMS[idx-1]);
-    EXPECT_EQ(layers[idx]->inputSize(), DIMS[idx-1]);
-    EXPECT_TRUE(ffnn::layer::connect(layers[idx-1UL], layers[idx]));
+    EXPECT_EQ(layers[idx-1]->outputShape().size(), DIMS[idx-1]);
+    EXPECT_EQ(layers[idx]->inputShape().size(), DIMS[idx-1]);
+    EXPECT_TRUE(ffnn::layer::connect<Layer>(layers[idx-1UL], layers[idx]));
   }
 
   // Ensure we can't reinitialize a save layer

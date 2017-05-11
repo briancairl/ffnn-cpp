@@ -22,6 +22,7 @@
 #include <ffnn/layer/sparsely_connected.h>
 #include <ffnn/layer/output.h>
 #include <ffnn/optimizer/gradient_descent.h>
+#include <ffnn/distribution/normal.h>
 
 /***********************************************************/
 // Creates network workflow with one SparselyConnected hidden
@@ -45,9 +46,9 @@ TEST(TestLayerSparselyConnectedWithOptimizers, GradientDescent)
   static const Layer::SizeType DIM = 320;
 
   // Create layers
-  auto input = boost::make_shared<Input>(DIM);  
-  auto hidden = boost::make_shared<Hidden>(DIM, Hidden::Parameters(0.001, 0.01));
-  auto output = boost::make_shared<Output>();  
+  auto input = boost::make_shared<Input>(DIM);
+  auto hidden = boost::make_shared<Hidden>(DIM);
+  auto output = boost::make_shared<Output>();
 
   // Set optimizer (gradient descent)
   using Optimizer = ffnn::optimizer::GradientDescent<Hidden>;
@@ -59,18 +60,25 @@ TEST(TestLayerSparselyConnectedWithOptimizers, GradientDescent)
   // Connect layers
   for (size_t idx = 1UL; idx < layers.size(); idx++)
   {
-    EXPECT_TRUE(ffnn::layer::connect(layers[idx-1UL], layers[idx]));
+    EXPECT_TRUE(ffnn::layer::connect<Layer>(layers[idx-1UL], layers[idx]));
   }
+
+  // Initializer all layers
+  input->initialize();
+  hidden->initialize(ffnn::distribution::Normal<float>(0, 0.1),
+                     ffnn::distribution::Normal<float>(0, 0.1),
+                     ffnn::distribution::Normal<float>(0, 0.1),
+                     0.01);
+  output->initialize();
 
   // Initialize and check all layers and 
   for(const auto& layer : layers)
   {
-    EXPECT_TRUE(layer->initialize());
     EXPECT_TRUE(layer->isInitialized());
   }
 
   // Create some data
-  Hidden::InputBlockType target_data = Hidden::InputBlockType::Ones(DIM);
+  Hidden::InputBlockType target_data = Hidden::InputBlockType::Ones(DIM, 1);
   Hidden::InputBlockType output_data(DIM, 1);
 
   // Check that error montonically decreases

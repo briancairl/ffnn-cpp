@@ -29,59 +29,7 @@ struct is_alignable_128 :
   >::type
 {};
 
-template <typename ConnectType, typename BiasType>
-class LayerParameters
-{
-  /// Require that ScalarType is same between Connecting/Biasing types
-  static_assert(std::is_same<typename ConnectType::Scalar, typename BiasType::Scalar>::value,
-                "Scalar representation used by [ConnectionType] and [BiasType] must match.");
 
-  /// Require that ScalarType is floating point
-  static_assert(std::is_floating_point<typename ConnectType::Scalar>::value,
-                "Scalar representation must be a floating point type.");
-public:
-  /**
-   * @brief Scalar-type standardization
-   * @warning  Scalar-type consistency between ConnectType and BiasType is enforced
-   * @warning  Scalar-type enforced as floating-point type
-   */
-  typedef typename ConnectType::Scalar ScalarType;
-
-  /**
-   * @brief An initialization configuration object used for setting up a LayerParameters object
-   */
-  struct InitConfiguration
-  {
-    /// Standard deviation of connection weights on init
-    ScalarType init_connection_std;
-
-    /// Standard deviation of biases on init
-    ScalarType init_bias_std;
-
-    /// Connection weight mean (bias) on init
-    ScalarType init_connection_mean;
-
-    /// Connection biasing mean (bias) on init
-    ScalarType init_bias_mean;
-
-    /**
-     * @brief Setup constructor
-     * @param init_connection_std  Standard deviation of initial weights
-     * @param init_bias_std  Standard deviation of initial weights
-     * @param init_connection_mean  Mean of intial weights
-     * @param init_bias_mean  Mean of intial biases
-     */
-    explicit
-    InitConfiguration(ScalarType init_connection_std = 1e-3,
-                      ScalarType init_bias_std = 1e-3,
-                      ScalarType init_connection_mean = 0.0,
-                      ScalarType init_bias_mean = 0.0);
-  };
-
-public:
-  EIGEN_MAKE_ALIGNED_OPERATOR_NEW_IF(is_alignable_128<ConnectType>::value ||
-                                     is_alignable_128<BiasType>::value);
-};
 
 /**
  * @brief A fully-connected layer
@@ -124,55 +72,37 @@ public:
   /// Input-output weight matrix
   typedef Eigen::Matrix<ValueType, OutputsAtCompileTime, InputsAtCompileTime, Eigen::ColMajor> WeightMatrixType;
 
-  /// Layer parameter type
-  typedef LayerParameters<WeightMatrixType, BiasVectorType> LayerParameterType;
-
   /// Layer optimization type standardization
   typedef optimizer::Optimizer<Self> Optimizer;
-
-  /// A configuration object for a FullyConnected hidden layer
-  struct Parameters
-  {
-    /// Standard deviation of connection weights on init
-    ScalarType init_weight_std;
-
-    /// Standard deviation of biases on init
-    ScalarType init_bias_std;
-
-    /// Connection weight mean (bias) on init
-    ScalarType init_weight_mean;
-
-    /// Connection biasing mean (bias) on init
-    ScalarType init_bias_mean;
-
-    /**
-     * @brief Setup constructor
-     * @param init_weight_std  Standard deviation of initial weights
-     * @param init_bias_std  Standard deviation of initial weights
-     * @param init_weight_mean  Mean of intial weights
-     * @param init_bias_mean  Mean of intial biases
-     */
-    explicit
-    Parameters(ScalarType init_weight_std = 1e-3,
-               ScalarType init_bias_std = 1e-3,
-               ScalarType init_weight_mean = 0.0,
-               ScalarType init_bias_mean = 0.0);
-  };
 
   /**
    * @brief Setup constructor
    * @param output_size  number of layer outputs
-   * @param config  layer configuration struct
    */
-  explicit
-  FullyConnected(SizeType output_size = OutputsAtCompileTime,
-                 const Parameters& config = Parameters());
+  explicit FullyConnected(SizeType output_size = OutputsAtCompileTime);
   virtual ~FullyConnected();
 
   /**
    * @brief Initialize the layer
+   * @retval true  if layer was initialized successfully
+   * @retval false otherwise
+   *
+   * @warning If layer is not loaded instance, this method will initialize layer sizings
+   *          but weights and biases will be zero
    */
   bool initialize();
+
+  /**
+   * @brief Initialize layer weights and biases according to particular distributions
+   * @param wd  distribution to sample for connection weights
+   * @param bd  distribution to sample for biases
+   * @retval false otherwise
+   *
+   * @warning If layer is a loaded instance, this method will initialize layer sizings
+   *          but weights will not be reset according to the given distributions
+   */
+  template<typename WeightDistribution, typename BiasDistribution>
+  bool initialize(const WeightDistribution& wd, const BiasDistribution& bd);
 
   /**
    * @brief Performs forward value propagation
@@ -234,18 +164,15 @@ public:
 protected:
   FFNN_REGISTER_SERIALIZABLE(FullyConnected)
 
-  /// Save serializer
+  /// Save serialize
   void save(OutputArchive& ar, VersionType version) const;
 
-  /// Load serializer
+  /// Load serialize
   void load(InputArchive& ar, VersionType version);
 
 private:
   FFNN_REGISTER_OPTIMIZER(FullyConnected, Adam);
   FFNN_REGISTER_OPTIMIZER(FullyConnected, GradientDescent);
-
-  /// Layer configuration parameters
-  Parameters config_;
 
   /// Weight matrix
   WeightMatrixType w_;

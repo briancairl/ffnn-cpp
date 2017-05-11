@@ -24,6 +24,7 @@
 #include <ffnn/layer/output.h>
 #include <ffnn/neuron/lecun_sigmoid.h>
 #include <ffnn/optimizer/gradient_descent.h>
+#include <ffnn/distribution/normal.h>
 
 /***********************************************************/
 // Creates network workflow with one FullyConnected hidden
@@ -63,18 +64,23 @@ TEST(TestLayerFullyConnectedWithOptimizers, GradientDescent)
   // Connect layers
   for (size_t idx = 1UL; idx < layers.size(); idx++)
   {
-    EXPECT_TRUE(ffnn::layer::connect(layers[idx-1UL], layers[idx]));
+    EXPECT_TRUE(ffnn::layer::connect<Layer>(layers[idx-1UL], layers[idx]));
   }
+
+  // Intializer layers
+  input->initialize();
+  hidden->initialize(ffnn::distribution::Normal<float>(0, 0.1),
+                     ffnn::distribution::Normal<float>(0, 0.1));
+  output->initialize();
 
   // Initialize and check all layers and 
   for(const auto& layer : layers)
   {
-    EXPECT_TRUE(layer->initialize());
     EXPECT_TRUE(layer->isInitialized());
   }
 
   // Create some data
-  Hidden::InputBlockType target_data = Hidden::InputBlockType::Ones(DIM);
+  Hidden::InputBlockType target_data = Hidden::InputBlockType::Ones(DIM, 1);
   Hidden::InputBlockType output_data(DIM, 1);
 
   // Check that error montonically decreases
@@ -130,7 +136,7 @@ TEST(TestLayerFullyConnectedActivationWithOptimizers, GradientDescent)
   using Layer  = ffnn::layer::Layer<float>;
   using Input  = ffnn::layer::Input<float>;
   using Hidden = ffnn::layer::FullyConnected<float>;
-  using Activation = ffnn::layer::Activation<float, ffnn::neuron::LeCunSigmoid>;
+  using Activation = ffnn::layer::Activation<float, ffnn::neuron::LeCunSigmoid<float>>;
   using Output = ffnn::layer::Output<float>;
 
   // Layer sizes
@@ -154,18 +160,24 @@ TEST(TestLayerFullyConnectedActivationWithOptimizers, GradientDescent)
   // Connect layers
   for (size_t idx = 1UL; idx < layers.size(); idx++)
   {
-    EXPECT_TRUE(ffnn::layer::connect(layers[idx-1UL], layers[idx]));
+    EXPECT_TRUE(ffnn::layer::connect<Layer>(layers[idx-1UL], layers[idx]));
   }
+
+  // Intializer layers
+  input->initialize();
+  hidden1->initialize(ffnn::distribution::Normal<float>(0, 0.1),
+                      ffnn::distribution::Normal<float>(0, 0.1));
+  hidden2->initialize();
+  output->initialize();
 
   // Initialize and check all layers and 
   for(const auto& layer : layers)
   {
-    EXPECT_TRUE(layer->initialize());
     EXPECT_TRUE(layer->isInitialized());
   }
 
   // Create some data
-  Hidden::InputBlockType target_data = Hidden::InputBlockType::Ones(DIM);
+  Hidden::InputBlockType target_data = Hidden::InputBlockType::Ones(DIM, 1);
   Hidden::InputBlockType output_data(DIM, 1);
 
   // Check that error montonically decreases

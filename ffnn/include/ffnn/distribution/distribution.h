@@ -9,6 +9,11 @@ namespace ffnn
 {
 namespace distribution
 {
+template<typename DistributionType>
+struct is_distribution
+{
+  constexpr static bool value = DistributionType::IsDistribution::value;
+};
 
 template<typename ValueType>
 class Distribution
@@ -17,12 +22,12 @@ class Distribution
   static_assert(std::is_floating_point<ValueType>::value,
                 "Distribution value representation must be a floating point type.");
 public:
+  typedef std::true_type IsDistribution;
+
   /**
-   * @brief Generates a random value
-   * @param[in] input  a scalar input value
-   * @param[in,out] output  a scalar output value
+   * @brief Generates a random value according to given distribution
    */
-  virtual ValueType generate() = 0;
+  virtual ValueType generate() const = 0;
 
   /**
    * @brief Computes CDF of distribution at specified point

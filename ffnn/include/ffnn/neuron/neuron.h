@@ -15,7 +15,7 @@ namespace neuron
 template<typename NeuronType>
 struct is_neuron
 {
-  constexpr static bool value = NeuronType::IsNeuron;
+  constexpr static bool value = NeuronType::IsNeuron::value;
 };
 
 /**
@@ -25,7 +25,7 @@ template<typename ValueType>
 class Neuron
 {
 public:
-  enum {IsNeuron = true};
+  typedef std::true_type IsNeuron;
 
   /**
    * @brief Computes activation output
