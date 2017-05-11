@@ -158,14 +158,6 @@ public:
   void forward(const Eigen::Block<InputBlockType>& input);
 
   /**
-   * @brief Performs backward error propagation
-   * @param input  a block (matrix; depth embedded) of input values
-   * @param[out] backward_error  a block (matrix; depth embedded) of previous layer output error values
-   */
-  template<typename InputBlockType, typename BackwardErrorBlockPtr>
-  void backward(const Eigen::Block<InputBlockType>& input, BackwardErrorBlockPtr backward_error_ptr);
-
-  /**
    * @brief Exposes internal biasing weights
    * @return input-biasing vector
    */
@@ -197,6 +189,14 @@ public:
   inline void setForwardErrorMapping(ValueType* const ptr)
   {
     forward_error_ptr_ = ptr;
+  }
+
+  /**
+   * @brief Gets memory map to contiguous backward-error buffer
+   */
+  inline const ValueType* getForwardErrorMapping() const
+  {
+    return forward_error_ptr_;
   }
 
 private:

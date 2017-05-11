@@ -208,9 +208,11 @@ bool Convolution<CONV_TARGS>::backward()
     for (OffsetType jdx = 0, jdx_str = 0; jdx < output_volume_shape_.width; jdx++, jdx_str += filter_stride_.width)
     {
       // Sum over all filters
+      const ValueType* err_map = receptors_[idx][jdx].getForwardErrorMapping();
+      OffsetType kdx = 0;
       for (const auto& filter : receptors_[idx][jdx].getFilters())
       {
-        Base::backward_error_.block(idx_str, jdx_str, filter.rows(), filter.cols()) += filter;
+        Base::backward_error_.block(idx_str, jdx_str, filter.rows(), filter.cols()) += filter * err_map[kdx++];
       }
     }
   }
@@ -311,7 +313,8 @@ Convolution<CONV_TARGS>::connectToForwardLayer(const Layer<ValueType>& next, Off
   {
     for (SizeType idx = 0; idx < output_volume_shape_.height; idx++)
     {
-      // Compute pointer offser
+      // Compute pointer offset
+      // TODO(version for row-embedded mode)
       OffsetType kdx = jdx * Base::output_shape_.height + idx * output_volume_shape_.depth;
 
       // Set output memory mapping

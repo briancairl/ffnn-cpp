@@ -148,26 +148,6 @@ template<typename ValueType,
          FFNN_SIZE_TYPE DepthAtCompileTime,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          EmbeddingMode Mode>
-template<typename InputBlockType, typename BackwardErrorBlockPtr>
-void CONVOLUTION_VOLUME::backward(const Eigen::Block<InputBlockType>& input, BackwardErrorBlockPtr backward_error_ptr)
-{
-  Eigen::Map<KernelMatrixType, 16> map_to(backward_error_ptr, Base::input_shape_.height, Base::input_shape_.width);
-
-  // Sum error over all filters
-  for (OffsetType idx = 0; idx < Base::output_shape_.depth; idx++)
-  {
-    map_to += forward_error_ptr_[idx] * filters_[idx];
-  }
-
-  FFNN_ERROR(map_to);
-}
-
-template<typename ValueType,
-         FFNN_SIZE_TYPE HeightAtCompileTime,
-         FFNN_SIZE_TYPE WidthAtCompileTime,
-         FFNN_SIZE_TYPE DepthAtCompileTime,
-         FFNN_SIZE_TYPE FilterCountAtCompileTime,
-         EmbeddingMode Mode>
 void CONVOLUTION_VOLUME::save(typename CONVOLUTION_VOLUME::OutputArchive& ar,
                               typename CONVOLUTION_VOLUME::VersionType version) const
 {
