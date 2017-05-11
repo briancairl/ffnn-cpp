@@ -2,6 +2,8 @@
  * @note HEADER-ONLY IMPLEMENTATION FILE
  * @warn Do not include directly
  */
+#ifndef FFNN_LAYER_IMPL_LAYER_HPP
+#define FFNN_LAYER_IMPL_LAYER_HPP
 
 // Boost
 #include <boost/serialization/base_object.hpp>
@@ -164,3 +166,4 @@ void Layer<ValueType>::load(typename Layer<ValueType>::InputArchive& ar,
 }
 }  // namespace layer
 }  // namespace ffnn
+#endif // FFNN_LAYER_IMPL_LAYER_HPP

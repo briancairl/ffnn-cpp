@@ -2,6 +2,9 @@
  * @note HEADER-ONLY IMPLEMENTATION FILE
  * @warn Do not include directly
  */
+#ifndef FFNN_LAYER_IMPL_LAYER_HPP
+#define FFNN_LAYER_IMPL_LAYER_HPP
+
 // FFNN
 #include <ffnn/logging.h>
 
@@ -9,19 +12,21 @@ namespace ffnn
 {
 namespace layer
 {
+#define TARGS ValueType, NetworkOutputsAtCompileTime
+
 template<typename ValueType, FFNN_SIZE_TYPE NetworkOutputsAtCompileTime>
-Output<ValueType, NetworkOutputsAtCompileTime>::Output() :
+Output<TARGS>::Output() :
   Base(ShapeType(NetworkOutputsAtCompileTime), ShapeType(0))
 {}
 
 template<typename ValueType, FFNN_SIZE_TYPE NetworkOutputsAtCompileTime>
-Output<ValueType, NetworkOutputsAtCompileTime>::~Output()
+Output<TARGS>::~Output()
 {
   FFNN_INTERNAL_DEBUG_NAMED("layer::Output", "Destroying [layer::Output] object <" << this->getID() << ">");
 }
 
 template<typename ValueType, FFNN_SIZE_TYPE NetworkOutputsAtCompileTime>
-bool Output<ValueType, NetworkOutputsAtCompileTime>::initialize()
+bool Output<TARGS>::initialize()
 {
   // Abort if layer is already initialized
   if (Base::setupRequired() && Base::isInitialized())
@@ -59,15 +64,15 @@ bool Output<ValueType, NetworkOutputsAtCompileTime>::initialize()
 }
 
 template<typename ValueType, FFNN_SIZE_TYPE NetworkOutputsAtCompileTime>
-typename Output<ValueType, NetworkOutputsAtCompileTime>::OffsetType
-Output<ValueType, NetworkOutputsAtCompileTime>::connectToForwardLayer(const Base& next, OffsetType offset)
+typename Output<TARGS>::OffsetType
+Output<TARGS>::connectToForwardLayer(const Base& next, OffsetType offset)
 {
   return 0; /* do nothing */
 }
 
 template<typename ValueType, FFNN_SIZE_TYPE NetworkOutputsAtCompileTime>
 template<typename NetworkOutputType>
-void Output<ValueType, NetworkOutputsAtCompileTime>::operator>>(NetworkOutputType& output)
+void Output<TARGS>::operator>>(NetworkOutputType& output)
 {
   // Check output data size
   FFNN_ASSERT_MSG(output.size() == Base::inputShape().size(),
@@ -81,7 +86,7 @@ void Output<ValueType, NetworkOutputsAtCompileTime>::operator>>(NetworkOutputTyp
 
 template<typename ValueType, FFNN_SIZE_TYPE NetworkOutputsAtCompileTime>
 template<typename NetworkTargetType>
-void Output<ValueType, NetworkOutputsAtCompileTime>::operator<<(const NetworkTargetType& target)
+void Output<TARGS>::operator<<(const NetworkTargetType& target)
 {
   // Check target data size
   FFNN_ASSERT_MSG(target.size() == Base::inputShape().size(),
@@ -95,3 +100,5 @@ void Output<ValueType, NetworkOutputsAtCompileTime>::operator<<(const NetworkTar
 }
 }  // namespace layer
 }  // namespace ffnn
+#undef TARGS
+#endif  // FFNN_LAYER_IMPL_LAYER_HPP
