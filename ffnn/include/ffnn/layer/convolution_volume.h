@@ -167,11 +167,6 @@ public:
   bool initialize(const WeightDistribution& wd, const BiasDistribution& bd);
 
   /**
-   * @brief Reset filter weights and biases
-   */
-  void reset();
-
-  /**
    * @brief Performs forward value propagation
    * @param input  a block (matrix; depth embedded) of input values
    */
@@ -214,6 +209,16 @@ public:
   void load(InputArchive& ar, VersionType version);
 
 private:
+  /**
+   * @brief Reset filter weights and biases
+   */
+  void reset();
+
+  /**
+   * @brief Unused; does nothing
+   */
+  bool initialize();
+
   /// Filter bank for receptive field
   FilterBankType filters_;
 
@@ -228,11 +233,6 @@ private:
 
   /// Number of filters associated with the field
   SizeType filter_count_;
-
-  /**
-   * @brief Unused; does nothing
-   */
-  bool initialize();
 
 public:
   EIGEN_MAKE_ALIGNED_OPERATOR_NEW_IF(internal::is_alignable_128<BiasVectorType>::value);

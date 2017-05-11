@@ -87,6 +87,7 @@ public:
    * @brief Initialize layer weights and biases according to particular distributions
    * @param wd  distribution to sample for connection weights
    * @param bd  distribution to sample for biases
+   * @retval true  if layer was initialized successfully
    * @retval false otherwise
    *
    * @warning If layer is a loaded instance, this method will initialize layer sizings

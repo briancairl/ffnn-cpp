@@ -91,9 +91,6 @@ public:
   /// Layer optimization type standardization
   typedef optimizer::Optimizer<Self> Optimizer;
 
-  /// Configuration struct type alias
-  typedef typename ConvolutionVolumeType::Parameters Parameters;
-
   /**
    * @brief Setup constructor
    */
@@ -107,9 +104,26 @@ public:
 
   /**
    * @brief Initialize the layer
+   * @retval true  if layer was initialized successfully
+   * @retval false otherwise
+   *
+   * @warning If layer is not loaded instance, this method will initialize layer sizings
+   *          but weights and biases will be zero
    */
   bool initialize();
-  bool initialize(const Parameters& config);
+
+  /**
+   * @brief Initialize layer weights and biases according to particular distributions
+   * @param wd  distribution to sample for connection weights
+   * @param bd  distribution to sample for biases
+   * @retval true  if layer was initialized successfully
+   * @retval false otherwise
+   *
+   * @warning If layer is a loaded instance, this method will initialize layer sizings
+   *          but weights will not be reset according to the given distributions
+   */
+  template<typename WeightDistribution, typename BiasDistribution>
+  bool initialize(const WeightDistribution& wd, const BiasDistribution& bd);
 
   /**
    * @brief Performs forward value propagation
@@ -136,11 +150,6 @@ public:
    * @see setOptimizer
    */
   bool update();
-
-  /**
-   * @brief Reset all internal volumes
-   */
-  void reset(const Parameters& config = Parameters());
 
   /**
    * @brief Computes previous layer error from current layer output error
@@ -172,6 +181,11 @@ protected:
 private:
   //FFNN_REGISTER_OPTIMIZER(Convolution, Adam);
   //FFNN_REGISTER_OPTIMIZER(Convolution, GradientDescent);
+
+  /**
+   * @brief Reset all internal volumes
+   */
+  void reset();
 
   /// Layer configuration parameters
   ConvolutionVolumeBankType receptors_;

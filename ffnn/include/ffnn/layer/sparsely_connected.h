@@ -8,6 +8,9 @@
 // C++ Standard Library
 #include <vector>
 
+// FFNN (internal)
+#include <ffnn/layer/internal/shape.h>
+
 // FFNN
 #include <ffnn/layer/hidden.h>
 #include <ffnn/neuron/neuron.h>
@@ -85,6 +88,7 @@ public:
    * @param bd  distribution to sample for biases
    * @param cd  distribution used to detrmine connectedness
    * @param connection_probability  probability of connection between neurons, according to 'cd'
+   * @retval true  if layer was initialized successfully
    * @retval false otherwise
    *
    * @warning If layer is a loaded instance, this method will initialize layer sizings
@@ -123,11 +127,6 @@ public:
   bool update();
 
   /**
-   * @brief Reset weights and biases to zero
-   */
-  void reset();
-
-  /**
    * @brief Prune weights smaller than some value epsilon
    * @param epislon  minimum bounding value for weights to keep after pruning 
    */
@@ -153,6 +152,11 @@ protected:
 private:
   FFNN_REGISTER_OPTIMIZER(SparselyConnected, Adam);
   FFNN_REGISTER_OPTIMIZER(SparselyConnected, GradientDescent);
+
+  /**
+   * @brief Reset weights and biases to zero
+   */
+  void reset();
 
   /// Weight matrix
   WeightMatrixType w_;

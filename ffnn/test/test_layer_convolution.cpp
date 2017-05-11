@@ -20,7 +20,7 @@
 #include <ffnn/layer/convolution.h>
 #include <ffnn/layer/output.h>
 #include <ffnn/layer/layer.h>
-
+#include <ffnn/distribution/normal.h>
 
 TEST(TestLayerConvolution, StaticInstanceColEmbedding_Forward)
 {
@@ -41,7 +41,8 @@ TEST(TestLayerConvolution, StaticInstanceColEmbedding_Forward)
   FFNN_INFO(input->inputShape());
   FFNN_INFO(input->outputShape());
 
-  convolution->initialize();
+  convolution->initialize(ffnn::distribution::Normal<float>(0, 100),
+                          ffnn::distribution::StandardNormal<float>());
   FFNN_INFO(convolution->inputShape());
   FFNN_INFO(convolution->outputShape());
 
@@ -63,8 +64,8 @@ TEST(TestLayerConvolution, StaticInstanceColEmbedding_Forward)
   out_data.setZero();
   (*output) >> out_data;
 
-  //Eigen::Map<Eigen::MatrixXf> om(out_data.data(), osh.height, osh.width);
-  //FFNN_INFO("\n" << om);
+  Eigen::Map<Eigen::MatrixXf> om(out_data.data(), osh.height, osh.width);
+  FFNN_INFO("\n" << om);
 }
 
 // Run tests

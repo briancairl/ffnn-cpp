@@ -3,6 +3,9 @@
  * @warn Do not include directly
  */
 
+// C++ Standard Library
+#include <exception>
+
 // FFNN
 #include <ffnn/assert.h>
 #include <ffnn/logging.h>
@@ -22,7 +25,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
          EmbeddingMode Mode,
-         class _LShape>
+         class _HiddenLayerShape>
 Convolution<CONV_TARGS>::
 Convolution(const ShapeType& input_shape,
             const SizeType& filter_height,
@@ -52,7 +55,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
          EmbeddingMode Mode,
-         class _LShape>
+         class _HiddenLayerShape>
 Convolution<CONV_TARGS>::~Convolution()
 {
   FFNN_INTERNAL_DEBUG_NAMED("layer::Convolution", "Destroying [layer::Convolution] object <" << this->getID() << ">");
@@ -67,39 +70,22 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
          EmbeddingMode Mode,
-         class _LShape>
+         class _HiddenLayerShape>
 bool Convolution<CONV_TARGS>::initialize()
 {
-  return initialize(Convolution<CONV_TARGS>::Parameters());
-}
-
-template<typename ValueType,
-         FFNN_SIZE_TYPE HeightAtCompileTime,
-         FFNN_SIZE_TYPE WidthAtCompileTime,
-         FFNN_SIZE_TYPE DepthAtCompileTime,
-         FFNN_SIZE_TYPE FilterHeightAtCompileTime,
-         FFNN_SIZE_TYPE FilterWidthAtCompileTime,
-         FFNN_SIZE_TYPE FilterCountAtCompileTime,
-         FFNN_SIZE_TYPE StrideAtCompileTime,
-         EmbeddingMode Mode,
-         class _LShape>
-bool Convolution<CONV_TARGS>::initialize(const Convolution<CONV_TARGS>::Parameters& config)
-{
-  // Abort if layer is already initialized
-  if (Base::setupRequired() && Base::isInitialized())
+  if (Base::isInitialized())
   {
     FFNN_WARN_NAMED("layer::Convolution", "<" << Base::getID() << "> already initialized.");
     return false;
   }
   else if (!Base::initialize())
   {
+    FFNN_WARN_NAMED("layer::Convolution", "<" << Base::getID() << "> failed basic initializaition.");
     return false;
   }
-
-  // Initialize weights
-  if (Base::setupRequired())
+  else if (Base::setupRequired())
   {
-    reset(config);
+    reset();
   }
 
   // Setup optimizer
@@ -136,7 +122,47 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
          EmbeddingMode Mode,
-         class _LShape>
+         class _HiddenLayerShape>
+template<typename WeightDistribution,
+         typename BiasDistribution>
+bool  Convolution<CONV_TARGS>::initialize(const WeightDistribution& wd, const BiasDistribution& bd)
+{
+  // Abort if layer is already initialized
+  if (!Base::setupRequired())
+  {
+    throw std::logic_error("Wrong initialization method called. This is a loaded object.");
+  }
+  else if (!initialize())
+  {
+    return false;
+  }
+
+  // Intiialize all volumes
+  OffsetType kdx = 0;
+  for (SizeType jdx = 0; jdx < output_volume_shape_.width; jdx++)
+  {
+    for (SizeType idx = 0; idx < output_volume_shape_.height; idx++)
+    {
+      // Initialize field
+      Base::initialized_ &= receptors_[idx][jdx].initialize(wd, bd);
+
+      // Check that last created field was initialized properly
+      FFNN_ASSERT_MSG(Base::initialized_, "Failed to initialize receptor.");
+    }
+  }
+  return Base::initialized_;
+}
+
+template<typename ValueType,
+         FFNN_SIZE_TYPE HeightAtCompileTime,
+         FFNN_SIZE_TYPE WidthAtCompileTime,
+         FFNN_SIZE_TYPE DepthAtCompileTime,
+         FFNN_SIZE_TYPE FilterHeightAtCompileTime,
+         FFNN_SIZE_TYPE FilterWidthAtCompileTime,
+         FFNN_SIZE_TYPE FilterCountAtCompileTime,
+         FFNN_SIZE_TYPE StrideAtCompileTime,
+         EmbeddingMode Mode,
+         class _HiddenLayerShape>
 bool Convolution<CONV_TARGS>::forward()
 {
   if (!opt_->forward(*this))
@@ -170,7 +196,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
          EmbeddingMode Mode,
-         class _LShape>
+         class _HiddenLayerShape>
 bool Convolution<CONV_TARGS>::backward()
 {
   FFNN_ASSERT_MSG(opt_, "No optimization resource set.");
@@ -186,7 +212,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
          EmbeddingMode Mode,
-         class _LShape>
+         class _HiddenLayerShape>
 bool Convolution<CONV_TARGS>::update()
 {
   FFNN_ASSERT_MSG(opt_, "No optimization resource set.");
@@ -202,24 +228,16 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
          EmbeddingMode Mode,
-         class _LShape>
-void Convolution<CONV_TARGS>::reset(const Convolution<CONV_TARGS>::Parameters& config)
+         class _HiddenLayerShape>
+void Convolution<CONV_TARGS>::reset()
 {
   receptors_.resize(boost::extents[output_volume_shape_.height][output_volume_shape_.width]);
-
-  OffsetType kdx = 0;
   for (SizeType jdx = 0; jdx < output_volume_shape_.width; jdx++)
   {
     for (SizeType idx = 0; idx < output_volume_shape_.height; idx++)
     {
       // Create receptive field
       new (&receptors_[idx][jdx]) ConvolutionVolumeType(filter_shape_, output_volume_shape_.depth);
-
-      // Initialize field
-      Base::initialized_ &= receptors_[idx][jdx].initialize(config);
-
-      // Check that last created field was initialized properly
-      FFNN_ASSERT_MSG(Base::initialized_, "Failed to initialize receptor.");
     }
   }
 }
@@ -233,7 +251,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
          EmbeddingMode Mode,
-         class _LShape>
+         class _HiddenLayerShape>
 bool Convolution<CONV_TARGS>::computeBackwardError()
 {
   return true;
@@ -248,9 +266,8 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
          EmbeddingMode Mode,
-         class _LShape>
-void Convolution<CONV_TARGS>::
-  setOptimizer(typename Optimizer::Ptr opt)
+         class _HiddenLayerShape>
+void Convolution<CONV_TARGS>::setOptimizer(typename Optimizer::Ptr opt)
 {
   FFNN_ASSERT_MSG(opt, "Input optimizer object is an empty resource.");
   opt_ = opt;
@@ -265,8 +282,9 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
          EmbeddingMode Mode,
-         class _LShape>
-typename Convolution<CONV_TARGS>::OffsetType
+         class _HiddenLayerShape>
+typename
+Convolution<CONV_TARGS>::OffsetType
 Convolution<CONV_TARGS>::connectToForwardLayer(const Layer<ValueType>& next, OffsetType offset)
 {
   // Connect outputs
@@ -301,10 +319,9 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
          EmbeddingMode Mode,
-         class _LShape>
-void Convolution<CONV_TARGS>::
-  save(typename Convolution<CONV_TARGS>::OutputArchive& ar,
-       typename Convolution<CONV_TARGS>::VersionType version) const
+         class _HiddenLayerShape>
+void Convolution<CONV_TARGS>::save(typename Convolution<CONV_TARGS>::OutputArchive& ar,
+                                   typename Convolution<CONV_TARGS>::VersionType version) const
 {
   ffnn::io::signature::apply<Convolution<CONV_TARGS>>(ar);
   Base::save(ar, version);
@@ -329,10 +346,9 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
          EmbeddingMode Mode,
-         class _LShape>
-void Convolution<CONV_TARGS>::
-  load(typename Convolution<CONV_TARGS>::InputArchive& ar,
-       typename Convolution<CONV_TARGS>::VersionType version)
+         class _HiddenLayerShape>
+void Convolution<CONV_TARGS>::load(typename Convolution<CONV_TARGS>::InputArchive& ar,
+                                   typename Convolution<CONV_TARGS>::VersionType version)
 {
   ffnn::io::signature::check<Convolution<CONV_TARGS>>(ar);
   Base::load(ar, version);
