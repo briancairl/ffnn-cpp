@@ -41,8 +41,8 @@ TEST(TestLayerConvolution, StaticInstanceColEmbedding_Forward)
   FFNN_INFO(input->inputShape());
   FFNN_INFO(input->outputShape());
 
-  convolution->initialize(ffnn::distribution::Normal<float>(0, 100),
-                          ffnn::distribution::StandardNormal<float>());
+  convolution->initialize(ffnn::distribution::Normal<float>(0, 10),
+                          ffnn::distribution::Normal<float>(-100000, 0.1));
   FFNN_INFO(convolution->inputShape());
   FFNN_INFO(convolution->outputShape());
 

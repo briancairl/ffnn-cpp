@@ -61,7 +61,8 @@ public:
    */
   ValueType cdf(const ValueType& value) const
   {
-    return 0.5 * boost::math::erfc(-M_SQRT1_2 * (value - distribution_.mean()) / distribution_.sigma());
+    const ValueType x((value - distribution_.mean()) / distribution_.sigma());
+    return boost::math::erfc(-M_SQRT1_2 * x) / 2.0;
   }
 
 private:

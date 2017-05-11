@@ -137,21 +137,10 @@ void CONVOLUTION_VOLUME::forward(const Eigen::MatrixBase<InputBlockType>& input)
   // Multiply all filters
   for (OffsetType idx = 0; idx < Base::output_shape_.depth; idx++)
   {
-    output_ptr_[idx]  = input.cwiseProduct(filters_[idx]).sum() + b_(idx);
+    output_ptr_[idx]  = input.cwiseProduct(filters_[idx]).sum();
     output_ptr_[idx] += b_(idx);
   }
 }
-
-template<typename ValueType,
-         FFNN_SIZE_TYPE HeightAtCompileTime,
-         FFNN_SIZE_TYPE WidthAtCompileTime,
-         FFNN_SIZE_TYPE DepthAtCompileTime,
-         FFNN_SIZE_TYPE FilterCountAtCompileTime,
-         EmbeddingMode Mode>
-template<typename InputBlockType, typename ForwardErrorBlockType>
-void CONVOLUTION_VOLUME::backward(const Eigen::MatrixBase<InputBlockType>& input,
-                                  const Eigen::MatrixBase<ForwardErrorBlockType>& error)
-{}
 
 template<typename ValueType,
          FFNN_SIZE_TYPE HeightAtCompileTime,

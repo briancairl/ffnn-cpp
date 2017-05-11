@@ -292,7 +292,6 @@ Convolution<CONV_TARGS>::connectToForwardLayer(const Layer<ValueType>& next, Off
 
   // Map to individual volumes
   ValueType* output_ptr = const_cast<ValueType*>(next.getInputBuffer().data());
-  ValueType* error_ptr  = const_cast<ValueType*>(next.getBackwardErrorBuffer().data());
   for (SizeType jdx = 0; jdx < output_volume_shape_.width; jdx++)
   {
     for (SizeType idx = 0; idx < output_volume_shape_.height; idx++)
@@ -302,9 +301,6 @@ Convolution<CONV_TARGS>::connectToForwardLayer(const Layer<ValueType>& next, Off
 
       // Set output memory mapping
       receptors_[idx][jdx].setOutputMapping(output_ptr + kdx);
-
-      // Set backward-error memory mapping
-      receptors_[idx][jdx].setBackwardErrorMapping(error_ptr + kdx);
     }
   }
   return offset_after_connect;

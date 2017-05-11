@@ -139,22 +139,6 @@ public:
   virtual ~ConvolutionVolume();
 
   /**
-   * @brief Sets memory map to contiguous output buffer
-   */
-  inline void setOutputMapping(ValueType* const ptr)
-  {
-    output_ptr_ = ptr;
-  }
-
-  /**
-   * @brief Sets memory map to contiguous backward-error buffer
-   */
-  inline void setBackwardErrorMapping(ValueType* const ptr)
-  {
-    backward_error_ptr_ = ptr;
-  }
-
-  /**
    * @brief Initialize volume weights and biases according to particular distributions
    * @param wd  distribution to sample for connection weights
    * @param bd  distribution to sample for biases
@@ -174,15 +158,6 @@ public:
   void forward(const Eigen::MatrixBase<InputBlockType>& input);
 
   /**
-   * @brief Performs backward error propagation
-   * @param input  a block (matrix; depth embedded) of input values
-   * @param forward_error  a block (matrix; depth embedded) of layer-output error values
-   */
-  template<typename InputBlockType, typename ForwardErrorBlockType>
-  void backward(const Eigen::MatrixBase<InputBlockType>& input,
-                const Eigen::MatrixBase<ForwardErrorBlockType>& forward_error);
-
-  /**
    * @brief Exposes internal biasing weights
    * @return input-biasing vector
    */
@@ -200,13 +175,13 @@ public:
     return filters_;
   }
 
-  FFNN_REGISTER_SERIALIZABLE(ConvolutionVolume)
-
-  /// Save serializer
-  void save(OutputArchive& ar, VersionType version) const;
-
-  /// Load serializer
-  void load(InputArchive& ar, VersionType version);
+  /**
+   * @brief Sets memory map to contiguous output buffer
+   */
+  inline void setOutputMapping(ValueType* const ptr)
+  {
+    output_ptr_ = ptr;
+  }
 
 private:
   /**
@@ -228,13 +203,18 @@ private:
   // Output mapping
   ValueType* output_ptr_;
 
-  // Backward-error mapping
-  ValueType* backward_error_ptr_;
-
   /// Number of filters associated with the field
   SizeType filter_count_;
 
 public:
+  FFNN_REGISTER_SERIALIZABLE(ConvolutionVolume)
+
+  /// Save serializer
+  void save(OutputArchive& ar, VersionType version) const;
+
+  /// Load serializer
+  void load(InputArchive& ar, VersionType version);
+
   EIGEN_MAKE_ALIGNED_OPERATOR_NEW_IF(internal::is_alignable_128<BiasVectorType>::value);
 };
 }  // namespace layer
