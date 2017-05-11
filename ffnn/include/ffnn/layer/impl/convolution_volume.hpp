@@ -20,21 +20,13 @@ namespace ffnn
 {
 namespace layer
 {
-#define CONVOLUTION_VOLUME_TARGS ValueType,\
-                                 HeightAtCompileTime,\
-                                 WidthAtCompileTime,\
-                                 DepthAtCompileTime,\
-                                 FilterCountAtCompileTime,\
-                                 Mode
-#define CONVOLUTION_VOLUME ConvolutionVolume<CONVOLUTION_VOLUME_TARGS>
-
 template<typename ValueType,
          FFNN_SIZE_TYPE HeightAtCompileTime,
          FFNN_SIZE_TYPE WidthAtCompileTime,
          FFNN_SIZE_TYPE DepthAtCompileTime,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          EmbeddingMode Mode>
-CONVOLUTION_VOLUME::ConvolutionVolume(const ShapeType& filter_shape, const SizeType& filter_count) :
+ConvolutionVolume<TARGS>::ConvolutionVolume(const ShapeType& filter_shape, const SizeType& filter_count) :
   Base(filter_shape, ShapeType(1, 1, filter_count)),
   filters_(filter_count)
 {}
@@ -45,7 +37,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE DepthAtCompileTime,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          EmbeddingMode Mode>
-CONVOLUTION_VOLUME::~ConvolutionVolume()
+ConvolutionVolume<TARGS>::~ConvolutionVolume()
 {
   FFNN_INTERNAL_DEBUG_NAMED("layer::ConvolutionVolume", "Destroying [layer::ConvolutionVolume] object <" << this->getID() << ">");
 }
@@ -56,7 +48,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE DepthAtCompileTime,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          EmbeddingMode Mode>
-bool CONVOLUTION_VOLUME::initialize()
+bool ConvolutionVolume<TARGS>::initialize()
 {
   throw std::logic_error("ConvolutionVolume objects should not be initialized this way.");
   return false;
@@ -70,7 +62,7 @@ template<typename ValueType,
          EmbeddingMode Mode>
 template<typename WeightDistribution,
          typename BiasDistribution>
-bool CONVOLUTION_VOLUME::initialize(const WeightDistribution& wd, const BiasDistribution& bd)
+bool ConvolutionVolume<TARGS>::initialize(const WeightDistribution& wd, const BiasDistribution& bd)
 {
   // Abort if layer is already initialized
   if (Base::setupRequired())
@@ -117,7 +109,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE DepthAtCompileTime,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          EmbeddingMode Mode>
-void CONVOLUTION_VOLUME::reset()
+void ConvolutionVolume<TARGS>::reset()
 {
   // Initiliaze all filters and biases
   filters_.setZero(embed_dimension<Mode, ColEmbedding>(Base::input_shape_.height, Base::input_shape_.depth),
@@ -132,7 +124,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          EmbeddingMode Mode>
 template<typename InputBlockType>
-void CONVOLUTION_VOLUME::forward(const Eigen::Block<InputBlockType>& input)
+void ConvolutionVolume<TARGS>::forward(const Eigen::Block<InputBlockType>& input)
 {
   // Multiply all filters
   for (OffsetType idx = 0; idx < Base::output_shape_.depth; idx++)
@@ -148,8 +140,8 @@ template<typename ValueType,
          FFNN_SIZE_TYPE DepthAtCompileTime,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          EmbeddingMode Mode>
-void CONVOLUTION_VOLUME::save(typename CONVOLUTION_VOLUME::OutputArchive& ar,
-                              typename CONVOLUTION_VOLUME::VersionType version) const
+void ConvolutionVolume<TARGS>::save(typename ConvolutionVolume<TARGS>::OutputArchive& ar,
+                                    typename ConvolutionVolume<TARGS>::VersionType version) const
 {
   ffnn::io::signature::apply<CONVOLUTION_VOLUME>(ar);
   Base::save(ar, version);
@@ -168,8 +160,8 @@ template<typename ValueType,
          FFNN_SIZE_TYPE DepthAtCompileTime,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          EmbeddingMode Mode>
-void CONVOLUTION_VOLUME::load(typename CONVOLUTION_VOLUME::InputArchive& ar,
-                              typename CONVOLUTION_VOLUME::VersionType version)
+void ConvolutionVolume<TARGS>::load(typename ConvolutionVolume<TARGS>::InputArchive& ar,
+                                    typename ConvolutionVolume<TARGS>::VersionType version)
 {
   ffnn::io::signature::check<CONVOLUTION_VOLUME>(ar);
   Base::load(ar, version);
@@ -181,9 +173,7 @@ void CONVOLUTION_VOLUME::load(typename CONVOLUTION_VOLUME::InputArchive& ar,
 
   FFNN_DEBUG_NAMED("layer::ConvolutionVolume", "Loaded");
 }
-
-#undef CONVOLUTION_VOLUME_TARGS
-#undef CONVOLUTION_VOLUME
 }  // namespace layer
 }  // namespace ffnn
+#undef TARGS
 #endif  // FFNN_LAYER_IMPL_CONVOLUTION_VOLUME_HPP

@@ -2,6 +2,8 @@
  * @note HEADER-ONLY IMPLEMENTATION FILE
  * @warn Do not include directly
  */
+#ifndef FFNN_LAYER_IMPL_HIDDEN_HPP
+#define FFNN_LAYER_IMPL_HIDDEN_HPP
 
 // FFNN
 #include <ffnn/assert.h>
@@ -12,16 +14,13 @@ namespace ffnn
 {
 namespace layer
 {
-#define HIDDEN_TARGS ValueType, LayerShape
-#define HIDDEN_TARGS_ADVANCED _InputBlockType, _OutputBlockType
-#define HIDDEN Hidden<HIDDEN_TARGS, HIDDEN_TARGS_ADVANCED>
+#define TARGS ValueType, LayerShape, _InputBlockType, _OutputBlockType
 
 template<typename ValueType,
          typename LayerShape,
          typename _InputBlockType,
          typename _OutputBlockType>
-HIDDEN::Hidden(const ShapeType& input_shape,
-               const ShapeType& output_shape) :
+Hidden<TARGS>::Hidden(const ShapeType& input_shape, const ShapeType& output_shape) :
   Base(input_shape, output_shape),
   input_(NULL, LayerShape::input_height, LayerShape::input_width),
   output_(NULL, LayerShape::output_height, LayerShape::output_width),
@@ -34,7 +33,7 @@ template<typename ValueType,
          typename LayerShape,
          typename _InputBlockType,
          typename _OutputBlockType>
-HIDDEN::~Hidden()
+Hidden<TARGS>::~Hidden()
 {
   FFNN_INTERNAL_DEBUG_NAMED("layer::Hidden", "Destroying [layer::Hidden] object <" << this->getID() << ">");
 }
@@ -43,8 +42,8 @@ template<typename ValueType,
          typename LayerShape,
          typename _InputBlockType,
          typename _OutputBlockType>
-typename HIDDEN::OffsetType
-HIDDEN::connectToForwardLayer(const Layer<ValueType>& next, OffsetType offset)
+typename Hidden<TARGS>::OffsetType
+Hidden<TARGS>::connectToForwardLayer(const Layer<ValueType>& next, OffsetType offset)
 {
   FFNN_ASSERT_MSG (Base::output_shape_ > 0, "Output dimensions are invalid (non-positive) or unresolved.");
 
@@ -64,7 +63,7 @@ template<typename ValueType,
          typename LayerShape,
          typename _InputBlockType,
          typename _OutputBlockType>
-bool HIDDEN::initialize()
+bool Hidden<TARGS>::initialize()
 {
   // Deduce input dimensions
   if (!Base::input_shape_.valid())
@@ -119,10 +118,10 @@ template<typename ValueType,
          typename LayerShape,
          typename _InputBlockType,
          typename _OutputBlockType>
-void HIDDEN::save(typename HIDDEN::OutputArchive& ar,
-                  typename HIDDEN::VersionType version) const
+void Hidden<TARGS>::save(typename Hidden<TARGS>::OutputArchive& ar,
+                         typename Hidden<TARGS>::VersionType version) const
 {
-  ffnn::io::signature::apply<HIDDEN>(ar);
+  ffnn::io::signature::apply<Hidden<TARGS>>(ar);
   Base::save(ar, version);
   FFNN_DEBUG_NAMED("layer::Hidden", "Saved");
 }
@@ -131,16 +130,14 @@ template<typename ValueType,
          typename LayerShape,
          typename _InputBlockType,
          typename _OutputBlockType>
-void HIDDEN::load(typename HIDDEN::InputArchive& ar,
-                  typename HIDDEN::VersionType version)
+void Hidden<TARGS>::load(typename Hidden<TARGS>::InputArchive& ar,
+                         typename Hidden<TARGS>::VersionType version)
 {
-  ffnn::io::signature::check<HIDDEN>(ar);
+  ffnn::io::signature::check<Hidden<TARGS>>(ar);
   Base::load(ar, version);
   FFNN_DEBUG_NAMED("layer::Hidden", "Loaded");
 }
-
-#undef HIDDEN_TARGS
-#undef HIDDEN_TARGS_ADVANCED
-#undef HIDDEN
 }  // namespace layer
 }  // namespace ffnn
+#undef TARGS
+#endif  // FFNN_LAYER_IMPL_HIDDEN_HPP

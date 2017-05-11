@@ -208,8 +208,8 @@ bool Convolution<CONV_TARGS>::backward()
     for (OffsetType jdx = 0, jdx_str = 0; jdx < output_volume_shape_.width; jdx++, jdx_str += filter_stride_.width)
     {
       // Sum over all filters
-      const ValueType* err_map = receptors_[idx][jdx].getForwardErrorMapping();
       OffsetType kdx = 0;
+      const ValueType* err_map = receptors_[idx][jdx].getForwardErrorMapping();
       for (const auto& filter : receptors_[idx][jdx].getFilters())
       {
         Base::backward_error_.block(idx_str, jdx_str, filter.rows(), filter.cols()) += filter * err_map[kdx++];

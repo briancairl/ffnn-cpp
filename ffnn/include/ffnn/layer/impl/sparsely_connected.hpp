@@ -2,6 +2,8 @@
  * @note HEADER-ONLY IMPLEMENTATION FILE
  * @warn Do not include directly
  */
+#ifndef FFNN_LAYER_IMPL_SPARSELY_CONNECTED_HPP
+#define FFNN_LAYER_IMPL_SPARSELY_CONNECTED_HPP
 
 // Boost
 #include <boost/bind.hpp>
@@ -16,15 +18,13 @@ namespace ffnn
 {
 namespace layer
 {
-#define SPARSELY_CONNECTED_TARGS ValueType, InputsAtCompileTime, OutputsAtCompileTime
-#define SPARSELY_CONNECTED_TARGS_ADVANCED _HiddenLayerShape
-#define SPARSELY_CONNECTED SparselyConnected<SPARSELY_CONNECTED_TARGS, SPARSELY_CONNECTED_TARGS_ADVANCED>
+#define TARGS ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape
 
 template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
          FFNN_SIZE_TYPE OutputsAtCompileTime,
          typename _HiddenLayerShape>
-SPARSELY_CONNECTED::
+SparselyConnected<TARGS>::
 SparselyConnected(SizeType output_size) :
   Base(ShapeType(0), ShapeType(output_size)),
   opt_(boost::make_shared<typename optimizer::None<Self>>())
@@ -34,14 +34,14 @@ template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
          FFNN_SIZE_TYPE OutputsAtCompileTime,
          typename _HiddenLayerShape>
-SPARSELY_CONNECTED::~SparselyConnected()
+SparselyConnected<TARGS>::~SparselyConnected()
 {}
 
 template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
          FFNN_SIZE_TYPE OutputsAtCompileTime,
          typename _HiddenLayerShape>
-bool SPARSELY_CONNECTED::initialize()
+bool SparselyConnected<TARGS>::initialize()
 {
   // Abort if layer is already initialized
   if (Base::setupRequired() && Base::isInitialized())
@@ -86,7 +86,7 @@ template<typename ValueType,
 template<typename WeightDistribution,
          typename BiasDistribution,
          typename ConnectionDistribution>
-bool SPARSELY_CONNECTED::initialize(const WeightDistribution& wd,
+bool SparselyConnected<TARGS>::initialize(const WeightDistribution& wd,
                                     const BiasDistribution& bd,
                                     const ConnectionDistribution& cd,
                                     ValueType connection_probability)
@@ -129,7 +129,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
          FFNN_SIZE_TYPE OutputsAtCompileTime,
          typename _HiddenLayerShape>
-bool SPARSELY_CONNECTED::forward()
+bool SparselyConnected<TARGS>::forward()
 {
   FFNN_ASSERT_MSG(opt_, "No optimization resource set.");
   if (!opt_->forward(*this))
@@ -147,7 +147,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
          FFNN_SIZE_TYPE OutputsAtCompileTime,
          typename _HiddenLayerShape>
-bool SPARSELY_CONNECTED::backward()
+bool SparselyConnected<TARGS>::backward()
 {
   FFNN_ASSERT_MSG(opt_, "No optimization resource set.");
 
@@ -162,7 +162,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
          FFNN_SIZE_TYPE OutputsAtCompileTime,
          typename _HiddenLayerShape>
-bool SPARSELY_CONNECTED::update()
+bool SparselyConnected<TARGS>::update()
 {
   FFNN_ASSERT_MSG(opt_, "No optimization resource set.");
   return opt_->update(*this);
@@ -172,7 +172,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
          FFNN_SIZE_TYPE OutputsAtCompileTime,
          typename _HiddenLayerShape>
-void SPARSELY_CONNECTED::reset()
+void SparselyConnected<TARGS>::reset()
 {
   // Zero out connection weights and biases with appropriate size
   w_.resize(Base::outputShape().size(), Base::inputShape().size());
@@ -183,7 +183,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
          FFNN_SIZE_TYPE OutputsAtCompileTime,
          typename _HiddenLayerShape>
-void SPARSELY_CONNECTED::prune(ValueType epsilon)
+void SparselyConnected<TARGS>::prune(ValueType epsilon)
 {
   w_.prune(0, epsilon);
 }
@@ -192,7 +192,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
          FFNN_SIZE_TYPE OutputsAtCompileTime,
          typename _HiddenLayerShape>
-void SPARSELY_CONNECTED::
+void SparselyConnected<TARGS>::
   setOptimizer(typename Optimizer::Ptr opt)
 {
   FFNN_ASSERT_MSG(opt, "Input optimizer object is an empty resource.");
@@ -203,11 +203,11 @@ template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
          FFNN_SIZE_TYPE OutputsAtCompileTime,
          typename _HiddenLayerShape>
-void SPARSELY_CONNECTED::
-  save(typename SPARSELY_CONNECTED::OutputArchive& ar,
-       typename SPARSELY_CONNECTED::VersionType version) const
+void SparselyConnected<TARGS>::
+  save(typename SparselyConnected<TARGS>::OutputArchive& ar,
+       typename SparselyConnected<TARGS>::VersionType version) const
 {
-  ffnn::io::signature::apply<SPARSELY_CONNECTED>(ar);
+  ffnn::io::signature::apply<SparselyConnected<TARGS>>(ar);
   Base::save(ar, version);
 
   // Save weight/bias matrix
@@ -221,11 +221,11 @@ template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
          FFNN_SIZE_TYPE OutputsAtCompileTime,
          typename _HiddenLayerShape>
-void SPARSELY_CONNECTED::
-  load(typename SPARSELY_CONNECTED::InputArchive& ar,
-       typename SPARSELY_CONNECTED::VersionType version)
+void SparselyConnected<TARGS>::
+  load(typename SparselyConnected<TARGS>::InputArchive& ar,
+       typename SparselyConnected<TARGS>::VersionType version)
 {
-  ffnn::io::signature::check<SPARSELY_CONNECTED>(ar);
+  ffnn::io::signature::check<SparselyConnected<TARGS>>(ar);
   Base::load(ar, version);
 
   // Save weight/bias matrix
@@ -236,3 +236,5 @@ void SPARSELY_CONNECTED::
 }
 }  // namespace layer
 }  // namespace ffnn
+#undef TARGS
+#endif  // FFNN_LAYER_IMPL_SPARSELY_CONNECTED_HPP

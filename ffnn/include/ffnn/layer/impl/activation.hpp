@@ -17,29 +17,27 @@ namespace ffnn
 {
 namespace layer
 {
-#define ACTIVATION_TARGS ValueType, NeuronType, SizeAtCompileTime
-#define ACTIVATION_TARGS_ADVANCED _HiddenLayerShape
-#define ACTIVATION Activation<ACTIVATION_TARGS, ACTIVATION_TARGS_ADVANCED>
+#define TARGS ValueType, NeuronType, SizeAtCompileTime, _HiddenLayerShape
 
 template<typename ValueType,
          typename NeuronType,
          FFNN_SIZE_TYPE SizeAtCompileTime,
          typename _HiddenLayerShape>
-ACTIVATION::Activation()
+Activation<TARGS>::Activation()
 {}
 
 template<typename ValueType,
          typename NeuronType,
          FFNN_SIZE_TYPE SizeAtCompileTime,
          typename _HiddenLayerShape>
-ACTIVATION::~Activation()
+Activation<TARGS>::~Activation()
 {}
 
 template<typename ValueType,
          typename NeuronType,
          FFNN_SIZE_TYPE SizeAtCompileTime,
          typename _HiddenLayerShape>
-bool ACTIVATION::initialize()
+bool Activation<TARGS>::initialize()
 {
   // Abort if layer is already initialized
   if (Base::setupRequired() && Base::isInitialized())
@@ -74,7 +72,7 @@ template<typename ValueType,
          typename NeuronType,
          FFNN_SIZE_TYPE SizeAtCompileTime,
          typename _HiddenLayerShape>
-bool ACTIVATION::forward()
+bool Activation<TARGS>::forward()
 {
   // Compute neuron outputs
   for (SizeType idx = 0; idx < Base::inputShape().size(); idx++)
@@ -88,7 +86,7 @@ template<typename ValueType,
          typename NeuronType,
          FFNN_SIZE_TYPE SizeAtCompileTime,
          typename _HiddenLayerShape>
-bool ACTIVATION::backward()
+bool Activation<TARGS>::backward()
 {
   // Compute neuron derivatives
   Base::backward_error_.noalias() = Base::output_;
@@ -106,11 +104,11 @@ template<typename ValueType,
          typename NeuronType,
          FFNN_SIZE_TYPE SizeAtCompileTime,
          typename _HiddenLayerShape>
-void ACTIVATION::
-  save(typename ACTIVATION::OutputArchive& ar,
-       typename ACTIVATION::VersionType version) const
+void Activation<TARGS>::
+  save(typename Activation<TARGS>::OutputArchive& ar,
+       typename Activation<TARGS>::VersionType version) const
 {
-  ffnn::io::signature::apply<ACTIVATION>(ar);
+  ffnn::io::signature::apply<Activation<TARGS>>(ar);
   Base::save(ar, version);
   FFNN_DEBUG_NAMED("layer::Activation", "Saved");
 }
@@ -119,11 +117,11 @@ template<typename ValueType,
          typename NeuronType,
          FFNN_SIZE_TYPE SizeAtCompileTime,
          typename _HiddenLayerShape>
-void ACTIVATION::
-  load(typename ACTIVATION::InputArchive& ar,
-       typename ACTIVATION::VersionType version)
+void Activation<TARGS>::
+  load(typename Activation<TARGS>::InputArchive& ar,
+       typename Activation<TARGS>::VersionType version)
 {
-  ffnn::io::signature::check<ACTIVATION>(ar);
+  ffnn::io::signature::check<Activation<TARGS>>(ar);
   Base::load(ar, version);
   FFNN_DEBUG_NAMED("layer::Activation", "Loaded");
 }
