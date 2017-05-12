@@ -81,6 +81,43 @@ struct FilterBank :
     }
   }
 
+  void setZero()
+  {
+    for (auto& filter : *this)
+    {
+      filter.kernel.setZero();
+      filter.bias = 0;
+    }
+  }
+
+  void operator*=(ValueType scale)
+  {
+    for (auto& filter : *this)
+    {
+      filter.kernel *= scale;
+      filter.bias *= scale;
+    }
+  }
+
+  void operator-=(const FilterBank& other)
+  {
+    for (auto& filter : *this)
+    {
+      filter.kernel -= other.kernel;
+      filter.bias -= other.bias;
+    }
+  }
+
+  void operator+=(const FilterBank& other)
+  {
+    for (auto& filter : *this)
+    {
+      filter.kernel += other.kernel;
+      filter.bias += other.bias;
+    }
+  }
+
+
   template<class Archive>
   void save(Archive & ar, const unsigned int version) const
   {

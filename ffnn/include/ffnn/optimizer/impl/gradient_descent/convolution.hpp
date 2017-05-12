@@ -38,11 +38,17 @@ public:
   /// Size type standardization
   typedef typename LayerType::SizeType SizeType;
 
+  /// Offset type standardization
+  typedef typename LayerType::OffsetType OffsetType;
+
   /// Matrix type standardization
   typedef typename LayerType::InputBlockType InputBlockType;
 
   /// Matrix type standardization
   typedef typename LayerType::OutputBlockType OutputBlockType;
+
+  /// Receptive-volume type standardization
+  typedef typename LayerType::ConvolutionVolumeType ConvolutionVolumeType;
 
   /// Receptive-field type standardization
   typedef typename LayerType::ConvolutionFieldType ConvolutionFieldType;
@@ -69,6 +75,16 @@ public:
 
     // Reset previous input
     prev_input_.setZero(layer.input_shape_.height, layer.input_shape_.width);
+
+    // Reset weight delta
+    gradient_.resize(boost::extents[layer.output_volume_shape_.height][layer.output_volume_shape_.width]);
+    for (SizeType idx = 0; idx < layer.output_volume_shape_.height; idx++)
+    {
+      for (SizeType jdx = 0; jdx < layer.output_volume_shape_.width; jdx++)
+      {
+        new (&gradient_[idx][jdx]) ConvolutionVolumeType(layer.filter_shape_, layer.output_volume_shape_.depth);
+      }
+    }
   }
 
   /**
@@ -77,19 +93,12 @@ public:
    */
   virtual void reset(LayerType& layer)
   {
-    // Layer sizing
-    const SizeType& hs = layer.output_volume_shape_.height;
-    const SizeType& ws = layer.output_volume_shape_.width;
-    const SizeType& ds = layer.output_volume_shape_.depth;
-
     // Reset weight delta
-    weight_gradient_.resize(boost::extents[hs][ws]);
-    for (SizeType jdx = 0; jdx < ws; jdx++)
+    for (SizeType idx = 0; idx < layer.output_volume_shape_.height; idx++)
     {
-      for (SizeType idx = 0; idx < hs; idx++)
+      for (SizeType jdx = 0; jdx < layer.output_volume_shape_.width; jdx++)
       {
-        // Create receptive field
-        new (&weight_gradient_[idx][jdx]) ConvolutionVolumeType(filter_shape_, ds);
+        gradient_[idx][jdx].setZero();
       }
     }
   }
@@ -119,9 +128,20 @@ public:
   {
     FFNN_ASSERT_MSG(layer.isInitialized(), "Layer to optimize is not initialized.");
 
-    // Compute and accumulate new gradient
-    weight_gradient_.noalias() += layer.forward_error_ * prev_input_.transpose();
-    bias_gradient_.noalias() += layer.forward_error_;
+    // Reset weight delta
+    for (OffsetType idx = 0; idx < layer.output_volume_shape_.height; idx++)
+    {
+      for (OffsetType jdx = 0; jdx < layer.output_volume_shape_.width; jdx++)
+      {
+        for (OffsetType kdx = 0; kdx < static_cast<OffsetType>(gradient_[idx][jdx].size()); kdx++)
+        {
+          const OffsetType iidx((Mode == ColEmbedding) ? (idx * layer.output_volume_shape_.depth + kdx) : idx);
+          const OffsetType jjdx((Mode == RowEmbedding) ? (jdx * layer.output_volume_shape_.depth + kdx) : kdx);
+
+          gradient_[idx][jdx][kdx].kernel += layer.fields_[idx][jdx][kdx].kernel * layer.forward_error_(iidx, jjdx);
+        }
+      }
+    }
 
     // Back-prop error
     return true;
@@ -137,13 +157,15 @@ public:
   {
     FFNN_ASSERT_MSG(layer.isInitialized(), "Layer to optimize is not initialized.");
 
-    // Incorporate learning rate
-    weight_gradient_ *= lr_;
-    bias_gradient_ *= lr_;
-
-    // Update weights
-    layer.w_.noalias() -= weight_gradient_;
-    layer.b_.noalias() -= bias_gradient_;
+    // Incorporate learning rate + update weights
+    for (OffsetType idx = 0; idx < layer.output_volume_shape_.height; idx++)
+    {
+      for (OffsetType jdx = 0; jdx < layer.output_volume_shape_.width; jdx++)
+      {
+        layer.fields_[idx][jdx] *= lr_;
+        layer.fields_[idx][jdx] -= gradient_[idx][jdx];
+      }
+    }
 
     // Reinitialize optimizer
     reset(layer);
@@ -155,7 +177,7 @@ protected:
   ScalarType lr_;
 
   /// Total weight matrix gradient
-  WeightMatrixType weight_gradient_;
+  WeightMatrixType gradient_;
 
   /// Total bias vector delta
   BiasVectorType bias_gradient_;

@@ -166,7 +166,7 @@ public:
 
   inline const ConvolutionFieldType& getConvolutionField() const
   {
-    return receptors_;
+    return fields_;
   }
 
 protected:
@@ -188,7 +188,7 @@ private:
   void reset();
 
   /// Layer configuration parameters
-  ConvolutionFieldType receptors_;
+  ConvolutionFieldType fields_;
 
   /// "True" shape of the ouput with no depth-embedding
   ShapeType input_volume_shape_;

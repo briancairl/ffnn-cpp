@@ -146,7 +146,7 @@ bool  Convolution<CONV_TARGS>::initialize(const WeightDistribution& wd, const Bi
     for (SizeType jdx = 0; jdx < output_volume_shape_.width; jdx++)
     {
       // Initialize field
-      Base::initialized_ &= receptors_[idx][jdx].initialize(wd, bd);
+      Base::initialized_ &= fields_[idx][jdx].initialize(wd, bd);
 
       // Check that last created field was initialized properly
       FFNN_ASSERT_MSG(Base::initialized_, "Failed to initialize receptor.");
@@ -178,10 +178,10 @@ bool Convolution<CONV_TARGS>::forward()
     for (OffsetType jdx = 0, wdx = 0; jdx < output_volume_shape_.width; jdx++, wdx += filter_stride_.width)
     {
       // Get block dimensions
-      const auto& ris = receptors_[idx][jdx].inputShape();
+      const auto& ris = fields_[idx][jdx].inputShape();
 
       // Activate receptor
-      receptors_[idx][jdx].forward(Base::input_.block(hdx, wdx, ris.height, ris.width));
+      fields_[idx][jdx].forward(Base::input_.block(hdx, wdx, ris.height, ris.width));
     }
   }
   return true;
@@ -209,12 +209,12 @@ bool Convolution<CONV_TARGS>::backward()
     for (OffsetType jdx = 0, wdx = 0; jdx < output_volume_shape_.width; jdx++, wdx += filter_stride_.width)
     {
       // Get block dimensions
-      const auto& ris = receptors_[idx][jdx].inputShape();
+      const auto& ris = fields_[idx][jdx].inputShape();
 
       // Sum over all filters
       OffsetType kdx = 0;
-      const ValueType* err = receptors_[idx][jdx].getForwardErrorMapping();
-      for (const auto& filter : receptors_[idx][jdx].getFilters())
+      const ValueType* err = fields_[idx][jdx].getForwardErrorMapping();
+      for (const auto& filter : fields_[idx][jdx].getFilters())
       {
         Base::backward_error_.block(hdx, wdx, ris.height, ris.width) += filter.kernel * err[kdx++];
       }
@@ -251,13 +251,13 @@ template<typename ValueType,
          typename _HiddenLayerShape>
 void Convolution<CONV_TARGS>::reset()
 {
-  receptors_.resize(boost::extents[output_volume_shape_.height][output_volume_shape_.width]);
+  fields_.resize(boost::extents[output_volume_shape_.height][output_volume_shape_.width]);
   for (SizeType jdx = 0; jdx < output_volume_shape_.width; jdx++)
   {
     for (SizeType idx = 0; idx < output_volume_shape_.height; idx++)
     {
       // Create receptive field
-      new (&receptors_[idx][jdx]) ConvolutionVolumeType(filter_shape_, output_volume_shape_.depth);
+      new (&fields_[idx][jdx]) ConvolutionVolumeType(filter_shape_, output_volume_shape_.depth);
     }
   }
 }
@@ -323,10 +323,10 @@ Convolution<CONV_TARGS>::connectToForwardLayer(const Layer<ValueType>& next, Off
         idx * output_volume_shape_.depth;
 
       // Set output memory mapping
-      receptors_[idx][jdx].setOutputMapping(output_ptr + kdx);
+      fields_[idx][jdx].setOutputMapping(output_ptr + kdx);
 
       // Set backward-error memory mapping
-      receptors_[idx][jdx].setForwardErrorMapping(error_ptr + kdx);
+      fields_[idx][jdx].setForwardErrorMapping(error_ptr + kdx);
     }
   }
   return offset_after_connect;
@@ -353,7 +353,7 @@ void Convolution<CONV_TARGS>::save(typename Convolution<CONV_TARGS>::OutputArchi
   {
     for (SizeType jdx = 0; jdx < output_volume_shape_.width; jdx++)
     {
-      receptors_[idx][jdx].save(ar, version);
+      fields_[idx][jdx].save(ar, version);
     }
   }
   FFNN_DEBUG_NAMED("layer::Convolution", "Saved");
@@ -381,7 +381,7 @@ void Convolution<CONV_TARGS>::load(typename Convolution<CONV_TARGS>::InputArchiv
   {
     for (SizeType jdx = 0; jdx < output_volume_shape_.width; jdx++)
     {
-      receptors_[idx][jdx].load(ar, version);
+      fields_[idx][jdx].load(ar, version);
     }
   }
 

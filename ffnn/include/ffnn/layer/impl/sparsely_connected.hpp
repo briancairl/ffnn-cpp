@@ -87,9 +87,9 @@ template<typename WeightDistribution,
          typename BiasDistribution,
          typename ConnectionDistribution>
 bool SparselyConnected<TARGS>::initialize(const WeightDistribution& wd,
-                                    const BiasDistribution& bd,
-                                    const ConnectionDistribution& cd,
-                                    ValueType connection_probability)
+                                          const BiasDistribution& bd,
+                                          const ConnectionDistribution& cd,
+                                          ValueType connection_probability)
 {
   if (initialize())
   {
