@@ -71,7 +71,6 @@ public:
   virtual void initialize(LayerType& layer)
   {
     FFNN_ASSERT_MSG(layer.isInitialized(), "Layer to optimize is not initialized.");
-    reset(layer);
 
     // Reset previous input
     prev_input_.setZero(layer.input_shape_.height, layer.input_shape_.width);
@@ -85,6 +84,7 @@ public:
         new (&gradient_[idx][jdx]) ConvolutionVolumeType(layer.filter_shape_, layer.output_volume_shape_.depth);
       }
     }
+    reset(layer);
   }
 
   /**
