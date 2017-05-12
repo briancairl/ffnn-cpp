@@ -176,11 +176,8 @@ protected:
   /// Learning rate
   ScalarType lr_;
 
-  /// Total weight matrix gradient
-  WeightMatrixType gradient_;
-
-  /// Total bias vector delta
-  BiasVectorType bias_gradient_;
+  /// Total parameter gradient
+  ConvolutionFieldType gradient_;
 
   /// Previous input
   InputBlockType prev_input_;
