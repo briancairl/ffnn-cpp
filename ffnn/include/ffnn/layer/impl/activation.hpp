@@ -2,6 +2,8 @@
  * @note HEADER-ONLY IMPLEMENTATION FILE
  * @warn Do not include directly
  */
+#ifndef FFNN_LAYER_IMPL_ACTIVATION_HPP
+#define FFNN_LAYER_IMPL_ACTIVATION_HPP
 
 // C++ Standard library
 #include <ctime>
@@ -127,3 +129,5 @@ void Activation<TARGS>::
 }
 }  // namespace layer
 }  // namespace ffnn
+#undef TARGS
+#endif  // FFNN_LAYER_IMPL_ACTIVATION_HPP

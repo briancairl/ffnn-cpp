@@ -1,7 +1,7 @@
 var searchData=
 [
   ['activation',['Activation',['../classffnn_1_1layer_1_1_activation.html',1,'ffnn::layer']]],
-  ['activation',['Activation',['../classffnn_1_1layer_1_1_activation.html#a433d57370b979f91679e2065c48663f9',1,'ffnn::layer::Activation']]],
+  ['activation',['Activation',['../classffnn_1_1layer_1_1_activation.html#a92e73d25dc6855597d25e2b492bd381c',1,'ffnn::layer::Activation']]],
   ['activation_2eh',['activation.h',['../activation_8h.html',1,'']]],
   ['activation_2ehpp',['activation.hpp',['../activation_8hpp.html',1,'']]],
   ['adam',['Adam',['../classffnn_1_1optimizer_1_1_adam.html',1,'ffnn::optimizer']]],

@@ -147,15 +147,13 @@ Public Types</h2></td></tr>
 <tr class="separator:abdfcf81b3846fae3b19a207424695df0 inherit pub_types_classffnn_1_1layer_1_1_hidden"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae401b1af7763caf09a0dffcaf4f2d5e9 inherit pub_types_classffnn_1_1layer_1_1_hidden"><td class="memItemLeft" align="right" valign="top">typedef Eigen::Matrix<br class="typebreak"/>
 &lt; ValueType, <br class="typebreak"/>
-_HiddenLayerShape::input_height, <br class="typebreak"/>
-_HiddenLayerShape::input_height, <br class="typebreak"/>
-Eigen::ColMajor &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#ae401b1af7763caf09a0dffcaf4f2d5e9">InputBlockType</a></td></tr>
+_HiddenLayerShape::input_height,_HiddenLayerShape::input_width,Eigen::ColMajor &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#ae401b1af7763caf09a0dffcaf4f2d5e9">InputBlockType</a></td></tr>
 <tr class="memdesc:ae401b1af7763caf09a0dffcaf4f2d5e9 inherit pub_types_classffnn_1_1layer_1_1_hidden"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input block type standardization.  <a href="#ae401b1af7763caf09a0dffcaf4f2d5e9">More...</a><br/></td></tr>
 <tr class="separator:ae401b1af7763caf09a0dffcaf4f2d5e9 inherit pub_types_classffnn_1_1layer_1_1_hidden"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b9e276188ef490ea5301f553225c735 inherit pub_types_classffnn_1_1layer_1_1_hidden"><td class="memItemLeft" align="right" valign="top">typedef Eigen::Matrix<br class="typebreak"/>
 &lt; ValueType, <br class="typebreak"/>
 _HiddenLayerShape::output_height, <br class="typebreak"/>
-_HiddenLayerShape::output_height, <br class="typebreak"/>
+_HiddenLayerShape::output_width, <br class="typebreak"/>
 Eigen::ColMajor &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#a9b9e276188ef490ea5301f553225c735">OutputBlockType</a></td></tr>
 <tr class="memdesc:a9b9e276188ef490ea5301f553225c735 inherit pub_types_classffnn_1_1layer_1_1_hidden"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output block type standardization.  <a href="#a9b9e276188ef490ea5301f553225c735">More...</a><br/></td></tr>
 <tr class="separator:a9b9e276188ef490ea5301f553225c735 inherit pub_types_classffnn_1_1layer_1_1_hidden"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -227,20 +225,20 @@ Eigen::aligned_allocator<br class="typebreak"/>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a433d57370b979f91679e2065c48663f9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_activation.html#a433d57370b979f91679e2065c48663f9">Activation</a> ()</td></tr>
-<tr class="memdesc:a433d57370b979f91679e2065c48663f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <a href="#a433d57370b979f91679e2065c48663f9">More...</a><br/></td></tr>
-<tr class="separator:a433d57370b979f91679e2065c48663f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b353acb2031fff2e7a15cf0895d346d"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_activation.html#a4b353acb2031fff2e7a15cf0895d346d">~Activation</a> ()</td></tr>
-<tr class="separator:a4b353acb2031fff2e7a15cf0895d346d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae73ef2d36d9c5ce3c219f6a51cba3c35"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_activation.html#ae73ef2d36d9c5ce3c219f6a51cba3c35">initialize</a> ()</td></tr>
-<tr class="memdesc:ae73ef2d36d9c5ce3c219f6a51cba3c35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the layer.  <a href="#ae73ef2d36d9c5ce3c219f6a51cba3c35">More...</a><br/></td></tr>
-<tr class="separator:ae73ef2d36d9c5ce3c219f6a51cba3c35"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa7f88c8bc20589dc51d9dd615b8c4580"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_activation.html#aa7f88c8bc20589dc51d9dd615b8c4580">forward</a> ()</td></tr>
-<tr class="memdesc:aa7f88c8bc20589dc51d9dd615b8c4580"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forward value propagation.  <a href="#aa7f88c8bc20589dc51d9dd615b8c4580">More...</a><br/></td></tr>
-<tr class="separator:aa7f88c8bc20589dc51d9dd615b8c4580"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c4284245343f2132dd28eaf7ffbed47"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_activation.html#a3c4284245343f2132dd28eaf7ffbed47">backward</a> ()</td></tr>
-<tr class="memdesc:a3c4284245343f2132dd28eaf7ffbed47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs backward error propagation.  <a href="#a3c4284245343f2132dd28eaf7ffbed47">More...</a><br/></td></tr>
-<tr class="separator:a3c4284245343f2132dd28eaf7ffbed47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92e73d25dc6855597d25e2b492bd381c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_activation.html#a92e73d25dc6855597d25e2b492bd381c">Activation</a> ()</td></tr>
+<tr class="memdesc:a92e73d25dc6855597d25e2b492bd381c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <a href="#a92e73d25dc6855597d25e2b492bd381c">More...</a><br/></td></tr>
+<tr class="separator:a92e73d25dc6855597d25e2b492bd381c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd5aa2e208c0c85ea1ff8033133f8ebe"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_activation.html#acd5aa2e208c0c85ea1ff8033133f8ebe">~Activation</a> ()</td></tr>
+<tr class="separator:acd5aa2e208c0c85ea1ff8033133f8ebe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10a733b3fc1378fd8d1f33d231ee3e83"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_activation.html#a10a733b3fc1378fd8d1f33d231ee3e83">initialize</a> ()</td></tr>
+<tr class="memdesc:a10a733b3fc1378fd8d1f33d231ee3e83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the layer.  <a href="#a10a733b3fc1378fd8d1f33d231ee3e83">More...</a><br/></td></tr>
+<tr class="separator:a10a733b3fc1378fd8d1f33d231ee3e83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8435ed1feadfcfc2343dd65a1542fe23"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_activation.html#a8435ed1feadfcfc2343dd65a1542fe23">forward</a> ()</td></tr>
+<tr class="memdesc:a8435ed1feadfcfc2343dd65a1542fe23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forward value propagation.  <a href="#a8435ed1feadfcfc2343dd65a1542fe23">More...</a><br/></td></tr>
+<tr class="separator:a8435ed1feadfcfc2343dd65a1542fe23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5166a595cb135c7ad62569361de101b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_activation.html#aa5166a595cb135c7ad62569361de101b">backward</a> ()</td></tr>
+<tr class="memdesc:aa5166a595cb135c7ad62569361de101b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs backward error propagation.  <a href="#aa5166a595cb135c7ad62569361de101b">More...</a><br/></td></tr>
+<tr class="separator:aa5166a595cb135c7ad62569361de101b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24a044458729f72466af06153851f5b2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_activation.html#a24a044458729f72466af06153851f5b2">update</a> ()</td></tr>
 <tr class="memdesc:a24a044458729f72466af06153851f5b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Does nothing.  <a href="#a24a044458729f72466af06153851f5b2">More...</a><br/></td></tr>
 <tr class="separator:a24a044458729f72466af06153851f5b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -248,8 +246,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3caeb739cac8995496db207e32900fca inherit pub_methods_classffnn_1_1layer_1_1_hidden"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#a3caeb739cac8995496db207e32900fca">Hidden</a> (const <a class="el" href="classffnn_1_1layer_1_1internal_1_1_interface.html#a945709b1d0ea54a51539b80d04485f5f">ShapeType</a> &amp;input_shape=<a class="el" href="classffnn_1_1layer_1_1internal_1_1_interface.html#a945709b1d0ea54a51539b80d04485f5f">ShapeType</a>(_HiddenLayerShape::input_height, _HiddenLayerShape::input_width), const <a class="el" href="classffnn_1_1layer_1_1internal_1_1_interface.html#a945709b1d0ea54a51539b80d04485f5f">ShapeType</a> &amp;output_shape=<a class="el" href="classffnn_1_1layer_1_1internal_1_1_interface.html#a945709b1d0ea54a51539b80d04485f5f">ShapeType</a>(_HiddenLayerShape::output_height, _HiddenLayerShape::output_width))</td></tr>
 <tr class="memdesc:a3caeb739cac8995496db207e32900fca inherit pub_methods_classffnn_1_1layer_1_1_hidden"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup constructor.  <a href="#a3caeb739cac8995496db207e32900fca">More...</a><br/></td></tr>
 <tr class="separator:a3caeb739cac8995496db207e32900fca inherit pub_methods_classffnn_1_1layer_1_1_hidden"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0dad92c0b04b2e41efcde9462ba3e123 inherit pub_methods_classffnn_1_1layer_1_1_hidden"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#a0dad92c0b04b2e41efcde9462ba3e123">~Hidden</a> ()</td></tr>
-<tr class="separator:a0dad92c0b04b2e41efcde9462ba3e123 inherit pub_methods_classffnn_1_1layer_1_1_hidden"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4d85d69e2da92c3b70992e0c3ced4d1 inherit pub_methods_classffnn_1_1layer_1_1_hidden"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#ae4d85d69e2da92c3b70992e0c3ced4d1">~Hidden</a> ()</td></tr>
+<tr class="separator:ae4d85d69e2da92c3b70992e0c3ced4d1 inherit pub_methods_classffnn_1_1layer_1_1_hidden"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classffnn_1_1layer_1_1_layer"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classffnn_1_1layer_1_1_layer')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classffnn_1_1layer_1_1_layer.html">ffnn::layer::Layer&lt; ValueType &gt;</a></td></tr>
 <tr class="memitem:a0c766a6f5770ea0ae8a7e660523eb413 inherit pub_methods_classffnn_1_1layer_1_1_layer"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_layer.html#a0c766a6f5770ea0ae8a7e660523eb413">Layer</a> (const <a class="el" href="classffnn_1_1layer_1_1internal_1_1_interface.html#a945709b1d0ea54a51539b80d04485f5f">ShapeType</a> &amp;input_shape, const <a class="el" href="classffnn_1_1layer_1_1internal_1_1_interface.html#a945709b1d0ea54a51539b80d04485f5f">ShapeType</a> &amp;output_shape)</td></tr>
 <tr class="memdesc:a0c766a6f5770ea0ae8a7e660523eb413 inherit pub_methods_classffnn_1_1layer_1_1_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup constructor.  <a href="#a0c766a6f5770ea0ae8a7e660523eb413">More...</a><br/></td></tr>
@@ -292,12 +290,12 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:ab5525e49c08fc593856b9c95e0eba1ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_activation.html#ab5525e49c08fc593856b9c95e0eba1ee">save</a> (<a class="el" href="classffnn_1_1traits_1_1_serializable.html#a08d986df75d363fa79506d4f6045cb9f">OutputArchive</a> &amp;ar, <a class="el" href="classffnn_1_1traits_1_1_serializable.html#a08924b3b7d20cb3cb6eafe517d4f7b30">VersionType</a> version) const </td></tr>
-<tr class="memdesc:ab5525e49c08fc593856b9c95e0eba1ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save serializer.  <a href="#ab5525e49c08fc593856b9c95e0eba1ee">More...</a><br/></td></tr>
-<tr class="separator:ab5525e49c08fc593856b9c95e0eba1ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a045ecc330b67cdc3a41d6d7fc3a8dbf2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_activation.html#a045ecc330b67cdc3a41d6d7fc3a8dbf2">load</a> (<a class="el" href="classffnn_1_1traits_1_1_serializable.html#a6e626759259f8f370dd4303b4441a234">InputArchive</a> &amp;ar, <a class="el" href="classffnn_1_1traits_1_1_serializable.html#a08924b3b7d20cb3cb6eafe517d4f7b30">VersionType</a> version)</td></tr>
-<tr class="memdesc:a045ecc330b67cdc3a41d6d7fc3a8dbf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load serializer.  <a href="#a045ecc330b67cdc3a41d6d7fc3a8dbf2">More...</a><br/></td></tr>
-<tr class="separator:a045ecc330b67cdc3a41d6d7fc3a8dbf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4fa0c4e44033921fe6ada1dcd0c0560"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_activation.html#af4fa0c4e44033921fe6ada1dcd0c0560">save</a> (<a class="el" href="classffnn_1_1traits_1_1_serializable.html#a08d986df75d363fa79506d4f6045cb9f">OutputArchive</a> &amp;ar, <a class="el" href="classffnn_1_1traits_1_1_serializable.html#a08924b3b7d20cb3cb6eafe517d4f7b30">VersionType</a> version) const </td></tr>
+<tr class="memdesc:af4fa0c4e44033921fe6ada1dcd0c0560"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save serializer.  <a href="#af4fa0c4e44033921fe6ada1dcd0c0560">More...</a><br/></td></tr>
+<tr class="separator:af4fa0c4e44033921fe6ada1dcd0c0560"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf041de6c530dfb271dd42689927eebe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_activation.html#abf041de6c530dfb271dd42689927eebe">load</a> (<a class="el" href="classffnn_1_1traits_1_1_serializable.html#a6e626759259f8f370dd4303b4441a234">InputArchive</a> &amp;ar, <a class="el" href="classffnn_1_1traits_1_1_serializable.html#a08924b3b7d20cb3cb6eafe517d4f7b30">VersionType</a> version)</td></tr>
+<tr class="memdesc:abf041de6c530dfb271dd42689927eebe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load serializer.  <a href="#abf041de6c530dfb271dd42689927eebe">More...</a><br/></td></tr>
+<tr class="separator:abf041de6c530dfb271dd42689927eebe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classffnn_1_1layer_1_1_hidden"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classffnn_1_1layer_1_1_hidden')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classffnn_1_1layer_1_1_hidden.html">ffnn::layer::Hidden&lt; ValueType, _HiddenLayerShape &gt;</a></td></tr>
 <tr class="memitem:a184844a0eadeb1aa27e29b24cbb0008c inherit pro_methods_classffnn_1_1layer_1_1_hidden"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#a184844a0eadeb1aa27e29b24cbb0008c">save</a> (<a class="el" href="classffnn_1_1traits_1_1_serializable.html#a08d986df75d363fa79506d4f6045cb9f">OutputArchive</a> &amp;ar, <a class="el" href="classffnn_1_1traits_1_1_serializable.html#a08924b3b7d20cb3cb6eafe517d4f7b30">VersionType</a> version) const</td></tr>
 <tr class="memdesc:a184844a0eadeb1aa27e29b24cbb0008c inherit pro_methods_classffnn_1_1layer_1_1_hidden"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save serializer.  <a href="#a184844a0eadeb1aa27e29b24cbb0008c">More...</a><br/></td></tr>
@@ -305,9 +303,9 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a4ab88bd0c94d86b6d17f63e054cc907c inherit pro_methods_classffnn_1_1layer_1_1_hidden"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#a4ab88bd0c94d86b6d17f63e054cc907c">load</a> (<a class="el" href="classffnn_1_1traits_1_1_serializable.html#a6e626759259f8f370dd4303b4441a234">InputArchive</a> &amp;ar, <a class="el" href="classffnn_1_1traits_1_1_serializable.html#a08924b3b7d20cb3cb6eafe517d4f7b30">VersionType</a> version)</td></tr>
 <tr class="memdesc:a4ab88bd0c94d86b6d17f63e054cc907c inherit pro_methods_classffnn_1_1layer_1_1_hidden"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load serializer.  <a href="#a4ab88bd0c94d86b6d17f63e054cc907c">More...</a><br/></td></tr>
 <tr class="separator:a4ab88bd0c94d86b6d17f63e054cc907c inherit pro_methods_classffnn_1_1layer_1_1_hidden"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab832b0f6450b963fcb54cd28d1c88e39 inherit pro_methods_classffnn_1_1layer_1_1_hidden"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classffnn_1_1layer_1_1internal_1_1_interface.html#adc5bb454329ebd51ac26579a43c006fd">OffsetType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#ab832b0f6450b963fcb54cd28d1c88e39">connectToForwardLayer</a> (const <a class="el" href="classffnn_1_1layer_1_1_layer.html">Layer</a>&lt; ValueType &gt; &amp;next, <a class="el" href="classffnn_1_1layer_1_1internal_1_1_interface.html#adc5bb454329ebd51ac26579a43c006fd">OffsetType</a> offset)</td></tr>
-<tr class="memdesc:ab832b0f6450b963fcb54cd28d1c88e39 inherit pro_methods_classffnn_1_1layer_1_1_hidden"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps outputs of this layer to inputs of the next.  <a href="#ab832b0f6450b963fcb54cd28d1c88e39">More...</a><br/></td></tr>
-<tr class="separator:ab832b0f6450b963fcb54cd28d1c88e39 inherit pro_methods_classffnn_1_1layer_1_1_hidden"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f56d6a53aacd8c84477dbe73d250101 inherit pro_methods_classffnn_1_1layer_1_1_hidden"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classffnn_1_1layer_1_1internal_1_1_interface.html#adc5bb454329ebd51ac26579a43c006fd">OffsetType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#a0f56d6a53aacd8c84477dbe73d250101">connectToForwardLayer</a> (const <a class="el" href="classffnn_1_1layer_1_1_layer.html">Layer</a>&lt; ValueType &gt; &amp;next, <a class="el" href="classffnn_1_1layer_1_1internal_1_1_interface.html#adc5bb454329ebd51ac26579a43c006fd">OffsetType</a> offset)</td></tr>
+<tr class="memdesc:a0f56d6a53aacd8c84477dbe73d250101 inherit pro_methods_classffnn_1_1layer_1_1_hidden"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps outputs of this layer to inputs of the next.  <a href="#a0f56d6a53aacd8c84477dbe73d250101">More...</a><br/></td></tr>
+<tr class="separator:a0f56d6a53aacd8c84477dbe73d250101 inherit pro_methods_classffnn_1_1layer_1_1_hidden"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classffnn_1_1layer_1_1_layer"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classffnn_1_1layer_1_1_layer')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classffnn_1_1layer_1_1_layer.html">ffnn::layer::Layer&lt; ValueType &gt;</a></td></tr>
 <tr class="memitem:afdc489e04b2b1e716940f598ac474e4c inherit pro_methods_classffnn_1_1layer_1_1_layer"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classffnn_1_1layer_1_1internal_1_1_interface.html#af0567642f60c65b5e87067226a54174b">SizeType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_layer.html#afdc489e04b2b1e716940f598ac474e4c">evaluateInputSize</a> () const </td></tr>
 <tr class="memdesc:afdc489e04b2b1e716940f598ac474e4c inherit pro_methods_classffnn_1_1layer_1_1_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Counts the number of inputs from outputs of previous layers.  <a href="#afdc489e04b2b1e716940f598ac474e4c">More...</a><br/></td></tr>
@@ -430,14 +428,14 @@ template&lt;typename ValueType, typename NeuronType, FFNN_SIZE_TYPE SizeAtCompil
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a433d57370b979f91679e2065c48663f9"></a>
+<a class="anchor" id="a92e73d25dc6855597d25e2b492bd381c"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType , template&lt; class &gt; class NeuronType, FFNN_SIZE_TYPE SizeAtCompileTime&gt; </div>
+template&lt;typename ValueType , typename NeuronType , FFNN_SIZE_TYPE SizeAtCompileTime, typename _HiddenLayerShape &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classffnn_1_1layer_1_1_activation.html">ffnn::layer::Activation</a>&lt; ValueType, NeuronType, SizeAtCompileTime &gt;::<a class="el" href="classffnn_1_1layer_1_1_activation.html">Activation</a> </td>
+          <td class="memname"><a class="el" href="classffnn_1_1layer_1_1_activation.html">ffnn::layer::Activation</a>&lt; ValueType, NeuronType, SizeAtCompileTime, _HiddenLayerShape &gt;::<a class="el" href="classffnn_1_1layer_1_1_activation.html">Activation</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -449,17 +447,17 @@ template&lt;typename ValueType , template&lt; class &gt; class NeuronType, FFNN_
 
 </div>
 </div>
-<a class="anchor" id="a4b353acb2031fff2e7a15cf0895d346d"></a>
+<a class="anchor" id="acd5aa2e208c0c85ea1ff8033133f8ebe"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType , template&lt; class &gt; class NeuronType, FFNN_SIZE_TYPE SizeAtCompileTime&gt; </div>
+template&lt;typename ValueType , typename NeuronType , FFNN_SIZE_TYPE SizeAtCompileTime, typename _HiddenLayerShape &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classffnn_1_1layer_1_1_activation.html">ffnn::layer::Activation</a>&lt; ValueType, NeuronType, SizeAtCompileTime &gt;::~<a class="el" href="classffnn_1_1layer_1_1_activation.html">Activation</a> </td>
+          <td class="memname"><a class="el" href="classffnn_1_1layer_1_1_activation.html">ffnn::layer::Activation</a>&lt; ValueType, NeuronType, SizeAtCompileTime, _HiddenLayerShape &gt;::~<a class="el" href="classffnn_1_1layer_1_1_activation.html">Activation</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -475,17 +473,17 @@ template&lt;typename ValueType , template&lt; class &gt; class NeuronType, FFNN_
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a3c4284245343f2132dd28eaf7ffbed47"></a>
+<a class="anchor" id="aa5166a595cb135c7ad62569361de101b"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType , template&lt; class &gt; class NeuronType, FFNN_SIZE_TYPE SizeAtCompileTime&gt; </div>
+template&lt;typename ValueType , typename NeuronType , FFNN_SIZE_TYPE SizeAtCompileTime, typename _HiddenLayerShape &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classffnn_1_1layer_1_1_activation.html">ffnn::layer::Activation</a>&lt; ValueType, NeuronType, SizeAtCompileTime &gt;::backward </td>
+          <td class="memname">bool <a class="el" href="classffnn_1_1layer_1_1_activation.html">ffnn::layer::Activation</a>&lt; ValueType, NeuronType, SizeAtCompileTime, _HiddenLayerShape &gt;::backward </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -511,17 +509,17 @@ template&lt;typename ValueType , template&lt; class &gt; class NeuronType, FFNN_
 
 </div>
 </div>
-<a class="anchor" id="aa7f88c8bc20589dc51d9dd615b8c4580"></a>
+<a class="anchor" id="a8435ed1feadfcfc2343dd65a1542fe23"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType , template&lt; class &gt; class NeuronType, FFNN_SIZE_TYPE SizeAtCompileTime&gt; </div>
+template&lt;typename ValueType , typename NeuronType , FFNN_SIZE_TYPE SizeAtCompileTime, typename _HiddenLayerShape &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classffnn_1_1layer_1_1_activation.html">ffnn::layer::Activation</a>&lt; ValueType, NeuronType, SizeAtCompileTime &gt;::forward </td>
+          <td class="memname">bool <a class="el" href="classffnn_1_1layer_1_1_activation.html">ffnn::layer::Activation</a>&lt; ValueType, NeuronType, SizeAtCompileTime, _HiddenLayerShape &gt;::forward </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -547,17 +545,17 @@ template&lt;typename ValueType , template&lt; class &gt; class NeuronType, FFNN_
 
 </div>
 </div>
-<a class="anchor" id="ae73ef2d36d9c5ce3c219f6a51cba3c35"></a>
+<a class="anchor" id="a10a733b3fc1378fd8d1f33d231ee3e83"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType , template&lt; class &gt; class NeuronType, FFNN_SIZE_TYPE SizeAtCompileTime&gt; </div>
+template&lt;typename ValueType , typename NeuronType , FFNN_SIZE_TYPE SizeAtCompileTime, typename _HiddenLayerShape &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classffnn_1_1layer_1_1_activation.html">ffnn::layer::Activation</a>&lt; ValueType, NeuronType, SizeAtCompileTime &gt;::initialize </td>
+          <td class="memname">bool <a class="el" href="classffnn_1_1layer_1_1_activation.html">ffnn::layer::Activation</a>&lt; ValueType, NeuronType, SizeAtCompileTime, _HiddenLayerShape &gt;::initialize </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -572,11 +570,11 @@ template&lt;typename ValueType , template&lt; class &gt; class NeuronType, FFNN_
 
 <p>Initialize the layer. </p>
 
-<p>Reimplemented from <a class="el" href="classffnn_1_1layer_1_1_hidden.html#a0bf259cd8d070ce21c90a34d86b173ee">ffnn::layer::Hidden&lt; ValueType, _HiddenLayerShape &gt;</a>.</p>
+<p>Reimplemented from <a class="el" href="classffnn_1_1layer_1_1_hidden.html#adb70b4a8f5ac4979689f86cab73f48b1">ffnn::layer::Hidden&lt; ValueType, _HiddenLayerShape &gt;</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a045ecc330b67cdc3a41d6d7fc3a8dbf2"></a>
+<a class="anchor" id="abf041de6c530dfb271dd42689927eebe"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -586,7 +584,7 @@ template&lt;typename ValueType, typename NeuronType, FFNN_SIZE_TYPE SizeAtCompil
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classffnn_1_1layer_1_1_activation.html">ffnn::layer::Activation</a>&lt; ValueType, NeuronType, SizeAtCompileTime &gt;::load </td>
+          <td class="memname">void <a class="el" href="classffnn_1_1layer_1_1_activation.html">ffnn::layer::Activation</a>&lt; ValueType, NeuronType, SizeAtCompileTime, _HiddenLayerShape &gt;::load </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classffnn_1_1traits_1_1_serializable.html#a6e626759259f8f370dd4303b4441a234">InputArchive</a> &amp;&#160;</td>
           <td class="paramname"><em>ar</em>, </td>
@@ -617,15 +615,15 @@ template&lt;typename ValueType, typename NeuronType, FFNN_SIZE_TYPE SizeAtCompil
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classffnn_1_1layer_1_1_activation_a045ecc330b67cdc3a41d6d7fc3a8dbf2_cgraph.png" border="0" usemap="#classffnn_1_1layer_1_1_activation_a045ecc330b67cdc3a41d6d7fc3a8dbf2_cgraph" alt=""/></div>
-<map name="classffnn_1_1layer_1_1_activation_a045ecc330b67cdc3a41d6d7fc3a8dbf2_cgraph" id="classffnn_1_1layer_1_1_activation_a045ecc330b67cdc3a41d6d7fc3a8dbf2_cgraph">
+<div class="center"><img src="classffnn_1_1layer_1_1_activation_abf041de6c530dfb271dd42689927eebe_cgraph.png" border="0" usemap="#classffnn_1_1layer_1_1_activation_abf041de6c530dfb271dd42689927eebe_cgraph" alt=""/></div>
+<map name="classffnn_1_1layer_1_1_activation_abf041de6c530dfb271dd42689927eebe_cgraph" id="classffnn_1_1layer_1_1_activation_abf041de6c530dfb271dd42689927eebe_cgraph">
 <area shape="rect" id="node2" href="dense__base__addons_8h.html#a68dbd347886624cd725b8a26e5242ee2" title="load" alt="" coords="201,12,247,39"/></map>
 </div>
 </p>
 
 </div>
 </div>
-<a class="anchor" id="ab5525e49c08fc593856b9c95e0eba1ee"></a>
+<a class="anchor" id="af4fa0c4e44033921fe6ada1dcd0c0560"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -635,7 +633,7 @@ template&lt;typename ValueType, typename NeuronType, FFNN_SIZE_TYPE SizeAtCompil
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classffnn_1_1layer_1_1_activation.html">ffnn::layer::Activation</a>&lt; ValueType, NeuronType, SizeAtCompileTime &gt;::save </td>
+          <td class="memname">void <a class="el" href="classffnn_1_1layer_1_1_activation.html">ffnn::layer::Activation</a>&lt; ValueType, NeuronType, SizeAtCompileTime, _HiddenLayerShape &gt;::save </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classffnn_1_1traits_1_1_serializable.html#a08d986df75d363fa79506d4f6045cb9f">OutputArchive</a> &amp;&#160;</td>
           <td class="paramname"><em>ar</em>, </td>
@@ -666,8 +664,8 @@ template&lt;typename ValueType, typename NeuronType, FFNN_SIZE_TYPE SizeAtCompil
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classffnn_1_1layer_1_1_activation_ab5525e49c08fc593856b9c95e0eba1ee_cgraph.png" border="0" usemap="#classffnn_1_1layer_1_1_activation_ab5525e49c08fc593856b9c95e0eba1ee_cgraph" alt=""/></div>
-<map name="classffnn_1_1layer_1_1_activation_ab5525e49c08fc593856b9c95e0eba1ee_cgraph" id="classffnn_1_1layer_1_1_activation_ab5525e49c08fc593856b9c95e0eba1ee_cgraph">
+<div class="center"><img src="classffnn_1_1layer_1_1_activation_af4fa0c4e44033921fe6ada1dcd0c0560_cgraph.png" border="0" usemap="#classffnn_1_1layer_1_1_activation_af4fa0c4e44033921fe6ada1dcd0c0560_cgraph" alt=""/></div>
+<map name="classffnn_1_1layer_1_1_activation_af4fa0c4e44033921fe6ada1dcd0c0560_cgraph" id="classffnn_1_1layer_1_1_activation_af4fa0c4e44033921fe6ada1dcd0c0560_cgraph">
 <area shape="rect" id="node2" href="dense__base__addons_8h.html#ab948859788aa671e575e410654e07f16" title="save" alt="" coords="200,12,251,39"/></map>
 </div>
 </p>
@@ -717,7 +715,7 @@ template&lt;typename ValueType, typename NeuronType, FFNN_SIZE_TYPE SizeAtCompil
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed May 10 2017 17:22:47 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 11 2017 11:34:22 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

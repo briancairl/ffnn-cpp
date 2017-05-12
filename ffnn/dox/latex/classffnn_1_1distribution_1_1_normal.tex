@@ -1,5 +1,5 @@
-\hypertarget{classffnn_1_1distribution_1_1_normal}{\section{ffnn\-:\-:distribution\-:\-:Normal$<$ Value\-Type, \-\_\-\-Distribution\-Parameters $>$ Class Template Reference}
-\label{classffnn_1_1distribution_1_1_normal}\index{ffnn\-::distribution\-::\-Normal$<$ Value\-Type, \-\_\-\-Distribution\-Parameters $>$@{ffnn\-::distribution\-::\-Normal$<$ Value\-Type, \-\_\-\-Distribution\-Parameters $>$}}
+\hypertarget{classffnn_1_1distribution_1_1_normal}{\section{ffnn\-:\-:distribution\-:\-:Normal$<$ Value\-Type, Default\-Parameters $>$ Class Template Reference}
+\label{classffnn_1_1distribution_1_1_normal}\index{ffnn\-::distribution\-::\-Normal$<$ Value\-Type, Default\-Parameters $>$@{ffnn\-::distribution\-::\-Normal$<$ Value\-Type, Default\-Parameters $>$}}
 }
 
 
@@ -10,35 +10,35 @@
 \item 
 typedef \\*
 boost\-::normal\-\_\-distribution\\*
-$<$ Value\-Type $>$ \hyperlink{classffnn_1_1distribution_1_1_normal_ad56eafa8b2673bdb5092e47a0757e998}{Distribution\-Type}
+$<$ Value\-Type $>$ \hyperlink{classffnn_1_1distribution_1_1_normal_a30ff73a118402782feff21954e71b3a5}{Distribution\-Type}
 \begin{DoxyCompactList}\small\item\em \hyperlink{classffnn_1_1distribution_1_1_distribution}{Distribution} type standardization. \end{DoxyCompactList}\item 
 typedef \\*
 boost\-::variate\-\_\-generator\\*
 $<$ boost\-::mt19937 \\*
-\&, \hyperlink{classffnn_1_1distribution_1_1_normal_ad56eafa8b2673bdb5092e47a0757e998}{Distribution\-Type} $>$ \hyperlink{classffnn_1_1distribution_1_1_normal_a1fcd4770f465ad858f33e1c40235f850}{Generator\-Type}
+\&, \hyperlink{classffnn_1_1distribution_1_1_normal_a30ff73a118402782feff21954e71b3a5}{Distribution\-Type} $>$ \hyperlink{classffnn_1_1distribution_1_1_normal_a7e672cbc0b3958c045c9518d5a0a2850}{Generator\-Type}
 \begin{DoxyCompactList}\small\item\em Variate generator type standardization. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classffnn_1_1distribution_1_1_normal_ac4fa253a18700c58490493e998539d85}{Normal} ()
+\hyperlink{classffnn_1_1distribution_1_1_normal_ae5838a524f4cbb4723c7b847da48748e}{Normal} (Value\-Type mean=Default\-Parameters\-::mean, Value\-Type scale=Default\-Parameters\-::scale)
 \item 
-Value\-Type \hyperlink{classffnn_1_1distribution_1_1_normal_a60ac62a307b2b6efd94c3b9ebc69d4eb}{generate} ()
-\begin{DoxyCompactList}\small\item\em Generates a random value. \end{DoxyCompactList}\item 
-Value\-Type \hyperlink{classffnn_1_1distribution_1_1_normal_ad53110a198ef0e2ed4f510abf491ae4e}{cdf} (const Value\-Type \&value) const 
+Value\-Type \hyperlink{classffnn_1_1distribution_1_1_normal_abaaeca05e27923d319a452b78dda379b}{generate} () const 
+\begin{DoxyCompactList}\small\item\em Generates a random value according to given distribution. \end{DoxyCompactList}\item 
+Value\-Type \hyperlink{classffnn_1_1distribution_1_1_normal_aff824a6924a11a83c0ac419190e9b971}{cdf} (const Value\-Type \&value) const 
 \begin{DoxyCompactList}\small\item\em Computes C\-D\-F of distribution at specified point. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Member Typedef Documentation}
-\hypertarget{classffnn_1_1distribution_1_1_normal_ad56eafa8b2673bdb5092e47a0757e998}{\index{ffnn\-::distribution\-::\-Normal@{ffnn\-::distribution\-::\-Normal}!Distribution\-Type@{Distribution\-Type}}
+\hypertarget{classffnn_1_1distribution_1_1_normal_a30ff73a118402782feff21954e71b3a5}{\index{ffnn\-::distribution\-::\-Normal@{ffnn\-::distribution\-::\-Normal}!Distribution\-Type@{Distribution\-Type}}
 \index{Distribution\-Type@{Distribution\-Type}!ffnn::distribution::Normal@{ffnn\-::distribution\-::\-Normal}}
-\subsubsection[{Distribution\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, class \-\_\-\-Distribution\-Parameters$>$ typedef boost\-::normal\-\_\-distribution$<$Value\-Type$>$ {\bf ffnn\-::distribution\-::\-Normal}$<$ Value\-Type, \-\_\-\-Distribution\-Parameters $>$\-::{\bf Distribution\-Type}}}\label{classffnn_1_1distribution_1_1_normal_ad56eafa8b2673bdb5092e47a0757e998}
+\subsubsection[{Distribution\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Default\-Parameters = Standard\-Normal\-Parameters$<$\-Value\-Type$>$$>$ typedef boost\-::normal\-\_\-distribution$<$Value\-Type$>$ {\bf ffnn\-::distribution\-::\-Normal}$<$ Value\-Type, Default\-Parameters $>$\-::{\bf Distribution\-Type}}}\label{classffnn_1_1distribution_1_1_normal_a30ff73a118402782feff21954e71b3a5}
 
 
 \hyperlink{classffnn_1_1distribution_1_1_distribution}{Distribution} type standardization. 
 
-\hypertarget{classffnn_1_1distribution_1_1_normal_a1fcd4770f465ad858f33e1c40235f850}{\index{ffnn\-::distribution\-::\-Normal@{ffnn\-::distribution\-::\-Normal}!Generator\-Type@{Generator\-Type}}
+\hypertarget{classffnn_1_1distribution_1_1_normal_a7e672cbc0b3958c045c9518d5a0a2850}{\index{ffnn\-::distribution\-::\-Normal@{ffnn\-::distribution\-::\-Normal}!Generator\-Type@{Generator\-Type}}
 \index{Generator\-Type@{Generator\-Type}!ffnn::distribution::Normal@{ffnn\-::distribution\-::\-Normal}}
-\subsubsection[{Generator\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, class \-\_\-\-Distribution\-Parameters$>$ typedef boost\-::variate\-\_\-generator$<$boost\-::mt19937\&, {\bf Distribution\-Type}$>$ {\bf ffnn\-::distribution\-::\-Normal}$<$ Value\-Type, \-\_\-\-Distribution\-Parameters $>$\-::{\bf Generator\-Type}}}\label{classffnn_1_1distribution_1_1_normal_a1fcd4770f465ad858f33e1c40235f850}
+\subsubsection[{Generator\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Default\-Parameters = Standard\-Normal\-Parameters$<$\-Value\-Type$>$$>$ typedef boost\-::variate\-\_\-generator$<$boost\-::mt19937\&, {\bf Distribution\-Type}$>$ {\bf ffnn\-::distribution\-::\-Normal}$<$ Value\-Type, Default\-Parameters $>$\-::{\bf Generator\-Type}}}\label{classffnn_1_1distribution_1_1_normal_a7e672cbc0b3958c045c9518d5a0a2850}
 
 
 Variate generator type standardization. 
@@ -46,23 +46,24 @@ Variate generator type standardization.
 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classffnn_1_1distribution_1_1_normal_ac4fa253a18700c58490493e998539d85}{\index{ffnn\-::distribution\-::\-Normal@{ffnn\-::distribution\-::\-Normal}!Normal@{Normal}}
+\hypertarget{classffnn_1_1distribution_1_1_normal_ae5838a524f4cbb4723c7b847da48748e}{\index{ffnn\-::distribution\-::\-Normal@{ffnn\-::distribution\-::\-Normal}!Normal@{Normal}}
 \index{Normal@{Normal}!ffnn::distribution::Normal@{ffnn\-::distribution\-::\-Normal}}
-\subsubsection[{Normal}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, class \-\_\-\-Distribution\-Parameters$>$ {\bf ffnn\-::distribution\-::\-Normal}$<$ Value\-Type, \-\_\-\-Distribution\-Parameters $>$\-::{\bf Normal} (
+\subsubsection[{Normal}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Default\-Parameters = Standard\-Normal\-Parameters$<$\-Value\-Type$>$$>$ {\bf ffnn\-::distribution\-::\-Normal}$<$ Value\-Type, Default\-Parameters $>$\-::{\bf Normal} (
 \begin{DoxyParamCaption}
-{}
+\item[{Value\-Type}]{mean = {\ttfamily DefaultParameters\-:\-:mean}, }
+\item[{Value\-Type}]{scale = {\ttfamily DefaultParameters\-:\-:scale}}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1distribution_1_1_normal_ac4fa253a18700c58490493e998539d85}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1distribution_1_1_normal_ae5838a524f4cbb4723c7b847da48748e}
 
 
 \subsection{Member Function Documentation}
-\hypertarget{classffnn_1_1distribution_1_1_normal_ad53110a198ef0e2ed4f510abf491ae4e}{\index{ffnn\-::distribution\-::\-Normal@{ffnn\-::distribution\-::\-Normal}!cdf@{cdf}}
+\hypertarget{classffnn_1_1distribution_1_1_normal_aff824a6924a11a83c0ac419190e9b971}{\index{ffnn\-::distribution\-::\-Normal@{ffnn\-::distribution\-::\-Normal}!cdf@{cdf}}
 \index{cdf@{cdf}!ffnn::distribution::Normal@{ffnn\-::distribution\-::\-Normal}}
-\subsubsection[{cdf}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, class \-\_\-\-Distribution\-Parameters$>$ Value\-Type {\bf ffnn\-::distribution\-::\-Normal}$<$ Value\-Type, \-\_\-\-Distribution\-Parameters $>$\-::cdf (
+\subsubsection[{cdf}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Default\-Parameters = Standard\-Normal\-Parameters$<$\-Value\-Type$>$$>$ Value\-Type {\bf ffnn\-::distribution\-::\-Normal}$<$ Value\-Type, Default\-Parameters $>$\-::cdf (
 \begin{DoxyParamCaption}
 \item[{const Value\-Type \&}]{value}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1distribution_1_1_normal_ad53110a198ef0e2ed4f510abf491ae4e}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1distribution_1_1_normal_aff824a6924a11a83c0ac419190e9b971}
 
 
 Computes C\-D\-F of distribution at specified point. 
@@ -75,24 +76,17 @@ Computes C\-D\-F of distribution at specified point.
 \begin{DoxyReturn}{Returns}
 cumulative probability 
 \end{DoxyReturn}
-\hypertarget{classffnn_1_1distribution_1_1_normal_a60ac62a307b2b6efd94c3b9ebc69d4eb}{\index{ffnn\-::distribution\-::\-Normal@{ffnn\-::distribution\-::\-Normal}!generate@{generate}}
+\hypertarget{classffnn_1_1distribution_1_1_normal_abaaeca05e27923d319a452b78dda379b}{\index{ffnn\-::distribution\-::\-Normal@{ffnn\-::distribution\-::\-Normal}!generate@{generate}}
 \index{generate@{generate}!ffnn::distribution::Normal@{ffnn\-::distribution\-::\-Normal}}
-\subsubsection[{generate}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, class \-\_\-\-Distribution\-Parameters$>$ Value\-Type {\bf ffnn\-::distribution\-::\-Normal}$<$ Value\-Type, \-\_\-\-Distribution\-Parameters $>$\-::generate (
+\subsubsection[{generate}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Default\-Parameters = Standard\-Normal\-Parameters$<$\-Value\-Type$>$$>$ Value\-Type {\bf ffnn\-::distribution\-::\-Normal}$<$ Value\-Type, Default\-Parameters $>$\-::generate (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1distribution_1_1_normal_a60ac62a307b2b6efd94c3b9ebc69d4eb}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1distribution_1_1_normal_abaaeca05e27923d319a452b78dda379b}
 
 
-Generates a random value. 
+Generates a random value according to given distribution. 
 
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em input} & a scalar input value \\
-\hline
-\mbox{\tt in,out}  & {\em output} & a scalar output value \\
-\hline
-\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}

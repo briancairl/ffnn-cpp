@@ -6,7 +6,8 @@
 {\ttfamily \#include $<$ffnn/layer/internal/shape.\-h$>$}\\*
 {\ttfamily \#include $<$ffnn/layer/internal/interface.\-h$>$}\\*
 {\ttfamily \#include $<$ffnn/layer/impl/convolution\-\_\-volume.\-hpp$>$}\\*
-Include dependency graph for convolution\-\_\-volume.\-h\-:\nopagebreak
+Include dependency graph for convolution\-\_\-volume.\-h\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -23,18 +24,10 @@ This graph shows which files directly or indirectly include this file\-:\nopageb
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-struct \hyperlink{structffnn_1_1layer_1_1is__dynamic}{ffnn\-::layer\-::is\-\_\-dynamic$<$ Size $>$}
-\item 
-struct \hyperlink{structffnn_1_1layer_1_1is__dynamic__pair}{ffnn\-::layer\-::is\-\_\-dynamic\-\_\-pair$<$ Size\-N, Size\-M $>$}
-\item 
-struct \hyperlink{structffnn_1_1layer_1_1is__alignable__128}{ffnn\-::layer\-::is\-\_\-alignable\-\_\-128$<$ Block\-Type $>$}
-\item 
 class \hyperlink{classffnn_1_1layer_1_1_filter_bank}{ffnn\-::layer\-::\-Filter\-Bank$<$ Kernel\-Matrix\-Type $>$}
 \item 
 class \hyperlink{classffnn_1_1layer_1_1_convolution_volume}{ffnn\-::layer\-::\-Convolution\-Volume$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Mode $>$}
-\item 
-struct \hyperlink{structffnn_1_1layer_1_1_convolution_volume_1_1_parameters}{ffnn\-::layer\-::\-Convolution\-Volume$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Mode $>$\-::\-Parameters}
-\begin{DoxyCompactList}\small\item\em A configuration object for a \hyperlink{classffnn_1_1layer_1_1_fully_connected}{Fully\-Connected} hidden layer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{DoxyCompactItemize}
 \subsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
@@ -42,24 +35,11 @@ struct \hyperlink{structffnn_1_1layer_1_1_convolution_volume_1_1_parameters}{ffn
 \item 
 \hyperlink{namespaceffnn_1_1layer}{ffnn\-::layer}
 \end{DoxyCompactItemize}
-\subsection*{Macros}
-\begin{DoxyCompactItemize}
-\item 
-\#define \hyperlink{convolution__volume_8h_a1888db73da403e86806b106c3b40eb29}{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-P\-A\-I\-R}(n, m)~(I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C(n) $\vert$$\vert$ I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C(m))
-\item 
-\#define \hyperlink{convolution__volume_8h_a74feffebf310dd34521adc2adcaf64c9}{P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-P\-A\-I\-R}(n, m)~(\hyperlink{receptive__volume_8h_a1888db73da403e86806b106c3b40eb29}{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-P\-A\-I\-R}(n, m) ? Eigen\-::\-Dynamic \-: (n$\ast$m))
-\item 
-\#define \hyperlink{convolution__volume_8h_aa3e0ccfe3f80f1cbfd2883afcd39bba1}{C\-O\-N\-V\-\_\-\-E\-M\-B\-E\-D\-D\-E\-D\-\_\-\-H}(h, d)~Mode == Col\-Embedding ? \hyperlink{receptive__volume_8h_a74feffebf310dd34521adc2adcaf64c9}{P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-P\-A\-I\-R}(h, d) \-: h
-\item 
-\#define \hyperlink{convolution__volume_8h_a0fc2446589d9cda3500aeca0c3ab5dbc}{C\-O\-N\-V\-\_\-\-E\-M\-B\-E\-D\-D\-E\-D\-\_\-\-W}(w, d)~Mode == Row\-Embedding ? \hyperlink{receptive__volume_8h_a74feffebf310dd34521adc2adcaf64c9}{P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-P\-A\-I\-R}(w, d) \-: w
-\end{DoxyCompactItemize}
 \subsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
-enum \hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69a}{ffnn\-::layer\-::\-Embedding\-Mode} \{ \hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aa56bf723aeae4562f2fe05ae5e675da92}{ffnn\-::layer\-::\-Row\-Embedding} = 0, 
-\hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aaede1065f5863208cae7e55561966a182}{ffnn\-::layer\-::\-Col\-Embedding} = 1, 
-\hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aa56bf723aeae4562f2fe05ae5e675da92}{ffnn\-::layer\-::\-Row\-Embedding} = 0, 
-\hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aaede1065f5863208cae7e55561966a182}{ffnn\-::layer\-::\-Col\-Embedding} = 1
+enum \hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69a}{ffnn\-::layer\-::\-Embedding\-Mode} \{ \hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aa91eb0d1f175a08e2b2991cae348c827d}{ffnn\-::layer\-::\-Row\-Embedding} = 0, 
+\hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aa42ac01b35d45fd60256ef5008c96c049}{ffnn\-::layer\-::\-Col\-Embedding} = 1
  \}
 \end{DoxyCompactItemize}
 \subsection*{Functions}
@@ -69,38 +49,3 @@ enum \hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69a}{ffnn\-
 \item 
 {\footnotesize template$<$typename Size\-Type $>$ }\\constexpr Size\-Type \hyperlink{namespaceffnn_1_1layer_ac1d8b4e852293231055d1257f1e83e60}{ffnn\-::layer\-::output\-\_\-dimension} (Size\-Type n, Size\-Type fn, Size\-Type stride)
 \end{DoxyCompactItemize}
-
-
-\subsection{Macro Definition Documentation}
-\hypertarget{convolution__volume_8h_aa3e0ccfe3f80f1cbfd2883afcd39bba1}{\index{convolution\-\_\-volume.\-h@{convolution\-\_\-volume.\-h}!C\-O\-N\-V\-\_\-\-E\-M\-B\-E\-D\-D\-E\-D\-\_\-\-H@{C\-O\-N\-V\-\_\-\-E\-M\-B\-E\-D\-D\-E\-D\-\_\-\-H}}
-\index{C\-O\-N\-V\-\_\-\-E\-M\-B\-E\-D\-D\-E\-D\-\_\-\-H@{C\-O\-N\-V\-\_\-\-E\-M\-B\-E\-D\-D\-E\-D\-\_\-\-H}!convolution_volume.h@{convolution\-\_\-volume.\-h}}
-\subsubsection[{C\-O\-N\-V\-\_\-\-E\-M\-B\-E\-D\-D\-E\-D\-\_\-\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-O\-N\-V\-\_\-\-E\-M\-B\-E\-D\-D\-E\-D\-\_\-\-H(
-\begin{DoxyParamCaption}
-\item[{}]{h, }
-\item[{}]{d}
-\end{DoxyParamCaption}
-)~Mode == Col\-Embedding ? {\bf P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-P\-A\-I\-R}(h, d) \-: h}}\label{convolution__volume_8h_aa3e0ccfe3f80f1cbfd2883afcd39bba1}
-\hypertarget{convolution__volume_8h_a0fc2446589d9cda3500aeca0c3ab5dbc}{\index{convolution\-\_\-volume.\-h@{convolution\-\_\-volume.\-h}!C\-O\-N\-V\-\_\-\-E\-M\-B\-E\-D\-D\-E\-D\-\_\-\-W@{C\-O\-N\-V\-\_\-\-E\-M\-B\-E\-D\-D\-E\-D\-\_\-\-W}}
-\index{C\-O\-N\-V\-\_\-\-E\-M\-B\-E\-D\-D\-E\-D\-\_\-\-W@{C\-O\-N\-V\-\_\-\-E\-M\-B\-E\-D\-D\-E\-D\-\_\-\-W}!convolution_volume.h@{convolution\-\_\-volume.\-h}}
-\subsubsection[{C\-O\-N\-V\-\_\-\-E\-M\-B\-E\-D\-D\-E\-D\-\_\-\-W}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-O\-N\-V\-\_\-\-E\-M\-B\-E\-D\-D\-E\-D\-\_\-\-W(
-\begin{DoxyParamCaption}
-\item[{}]{w, }
-\item[{}]{d}
-\end{DoxyParamCaption}
-)~Mode == Row\-Embedding ? {\bf P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-P\-A\-I\-R}(w, d) \-: w}}\label{convolution__volume_8h_a0fc2446589d9cda3500aeca0c3ab5dbc}
-\hypertarget{convolution__volume_8h_a1888db73da403e86806b106c3b40eb29}{\index{convolution\-\_\-volume.\-h@{convolution\-\_\-volume.\-h}!I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-P\-A\-I\-R@{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-P\-A\-I\-R}}
-\index{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-P\-A\-I\-R@{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-P\-A\-I\-R}!convolution_volume.h@{convolution\-\_\-volume.\-h}}
-\subsubsection[{I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-P\-A\-I\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-P\-A\-I\-R(
-\begin{DoxyParamCaption}
-\item[{}]{n, }
-\item[{}]{m}
-\end{DoxyParamCaption}
-)~(I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C(n) $\vert$$\vert$ I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C(m))}}\label{convolution__volume_8h_a1888db73da403e86806b106c3b40eb29}
-\hypertarget{convolution__volume_8h_a74feffebf310dd34521adc2adcaf64c9}{\index{convolution\-\_\-volume.\-h@{convolution\-\_\-volume.\-h}!P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-P\-A\-I\-R@{P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-P\-A\-I\-R}}
-\index{P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-P\-A\-I\-R@{P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-P\-A\-I\-R}!convolution_volume.h@{convolution\-\_\-volume.\-h}}
-\subsubsection[{P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-P\-A\-I\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-R\-O\-D\-\_\-\-I\-F\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-P\-A\-I\-R(
-\begin{DoxyParamCaption}
-\item[{}]{n, }
-\item[{}]{m}
-\end{DoxyParamCaption}
-)~({\bf I\-S\-\_\-\-D\-Y\-N\-A\-M\-I\-C\-\_\-\-P\-A\-I\-R}(n, m) ? Eigen\-::\-Dynamic \-: (n$\ast$m))}}\label{convolution__volume_8h_a74feffebf310dd34521adc2adcaf64c9}

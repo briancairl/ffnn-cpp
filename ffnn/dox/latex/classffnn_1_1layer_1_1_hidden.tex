@@ -54,9 +54,9 @@ $<$ \hyperlink{classffnn_1_1layer_1_1_hidden_a9b9e276188ef490ea5301f553225c735}{
 \item 
 \hyperlink{classffnn_1_1layer_1_1_hidden_a3caeb739cac8995496db207e32900fca}{Hidden} (const \hyperlink{classffnn_1_1layer_1_1_hidden_abdfcf81b3846fae3b19a207424695df0}{Shape\-Type} \&input\-\_\-shape=\hyperlink{classffnn_1_1layer_1_1_hidden_abdfcf81b3846fae3b19a207424695df0}{Shape\-Type}(Layer\-Shape\-::input\-\_\-height, Layer\-Shape\-::input\-\_\-width), const \hyperlink{classffnn_1_1layer_1_1_hidden_abdfcf81b3846fae3b19a207424695df0}{Shape\-Type} \&output\-\_\-shape=\hyperlink{classffnn_1_1layer_1_1_hidden_abdfcf81b3846fae3b19a207424695df0}{Shape\-Type}(Layer\-Shape\-::output\-\_\-height, Layer\-Shape\-::output\-\_\-width))
 \begin{DoxyCompactList}\small\item\em Setup constructor. \end{DoxyCompactList}\item 
-virtual \hyperlink{classffnn_1_1layer_1_1_hidden_a0dad92c0b04b2e41efcde9462ba3e123}{$\sim$\-Hidden} ()
+virtual \hyperlink{classffnn_1_1layer_1_1_hidden_ae4d85d69e2da92c3b70992e0c3ced4d1}{$\sim$\-Hidden} ()
 \item 
-virtual bool \hyperlink{classffnn_1_1layer_1_1_hidden_a0bf259cd8d070ce21c90a34d86b173ee}{initialize} ()
+virtual bool \hyperlink{classffnn_1_1layer_1_1_hidden_adb70b4a8f5ac4979689f86cab73f48b1}{initialize} ()
 \begin{DoxyCompactList}\small\item\em Initialize the layer. \end{DoxyCompactList}\item 
 virtual bool \hyperlink{classffnn_1_1layer_1_1_hidden_a600b86d72826e8be3eafa53e040e9cbe}{forward} ()=0
 \begin{DoxyCompactList}\small\item\em Forward value propagation. \end{DoxyCompactList}\item 
@@ -71,7 +71,7 @@ void \hyperlink{classffnn_1_1layer_1_1_hidden_a184844a0eadeb1aa27e29b24cbb0008c}
 \begin{DoxyCompactList}\small\item\em Save serializer. \end{DoxyCompactList}\item 
 void \hyperlink{classffnn_1_1layer_1_1_hidden_a4ab88bd0c94d86b6d17f63e054cc907c}{load} (\hyperlink{classffnn_1_1traits_1_1_serializable_a6e626759259f8f370dd4303b4441a234}{Input\-Archive} \&ar, \hyperlink{classffnn_1_1traits_1_1_serializable_a08924b3b7d20cb3cb6eafe517d4f7b30}{Version\-Type} version)
 \begin{DoxyCompactList}\small\item\em Load serializer. \end{DoxyCompactList}\item 
-virtual \hyperlink{classffnn_1_1layer_1_1_hidden_ae2409b970adafb0ebc9b2eec62c4aac4}{Offset\-Type} \hyperlink{classffnn_1_1layer_1_1_hidden_ab832b0f6450b963fcb54cd28d1c88e39}{connect\-To\-Forward\-Layer} (const \hyperlink{classffnn_1_1layer_1_1_layer}{Layer}$<$ Value\-Type $>$ \&next, \hyperlink{classffnn_1_1layer_1_1_hidden_ae2409b970adafb0ebc9b2eec62c4aac4}{Offset\-Type} offset)
+virtual \hyperlink{classffnn_1_1layer_1_1_hidden_ae2409b970adafb0ebc9b2eec62c4aac4}{Offset\-Type} \hyperlink{classffnn_1_1layer_1_1_hidden_a0f56d6a53aacd8c84477dbe73d250101}{connect\-To\-Forward\-Layer} (const \hyperlink{classffnn_1_1layer_1_1_layer}{Layer}$<$ Value\-Type $>$ \&next, \hyperlink{classffnn_1_1layer_1_1_hidden_ae2409b970adafb0ebc9b2eec62c4aac4}{Offset\-Type} offset)
 \begin{DoxyCompactList}\small\item\em Maps outputs of this layer to inputs of the next. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
@@ -87,63 +87,63 @@ virtual \hyperlink{classffnn_1_1layer_1_1_hidden_ae2409b970adafb0ebc9b2eec62c4aa
 
 
 \subsection{Detailed Description}
-\subsubsection*{template$<$typename Value\-Type, typename Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$$>$, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::input\-\_\-height, Layer\-Shape\-::input\-\_\-height, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::output\-\_\-height, Layer\-Shape\-::output\-\_\-height, Eigen\-::\-Col\-Major$>$$>$class ffnn\-::layer\-::\-Hidden$<$ Value\-Type, Layer\-Shape, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type $>$}
+\subsubsection*{template$<$typename Value\-Type, typename Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$$>$, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::input\-\_\-height,  Layer\-Shape\-::input\-\_\-width,  Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::output\-\_\-height, Layer\-Shape\-::output\-\_\-width, Eigen\-::\-Col\-Major$>$$>$class ffnn\-::layer\-::\-Hidden$<$ Value\-Type, Layer\-Shape, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type $>$}
 
 A network hidden-\/layer object. 
 
 \subsection{Member Typedef Documentation}
 \hypertarget{classffnn_1_1layer_1_1_hidden_a2ff8a0b925b2b929b05e7889dda361e4}{\index{ffnn\-::layer\-::\-Hidden@{ffnn\-::layer\-::\-Hidden}!Base@{Base}}
 \index{Base@{Base}!ffnn::layer::Hidden@{ffnn\-::layer\-::\-Hidden}}
-\subsubsection[{Base}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$$>$, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::input\-\_\-height, Layer\-Shape\-::input\-\_\-height, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::output\-\_\-height, Layer\-Shape\-::output\-\_\-height, Eigen\-::\-Col\-Major$>$$>$ using {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Layer\-Shape, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type $>$\-::{\bf Base} =  {\bf Layer}$<$Value\-Type$>$}}\label{classffnn_1_1layer_1_1_hidden_a2ff8a0b925b2b929b05e7889dda361e4}
+\subsubsection[{Base}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$$>$, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::input\-\_\-height,  Layer\-Shape\-::input\-\_\-width,  Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::output\-\_\-height, Layer\-Shape\-::output\-\_\-width, Eigen\-::\-Col\-Major$>$$>$ using {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Layer\-Shape, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type $>$\-::{\bf Base} =  {\bf Layer}$<$Value\-Type$>$}}\label{classffnn_1_1layer_1_1_hidden_a2ff8a0b925b2b929b05e7889dda361e4}
 
 
 Base type alias. 
 
 \hypertarget{classffnn_1_1layer_1_1_hidden_ae401b1af7763caf09a0dffcaf4f2d5e9}{\index{ffnn\-::layer\-::\-Hidden@{ffnn\-::layer\-::\-Hidden}!Input\-Block\-Type@{Input\-Block\-Type}}
 \index{Input\-Block\-Type@{Input\-Block\-Type}!ffnn::layer::Hidden@{ffnn\-::layer\-::\-Hidden}}
-\subsubsection[{Input\-Block\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$$>$, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::input\-\_\-height, Layer\-Shape\-::input\-\_\-height, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::output\-\_\-height, Layer\-Shape\-::output\-\_\-height, Eigen\-::\-Col\-Major$>$$>$ typedef \-\_\-\-Input\-Block\-Type {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Layer\-Shape, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type $>$\-::{\bf Input\-Block\-Type}}}\label{classffnn_1_1layer_1_1_hidden_ae401b1af7763caf09a0dffcaf4f2d5e9}
+\subsubsection[{Input\-Block\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$$>$, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::input\-\_\-height,  Layer\-Shape\-::input\-\_\-width,  Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::output\-\_\-height, Layer\-Shape\-::output\-\_\-width, Eigen\-::\-Col\-Major$>$$>$ typedef \-\_\-\-Input\-Block\-Type {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Layer\-Shape, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type $>$\-::{\bf Input\-Block\-Type}}}\label{classffnn_1_1layer_1_1_hidden_ae401b1af7763caf09a0dffcaf4f2d5e9}
 
 
 \hyperlink{classffnn_1_1layer_1_1_input}{Input} block type standardization. 
 
 \hypertarget{classffnn_1_1layer_1_1_hidden_a9297d5b8ac45dc288ee1b91f15bb4047}{\index{ffnn\-::layer\-::\-Hidden@{ffnn\-::layer\-::\-Hidden}!Input\-Mapping\-Type@{Input\-Mapping\-Type}}
 \index{Input\-Mapping\-Type@{Input\-Mapping\-Type}!ffnn::layer::Hidden@{ffnn\-::layer\-::\-Hidden}}
-\subsubsection[{Input\-Mapping\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$$>$, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::input\-\_\-height, Layer\-Shape\-::input\-\_\-height, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::output\-\_\-height, Layer\-Shape\-::output\-\_\-height, Eigen\-::\-Col\-Major$>$$>$ typedef Eigen\-::\-Map$<${\bf Input\-Block\-Type}, 16$>$ {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Layer\-Shape, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type $>$\-::{\bf Input\-Mapping\-Type}}}\label{classffnn_1_1layer_1_1_hidden_a9297d5b8ac45dc288ee1b91f15bb4047}
+\subsubsection[{Input\-Mapping\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$$>$, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::input\-\_\-height,  Layer\-Shape\-::input\-\_\-width,  Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::output\-\_\-height, Layer\-Shape\-::output\-\_\-width, Eigen\-::\-Col\-Major$>$$>$ typedef Eigen\-::\-Map$<${\bf Input\-Block\-Type}, 16$>$ {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Layer\-Shape, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type $>$\-::{\bf Input\-Mapping\-Type}}}\label{classffnn_1_1layer_1_1_hidden_a9297d5b8ac45dc288ee1b91f15bb4047}
 
 
 \hyperlink{classffnn_1_1layer_1_1_input}{Input} block-\/mapping type standardization. 
 
 \hypertarget{classffnn_1_1layer_1_1_hidden_ae2409b970adafb0ebc9b2eec62c4aac4}{\index{ffnn\-::layer\-::\-Hidden@{ffnn\-::layer\-::\-Hidden}!Offset\-Type@{Offset\-Type}}
 \index{Offset\-Type@{Offset\-Type}!ffnn::layer::Hidden@{ffnn\-::layer\-::\-Hidden}}
-\subsubsection[{Offset\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$$>$, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::input\-\_\-height, Layer\-Shape\-::input\-\_\-height, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::output\-\_\-height, Layer\-Shape\-::output\-\_\-height, Eigen\-::\-Col\-Major$>$$>$ typedef {\bf Base\-::\-Offset\-Type} {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Layer\-Shape, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type $>$\-::{\bf Offset\-Type}}}\label{classffnn_1_1layer_1_1_hidden_ae2409b970adafb0ebc9b2eec62c4aac4}
+\subsubsection[{Offset\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$$>$, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::input\-\_\-height,  Layer\-Shape\-::input\-\_\-width,  Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::output\-\_\-height, Layer\-Shape\-::output\-\_\-width, Eigen\-::\-Col\-Major$>$$>$ typedef {\bf Base\-::\-Offset\-Type} {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Layer\-Shape, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type $>$\-::{\bf Offset\-Type}}}\label{classffnn_1_1layer_1_1_hidden_ae2409b970adafb0ebc9b2eec62c4aac4}
 
 
 Offset type standardization. 
 
 \hypertarget{classffnn_1_1layer_1_1_hidden_a9b9e276188ef490ea5301f553225c735}{\index{ffnn\-::layer\-::\-Hidden@{ffnn\-::layer\-::\-Hidden}!Output\-Block\-Type@{Output\-Block\-Type}}
 \index{Output\-Block\-Type@{Output\-Block\-Type}!ffnn::layer::Hidden@{ffnn\-::layer\-::\-Hidden}}
-\subsubsection[{Output\-Block\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$$>$, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::input\-\_\-height, Layer\-Shape\-::input\-\_\-height, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::output\-\_\-height, Layer\-Shape\-::output\-\_\-height, Eigen\-::\-Col\-Major$>$$>$ typedef \-\_\-\-Output\-Block\-Type {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Layer\-Shape, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type $>$\-::{\bf Output\-Block\-Type}}}\label{classffnn_1_1layer_1_1_hidden_a9b9e276188ef490ea5301f553225c735}
+\subsubsection[{Output\-Block\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$$>$, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::input\-\_\-height,  Layer\-Shape\-::input\-\_\-width,  Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::output\-\_\-height, Layer\-Shape\-::output\-\_\-width, Eigen\-::\-Col\-Major$>$$>$ typedef \-\_\-\-Output\-Block\-Type {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Layer\-Shape, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type $>$\-::{\bf Output\-Block\-Type}}}\label{classffnn_1_1layer_1_1_hidden_a9b9e276188ef490ea5301f553225c735}
 
 
 \hyperlink{classffnn_1_1layer_1_1_output}{Output} block type standardization. 
 
 \hypertarget{classffnn_1_1layer_1_1_hidden_a619ae9b0890cb86b66ac2b591b5a5610}{\index{ffnn\-::layer\-::\-Hidden@{ffnn\-::layer\-::\-Hidden}!Output\-Mapping\-Type@{Output\-Mapping\-Type}}
 \index{Output\-Mapping\-Type@{Output\-Mapping\-Type}!ffnn::layer::Hidden@{ffnn\-::layer\-::\-Hidden}}
-\subsubsection[{Output\-Mapping\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$$>$, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::input\-\_\-height, Layer\-Shape\-::input\-\_\-height, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::output\-\_\-height, Layer\-Shape\-::output\-\_\-height, Eigen\-::\-Col\-Major$>$$>$ typedef Eigen\-::\-Map$<${\bf Output\-Block\-Type}, 16$>$ {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Layer\-Shape, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type $>$\-::{\bf Output\-Mapping\-Type}}}\label{classffnn_1_1layer_1_1_hidden_a619ae9b0890cb86b66ac2b591b5a5610}
+\subsubsection[{Output\-Mapping\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$$>$, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::input\-\_\-height,  Layer\-Shape\-::input\-\_\-width,  Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::output\-\_\-height, Layer\-Shape\-::output\-\_\-width, Eigen\-::\-Col\-Major$>$$>$ typedef Eigen\-::\-Map$<${\bf Output\-Block\-Type}, 16$>$ {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Layer\-Shape, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type $>$\-::{\bf Output\-Mapping\-Type}}}\label{classffnn_1_1layer_1_1_hidden_a619ae9b0890cb86b66ac2b591b5a5610}
 
 
 \hyperlink{classffnn_1_1layer_1_1_output}{Output} block-\/mapping type standardization. 
 
 \hypertarget{classffnn_1_1layer_1_1_hidden_abdfcf81b3846fae3b19a207424695df0}{\index{ffnn\-::layer\-::\-Hidden@{ffnn\-::layer\-::\-Hidden}!Shape\-Type@{Shape\-Type}}
 \index{Shape\-Type@{Shape\-Type}!ffnn::layer::Hidden@{ffnn\-::layer\-::\-Hidden}}
-\subsubsection[{Shape\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$$>$, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::input\-\_\-height, Layer\-Shape\-::input\-\_\-height, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::output\-\_\-height, Layer\-Shape\-::output\-\_\-height, Eigen\-::\-Col\-Major$>$$>$ typedef {\bf Base\-::\-Shape\-Type} {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Layer\-Shape, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type $>$\-::{\bf Shape\-Type}}}\label{classffnn_1_1layer_1_1_hidden_abdfcf81b3846fae3b19a207424695df0}
+\subsubsection[{Shape\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$$>$, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::input\-\_\-height,  Layer\-Shape\-::input\-\_\-width,  Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::output\-\_\-height, Layer\-Shape\-::output\-\_\-width, Eigen\-::\-Col\-Major$>$$>$ typedef {\bf Base\-::\-Shape\-Type} {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Layer\-Shape, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type $>$\-::{\bf Shape\-Type}}}\label{classffnn_1_1layer_1_1_hidden_abdfcf81b3846fae3b19a207424695df0}
 
 
 Dimension type standardization. 
 
 \hypertarget{classffnn_1_1layer_1_1_hidden_ac148012cb544a39841675601090cd4c8}{\index{ffnn\-::layer\-::\-Hidden@{ffnn\-::layer\-::\-Hidden}!Size\-Type@{Size\-Type}}
 \index{Size\-Type@{Size\-Type}!ffnn::layer::Hidden@{ffnn\-::layer\-::\-Hidden}}
-\subsubsection[{Size\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$$>$, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::input\-\_\-height, Layer\-Shape\-::input\-\_\-height, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::output\-\_\-height, Layer\-Shape\-::output\-\_\-height, Eigen\-::\-Col\-Major$>$$>$ typedef {\bf Base\-::\-Size\-Type} {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Layer\-Shape, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type $>$\-::{\bf Size\-Type}}}\label{classffnn_1_1layer_1_1_hidden_ac148012cb544a39841675601090cd4c8}
+\subsubsection[{Size\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$$>$, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::input\-\_\-height,  Layer\-Shape\-::input\-\_\-width,  Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::output\-\_\-height, Layer\-Shape\-::output\-\_\-width, Eigen\-::\-Col\-Major$>$$>$ typedef {\bf Base\-::\-Size\-Type} {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Layer\-Shape, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type $>$\-::{\bf Size\-Type}}}\label{classffnn_1_1layer_1_1_hidden_ac148012cb544a39841675601090cd4c8}
 
 
 Size type standardization. 
@@ -153,9 +153,9 @@ Size type standardization.
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{classffnn_1_1layer_1_1_hidden_a3caeb739cac8995496db207e32900fca}{\index{ffnn\-::layer\-::\-Hidden@{ffnn\-::layer\-::\-Hidden}!Hidden@{Hidden}}
 \index{Hidden@{Hidden}!ffnn::layer::Hidden@{ffnn\-::layer\-::\-Hidden}}
-\subsubsection[{Hidden}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$$>$, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::input\-\_\-height, Layer\-Shape\-::input\-\_\-height, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::output\-\_\-height, Layer\-Shape\-::output\-\_\-height, Eigen\-::\-Col\-Major$>$$>$ {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Layer\-Shape, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type $>$\-::{\bf Hidden} (
+\subsubsection[{Hidden}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Layer\-Shape , typename \-\_\-\-Input\-Block\-Type , typename \-\_\-\-Output\-Block\-Type $>$ {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Layer\-Shape, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type $>$\-::{\bf Hidden} (
 \begin{DoxyParamCaption}
-\item[{const {\bf Shape\-Type} \&}]{input\-\_\-shape = {\ttfamily {\bf Shape\-Type}(LayerShape\-:\-:input\-\_\-height,~LayerShape\-:\-:input\-\_\-width)}, }
+\item[{const {\bf Shape\-Type} \&}]{input\-\_\-shape = {\ttfamily {\bf Shape\-Type}(LayerShape\-:\-:input\-\_\-height,~~LayerShape\-:\-:input\-\_\-width)}, }
 \item[{const {\bf Shape\-Type} \&}]{output\-\_\-shape = {\ttfamily {\bf Shape\-Type}(LayerShape\-:\-:output\-\_\-height,~LayerShape\-:\-:output\-\_\-width)}}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classffnn_1_1layer_1_1_hidden_a3caeb739cac8995496db207e32900fca}
@@ -174,19 +174,19 @@ Setup constructor.
 {\em output\-\_\-width} & width of the output surface \\
 \hline
 \end{DoxyParams}
-\hypertarget{classffnn_1_1layer_1_1_hidden_a0dad92c0b04b2e41efcde9462ba3e123}{\index{ffnn\-::layer\-::\-Hidden@{ffnn\-::layer\-::\-Hidden}!$\sim$\-Hidden@{$\sim$\-Hidden}}
+\hypertarget{classffnn_1_1layer_1_1_hidden_ae4d85d69e2da92c3b70992e0c3ced4d1}{\index{ffnn\-::layer\-::\-Hidden@{ffnn\-::layer\-::\-Hidden}!$\sim$\-Hidden@{$\sim$\-Hidden}}
 \index{$\sim$\-Hidden@{$\sim$\-Hidden}!ffnn::layer::Hidden@{ffnn\-::layer\-::\-Hidden}}
-\subsubsection[{$\sim$\-Hidden}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$$>$, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::input\-\_\-height, Layer\-Shape\-::input\-\_\-height, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::output\-\_\-height, Layer\-Shape\-::output\-\_\-height, Eigen\-::\-Col\-Major$>$$>$ virtual {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Layer\-Shape, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type $>$\-::$\sim${\bf Hidden} (
+\subsubsection[{$\sim$\-Hidden}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Layer\-Shape , typename \-\_\-\-Input\-Block\-Type , typename \-\_\-\-Output\-Block\-Type $>$ {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Layer\-Shape, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type $>$\-::$\sim${\bf Hidden} (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_hidden_a0dad92c0b04b2e41efcde9462ba3e123}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_hidden_ae4d85d69e2da92c3b70992e0c3ced4d1}
 
 
 \subsection{Member Function Documentation}
 \hypertarget{classffnn_1_1layer_1_1_hidden_aac0ee89390b02ff4731678883dd402dd}{\index{ffnn\-::layer\-::\-Hidden@{ffnn\-::layer\-::\-Hidden}!backward@{backward}}
 \index{backward@{backward}!ffnn::layer::Hidden@{ffnn\-::layer\-::\-Hidden}}
-\subsubsection[{backward}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$$>$, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::input\-\_\-height, Layer\-Shape\-::input\-\_\-height, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::output\-\_\-height, Layer\-Shape\-::output\-\_\-height, Eigen\-::\-Col\-Major$>$$>$ virtual bool {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Layer\-Shape, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type $>$\-::backward (
+\subsubsection[{backward}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$$>$, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::input\-\_\-height,  Layer\-Shape\-::input\-\_\-width,  Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::output\-\_\-height, Layer\-Shape\-::output\-\_\-width, Eigen\-::\-Col\-Major$>$$>$ virtual bool {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Layer\-Shape, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type $>$\-::backward (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
@@ -208,16 +208,16 @@ Reimplemented from \hyperlink{classffnn_1_1layer_1_1_layer_a59d5f45393a1b0e46739
 
 
 
-Implemented in \hyperlink{classffnn_1_1layer_1_1_fully_connected_ab4a63eb87bd3f2288258b341fcfd165f}{ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}, \hyperlink{classffnn_1_1layer_1_1_convolution_ab3b7e1b317090930a52712723cd822aa}{ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode, \-\_\-\-Hidden\-Layer\-Shape $>$}, \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_a597ea83c83e8f4f64a1fb7f17a1ea015}{ffnn\-::layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}, and \hyperlink{classffnn_1_1layer_1_1_activation_a3c4284245343f2132dd28eaf7ffbed47}{ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}.
+Implemented in \hyperlink{classffnn_1_1layer_1_1_convolution_a3f68ea1af0d1c6a3f4d8d8ee59d73bd4}{ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode, \-\_\-\-Hidden\-Layer\-Shape $>$}, \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_afd4b1b14b3bb25103afbb3da0c36870f}{ffnn\-::layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}, \hyperlink{classffnn_1_1layer_1_1_fully_connected_ab4a63eb87bd3f2288258b341fcfd165f}{ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}, and \hyperlink{classffnn_1_1layer_1_1_activation_aa5166a595cb135c7ad62569361de101b}{ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}.
 
-\hypertarget{classffnn_1_1layer_1_1_hidden_ab832b0f6450b963fcb54cd28d1c88e39}{\index{ffnn\-::layer\-::\-Hidden@{ffnn\-::layer\-::\-Hidden}!connect\-To\-Forward\-Layer@{connect\-To\-Forward\-Layer}}
+\hypertarget{classffnn_1_1layer_1_1_hidden_a0f56d6a53aacd8c84477dbe73d250101}{\index{ffnn\-::layer\-::\-Hidden@{ffnn\-::layer\-::\-Hidden}!connect\-To\-Forward\-Layer@{connect\-To\-Forward\-Layer}}
 \index{connect\-To\-Forward\-Layer@{connect\-To\-Forward\-Layer}!ffnn::layer::Hidden@{ffnn\-::layer\-::\-Hidden}}
-\subsubsection[{connect\-To\-Forward\-Layer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$$>$, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::input\-\_\-height, Layer\-Shape\-::input\-\_\-height, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::output\-\_\-height, Layer\-Shape\-::output\-\_\-height, Eigen\-::\-Col\-Major$>$$>$ virtual {\bf Offset\-Type} {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Layer\-Shape, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type $>$\-::connect\-To\-Forward\-Layer (
+\subsubsection[{connect\-To\-Forward\-Layer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Shape , typename \-\_\-\-Input\-Block\-Type , typename \-\_\-\-Output\-Block\-Type $>$ {\bf Hidden}$<$ {\bf T\-A\-R\-G\-S} $>$\-::{\bf Offset\-Type} {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Layer\-Shape, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type $>$\-::connect\-To\-Forward\-Layer (
 \begin{DoxyParamCaption}
 \item[{const {\bf Layer}$<$ Value\-Type $>$ \&}]{next, }
 \item[{{\bf Offset\-Type}}]{offset}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_hidden_ab832b0f6450b963fcb54cd28d1c88e39}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_hidden_a0f56d6a53aacd8c84477dbe73d250101}
 
 
 Maps outputs of this layer to inputs of the next. 
@@ -234,9 +234,21 @@ Maps outputs of this layer to inputs of the next.
 {\em $<$code$>$offset} & + output\-\_\-shape\-\_\-.\-size() \\
 \hline
 \end{DoxyRetVals}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classffnn_1_1layer_1_1_hidden_a0f56d6a53aacd8c84477dbe73d250101_cgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{classffnn_1_1layer_1_1_hidden_a600b86d72826e8be3eafa53e040e9cbe}{\index{ffnn\-::layer\-::\-Hidden@{ffnn\-::layer\-::\-Hidden}!forward@{forward}}
 \index{forward@{forward}!ffnn::layer::Hidden@{ffnn\-::layer\-::\-Hidden}}
-\subsubsection[{forward}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$$>$, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::input\-\_\-height, Layer\-Shape\-::input\-\_\-height, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::output\-\_\-height, Layer\-Shape\-::output\-\_\-height, Eigen\-::\-Col\-Major$>$$>$ virtual bool {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Layer\-Shape, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type $>$\-::forward (
+\subsubsection[{forward}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$$>$, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::input\-\_\-height,  Layer\-Shape\-::input\-\_\-width,  Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::output\-\_\-height, Layer\-Shape\-::output\-\_\-width, Eigen\-::\-Col\-Major$>$$>$ virtual bool {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Layer\-Shape, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type $>$\-::forward (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
@@ -258,15 +270,15 @@ Reimplemented from \hyperlink{classffnn_1_1layer_1_1_layer_a832518de9beb442be076
 
 
 
-Implemented in \hyperlink{classffnn_1_1layer_1_1_fully_connected_a350e7910bd416f67d30113425ea74f59}{ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}, \hyperlink{classffnn_1_1layer_1_1_convolution_a09216fc4ade0c00c2ddf97e5eacadec1}{ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode, \-\_\-\-Hidden\-Layer\-Shape $>$}, \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_a53f1d9a2edfdd2e47164b24121c23acc}{ffnn\-::layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}, and \hyperlink{classffnn_1_1layer_1_1_activation_aa7f88c8bc20589dc51d9dd615b8c4580}{ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}.
+Implemented in \hyperlink{classffnn_1_1layer_1_1_convolution_abb5a0822c5af574633a17f686191ab61}{ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode, \-\_\-\-Hidden\-Layer\-Shape $>$}, \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_a0acb482045ac19809d05ef891358121c}{ffnn\-::layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}, \hyperlink{classffnn_1_1layer_1_1_fully_connected_a350e7910bd416f67d30113425ea74f59}{ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}, and \hyperlink{classffnn_1_1layer_1_1_activation_a8435ed1feadfcfc2343dd65a1542fe23}{ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}.
 
-\hypertarget{classffnn_1_1layer_1_1_hidden_a0bf259cd8d070ce21c90a34d86b173ee}{\index{ffnn\-::layer\-::\-Hidden@{ffnn\-::layer\-::\-Hidden}!initialize@{initialize}}
+\hypertarget{classffnn_1_1layer_1_1_hidden_adb70b4a8f5ac4979689f86cab73f48b1}{\index{ffnn\-::layer\-::\-Hidden@{ffnn\-::layer\-::\-Hidden}!initialize@{initialize}}
 \index{initialize@{initialize}!ffnn::layer::Hidden@{ffnn\-::layer\-::\-Hidden}}
-\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$$>$, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::input\-\_\-height, Layer\-Shape\-::input\-\_\-height, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::output\-\_\-height, Layer\-Shape\-::output\-\_\-height, Eigen\-::\-Col\-Major$>$$>$ virtual bool {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Layer\-Shape, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type $>$\-::initialize (
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Layer\-Shape , typename \-\_\-\-Input\-Block\-Type , typename \-\_\-\-Output\-Block\-Type $>$ bool {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Layer\-Shape, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type $>$\-::initialize (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_hidden_a0bf259cd8d070ce21c90a34d86b173ee}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_hidden_adb70b4a8f5ac4979689f86cab73f48b1}
 
 
 Initialize the layer. 
@@ -277,11 +289,11 @@ Reimplemented from \hyperlink{classffnn_1_1layer_1_1_layer_ae8a7daa81382a7965b8a
 
 
 
-Reimplemented in \hyperlink{classffnn_1_1layer_1_1_fully_connected_a55089e2810d6848950da5ca33000da8a}{ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}, \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_abb2966b5e7813c43ae2ea5448188a9fb}{ffnn\-::layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}, \hyperlink{classffnn_1_1layer_1_1_convolution_a2ae5762f45886e132eef09c8550e950a}{ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode, \-\_\-\-Hidden\-Layer\-Shape $>$}, and \hyperlink{classffnn_1_1layer_1_1_activation_ae73ef2d36d9c5ce3c219f6a51cba3c35}{ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}.
+Reimplemented in \hyperlink{classffnn_1_1layer_1_1_convolution_a6db8aa87e5044aa30f538091339c2994}{ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode, \-\_\-\-Hidden\-Layer\-Shape $>$}, \hyperlink{classffnn_1_1layer_1_1_fully_connected_a55089e2810d6848950da5ca33000da8a}{ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}, \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_a67b16619976b48b77eee1a3c9d53bdd1}{ffnn\-::layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}, and \hyperlink{classffnn_1_1layer_1_1_activation_a10a733b3fc1378fd8d1f33d231ee3e83}{ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}.
 
 \hypertarget{classffnn_1_1layer_1_1_hidden_a4ab88bd0c94d86b6d17f63e054cc907c}{\index{ffnn\-::layer\-::\-Hidden@{ffnn\-::layer\-::\-Hidden}!load@{load}}
 \index{load@{load}!ffnn::layer::Hidden@{ffnn\-::layer\-::\-Hidden}}
-\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$$>$, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::input\-\_\-height, Layer\-Shape\-::input\-\_\-height, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::output\-\_\-height, Layer\-Shape\-::output\-\_\-height, Eigen\-::\-Col\-Major$>$$>$ void {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Layer\-Shape, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type $>$\-::load (
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$$>$, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::input\-\_\-height,  Layer\-Shape\-::input\-\_\-width,  Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::output\-\_\-height, Layer\-Shape\-::output\-\_\-width, Eigen\-::\-Col\-Major$>$$>$ void {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Layer\-Shape, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type $>$\-::load (
 \begin{DoxyParamCaption}
 \item[{{\bf Input\-Archive} \&}]{ar, }
 \item[{{\bf Version\-Type}}]{version}
@@ -295,9 +307,21 @@ Load serializer.
 
 Reimplemented from \hyperlink{classffnn_1_1traits_1_1_unique_af1e937c2908ed2ff707d6a7d1b5b13d2}{ffnn\-::traits\-::\-Unique}.
 
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{classffnn_1_1layer_1_1_hidden_a4ab88bd0c94d86b6d17f63e054cc907c_cgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{classffnn_1_1layer_1_1_hidden_a184844a0eadeb1aa27e29b24cbb0008c}{\index{ffnn\-::layer\-::\-Hidden@{ffnn\-::layer\-::\-Hidden}!save@{save}}
 \index{save@{save}!ffnn::layer::Hidden@{ffnn\-::layer\-::\-Hidden}}
-\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$$>$, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::input\-\_\-height, Layer\-Shape\-::input\-\_\-height, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::output\-\_\-height, Layer\-Shape\-::output\-\_\-height, Eigen\-::\-Col\-Major$>$$>$ void {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Layer\-Shape, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type $>$\-::save (
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$$>$, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::input\-\_\-height,  Layer\-Shape\-::input\-\_\-width,  Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::output\-\_\-height, Layer\-Shape\-::output\-\_\-width, Eigen\-::\-Col\-Major$>$$>$ void {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Layer\-Shape, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type $>$\-::save (
 \begin{DoxyParamCaption}
 \item[{{\bf Output\-Archive} \&}]{ar, }
 \item[{{\bf Version\-Type}}]{version}
@@ -311,9 +335,21 @@ Save serializer.
 
 Reimplemented from \hyperlink{classffnn_1_1traits_1_1_unique_ad8be6fcb9a7519603b2aab19b3c6d593}{ffnn\-::traits\-::\-Unique}.
 
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{classffnn_1_1layer_1_1_hidden_a184844a0eadeb1aa27e29b24cbb0008c_cgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{classffnn_1_1layer_1_1_hidden_ae038d2a1e64fcbbde6166df7d0573ef8}{\index{ffnn\-::layer\-::\-Hidden@{ffnn\-::layer\-::\-Hidden}!update@{update}}
 \index{update@{update}!ffnn::layer::Hidden@{ffnn\-::layer\-::\-Hidden}}
-\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$$>$, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::input\-\_\-height, Layer\-Shape\-::input\-\_\-height, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::output\-\_\-height, Layer\-Shape\-::output\-\_\-height, Eigen\-::\-Col\-Major$>$$>$ virtual bool {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Layer\-Shape, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type $>$\-::update (
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$$>$, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::input\-\_\-height,  Layer\-Shape\-::input\-\_\-width,  Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::output\-\_\-height, Layer\-Shape\-::output\-\_\-width, Eigen\-::\-Col\-Major$>$$>$ virtual bool {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Layer\-Shape, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type $>$\-::update (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
@@ -335,21 +371,21 @@ Reimplemented from \hyperlink{classffnn_1_1layer_1_1_layer_a25bf06cfea93baf1c80e
 
 
 
-Implemented in \hyperlink{classffnn_1_1layer_1_1_fully_connected_a7dd4dbe010c3d290c131b21b35f6301e}{ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}, \hyperlink{classffnn_1_1layer_1_1_convolution_aa56059e379a152efee3de409a217d1e1}{ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode, \-\_\-\-Hidden\-Layer\-Shape $>$}, \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_afa564d528e74917231da2d038f76e3f1}{ffnn\-::layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}, and \hyperlink{classffnn_1_1layer_1_1_activation_a24a044458729f72466af06153851f5b2}{ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}.
+Implemented in \hyperlink{classffnn_1_1layer_1_1_convolution_adda31ab384f91bba27443e19cf7c2dc5}{ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode, \-\_\-\-Hidden\-Layer\-Shape $>$}, \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_a5ddba33151a0bca81ec83cec819a14d8}{ffnn\-::layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}, \hyperlink{classffnn_1_1layer_1_1_fully_connected_a7dd4dbe010c3d290c131b21b35f6301e}{ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}, and \hyperlink{classffnn_1_1layer_1_1_activation_a24a044458729f72466af06153851f5b2}{ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}.
 
 
 
 \subsection{Member Data Documentation}
 \hypertarget{classffnn_1_1layer_1_1_hidden_a94312439d5029c9c779ff778f18f95a8}{\index{ffnn\-::layer\-::\-Hidden@{ffnn\-::layer\-::\-Hidden}!backward\-\_\-error\-\_\-@{backward\-\_\-error\-\_\-}}
 \index{backward\-\_\-error\-\_\-@{backward\-\_\-error\-\_\-}!ffnn::layer::Hidden@{ffnn\-::layer\-::\-Hidden}}
-\subsubsection[{backward\-\_\-error\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$$>$, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::input\-\_\-height, Layer\-Shape\-::input\-\_\-height, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::output\-\_\-height, Layer\-Shape\-::output\-\_\-height, Eigen\-::\-Col\-Major$>$$>$ {\bf Input\-Mapping\-Type} {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Layer\-Shape, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type $>$\-::backward\-\_\-error\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classffnn_1_1layer_1_1_hidden_a94312439d5029c9c779ff778f18f95a8}
+\subsubsection[{backward\-\_\-error\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$$>$, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::input\-\_\-height,  Layer\-Shape\-::input\-\_\-width,  Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::output\-\_\-height, Layer\-Shape\-::output\-\_\-width, Eigen\-::\-Col\-Major$>$$>$ {\bf Input\-Mapping\-Type} {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Layer\-Shape, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type $>$\-::backward\-\_\-error\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classffnn_1_1layer_1_1_hidden_a94312439d5029c9c779ff778f18f95a8}
 
 
 Backward error vector. 
 
 \hypertarget{classffnn_1_1layer_1_1_hidden_af1f439bdd3645a5ee444455d822b5143}{\index{ffnn\-::layer\-::\-Hidden@{ffnn\-::layer\-::\-Hidden}!forward\-\_\-error\-\_\-@{forward\-\_\-error\-\_\-}}
 \index{forward\-\_\-error\-\_\-@{forward\-\_\-error\-\_\-}!ffnn::layer::Hidden@{ffnn\-::layer\-::\-Hidden}}
-\subsubsection[{forward\-\_\-error\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$$>$, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::input\-\_\-height, Layer\-Shape\-::input\-\_\-height, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::output\-\_\-height, Layer\-Shape\-::output\-\_\-height, Eigen\-::\-Col\-Major$>$$>$ {\bf Output\-Mapping\-Type} {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Layer\-Shape, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type $>$\-::forward\-\_\-error\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classffnn_1_1layer_1_1_hidden_af1f439bdd3645a5ee444455d822b5143}
+\subsubsection[{forward\-\_\-error\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$$>$, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::input\-\_\-height,  Layer\-Shape\-::input\-\_\-width,  Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::output\-\_\-height, Layer\-Shape\-::output\-\_\-width, Eigen\-::\-Col\-Major$>$$>$ {\bf Output\-Mapping\-Type} {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Layer\-Shape, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type $>$\-::forward\-\_\-error\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classffnn_1_1layer_1_1_hidden_af1f439bdd3645a5ee444455d822b5143}
 
 
 Output-\/target error vector. 
@@ -360,7 +396,7 @@ Referenced by ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Conn
 
 \hypertarget{classffnn_1_1layer_1_1_hidden_a1177e86b75ad7ba87aa4e855defa5851}{\index{ffnn\-::layer\-::\-Hidden@{ffnn\-::layer\-::\-Hidden}!input\-\_\-@{input\-\_\-}}
 \index{input\-\_\-@{input\-\_\-}!ffnn::layer::Hidden@{ffnn\-::layer\-::\-Hidden}}
-\subsubsection[{input\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$$>$, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::input\-\_\-height, Layer\-Shape\-::input\-\_\-height, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::output\-\_\-height, Layer\-Shape\-::output\-\_\-height, Eigen\-::\-Col\-Major$>$$>$ {\bf Input\-Mapping\-Type} {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Layer\-Shape, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type $>$\-::input\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classffnn_1_1layer_1_1_hidden_a1177e86b75ad7ba87aa4e855defa5851}
+\subsubsection[{input\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$$>$, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::input\-\_\-height,  Layer\-Shape\-::input\-\_\-width,  Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::output\-\_\-height, Layer\-Shape\-::output\-\_\-width, Eigen\-::\-Col\-Major$>$$>$ {\bf Input\-Mapping\-Type} {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Layer\-Shape, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type $>$\-::input\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classffnn_1_1layer_1_1_hidden_a1177e86b75ad7ba87aa4e855defa5851}
 
 
 Memory-\/mapped input vector. 
@@ -371,13 +407,14 @@ Referenced by ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Conn
 
 \hypertarget{classffnn_1_1layer_1_1_hidden_adf9818c784dccc1860fe8384264cc4be}{\index{ffnn\-::layer\-::\-Hidden@{ffnn\-::layer\-::\-Hidden}!output\-\_\-@{output\-\_\-}}
 \index{output\-\_\-@{output\-\_\-}!ffnn::layer::Hidden@{ffnn\-::layer\-::\-Hidden}}
-\subsubsection[{output\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$$>$, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::input\-\_\-height, Layer\-Shape\-::input\-\_\-height, Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::output\-\_\-height, Layer\-Shape\-::output\-\_\-height, Eigen\-::\-Col\-Major$>$$>$ {\bf Output\-Mapping\-Type} {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Layer\-Shape, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type $>$\-::output\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classffnn_1_1layer_1_1_hidden_adf9818c784dccc1860fe8384264cc4be}
+\subsubsection[{output\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$$>$, typename \-\_\-\-Input\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::input\-\_\-height,  Layer\-Shape\-::input\-\_\-width,  Eigen\-::\-Col\-Major$>$, typename \-\_\-\-Output\-Block\-Type = Eigen\-::\-Matrix$<$\-Value\-Type, Layer\-Shape\-::output\-\_\-height, Layer\-Shape\-::output\-\_\-width, Eigen\-::\-Col\-Major$>$$>$ {\bf Output\-Mapping\-Type} {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Layer\-Shape, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type $>$\-::output\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classffnn_1_1layer_1_1_hidden_adf9818c784dccc1860fe8384264cc4be}
 
 
 Memory-\/mapped output vector. 
 
 
 
-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/\hyperlink{hidden_8h}{hidden.\-h}\end{DoxyCompactItemize}
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/\hyperlink{hidden_8h}{hidden.\-h}\item 
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/impl/\hyperlink{hidden_8hpp}{hidden.\-hpp}\end{DoxyCompactItemize}

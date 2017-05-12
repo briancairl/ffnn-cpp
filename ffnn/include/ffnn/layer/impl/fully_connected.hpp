@@ -97,20 +97,14 @@ bool FullyConnected<TARGS>::initialize(const WeightDistribution& wd, const BiasD
     {
       // Set layer connections weights
       {
-        auto coeffInitfn = [](ValueType x, const WeightDistribution& dist)
-        {
-          return dist.generate();
-        };
-        w_ = w_.unaryExpr(boost::bind<ValueType>(coeffInitfn, _1, wd));
+        auto fn = [](ValueType x, const WeightDistribution& dist) {return dist.generate();};
+        w_ = w_.unaryExpr(boost::bind<ValueType>(fn, _1, wd));
       }
 
       // Set layer biases
       {
-        auto coeffInitfn = [](ValueType x, const BiasDistribution& dist)
-        {
-          return dist.generate();
-        };
-        b_ = b_.unaryExpr(boost::bind<ValueType>(coeffInitfn, _1, bd));
+        auto fn = [](ValueType x, const BiasDistribution& dist) {return dist.generate();};
+        b_ = b_.unaryExpr(boost::bind<ValueType>(fn, _1, bd));
       }
       return true;
     }

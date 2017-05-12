@@ -1,7 +1,6 @@
 <map id="/home/briancairl/packages/src/ffnn&#45;cpp/ffnn/include/ffnn/layer/internal/interface.h" name="/home/briancairl/packages/src/ffnn&#45;cpp/ffnn/include/ffnn/layer/internal/interface.h">
 <area shape="rect" id="node2" href="$convolution__volume_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/layer/convolution_volume.h" alt="" coords="5,109,215,165"/>
 <area shape="rect" id="node4" href="$layer_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/layer/layer.h" alt="" coords="241,109,415,165"/>
-<area shape="rect" id="node17" href="$receptive__volume_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/layer/receptive_volume.h" alt="" coords="440,109,637,165"/>
 <area shape="rect" id="node3" href="$convolution_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/layer/convolution.h" alt="" coords="23,317,197,373"/>
 <area shape="rect" id="node5" href="$hidden_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/layer/hidden.h" alt="" coords="222,213,396,269"/>
 <area shape="rect" id="node15" href="$input_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/layer/input.h" alt="" coords="421,213,595,269"/>

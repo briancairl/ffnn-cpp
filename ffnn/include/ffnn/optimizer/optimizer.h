@@ -7,6 +7,7 @@
 
 // C++ Standard Library
 #include <string>
+#include <type_traits>
 
 // Boost
 #include <boost/make_shared.hpp>

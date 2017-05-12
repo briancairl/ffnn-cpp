@@ -12,8 +12,7 @@ A fully-\/connected layer.
 
 
 
-Inheritance diagram for ffnn\-:\-:layer\-:\-:Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-:
-\nopagebreak
+Inheritance diagram for ffnn\-:\-:layer\-:\-:Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -22,19 +21,13 @@ Inheritance diagram for ffnn\-:\-:layer\-:\-:Sparsely\-Connected$<$ Value\-Type,
 \end{figure}
 
 
-Collaboration diagram for ffnn\-:\-:layer\-:\-:Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-:
-\nopagebreak
+Collaboration diagram for ffnn\-:\-:layer\-:\-:Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=302pt]{classffnn_1_1layer_1_1_sparsely_connected__coll__graph}
 \end{center}
 \end{figure}
-\subsection*{Classes}
-\begin{DoxyCompactItemize}
-\item 
-struct \hyperlink{structffnn_1_1layer_1_1_sparsely_connected_1_1_parameters}{Parameters}
-\begin{DoxyCompactList}\small\item\em A configuration object for a \hyperlink{classffnn_1_1layer_1_1_sparsely_connected}{Sparsely\-Connected} hidden layer. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
@@ -65,30 +58,32 @@ $<$ \hyperlink{classffnn_1_1layer_1_1_layer_a1d461b24632a849b2c26a5051a9cdbeb}{S
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classffnn_1_1layer_1_1_sparsely_connected_a7852f80fc620d79f893ca3a6ebea987b}{Sparsely\-Connected} (\hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_af0567642f60c65b5e87067226a54174b}{Size\-Type} output\-\_\-size=Outputs\-At\-Compile\-Time, const \hyperlink{structffnn_1_1layer_1_1_sparsely_connected_1_1_parameters}{Parameters} \&config=\hyperlink{structffnn_1_1layer_1_1_sparsely_connected_1_1_parameters}{Parameters}())
+\hyperlink{classffnn_1_1layer_1_1_sparsely_connected_ad1fd7fa0eefeec930f3b8d7b31e1061e}{Sparsely\-Connected} (\hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_af0567642f60c65b5e87067226a54174b}{Size\-Type} output\-\_\-size=Outputs\-At\-Compile\-Time)
 \begin{DoxyCompactList}\small\item\em Setup constructor. \end{DoxyCompactList}\item 
-virtual \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_ab35a9206f553aa2c84c5d09d4472aed8}{$\sim$\-Sparsely\-Connected} ()
+virtual \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_a8c7c34f665982387ce66bd22887b84bc}{$\sim$\-Sparsely\-Connected} ()
 \item 
-virtual bool \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_abb2966b5e7813c43ae2ea5448188a9fb}{initialize} ()
+bool \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_a67b16619976b48b77eee1a3c9d53bdd1}{initialize} ()
 \begin{DoxyCompactList}\small\item\em Initialize the layer. \end{DoxyCompactList}\item 
-virtual bool \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_a53f1d9a2edfdd2e47164b24121c23acc}{forward} ()
+{\footnotesize template$<$typename Weight\-Distribution , typename Bias\-Distribution , typename Connection\-Distribution $>$ }\\bool \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_ae66003530f3545958ea55baca0e6c132}{initialize} (const Weight\-Distribution \&wd, const Bias\-Distribution \&bd, const Connection\-Distribution \&cd, Value\-Type connection\-\_\-probability=0.\-5)
+\begin{DoxyCompactList}\small\item\em Initialize layer weights and biases according to particular distributions. \end{DoxyCompactList}\item 
+bool \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_a0acb482045ac19809d05ef891358121c}{forward} ()
 \begin{DoxyCompactList}\small\item\em Performs forward value propagation. \end{DoxyCompactList}\item 
-virtual bool \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_a597ea83c83e8f4f64a1fb7f17a1ea015}{backward} ()
+bool \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_afd4b1b14b3bb25103afbb3da0c36870f}{backward} ()
 \begin{DoxyCompactList}\small\item\em Performs backward error propagation. \end{DoxyCompactList}\item 
-virtual bool \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_afa564d528e74917231da2d038f76e3f1}{update} ()
+bool \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_a5ddba33151a0bca81ec83cec819a14d8}{update} ()
 \begin{DoxyCompactList}\small\item\em Applies accumulated layer weight updates computed during optimization. \end{DoxyCompactList}\item 
-void \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_a084e685f9e14b926d6cc6fb973775415}{reset} ()
-\begin{DoxyCompactList}\small\item\em Reset weights and biases. \end{DoxyCompactList}\item 
-void \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_a5ad877d8a61e22e66b040915fe5cb045}{prune} (Value\-Type epsilon)
+void \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_a78c4c2997531c733b0a4e094269e72d4}{prune} (Value\-Type epsilon)
 \begin{DoxyCompactList}\small\item\em Prune weights smaller than some value epsilon. \end{DoxyCompactList}\item 
-void \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_a1d6abf2925da812b4fb88a140ec60b63}{set\-Optimizer} (typename \hyperlink{classffnn_1_1optimizer_1_1_optimizer_ac03e7181934bf0c12a97fc67a60484ab}{Optimizer\-::\-Ptr} opt)
-\begin{DoxyCompactList}\small\item\em Sets an optimizer used update network weights during back-\/propagation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_a58182d9cc22d1893c8eb2ffdbe3d8efd}{set\-Optimizer} (typename \hyperlink{classffnn_1_1optimizer_1_1_optimizer_ac03e7181934bf0c12a97fc67a60484ab}{Optimizer\-::\-Ptr} opt)
+\begin{DoxyCompactList}\small\item\em Sets an optimizer used update network weights during back-\/propagation. \end{DoxyCompactList}\item 
+\hyperlink{classffnn_1_1layer_1_1_sparsely_connected_a2dd9da2a664635b0c8a24e3db6f6a90a}{E\-I\-G\-E\-N\-\_\-\-M\-A\-K\-E\-\_\-\-A\-L\-I\-G\-N\-E\-D\-\_\-\-O\-P\-E\-R\-A\-T\-O\-R\-\_\-\-N\-E\-W\-\_\-\-I\-F} (\hyperlink{structffnn_1_1layer_1_1internal_1_1is__alignable__128}{internal\-::is\-\_\-alignable\-\_\-128}$<$ \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_a2ff479719bf630de3957b72e9691893b}{Bias\-Vector\-Type} $>$\-::value)
+\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_aa8ae358e7cf06b58f3d33be2851d0260}{save} (\hyperlink{classffnn_1_1traits_1_1_serializable_a08d986df75d363fa79506d4f6045cb9f}{Output\-Archive} \&ar, \hyperlink{classffnn_1_1traits_1_1_serializable_a08924b3b7d20cb3cb6eafe517d4f7b30}{Version\-Type} version) const 
+void \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_a3eec4552d44a17ef14c5bb71361058ed}{save} (\hyperlink{classffnn_1_1traits_1_1_serializable_a08d986df75d363fa79506d4f6045cb9f}{Output\-Archive} \&ar, \hyperlink{classffnn_1_1traits_1_1_serializable_a08924b3b7d20cb3cb6eafe517d4f7b30}{Version\-Type} version) const 
 \begin{DoxyCompactList}\small\item\em Save serializer. \end{DoxyCompactList}\item 
-void \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_a0996cd78dc2f76cab36fac2ec5c8f323}{load} (\hyperlink{classffnn_1_1traits_1_1_serializable_a6e626759259f8f370dd4303b4441a234}{Input\-Archive} \&ar, \hyperlink{classffnn_1_1traits_1_1_serializable_a08924b3b7d20cb3cb6eafe517d4f7b30}{Version\-Type} version)
+void \hyperlink{classffnn_1_1layer_1_1_sparsely_connected_a671ce3fc9d6fa1e7b10153205a78596a}{load} (\hyperlink{classffnn_1_1traits_1_1_serializable_a6e626759259f8f370dd4303b4441a234}{Input\-Archive} \&ar, \hyperlink{classffnn_1_1traits_1_1_serializable_a08924b3b7d20cb3cb6eafe517d4f7b30}{Version\-Type} version)
 \begin{DoxyCompactList}\small\item\em Load serializer. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
@@ -179,14 +174,13 @@ Input-\/output weight matrix.
 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classffnn_1_1layer_1_1_sparsely_connected_a7852f80fc620d79f893ca3a6ebea987b}{\index{ffnn\-::layer\-::\-Sparsely\-Connected@{ffnn\-::layer\-::\-Sparsely\-Connected}!Sparsely\-Connected@{Sparsely\-Connected}}
+\hypertarget{classffnn_1_1layer_1_1_sparsely_connected_ad1fd7fa0eefeec930f3b8d7b31e1061e}{\index{ffnn\-::layer\-::\-Sparsely\-Connected@{ffnn\-::layer\-::\-Sparsely\-Connected}!Sparsely\-Connected@{Sparsely\-Connected}}
 \index{Sparsely\-Connected@{Sparsely\-Connected}!ffnn::layer::SparselyConnected@{ffnn\-::layer\-::\-Sparsely\-Connected}}
-\subsubsection[{Sparsely\-Connected}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time$>$ {\bf ffnn\-::layer\-::\-Sparsely\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::{\bf Sparsely\-Connected} (
+\subsubsection[{Sparsely\-Connected}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time, typename \-\_\-\-Hidden\-Layer\-Shape $>$ {\bf ffnn\-::layer\-::\-Sparsely\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-::{\bf Sparsely\-Connected} (
 \begin{DoxyParamCaption}
-\item[{{\bf Size\-Type}}]{output\-\_\-size = {\ttfamily OutputsAtCompileTime}, }
-\item[{const {\bf Parameters} \&}]{config = {\ttfamily {\bf Parameters}()}}
+\item[{{\bf Size\-Type}}]{output\-\_\-size = {\ttfamily OutputsAtCompileTime}}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classffnn_1_1layer_1_1_sparsely_connected_a7852f80fc620d79f893ca3a6ebea987b}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classffnn_1_1layer_1_1_sparsely_connected_ad1fd7fa0eefeec930f3b8d7b31e1061e}
 
 
 Setup constructor. 
@@ -195,26 +189,24 @@ Setup constructor.
 \begin{DoxyParams}{Parameters}
 {\em output\-\_\-size} & number of outputs from the layer \\
 \hline
-{\em config} & layer configuration struct \\
-\hline
 \end{DoxyParams}
-\hypertarget{classffnn_1_1layer_1_1_sparsely_connected_ab35a9206f553aa2c84c5d09d4472aed8}{\index{ffnn\-::layer\-::\-Sparsely\-Connected@{ffnn\-::layer\-::\-Sparsely\-Connected}!$\sim$\-Sparsely\-Connected@{$\sim$\-Sparsely\-Connected}}
+\hypertarget{classffnn_1_1layer_1_1_sparsely_connected_a8c7c34f665982387ce66bd22887b84bc}{\index{ffnn\-::layer\-::\-Sparsely\-Connected@{ffnn\-::layer\-::\-Sparsely\-Connected}!$\sim$\-Sparsely\-Connected@{$\sim$\-Sparsely\-Connected}}
 \index{$\sim$\-Sparsely\-Connected@{$\sim$\-Sparsely\-Connected}!ffnn::layer::SparselyConnected@{ffnn\-::layer\-::\-Sparsely\-Connected}}
-\subsubsection[{$\sim$\-Sparsely\-Connected}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time$>$ {\bf ffnn\-::layer\-::\-Sparsely\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::$\sim${\bf Sparsely\-Connected} (
+\subsubsection[{$\sim$\-Sparsely\-Connected}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time, typename \-\_\-\-Hidden\-Layer\-Shape $>$ {\bf ffnn\-::layer\-::\-Sparsely\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-::$\sim${\bf Sparsely\-Connected} (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_sparsely_connected_ab35a9206f553aa2c84c5d09d4472aed8}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_sparsely_connected_a8c7c34f665982387ce66bd22887b84bc}
 
 
 \subsection{Member Function Documentation}
-\hypertarget{classffnn_1_1layer_1_1_sparsely_connected_a597ea83c83e8f4f64a1fb7f17a1ea015}{\index{ffnn\-::layer\-::\-Sparsely\-Connected@{ffnn\-::layer\-::\-Sparsely\-Connected}!backward@{backward}}
+\hypertarget{classffnn_1_1layer_1_1_sparsely_connected_afd4b1b14b3bb25103afbb3da0c36870f}{\index{ffnn\-::layer\-::\-Sparsely\-Connected@{ffnn\-::layer\-::\-Sparsely\-Connected}!backward@{backward}}
 \index{backward@{backward}!ffnn::layer::SparselyConnected@{ffnn\-::layer\-::\-Sparsely\-Connected}}
-\subsubsection[{backward}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time$>$ bool {\bf ffnn\-::layer\-::\-Sparsely\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::backward (
+\subsubsection[{backward}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time, typename \-\_\-\-Hidden\-Layer\-Shape $>$ bool {\bf ffnn\-::layer\-::\-Sparsely\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-::backward (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_sparsely_connected_a597ea83c83e8f4f64a1fb7f17a1ea015}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_sparsely_connected_afd4b1b14b3bb25103afbb3da0c36870f}
 
 
 Performs backward error propagation. 
@@ -232,19 +224,26 @@ Does not apply layer weight updates
 Will throw if an optimizer has not been associated with this layer 
 \end{DoxyWarning}
 \begin{DoxySeeAlso}{See Also}
-\hyperlink{classffnn_1_1layer_1_1_sparsely_connected_a1d6abf2925da812b4fb88a140ec60b63}{set\-Optimizer} 
+\hyperlink{classffnn_1_1layer_1_1_sparsely_connected_a58182d9cc22d1893c8eb2ffdbe3d8efd}{set\-Optimizer} 
 \end{DoxySeeAlso}
 
 
 Implements \hyperlink{classffnn_1_1layer_1_1_hidden_aac0ee89390b02ff4731678883dd402dd}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, \-\_\-\-Hidden\-Layer\-Shape $>$}.
 
-\hypertarget{classffnn_1_1layer_1_1_sparsely_connected_a53f1d9a2edfdd2e47164b24121c23acc}{\index{ffnn\-::layer\-::\-Sparsely\-Connected@{ffnn\-::layer\-::\-Sparsely\-Connected}!forward@{forward}}
+\hypertarget{classffnn_1_1layer_1_1_sparsely_connected_a2dd9da2a664635b0c8a24e3db6f6a90a}{\index{ffnn\-::layer\-::\-Sparsely\-Connected@{ffnn\-::layer\-::\-Sparsely\-Connected}!E\-I\-G\-E\-N\-\_\-\-M\-A\-K\-E\-\_\-\-A\-L\-I\-G\-N\-E\-D\-\_\-\-O\-P\-E\-R\-A\-T\-O\-R\-\_\-\-N\-E\-W\-\_\-\-I\-F@{E\-I\-G\-E\-N\-\_\-\-M\-A\-K\-E\-\_\-\-A\-L\-I\-G\-N\-E\-D\-\_\-\-O\-P\-E\-R\-A\-T\-O\-R\-\_\-\-N\-E\-W\-\_\-\-I\-F}}
+\index{E\-I\-G\-E\-N\-\_\-\-M\-A\-K\-E\-\_\-\-A\-L\-I\-G\-N\-E\-D\-\_\-\-O\-P\-E\-R\-A\-T\-O\-R\-\_\-\-N\-E\-W\-\_\-\-I\-F@{E\-I\-G\-E\-N\-\_\-\-M\-A\-K\-E\-\_\-\-A\-L\-I\-G\-N\-E\-D\-\_\-\-O\-P\-E\-R\-A\-T\-O\-R\-\_\-\-N\-E\-W\-\_\-\-I\-F}!ffnn::layer::SparselyConnected@{ffnn\-::layer\-::\-Sparsely\-Connected}}
+\subsubsection[{E\-I\-G\-E\-N\-\_\-\-M\-A\-K\-E\-\_\-\-A\-L\-I\-G\-N\-E\-D\-\_\-\-O\-P\-E\-R\-A\-T\-O\-R\-\_\-\-N\-E\-W\-\_\-\-I\-F}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Hidden\-Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$\-Inputs\-At\-Compile\-Time, 1, Outputs\-At\-Compile\-Time, 1$>$$>$ {\bf ffnn\-::layer\-::\-Sparsely\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-::E\-I\-G\-E\-N\-\_\-\-M\-A\-K\-E\-\_\-\-A\-L\-I\-G\-N\-E\-D\-\_\-\-O\-P\-E\-R\-A\-T\-O\-R\-\_\-\-N\-E\-W\-\_\-\-I\-F (
+\begin{DoxyParamCaption}
+\item[{{\bf internal\-::is\-\_\-alignable\-\_\-128}$<$ {\bf Bias\-Vector\-Type} $>$\-::value}]{}
+\end{DoxyParamCaption}
+)}}\label{classffnn_1_1layer_1_1_sparsely_connected_a2dd9da2a664635b0c8a24e3db6f6a90a}
+\hypertarget{classffnn_1_1layer_1_1_sparsely_connected_a0acb482045ac19809d05ef891358121c}{\index{ffnn\-::layer\-::\-Sparsely\-Connected@{ffnn\-::layer\-::\-Sparsely\-Connected}!forward@{forward}}
 \index{forward@{forward}!ffnn::layer::SparselyConnected@{ffnn\-::layer\-::\-Sparsely\-Connected}}
-\subsubsection[{forward}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time$>$ bool {\bf ffnn\-::layer\-::\-Sparsely\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::forward (
+\subsubsection[{forward}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time, typename \-\_\-\-Hidden\-Layer\-Shape $>$ bool {\bf ffnn\-::layer\-::\-Sparsely\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-::forward (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_sparsely_connected_a53f1d9a2edfdd2e47164b24121c23acc}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_sparsely_connected_a0acb482045ac19809d05ef891358121c}
 
 
 Performs forward value propagation. 
@@ -260,29 +259,74 @@ Performs forward value propagation.
 
 Implements \hyperlink{classffnn_1_1layer_1_1_hidden_a600b86d72826e8be3eafa53e040e9cbe}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, \-\_\-\-Hidden\-Layer\-Shape $>$}.
 
-\hypertarget{classffnn_1_1layer_1_1_sparsely_connected_abb2966b5e7813c43ae2ea5448188a9fb}{\index{ffnn\-::layer\-::\-Sparsely\-Connected@{ffnn\-::layer\-::\-Sparsely\-Connected}!initialize@{initialize}}
+\hypertarget{classffnn_1_1layer_1_1_sparsely_connected_a67b16619976b48b77eee1a3c9d53bdd1}{\index{ffnn\-::layer\-::\-Sparsely\-Connected@{ffnn\-::layer\-::\-Sparsely\-Connected}!initialize@{initialize}}
 \index{initialize@{initialize}!ffnn::layer::SparselyConnected@{ffnn\-::layer\-::\-Sparsely\-Connected}}
-\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time$>$ bool {\bf ffnn\-::layer\-::\-Sparsely\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::initialize (
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time, typename \-\_\-\-Hidden\-Layer\-Shape $>$ bool {\bf ffnn\-::layer\-::\-Sparsely\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-::initialize (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_sparsely_connected_abb2966b5e7813c43ae2ea5448188a9fb}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_sparsely_connected_a67b16619976b48b77eee1a3c9d53bdd1}
 
 
 Initialize the layer. 
 
 
+\begin{DoxyRetVals}{Return values}
+{\em true} & if layer was initialized successfully \\
+\hline
+{\em false} & otherwise\\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyWarning}{Warning}
+If layer is not loaded instance, this method will initialize layer sizings but weights and biases will be zero 
+\end{DoxyWarning}
 
-Reimplemented from \hyperlink{classffnn_1_1layer_1_1_hidden_a0bf259cd8d070ce21c90a34d86b173ee}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, \-\_\-\-Hidden\-Layer\-Shape $>$}.
 
-\hypertarget{classffnn_1_1layer_1_1_sparsely_connected_a0996cd78dc2f76cab36fac2ec5c8f323}{\index{ffnn\-::layer\-::\-Sparsely\-Connected@{ffnn\-::layer\-::\-Sparsely\-Connected}!load@{load}}
+Reimplemented from \hyperlink{classffnn_1_1layer_1_1_hidden_adb70b4a8f5ac4979689f86cab73f48b1}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, \-\_\-\-Hidden\-Layer\-Shape $>$}.
+
+\hypertarget{classffnn_1_1layer_1_1_sparsely_connected_ae66003530f3545958ea55baca0e6c132}{\index{ffnn\-::layer\-::\-Sparsely\-Connected@{ffnn\-::layer\-::\-Sparsely\-Connected}!initialize@{initialize}}
+\index{initialize@{initialize}!ffnn::layer::SparselyConnected@{ffnn\-::layer\-::\-Sparsely\-Connected}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time, typename \-\_\-\-Hidden\-Layer\-Shape $>$ template$<$typename Weight\-Distribution , typename Bias\-Distribution , typename Connection\-Distribution $>$ bool {\bf ffnn\-::layer\-::\-Sparsely\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-::initialize (
+\begin{DoxyParamCaption}
+\item[{const Weight\-Distribution \&}]{wd, }
+\item[{const Bias\-Distribution \&}]{bd, }
+\item[{const Connection\-Distribution \&}]{cd, }
+\item[{Value\-Type}]{connection\-\_\-probability = {\ttfamily 0.5}}
+\end{DoxyParamCaption}
+)}}\label{classffnn_1_1layer_1_1_sparsely_connected_ae66003530f3545958ea55baca0e6c132}
+
+
+Initialize layer weights and biases according to particular distributions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wd} & distribution to sample for connection weights \\
+\hline
+{\em bd} & distribution to sample for biases \\
+\hline
+{\em cd} & distribution used to detrmine connectedness \\
+\hline
+{\em connection\-\_\-probability} & probability of connection between neurons, according to 'cd' \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & if layer was initialized successfully \\
+\hline
+{\em false} & otherwise\\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyWarning}{Warning}
+If layer is a loaded instance, this method will initialize layer sizings but weights will not be reset according to the given distributions 
+\end{DoxyWarning}
+\hypertarget{classffnn_1_1layer_1_1_sparsely_connected_a671ce3fc9d6fa1e7b10153205a78596a}{\index{ffnn\-::layer\-::\-Sparsely\-Connected@{ffnn\-::layer\-::\-Sparsely\-Connected}!load@{load}}
 \index{load@{load}!ffnn::layer::SparselyConnected@{ffnn\-::layer\-::\-Sparsely\-Connected}}
-\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Hidden\-Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$\-Inputs\-At\-Compile\-Time, 1, Outputs\-At\-Compile\-Time, 1$>$$>$ void {\bf ffnn\-::layer\-::\-Sparsely\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::load (
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Hidden\-Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$\-Inputs\-At\-Compile\-Time, 1, Outputs\-At\-Compile\-Time, 1$>$$>$ void {\bf ffnn\-::layer\-::\-Sparsely\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-::load (
 \begin{DoxyParamCaption}
 \item[{{\bf Input\-Archive} \&}]{ar, }
 \item[{{\bf Version\-Type}}]{version}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_sparsely_connected_a0996cd78dc2f76cab36fac2ec5c8f323}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_sparsely_connected_a671ce3fc9d6fa1e7b10153205a78596a}
 
 
 Load serializer. 
@@ -293,22 +337,23 @@ Reimplemented from \hyperlink{classffnn_1_1layer_1_1_layer_a23f5f3c958d888632010
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=304pt]{classffnn_1_1layer_1_1_sparsely_connected_a0996cd78dc2f76cab36fac2ec5c8f323_cgraph}
+\includegraphics[width=304pt]{classffnn_1_1layer_1_1_sparsely_connected_a671ce3fc9d6fa1e7b10153205a78596a_cgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{classffnn_1_1layer_1_1_sparsely_connected_a5ad877d8a61e22e66b040915fe5cb045}{\index{ffnn\-::layer\-::\-Sparsely\-Connected@{ffnn\-::layer\-::\-Sparsely\-Connected}!prune@{prune}}
+\hypertarget{classffnn_1_1layer_1_1_sparsely_connected_a78c4c2997531c733b0a4e094269e72d4}{\index{ffnn\-::layer\-::\-Sparsely\-Connected@{ffnn\-::layer\-::\-Sparsely\-Connected}!prune@{prune}}
 \index{prune@{prune}!ffnn::layer::SparselyConnected@{ffnn\-::layer\-::\-Sparsely\-Connected}}
-\subsubsection[{prune}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time$>$ void {\bf ffnn\-::layer\-::\-Sparsely\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::prune (
+\subsubsection[{prune}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time, typename \-\_\-\-Hidden\-Layer\-Shape $>$ void {\bf ffnn\-::layer\-::\-Sparsely\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-::prune (
 \begin{DoxyParamCaption}
 \item[{Value\-Type}]{epsilon}
 \end{DoxyParamCaption}
-)}}\label{classffnn_1_1layer_1_1_sparsely_connected_a5ad877d8a61e22e66b040915fe5cb045}
+)}}\label{classffnn_1_1layer_1_1_sparsely_connected_a78c4c2997531c733b0a4e094269e72d4}
 
 
 Prune weights smaller than some value epsilon. 
@@ -318,25 +363,14 @@ Prune weights smaller than some value epsilon.
 {\em epislon} & minimum bounding value for weights to keep after pruning \\
 \hline
 \end{DoxyParams}
-\hypertarget{classffnn_1_1layer_1_1_sparsely_connected_a084e685f9e14b926d6cc6fb973775415}{\index{ffnn\-::layer\-::\-Sparsely\-Connected@{ffnn\-::layer\-::\-Sparsely\-Connected}!reset@{reset}}
-\index{reset@{reset}!ffnn::layer::SparselyConnected@{ffnn\-::layer\-::\-Sparsely\-Connected}}
-\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time$>$ void {\bf ffnn\-::layer\-::\-Sparsely\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::reset (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}}\label{classffnn_1_1layer_1_1_sparsely_connected_a084e685f9e14b926d6cc6fb973775415}
-
-
-Reset weights and biases. 
-
-\hypertarget{classffnn_1_1layer_1_1_sparsely_connected_aa8ae358e7cf06b58f3d33be2851d0260}{\index{ffnn\-::layer\-::\-Sparsely\-Connected@{ffnn\-::layer\-::\-Sparsely\-Connected}!save@{save}}
+\hypertarget{classffnn_1_1layer_1_1_sparsely_connected_a3eec4552d44a17ef14c5bb71361058ed}{\index{ffnn\-::layer\-::\-Sparsely\-Connected@{ffnn\-::layer\-::\-Sparsely\-Connected}!save@{save}}
 \index{save@{save}!ffnn::layer::SparselyConnected@{ffnn\-::layer\-::\-Sparsely\-Connected}}
-\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Hidden\-Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$\-Inputs\-At\-Compile\-Time, 1, Outputs\-At\-Compile\-Time, 1$>$$>$ void {\bf ffnn\-::layer\-::\-Sparsely\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::save (
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Hidden\-Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$\-Inputs\-At\-Compile\-Time, 1, Outputs\-At\-Compile\-Time, 1$>$$>$ void {\bf ffnn\-::layer\-::\-Sparsely\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-::save (
 \begin{DoxyParamCaption}
 \item[{{\bf Output\-Archive} \&}]{ar, }
 \item[{{\bf Version\-Type}}]{version}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_sparsely_connected_aa8ae358e7cf06b58f3d33be2851d0260}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_sparsely_connected_a3eec4552d44a17ef14c5bb71361058ed}
 
 
 Save serializer. 
@@ -347,22 +381,23 @@ Reimplemented from \hyperlink{classffnn_1_1layer_1_1_layer_ac265fc929a178b111337
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=306pt]{classffnn_1_1layer_1_1_sparsely_connected_aa8ae358e7cf06b58f3d33be2851d0260_cgraph}
+\includegraphics[width=306pt]{classffnn_1_1layer_1_1_sparsely_connected_a3eec4552d44a17ef14c5bb71361058ed_cgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{classffnn_1_1layer_1_1_sparsely_connected_a1d6abf2925da812b4fb88a140ec60b63}{\index{ffnn\-::layer\-::\-Sparsely\-Connected@{ffnn\-::layer\-::\-Sparsely\-Connected}!set\-Optimizer@{set\-Optimizer}}
+\hypertarget{classffnn_1_1layer_1_1_sparsely_connected_a58182d9cc22d1893c8eb2ffdbe3d8efd}{\index{ffnn\-::layer\-::\-Sparsely\-Connected@{ffnn\-::layer\-::\-Sparsely\-Connected}!set\-Optimizer@{set\-Optimizer}}
 \index{set\-Optimizer@{set\-Optimizer}!ffnn::layer::SparselyConnected@{ffnn\-::layer\-::\-Sparsely\-Connected}}
-\subsubsection[{set\-Optimizer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time$>$ void {\bf ffnn\-::layer\-::\-Sparsely\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::set\-Optimizer (
+\subsubsection[{set\-Optimizer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time, typename \-\_\-\-Hidden\-Layer\-Shape $>$ void {\bf ffnn\-::layer\-::\-Sparsely\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-::set\-Optimizer (
 \begin{DoxyParamCaption}
 \item[{typename {\bf Optimizer\-::\-Ptr}}]{opt}
 \end{DoxyParamCaption}
-)}}\label{classffnn_1_1layer_1_1_sparsely_connected_a1d6abf2925da812b4fb88a140ec60b63}
+)}}\label{classffnn_1_1layer_1_1_sparsely_connected_a58182d9cc22d1893c8eb2ffdbe3d8efd}
 
 
 Sets an optimizer used update network weights during back-\/propagation. 
@@ -375,13 +410,13 @@ Sets an optimizer used update network weights during back-\/propagation.
 \begin{DoxyWarning}{Warning}
 {\ttfamily backward} and {\ttfamily update} methods are expected to throw if an optimizer has not been set explicitly 
 \end{DoxyWarning}
-\hypertarget{classffnn_1_1layer_1_1_sparsely_connected_afa564d528e74917231da2d038f76e3f1}{\index{ffnn\-::layer\-::\-Sparsely\-Connected@{ffnn\-::layer\-::\-Sparsely\-Connected}!update@{update}}
+\hypertarget{classffnn_1_1layer_1_1_sparsely_connected_a5ddba33151a0bca81ec83cec819a14d8}{\index{ffnn\-::layer\-::\-Sparsely\-Connected@{ffnn\-::layer\-::\-Sparsely\-Connected}!update@{update}}
 \index{update@{update}!ffnn::layer::SparselyConnected@{ffnn\-::layer\-::\-Sparsely\-Connected}}
-\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time$>$ bool {\bf ffnn\-::layer\-::\-Sparsely\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::update (
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Inputs\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Outputs\-At\-Compile\-Time, typename \-\_\-\-Hidden\-Layer\-Shape $>$ bool {\bf ffnn\-::layer\-::\-Sparsely\-Connected}$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-::update (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_sparsely_connected_afa564d528e74917231da2d038f76e3f1}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_sparsely_connected_a5ddba33151a0bca81ec83cec819a14d8}
 
 
 Applies accumulated layer weight updates computed during optimization. 
@@ -397,7 +432,7 @@ Applies accumulated layer weight updates computed during optimization.
 Will throw if an optimizer has not been associated with this layer 
 \end{DoxyWarning}
 \begin{DoxySeeAlso}{See Also}
-\hyperlink{classffnn_1_1layer_1_1_sparsely_connected_a1d6abf2925da812b4fb88a140ec60b63}{set\-Optimizer} 
+\hyperlink{classffnn_1_1layer_1_1_sparsely_connected_a58182d9cc22d1893c8eb2ffdbe3d8efd}{set\-Optimizer} 
 \end{DoxySeeAlso}
 
 

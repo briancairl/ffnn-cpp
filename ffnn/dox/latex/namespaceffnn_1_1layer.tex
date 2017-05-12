@@ -13,17 +13,9 @@ class \hyperlink{classffnn_1_1layer_1_1_activation}{Activation}
 \begin{DoxyCompactList}\small\item\em \hyperlink{classffnn_1_1layer_1_1_activation}{Activation} layer. \end{DoxyCompactList}\item 
 class \hyperlink{classffnn_1_1layer_1_1_convolution}{Convolution}
 \begin{DoxyCompactList}\small\item\em A convolution layer. \end{DoxyCompactList}\item 
-struct \hyperlink{structffnn_1_1layer_1_1is__dynamic}{is\-\_\-dynamic}
-\item 
-struct \hyperlink{structffnn_1_1layer_1_1is__dynamic__pair}{is\-\_\-dynamic\-\_\-pair}
-\item 
-struct \hyperlink{structffnn_1_1layer_1_1is__alignable__128}{is\-\_\-alignable\-\_\-128}
-\item 
 class \hyperlink{classffnn_1_1layer_1_1_filter_bank}{Filter\-Bank}
 \item 
 class \hyperlink{classffnn_1_1layer_1_1_convolution_volume}{Convolution\-Volume}
-\item 
-class \hyperlink{classffnn_1_1layer_1_1_layer_parameters}{Layer\-Parameters}
 \item 
 class \hyperlink{classffnn_1_1layer_1_1_fully_connected}{Fully\-Connected}
 \begin{DoxyCompactList}\small\item\em A fully-\/connected layer. \end{DoxyCompactList}\item 
@@ -37,23 +29,13 @@ class \hyperlink{classffnn_1_1layer_1_1_layer}{Layer}
 \begin{DoxyCompactList}\small\item\em Base object for all layer types. \end{DoxyCompactList}\item 
 class \hyperlink{classffnn_1_1layer_1_1_output}{Output}
 \begin{DoxyCompactList}\small\item\em A layer which handles network outputs. \end{DoxyCompactList}\item 
-class \hyperlink{classffnn_1_1layer_1_1_receptive_volume}{Receptive\-Volume}
-\item 
 class \hyperlink{classffnn_1_1layer_1_1_sparsely_connected}{Sparsely\-Connected}
 \begin{DoxyCompactList}\small\item\em A fully-\/connected layer. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
-enum \hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69a}{Embedding\-Mode} \{ \hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aa56bf723aeae4562f2fe05ae5e675da92}{Row\-Embedding} = 0, 
-\hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aaede1065f5863208cae7e55561966a182}{Col\-Embedding} = 1, 
-\hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aa56bf723aeae4562f2fe05ae5e675da92}{Row\-Embedding} = 0, 
-\hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aaede1065f5863208cae7e55561966a182}{Col\-Embedding} = 1
- \}
-\item 
-enum \hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69a}{Embedding\-Mode} \{ \hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aa56bf723aeae4562f2fe05ae5e675da92}{Row\-Embedding} = 0, 
-\hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aaede1065f5863208cae7e55561966a182}{Col\-Embedding} = 1, 
-\hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aa56bf723aeae4562f2fe05ae5e675da92}{Row\-Embedding} = 0, 
-\hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aaede1065f5863208cae7e55561966a182}{Col\-Embedding} = 1
+enum \hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69a}{Embedding\-Mode} \{ \hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aa91eb0d1f175a08e2b2991cae348c827d}{Row\-Embedding} = 0, 
+\hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aa42ac01b35d45fd60256ef5008c96c049}{Col\-Embedding} = 1
  \}
 \end{DoxyCompactItemize}
 \subsection*{Functions}
@@ -75,29 +57,9 @@ enum \hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69a}{Embedd
 \item[Enumerator]\par
 \begin{description}
 \index{Row\-Embedding@{Row\-Embedding}!ffnn\-::layer@{ffnn\-::layer}}\index{ffnn\-::layer@{ffnn\-::layer}!Row\-Embedding@{Row\-Embedding}}\item[{\em 
-\hypertarget{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aa56bf723aeae4562f2fe05ae5e675da92}{Row\-Embedding}\label{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aa56bf723aeae4562f2fe05ae5e675da92}
+\hypertarget{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aa91eb0d1f175a08e2b2991cae348c827d}{Row\-Embedding}\label{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aa91eb0d1f175a08e2b2991cae348c827d}
 }]Embed depth along filter matrix rows. \index{Col\-Embedding@{Col\-Embedding}!ffnn\-::layer@{ffnn\-::layer}}\index{ffnn\-::layer@{ffnn\-::layer}!Col\-Embedding@{Col\-Embedding}}\item[{\em 
-\hypertarget{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aaede1065f5863208cae7e55561966a182}{Col\-Embedding}\label{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aaede1065f5863208cae7e55561966a182}
-}]Embed depth along filter matrix cols. \index{Row\-Embedding@{Row\-Embedding}!ffnn\-::layer@{ffnn\-::layer}}\index{ffnn\-::layer@{ffnn\-::layer}!Row\-Embedding@{Row\-Embedding}}\item[{\em 
-\hypertarget{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aa56bf723aeae4562f2fe05ae5e675da92}{Row\-Embedding}\label{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aa56bf723aeae4562f2fe05ae5e675da92}
-}]Embed depth along filter matrix rows. \index{Col\-Embedding@{Col\-Embedding}!ffnn\-::layer@{ffnn\-::layer}}\index{ffnn\-::layer@{ffnn\-::layer}!Col\-Embedding@{Col\-Embedding}}\item[{\em 
-\hypertarget{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aaede1065f5863208cae7e55561966a182}{Col\-Embedding}\label{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aaede1065f5863208cae7e55561966a182}
-}]Embed depth along filter matrix cols. \end{description}
-\end{Desc}
-\hypertarget{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69a}{\index{ffnn\-::layer@{ffnn\-::layer}!Embedding\-Mode@{Embedding\-Mode}}
-\index{Embedding\-Mode@{Embedding\-Mode}!ffnn::layer@{ffnn\-::layer}}
-\subsubsection[{Embedding\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf ffnn\-::layer\-::\-Embedding\-Mode}}}\label{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69a}
-\begin{Desc}
-\item[Enumerator]\par
-\begin{description}
-\index{Row\-Embedding@{Row\-Embedding}!ffnn\-::layer@{ffnn\-::layer}}\index{ffnn\-::layer@{ffnn\-::layer}!Row\-Embedding@{Row\-Embedding}}\item[{\em 
-\hypertarget{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aa56bf723aeae4562f2fe05ae5e675da92}{Row\-Embedding}\label{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aa56bf723aeae4562f2fe05ae5e675da92}
-}]Embed depth along filter matrix rows. \index{Col\-Embedding@{Col\-Embedding}!ffnn\-::layer@{ffnn\-::layer}}\index{ffnn\-::layer@{ffnn\-::layer}!Col\-Embedding@{Col\-Embedding}}\item[{\em 
-\hypertarget{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aaede1065f5863208cae7e55561966a182}{Col\-Embedding}\label{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aaede1065f5863208cae7e55561966a182}
-}]Embed depth along filter matrix cols. \index{Row\-Embedding@{Row\-Embedding}!ffnn\-::layer@{ffnn\-::layer}}\index{ffnn\-::layer@{ffnn\-::layer}!Row\-Embedding@{Row\-Embedding}}\item[{\em 
-\hypertarget{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aa56bf723aeae4562f2fe05ae5e675da92}{Row\-Embedding}\label{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aa56bf723aeae4562f2fe05ae5e675da92}
-}]Embed depth along filter matrix rows. \index{Col\-Embedding@{Col\-Embedding}!ffnn\-::layer@{ffnn\-::layer}}\index{ffnn\-::layer@{ffnn\-::layer}!Col\-Embedding@{Col\-Embedding}}\item[{\em 
-\hypertarget{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aaede1065f5863208cae7e55561966a182}{Col\-Embedding}\label{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aaede1065f5863208cae7e55561966a182}
+\hypertarget{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aa42ac01b35d45fd60256ef5008c96c049}{Col\-Embedding}\label{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aa42ac01b35d45fd60256ef5008c96c049}
 }]Embed depth along filter matrix cols. \end{description}
 \end{Desc}
 

@@ -5,13 +5,28 @@
 
 {\ttfamily \#include \char`\"{}distribution.\-h\char`\"{}}
 
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\-::true\-\_\-type \hyperlink{classffnn_1_1distribution_1_1_distribution_aa553d99dbb2eb2ed0633a916c6ba04ea}{Is\-Distribution}
+\begin{DoxyCompactList}\small\item\em Require that Value\-Type is floating point. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-virtual Value\-Type \hyperlink{classffnn_1_1distribution_1_1_distribution_a62760bdfd46cdc21c2a7ab137b491508}{generate} ()=0
-\begin{DoxyCompactList}\small\item\em Require that Value\-Type is floating point. \end{DoxyCompactList}\item 
+virtual Value\-Type \hyperlink{classffnn_1_1distribution_1_1_distribution_adfbfb073a8df2f255961aa44743aaddb}{generate} () const =0
+\begin{DoxyCompactList}\small\item\em Generates a random value according to given distribution. \end{DoxyCompactList}\item 
 virtual Value\-Type \hyperlink{classffnn_1_1distribution_1_1_distribution_abd2db033dd692d4b78915734c5c02204}{cdf} (const Value\-Type \&value) const =0
 \begin{DoxyCompactList}\small\item\em Computes C\-D\-F of distribution at specified point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classffnn_1_1distribution_1_1_distribution_aa553d99dbb2eb2ed0633a916c6ba04ea}{\index{ffnn\-::distribution\-::\-Distribution@{ffnn\-::distribution\-::\-Distribution}!Is\-Distribution@{Is\-Distribution}}
+\index{Is\-Distribution@{Is\-Distribution}!ffnn::distribution::Distribution@{ffnn\-::distribution\-::\-Distribution}}
+\subsubsection[{Is\-Distribution}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type $>$ typedef std\-::true\-\_\-type {\bf ffnn\-::distribution\-::\-Distribution}$<$ Value\-Type $>$\-::{\bf Is\-Distribution}}}\label{classffnn_1_1distribution_1_1_distribution_aa553d99dbb2eb2ed0633a916c6ba04ea}
+
+
+Require that Value\-Type is floating point. 
+
 
 
 \subsection{Member Function Documentation}
@@ -34,24 +49,17 @@ Computes C\-D\-F of distribution at specified point.
 \begin{DoxyReturn}{Returns}
 cumulative probability 
 \end{DoxyReturn}
-\hypertarget{classffnn_1_1distribution_1_1_distribution_a62760bdfd46cdc21c2a7ab137b491508}{\index{ffnn\-::distribution\-::\-Distribution@{ffnn\-::distribution\-::\-Distribution}!generate@{generate}}
+\hypertarget{classffnn_1_1distribution_1_1_distribution_adfbfb073a8df2f255961aa44743aaddb}{\index{ffnn\-::distribution\-::\-Distribution@{ffnn\-::distribution\-::\-Distribution}!generate@{generate}}
 \index{generate@{generate}!ffnn::distribution::Distribution@{ffnn\-::distribution\-::\-Distribution}}
 \subsubsection[{generate}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type $>$ virtual Value\-Type {\bf ffnn\-::distribution\-::\-Distribution}$<$ Value\-Type $>$\-::generate (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classffnn_1_1distribution_1_1_distribution_a62760bdfd46cdc21c2a7ab137b491508}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classffnn_1_1distribution_1_1_distribution_adfbfb073a8df2f255961aa44743aaddb}
 
 
-Require that Value\-Type is floating point. 
+Generates a random value according to given distribution. 
 
-Generates a random value 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em input} & a scalar input value \\
-\hline
-\mbox{\tt in,out}  & {\em output} & a scalar output value \\
-\hline
-\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}

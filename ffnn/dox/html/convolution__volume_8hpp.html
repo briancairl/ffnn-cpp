@@ -88,13 +88,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#define-members">Macros</a>  </div>
+<a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
 <div class="title">convolution_volume.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="assert_8h_source.html">ffnn/assert.h</a>&gt;</code><br/>
+<div class="textblock"><code>#include &lt;exception&gt;</code><br/>
+<code>#include &lt;boost/bind.hpp&gt;</code><br/>
+<code>#include &lt;<a class="el" href="assert_8h_source.html">ffnn/assert.h</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="logging_8h_source.html">ffnn/logging.h</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="internal_2signature_8h_source.html">ffnn/internal/signature.h</a>&gt;</code><br/>
 </div><div class="textblock"><div class="dynheader">
@@ -102,7 +103,7 @@ Include dependency graph for convolution_volume.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="convolution__volume_8hpp__incl.png" border="0" usemap="#_2home_2briancairl_2packages_2src_2ffnn-cpp_2ffnn_2include_2ffnn_2layer_2impl_2convolution__volume_8hpp" alt=""/></div>
 <map name="_2home_2briancairl_2packages_2src_2ffnn-cpp_2ffnn_2include_2ffnn_2layer_2impl_2convolution__volume_8hpp" id="_2home_2briancairl_2packages_2src_2ffnn-cpp_2ffnn_2include_2ffnn_2layer_2impl_2convolution__volume_8hpp">
-<area shape="rect" id="node2" href="assert_8h.html" title="ffnn/assert.h" alt="" coords="354,125,448,152"/><area shape="rect" id="node6" href="logging_8h.html" title="ffnn/logging.h" alt="" coords="266,283,365,309"/><area shape="rect" id="node17" href="internal_2signature_8h.html" title="ffnn/internal/signature.h" alt="" coords="89,125,247,152"/><area shape="rect" id="node4" href="global_8h.html" title="ffnn/config/global.h" alt="" coords="953,200,1084,227"/><area shape="rect" id="node13" href="sparse__triplet__serialization_8h.html" title="ffnn/internal/eigen\l/sparse_triplet_serialization.h" alt="" coords="842,275,1032,317"/></map>
+<area shape="rect" id="node4" href="assert_8h.html" title="ffnn/assert.h" alt="" coords="627,125,721,152"/><area shape="rect" id="node7" href="logging_8h.html" title="ffnn/logging.h" alt="" coords="5,283,104,309"/><area shape="rect" id="node18" href="internal_2signature_8h.html" title="ffnn/internal/signature.h" alt="" coords="810,125,968,152"/><area shape="rect" id="node5" href="global_8h.html" title="ffnn/config/global.h" alt="" coords="603,200,735,227"/><area shape="rect" id="node14" href="sparse__triplet__serialization_8h.html" title="ffnn/internal/eigen\l/sparse_triplet_serialization.h" alt="" coords="907,275,1097,317"/></map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
@@ -120,49 +121,11 @@ Namespaces</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespaceffnn_1_1layer"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceffnn_1_1layer.html">ffnn::layer</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:af6cd5a2c0574bdc1e2ee04974964a7ac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="convolution__volume_8hpp.html#af6cd5a2c0574bdc1e2ee04974964a7ac">CONVOLUTION_VOLUME_TARGS</a></td></tr>
-<tr class="separator:af6cd5a2c0574bdc1e2ee04974964a7ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa7cdd6e5c7ad277b5abf4e20835a23c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="convolution__volume_8hpp.html#aaa7cdd6e5c7ad277b5abf4e20835a23c">CONVOLUTION_VOLUME</a>&#160;&#160;&#160;ConvolutionVolume&lt;<a class="el" href="convolution__volume_8hpp.html#af6cd5a2c0574bdc1e2ee04974964a7ac">CONVOLUTION_VOLUME_TARGS</a>&gt;</td></tr>
-<tr class="separator:aaa7cdd6e5c7ad277b5abf4e20835a23c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="aaa7cdd6e5c7ad277b5abf4e20835a23c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CONVOLUTION_VOLUME&#160;&#160;&#160;ConvolutionVolume&lt;<a class="el" href="convolution__volume_8hpp.html#af6cd5a2c0574bdc1e2ee04974964a7ac">CONVOLUTION_VOLUME_TARGS</a>&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="af6cd5a2c0574bdc1e2ee04974964a7ac"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CONVOLUTION_VOLUME_TARGS</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">ValueType,\</div>
-<div class="line">                                 HeightAtCompileTime,\</div>
-<div class="line">                                 WidthAtCompileTime,\</div>
-<div class="line">                                 DepthAtCompileTime,\</div>
-<div class="line">                                 FilterCountAtCompileTime,\</div>
-<div class="line">                                 Mode</div>
-</div><!-- fragment -->
-</div>
-</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed May 10 2017 17:22:46 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 11 2017 11:34:22 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -109,11 +109,8 @@ bool SparselyConnected<TARGS>::initialize(const WeightDistribution& wd,
 
       // Set layer biases
       {
-        auto coeffInitfn = [](ValueType x, const BiasDistribution& dist)
-        {
-          return dist.generate();
-        };
-        b_ = b_.unaryExpr(boost::bind<ValueType>(coeffInitfn, _1, bd));
+        auto fn = [](ValueType x, const BiasDistribution& dist) {return dist.generate();};
+        b_ = b_.unaryExpr(boost::bind<ValueType>(fn, _1, bd));
       }
       return true;
     }

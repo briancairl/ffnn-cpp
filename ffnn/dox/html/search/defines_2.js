@@ -18,6 +18,7 @@ var searchData=
   ['ffnn_5fserialization_5fversion_5ftype',['FFNN_SERIALIZATION_VERSION_TYPE',['../global_8h.html#a0678a9de3e627b6d8dbba2f2733b4bab',1,'global.h']]],
   ['ffnn_5fsize_5ftype',['FFNN_SIZE_TYPE',['../global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65',1,'global.h']]],
   ['ffnn_5fstatic_5fassert_5fmsg',['FFNN_STATIC_ASSERT_MSG',['../assert_8h.html#a2b49bd7cbe87713cc51996494f3c4fd5',1,'assert.h']]],
+  ['ffnn_5fstatic_5fruntime_5fassert_5fmsg',['FFNN_STATIC_RUNTIME_ASSERT_MSG',['../assert_8h.html#aad64ee3fe6ac7c17c2a7b02318563b21',1,'assert.h']]],
   ['ffnn_5fwarn',['FFNN_WARN',['../logging_8h.html#a828fa47e8eacc1dfaf7dc258feccd621',1,'logging.h']]],
   ['ffnn_5fwarn_5fnamed',['FFNN_WARN_NAMED',['../logging_8h.html#aabf5ff82064ef58a239a35b444685955',1,'logging.h']]]
 ];

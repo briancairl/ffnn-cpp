@@ -6,8 +6,8 @@ var searchData=
   ['none',['None',['../classffnn_1_1optimizer_1_1_none.html',1,'ffnn::optimizer']]],
   ['none',['None',['../classffnn_1_1optimizer_1_1_none.html#ae5ba72205a7f11508de871d6c3f1081f',1,'ffnn::optimizer::None']]],
   ['none_2eh',['none.h',['../none_8h.html',1,'']]],
-  ['normal',['Normal',['../classffnn_1_1distribution_1_1_normal.html#ac4fa253a18700c58490493e998539d85',1,'ffnn::distribution::Normal']]],
+  ['normal',['Normal',['../classffnn_1_1distribution_1_1_normal.html#ae5838a524f4cbb4723c7b847da48748e',1,'ffnn::distribution::Normal']]],
   ['normal',['Normal',['../classffnn_1_1distribution_1_1_normal.html',1,'ffnn::distribution']]],
   ['normal_2eh',['normal.h',['../normal_8h.html',1,'']]],
-  ['normal_3c_20valuetype_2c_20standardnormalparameters_3c_20valuetype_20_3e_20_3e',['Normal&lt; ValueType, StandardNormalParameters&lt; ValueType &gt; &gt;',['../classffnn_1_1distribution_1_1_normal.html',1,'ffnn::distribution']]]
+  ['normal_3c_20valuetype_20_3e',['Normal&lt; ValueType &gt;',['../classffnn_1_1distribution_1_1_normal.html',1,'ffnn::distribution']]]
 ];

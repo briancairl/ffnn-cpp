@@ -69,8 +69,8 @@ TEST(TestLayerFullyConnectedWithOptimizers, GradientDescent)
 
   // Intializer layers
   input->initialize();
-  hidden->initialize(ffnn::distribution::Normal<float>(0, 0.1),
-                     ffnn::distribution::Normal<float>(0, 0.1));
+  hidden->initialize(ffnn::distribution::Normal<float>(0, 1.0 / (DIM*DIM)),
+                     ffnn::distribution::Normal<float>(0, 1.0 / (DIM*DIM)));
   output->initialize();
 
   // Initialize and check all layers and 
@@ -165,8 +165,8 @@ TEST(TestLayerFullyConnectedActivationWithOptimizers, GradientDescent)
 
   // Intializer layers
   input->initialize();
-  hidden1->initialize(ffnn::distribution::Normal<float>(0, 0.1),
-                      ffnn::distribution::Normal<float>(0, 0.1));
+  hidden1->initialize(ffnn::distribution::Normal<float>(0, 1.0 / (DIM*DIM)),
+                      ffnn::distribution::Normal<float>(0, 1.0 / (DIM*DIM)));
   hidden2->initialize();
   output->initialize();
 

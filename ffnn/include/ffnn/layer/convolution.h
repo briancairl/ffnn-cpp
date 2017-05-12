@@ -54,7 +54,7 @@ template <typename ValueType,
           FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic,
           FFNN_SIZE_TYPE StrideAtCompileTime = 1,
           EmbeddingMode Mode = ColEmbedding,
-          class _HiddenLayerShape =
+          typename _HiddenLayerShape =
             hidden_layer_shape<
               embed_dimension<Mode, ColEmbedding>(HeightAtCompileTime, DepthAtCompileTime),
               embed_dimension<Mode, RowEmbedding>(WidthAtCompileTime,  DepthAtCompileTime),

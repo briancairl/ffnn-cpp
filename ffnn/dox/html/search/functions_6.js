@@ -1,10 +1,11 @@
 var searchData=
 [
-  ['generate',['generate',['../classffnn_1_1distribution_1_1_distribution.html#a62760bdfd46cdc21c2a7ab137b491508',1,'ffnn::distribution::Distribution::generate()'],['../classffnn_1_1distribution_1_1_normal.html#a60ac62a307b2b6efd94c3b9ebc69d4eb',1,'ffnn::distribution::Normal::generate()']]],
+  ['generate',['generate',['../classffnn_1_1distribution_1_1_distribution.html#adfbfb073a8df2f255961aa44743aaddb',1,'ffnn::distribution::Distribution::generate()'],['../classffnn_1_1distribution_1_1_normal.html#abaaeca05e27923d319a452b78dda379b',1,'ffnn::distribution::Normal::generate()']]],
   ['getbackwarderrorbuffer',['getBackwardErrorBuffer',['../classffnn_1_1layer_1_1_layer.html#a0caad62750e9610e607fb18d87df63b8',1,'ffnn::layer::Layer']]],
-  ['getbiases',['getBiases',['../classffnn_1_1layer_1_1_convolution_volume.html#ae1dbed16d230d7ecc8d05e82cc5b087b',1,'ffnn::layer::ConvolutionVolume::getBiases()'],['../classffnn_1_1layer_1_1_fully_connected.html#af7492d5d678fd45466d7768ab187a41e',1,'ffnn::layer::FullyConnected::getBiases()'],['../classffnn_1_1layer_1_1_receptive_volume.html#a8fc32191a95ef94a0fa6d0366f69cf80',1,'ffnn::layer::ReceptiveVolume::getBiases()']]],
+  ['getbiases',['getBiases',['../classffnn_1_1layer_1_1_convolution_volume.html#ae1dbed16d230d7ecc8d05e82cc5b087b',1,'ffnn::layer::ConvolutionVolume::getBiases()'],['../classffnn_1_1layer_1_1_fully_connected.html#af7492d5d678fd45466d7768ab187a41e',1,'ffnn::layer::FullyConnected::getBiases()']]],
   ['getconvolutionvolumes',['getConvolutionVolumes',['../classffnn_1_1layer_1_1_convolution.html#ab7cd47d35f92a5dbc439a33a9af8ce97',1,'ffnn::layer::Convolution']]],
-  ['getfilters',['getFilters',['../classffnn_1_1layer_1_1_convolution_volume.html#a9c0858bc9ec53071a5d0eb083772d9ac',1,'ffnn::layer::ConvolutionVolume::getFilters()'],['../classffnn_1_1layer_1_1_receptive_volume.html#a12e9b530df6207faef15c49e63086047',1,'ffnn::layer::ReceptiveVolume::getFilters()']]],
+  ['getfilters',['getFilters',['../classffnn_1_1layer_1_1_convolution_volume.html#a9c0858bc9ec53071a5d0eb083772d9ac',1,'ffnn::layer::ConvolutionVolume']]],
+  ['getforwarderrormapping',['getForwardErrorMapping',['../classffnn_1_1layer_1_1_convolution_volume.html#a70c050c2f7ad88186b3e6cd325567a84',1,'ffnn::layer::ConvolutionVolume']]],
   ['getid',['getID',['../classffnn_1_1traits_1_1_unique.html#ab6971fdaf349b0a42a8c5627cf7b6f58',1,'ffnn::traits::Unique']]],
   ['getinputbuffer',['getInputBuffer',['../classffnn_1_1layer_1_1_layer.html#a8049c939bc452bd5453227d1ce1a35f3',1,'ffnn::layer::Layer']]],
   ['getweights',['getWeights',['../classffnn_1_1layer_1_1_fully_connected.html#a96e00e6f6fec19f22a8830e5342bc7ef',1,'ffnn::layer::FullyConnected']]],

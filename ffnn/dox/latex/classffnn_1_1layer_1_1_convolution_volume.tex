@@ -23,11 +23,6 @@ Collaboration diagram for ffnn\-:\-:layer\-:\-:Convolution\-Volume$<$ Value\-Typ
 \includegraphics[width=294pt]{classffnn_1_1layer_1_1_convolution_volume__coll__graph}
 \end{center}
 \end{figure}
-\subsection*{Classes}
-\begin{DoxyCompactItemize}
-\item 
-struct \hyperlink{structffnn_1_1layer_1_1_convolution_volume_1_1_parameters}{Parameters}
-\begin{DoxyCompactList}\small\item\em A configuration object for a \hyperlink{classffnn_1_1layer_1_1_fully_connected}{Fully\-Connected} hidden layer. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
@@ -45,13 +40,13 @@ typedef \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a945709b1d0ea54a
 \begin{DoxyCompactList}\small\item\em Dimension type standardization. \end{DoxyCompactList}\item 
 typedef Eigen\-::\-Matrix\\*
 $<$ Value\-Type, \hyperlink{namespaceffnn_1_1layer_ad128f693900faa5bcf2cdd0ef8e7eee6}{embed\-\_\-dimension}\\*
-$<$ Mode, \hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aaede1065f5863208cae7e55561966a182}{Col\-Embedding} $>$\\*
+$<$ Mode, \hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aa42ac01b35d45fd60256ef5008c96c049}{Col\-Embedding} $>$\\*
 Height\-At\-Compile\-Time, \\*
 Depth\-At\-Compile\-Time), \\*
 \hyperlink{namespaceffnn_1_1layer_ad128f693900faa5bcf2cdd0ef8e7eee6}{embed\-\_\-dimension}$<$ Mode, \\*
-\hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aa56bf723aeae4562f2fe05ae5e675da92}{Row\-Embedding} $>$\\*
+\hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aa91eb0d1f175a08e2b2991cae348c827d}{Row\-Embedding} $>$\\*
 Width\-At\-Compile\-Time, \\*
-Depth\-At\-Compile\-Time), Mode==\hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aaede1065f5863208cae7e55561966a182}{Col\-Embedding}?Eigen\-::\-Col\-Major\-:\-Eigen\-::\-Row\-Major $>$ \hyperlink{classffnn_1_1layer_1_1_convolution_volume_ad928a402aa7aa7e5fb3cd5b7f088f73e}{Kernel\-Matrix\-Type}
+Depth\-At\-Compile\-Time), Mode==\hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aa42ac01b35d45fd60256ef5008c96c049}{Col\-Embedding}?Eigen\-::\-Col\-Major\-:\-Eigen\-::\-Row\-Major $>$ \hyperlink{classffnn_1_1layer_1_1_convolution_volume_ad928a402aa7aa7e5fb3cd5b7f088f73e}{Kernel\-Matrix\-Type}
 \begin{DoxyCompactList}\small\item\em Filter kernel matrix standardization. \end{DoxyCompactList}\item 
 typedef Eigen\-::\-Matrix\\*
 $<$ Value\-Type, \\*
@@ -66,31 +61,27 @@ $<$ \hyperlink{classffnn_1_1layer_1_1_convolution_volume_ad928a402aa7aa7e5fb3cd5
 \item 
 \hyperlink{classffnn_1_1layer_1_1_convolution_volume_a88d8d17c780f2b1bd3abe86c9daa432f}{Convolution\-Volume} (const \hyperlink{classffnn_1_1layer_1_1_convolution_volume_ae31080a107422dcfaff38eafadd69494}{Shape\-Type} \&filter\-\_\-shape=\hyperlink{classffnn_1_1layer_1_1_convolution_volume_ae31080a107422dcfaff38eafadd69494}{Shape\-Type}(Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time), const \hyperlink{classffnn_1_1layer_1_1_convolution_volume_abddc276f0405f5c0d70de3e43c2824d9}{Size\-Type} \&filter\-\_\-count=Filter\-Count\-At\-Compile\-Time)
 \item 
-virtual \hyperlink{classffnn_1_1layer_1_1_convolution_volume_abb83c5a7c16175e838a3cfdc98f8eb0c}{$\sim$\-Convolution\-Volume} ()
+virtual \hyperlink{classffnn_1_1layer_1_1_convolution_volume_aae850d568162b8f74cd1ef134d0a88bf}{$\sim$\-Convolution\-Volume} ()
 \item 
-void \hyperlink{classffnn_1_1layer_1_1_convolution_volume_abf9ca7c7901a909ee924f3bca9e1f4cd}{set\-Output\-Mapping} (Value\-Type $\ast$const ptr)
-\begin{DoxyCompactList}\small\item\em Sets memory map to contiguous output buffer. \end{DoxyCompactList}\item 
-void \hyperlink{classffnn_1_1layer_1_1_convolution_volume_a2a823c2b00b1f62d6a6a616be653c266}{set\-Backward\-Error\-Mapping} (Value\-Type $\ast$const ptr)
-\begin{DoxyCompactList}\small\item\em Sets memory map to contiguous backward-\/error buffer. \end{DoxyCompactList}\item 
-bool \hyperlink{classffnn_1_1layer_1_1_convolution_volume_ae80c8f441de89f0ac4c089a17e43970c}{initialize} ()
-\begin{DoxyCompactList}\small\item\em Initialize the volume. \end{DoxyCompactList}\item 
-bool \hyperlink{classffnn_1_1layer_1_1_convolution_volume_a09808deb1aac6c1eb556de86838eef08}{initialize} (const \hyperlink{structffnn_1_1layer_1_1_convolution_volume_1_1_parameters}{Parameters} \&config)
-\item 
-void \hyperlink{classffnn_1_1layer_1_1_convolution_volume_adab425ba7e60e232ea4a3ccab49171d6}{reset} (const \hyperlink{structffnn_1_1layer_1_1_convolution_volume_1_1_parameters}{Parameters} \&config=\hyperlink{structffnn_1_1layer_1_1_convolution_volume_1_1_parameters}{Parameters}())
-\begin{DoxyCompactList}\small\item\em Reset filter weights and biases. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Input\-Block\-Type $>$ }\\void \hyperlink{classffnn_1_1layer_1_1_convolution_volume_a0145b555b05e8f0e5d7e5a740f21a890}{forward} (const Eigen\-::\-Matrix\-Base$<$ Input\-Block\-Type $>$ \&input)
+{\footnotesize template$<$typename Weight\-Distribution , typename Bias\-Distribution $>$ }\\bool \hyperlink{classffnn_1_1layer_1_1_convolution_volume_a6a93e80ff524cb501e106cff63819165}{initialize} (const Weight\-Distribution \&wd, const Bias\-Distribution \&bd)
+\begin{DoxyCompactList}\small\item\em Initialize volume weights and biases according to particular distributions. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Input\-Block\-Type $>$ }\\void \hyperlink{classffnn_1_1layer_1_1_convolution_volume_ad4659abd7e536b6b7e6c61ae2a0299b1}{forward} (const Eigen\-::\-Block$<$ Input\-Block\-Type $>$ \&input)
 \begin{DoxyCompactList}\small\item\em Performs forward value propagation. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Input\-Block\-Type , typename Forward\-Error\-Block\-Type $>$ }\\void \hyperlink{classffnn_1_1layer_1_1_convolution_volume_a0c69cf588f0d3b656f17d4c7e2229a1b}{backward} (const Eigen\-::\-Matrix\-Base$<$ Input\-Block\-Type $>$ \&input, const Eigen\-::\-Matrix\-Base$<$ Forward\-Error\-Block\-Type $>$ \&forward\-\_\-error)
-\begin{DoxyCompactList}\small\item\em Performs backward error propagation. \end{DoxyCompactList}\item 
 const \hyperlink{classffnn_1_1layer_1_1_convolution_volume_ac2655aee05415e5ffc76cf7b0ba64e61}{Bias\-Vector\-Type} \& \hyperlink{classffnn_1_1layer_1_1_convolution_volume_ae1dbed16d230d7ecc8d05e82cc5b087b}{get\-Biases} () const 
 \begin{DoxyCompactList}\small\item\em Exposes internal biasing weights. \end{DoxyCompactList}\item 
 const \hyperlink{classffnn_1_1layer_1_1_convolution_volume_a73cb805b7ffa2bc96461412e1cf958f9}{Filter\-Bank\-Type} \& \hyperlink{classffnn_1_1layer_1_1_convolution_volume_a9c0858bc9ec53071a5d0eb083772d9ac}{get\-Filters} () const 
 \begin{DoxyCompactList}\small\item\em Exposes internal filters. \end{DoxyCompactList}\item 
+void \hyperlink{classffnn_1_1layer_1_1_convolution_volume_abf9ca7c7901a909ee924f3bca9e1f4cd}{set\-Output\-Mapping} (Value\-Type $\ast$const ptr)
+\begin{DoxyCompactList}\small\item\em Sets memory map to contiguous output buffer. \end{DoxyCompactList}\item 
+void \hyperlink{classffnn_1_1layer_1_1_convolution_volume_a089d53d3244e88f9220ed465b0f1d80e}{set\-Forward\-Error\-Mapping} (Value\-Type $\ast$const ptr)
+\begin{DoxyCompactList}\small\item\em Sets memory map to contiguous backward-\/error buffer. \end{DoxyCompactList}\item 
+const Value\-Type $\ast$ \hyperlink{classffnn_1_1layer_1_1_convolution_volume_a70c050c2f7ad88186b3e6cd325567a84}{get\-Forward\-Error\-Mapping} () const 
+\begin{DoxyCompactList}\small\item\em Gets memory map to contiguous backward-\/error buffer. \end{DoxyCompactList}\item 
 void \hyperlink{classffnn_1_1layer_1_1_convolution_volume_a52d21f4ee6b841d154b1dc63bd3ed4bf}{save} (\hyperlink{classffnn_1_1traits_1_1_serializable_a08d986df75d363fa79506d4f6045cb9f}{Output\-Archive} \&ar, \hyperlink{classffnn_1_1traits_1_1_serializable_a08924b3b7d20cb3cb6eafe517d4f7b30}{Version\-Type} version) const 
 \begin{DoxyCompactList}\small\item\em Save serializer. \end{DoxyCompactList}\item 
 void \hyperlink{classffnn_1_1layer_1_1_convolution_volume_a77f5965e61f450d0fe72fa091a3e667a}{load} (\hyperlink{classffnn_1_1traits_1_1_serializable_a6e626759259f8f370dd4303b4441a234}{Input\-Archive} \&ar, \hyperlink{classffnn_1_1traits_1_1_serializable_a08924b3b7d20cb3cb6eafe517d4f7b30}{Version\-Type} version)
 \begin{DoxyCompactList}\small\item\em Load serializer. \end{DoxyCompactList}\item 
-\hyperlink{classffnn_1_1layer_1_1_convolution_volume_a878f19e1509567f2fe5c39c7b5c95f92}{E\-I\-G\-E\-N\-\_\-\-M\-A\-K\-E\-\_\-\-A\-L\-I\-G\-N\-E\-D\-\_\-\-O\-P\-E\-R\-A\-T\-O\-R\-\_\-\-N\-E\-W\-\_\-\-I\-F} (\hyperlink{structffnn_1_1layer_1_1is__alignable__128}{is\-\_\-alignable\-\_\-128}$<$ \hyperlink{classffnn_1_1layer_1_1_convolution_volume_ac2655aee05415e5ffc76cf7b0ba64e61}{Bias\-Vector\-Type} $>$\-::value)
+\hyperlink{classffnn_1_1layer_1_1_convolution_volume_a30a1ab41943208bc7655ae323f99d2e2}{E\-I\-G\-E\-N\-\_\-\-M\-A\-K\-E\-\_\-\-A\-L\-I\-G\-N\-E\-D\-\_\-\-O\-P\-E\-R\-A\-T\-O\-R\-\_\-\-N\-E\-W\-\_\-\-I\-F} (\hyperlink{structffnn_1_1layer_1_1internal_1_1is__alignable__128}{internal\-::is\-\_\-alignable\-\_\-128}$<$ \hyperlink{classffnn_1_1layer_1_1_convolution_volume_ac2655aee05415e5ffc76cf7b0ba64e61}{Bias\-Vector\-Type} $>$\-::value)
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
@@ -98,63 +89,63 @@ void \hyperlink{classffnn_1_1layer_1_1_convolution_volume_a77f5965e61f450d0fe72f
 \subsection{Member Typedef Documentation}
 \hypertarget{classffnn_1_1layer_1_1_convolution_volume_aca83c6f7b34f8865682859f2e096858d}{\index{ffnn\-::layer\-::\-Convolution\-Volume@{ffnn\-::layer\-::\-Convolution\-Volume}!Base@{Base}}
 \index{Base@{Base}!ffnn::layer::ConvolutionVolume@{ffnn\-::layer\-::\-Convolution\-Volume}}
-\subsubsection[{Base}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, Embedding\-Mode Mode = Col\-Embedding$>$ using {\bf ffnn\-::layer\-::\-Convolution\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Mode $>$\-::{\bf Base} =  {\bf internal\-::\-Interface}$<$Value\-Type$>$}}\label{classffnn_1_1layer_1_1_convolution_volume_aca83c6f7b34f8865682859f2e096858d}
+\subsubsection[{Base}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, Embedding\-Mode Mode = Col\-Embedding$>$ using {\bf ffnn\-::layer\-::\-Convolution\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Mode $>$\-::{\bf Base} =  {\bf internal\-::\-Interface}$<$Value\-Type$>$}}\label{classffnn_1_1layer_1_1_convolution_volume_aca83c6f7b34f8865682859f2e096858d}
 
 
 Base type alias. 
 
 \hypertarget{classffnn_1_1layer_1_1_convolution_volume_ac2655aee05415e5ffc76cf7b0ba64e61}{\index{ffnn\-::layer\-::\-Convolution\-Volume@{ffnn\-::layer\-::\-Convolution\-Volume}!Bias\-Vector\-Type@{Bias\-Vector\-Type}}
 \index{Bias\-Vector\-Type@{Bias\-Vector\-Type}!ffnn::layer::ConvolutionVolume@{ffnn\-::layer\-::\-Convolution\-Volume}}
-\subsubsection[{Bias\-Vector\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, Embedding\-Mode Mode = Col\-Embedding$>$ typedef Eigen\-::\-Matrix$<$Value\-Type, Filter\-Count\-At\-Compile\-Time, 1, Eigen\-::\-Col\-Major$>$ {\bf ffnn\-::layer\-::\-Convolution\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Mode $>$\-::{\bf Bias\-Vector\-Type}}}\label{classffnn_1_1layer_1_1_convolution_volume_ac2655aee05415e5ffc76cf7b0ba64e61}
+\subsubsection[{Bias\-Vector\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, Embedding\-Mode Mode = Col\-Embedding$>$ typedef Eigen\-::\-Matrix$<$Value\-Type, Filter\-Count\-At\-Compile\-Time, 1, Eigen\-::\-Col\-Major$>$ {\bf ffnn\-::layer\-::\-Convolution\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Mode $>$\-::{\bf Bias\-Vector\-Type}}}\label{classffnn_1_1layer_1_1_convolution_volume_ac2655aee05415e5ffc76cf7b0ba64e61}
 
 
 Bias vector type standardization. 
 
 \hypertarget{classffnn_1_1layer_1_1_convolution_volume_a73cb805b7ffa2bc96461412e1cf958f9}{\index{ffnn\-::layer\-::\-Convolution\-Volume@{ffnn\-::layer\-::\-Convolution\-Volume}!Filter\-Bank\-Type@{Filter\-Bank\-Type}}
 \index{Filter\-Bank\-Type@{Filter\-Bank\-Type}!ffnn::layer::ConvolutionVolume@{ffnn\-::layer\-::\-Convolution\-Volume}}
-\subsubsection[{Filter\-Bank\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, Embedding\-Mode Mode = Col\-Embedding$>$ typedef {\bf Filter\-Bank}$<${\bf Kernel\-Matrix\-Type}$>$ {\bf ffnn\-::layer\-::\-Convolution\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Mode $>$\-::{\bf Filter\-Bank\-Type}}}\label{classffnn_1_1layer_1_1_convolution_volume_a73cb805b7ffa2bc96461412e1cf958f9}
+\subsubsection[{Filter\-Bank\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, Embedding\-Mode Mode = Col\-Embedding$>$ typedef {\bf Filter\-Bank}$<${\bf Kernel\-Matrix\-Type}$>$ {\bf ffnn\-::layer\-::\-Convolution\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Mode $>$\-::{\bf Filter\-Bank\-Type}}}\label{classffnn_1_1layer_1_1_convolution_volume_a73cb805b7ffa2bc96461412e1cf958f9}
 
 
 Filter collection type standardization. 
 
 \hypertarget{classffnn_1_1layer_1_1_convolution_volume_ad928a402aa7aa7e5fb3cd5b7f088f73e}{\index{ffnn\-::layer\-::\-Convolution\-Volume@{ffnn\-::layer\-::\-Convolution\-Volume}!Kernel\-Matrix\-Type@{Kernel\-Matrix\-Type}}
 \index{Kernel\-Matrix\-Type@{Kernel\-Matrix\-Type}!ffnn::layer::ConvolutionVolume@{ffnn\-::layer\-::\-Convolution\-Volume}}
-\subsubsection[{Kernel\-Matrix\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, Embedding\-Mode Mode = Col\-Embedding$>$ typedef Eigen\-::\-Matrix$<$Value\-Type, {\bf embed\-\_\-dimension}$<$Mode, {\bf Col\-Embedding}$>$Height\-At\-Compile\-Time, Depth\-At\-Compile\-Time), {\bf embed\-\_\-dimension}$<$Mode, {\bf Row\-Embedding}$>$Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time), Mode == {\bf Col\-Embedding} ? Eigen\-::\-Col\-Major \-: Eigen\-::\-Row\-Major$>$ {\bf ffnn\-::layer\-::\-Convolution\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Mode $>$\-::{\bf Kernel\-Matrix\-Type}}}\label{classffnn_1_1layer_1_1_convolution_volume_ad928a402aa7aa7e5fb3cd5b7f088f73e}
+\subsubsection[{Kernel\-Matrix\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, Embedding\-Mode Mode = Col\-Embedding$>$ typedef Eigen\-::\-Matrix$<$Value\-Type, {\bf embed\-\_\-dimension}$<$Mode, {\bf Col\-Embedding}$>$Height\-At\-Compile\-Time, Depth\-At\-Compile\-Time), {\bf embed\-\_\-dimension}$<$Mode, {\bf Row\-Embedding}$>$Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time), Mode == {\bf Col\-Embedding} ? Eigen\-::\-Col\-Major \-: Eigen\-::\-Row\-Major$>$ {\bf ffnn\-::layer\-::\-Convolution\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Mode $>$\-::{\bf Kernel\-Matrix\-Type}}}\label{classffnn_1_1layer_1_1_convolution_volume_ad928a402aa7aa7e5fb3cd5b7f088f73e}
 
 
 Filter kernel matrix standardization. 
 
 \hypertarget{classffnn_1_1layer_1_1_convolution_volume_a17bdd4d0402730cbc4cd491cb8c3bdfd}{\index{ffnn\-::layer\-::\-Convolution\-Volume@{ffnn\-::layer\-::\-Convolution\-Volume}!Offset\-Type@{Offset\-Type}}
 \index{Offset\-Type@{Offset\-Type}!ffnn::layer::ConvolutionVolume@{ffnn\-::layer\-::\-Convolution\-Volume}}
-\subsubsection[{Offset\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, Embedding\-Mode Mode = Col\-Embedding$>$ typedef {\bf Base\-::\-Offset\-Type} {\bf ffnn\-::layer\-::\-Convolution\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Mode $>$\-::{\bf Offset\-Type}}}\label{classffnn_1_1layer_1_1_convolution_volume_a17bdd4d0402730cbc4cd491cb8c3bdfd}
+\subsubsection[{Offset\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, Embedding\-Mode Mode = Col\-Embedding$>$ typedef {\bf Base\-::\-Offset\-Type} {\bf ffnn\-::layer\-::\-Convolution\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Mode $>$\-::{\bf Offset\-Type}}}\label{classffnn_1_1layer_1_1_convolution_volume_a17bdd4d0402730cbc4cd491cb8c3bdfd}
 
 
 Offset type standardization. 
 
 \hypertarget{classffnn_1_1layer_1_1_convolution_volume_aee5896ca6c930a673234c66446753432}{\index{ffnn\-::layer\-::\-Convolution\-Volume@{ffnn\-::layer\-::\-Convolution\-Volume}!Scalar\-Type@{Scalar\-Type}}
 \index{Scalar\-Type@{Scalar\-Type}!ffnn::layer::ConvolutionVolume@{ffnn\-::layer\-::\-Convolution\-Volume}}
-\subsubsection[{Scalar\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, Embedding\-Mode Mode = Col\-Embedding$>$ typedef {\bf Base\-::\-Scalar\-Type} {\bf ffnn\-::layer\-::\-Convolution\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Mode $>$\-::{\bf Scalar\-Type}}}\label{classffnn_1_1layer_1_1_convolution_volume_aee5896ca6c930a673234c66446753432}
+\subsubsection[{Scalar\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, Embedding\-Mode Mode = Col\-Embedding$>$ typedef {\bf Base\-::\-Scalar\-Type} {\bf ffnn\-::layer\-::\-Convolution\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Mode $>$\-::{\bf Scalar\-Type}}}\label{classffnn_1_1layer_1_1_convolution_volume_aee5896ca6c930a673234c66446753432}
 
 
 Scalar type standardization. 
 
 \hypertarget{classffnn_1_1layer_1_1_convolution_volume_a176ff3362c3ce073b92f837b65cde684}{\index{ffnn\-::layer\-::\-Convolution\-Volume@{ffnn\-::layer\-::\-Convolution\-Volume}!Self@{Self}}
 \index{Self@{Self}!ffnn::layer::ConvolutionVolume@{ffnn\-::layer\-::\-Convolution\-Volume}}
-\subsubsection[{Self}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, Embedding\-Mode Mode = Col\-Embedding$>$ using {\bf ffnn\-::layer\-::\-Convolution\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Mode $>$\-::{\bf Self} =  {\bf Convolution\-Volume}$<$Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Mode$>$}}\label{classffnn_1_1layer_1_1_convolution_volume_a176ff3362c3ce073b92f837b65cde684}
+\subsubsection[{Self}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, Embedding\-Mode Mode = Col\-Embedding$>$ using {\bf ffnn\-::layer\-::\-Convolution\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Mode $>$\-::{\bf Self} =  {\bf Convolution\-Volume}$<$Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Mode$>$}}\label{classffnn_1_1layer_1_1_convolution_volume_a176ff3362c3ce073b92f837b65cde684}
 
 
 Self type alias. 
 
 \hypertarget{classffnn_1_1layer_1_1_convolution_volume_ae31080a107422dcfaff38eafadd69494}{\index{ffnn\-::layer\-::\-Convolution\-Volume@{ffnn\-::layer\-::\-Convolution\-Volume}!Shape\-Type@{Shape\-Type}}
 \index{Shape\-Type@{Shape\-Type}!ffnn::layer::ConvolutionVolume@{ffnn\-::layer\-::\-Convolution\-Volume}}
-\subsubsection[{Shape\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, Embedding\-Mode Mode = Col\-Embedding$>$ typedef {\bf Base\-::\-Shape\-Type} {\bf ffnn\-::layer\-::\-Convolution\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Mode $>$\-::{\bf Shape\-Type}}}\label{classffnn_1_1layer_1_1_convolution_volume_ae31080a107422dcfaff38eafadd69494}
+\subsubsection[{Shape\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, Embedding\-Mode Mode = Col\-Embedding$>$ typedef {\bf Base\-::\-Shape\-Type} {\bf ffnn\-::layer\-::\-Convolution\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Mode $>$\-::{\bf Shape\-Type}}}\label{classffnn_1_1layer_1_1_convolution_volume_ae31080a107422dcfaff38eafadd69494}
 
 
 Dimension type standardization. 
 
 \hypertarget{classffnn_1_1layer_1_1_convolution_volume_abddc276f0405f5c0d70de3e43c2824d9}{\index{ffnn\-::layer\-::\-Convolution\-Volume@{ffnn\-::layer\-::\-Convolution\-Volume}!Size\-Type@{Size\-Type}}
 \index{Size\-Type@{Size\-Type}!ffnn::layer::ConvolutionVolume@{ffnn\-::layer\-::\-Convolution\-Volume}}
-\subsubsection[{Size\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, Embedding\-Mode Mode = Col\-Embedding$>$ typedef {\bf Base\-::\-Size\-Type} {\bf ffnn\-::layer\-::\-Convolution\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Mode $>$\-::{\bf Size\-Type}}}\label{classffnn_1_1layer_1_1_convolution_volume_abddc276f0405f5c0d70de3e43c2824d9}
+\subsubsection[{Size\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, Embedding\-Mode Mode = Col\-Embedding$>$ typedef {\bf Base\-::\-Size\-Type} {\bf ffnn\-::layer\-::\-Convolution\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Mode $>$\-::{\bf Size\-Type}}}\label{classffnn_1_1layer_1_1_convolution_volume_abddc276f0405f5c0d70de3e43c2824d9}
 
 
 Size-\/type standardization. 
@@ -164,55 +155,36 @@ Size-\/type standardization.
 \subsection{Constructor \& Destructor Documentation}
 \hypertarget{classffnn_1_1layer_1_1_convolution_volume_a88d8d17c780f2b1bd3abe86c9daa432f}{\index{ffnn\-::layer\-::\-Convolution\-Volume@{ffnn\-::layer\-::\-Convolution\-Volume}!Convolution\-Volume@{Convolution\-Volume}}
 \index{Convolution\-Volume@{Convolution\-Volume}!ffnn::layer::ConvolutionVolume@{ffnn\-::layer\-::\-Convolution\-Volume}}
-\subsubsection[{Convolution\-Volume}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, Embedding\-Mode Mode = Col\-Embedding$>$ {\bf ffnn\-::layer\-::\-Convolution\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Mode $>$\-::{\bf Convolution\-Volume} (
+\subsubsection[{Convolution\-Volume}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time, Embedding\-Mode Mode$>$ {\bf ffnn\-::layer\-::\-Convolution\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Mode $>$\-::{\bf Convolution\-Volume} (
 \begin{DoxyParamCaption}
 \item[{const {\bf Shape\-Type} \&}]{filter\-\_\-shape = {\ttfamily {\bf Shape\-Type}(HeightAtCompileTime,~WidthAtCompileTime,~DepthAtCompileTime)}, }
 \item[{const {\bf Size\-Type} \&}]{filter\-\_\-count = {\ttfamily FilterCountAtCompileTime}}
 \end{DoxyParamCaption}
 )}}\label{classffnn_1_1layer_1_1_convolution_volume_a88d8d17c780f2b1bd3abe86c9daa432f}
-\hypertarget{classffnn_1_1layer_1_1_convolution_volume_abb83c5a7c16175e838a3cfdc98f8eb0c}{\index{ffnn\-::layer\-::\-Convolution\-Volume@{ffnn\-::layer\-::\-Convolution\-Volume}!$\sim$\-Convolution\-Volume@{$\sim$\-Convolution\-Volume}}
+\hypertarget{classffnn_1_1layer_1_1_convolution_volume_aae850d568162b8f74cd1ef134d0a88bf}{\index{ffnn\-::layer\-::\-Convolution\-Volume@{ffnn\-::layer\-::\-Convolution\-Volume}!$\sim$\-Convolution\-Volume@{$\sim$\-Convolution\-Volume}}
 \index{$\sim$\-Convolution\-Volume@{$\sim$\-Convolution\-Volume}!ffnn::layer::ConvolutionVolume@{ffnn\-::layer\-::\-Convolution\-Volume}}
-\subsubsection[{$\sim$\-Convolution\-Volume}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, Embedding\-Mode Mode = Col\-Embedding$>$ virtual {\bf ffnn\-::layer\-::\-Convolution\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Mode $>$\-::$\sim${\bf Convolution\-Volume} (
+\subsubsection[{$\sim$\-Convolution\-Volume}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time, Embedding\-Mode Mode$>$ {\bf ffnn\-::layer\-::\-Convolution\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Mode $>$\-::$\sim${\bf Convolution\-Volume} (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_convolution_volume_abb83c5a7c16175e838a3cfdc98f8eb0c}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_convolution_volume_aae850d568162b8f74cd1ef134d0a88bf}
 
 
 \subsection{Member Function Documentation}
-\hypertarget{classffnn_1_1layer_1_1_convolution_volume_a0c69cf588f0d3b656f17d4c7e2229a1b}{\index{ffnn\-::layer\-::\-Convolution\-Volume@{ffnn\-::layer\-::\-Convolution\-Volume}!backward@{backward}}
-\index{backward@{backward}!ffnn::layer::ConvolutionVolume@{ffnn\-::layer\-::\-Convolution\-Volume}}
-\subsubsection[{backward}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, Embedding\-Mode Mode = Col\-Embedding$>$ template$<$typename Input\-Block\-Type , typename Forward\-Error\-Block\-Type $>$ void {\bf ffnn\-::layer\-::\-Convolution\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Mode $>$\-::backward (
-\begin{DoxyParamCaption}
-\item[{const Eigen\-::\-Matrix\-Base$<$ Input\-Block\-Type $>$ \&}]{input, }
-\item[{const Eigen\-::\-Matrix\-Base$<$ Forward\-Error\-Block\-Type $>$ \&}]{forward\-\_\-error}
-\end{DoxyParamCaption}
-)}}\label{classffnn_1_1layer_1_1_convolution_volume_a0c69cf588f0d3b656f17d4c7e2229a1b}
-
-
-Performs backward error propagation. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em input} & a block (matrix; depth embedded) of input values \\
-\hline
-{\em forward\-\_\-error} & a block (matrix; depth embedded) of layer-\/output error values \\
-\hline
-\end{DoxyParams}
-\hypertarget{classffnn_1_1layer_1_1_convolution_volume_a878f19e1509567f2fe5c39c7b5c95f92}{\index{ffnn\-::layer\-::\-Convolution\-Volume@{ffnn\-::layer\-::\-Convolution\-Volume}!E\-I\-G\-E\-N\-\_\-\-M\-A\-K\-E\-\_\-\-A\-L\-I\-G\-N\-E\-D\-\_\-\-O\-P\-E\-R\-A\-T\-O\-R\-\_\-\-N\-E\-W\-\_\-\-I\-F@{E\-I\-G\-E\-N\-\_\-\-M\-A\-K\-E\-\_\-\-A\-L\-I\-G\-N\-E\-D\-\_\-\-O\-P\-E\-R\-A\-T\-O\-R\-\_\-\-N\-E\-W\-\_\-\-I\-F}}
+\hypertarget{classffnn_1_1layer_1_1_convolution_volume_a30a1ab41943208bc7655ae323f99d2e2}{\index{ffnn\-::layer\-::\-Convolution\-Volume@{ffnn\-::layer\-::\-Convolution\-Volume}!E\-I\-G\-E\-N\-\_\-\-M\-A\-K\-E\-\_\-\-A\-L\-I\-G\-N\-E\-D\-\_\-\-O\-P\-E\-R\-A\-T\-O\-R\-\_\-\-N\-E\-W\-\_\-\-I\-F@{E\-I\-G\-E\-N\-\_\-\-M\-A\-K\-E\-\_\-\-A\-L\-I\-G\-N\-E\-D\-\_\-\-O\-P\-E\-R\-A\-T\-O\-R\-\_\-\-N\-E\-W\-\_\-\-I\-F}}
 \index{E\-I\-G\-E\-N\-\_\-\-M\-A\-K\-E\-\_\-\-A\-L\-I\-G\-N\-E\-D\-\_\-\-O\-P\-E\-R\-A\-T\-O\-R\-\_\-\-N\-E\-W\-\_\-\-I\-F@{E\-I\-G\-E\-N\-\_\-\-M\-A\-K\-E\-\_\-\-A\-L\-I\-G\-N\-E\-D\-\_\-\-O\-P\-E\-R\-A\-T\-O\-R\-\_\-\-N\-E\-W\-\_\-\-I\-F}!ffnn::layer::ConvolutionVolume@{ffnn\-::layer\-::\-Convolution\-Volume}}
-\subsubsection[{E\-I\-G\-E\-N\-\_\-\-M\-A\-K\-E\-\_\-\-A\-L\-I\-G\-N\-E\-D\-\_\-\-O\-P\-E\-R\-A\-T\-O\-R\-\_\-\-N\-E\-W\-\_\-\-I\-F}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, Embedding\-Mode Mode = Col\-Embedding$>$ {\bf ffnn\-::layer\-::\-Convolution\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Mode $>$\-::E\-I\-G\-E\-N\-\_\-\-M\-A\-K\-E\-\_\-\-A\-L\-I\-G\-N\-E\-D\-\_\-\-O\-P\-E\-R\-A\-T\-O\-R\-\_\-\-N\-E\-W\-\_\-\-I\-F (
+\subsubsection[{E\-I\-G\-E\-N\-\_\-\-M\-A\-K\-E\-\_\-\-A\-L\-I\-G\-N\-E\-D\-\_\-\-O\-P\-E\-R\-A\-T\-O\-R\-\_\-\-N\-E\-W\-\_\-\-I\-F}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, Embedding\-Mode Mode = Col\-Embedding$>$ {\bf ffnn\-::layer\-::\-Convolution\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Mode $>$\-::E\-I\-G\-E\-N\-\_\-\-M\-A\-K\-E\-\_\-\-A\-L\-I\-G\-N\-E\-D\-\_\-\-O\-P\-E\-R\-A\-T\-O\-R\-\_\-\-N\-E\-W\-\_\-\-I\-F (
 \begin{DoxyParamCaption}
-\item[{{\bf is\-\_\-alignable\-\_\-128}$<$ {\bf Bias\-Vector\-Type} $>$\-::value}]{}
+\item[{{\bf internal\-::is\-\_\-alignable\-\_\-128}$<$ {\bf Bias\-Vector\-Type} $>$\-::value}]{}
 \end{DoxyParamCaption}
-)}}\label{classffnn_1_1layer_1_1_convolution_volume_a878f19e1509567f2fe5c39c7b5c95f92}
-\hypertarget{classffnn_1_1layer_1_1_convolution_volume_a0145b555b05e8f0e5d7e5a740f21a890}{\index{ffnn\-::layer\-::\-Convolution\-Volume@{ffnn\-::layer\-::\-Convolution\-Volume}!forward@{forward}}
+)}}\label{classffnn_1_1layer_1_1_convolution_volume_a30a1ab41943208bc7655ae323f99d2e2}
+\hypertarget{classffnn_1_1layer_1_1_convolution_volume_ad4659abd7e536b6b7e6c61ae2a0299b1}{\index{ffnn\-::layer\-::\-Convolution\-Volume@{ffnn\-::layer\-::\-Convolution\-Volume}!forward@{forward}}
 \index{forward@{forward}!ffnn::layer::ConvolutionVolume@{ffnn\-::layer\-::\-Convolution\-Volume}}
-\subsubsection[{forward}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, Embedding\-Mode Mode = Col\-Embedding$>$ template$<$typename Input\-Block\-Type $>$ void {\bf ffnn\-::layer\-::\-Convolution\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Mode $>$\-::forward (
+\subsubsection[{forward}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time, Embedding\-Mode Mode$>$ template$<$typename Input\-Block\-Type $>$ void {\bf ffnn\-::layer\-::\-Convolution\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Mode $>$\-::forward (
 \begin{DoxyParamCaption}
-\item[{const Eigen\-::\-Matrix\-Base$<$ Input\-Block\-Type $>$ \&}]{input}
+\item[{const Eigen\-::\-Block$<$ Input\-Block\-Type $>$ \&}]{input}
 \end{DoxyParamCaption}
-)}}\label{classffnn_1_1layer_1_1_convolution_volume_a0145b555b05e8f0e5d7e5a740f21a890}
+)}}\label{classffnn_1_1layer_1_1_convolution_volume_ad4659abd7e536b6b7e6c61ae2a0299b1}
 
 
 Performs forward value propagation. 
@@ -224,7 +196,7 @@ Performs forward value propagation.
 \end{DoxyParams}
 \hypertarget{classffnn_1_1layer_1_1_convolution_volume_ae1dbed16d230d7ecc8d05e82cc5b087b}{\index{ffnn\-::layer\-::\-Convolution\-Volume@{ffnn\-::layer\-::\-Convolution\-Volume}!get\-Biases@{get\-Biases}}
 \index{get\-Biases@{get\-Biases}!ffnn::layer::ConvolutionVolume@{ffnn\-::layer\-::\-Convolution\-Volume}}
-\subsubsection[{get\-Biases}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, Embedding\-Mode Mode = Col\-Embedding$>$ const {\bf Bias\-Vector\-Type}\& {\bf ffnn\-::layer\-::\-Convolution\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Mode $>$\-::get\-Biases (
+\subsubsection[{get\-Biases}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, Embedding\-Mode Mode = Col\-Embedding$>$ const {\bf Bias\-Vector\-Type}\& {\bf ffnn\-::layer\-::\-Convolution\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Mode $>$\-::get\-Biases (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
@@ -238,7 +210,7 @@ input-\/biasing vector
 \end{DoxyReturn}
 \hypertarget{classffnn_1_1layer_1_1_convolution_volume_a9c0858bc9ec53071a5d0eb083772d9ac}{\index{ffnn\-::layer\-::\-Convolution\-Volume@{ffnn\-::layer\-::\-Convolution\-Volume}!get\-Filters@{get\-Filters}}
 \index{get\-Filters@{get\-Filters}!ffnn::layer::ConvolutionVolume@{ffnn\-::layer\-::\-Convolution\-Volume}}
-\subsubsection[{get\-Filters}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, Embedding\-Mode Mode = Col\-Embedding$>$ const {\bf Filter\-Bank\-Type}\& {\bf ffnn\-::layer\-::\-Convolution\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Mode $>$\-::get\-Filters (
+\subsubsection[{get\-Filters}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, Embedding\-Mode Mode = Col\-Embedding$>$ const {\bf Filter\-Bank\-Type}\& {\bf ffnn\-::layer\-::\-Convolution\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Mode $>$\-::get\-Filters (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
@@ -250,35 +222,47 @@ Exposes internal filters.
 \begin{DoxyReturn}{Returns}
 filter collection 
 \end{DoxyReturn}
-\hypertarget{classffnn_1_1layer_1_1_convolution_volume_ae80c8f441de89f0ac4c089a17e43970c}{\index{ffnn\-::layer\-::\-Convolution\-Volume@{ffnn\-::layer\-::\-Convolution\-Volume}!initialize@{initialize}}
-\index{initialize@{initialize}!ffnn::layer::ConvolutionVolume@{ffnn\-::layer\-::\-Convolution\-Volume}}
-\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, Embedding\-Mode Mode = Col\-Embedding$>$ bool {\bf ffnn\-::layer\-::\-Convolution\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Mode $>$\-::initialize (
+\hypertarget{classffnn_1_1layer_1_1_convolution_volume_a70c050c2f7ad88186b3e6cd325567a84}{\index{ffnn\-::layer\-::\-Convolution\-Volume@{ffnn\-::layer\-::\-Convolution\-Volume}!get\-Forward\-Error\-Mapping@{get\-Forward\-Error\-Mapping}}
+\index{get\-Forward\-Error\-Mapping@{get\-Forward\-Error\-Mapping}!ffnn::layer::ConvolutionVolume@{ffnn\-::layer\-::\-Convolution\-Volume}}
+\subsubsection[{get\-Forward\-Error\-Mapping}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, Embedding\-Mode Mode = Col\-Embedding$>$ const Value\-Type$\ast$ {\bf ffnn\-::layer\-::\-Convolution\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Mode $>$\-::get\-Forward\-Error\-Mapping (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_convolution_volume_ae80c8f441de89f0ac4c089a17e43970c}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1_convolution_volume_a70c050c2f7ad88186b3e6cd325567a84}
 
 
-Initialize the volume. 
+Gets memory map to contiguous backward-\/error buffer. 
 
-
-
-Implements \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a4159d9d163a0bd5287cc02c91b5baba8}{ffnn\-::layer\-::internal\-::\-Interface$<$ Value\-Type $>$}.
-
-
-
-Referenced by ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode, \-\_\-\-Hidden\-Layer\-Shape $>$\-::reset().
-
-\hypertarget{classffnn_1_1layer_1_1_convolution_volume_a09808deb1aac6c1eb556de86838eef08}{\index{ffnn\-::layer\-::\-Convolution\-Volume@{ffnn\-::layer\-::\-Convolution\-Volume}!initialize@{initialize}}
+\hypertarget{classffnn_1_1layer_1_1_convolution_volume_a6a93e80ff524cb501e106cff63819165}{\index{ffnn\-::layer\-::\-Convolution\-Volume@{ffnn\-::layer\-::\-Convolution\-Volume}!initialize@{initialize}}
 \index{initialize@{initialize}!ffnn::layer::ConvolutionVolume@{ffnn\-::layer\-::\-Convolution\-Volume}}
-\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, Embedding\-Mode Mode = Col\-Embedding$>$ bool {\bf ffnn\-::layer\-::\-Convolution\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Mode $>$\-::initialize (
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time, Embedding\-Mode Mode$>$ template$<$typename Weight\-Distribution , typename Bias\-Distribution $>$ bool {\bf ffnn\-::layer\-::\-Convolution\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Mode $>$\-::initialize (
 \begin{DoxyParamCaption}
-\item[{const {\bf Parameters} \&}]{config}
+\item[{const Weight\-Distribution \&}]{wd, }
+\item[{const Bias\-Distribution \&}]{bd}
 \end{DoxyParamCaption}
-)}}\label{classffnn_1_1layer_1_1_convolution_volume_a09808deb1aac6c1eb556de86838eef08}
-\hypertarget{classffnn_1_1layer_1_1_convolution_volume_a77f5965e61f450d0fe72fa091a3e667a}{\index{ffnn\-::layer\-::\-Convolution\-Volume@{ffnn\-::layer\-::\-Convolution\-Volume}!load@{load}}
+)}}\label{classffnn_1_1layer_1_1_convolution_volume_a6a93e80ff524cb501e106cff63819165}
+
+
+Initialize volume weights and biases according to particular distributions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wd} & distribution to sample for connection weights \\
+\hline
+{\em bd} & distribution to sample for biases \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em false} & otherwise\\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyWarning}{Warning}
+If volume is a loaded instance, this method will initialize volume sizings but weights will not be reset according to the given distributions 
+\end{DoxyWarning}
+Reset all filters \hypertarget{classffnn_1_1layer_1_1_convolution_volume_a77f5965e61f450d0fe72fa091a3e667a}{\index{ffnn\-::layer\-::\-Convolution\-Volume@{ffnn\-::layer\-::\-Convolution\-Volume}!load@{load}}
 \index{load@{load}!ffnn::layer::ConvolutionVolume@{ffnn\-::layer\-::\-Convolution\-Volume}}
-\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, Embedding\-Mode Mode = Col\-Embedding$>$ void {\bf ffnn\-::layer\-::\-Convolution\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Mode $>$\-::load (
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, Embedding\-Mode Mode = Col\-Embedding$>$ void {\bf ffnn\-::layer\-::\-Convolution\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Mode $>$\-::load (
 \begin{DoxyParamCaption}
 \item[{{\bf Input\-Archive} \&}]{ar, }
 \item[{{\bf Version\-Type}}]{version}
@@ -292,25 +276,21 @@ Load serializer.
 
 Reimplemented from \hyperlink{classffnn_1_1traits_1_1_unique_af1e937c2908ed2ff707d6a7d1b5b13d2}{ffnn\-::traits\-::\-Unique}.
 
-\hypertarget{classffnn_1_1layer_1_1_convolution_volume_adab425ba7e60e232ea4a3ccab49171d6}{\index{ffnn\-::layer\-::\-Convolution\-Volume@{ffnn\-::layer\-::\-Convolution\-Volume}!reset@{reset}}
-\index{reset@{reset}!ffnn::layer::ConvolutionVolume@{ffnn\-::layer\-::\-Convolution\-Volume}}
-\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, Embedding\-Mode Mode = Col\-Embedding$>$ void {\bf ffnn\-::layer\-::\-Convolution\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Mode $>$\-::reset (
-\begin{DoxyParamCaption}
-\item[{const {\bf Parameters} \&}]{config = {\ttfamily {\bf Parameters}()}}
-\end{DoxyParamCaption}
-)}}\label{classffnn_1_1layer_1_1_convolution_volume_adab425ba7e60e232ea4a3ccab49171d6}
 
 
-Reset filter weights and biases. 
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{classffnn_1_1layer_1_1_convolution_volume_a77f5965e61f450d0fe72fa091a3e667a_cgraph}
+\end{center}
+\end{figure}
 
 
-\begin{DoxyParams}{Parameters}
-{\em config} & parameter reset configuration \\
-\hline
-\end{DoxyParams}
 \hypertarget{classffnn_1_1layer_1_1_convolution_volume_a52d21f4ee6b841d154b1dc63bd3ed4bf}{\index{ffnn\-::layer\-::\-Convolution\-Volume@{ffnn\-::layer\-::\-Convolution\-Volume}!save@{save}}
 \index{save@{save}!ffnn::layer::ConvolutionVolume@{ffnn\-::layer\-::\-Convolution\-Volume}}
-\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, Embedding\-Mode Mode = Col\-Embedding$>$ void {\bf ffnn\-::layer\-::\-Convolution\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Mode $>$\-::save (
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, Embedding\-Mode Mode = Col\-Embedding$>$ void {\bf ffnn\-::layer\-::\-Convolution\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Mode $>$\-::save (
 \begin{DoxyParamCaption}
 \item[{{\bf Output\-Archive} \&}]{ar, }
 \item[{{\bf Version\-Type}}]{version}
@@ -324,20 +304,32 @@ Save serializer.
 
 Reimplemented from \hyperlink{classffnn_1_1traits_1_1_unique_ad8be6fcb9a7519603b2aab19b3c6d593}{ffnn\-::traits\-::\-Unique}.
 
-\hypertarget{classffnn_1_1layer_1_1_convolution_volume_a2a823c2b00b1f62d6a6a616be653c266}{\index{ffnn\-::layer\-::\-Convolution\-Volume@{ffnn\-::layer\-::\-Convolution\-Volume}!set\-Backward\-Error\-Mapping@{set\-Backward\-Error\-Mapping}}
-\index{set\-Backward\-Error\-Mapping@{set\-Backward\-Error\-Mapping}!ffnn::layer::ConvolutionVolume@{ffnn\-::layer\-::\-Convolution\-Volume}}
-\subsubsection[{set\-Backward\-Error\-Mapping}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, Embedding\-Mode Mode = Col\-Embedding$>$ void {\bf ffnn\-::layer\-::\-Convolution\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Mode $>$\-::set\-Backward\-Error\-Mapping (
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{classffnn_1_1layer_1_1_convolution_volume_a52d21f4ee6b841d154b1dc63bd3ed4bf_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classffnn_1_1layer_1_1_convolution_volume_a089d53d3244e88f9220ed465b0f1d80e}{\index{ffnn\-::layer\-::\-Convolution\-Volume@{ffnn\-::layer\-::\-Convolution\-Volume}!set\-Forward\-Error\-Mapping@{set\-Forward\-Error\-Mapping}}
+\index{set\-Forward\-Error\-Mapping@{set\-Forward\-Error\-Mapping}!ffnn::layer::ConvolutionVolume@{ffnn\-::layer\-::\-Convolution\-Volume}}
+\subsubsection[{set\-Forward\-Error\-Mapping}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, Embedding\-Mode Mode = Col\-Embedding$>$ void {\bf ffnn\-::layer\-::\-Convolution\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Mode $>$\-::set\-Forward\-Error\-Mapping (
 \begin{DoxyParamCaption}
 \item[{Value\-Type $\ast$const}]{ptr}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1_convolution_volume_a2a823c2b00b1f62d6a6a616be653c266}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1_convolution_volume_a089d53d3244e88f9220ed465b0f1d80e}
 
 
 Sets memory map to contiguous backward-\/error buffer. 
 
 \hypertarget{classffnn_1_1layer_1_1_convolution_volume_abf9ca7c7901a909ee924f3bca9e1f4cd}{\index{ffnn\-::layer\-::\-Convolution\-Volume@{ffnn\-::layer\-::\-Convolution\-Volume}!set\-Output\-Mapping@{set\-Output\-Mapping}}
 \index{set\-Output\-Mapping@{set\-Output\-Mapping}!ffnn::layer::ConvolutionVolume@{ffnn\-::layer\-::\-Convolution\-Volume}}
-\subsubsection[{set\-Output\-Mapping}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, Embedding\-Mode Mode = Col\-Embedding$>$ void {\bf ffnn\-::layer\-::\-Convolution\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Mode $>$\-::set\-Output\-Mapping (
+\subsubsection[{set\-Output\-Mapping}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, Embedding\-Mode Mode = Col\-Embedding$>$ void {\bf ffnn\-::layer\-::\-Convolution\-Volume}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Mode $>$\-::set\-Output\-Mapping (
 \begin{DoxyParamCaption}
 \item[{Value\-Type $\ast$const}]{ptr}
 \end{DoxyParamCaption}
@@ -348,6 +340,7 @@ Sets memory map to contiguous output buffer.
 
 
 
-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/\hyperlink{convolution__volume_8h}{convolution\-\_\-volume.\-h}\end{DoxyCompactItemize}
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/\hyperlink{convolution__volume_8h}{convolution\-\_\-volume.\-h}\item 
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/impl/\hyperlink{convolution__volume_8hpp}{convolution\-\_\-volume.\-hpp}\end{DoxyCompactItemize}

@@ -140,7 +140,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;          <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> FilterWidthAtCompileTime = Eigen::Dynamic,</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;          <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> FilterCountAtCompileTime = Eigen::Dynamic,</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;          <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> StrideAtCompileTime = 1,</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;          <a class="code" href="namespaceffnn_1_1layer.html#a254f16beba4fb335d935e9b43bb9e69a">EmbeddingMode</a> Mode = <a class="code" href="namespaceffnn_1_1layer.html#a254f16beba4fb335d935e9b43bb9e69aaede1065f5863208cae7e55561966a182">ColEmbedding</a>,</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;          <a class="code" href="namespaceffnn_1_1layer.html#a254f16beba4fb335d935e9b43bb9e69a">EmbeddingMode</a> Mode = <a class="code" href="namespaceffnn_1_1layer.html#a254f16beba4fb335d935e9b43bb9e69aa42ac01b35d45fd60256ef5008c96c049">ColEmbedding</a>,</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;          <span class="keyword">class </span>_HiddenLayerShape =</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            hidden_layer_shape&lt;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;              embed_dimension&lt;Mode, ColEmbedding&gt;(HeightAtCompileTime, DepthAtCompileTime),</div>
@@ -169,98 +169,96 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
 <div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_convolution.html#a4f65a386b5e7803b1413b546215cefa3">   92</a></span>&#160;  <span class="keyword">typedef</span> <a class="code" href="classffnn_1_1optimizer_1_1_optimizer.html">optimizer::Optimizer&lt;Self&gt;</a> <a class="code" href="classffnn_1_1layer_1_1_convolution.html#a4f65a386b5e7803b1413b546215cefa3">Optimizer</a>;</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
-<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_convolution.html#afba43aa5946f49d3ffc306972ba11fff">   95</a></span>&#160;  <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code" href="structffnn_1_1layer_1_1_convolution_volume_1_1_parameters.html">ConvolutionVolumeType::Parameters</a> <a class="code" href="classffnn_1_1layer_1_1_convolution.html#afba43aa5946f49d3ffc306972ba11fff">Parameters</a>;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="keyword">explicit</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <a class="code" href="classffnn_1_1layer_1_1_convolution.html">Convolution</a>(<span class="keyword">const</span> ShapeType&amp; input_shape = ShapeType(HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime),</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;              <span class="keyword">const</span> SizeType&amp; filter_height = FilterHeightAtCompileTime,</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;              <span class="keyword">const</span> SizeType&amp; filter_width = FilterWidthAtCompileTime,</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;              <span class="keyword">const</span> SizeType&amp; filter_count = FilterCountAtCompileTime,</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;              <span class="keyword">const</span> SizeType&amp; filter_stride = StrideAtCompileTime);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <span class="keyword">virtual</span> ~<a class="code" href="classffnn_1_1layer_1_1_convolution.html">Convolution</a>();</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="keywordtype">bool</span> initialize();</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <span class="keywordtype">bool</span> initialize(<span class="keyword">const</span> Parameters&amp; config);</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <span class="keywordtype">bool</span> forward();</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <span class="keywordtype">bool</span> backward();</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  <span class="keywordtype">bool</span> update();</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  <span class="keywordtype">void</span> reset(<span class="keyword">const</span> Parameters&amp; config = Parameters());</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <span class="keyword">explicit</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <a class="code" href="classffnn_1_1layer_1_1_convolution.html">Convolution</a>(<span class="keyword">const</span> ShapeType&amp; input_shape = ShapeType(HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime),</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;              <span class="keyword">const</span> SizeType&amp; filter_height = FilterHeightAtCompileTime,</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;              <span class="keyword">const</span> SizeType&amp; filter_width = FilterWidthAtCompileTime,</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;              <span class="keyword">const</span> SizeType&amp; filter_count = FilterCountAtCompileTime,</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;              <span class="keyword">const</span> SizeType&amp; filter_stride = StrideAtCompileTime);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <span class="keyword">virtual</span> ~<a class="code" href="classffnn_1_1layer_1_1_convolution.html">Convolution</a>();</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <span class="keywordtype">bool</span> initialize();</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> WeightDistribution, <span class="keyword">typename</span> BiasDistribution&gt;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <span class="keywordtype">bool</span> initialize(<span class="keyword">const</span> WeightDistribution&amp; wd, <span class="keyword">const</span> BiasDistribution&amp; bd);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  <span class="keywordtype">bool</span> forward();</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  <span class="keywordtype">bool</span> backward();</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  <span class="keywordtype">bool</span> computeBackwardError();</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  <span class="keywordtype">void</span> setOptimizer(<span class="keyword">typename</span> <a class="code" href="classffnn_1_1optimizer_1_1_optimizer.html#ac03e7181934bf0c12a97fc67a60484ab">Optimizer::Ptr</a> opt);</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
-<div class="line"><a name="l00158"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_convolution.html#ab7cd47d35f92a5dbc439a33a9af8ce97">  158</a></span>&#160;  <span class="keyword">inline</span> <span class="keyword">const</span> ConvolutionVolumeBankType&amp; <a class="code" href="classffnn_1_1layer_1_1_convolution.html#ab7cd47d35f92a5dbc439a33a9af8ce97">getConvolutionVolumes</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordflow">return</span> receptors_;</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  }</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;  <a class="code" href="serializable_8h.html#a3937bc18361c33fe981fe2725f70ebc5">FFNN_REGISTER_SERIALIZABLE</a>(<a class="code" href="classffnn_1_1layer_1_1_convolution.html">Convolution</a>)</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  </div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  void <a class="code" href="namespaceffnn.html#a1d292f830b9e27ce3965b0c18231b7fc">save</a>(OutputArchive&amp; ar, VersionType version) const;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="namespaceffnn.html#a365753310c86d8142fa5b785cc16004a">load</a>(InputArchive&amp; ar, VersionType version);</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  <span class="keywordtype">bool</span> update();</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  <span class="keywordtype">bool</span> computeBackwardError();</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  <span class="keywordtype">void</span> setOptimizer(<span class="keyword">typename</span> <a class="code" href="classffnn_1_1optimizer_1_1_optimizer.html#ac03e7181934bf0c12a97fc67a60484ab">Optimizer::Ptr</a> opt);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div>
+<div class="line"><a name="l00167"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_convolution.html#ab7cd47d35f92a5dbc439a33a9af8ce97">  167</a></span>&#160;  <span class="keyword">inline</span> <span class="keyword">const</span> ConvolutionVolumeBankType&amp; <a class="code" href="classffnn_1_1layer_1_1_convolution.html#ab7cd47d35f92a5dbc439a33a9af8ce97">getConvolutionVolumes</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="keyword">  </span>{</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">return</span> receptors_;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  }</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;private:</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;  <span class="comment">//FFNN_REGISTER_OPTIMIZER(Convolution, Adam);</span></div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;  <span class="comment">//FFNN_REGISTER_OPTIMIZER(Convolution, GradientDescent);</span></div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;  ConvolutionVolumeBankType receptors_;</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;  ShapeType input_volume_shape_;</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;  ShapeType output_volume_shape_;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;  <a class="code" href="serializable_8h.html#a3937bc18361c33fe981fe2725f70ebc5">FFNN_REGISTER_SERIALIZABLE</a>(<a class="code" href="classffnn_1_1layer_1_1_convolution.html">Convolution</a>)</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  </div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  void <a class="code" href="namespaceffnn.html#a1d292f830b9e27ce3965b0c18231b7fc">save</a>(OutputArchive&amp; ar, VersionType version) const;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="namespaceffnn.html#a365753310c86d8142fa5b785cc16004a">load</a>(InputArchive&amp; ar, VersionType version);</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;private:</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;  <span class="comment">//FFNN_REGISTER_OPTIMIZER(Convolution, Adam);</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;  <span class="comment">//FFNN_REGISTER_OPTIMIZER(Convolution, GradientDescent);</span></div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  ShapeType filter_shape_;</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  SizeType filter_stride_;</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;  typename Optimizer::Ptr opt_;</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;  OffsetType connectToForwardLayer(const <a class="code" href="classffnn_1_1layer_1_1_layer.html">Layer</a>&lt;ValueType&gt;&amp; next, OffsetType offset);</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;};</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;}  <span class="comment">// namespace layer</span></div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;}  <span class="comment">// namespace ffnn</span></div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<span class="preprocessor">#include &lt;ffnn/layer/impl/convolution.hpp&gt;</span></div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="comment">// Cleanup definitions</span></div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<span class="preprocessor">#undef CONV_TARGS</span></div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#undef CONV_VOLUME_TARGS</span></div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif  // FFNN_LAYER_CONVOLUTION_H</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  <span class="keywordtype">void</span> reset();</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  ConvolutionVolumeBankType receptors_;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  ShapeType input_volume_shape_;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  ShapeType output_volume_shape_;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;  ShapeType filter_shape_;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;  ShapeType filter_stride_;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;  typename Optimizer::Ptr opt_;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;  OffsetType connectToForwardLayer(const <a class="code" href="classffnn_1_1layer_1_1_layer.html">Layer</a>&lt;ValueType&gt;&amp; next, OffsetType offset);</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;};</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;}  <span class="comment">// namespace layer</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;}  <span class="comment">// namespace ffnn</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="preprocessor">#include &lt;ffnn/layer/impl/convolution.hpp&gt;</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="comment">// Cleanup definitions</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="preprocessor">#undef CONV_TARGS</span></div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#undef CONV_VOLUME_TARGS</span></div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif  // FFNN_LAYER_CONVOLUTION_H</span></div>
 <div class="ttc" id="layer_8h_html"><div class="ttname"><a href="layer_8h.html">layer.h</a></div></div>
 <div class="ttc" id="classffnn_1_1layer_1_1internal_1_1_interface_html_a7f834e3365e5199bcbcd16d9abd63941"><div class="ttname"><a href="classffnn_1_1layer_1_1internal_1_1_interface.html#a7f834e3365e5199bcbcd16d9abd63941">ffnn::layer::internal::Interface::ScalarType</a></div><div class="ttdeci">ValueType ScalarType</div><div class="ttdoc">Scalar type standardization. </div><div class="ttdef"><b>Definition:</b> interface.h:32</div></div>
 <div class="ttc" id="classffnn_1_1layer_1_1_convolution_html_af048fd677e8749bb295fac8d330ad843"><div class="ttname"><a href="classffnn_1_1layer_1_1_convolution.html#af048fd677e8749bb295fac8d330ad843">ffnn::layer::Convolution::ShapeType</a></div><div class="ttdeci">Base::ShapeType ShapeType</div><div class="ttdoc">Dimension type standardization. </div><div class="ttdef"><b>Definition:</b> convolution.h:83</div></div>
 <div class="ttc" id="classffnn_1_1layer_1_1_convolution_html_a779ee450f39a97c1063d750416edb533"><div class="ttname"><a href="classffnn_1_1layer_1_1_convolution.html#a779ee450f39a97c1063d750416edb533">ffnn::layer::Convolution::ScalarType</a></div><div class="ttdeci">Base::ScalarType ScalarType</div><div class="ttdoc">Scalar type standardization. </div><div class="ttdef"><b>Definition:</b> convolution.h:74</div></div>
-<div class="ttc" id="classffnn_1_1layer_1_1_convolution_html_ab7cd47d35f92a5dbc439a33a9af8ce97"><div class="ttname"><a href="classffnn_1_1layer_1_1_convolution.html#ab7cd47d35f92a5dbc439a33a9af8ce97">ffnn::layer::Convolution::getConvolutionVolumes</a></div><div class="ttdeci">const ConvolutionVolumeBankType &amp; getConvolutionVolumes() const </div><div class="ttdef"><b>Definition:</b> convolution.h:158</div></div>
-<div class="ttc" id="structffnn_1_1layer_1_1_convolution_volume_1_1_parameters_html"><div class="ttname"><a href="structffnn_1_1layer_1_1_convolution_volume_1_1_parameters.html">ffnn::layer::ConvolutionVolume::Parameters</a></div><div class="ttdoc">A configuration object for a FullyConnected hidden layer. </div><div class="ttdef"><b>Definition:</b> convolution_volume.h:172</div></div>
+<div class="ttc" id="classffnn_1_1layer_1_1_convolution_html_ab7cd47d35f92a5dbc439a33a9af8ce97"><div class="ttname"><a href="classffnn_1_1layer_1_1_convolution.html#ab7cd47d35f92a5dbc439a33a9af8ce97">ffnn::layer::Convolution::getConvolutionVolumes</a></div><div class="ttdeci">const ConvolutionVolumeBankType &amp; getConvolutionVolumes() const </div><div class="ttdef"><b>Definition:</b> convolution.h:167</div></div>
+<div class="ttc" id="namespaceffnn_1_1layer_html_a254f16beba4fb335d935e9b43bb9e69aa42ac01b35d45fd60256ef5008c96c049"><div class="ttname"><a href="namespaceffnn_1_1layer.html#a254f16beba4fb335d935e9b43bb9e69aa42ac01b35d45fd60256ef5008c96c049">ffnn::layer::ColEmbedding</a></div><div class="ttdoc">Embed depth along filter matrix cols. </div><div class="ttdef"><b>Definition:</b> convolution_volume.h:23</div></div>
 <div class="ttc" id="namespaceffnn_html_a365753310c86d8142fa5b785cc16004a"><div class="ttname"><a href="namespaceffnn.html#a365753310c86d8142fa5b785cc16004a">ffnn::load</a></div><div class="ttdeci">void load(std::istream &amp;is, Serializable &amp;object, const typename Serializable::VersionType version=0)</div></div>
-<div class="ttc" id="namespaceffnn_1_1layer_html_ac1d8b4e852293231055d1257f1e83e60"><div class="ttname"><a href="namespaceffnn_1_1layer.html#ac1d8b4e852293231055d1257f1e83e60">ffnn::layer::output_dimension</a></div><div class="ttdeci">constexpr SizeType output_dimension(SizeType n, SizeType fn, SizeType stride)</div><div class="ttdef"><b>Definition:</b> convolution_volume.h:55</div></div>
-<div class="ttc" id="classffnn_1_1layer_1_1_convolution_html_afba43aa5946f49d3ffc306972ba11fff"><div class="ttname"><a href="classffnn_1_1layer_1_1_convolution.html#afba43aa5946f49d3ffc306972ba11fff">ffnn::layer::Convolution::Parameters</a></div><div class="ttdeci">ConvolutionVolumeType::Parameters Parameters</div><div class="ttdoc">Configuration struct type alias. </div><div class="ttdef"><b>Definition:</b> convolution.h:95</div></div>
+<div class="ttc" id="namespaceffnn_1_1layer_html_ac1d8b4e852293231055d1257f1e83e60"><div class="ttname"><a href="namespaceffnn_1_1layer.html#ac1d8b4e852293231055d1257f1e83e60">ffnn::layer::output_dimension</a></div><div class="ttdeci">constexpr SizeType output_dimension(SizeType n, SizeType fn, SizeType stride)</div><div class="ttdef"><b>Definition:</b> convolution_volume.h:34</div></div>
 <div class="ttc" id="serializable_8h_html_a3937bc18361c33fe981fe2725f70ebc5"><div class="ttname"><a href="serializable_8h.html#a3937bc18361c33fe981fe2725f70ebc5">FFNN_REGISTER_SERIALIZABLE</a></div><div class="ttdeci">#define FFNN_REGISTER_SERIALIZABLE(object)</div><div class="ttdoc">Imbues an object with objects/types for serialization. </div><div class="ttdef"><b>Definition:</b> serializable.h:52</div></div>
 <div class="ttc" id="namespaceffnn_html_a1d292f830b9e27ce3965b0c18231b7fc"><div class="ttname"><a href="namespaceffnn.html#a1d292f830b9e27ce3965b0c18231b7fc">ffnn::save</a></div><div class="ttdeci">void save(std::ostream &amp;os, const Serializable &amp;object, const typename Serializable::VersionType version=0)</div></div>
 <div class="ttc" id="classffnn_1_1layer_1_1_convolution_html"><div class="ttname"><a href="classffnn_1_1layer_1_1_convolution.html">ffnn::layer::Convolution</a></div><div class="ttdoc">A convolution layer. </div><div class="ttdef"><b>Definition:</b> convolution.h:63</div></div>
-<div class="ttc" id="structffnn_1_1layer_1_1internal_1_1_shape_html"><div class="ttname"><a href="structffnn_1_1layer_1_1internal_1_1_shape.html">ffnn::layer::internal::Shape</a></div><div class="ttdef"><b>Definition:</b> shape.h:56</div></div>
+<div class="ttc" id="structffnn_1_1layer_1_1internal_1_1_shape_html"><div class="ttname"><a href="structffnn_1_1layer_1_1internal_1_1_shape.html">ffnn::layer::internal::Shape</a></div><div class="ttdef"><b>Definition:</b> shape.h:64</div></div>
 <div class="ttc" id="fwd_8h_html"><div class="ttname"><a href="fwd_8h.html">fwd.h</a></div></div>
 <div class="ttc" id="neuron_8h_html"><div class="ttname"><a href="neuron_8h.html">neuron.h</a></div></div>
 <div class="ttc" id="classffnn_1_1layer_1_1_convolution_html_a9cec43e24f084c141c0cc8ae3c046ff4"><div class="ttname"><a href="classffnn_1_1layer_1_1_convolution.html#a9cec43e24f084c141c0cc8ae3c046ff4">ffnn::layer::Convolution::ConvolutionVolumeBankType</a></div><div class="ttdeci">boost::multi_array&lt; ConvolutionVolumeType, 2 &gt; ConvolutionVolumeBankType</div><div class="ttdoc">Recptive-volume bank standardization. </div><div class="ttdef"><b>Definition:</b> convolution.h:89</div></div>
-<div class="ttc" id="namespaceffnn_1_1layer_html_a254f16beba4fb335d935e9b43bb9e69a"><div class="ttname"><a href="namespaceffnn_1_1layer.html#a254f16beba4fb335d935e9b43bb9e69a">ffnn::layer::EmbeddingMode</a></div><div class="ttdeci">EmbeddingMode</div><div class="ttdef"><b>Definition:</b> convolution_volume.h:27</div></div>
+<div class="ttc" id="namespaceffnn_1_1layer_html_a254f16beba4fb335d935e9b43bb9e69a"><div class="ttname"><a href="namespaceffnn_1_1layer.html#a254f16beba4fb335d935e9b43bb9e69a">ffnn::layer::EmbeddingMode</a></div><div class="ttdeci">EmbeddingMode</div><div class="ttdef"><b>Definition:</b> convolution_volume.h:20</div></div>
 <div class="ttc" id="classffnn_1_1layer_1_1_convolution_html_afce446070a9d86d22f6b5b53fef7c7d0"><div class="ttname"><a href="classffnn_1_1layer_1_1_convolution.html#afce446070a9d86d22f6b5b53fef7c7d0">ffnn::layer::Convolution::ConvolutionVolumeType</a></div><div class="ttdeci">ConvolutionVolume&lt; CONV_VOLUME_TARGS &gt; ConvolutionVolumeType</div><div class="ttdoc">Receptive-volume type standardization. </div><div class="ttdef"><b>Definition:</b> convolution.h:86</div></div>
 <div class="ttc" id="classffnn_1_1layer_1_1_convolution_html_a0ec0f3a4598c7286815f2fdd1e57e8ca"><div class="ttname"><a href="classffnn_1_1layer_1_1_convolution.html#a0ec0f3a4598c7286815f2fdd1e57e8ca">ffnn::layer::Convolution::OffsetType</a></div><div class="ttdeci">Base::OffsetType OffsetType</div><div class="ttdoc">Offset type standardization. </div><div class="ttdef"><b>Definition:</b> convolution.h:80</div></div>
-<div class="ttc" id="namespaceffnn_1_1layer_html_a254f16beba4fb335d935e9b43bb9e69aaede1065f5863208cae7e55561966a182"><div class="ttname"><a href="namespaceffnn_1_1layer.html#a254f16beba4fb335d935e9b43bb9e69aaede1065f5863208cae7e55561966a182">ffnn::layer::ColEmbedding</a></div><div class="ttdoc">Embed depth along filter matrix cols. </div><div class="ttdef"><b>Definition:</b> convolution_volume.h:30</div></div>
 <div class="ttc" id="classffnn_1_1optimizer_1_1_optimizer_html_ac03e7181934bf0c12a97fc67a60484ab"><div class="ttname"><a href="classffnn_1_1optimizer_1_1_optimizer.html#ac03e7181934bf0c12a97fc67a60484ab">ffnn::optimizer::Optimizer::Ptr</a></div><div class="ttdeci">boost::shared_ptr&lt; Optimizer &gt; Ptr</div><div class="ttdoc">Shared resource standardization. </div><div class="ttdef"><b>Definition:</b> optimizer.h:31</div></div>
-<div class="ttc" id="classffnn_1_1layer_1_1_hidden_html_ac148012cb544a39841675601090cd4c8"><div class="ttname"><a href="classffnn_1_1layer_1_1_hidden.html#ac148012cb544a39841675601090cd4c8">ffnn::layer::Hidden::SizeType</a></div><div class="ttdeci">Base::SizeType SizeType</div><div class="ttdoc">Size type standardization. </div><div class="ttdef"><b>Definition:</b> hidden.h:51</div></div>
+<div class="ttc" id="classffnn_1_1layer_1_1_hidden_html_ac148012cb544a39841675601090cd4c8"><div class="ttname"><a href="classffnn_1_1layer_1_1_hidden.html#ac148012cb544a39841675601090cd4c8">ffnn::layer::Hidden&lt; ValueType, _HiddenLayerShape &gt;::SizeType</a></div><div class="ttdeci">Base::SizeType SizeType</div><div class="ttdoc">Size type standardization. </div><div class="ttdef"><b>Definition:</b> hidden.h:51</div></div>
 <div class="ttc" id="hidden_8h_html"><div class="ttname"><a href="hidden_8h.html">hidden.h</a></div></div>
 <div class="ttc" id="convolution__volume_8h_html"><div class="ttname"><a href="convolution__volume_8h.html">convolution_volume.h</a></div></div>
 <div class="ttc" id="global_8h_html_aab5a5a098c5bf31f4176f4a141d2ef65"><div class="ttname"><a href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a></div><div class="ttdeci">#define FFNN_SIZE_TYPE</div><div class="ttdef"><b>Definition:</b> global.h:38</div></div>
 <div class="ttc" id="optimizer_8h_html"><div class="ttname"><a href="optimizer_8h.html">optimizer.h</a></div></div>
-<div class="ttc" id="classffnn_1_1layer_1_1_convolution_volume_html"><div class="ttname"><a href="classffnn_1_1layer_1_1_convolution_volume.html">ffnn::layer::ConvolutionVolume</a></div><div class="ttdef"><b>Definition:</b> convolution_volume.h:132</div></div>
+<div class="ttc" id="classffnn_1_1layer_1_1_convolution_volume_html"><div class="ttname"><a href="classffnn_1_1layer_1_1_convolution_volume.html">ffnn::layer::ConvolutionVolume</a></div><div class="ttdef"><b>Definition:</b> convolution_volume.h:95</div></div>
 <div class="ttc" id="classffnn_1_1layer_1_1_convolution_html_a9599a1f35642eb9b9f516659507ae58d"><div class="ttname"><a href="classffnn_1_1layer_1_1_convolution.html#a9599a1f35642eb9b9f516659507ae58d">ffnn::layer::Convolution::SizeType</a></div><div class="ttdeci">Base::SizeType SizeType</div><div class="ttdoc">Size type standardization. </div><div class="ttdef"><b>Definition:</b> convolution.h:77</div></div>
 <div class="ttc" id="classffnn_1_1layer_1_1_hidden_html"><div class="ttname"><a href="classffnn_1_1layer_1_1_hidden.html">ffnn::layer::Hidden&lt; ValueType, _HiddenLayerShape &gt;</a></div></div>
 <div class="ttc" id="classffnn_1_1layer_1_1_hidden_html_ae2409b970adafb0ebc9b2eec62c4aac4"><div class="ttname"><a href="classffnn_1_1layer_1_1_hidden.html#ae2409b970adafb0ebc9b2eec62c4aac4">ffnn::layer::Hidden::OffsetType</a></div><div class="ttdeci">Base::OffsetType OffsetType</div><div class="ttdoc">Offset type standardization. </div><div class="ttdef"><b>Definition:</b> hidden.h:54</div></div>
@@ -270,7 +268,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed May 10 2017 17:22:46 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 11 2017 11:34:21 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

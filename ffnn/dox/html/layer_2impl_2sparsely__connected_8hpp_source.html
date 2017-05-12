@@ -92,274 +92,275 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <a href="layer_2impl_2sparsely__connected_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">// FFNN</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="assert_8h.html">ffnn/assert.h</a>&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="logging_8h.html">ffnn/logging.h</a>&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="none_8h.html">ffnn/optimizer/none.h</a>&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="internal_2signature_8h.html">ffnn/internal/signature.h</a>&gt;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace </span>ffnn</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace </span>layer</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> InputsAtCompileTime,</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> OutputsAtCompileTime&gt;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<a class="code" href="structffnn_1_1layer_1_1_sparsely_connected_1_1_parameters.html#acf0d0c7c3a01f292c035994e0bdda75d">SparselyConnected&lt;ValueType, InputsAtCompileTime, OutputsAtCompileTime&gt;::</a></div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="structffnn_1_1layer_1_1_sparsely_connected_1_1_parameters.html#acf0d0c7c3a01f292c035994e0bdda75d">   20</a></span>&#160;<a class="code" href="structffnn_1_1layer_1_1_sparsely_connected_1_1_parameters.html#acf0d0c7c3a01f292c035994e0bdda75d">Parameters::Parameters</a>(<a class="code" href="classffnn_1_1layer_1_1internal_1_1_interface.html#a7f834e3365e5199bcbcd16d9abd63941">ScalarType</a> connection_probability,</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                       <a class="code" href="classffnn_1_1layer_1_1internal_1_1_interface.html#a7f834e3365e5199bcbcd16d9abd63941">ScalarType</a> init_weight_std,</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                       <a class="code" href="classffnn_1_1layer_1_1internal_1_1_interface.html#a7f834e3365e5199bcbcd16d9abd63941">ScalarType</a> init_bias_std,</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                       <a class="code" href="classffnn_1_1layer_1_1internal_1_1_interface.html#a7f834e3365e5199bcbcd16d9abd63941">ScalarType</a> init_weight_mean,</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                       <a class="code" href="classffnn_1_1layer_1_1internal_1_1_interface.html#a7f834e3365e5199bcbcd16d9abd63941">ScalarType</a> init_bias_mean) :</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  connection_probability(connection_probability),</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  init_weight_std(init_weight_std),</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  init_bias_std(init_bias_std),</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  init_weight_mean(init_weight_mean),</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  init_bias_mean(init_bias_mean)</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <a class="code" href="assert_8h.html#a0dd452510e5d75d0f71f52ed14143c40">FFNN_ASSERT_MSG</a>(connection_probability &gt; 0, <span class="stringliteral">&quot;[connection_probability] should be in the range (0, 1)&quot;</span>);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <a class="code" href="assert_8h.html#a0dd452510e5d75d0f71f52ed14143c40">FFNN_ASSERT_MSG</a>(connection_probability &lt; 1, <span class="stringliteral">&quot;[connection_probability] should be in the range (0, 1)&quot;</span>);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <a class="code" href="assert_8h.html#a0dd452510e5d75d0f71f52ed14143c40">FFNN_ASSERT_MSG</a>(init_bias_std &gt; 0, <span class="stringliteral">&quot;[init_bias_std] should be positive&quot;</span>);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <a class="code" href="assert_8h.html#a0dd452510e5d75d0f71f52ed14143c40">FFNN_ASSERT_MSG</a>(init_weight_std &gt; 0, <span class="stringliteral">&quot;[init_weight_std] should be positive&quot;</span>);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> InputsAtCompileTime,</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> OutputsAtCompileTime&gt;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<a class="code" href="classffnn_1_1layer_1_1_sparsely_connected.html#a7852f80fc620d79f893ca3a6ebea987b">SparselyConnected&lt;ValueType, InputsAtCompileTime, OutputsAtCompileTime&gt;::</a></div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_sparsely_connected.html#a7852f80fc620d79f893ca3a6ebea987b">   41</a></span>&#160;<a class="code" href="classffnn_1_1layer_1_1_sparsely_connected.html#a7852f80fc620d79f893ca3a6ebea987b">SparselyConnected</a>(<a class="code" href="classffnn_1_1layer_1_1internal_1_1_interface.html#af0567642f60c65b5e87067226a54174b">SizeType</a> output_size, <span class="keyword">const</span> <a class="code" href="structffnn_1_1layer_1_1_sparsely_connected_1_1_parameters.html">Parameters</a>&amp; config) :</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="classffnn_1_1layer_1_1internal_1_1_interface.html">Base</a>(<a class="code" href="structffnn_1_1layer_1_1internal_1_1_shape.html">ShapeType</a>(0), <a class="code" href="structffnn_1_1layer_1_1internal_1_1_shape.html">ShapeType</a>(output_size)),</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  config_(config),</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  opt_(boost::make_shared&lt;typename optimizer::None&lt;<a class="code" href="classffnn_1_1layer_1_1_layer.html">Self</a>&gt;&gt;())</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{}</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> InputsAtCompileTime,</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> OutputsAtCompileTime&gt;</div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_sparsely_connected.html#ab35a9206f553aa2c84c5d09d4472aed8">   50</a></span>&#160;<a class="code" href="classffnn_1_1layer_1_1_sparsely_connected.html#ab35a9206f553aa2c84c5d09d4472aed8">SparselyConnected&lt;ValueType, InputsAtCompileTime, OutputsAtCompileTime&gt;::~SparselyConnected</a>()</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{}</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> InputsAtCompileTime,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> OutputsAtCompileTime&gt;</div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_sparsely_connected.html#abb2966b5e7813c43ae2ea5448188a9fb">   56</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classffnn_1_1layer_1_1_sparsely_connected.html#abb2966b5e7813c43ae2ea5448188a9fb">SparselyConnected&lt;ValueType, InputsAtCompileTime, OutputsAtCompileTime&gt;::initialize</a>()</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;{</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="comment">// Abort if layer is already initialized</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordflow">if</span> (Base::setupRequired() &amp;&amp; Base::isInitialized())</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="logging_8h.html#aabf5ff82064ef58a239a35b444685955">FFNN_WARN_NAMED</a>(<span class="stringliteral">&quot;layer::SparselyConnected&quot;</span>, <span class="stringliteral">&quot;&lt;&quot;</span> &lt;&lt; Base::getID() &lt;&lt; <span class="stringliteral">&quot;&gt; already initialized.&quot;</span>);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!Base::initialize())</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef FFNN_LAYER_IMPL_SPARSELY_CONNECTED_HPP</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define FFNN_LAYER_IMPL_SPARSELY_CONNECTED_HPP</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// Boost</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;boost/bind.hpp&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// FFNN</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="assert_8h.html">ffnn/assert.h</a>&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="logging_8h.html">ffnn/logging.h</a>&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="none_8h.html">ffnn/optimizer/none.h</a>&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="internal_2signature_8h.html">ffnn/internal/signature.h</a>&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace </span>ffnn</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">namespace </span>layer</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="layer_2impl_2sparsely__connected_8hpp.html#a005b9b79411aa786124330e813a99057">   21</a></span>&#160;<span class="preprocessor">#define TARGS ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> InputsAtCompileTime,</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> OutputsAtCompileTime,</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;         <span class="keyword">typename</span> _HiddenLayerShape&gt;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<a class="code" href="classffnn_1_1layer_1_1_sparsely_connected.html#ad1fd7fa0eefeec930f3b8d7b31e1061e">SparselyConnected&lt;TARGS&gt;::</a></div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_sparsely_connected.html#ad1fd7fa0eefeec930f3b8d7b31e1061e">   28</a></span>&#160;<a class="code" href="classffnn_1_1layer_1_1_sparsely_connected.html#ad1fd7fa0eefeec930f3b8d7b31e1061e">SparselyConnected</a>(<a class="code" href="classffnn_1_1layer_1_1internal_1_1_interface.html#af0567642f60c65b5e87067226a54174b">SizeType</a> output_size) :</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <a class="code" href="classffnn_1_1layer_1_1internal_1_1_interface.html">Base</a>(<a class="code" href="structffnn_1_1layer_1_1internal_1_1_shape.html">ShapeType</a>(0), <a class="code" href="structffnn_1_1layer_1_1internal_1_1_shape.html">ShapeType</a>(output_size)),</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  opt_(boost::make_shared&lt;typename optimizer::None&lt;<a class="code" href="classffnn_1_1layer_1_1_layer.html">Self</a>&gt;&gt;())</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{}</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> InputsAtCompileTime,</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> OutputsAtCompileTime,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;         <span class="keyword">typename</span> _HiddenLayerShape&gt;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_sparsely_connected.html#a8c7c34f665982387ce66bd22887b84bc">   37</a></span>&#160;<a class="code" href="classffnn_1_1layer_1_1_sparsely_connected.html#a8c7c34f665982387ce66bd22887b84bc">SparselyConnected&lt;TARGS&gt;::~SparselyConnected</a>()</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{}</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> InputsAtCompileTime,</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> OutputsAtCompileTime,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;         <span class="keyword">typename</span> _HiddenLayerShape&gt;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_sparsely_connected.html#a67b16619976b48b77eee1a3c9d53bdd1">   44</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classffnn_1_1layer_1_1_sparsely_connected.html#a67b16619976b48b77eee1a3c9d53bdd1">SparselyConnected&lt;TARGS&gt;::initialize</a>()</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="comment">// Abort if layer is already initialized</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordflow">if</span> (Base::setupRequired() &amp;&amp; Base::isInitialized())</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="logging_8h.html#aabf5ff82064ef58a239a35b444685955">FFNN_WARN_NAMED</a>(<span class="stringliteral">&quot;layer::SparselyConnected&quot;</span>, <span class="stringliteral">&quot;&lt;&quot;</span> &lt;&lt; Base::getID() &lt;&lt; <span class="stringliteral">&quot;&gt; already initialized.&quot;</span>);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!Base::initialize())</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="comment">// Initialize weights</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keywordflow">if</span> (Base::setupRequired())</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    reset();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="comment">// Setup optimizer</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordflow">if</span> (opt_)</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    opt_-&gt;initialize(*<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  }</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="comment">// Initialize weights</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordflow">if</span> (Base::setupRequired())</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    reset();</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="comment">// Setup optimizer</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordflow">if</span> (opt_)</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    opt_-&gt;initialize(*<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  }</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <a class="code" href="logging_8h.html#ad17a22e477672ae24ca9afe0abf1b46f">FFNN_DEBUG_NAMED</a>(<span class="stringliteral">&quot;layer::SparselyConnected&quot;</span>,</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                   <span class="stringliteral">&quot;&lt;&quot;</span> &lt;&lt;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                   Base::getID() &lt;&lt;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                   <span class="stringliteral">&quot;&gt; initialized as (in=&quot;</span> &lt;&lt;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                   Base::inputShape().size() &lt;&lt;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                   <span class="stringliteral">&quot;, out=&quot;</span> &lt;&lt;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                   Base::outputShape().size() &lt;&lt;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                   <span class="stringliteral">&quot;) [with 1 biasing input] (optimizer=&quot;</span> &lt;&lt;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                   opt_-&gt;name() &lt;&lt;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                   <span class="stringliteral">&quot;)&quot;</span>);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> InputsAtCompileTime,</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> OutputsAtCompileTime&gt;</div>
-<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_sparsely_connected.html#a53f1d9a2edfdd2e47164b24121c23acc">   97</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classffnn_1_1layer_1_1_sparsely_connected.html#a53f1d9a2edfdd2e47164b24121c23acc">SparselyConnected&lt;ValueType, InputsAtCompileTime, OutputsAtCompileTime&gt;::forward</a>()</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;{</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <a class="code" href="assert_8h.html#a0dd452510e5d75d0f71f52ed14143c40">FFNN_ASSERT_MSG</a>(opt_, <span class="stringliteral">&quot;No optimization resource set.&quot;</span>);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="keywordflow">if</span> (!opt_-&gt;forward(*<span class="keyword">this</span>))</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  {</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  }</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <span class="comment">// Compute weighted outputs</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  Base::output_.noalias() = w_ * Base::input_;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  Base::output_.noalias() += b_;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> InputsAtCompileTime,</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> OutputsAtCompileTime&gt;</div>
-<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_sparsely_connected.html#a597ea83c83e8f4f64a1fb7f17a1ea015">  114</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classffnn_1_1layer_1_1_sparsely_connected.html#a597ea83c83e8f4f64a1fb7f17a1ea015">SparselyConnected&lt;ValueType, InputsAtCompileTime, OutputsAtCompileTime&gt;::backward</a>()</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;{</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <a class="code" href="assert_8h.html#a0dd452510e5d75d0f71f52ed14143c40">FFNN_ASSERT_MSG</a>(opt_, <span class="stringliteral">&quot;No optimization resource set.&quot;</span>);</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  <span class="comment">// Compute backward error</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  Base::backward_error_.noalias() = w_.transpose() * Base::forward_error_;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <span class="comment">// Run optimizer</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <span class="keywordflow">return</span> opt_-&gt;backward(*<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;}</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> InputsAtCompileTime,</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> OutputsAtCompileTime&gt;</div>
-<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_sparsely_connected.html#afa564d528e74917231da2d038f76e3f1">  128</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classffnn_1_1layer_1_1_sparsely_connected.html#afa564d528e74917231da2d038f76e3f1">SparselyConnected&lt;ValueType, InputsAtCompileTime, OutputsAtCompileTime&gt;::update</a>()</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;{</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  <a class="code" href="assert_8h.html#a0dd452510e5d75d0f71f52ed14143c40">FFNN_ASSERT_MSG</a>(opt_, <span class="stringliteral">&quot;No optimization resource set.&quot;</span>);</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  <span class="keywordflow">return</span> opt_-&gt;update(*<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;}</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> InputsAtCompileTime,</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> OutputsAtCompileTime&gt;</div>
-<div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_sparsely_connected.html#a084e685f9e14b926d6cc6fb973775415">  137</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classffnn_1_1layer_1_1_sparsely_connected.html#a084e685f9e14b926d6cc6fb973775415">SparselyConnected&lt;ValueType, InputsAtCompileTime, OutputsAtCompileTime&gt;::reset</a>()</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;{</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  <span class="keyword">typedef</span> Eigen::Matrix&lt;ValueType, OutputsAtCompileTime, InputsAtCompileTime&gt; RandMatrix;</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  <a class="code" href="assert_8h.html#a0dd452510e5d75d0f71f52ed14143c40">FFNN_ASSERT_MSG</a>(Base::isInitialized(), <span class="stringliteral">&quot;Layer is not initialized.&quot;</span>);</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  <span class="comment">// Create random value matrix</span></div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  RandMatrix random(Base::outputShape().size(), Base::inputShape().size());</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  random.setRandom(Base::outputShape().size(), Base::inputShape().size());</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  <span class="comment">// Build weight matrix</span></div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  w_.resize(Base::outputShape().size(), Base::inputShape().size());</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  <span class="keywordflow">for</span> (<a class="code" href="classffnn_1_1layer_1_1internal_1_1_interface.html#af0567642f60c65b5e87067226a54174b">SizeType</a> idx = 0; idx &lt; Base::outputShape().size(); idx++)</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  {</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordflow">for</span> (<a class="code" href="classffnn_1_1layer_1_1internal_1_1_interface.html#af0567642f60c65b5e87067226a54174b">SizeType</a> jdx = 0; jdx &lt; Base::inputShape().size(); jdx++)</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    {</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;      <span class="keyword">const</span> ValueType p = (random(idx, jdx) + 1) / 2;</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;      <span class="keywordflow">if</span> (p &lt; config_.connection_probability)</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;      {</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        w_.insert(idx, jdx) =</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;          config_.init_weight_mean + random(idx, jdx) * config_.init_weight_std;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;      }</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    }</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  }</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  <span class="comment">// Set uniformly random bias matrix + add biases</span></div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;  b_.setRandom(Base::outputShape().size(), 1);</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;  b_ *= config_.init_bias_std;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  <span class="keywordflow">if</span> (std::abs(config_.init_bias_mean) &gt; 0)</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  {</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    b_.array() += config_.init_bias_mean;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <a class="code" href="logging_8h.html#ad17a22e477672ae24ca9afe0abf1b46f">FFNN_DEBUG_NAMED</a>(<span class="stringliteral">&quot;layer::SparselyConnected&quot;</span>,</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                   <span class="stringliteral">&quot;&lt;&quot;</span> &lt;&lt;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                   Base::getID() &lt;&lt;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                   <span class="stringliteral">&quot;&gt; initialized as (in=&quot;</span> &lt;&lt;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                   Base::inputShape().size() &lt;&lt;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                   <span class="stringliteral">&quot;, out=&quot;</span> &lt;&lt;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                   Base::outputShape().size() &lt;&lt;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                   <span class="stringliteral">&quot;) [with 1 biasing input] (optimizer=&quot;</span> &lt;&lt;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                   opt_-&gt;name() &lt;&lt;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                   <span class="stringliteral">&quot;)&quot;</span>);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> InputsAtCompileTime,</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> OutputsAtCompileTime,</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;         <span class="keyword">typename</span> _HiddenLayerShape&gt;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> WeightDistribution,</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;         <span class="keyword">typename</span> BiasDistribution,</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;         <span class="keyword">typename</span> ConnectionDistribution&gt;</div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_sparsely_connected.html#ae66003530f3545958ea55baca0e6c132">   89</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classffnn_1_1layer_1_1_sparsely_connected.html#a67b16619976b48b77eee1a3c9d53bdd1">SparselyConnected&lt;TARGS&gt;::initialize</a>(<span class="keyword">const</span> WeightDistribution&amp; wd,</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                                    <span class="keyword">const</span> BiasDistribution&amp; bd,</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                                    <span class="keyword">const</span> ConnectionDistribution&amp; cd,</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                                    ValueType connection_probability)</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;{</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keywordflow">if</span> (initialize())</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">if</span> (Base::setupRequired())</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;      <span class="comment">// Build weight matrix</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;      <span class="keywordflow">for</span> (<a class="code" href="classffnn_1_1layer_1_1internal_1_1_interface.html#af0567642f60c65b5e87067226a54174b">SizeType</a> idx = 0; idx &lt; Base::outputShape().size(); idx++)</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;      {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordflow">for</span> (<a class="code" href="classffnn_1_1layer_1_1internal_1_1_interface.html#af0567642f60c65b5e87067226a54174b">SizeType</a> jdx = 0; jdx &lt; Base::inputShape().size(); jdx++)</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;          <span class="keywordflow">if</span> (cd.cdf(cd.generate()) &lt; connection_probability)</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;          {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            w_.insert(idx, jdx) = wd.generate();</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;          }</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;      }</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;      <span class="comment">// Set layer biases</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;      {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keyword">auto</span> coeffInitfn = [](ValueType x, <span class="keyword">const</span> BiasDistribution&amp; dist)</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        {</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;          <span class="keywordflow">return</span> dist.generate();</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        };</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        b_ = b_.unaryExpr(boost::bind&lt;ValueType&gt;(coeffInitfn, _1, bd));</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;      }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    }</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <a class="code" href="logging_8h.html#aabf5ff82064ef58a239a35b444685955">FFNN_WARN_NAMED</a>(<span class="stringliteral">&quot;layer::SparselyConnected&quot;</span>,</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                    <span class="stringliteral">&quot;Layer was previously loaded. Trained parameters will not be reset.&quot;</span>);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  }</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;}</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> InputsAtCompileTime,</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> OutputsAtCompileTime,</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;         <span class="keyword">typename</span> _HiddenLayerShape&gt;</div>
+<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_sparsely_connected.html#a0acb482045ac19809d05ef891358121c">  132</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classffnn_1_1layer_1_1_sparsely_connected.html#a0acb482045ac19809d05ef891358121c">SparselyConnected&lt;TARGS&gt;::forward</a>()</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;{</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  <a class="code" href="assert_8h.html#a0dd452510e5d75d0f71f52ed14143c40">FFNN_ASSERT_MSG</a>(opt_, <span class="stringliteral">&quot;No optimization resource set.&quot;</span>);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  <span class="keywordflow">if</span> (!opt_-&gt;forward(*<span class="keyword">this</span>))</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  {</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  }</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  <span class="comment">// Compute weighted outputs</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  Base::output_.noalias() = w_ * Base::input_;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  Base::output_ += b_;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;}</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> InputsAtCompileTime,</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> OutputsAtCompileTime,</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;         <span class="keyword">typename</span> _HiddenLayerShape&gt;</div>
+<div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_sparsely_connected.html#afd4b1b14b3bb25103afbb3da0c36870f">  150</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classffnn_1_1layer_1_1_sparsely_connected.html#afd4b1b14b3bb25103afbb3da0c36870f">SparselyConnected&lt;TARGS&gt;::backward</a>()</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;{</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  <a class="code" href="assert_8h.html#a0dd452510e5d75d0f71f52ed14143c40">FFNN_ASSERT_MSG</a>(opt_, <span class="stringliteral">&quot;No optimization resource set.&quot;</span>);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  <span class="comment">// Compute backward error</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  Base::backward_error_.noalias() = w_.transpose() * Base::forward_error_;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  <span class="comment">// Run optimizer</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  <span class="keywordflow">return</span> opt_-&gt;backward(*<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;}</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> InputsAtCompileTime,</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> OutputsAtCompileTime,</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;         <span class="keyword">typename</span> _HiddenLayerShape&gt;</div>
+<div class="line"><a name="l00165"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_sparsely_connected.html#a5ddba33151a0bca81ec83cec819a14d8">  165</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classffnn_1_1layer_1_1_sparsely_connected.html#a5ddba33151a0bca81ec83cec819a14d8">SparselyConnected&lt;TARGS&gt;::update</a>()</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;{</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  <a class="code" href="assert_8h.html#a0dd452510e5d75d0f71f52ed14143c40">FFNN_ASSERT_MSG</a>(opt_, <span class="stringliteral">&quot;No optimization resource set.&quot;</span>);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  <span class="keywordflow">return</span> opt_-&gt;update(*<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;}</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> InputsAtCompileTime,</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> OutputsAtCompileTime&gt;</div>
-<div class="line"><a name="l00174"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_sparsely_connected.html#a5ad877d8a61e22e66b040915fe5cb045">  174</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classffnn_1_1layer_1_1_sparsely_connected.html#a5ad877d8a61e22e66b040915fe5cb045">SparselyConnected&lt;ValueType, InputsAtCompileTime, OutputsAtCompileTime&gt;::prune</a>(ValueType epsilon)</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;{</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  w_.prune(0, epsilon);</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;}</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> InputsAtCompileTime,</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> OutputsAtCompileTime&gt;</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="keywordtype">void</span> <a class="code" href="classffnn_1_1layer_1_1_sparsely_connected.html#a1d6abf2925da812b4fb88a140ec60b63">SparselyConnected&lt;ValueType, InputsAtCompileTime, OutputsAtCompileTime&gt;::</a></div>
-<div class="line"><a name="l00183"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_sparsely_connected.html#a1d6abf2925da812b4fb88a140ec60b63">  183</a></span>&#160;<a class="code" href="classffnn_1_1layer_1_1_sparsely_connected.html#a1d6abf2925da812b4fb88a140ec60b63">  setOptimizer</a>(<span class="keyword">typename</span> <a class="code" href="classffnn_1_1optimizer_1_1_optimizer.html#ac03e7181934bf0c12a97fc67a60484ab">Optimizer::Ptr</a> opt)</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;{</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  <a class="code" href="assert_8h.html#a0dd452510e5d75d0f71f52ed14143c40">FFNN_ASSERT_MSG</a>(opt, <span class="stringliteral">&quot;Input optimizer object is an empty resource.&quot;</span>);</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  opt_ = opt;</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;}</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> InputsAtCompileTime,</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> OutputsAtCompileTime&gt;</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="keywordtype">void</span> <a class="code" href="classffnn_1_1layer_1_1_sparsely_connected.html#aa8ae358e7cf06b58f3d33be2851d0260">SparselyConnected&lt;ValueType, InputsAtCompileTime, OutputsAtCompileTime&gt;::</a></div>
-<div class="line"><a name="l00193"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_sparsely_connected.html#aa8ae358e7cf06b58f3d33be2851d0260">  193</a></span>&#160;<a class="code" href="classffnn_1_1layer_1_1_sparsely_connected.html#aa8ae358e7cf06b58f3d33be2851d0260">  save</a>(<span class="keyword">typename</span> <a class="code" href="classffnn_1_1traits_1_1_serializable.html#a08d986df75d363fa79506d4f6045cb9f">SparselyConnected&lt;ValueType, InputsAtCompileTime, OutputsAtCompileTime&gt;::OutputArchive</a>&amp; ar,</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;       <span class="keyword">typename</span> <a class="code" href="classffnn_1_1traits_1_1_serializable.html#a08924b3b7d20cb3cb6eafe517d4f7b30">SparselyConnected&lt;ValueType, InputsAtCompileTime, OutputsAtCompileTime&gt;::VersionType</a> version)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;  ffnn::io::signature::apply&lt;SparselyConnected&lt;ValueType, InputsAtCompileTime, OutputsAtCompileTime&gt;&gt;(ar);</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  <a class="code" href="dense__base__addons_8h.html#ab948859788aa671e575e410654e07f16">Base::save</a>(ar, version);</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;  <span class="comment">// Save configuration parameters</span></div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;  ar &amp; config_.connection_probability;</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;  ar &amp; config_.init_weight_std;</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;  ar &amp; config_.init_weight_mean;</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;  ar &amp; config_.init_bias_std;</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;  ar &amp; config_.init_bias_mean;</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;  <span class="comment">// Save weight/bias matrix</span></div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;  ar &amp; w_;</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;  ar &amp; b_;</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;  <a class="code" href="logging_8h.html#ad17a22e477672ae24ca9afe0abf1b46f">FFNN_DEBUG_NAMED</a>(<span class="stringliteral">&quot;layer::SparselyConnected&quot;</span>, <span class="stringliteral">&quot;Saved&quot;</span>);</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;}</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> OutputsAtCompileTime,</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;         <span class="keyword">typename</span> _HiddenLayerShape&gt;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="keywordtype">void</span> <a class="code" href="classffnn_1_1layer_1_1_sparsely_connected.html">SparselyConnected&lt;TARGS&gt;::reset</a>()</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;{</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;  <span class="comment">// Zero out connection weights and biases with appropriate size</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;  w_.resize(Base::outputShape().size(), Base::inputShape().size());</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;  b_.setRandom(Base::outputShape().size(), 1);</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;}</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> InputsAtCompileTime,</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> OutputsAtCompileTime,</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;         <span class="keyword">typename</span> _HiddenLayerShape&gt;</div>
+<div class="line"><a name="l00186"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_sparsely_connected.html#a78c4c2997531c733b0a4e094269e72d4">  186</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classffnn_1_1layer_1_1_sparsely_connected.html#a78c4c2997531c733b0a4e094269e72d4">SparselyConnected&lt;TARGS&gt;::prune</a>(ValueType epsilon)</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;{</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  w_.prune(0, epsilon);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;}</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> InputsAtCompileTime,</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> OutputsAtCompileTime,</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;         <span class="keyword">typename</span> _HiddenLayerShape&gt;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="keywordtype">void</span> <a class="code" href="classffnn_1_1layer_1_1_sparsely_connected.html#a58182d9cc22d1893c8eb2ffdbe3d8efd">SparselyConnected&lt;TARGS&gt;::</a></div>
+<div class="line"><a name="l00196"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_sparsely_connected.html#a58182d9cc22d1893c8eb2ffdbe3d8efd">  196</a></span>&#160;<a class="code" href="classffnn_1_1layer_1_1_sparsely_connected.html#a58182d9cc22d1893c8eb2ffdbe3d8efd">  setOptimizer</a>(<span class="keyword">typename</span> <a class="code" href="classffnn_1_1optimizer_1_1_optimizer.html#ac03e7181934bf0c12a97fc67a60484ab">Optimizer::Ptr</a> opt)</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;{</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  <a class="code" href="assert_8h.html#a0dd452510e5d75d0f71f52ed14143c40">FFNN_ASSERT_MSG</a>(opt, <span class="stringliteral">&quot;Input optimizer object is an empty resource.&quot;</span>);</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;  opt_ = opt;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;}</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> InputsAtCompileTime,</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> OutputsAtCompileTime,</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;         <span class="keyword">typename</span> _HiddenLayerShape&gt;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="keywordtype">void</span> <a class="code" href="classffnn_1_1layer_1_1_sparsely_connected.html#a3eec4552d44a17ef14c5bb71361058ed">SparselyConnected&lt;TARGS&gt;::</a></div>
+<div class="line"><a name="l00207"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_sparsely_connected.html#a3eec4552d44a17ef14c5bb71361058ed">  207</a></span>&#160;<a class="code" href="classffnn_1_1layer_1_1_sparsely_connected.html#a3eec4552d44a17ef14c5bb71361058ed">  save</a>(<span class="keyword">typename</span> <a class="code" href="classffnn_1_1traits_1_1_serializable.html#a08d986df75d363fa79506d4f6045cb9f">SparselyConnected&lt;TARGS&gt;::OutputArchive</a>&amp; ar,</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;       <span class="keyword">typename</span> <a class="code" href="classffnn_1_1traits_1_1_serializable.html#a08924b3b7d20cb3cb6eafe517d4f7b30">SparselyConnected&lt;TARGS&gt;::VersionType</a> version)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;  ffnn::io::signature::apply&lt;SparselyConnected&lt;TARGS&gt;&gt;(ar);</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;  <a class="code" href="dense__base__addons_8h.html#ab948859788aa671e575e410654e07f16">Base::save</a>(ar, version);</div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> InputsAtCompileTime,</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> OutputsAtCompileTime&gt;</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="keywordtype">void</span> <a class="code" href="classffnn_1_1layer_1_1_sparsely_connected.html#a0996cd78dc2f76cab36fac2ec5c8f323">SparselyConnected&lt;ValueType, InputsAtCompileTime, OutputsAtCompileTime&gt;::</a></div>
-<div class="line"><a name="l00217"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_sparsely_connected.html#a0996cd78dc2f76cab36fac2ec5c8f323">  217</a></span>&#160;<a class="code" href="classffnn_1_1layer_1_1_sparsely_connected.html#a0996cd78dc2f76cab36fac2ec5c8f323">  load</a>(<span class="keyword">typename</span> <a class="code" href="classffnn_1_1traits_1_1_serializable.html#a6e626759259f8f370dd4303b4441a234">SparselyConnected&lt;ValueType, InputsAtCompileTime, OutputsAtCompileTime&gt;::InputArchive</a>&amp; ar,</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;       <span class="keyword">typename</span> <a class="code" href="classffnn_1_1traits_1_1_serializable.html#a08924b3b7d20cb3cb6eafe517d4f7b30">SparselyConnected&lt;ValueType, InputsAtCompileTime, OutputsAtCompileTime&gt;::VersionType</a> version)</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;{</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;  ffnn::io::signature::check&lt;SparselyConnected&lt;ValueType, InputsAtCompileTime, OutputsAtCompileTime&gt;&gt;(ar);</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;  <a class="code" href="dense__base__addons_8h.html#a68dbd347886624cd725b8a26e5242ee2">Base::load</a>(ar, version);</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;  <span class="comment">// Save configuration parameters</span></div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;  ar &amp; config_.connection_probability;</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;  ar &amp; config_.init_weight_std;</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;  ar &amp; config_.init_weight_mean;</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;  ar &amp; config_.init_bias_std;</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;  ar &amp; config_.init_bias_mean;</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;  <span class="comment">// Save weight/bias matrix</span></div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;  ar &amp; w_;</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;  ar &amp; b_;</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;  <a class="code" href="logging_8h.html#ad17a22e477672ae24ca9afe0abf1b46f">FFNN_DEBUG_NAMED</a>(<span class="stringliteral">&quot;layer::SparselyConnected&quot;</span>, <span class="stringliteral">&quot;Loaded&quot;</span>);</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;}</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;}  <span class="comment">// namespace layer</span></div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;}  <span class="comment">// namespace ffnn</span></div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;  <span class="comment">// Save weight/bias matrix</span></div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;  ar &amp; w_;</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;  ar &amp; b_;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;  <a class="code" href="logging_8h.html#ad17a22e477672ae24ca9afe0abf1b46f">FFNN_DEBUG_NAMED</a>(<span class="stringliteral">&quot;layer::SparselyConnected&quot;</span>, <span class="stringliteral">&quot;Saved&quot;</span>);</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;}</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> InputsAtCompileTime,</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;         <a class="code" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> OutputsAtCompileTime,</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;         <span class="keyword">typename</span> _HiddenLayerShape&gt;</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="keywordtype">void</span> <a class="code" href="classffnn_1_1layer_1_1_sparsely_connected.html#a671ce3fc9d6fa1e7b10153205a78596a">SparselyConnected&lt;TARGS&gt;::</a></div>
+<div class="line"><a name="l00225"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_sparsely_connected.html#a671ce3fc9d6fa1e7b10153205a78596a">  225</a></span>&#160;<a class="code" href="classffnn_1_1layer_1_1_sparsely_connected.html#a671ce3fc9d6fa1e7b10153205a78596a">  load</a>(<span class="keyword">typename</span> <a class="code" href="classffnn_1_1traits_1_1_serializable.html#a6e626759259f8f370dd4303b4441a234">SparselyConnected&lt;TARGS&gt;::InputArchive</a>&amp; ar,</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;       <span class="keyword">typename</span> <a class="code" href="classffnn_1_1traits_1_1_serializable.html#a08924b3b7d20cb3cb6eafe517d4f7b30">SparselyConnected&lt;TARGS&gt;::VersionType</a> version)</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;{</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;  ffnn::io::signature::check&lt;SparselyConnected&lt;TARGS&gt;&gt;(ar);</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;  <a class="code" href="dense__base__addons_8h.html#a68dbd347886624cd725b8a26e5242ee2">Base::load</a>(ar, version);</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;  <span class="comment">// Save weight/bias matrix</span></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;  ar &amp; w_;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;  ar &amp; b_;</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;  <a class="code" href="logging_8h.html#ad17a22e477672ae24ca9afe0abf1b46f">FFNN_DEBUG_NAMED</a>(<span class="stringliteral">&quot;layer::SparselyConnected&quot;</span>, <span class="stringliteral">&quot;Loaded&quot;</span>);</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;}</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;}  <span class="comment">// namespace layer</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;}  <span class="comment">// namespace ffnn</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="preprocessor">#undef TARGS</span></div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif  // FFNN_LAYER_IMPL_SPARSELY_CONNECTED_HPP</span></div>
 <div class="ttc" id="classffnn_1_1layer_1_1internal_1_1_interface_html"><div class="ttname"><a href="classffnn_1_1layer_1_1internal_1_1_interface.html">ffnn::layer::internal::Interface</a></div><div class="ttdoc">Base object for all layer types. </div><div class="ttdef"><b>Definition:</b> interface.h:27</div></div>
+<div class="ttc" id="classffnn_1_1layer_1_1_sparsely_connected_html_a5ddba33151a0bca81ec83cec819a14d8"><div class="ttname"><a href="classffnn_1_1layer_1_1_sparsely_connected.html#a5ddba33151a0bca81ec83cec819a14d8">ffnn::layer::SparselyConnected::update</a></div><div class="ttdeci">bool update()</div><div class="ttdoc">Applies accumulated layer weight updates computed during optimization. </div><div class="ttdef"><b>Definition:</b> sparsely_connected.hpp:165</div></div>
 <div class="ttc" id="classffnn_1_1traits_1_1_serializable_html_a08924b3b7d20cb3cb6eafe517d4f7b30"><div class="ttname"><a href="classffnn_1_1traits_1_1_serializable.html#a08924b3b7d20cb3cb6eafe517d4f7b30">ffnn::traits::Serializable::VersionType</a></div><div class="ttdeci">FFNN_SERIALIZATION_VERSION_TYPE VersionType</div><div class="ttdoc">Class-version type standardization. </div><div class="ttdef"><b>Definition:</b> serializable.h:35</div></div>
-<div class="ttc" id="classffnn_1_1layer_1_1_sparsely_connected_html_a5ad877d8a61e22e66b040915fe5cb045"><div class="ttname"><a href="classffnn_1_1layer_1_1_sparsely_connected.html#a5ad877d8a61e22e66b040915fe5cb045">ffnn::layer::SparselyConnected::prune</a></div><div class="ttdeci">void prune(ValueType epsilon)</div><div class="ttdoc">Prune weights smaller than some value epsilon. </div><div class="ttdef"><b>Definition:</b> sparsely_connected.hpp:174</div></div>
-<div class="ttc" id="classffnn_1_1layer_1_1internal_1_1_interface_html_a7f834e3365e5199bcbcd16d9abd63941"><div class="ttname"><a href="classffnn_1_1layer_1_1internal_1_1_interface.html#a7f834e3365e5199bcbcd16d9abd63941">ffnn::layer::internal::Interface::ScalarType</a></div><div class="ttdeci">ValueType ScalarType</div><div class="ttdoc">Scalar type standardization. </div><div class="ttdef"><b>Definition:</b> interface.h:32</div></div>
-<div class="ttc" id="structffnn_1_1layer_1_1_sparsely_connected_1_1_parameters_html_acf0d0c7c3a01f292c035994e0bdda75d"><div class="ttname"><a href="structffnn_1_1layer_1_1_sparsely_connected_1_1_parameters.html#acf0d0c7c3a01f292c035994e0bdda75d">ffnn::layer::SparselyConnected::Parameters::Parameters</a></div><div class="ttdeci">Parameters(ScalarType connection_probability=0.5, ScalarType init_weight_std=1e-3, ScalarType init_bias_std=1e-3, ScalarType init_weight_mean=0.0, ScalarType init_bias_mean=0.0)</div><div class="ttdoc">Setup constructor. </div><div class="ttdef"><b>Definition:</b> sparsely_connected.hpp:20</div></div>
+<div class="ttc" id="classffnn_1_1layer_1_1_sparsely_connected_html_a78c4c2997531c733b0a4e094269e72d4"><div class="ttname"><a href="classffnn_1_1layer_1_1_sparsely_connected.html#a78c4c2997531c733b0a4e094269e72d4">ffnn::layer::SparselyConnected::prune</a></div><div class="ttdeci">void prune(ValueType epsilon)</div><div class="ttdoc">Prune weights smaller than some value epsilon. </div><div class="ttdef"><b>Definition:</b> sparsely_connected.hpp:186</div></div>
 <div class="ttc" id="none_8h_html"><div class="ttname"><a href="none_8h.html">none.h</a></div></div>
-<div class="ttc" id="classffnn_1_1layer_1_1_sparsely_connected_html_afa564d528e74917231da2d038f76e3f1"><div class="ttname"><a href="classffnn_1_1layer_1_1_sparsely_connected.html#afa564d528e74917231da2d038f76e3f1">ffnn::layer::SparselyConnected::update</a></div><div class="ttdeci">virtual bool update()</div><div class="ttdoc">Applies accumulated layer weight updates computed during optimization. </div><div class="ttdef"><b>Definition:</b> sparsely_connected.hpp:128</div></div>
-<div class="ttc" id="classffnn_1_1layer_1_1_sparsely_connected_html_aa8ae358e7cf06b58f3d33be2851d0260"><div class="ttname"><a href="classffnn_1_1layer_1_1_sparsely_connected.html#aa8ae358e7cf06b58f3d33be2851d0260">ffnn::layer::SparselyConnected::save</a></div><div class="ttdeci">void save(OutputArchive &amp;ar, VersionType version) const </div><div class="ttdoc">Save serializer. </div><div class="ttdef"><b>Definition:</b> sparsely_connected.hpp:193</div></div>
 <div class="ttc" id="dense__base__addons_8h_html_a68dbd347886624cd725b8a26e5242ee2"><div class="ttname"><a href="dense__base__addons_8h.html#a68dbd347886624cd725b8a26e5242ee2">load</a></div><div class="ttdeci">void load(Archive &amp;ar, const unsigned int version)</div><div class="ttdef"><b>Definition:</b> dense_base_addons.h:26</div></div>
-<div class="ttc" id="structffnn_1_1layer_1_1internal_1_1_shape_html"><div class="ttname"><a href="structffnn_1_1layer_1_1internal_1_1_shape.html">ffnn::layer::internal::Shape</a></div><div class="ttdef"><b>Definition:</b> shape.h:56</div></div>
+<div class="ttc" id="classffnn_1_1layer_1_1_sparsely_connected_html"><div class="ttname"><a href="classffnn_1_1layer_1_1_sparsely_connected.html">ffnn::layer::SparselyConnected</a></div><div class="ttdoc">A fully-connected layer. </div><div class="ttdef"><b>Definition:</b> sparsely_connected.h:31</div></div>
+<div class="ttc" id="structffnn_1_1layer_1_1internal_1_1_shape_html"><div class="ttname"><a href="structffnn_1_1layer_1_1internal_1_1_shape.html">ffnn::layer::internal::Shape</a></div><div class="ttdef"><b>Definition:</b> shape.h:64</div></div>
 <div class="ttc" id="logging_8h_html"><div class="ttname"><a href="logging_8h.html">logging.h</a></div></div>
 <div class="ttc" id="classffnn_1_1traits_1_1_serializable_html_a08d986df75d363fa79506d4f6045cb9f"><div class="ttname"><a href="classffnn_1_1traits_1_1_serializable.html#a08d986df75d363fa79506d4f6045cb9f">ffnn::traits::Serializable::OutputArchive</a></div><div class="ttdeci">FFNN_SERIALIZATION_OUTPUT_ARCHIVE_TYPE OutputArchive</div><div class="ttdoc">Output (save) archive type. </div><div class="ttdef"><b>Definition:</b> serializable.h:41</div></div>
 <div class="ttc" id="logging_8h_html_aabf5ff82064ef58a239a35b444685955"><div class="ttname"><a href="logging_8h.html#aabf5ff82064ef58a239a35b444685955">FFNN_WARN_NAMED</a></div><div class="ttdeci">#define FFNN_WARN_NAMED(name, msg)</div><div class="ttdoc">Prints an named warning message. </div><div class="ttdef"><b>Definition:</b> logging.h:61</div></div>
-<div class="ttc" id="assert_8h_html_a0dd452510e5d75d0f71f52ed14143c40"><div class="ttname"><a href="assert_8h.html#a0dd452510e5d75d0f71f52ed14143c40">FFNN_ASSERT_MSG</a></div><div class="ttdeci">#define FFNN_ASSERT_MSG(cond, msg)</div><div class="ttdef"><b>Definition:</b> assert.h:32</div></div>
+<div class="ttc" id="classffnn_1_1layer_1_1_sparsely_connected_html_a58182d9cc22d1893c8eb2ffdbe3d8efd"><div class="ttname"><a href="classffnn_1_1layer_1_1_sparsely_connected.html#a58182d9cc22d1893c8eb2ffdbe3d8efd">ffnn::layer::SparselyConnected::setOptimizer</a></div><div class="ttdeci">void setOptimizer(typename Optimizer::Ptr opt)</div><div class="ttdoc">Sets an optimizer used update network weights during back-propagation. </div><div class="ttdef"><b>Definition:</b> sparsely_connected.hpp:196</div></div>
+<div class="ttc" id="assert_8h_html_a0dd452510e5d75d0f71f52ed14143c40"><div class="ttname"><a href="assert_8h.html#a0dd452510e5d75d0f71f52ed14143c40">FFNN_ASSERT_MSG</a></div><div class="ttdeci">#define FFNN_ASSERT_MSG(cond, msg)</div><div class="ttdef"><b>Definition:</b> assert.h:35</div></div>
 <div class="ttc" id="assert_8h_html"><div class="ttname"><a href="assert_8h.html">assert.h</a></div></div>
-<div class="ttc" id="classffnn_1_1layer_1_1_sparsely_connected_html_a597ea83c83e8f4f64a1fb7f17a1ea015"><div class="ttname"><a href="classffnn_1_1layer_1_1_sparsely_connected.html#a597ea83c83e8f4f64a1fb7f17a1ea015">ffnn::layer::SparselyConnected::backward</a></div><div class="ttdeci">virtual bool backward()</div><div class="ttdoc">Performs backward error propagation. </div><div class="ttdef"><b>Definition:</b> sparsely_connected.hpp:114</div></div>
-<div class="ttc" id="classffnn_1_1layer_1_1_sparsely_connected_html_a084e685f9e14b926d6cc6fb973775415"><div class="ttname"><a href="classffnn_1_1layer_1_1_sparsely_connected.html#a084e685f9e14b926d6cc6fb973775415">ffnn::layer::SparselyConnected::reset</a></div><div class="ttdeci">void reset()</div><div class="ttdoc">Reset weights and biases. </div><div class="ttdef"><b>Definition:</b> sparsely_connected.hpp:137</div></div>
-<div class="ttc" id="structffnn_1_1layer_1_1_sparsely_connected_1_1_parameters_html"><div class="ttname"><a href="structffnn_1_1layer_1_1_sparsely_connected_1_1_parameters.html">ffnn::layer::SparselyConnected::Parameters</a></div><div class="ttdoc">A configuration object for a SparselyConnected hidden layer. </div><div class="ttdef"><b>Definition:</b> sparsely_connected.h:66</div></div>
 <div class="ttc" id="internal_2signature_8h_html"><div class="ttname"><a href="internal_2signature_8h.html">signature.h</a></div></div>
+<div class="ttc" id="classffnn_1_1layer_1_1_sparsely_connected_html_a3eec4552d44a17ef14c5bb71361058ed"><div class="ttname"><a href="classffnn_1_1layer_1_1_sparsely_connected.html#a3eec4552d44a17ef14c5bb71361058ed">ffnn::layer::SparselyConnected::save</a></div><div class="ttdeci">void save(OutputArchive &amp;ar, VersionType version) const </div><div class="ttdoc">Save serializer. </div><div class="ttdef"><b>Definition:</b> sparsely_connected.hpp:207</div></div>
 <div class="ttc" id="logging_8h_html_ad17a22e477672ae24ca9afe0abf1b46f"><div class="ttname"><a href="logging_8h.html#ad17a22e477672ae24ca9afe0abf1b46f">FFNN_DEBUG_NAMED</a></div><div class="ttdeci">#define FFNN_DEBUG_NAMED(name, msg)</div><div class="ttdoc">Prints an named debug message. </div><div class="ttdef"><b>Definition:</b> logging.h:52</div></div>
-<div class="ttc" id="classffnn_1_1layer_1_1_sparsely_connected_html_ab35a9206f553aa2c84c5d09d4472aed8"><div class="ttname"><a href="classffnn_1_1layer_1_1_sparsely_connected.html#ab35a9206f553aa2c84c5d09d4472aed8">ffnn::layer::SparselyConnected::~SparselyConnected</a></div><div class="ttdeci">virtual ~SparselyConnected()</div><div class="ttdef"><b>Definition:</b> sparsely_connected.hpp:50</div></div>
-<div class="ttc" id="classffnn_1_1layer_1_1_sparsely_connected_html_a1d6abf2925da812b4fb88a140ec60b63"><div class="ttname"><a href="classffnn_1_1layer_1_1_sparsely_connected.html#a1d6abf2925da812b4fb88a140ec60b63">ffnn::layer::SparselyConnected::setOptimizer</a></div><div class="ttdeci">void setOptimizer(typename Optimizer::Ptr opt)</div><div class="ttdoc">Sets an optimizer used update network weights during back-propagation. </div><div class="ttdef"><b>Definition:</b> sparsely_connected.hpp:183</div></div>
-<div class="ttc" id="classffnn_1_1layer_1_1_sparsely_connected_html_a7852f80fc620d79f893ca3a6ebea987b"><div class="ttname"><a href="classffnn_1_1layer_1_1_sparsely_connected.html#a7852f80fc620d79f893ca3a6ebea987b">ffnn::layer::SparselyConnected::SparselyConnected</a></div><div class="ttdeci">SparselyConnected(SizeType output_size=OutputsAtCompileTime, const Parameters &amp;config=Parameters())</div><div class="ttdoc">Setup constructor. </div><div class="ttdef"><b>Definition:</b> sparsely_connected.hpp:41</div></div>
+<div class="ttc" id="classffnn_1_1layer_1_1_sparsely_connected_html_a67b16619976b48b77eee1a3c9d53bdd1"><div class="ttname"><a href="classffnn_1_1layer_1_1_sparsely_connected.html#a67b16619976b48b77eee1a3c9d53bdd1">ffnn::layer::SparselyConnected::initialize</a></div><div class="ttdeci">bool initialize()</div><div class="ttdoc">Initialize the layer. </div><div class="ttdef"><b>Definition:</b> sparsely_connected.hpp:44</div></div>
+<div class="ttc" id="classffnn_1_1layer_1_1_sparsely_connected_html_a0acb482045ac19809d05ef891358121c"><div class="ttname"><a href="classffnn_1_1layer_1_1_sparsely_connected.html#a0acb482045ac19809d05ef891358121c">ffnn::layer::SparselyConnected::forward</a></div><div class="ttdeci">bool forward()</div><div class="ttdoc">Performs forward value propagation. </div><div class="ttdef"><b>Definition:</b> sparsely_connected.hpp:132</div></div>
+<div class="ttc" id="classffnn_1_1layer_1_1_sparsely_connected_html_a8c7c34f665982387ce66bd22887b84bc"><div class="ttname"><a href="classffnn_1_1layer_1_1_sparsely_connected.html#a8c7c34f665982387ce66bd22887b84bc">ffnn::layer::SparselyConnected::~SparselyConnected</a></div><div class="ttdeci">virtual ~SparselyConnected()</div><div class="ttdef"><b>Definition:</b> sparsely_connected.hpp:37</div></div>
 <div class="ttc" id="classffnn_1_1optimizer_1_1_optimizer_html_ac03e7181934bf0c12a97fc67a60484ab"><div class="ttname"><a href="classffnn_1_1optimizer_1_1_optimizer.html#ac03e7181934bf0c12a97fc67a60484ab">ffnn::optimizer::Optimizer::Ptr</a></div><div class="ttdeci">boost::shared_ptr&lt; Optimizer &gt; Ptr</div><div class="ttdoc">Shared resource standardization. </div><div class="ttdef"><b>Definition:</b> optimizer.h:31</div></div>
+<div class="ttc" id="classffnn_1_1layer_1_1_sparsely_connected_html_ad1fd7fa0eefeec930f3b8d7b31e1061e"><div class="ttname"><a href="classffnn_1_1layer_1_1_sparsely_connected.html#ad1fd7fa0eefeec930f3b8d7b31e1061e">ffnn::layer::SparselyConnected::SparselyConnected</a></div><div class="ttdeci">SparselyConnected(SizeType output_size=OutputsAtCompileTime)</div><div class="ttdoc">Setup constructor. </div><div class="ttdef"><b>Definition:</b> sparsely_connected.hpp:28</div></div>
 <div class="ttc" id="global_8h_html_aab5a5a098c5bf31f4176f4a141d2ef65"><div class="ttname"><a href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a></div><div class="ttdeci">#define FFNN_SIZE_TYPE</div><div class="ttdef"><b>Definition:</b> global.h:38</div></div>
-<div class="ttc" id="classffnn_1_1layer_1_1_sparsely_connected_html_a0996cd78dc2f76cab36fac2ec5c8f323"><div class="ttname"><a href="classffnn_1_1layer_1_1_sparsely_connected.html#a0996cd78dc2f76cab36fac2ec5c8f323">ffnn::layer::SparselyConnected::load</a></div><div class="ttdeci">void load(InputArchive &amp;ar, VersionType version)</div><div class="ttdoc">Load serializer. </div><div class="ttdef"><b>Definition:</b> sparsely_connected.hpp:217</div></div>
+<div class="ttc" id="classffnn_1_1layer_1_1_sparsely_connected_html_a671ce3fc9d6fa1e7b10153205a78596a"><div class="ttname"><a href="classffnn_1_1layer_1_1_sparsely_connected.html#a671ce3fc9d6fa1e7b10153205a78596a">ffnn::layer::SparselyConnected::load</a></div><div class="ttdeci">void load(InputArchive &amp;ar, VersionType version)</div><div class="ttdoc">Load serializer. </div><div class="ttdef"><b>Definition:</b> sparsely_connected.hpp:225</div></div>
 <div class="ttc" id="classffnn_1_1traits_1_1_serializable_html_a6e626759259f8f370dd4303b4441a234"><div class="ttname"><a href="classffnn_1_1traits_1_1_serializable.html#a6e626759259f8f370dd4303b4441a234">ffnn::traits::Serializable::InputArchive</a></div><div class="ttdeci">FFNN_SERIALIZATION_INPUT_ARCHIVE_TYPE InputArchive</div><div class="ttdoc">Input (load) archive type. </div><div class="ttdef"><b>Definition:</b> serializable.h:38</div></div>
+<div class="ttc" id="classffnn_1_1layer_1_1_sparsely_connected_html_afd4b1b14b3bb25103afbb3da0c36870f"><div class="ttname"><a href="classffnn_1_1layer_1_1_sparsely_connected.html#afd4b1b14b3bb25103afbb3da0c36870f">ffnn::layer::SparselyConnected::backward</a></div><div class="ttdeci">bool backward()</div><div class="ttdoc">Performs backward error propagation. </div><div class="ttdef"><b>Definition:</b> sparsely_connected.hpp:150</div></div>
 <div class="ttc" id="dense__base__addons_8h_html_ab948859788aa671e575e410654e07f16"><div class="ttname"><a href="dense__base__addons_8h.html#ab948859788aa671e575e410654e07f16">save</a></div><div class="ttdeci">void save(Archive &amp;ar, const unsigned int version) const </div><div class="ttdef"><b>Definition:</b> dense_base_addons.h:9</div></div>
-<div class="ttc" id="classffnn_1_1layer_1_1_sparsely_connected_html_abb2966b5e7813c43ae2ea5448188a9fb"><div class="ttname"><a href="classffnn_1_1layer_1_1_sparsely_connected.html#abb2966b5e7813c43ae2ea5448188a9fb">ffnn::layer::SparselyConnected::initialize</a></div><div class="ttdeci">virtual bool initialize()</div><div class="ttdoc">Initialize the layer. </div><div class="ttdef"><b>Definition:</b> sparsely_connected.hpp:56</div></div>
-<div class="ttc" id="classffnn_1_1layer_1_1_sparsely_connected_html_a53f1d9a2edfdd2e47164b24121c23acc"><div class="ttname"><a href="classffnn_1_1layer_1_1_sparsely_connected.html#a53f1d9a2edfdd2e47164b24121c23acc">ffnn::layer::SparselyConnected::forward</a></div><div class="ttdeci">virtual bool forward()</div><div class="ttdoc">Performs forward value propagation. </div><div class="ttdef"><b>Definition:</b> sparsely_connected.hpp:97</div></div>
 <div class="ttc" id="classffnn_1_1layer_1_1_layer_html"><div class="ttname"><a href="classffnn_1_1layer_1_1_layer.html">ffnn::layer::Layer</a></div><div class="ttdoc">Base object for all layer types. </div><div class="ttdef"><b>Definition:</b> layer.h:26</div></div>
 <div class="ttc" id="classffnn_1_1layer_1_1internal_1_1_interface_html_af0567642f60c65b5e87067226a54174b"><div class="ttname"><a href="classffnn_1_1layer_1_1internal_1_1_interface.html#af0567642f60c65b5e87067226a54174b">ffnn::layer::internal::Interface::SizeType</a></div><div class="ttdeci">FFNN_SIZE_TYPE SizeType</div><div class="ttdoc">Size type standardization. </div><div class="ttdef"><b>Definition:</b> interface.h:35</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed May 10 2017 17:22:46 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 11 2017 11:34:21 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

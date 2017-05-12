@@ -20,6 +20,8 @@ namespace ffnn
 {
 namespace layer
 {
+#define TARGS ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterCountAtCompileTime, Mode
+
 template<typename ValueType,
          FFNN_SIZE_TYPE HeightAtCompileTime,
          FFNN_SIZE_TYPE WidthAtCompileTime,
@@ -78,23 +80,17 @@ bool ConvolutionVolume<TARGS>::initialize(const WeightDistribution& wd, const Bi
 
     // Set filter connections weights
     {
-      auto coeffInitfn = [](ValueType x, const WeightDistribution& dist)
-      {
-        return dist.generate();
-      };
+      auto fn = [](ValueType x, const WeightDistribution& dist) {return dist.generate();};
       for (auto& filter : filters_)
       {
-        filter = filter.unaryExpr(boost::bind<ValueType>(coeffInitfn, _1, wd));
+        filter = filter.unaryExpr(boost::bind<ValueType>(fn, _1, wd));
       }
     }
 
     // Set layer biases
     {
-      auto coeffInitfn = [](ValueType x, const BiasDistribution& dist)
-      {
-        return dist.generate();
-      };
-      b_ = b_.unaryExpr(boost::bind<ValueType>(coeffInitfn, _1, bd));
+      auto fn = [](ValueType x, const BiasDistribution& dist) {return dist.generate();};
+      b_ = b_.unaryExpr(boost::bind<ValueType>(fn, _1, bd));
     }
   }
 
@@ -143,7 +139,7 @@ template<typename ValueType,
 void ConvolutionVolume<TARGS>::save(typename ConvolutionVolume<TARGS>::OutputArchive& ar,
                                     typename ConvolutionVolume<TARGS>::VersionType version) const
 {
-  ffnn::io::signature::apply<CONVOLUTION_VOLUME>(ar);
+  ffnn::io::signature::apply<ConvolutionVolume<TARGS>>(ar);
   Base::save(ar, version);
 
   // Save filters
@@ -163,7 +159,7 @@ template<typename ValueType,
 void ConvolutionVolume<TARGS>::load(typename ConvolutionVolume<TARGS>::InputArchive& ar,
                                     typename ConvolutionVolume<TARGS>::VersionType version)
 {
-  ffnn::io::signature::check<CONVOLUTION_VOLUME>(ar);
+  ffnn::io::signature::check<ConvolutionVolume<TARGS>>(ar);
   Base::load(ar, version);
 
   // Load filters

@@ -2,6 +2,8 @@
  * @note HEADER-ONLY IMPLEMENTATION FILE
  * @warn Do not include directly
  */
+#ifndef FFNN_LAYER_IMPL_CONVOLUTION_HPP
+#define FFNN_LAYER_IMPL_CONVOLUTION_HPP
 
 // C++ Standard Library
 #include <exception>
@@ -25,7 +27,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
          EmbeddingMode Mode,
-         class _HiddenLayerShape>
+         typename _HiddenLayerShape>
 Convolution<CONV_TARGS>::
 Convolution(const ShapeType& input_shape,
             const SizeType& filter_height,
@@ -56,7 +58,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
          EmbeddingMode Mode,
-         class _HiddenLayerShape>
+         typename _HiddenLayerShape>
 Convolution<CONV_TARGS>::~Convolution()
 {
   FFNN_INTERNAL_DEBUG_NAMED("layer::Convolution", "Destroying [layer::Convolution] object <" << this->getID() << ">");
@@ -71,7 +73,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
          EmbeddingMode Mode,
-         class _HiddenLayerShape>
+         typename _HiddenLayerShape>
 bool Convolution<CONV_TARGS>::initialize()
 {
   if (Base::isInitialized())
@@ -123,7 +125,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
          EmbeddingMode Mode,
-         class _HiddenLayerShape>
+         typename _HiddenLayerShape>
 template<typename WeightDistribution,
          typename BiasDistribution>
 bool  Convolution<CONV_TARGS>::initialize(const WeightDistribution& wd, const BiasDistribution& bd)
@@ -139,10 +141,9 @@ bool  Convolution<CONV_TARGS>::initialize(const WeightDistribution& wd, const Bi
   }
 
   // Intiialize all volumes
-  OffsetType kdx = 0;
-  for (SizeType jdx = 0; jdx < output_volume_shape_.width; jdx++)
+  for (SizeType idx = 0; idx < output_volume_shape_.height; idx++)
   {
-    for (SizeType idx = 0; idx < output_volume_shape_.height; idx++)
+    for (SizeType jdx = 0; jdx < output_volume_shape_.width; jdx++)
     {
       // Initialize field
       Base::initialized_ &= receptors_[idx][jdx].initialize(wd, bd);
@@ -163,7 +164,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
          EmbeddingMode Mode,
-         class _HiddenLayerShape>
+         typename _HiddenLayerShape>
 bool Convolution<CONV_TARGS>::forward()
 {
   if (!opt_->forward(*this))
@@ -195,7 +196,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
          EmbeddingMode Mode,
-         class _HiddenLayerShape>
+         typename _HiddenLayerShape>
 bool Convolution<CONV_TARGS>::backward()
 {
   FFNN_ASSERT_MSG(opt_, "No optimization resource set.");
@@ -209,10 +210,10 @@ bool Convolution<CONV_TARGS>::backward()
     {
       // Sum over all filters
       OffsetType kdx = 0;
-      const ValueType* err_map = receptors_[idx][jdx].getForwardErrorMapping();
+      const ValueType* errmap = receptors_[idx][jdx].getForwardErrorMapping();
       for (const auto& filter : receptors_[idx][jdx].getFilters())
       {
-        Base::backward_error_.block(idx_str, jdx_str, filter.rows(), filter.cols()) += filter * err_map[kdx++];
+        Base::backward_error_.block(idx_str, jdx_str, filter.rows(), filter.cols()) += filter * errmap[kdx++];
       }
     }
   }
@@ -228,7 +229,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
          EmbeddingMode Mode,
-         class _HiddenLayerShape>
+         typename _HiddenLayerShape>
 bool Convolution<CONV_TARGS>::update()
 {
   FFNN_ASSERT_MSG(opt_, "No optimization resource set.");
@@ -244,7 +245,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
          EmbeddingMode Mode,
-         class _HiddenLayerShape>
+         typename _HiddenLayerShape>
 void Convolution<CONV_TARGS>::reset()
 {
   receptors_.resize(boost::extents[output_volume_shape_.height][output_volume_shape_.width]);
@@ -267,7 +268,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
          EmbeddingMode Mode,
-         class _HiddenLayerShape>
+         typename _HiddenLayerShape>
 bool Convolution<CONV_TARGS>::computeBackwardError()
 {
   return true;
@@ -282,7 +283,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
          EmbeddingMode Mode,
-         class _HiddenLayerShape>
+         typename _HiddenLayerShape>
 void Convolution<CONV_TARGS>::setOptimizer(typename Optimizer::Ptr opt)
 {
   FFNN_ASSERT_MSG(opt, "Input optimizer object is an empty resource.");
@@ -298,7 +299,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
          EmbeddingMode Mode,
-         class _HiddenLayerShape>
+         typename _HiddenLayerShape>
 typename
 Convolution<CONV_TARGS>::OffsetType
 Convolution<CONV_TARGS>::connectToForwardLayer(const Layer<ValueType>& next, OffsetType offset)
@@ -314,8 +315,9 @@ Convolution<CONV_TARGS>::connectToForwardLayer(const Layer<ValueType>& next, Off
     for (SizeType idx = 0; idx < output_volume_shape_.height; idx++)
     {
       // Compute pointer offset
-      // TODO(version for row-embedded mode)
-      OffsetType kdx = jdx * Base::output_shape_.height + idx * output_volume_shape_.depth;
+      const OffsetType kdx =
+        jdx * ((Mode == ColEmbedding) ? Base::output_shape_.height : Base::output_shape_.width) +
+        idx * output_volume_shape_.depth;
 
       // Set output memory mapping
       receptors_[idx][jdx].setOutputMapping(output_ptr + kdx);
@@ -336,7 +338,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
          EmbeddingMode Mode,
-         class _HiddenLayerShape>
+         typename _HiddenLayerShape>
 void Convolution<CONV_TARGS>::save(typename Convolution<CONV_TARGS>::OutputArchive& ar,
                                    typename Convolution<CONV_TARGS>::VersionType version) const
 {
@@ -363,7 +365,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
          EmbeddingMode Mode,
-         class _HiddenLayerShape>
+         typename _HiddenLayerShape>
 void Convolution<CONV_TARGS>::load(typename Convolution<CONV_TARGS>::InputArchive& ar,
                                    typename Convolution<CONV_TARGS>::VersionType version)
 {
@@ -384,3 +386,5 @@ void Convolution<CONV_TARGS>::load(typename Convolution<CONV_TARGS>::InputArchiv
 }
 }  // namespace layer
 }  // namespace ffnn
+#undef TARGS
+#endif  // FFNN_LAYER_IMPL_CONVOLUTION_HPP

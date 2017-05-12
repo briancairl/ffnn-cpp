@@ -1,3 +1,15 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classffnn_1_1optimizer_1_1_gradient_descent.html" title="ffnn::optimizer::Gradient\lDescent\&lt; LayerType \&gt;" alt="" coords="5,5,168,46"/>
+<area shape="rect" id="node1" href="$classffnn_1_1traits_1_1_serializable.html" title="An object which can be saved and loaded. " alt="" coords="6,115,162,141"/>
+<area shape="rect" id="node2" href="$classffnn_1_1traits_1_1_unique.html" title="An object with a unique ID. " alt="" coords="211,115,341,141"/>
+<area shape="rect" id="node3" href="$classffnn_1_1layer_1_1internal_1_1_interface.html" title="Base object for all layer types. " alt="" coords="390,107,557,149"/>
+<area shape="rect" id="node4" href="$classffnn_1_1layer_1_1_convolution_volume.html" title="ffnn::layer::Convolution\lVolume\&lt; ValueType, HeightAtCompile\lTime, WidthAtCompileTime, DepthAtCompile\lTime, FilterCountAtCompileTime, Mode \&gt;" alt="" coords="606,53,893,123"/>
+<area shape="rect" id="node5" href="$classffnn_1_1layer_1_1_layer.html" title="Base object for all layer types. " alt="" coords="689,147,809,189"/>
+<area shape="rect" id="node6" href="$classffnn_1_1layer_1_1_hidden.html" title="A network hidden&#45;layer object. " alt="" coords="953,5,1164,75"/>
+<area shape="rect" id="node7" href="$classffnn_1_1layer_1_1_input.html" title="A layer which handles network inputs. " alt="" coords="964,100,1153,156"/>
+<area shape="rect" id="node8" href="$classffnn_1_1layer_1_1_output.html" title="A layer which handles network outputs. " alt="" coords="959,180,1158,236"/>
+<area shape="rect" id="node9" href="$classffnn_1_1layer_1_1_hidden.html" title="ffnn::layer::Hidden\l\&lt; ValueType, _HiddenLayerShape \&gt;" alt="" coords="942,259,1175,301"/>
+<area shape="rect" id="node10" href="$classffnn_1_1layer_1_1_activation.html" title="Activation layer. " alt="" coords="1283,85,1514,155"/>
+<area shape="rect" id="node11" href="$classffnn_1_1layer_1_1_convolution.html" title="A convolution layer. " alt="" coords="1224,179,1573,279"/>
+<area shape="rect" id="node12" href="$classffnn_1_1layer_1_1_fully_connected.html" title="A fully&#45;connected layer. " alt="" coords="1249,303,1548,359"/>
+<area shape="rect" id="node13" href="$classffnn_1_1layer_1_1_sparsely_connected.html" title="A fully&#45;connected layer. " alt="" coords="1249,383,1548,439"/>
 </map>

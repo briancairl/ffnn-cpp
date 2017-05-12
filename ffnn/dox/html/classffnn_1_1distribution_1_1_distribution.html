@@ -90,6 +90,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classffnn_1_1distribution_1_1_distribution-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -99,15 +100,38 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p><code>#include &quot;<a class="el" href="distribution_8h_source.html">distribution.h</a>&quot;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:aa553d99dbb2eb2ed0633a916c6ba04ea"><td class="memItemLeft" align="right" valign="top">typedef std::true_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1distribution_1_1_distribution.html#aa553d99dbb2eb2ed0633a916c6ba04ea">IsDistribution</a></td></tr>
+<tr class="memdesc:aa553d99dbb2eb2ed0633a916c6ba04ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Require that ValueType is floating point.  <a href="#aa553d99dbb2eb2ed0633a916c6ba04ea">More...</a><br/></td></tr>
+<tr class="separator:aa553d99dbb2eb2ed0633a916c6ba04ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a62760bdfd46cdc21c2a7ab137b491508"><td class="memItemLeft" align="right" valign="top">virtual ValueType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1distribution_1_1_distribution.html#a62760bdfd46cdc21c2a7ab137b491508">generate</a> ()=0</td></tr>
-<tr class="memdesc:a62760bdfd46cdc21c2a7ab137b491508"><td class="mdescLeft">&#160;</td><td class="mdescRight">Require that ValueType is floating point.  <a href="#a62760bdfd46cdc21c2a7ab137b491508">More...</a><br/></td></tr>
-<tr class="separator:a62760bdfd46cdc21c2a7ab137b491508"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfbfb073a8df2f255961aa44743aaddb"><td class="memItemLeft" align="right" valign="top">virtual ValueType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1distribution_1_1_distribution.html#adfbfb073a8df2f255961aa44743aaddb">generate</a> () const =0</td></tr>
+<tr class="memdesc:adfbfb073a8df2f255961aa44743aaddb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a random value according to given distribution.  <a href="#adfbfb073a8df2f255961aa44743aaddb">More...</a><br/></td></tr>
+<tr class="separator:adfbfb073a8df2f255961aa44743aaddb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd2db033dd692d4b78915734c5c02204"><td class="memItemLeft" align="right" valign="top">virtual ValueType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1distribution_1_1_distribution.html#abd2db033dd692d4b78915734c5c02204">cdf</a> (const ValueType &amp;value) const =0</td></tr>
 <tr class="memdesc:abd2db033dd692d4b78915734c5c02204"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes CDF of distribution at specified point.  <a href="#abd2db033dd692d4b78915734c5c02204">More...</a><br/></td></tr>
 <tr class="separator:abd2db033dd692d4b78915734c5c02204"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Typedef Documentation</h2>
+<a class="anchor" id="aa553d99dbb2eb2ed0633a916c6ba04ea"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ValueType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::true_type <a class="el" href="classffnn_1_1distribution_1_1_distribution.html">ffnn::distribution::Distribution</a>&lt; ValueType &gt;::<a class="el" href="classffnn_1_1distribution_1_1_distribution.html#aa553d99dbb2eb2ed0633a916c6ba04ea">IsDistribution</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Require that ValueType is floating point. </p>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="abd2db033dd692d4b78915734c5c02204"></a>
 <div class="memitem">
@@ -144,7 +168,7 @@ template&lt;typename ValueType &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a62760bdfd46cdc21c2a7ab137b491508"></a>
+<a class="anchor" id="adfbfb073a8df2f255961aa44743aaddb"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -157,7 +181,7 @@ template&lt;typename ValueType &gt; </div>
           <td class="memname">virtual ValueType <a class="el" href="classffnn_1_1distribution_1_1_distribution.html">ffnn::distribution::Distribution</a>&lt; ValueType &gt;::generate </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -167,15 +191,7 @@ template&lt;typename ValueType &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Require that ValueType is floating point. </p>
-<p>Generates a random value </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">input</td><td>a scalar input value </td></tr>
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">output</td><td>a scalar output value </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Generates a random value according to given distribution. </p>
 
 </div>
 </div>
@@ -185,7 +201,7 @@ template&lt;typename ValueType &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed May 10 2017 17:22:47 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 11 2017 11:34:22 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

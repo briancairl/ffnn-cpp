@@ -90,7 +90,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classffnn_1_1layer_1_1_convolution_volume-members.html">List of all members</a>  </div>
@@ -115,12 +114,6 @@ Collaboration diagram for ffnn::layer::ConvolutionVolume&lt; ValueType, HeightAt
 <area shape="rect" id="node2" href="classffnn_1_1layer_1_1internal_1_1_interface.html" title="Base object for all layer types. " alt="" coords="65,155,231,197"/><area shape="rect" id="node3" href="classffnn_1_1traits_1_1_unique.html" title="An object with a unique ID. " alt="" coords="83,80,212,107"/><area shape="rect" id="node4" href="classffnn_1_1traits_1_1_serializable.html" title="An object which can be saved and loaded. " alt="" coords="70,5,225,32"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structffnn_1_1layer_1_1_convolution_volume_1_1_parameters.html">Parameters</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A configuration object for a <a class="el" href="classffnn_1_1layer_1_1_fully_connected.html" title="A fully-connected layer. ">FullyConnected</a> hidden layer.  <a href="structffnn_1_1layer_1_1_convolution_volume_1_1_parameters.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:aca83c6f7b34f8865682859f2e096858d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html#aca83c6f7b34f8865682859f2e096858d">Base</a> = <a class="el" href="classffnn_1_1layer_1_1internal_1_1_interface.html">internal::Interface</a>&lt; ValueType &gt;</td></tr>
@@ -143,13 +136,13 @@ Public Types</h2></td></tr>
 <tr class="separator:ae31080a107422dcfaff38eafadd69494"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad928a402aa7aa7e5fb3cd5b7f088f73e"><td class="memItemLeft" align="right" valign="top">typedef Eigen::Matrix<br class="typebreak"/>
 &lt; ValueType, <a class="el" href="namespaceffnn_1_1layer.html#ad128f693900faa5bcf2cdd0ef8e7eee6">embed_dimension</a><br class="typebreak"/>
-&lt; Mode, <a class="el" href="namespaceffnn_1_1layer.html#a254f16beba4fb335d935e9b43bb9e69aaede1065f5863208cae7e55561966a182">ColEmbedding</a> &gt;<br class="typebreak"/>
+&lt; Mode, <a class="el" href="namespaceffnn_1_1layer.html#a254f16beba4fb335d935e9b43bb9e69aa42ac01b35d45fd60256ef5008c96c049">ColEmbedding</a> &gt;<br class="typebreak"/>
 HeightAtCompileTime, <br class="typebreak"/>
 DepthAtCompileTime), <br class="typebreak"/>
 <a class="el" href="namespaceffnn_1_1layer.html#ad128f693900faa5bcf2cdd0ef8e7eee6">embed_dimension</a>&lt; Mode, <br class="typebreak"/>
-<a class="el" href="namespaceffnn_1_1layer.html#a254f16beba4fb335d935e9b43bb9e69aa56bf723aeae4562f2fe05ae5e675da92">RowEmbedding</a> &gt;<br class="typebreak"/>
+<a class="el" href="namespaceffnn_1_1layer.html#a254f16beba4fb335d935e9b43bb9e69aa91eb0d1f175a08e2b2991cae348c827d">RowEmbedding</a> &gt;<br class="typebreak"/>
 WidthAtCompileTime, <br class="typebreak"/>
-DepthAtCompileTime), Mode==<a class="el" href="namespaceffnn_1_1layer.html#a254f16beba4fb335d935e9b43bb9e69aaede1065f5863208cae7e55561966a182">ColEmbedding</a>?Eigen::ColMajor:Eigen::RowMajor &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html#ad928a402aa7aa7e5fb3cd5b7f088f73e">KernelMatrixType</a></td></tr>
+DepthAtCompileTime), Mode==<a class="el" href="namespaceffnn_1_1layer.html#a254f16beba4fb335d935e9b43bb9e69aa42ac01b35d45fd60256ef5008c96c049">ColEmbedding</a>?Eigen::ColMajor:Eigen::RowMajor &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html#ad928a402aa7aa7e5fb3cd5b7f088f73e">KernelMatrixType</a></td></tr>
 <tr class="memdesc:ad928a402aa7aa7e5fb3cd5b7f088f73e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filter kernel matrix standardization.  <a href="#ad928a402aa7aa7e5fb3cd5b7f088f73e">More...</a><br/></td></tr>
 <tr class="separator:ad928a402aa7aa7e5fb3cd5b7f088f73e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2655aee05415e5ffc76cf7b0ba64e61"><td class="memItemLeft" align="right" valign="top">typedef Eigen::Matrix<br class="typebreak"/>
@@ -193,44 +186,39 @@ FilterCountAtCompileTime, <br class="typebreak"/>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a88d8d17c780f2b1bd3abe86c9daa432f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html#a88d8d17c780f2b1bd3abe86c9daa432f">ConvolutionVolume</a> (const <a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html#ae31080a107422dcfaff38eafadd69494">ShapeType</a> &amp;filter_shape=<a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html#ae31080a107422dcfaff38eafadd69494">ShapeType</a>(HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime), const <a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html#abddc276f0405f5c0d70de3e43c2824d9">SizeType</a> &amp;filter_count=FilterCountAtCompileTime)</td></tr>
 <tr class="separator:a88d8d17c780f2b1bd3abe86c9daa432f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb83c5a7c16175e838a3cfdc98f8eb0c"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html#abb83c5a7c16175e838a3cfdc98f8eb0c">~ConvolutionVolume</a> ()</td></tr>
-<tr class="separator:abb83c5a7c16175e838a3cfdc98f8eb0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf9ca7c7901a909ee924f3bca9e1f4cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html#abf9ca7c7901a909ee924f3bca9e1f4cd">setOutputMapping</a> (ValueType *const ptr)</td></tr>
-<tr class="memdesc:abf9ca7c7901a909ee924f3bca9e1f4cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets memory map to contiguous output buffer.  <a href="#abf9ca7c7901a909ee924f3bca9e1f4cd">More...</a><br/></td></tr>
-<tr class="separator:abf9ca7c7901a909ee924f3bca9e1f4cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a823c2b00b1f62d6a6a616be653c266"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html#a2a823c2b00b1f62d6a6a616be653c266">setBackwardErrorMapping</a> (ValueType *const ptr)</td></tr>
-<tr class="memdesc:a2a823c2b00b1f62d6a6a616be653c266"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets memory map to contiguous backward-error buffer.  <a href="#a2a823c2b00b1f62d6a6a616be653c266">More...</a><br/></td></tr>
-<tr class="separator:a2a823c2b00b1f62d6a6a616be653c266"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae80c8f441de89f0ac4c089a17e43970c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html#ae80c8f441de89f0ac4c089a17e43970c">initialize</a> ()</td></tr>
-<tr class="memdesc:ae80c8f441de89f0ac4c089a17e43970c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the volume.  <a href="#ae80c8f441de89f0ac4c089a17e43970c">More...</a><br/></td></tr>
-<tr class="separator:ae80c8f441de89f0ac4c089a17e43970c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09808deb1aac6c1eb556de86838eef08"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html#a09808deb1aac6c1eb556de86838eef08">initialize</a> (const <a class="el" href="structffnn_1_1layer_1_1_convolution_volume_1_1_parameters.html">Parameters</a> &amp;config)</td></tr>
-<tr class="separator:a09808deb1aac6c1eb556de86838eef08"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adab425ba7e60e232ea4a3ccab49171d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html#adab425ba7e60e232ea4a3ccab49171d6">reset</a> (const <a class="el" href="structffnn_1_1layer_1_1_convolution_volume_1_1_parameters.html">Parameters</a> &amp;config=<a class="el" href="structffnn_1_1layer_1_1_convolution_volume_1_1_parameters.html">Parameters</a>())</td></tr>
-<tr class="memdesc:adab425ba7e60e232ea4a3ccab49171d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset filter weights and biases.  <a href="#adab425ba7e60e232ea4a3ccab49171d6">More...</a><br/></td></tr>
-<tr class="separator:adab425ba7e60e232ea4a3ccab49171d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0145b555b05e8f0e5d7e5a740f21a890"><td class="memTemplParams" colspan="2">template&lt;typename InputBlockType &gt; </td></tr>
-<tr class="memitem:a0145b555b05e8f0e5d7e5a740f21a890"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html#a0145b555b05e8f0e5d7e5a740f21a890">forward</a> (const Eigen::MatrixBase&lt; InputBlockType &gt; &amp;input)</td></tr>
-<tr class="memdesc:a0145b555b05e8f0e5d7e5a740f21a890"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs forward value propagation.  <a href="#a0145b555b05e8f0e5d7e5a740f21a890">More...</a><br/></td></tr>
-<tr class="separator:a0145b555b05e8f0e5d7e5a740f21a890"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c69cf588f0d3b656f17d4c7e2229a1b"><td class="memTemplParams" colspan="2">template&lt;typename InputBlockType , typename ForwardErrorBlockType &gt; </td></tr>
-<tr class="memitem:a0c69cf588f0d3b656f17d4c7e2229a1b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html#a0c69cf588f0d3b656f17d4c7e2229a1b">backward</a> (const Eigen::MatrixBase&lt; InputBlockType &gt; &amp;input, const Eigen::MatrixBase&lt; ForwardErrorBlockType &gt; &amp;forward_error)</td></tr>
-<tr class="memdesc:a0c69cf588f0d3b656f17d4c7e2229a1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs backward error propagation.  <a href="#a0c69cf588f0d3b656f17d4c7e2229a1b">More...</a><br/></td></tr>
-<tr class="separator:a0c69cf588f0d3b656f17d4c7e2229a1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae850d568162b8f74cd1ef134d0a88bf"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html#aae850d568162b8f74cd1ef134d0a88bf">~ConvolutionVolume</a> ()</td></tr>
+<tr class="separator:aae850d568162b8f74cd1ef134d0a88bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a93e80ff524cb501e106cff63819165"><td class="memTemplParams" colspan="2">template&lt;typename WeightDistribution , typename BiasDistribution &gt; </td></tr>
+<tr class="memitem:a6a93e80ff524cb501e106cff63819165"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html#a6a93e80ff524cb501e106cff63819165">initialize</a> (const WeightDistribution &amp;wd, const BiasDistribution &amp;bd)</td></tr>
+<tr class="memdesc:a6a93e80ff524cb501e106cff63819165"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize volume weights and biases according to particular distributions.  <a href="#a6a93e80ff524cb501e106cff63819165">More...</a><br/></td></tr>
+<tr class="separator:a6a93e80ff524cb501e106cff63819165"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4659abd7e536b6b7e6c61ae2a0299b1"><td class="memTemplParams" colspan="2">template&lt;typename InputBlockType &gt; </td></tr>
+<tr class="memitem:ad4659abd7e536b6b7e6c61ae2a0299b1"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html#ad4659abd7e536b6b7e6c61ae2a0299b1">forward</a> (const Eigen::Block&lt; InputBlockType &gt; &amp;input)</td></tr>
+<tr class="memdesc:ad4659abd7e536b6b7e6c61ae2a0299b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs forward value propagation.  <a href="#ad4659abd7e536b6b7e6c61ae2a0299b1">More...</a><br/></td></tr>
+<tr class="separator:ad4659abd7e536b6b7e6c61ae2a0299b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1dbed16d230d7ecc8d05e82cc5b087b"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html#ac2655aee05415e5ffc76cf7b0ba64e61">BiasVectorType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html#ae1dbed16d230d7ecc8d05e82cc5b087b">getBiases</a> () const </td></tr>
 <tr class="memdesc:ae1dbed16d230d7ecc8d05e82cc5b087b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exposes internal biasing weights.  <a href="#ae1dbed16d230d7ecc8d05e82cc5b087b">More...</a><br/></td></tr>
 <tr class="separator:ae1dbed16d230d7ecc8d05e82cc5b087b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c0858bc9ec53071a5d0eb083772d9ac"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html#a73cb805b7ffa2bc96461412e1cf958f9">FilterBankType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html#a9c0858bc9ec53071a5d0eb083772d9ac">getFilters</a> () const </td></tr>
 <tr class="memdesc:a9c0858bc9ec53071a5d0eb083772d9ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exposes internal filters.  <a href="#a9c0858bc9ec53071a5d0eb083772d9ac">More...</a><br/></td></tr>
 <tr class="separator:a9c0858bc9ec53071a5d0eb083772d9ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf9ca7c7901a909ee924f3bca9e1f4cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html#abf9ca7c7901a909ee924f3bca9e1f4cd">setOutputMapping</a> (ValueType *const ptr)</td></tr>
+<tr class="memdesc:abf9ca7c7901a909ee924f3bca9e1f4cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets memory map to contiguous output buffer.  <a href="#abf9ca7c7901a909ee924f3bca9e1f4cd">More...</a><br/></td></tr>
+<tr class="separator:abf9ca7c7901a909ee924f3bca9e1f4cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a089d53d3244e88f9220ed465b0f1d80e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html#a089d53d3244e88f9220ed465b0f1d80e">setForwardErrorMapping</a> (ValueType *const ptr)</td></tr>
+<tr class="memdesc:a089d53d3244e88f9220ed465b0f1d80e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets memory map to contiguous backward-error buffer.  <a href="#a089d53d3244e88f9220ed465b0f1d80e">More...</a><br/></td></tr>
+<tr class="separator:a089d53d3244e88f9220ed465b0f1d80e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70c050c2f7ad88186b3e6cd325567a84"><td class="memItemLeft" align="right" valign="top">const ValueType *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html#a70c050c2f7ad88186b3e6cd325567a84">getForwardErrorMapping</a> () const </td></tr>
+<tr class="memdesc:a70c050c2f7ad88186b3e6cd325567a84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets memory map to contiguous backward-error buffer.  <a href="#a70c050c2f7ad88186b3e6cd325567a84">More...</a><br/></td></tr>
+<tr class="separator:a70c050c2f7ad88186b3e6cd325567a84"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52d21f4ee6b841d154b1dc63bd3ed4bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html#a52d21f4ee6b841d154b1dc63bd3ed4bf">save</a> (<a class="el" href="classffnn_1_1traits_1_1_serializable.html#a08d986df75d363fa79506d4f6045cb9f">OutputArchive</a> &amp;ar, <a class="el" href="classffnn_1_1traits_1_1_serializable.html#a08924b3b7d20cb3cb6eafe517d4f7b30">VersionType</a> version) const </td></tr>
 <tr class="memdesc:a52d21f4ee6b841d154b1dc63bd3ed4bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save serializer.  <a href="#a52d21f4ee6b841d154b1dc63bd3ed4bf">More...</a><br/></td></tr>
 <tr class="separator:a52d21f4ee6b841d154b1dc63bd3ed4bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77f5965e61f450d0fe72fa091a3e667a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html#a77f5965e61f450d0fe72fa091a3e667a">load</a> (<a class="el" href="classffnn_1_1traits_1_1_serializable.html#a6e626759259f8f370dd4303b4441a234">InputArchive</a> &amp;ar, <a class="el" href="classffnn_1_1traits_1_1_serializable.html#a08924b3b7d20cb3cb6eafe517d4f7b30">VersionType</a> version)</td></tr>
 <tr class="memdesc:a77f5965e61f450d0fe72fa091a3e667a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load serializer.  <a href="#a77f5965e61f450d0fe72fa091a3e667a">More...</a><br/></td></tr>
 <tr class="separator:a77f5965e61f450d0fe72fa091a3e667a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a878f19e1509567f2fe5c39c7b5c95f92"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html#a878f19e1509567f2fe5c39c7b5c95f92">EIGEN_MAKE_ALIGNED_OPERATOR_NEW_IF</a> (<a class="el" href="structffnn_1_1layer_1_1is__alignable__128.html">is_alignable_128</a>&lt; <a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html#ac2655aee05415e5ffc76cf7b0ba64e61">BiasVectorType</a> &gt;::value)</td></tr>
-<tr class="separator:a878f19e1509567f2fe5c39c7b5c95f92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30a1ab41943208bc7655ae323f99d2e2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html#a30a1ab41943208bc7655ae323f99d2e2">EIGEN_MAKE_ALIGNED_OPERATOR_NEW_IF</a> (<a class="el" href="structffnn_1_1layer_1_1internal_1_1is__alignable__128.html">internal::is_alignable_128</a>&lt; <a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html#ac2655aee05415e5ffc76cf7b0ba64e61">BiasVectorType</a> &gt;::value)</td></tr>
+<tr class="separator:a30a1ab41943208bc7655ae323f99d2e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classffnn_1_1layer_1_1internal_1_1_interface"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classffnn_1_1layer_1_1internal_1_1_interface')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classffnn_1_1layer_1_1internal_1_1_interface.html">ffnn::layer::internal::Interface&lt; ValueType &gt;</a></td></tr>
 <tr class="memitem:a8cd5a34202113edec18a64518d67b76f inherit pub_methods_classffnn_1_1layer_1_1internal_1_1_interface"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1internal_1_1_interface.html#a8cd5a34202113edec18a64518d67b76f">Interface</a> (const <a class="el" href="classffnn_1_1layer_1_1internal_1_1_interface.html#a945709b1d0ea54a51539b80d04485f5f">ShapeType</a> &amp;input_shape=<a class="el" href="classffnn_1_1layer_1_1internal_1_1_interface.html#a945709b1d0ea54a51539b80d04485f5f">ShapeType</a>(Eigen::Dynamic), const <a class="el" href="classffnn_1_1layer_1_1internal_1_1_interface.html#a945709b1d0ea54a51539b80d04485f5f">ShapeType</a> &amp;output_shape=<a class="el" href="classffnn_1_1layer_1_1internal_1_1_interface.html#a945709b1d0ea54a51539b80d04485f5f">ShapeType</a>(Eigen::Dynamic))</td></tr>
 <tr class="separator:a8cd5a34202113edec18a64518d67b76f inherit pub_methods_classffnn_1_1layer_1_1internal_1_1_interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -293,7 +281,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE DepthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic, EmbeddingMode Mode = ColEmbedding&gt; </div>
+template&lt;typename ValueType, FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE DepthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic, EmbeddingMode Mode = ColEmbedding&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html">ffnn::layer::ConvolutionVolume</a>&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterCountAtCompileTime, Mode &gt;::<a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html#aca83c6f7b34f8865682859f2e096858d">Base</a> =  <a class="el" href="classffnn_1_1layer_1_1internal_1_1_interface.html">internal::Interface</a>&lt;ValueType&gt;</td>
@@ -309,7 +297,7 @@ template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dyn
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE DepthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic, EmbeddingMode Mode = ColEmbedding&gt; </div>
+template&lt;typename ValueType, FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE DepthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic, EmbeddingMode Mode = ColEmbedding&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">typedef Eigen::Matrix&lt;ValueType, FilterCountAtCompileTime, 1, Eigen::ColMajor&gt; <a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html">ffnn::layer::ConvolutionVolume</a>&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterCountAtCompileTime, Mode &gt;::<a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html#ac2655aee05415e5ffc76cf7b0ba64e61">BiasVectorType</a></td>
@@ -325,7 +313,7 @@ template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dyn
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE DepthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic, EmbeddingMode Mode = ColEmbedding&gt; </div>
+template&lt;typename ValueType, FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE DepthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic, EmbeddingMode Mode = ColEmbedding&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">typedef <a class="el" href="classffnn_1_1layer_1_1_filter_bank.html">FilterBank</a>&lt;<a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html#ad928a402aa7aa7e5fb3cd5b7f088f73e">KernelMatrixType</a>&gt; <a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html">ffnn::layer::ConvolutionVolume</a>&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterCountAtCompileTime, Mode &gt;::<a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html#a73cb805b7ffa2bc96461412e1cf958f9">FilterBankType</a></td>
@@ -341,10 +329,10 @@ template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dyn
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE DepthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic, EmbeddingMode Mode = ColEmbedding&gt; </div>
+template&lt;typename ValueType, FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE DepthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic, EmbeddingMode Mode = ColEmbedding&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">typedef Eigen::Matrix&lt;ValueType, <a class="el" href="namespaceffnn_1_1layer.html#ad128f693900faa5bcf2cdd0ef8e7eee6">embed_dimension</a>&lt;Mode, <a class="el" href="namespaceffnn_1_1layer.html#a254f16beba4fb335d935e9b43bb9e69aaede1065f5863208cae7e55561966a182">ColEmbedding</a>&gt;HeightAtCompileTime, DepthAtCompileTime), <a class="el" href="namespaceffnn_1_1layer.html#ad128f693900faa5bcf2cdd0ef8e7eee6">embed_dimension</a>&lt;Mode, <a class="el" href="namespaceffnn_1_1layer.html#a254f16beba4fb335d935e9b43bb9e69aa56bf723aeae4562f2fe05ae5e675da92">RowEmbedding</a>&gt;WidthAtCompileTime, DepthAtCompileTime), Mode == <a class="el" href="namespaceffnn_1_1layer.html#a254f16beba4fb335d935e9b43bb9e69aaede1065f5863208cae7e55561966a182">ColEmbedding</a> ? Eigen::ColMajor : Eigen::RowMajor&gt; <a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html">ffnn::layer::ConvolutionVolume</a>&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterCountAtCompileTime, Mode &gt;::<a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html#ad928a402aa7aa7e5fb3cd5b7f088f73e">KernelMatrixType</a></td>
+          <td class="memname">typedef Eigen::Matrix&lt;ValueType, <a class="el" href="namespaceffnn_1_1layer.html#ad128f693900faa5bcf2cdd0ef8e7eee6">embed_dimension</a>&lt;Mode, <a class="el" href="namespaceffnn_1_1layer.html#a254f16beba4fb335d935e9b43bb9e69aa42ac01b35d45fd60256ef5008c96c049">ColEmbedding</a>&gt;HeightAtCompileTime, DepthAtCompileTime), <a class="el" href="namespaceffnn_1_1layer.html#ad128f693900faa5bcf2cdd0ef8e7eee6">embed_dimension</a>&lt;Mode, <a class="el" href="namespaceffnn_1_1layer.html#a254f16beba4fb335d935e9b43bb9e69aa91eb0d1f175a08e2b2991cae348c827d">RowEmbedding</a>&gt;WidthAtCompileTime, DepthAtCompileTime), Mode == <a class="el" href="namespaceffnn_1_1layer.html#a254f16beba4fb335d935e9b43bb9e69aa42ac01b35d45fd60256ef5008c96c049">ColEmbedding</a> ? Eigen::ColMajor : Eigen::RowMajor&gt; <a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html">ffnn::layer::ConvolutionVolume</a>&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterCountAtCompileTime, Mode &gt;::<a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html#ad928a402aa7aa7e5fb3cd5b7f088f73e">KernelMatrixType</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -357,7 +345,7 @@ template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dyn
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE DepthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic, EmbeddingMode Mode = ColEmbedding&gt; </div>
+template&lt;typename ValueType, FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE DepthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic, EmbeddingMode Mode = ColEmbedding&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">typedef <a class="el" href="classffnn_1_1layer_1_1internal_1_1_interface.html#adc5bb454329ebd51ac26579a43c006fd">Base::OffsetType</a> <a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html">ffnn::layer::ConvolutionVolume</a>&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterCountAtCompileTime, Mode &gt;::<a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html#a17bdd4d0402730cbc4cd491cb8c3bdfd">OffsetType</a></td>
@@ -373,7 +361,7 @@ template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dyn
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE DepthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic, EmbeddingMode Mode = ColEmbedding&gt; </div>
+template&lt;typename ValueType, FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE DepthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic, EmbeddingMode Mode = ColEmbedding&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">typedef <a class="el" href="classffnn_1_1layer_1_1internal_1_1_interface.html#a7f834e3365e5199bcbcd16d9abd63941">Base::ScalarType</a> <a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html">ffnn::layer::ConvolutionVolume</a>&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterCountAtCompileTime, Mode &gt;::<a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html#aee5896ca6c930a673234c66446753432">ScalarType</a></td>
@@ -389,7 +377,7 @@ template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dyn
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE DepthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic, EmbeddingMode Mode = ColEmbedding&gt; </div>
+template&lt;typename ValueType, FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE DepthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic, EmbeddingMode Mode = ColEmbedding&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html">ffnn::layer::ConvolutionVolume</a>&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterCountAtCompileTime, Mode &gt;::<a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html#a176ff3362c3ce073b92f837b65cde684">Self</a> =  <a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html">ConvolutionVolume</a>&lt;ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterCountAtCompileTime, Mode&gt;</td>
@@ -405,7 +393,7 @@ template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dyn
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE DepthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic, EmbeddingMode Mode = ColEmbedding&gt; </div>
+template&lt;typename ValueType, FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE DepthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic, EmbeddingMode Mode = ColEmbedding&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">typedef <a class="el" href="classffnn_1_1layer_1_1internal_1_1_interface.html#a945709b1d0ea54a51539b80d04485f5f">Base::ShapeType</a> <a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html">ffnn::layer::ConvolutionVolume</a>&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterCountAtCompileTime, Mode &gt;::<a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html#ae31080a107422dcfaff38eafadd69494">ShapeType</a></td>
@@ -421,7 +409,7 @@ template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dyn
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE DepthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic, EmbeddingMode Mode = ColEmbedding&gt; </div>
+template&lt;typename ValueType, FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE DepthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic, EmbeddingMode Mode = ColEmbedding&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">typedef <a class="el" href="classffnn_1_1layer_1_1internal_1_1_interface.html#af0567642f60c65b5e87067226a54174b">Base::SizeType</a> <a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html">ffnn::layer::ConvolutionVolume</a>&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterCountAtCompileTime, Mode &gt;::<a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html#abddc276f0405f5c0d70de3e43c2824d9">SizeType</a></td>
@@ -438,7 +426,7 @@ template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dyn
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE DepthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic, EmbeddingMode Mode = ColEmbedding&gt; </div>
+template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime, FFNN_SIZE_TYPE WidthAtCompileTime, FFNN_SIZE_TYPE DepthAtCompileTime, FFNN_SIZE_TYPE FilterCountAtCompileTime, EmbeddingMode Mode&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html">ffnn::layer::ConvolutionVolume</a>&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterCountAtCompileTime, Mode &gt;::<a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html">ConvolutionVolume</a> </td>
@@ -462,17 +450,17 @@ template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dyn
 
 </div>
 </div>
-<a class="anchor" id="abb83c5a7c16175e838a3cfdc98f8eb0c"></a>
+<a class="anchor" id="aae850d568162b8f74cd1ef134d0a88bf"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE DepthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic, EmbeddingMode Mode = ColEmbedding&gt; </div>
+template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime, FFNN_SIZE_TYPE WidthAtCompileTime, FFNN_SIZE_TYPE DepthAtCompileTime, FFNN_SIZE_TYPE FilterCountAtCompileTime, EmbeddingMode Mode&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html">ffnn::layer::ConvolutionVolume</a>&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterCountAtCompileTime, Mode &gt;::~<a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html">ConvolutionVolume</a> </td>
+          <td class="memname"><a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html">ffnn::layer::ConvolutionVolume</a>&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterCountAtCompileTime, Mode &gt;::~<a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html">ConvolutionVolume</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -488,55 +476,16 @@ template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dyn
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a0c69cf588f0d3b656f17d4c7e2229a1b"></a>
+<a class="anchor" id="a30a1ab41943208bc7655ae323f99d2e2"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE DepthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic, EmbeddingMode Mode = ColEmbedding&gt; </div>
-<div class="memtemplate">
-template&lt;typename InputBlockType , typename ForwardErrorBlockType &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html">ffnn::layer::ConvolutionVolume</a>&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterCountAtCompileTime, Mode &gt;::backward </td>
-          <td>(</td>
-          <td class="paramtype">const Eigen::MatrixBase&lt; InputBlockType &gt; &amp;&#160;</td>
-          <td class="paramname"><em>input</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Eigen::MatrixBase&lt; ForwardErrorBlockType &gt; &amp;&#160;</td>
-          <td class="paramname"><em>forward_error</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Performs backward error propagation. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">input</td><td>a block (matrix; depth embedded) of input values </td></tr>
-    <tr><td class="paramname">forward_error</td><td>a block (matrix; depth embedded) of layer-output error values </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="a878f19e1509567f2fe5c39c7b5c95f92"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE DepthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic, EmbeddingMode Mode = ColEmbedding&gt; </div>
+template&lt;typename ValueType, FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE DepthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic, EmbeddingMode Mode = ColEmbedding&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html">ffnn::layer::ConvolutionVolume</a>&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterCountAtCompileTime, Mode &gt;::EIGEN_MAKE_ALIGNED_OPERATOR_NEW_IF </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structffnn_1_1layer_1_1is__alignable__128.html">is_alignable_128</a>&lt; <a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html#ac2655aee05415e5ffc76cf7b0ba64e61">BiasVectorType</a> &gt;::value&#160;</td>
+          <td class="paramtype"><a class="el" href="structffnn_1_1layer_1_1internal_1_1is__alignable__128.html">internal::is_alignable_128</a>&lt; <a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html#ac2655aee05415e5ffc76cf7b0ba64e61">BiasVectorType</a> &gt;::value&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
@@ -545,18 +494,18 @@ template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dyn
 
 </div>
 </div>
-<a class="anchor" id="a0145b555b05e8f0e5d7e5a740f21a890"></a>
+<a class="anchor" id="ad4659abd7e536b6b7e6c61ae2a0299b1"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE DepthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic, EmbeddingMode Mode = ColEmbedding&gt; </div>
+template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime, FFNN_SIZE_TYPE WidthAtCompileTime, FFNN_SIZE_TYPE DepthAtCompileTime, FFNN_SIZE_TYPE FilterCountAtCompileTime, EmbeddingMode Mode&gt; </div>
 <div class="memtemplate">
 template&lt;typename InputBlockType &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void <a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html">ffnn::layer::ConvolutionVolume</a>&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterCountAtCompileTime, Mode &gt;::forward </td>
           <td>(</td>
-          <td class="paramtype">const Eigen::MatrixBase&lt; InputBlockType &gt; &amp;&#160;</td>
+          <td class="paramtype">const Eigen::Block&lt; InputBlockType &gt; &amp;&#160;</td>
           <td class="paramname"><em>input</em></td><td>)</td>
           <td></td>
         </tr>
@@ -577,7 +526,7 @@ template&lt;typename InputBlockType &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE DepthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic, EmbeddingMode Mode = ColEmbedding&gt; </div>
+template&lt;typename ValueType, FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE DepthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic, EmbeddingMode Mode = ColEmbedding&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -605,7 +554,7 @@ template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dyn
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE DepthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic, EmbeddingMode Mode = ColEmbedding&gt; </div>
+template&lt;typename ValueType, FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE DepthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic, EmbeddingMode Mode = ColEmbedding&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -629,52 +578,77 @@ template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dyn
 
 </div>
 </div>
-<a class="anchor" id="ae80c8f441de89f0ac4c089a17e43970c"></a>
+<a class="anchor" id="a70c050c2f7ad88186b3e6cd325567a84"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE DepthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic, EmbeddingMode Mode = ColEmbedding&gt; </div>
+template&lt;typename ValueType, FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE DepthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic, EmbeddingMode Mode = ColEmbedding&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html">ffnn::layer::ConvolutionVolume</a>&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterCountAtCompileTime, Mode &gt;::initialize </td>
+          <td class="memname">const ValueType* <a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html">ffnn::layer::ConvolutionVolume</a>&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterCountAtCompileTime, Mode &gt;::getForwardErrorMapping </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Initialize the volume. </p>
-
-<p>Implements <a class="el" href="classffnn_1_1layer_1_1internal_1_1_interface.html#a4159d9d163a0bd5287cc02c91b5baba8">ffnn::layer::internal::Interface&lt; ValueType &gt;</a>.</p>
-
-<p>Referenced by <a class="el" href="classffnn_1_1layer_1_1_convolution.html#aba90ab5ad018485361b1723e29d01354">ffnn::layer::Convolution&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterHeightAtCompileTime, FilterWidthAtCompileTime, FilterCountAtCompileTime, StrideAtCompileTime, Mode, _HiddenLayerShape &gt;::reset()</a>.</p>
+<p>Gets memory map to contiguous backward-error buffer. </p>
 
 </div>
 </div>
-<a class="anchor" id="a09808deb1aac6c1eb556de86838eef08"></a>
+<a class="anchor" id="a6a93e80ff524cb501e106cff63819165"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE DepthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic, EmbeddingMode Mode = ColEmbedding&gt; </div>
+template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime, FFNN_SIZE_TYPE WidthAtCompileTime, FFNN_SIZE_TYPE DepthAtCompileTime, FFNN_SIZE_TYPE FilterCountAtCompileTime, EmbeddingMode Mode&gt; </div>
+<div class="memtemplate">
+template&lt;typename WeightDistribution , typename BiasDistribution &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">bool <a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html">ffnn::layer::ConvolutionVolume</a>&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterCountAtCompileTime, Mode &gt;::initialize </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structffnn_1_1layer_1_1_convolution_volume_1_1_parameters.html">Parameters</a> &amp;&#160;</td>
-          <td class="paramname"><em>config</em></td><td>)</td>
+          <td class="paramtype">const WeightDistribution &amp;&#160;</td>
+          <td class="paramname"><em>wd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const BiasDistribution &amp;&#160;</td>
+          <td class="paramname"><em>bd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Initialize volume weights and biases according to particular distributions. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">wd</td><td>distribution to sample for connection weights </td></tr>
+    <tr><td class="paramname">bd</td><td>distribution to sample for biases </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">false</td><td>otherwise</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>If volume is a loaded instance, this method will initialize volume sizings but weights will not be reset according to the given distributions </dd></dl>
+<p>Reset all filters </p>
 
 </div>
 </div>
@@ -682,7 +656,7 @@ template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dyn
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE DepthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic, EmbeddingMode Mode = ColEmbedding&gt; </div>
+template&lt;typename ValueType, FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE DepthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic, EmbeddingMode Mode = ColEmbedding&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -716,31 +690,14 @@ template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dyn
 
 <p>Reimplemented from <a class="el" href="classffnn_1_1traits_1_1_unique.html#af1e937c2908ed2ff707d6a7d1b5b13d2">ffnn::traits::Unique</a>.</p>
 
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classffnn_1_1layer_1_1_convolution_volume_a77f5965e61f450d0fe72fa091a3e667a_cgraph.png" border="0" usemap="#classffnn_1_1layer_1_1_convolution_volume_a77f5965e61f450d0fe72fa091a3e667a_cgraph" alt=""/></div>
+<map name="classffnn_1_1layer_1_1_convolution_volume_a77f5965e61f450d0fe72fa091a3e667a_cgraph" id="classffnn_1_1layer_1_1_convolution_volume_a77f5965e61f450d0fe72fa091a3e667a_cgraph">
+<area shape="rect" id="node2" href="dense__base__addons_8h.html#a68dbd347886624cd725b8a26e5242ee2" title="load" alt="" coords="211,12,258,39"/></map>
 </div>
-</div>
-<a class="anchor" id="adab425ba7e60e232ea4a3ccab49171d6"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE DepthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic, EmbeddingMode Mode = ColEmbedding&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html">ffnn::layer::ConvolutionVolume</a>&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterCountAtCompileTime, Mode &gt;::reset </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structffnn_1_1layer_1_1_convolution_volume_1_1_parameters.html">Parameters</a> &amp;&#160;</td>
-          <td class="paramname"><em>config</em> = <code><a class="el" href="structffnn_1_1layer_1_1_convolution_volume_1_1_parameters.html">Parameters</a>()</code></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Reset filter weights and biases. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">config</td><td>parameter reset configuration </td></tr>
-  </table>
-  </dd>
-</dl>
+</p>
 
 </div>
 </div>
@@ -748,7 +705,7 @@ template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dyn
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE DepthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic, EmbeddingMode Mode = ColEmbedding&gt; </div>
+template&lt;typename ValueType, FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE DepthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic, EmbeddingMode Mode = ColEmbedding&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -782,19 +739,28 @@ template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dyn
 
 <p>Reimplemented from <a class="el" href="classffnn_1_1traits_1_1_unique.html#ad8be6fcb9a7519603b2aab19b3c6d593">ffnn::traits::Unique</a>.</p>
 
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classffnn_1_1layer_1_1_convolution_volume_a52d21f4ee6b841d154b1dc63bd3ed4bf_cgraph.png" border="0" usemap="#classffnn_1_1layer_1_1_convolution_volume_a52d21f4ee6b841d154b1dc63bd3ed4bf_cgraph" alt=""/></div>
+<map name="classffnn_1_1layer_1_1_convolution_volume_a52d21f4ee6b841d154b1dc63bd3ed4bf_cgraph" id="classffnn_1_1layer_1_1_convolution_volume_a52d21f4ee6b841d154b1dc63bd3ed4bf_cgraph">
+<area shape="rect" id="node2" href="dense__base__addons_8h.html#ab948859788aa671e575e410654e07f16" title="save" alt="" coords="211,12,261,39"/></map>
+</div>
+</p>
+
 </div>
 </div>
-<a class="anchor" id="a2a823c2b00b1f62d6a6a616be653c266"></a>
+<a class="anchor" id="a089d53d3244e88f9220ed465b0f1d80e"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE DepthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic, EmbeddingMode Mode = ColEmbedding&gt; </div>
+template&lt;typename ValueType, FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE DepthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic, EmbeddingMode Mode = ColEmbedding&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html">ffnn::layer::ConvolutionVolume</a>&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterCountAtCompileTime, Mode &gt;::setBackwardErrorMapping </td>
+          <td class="memname">void <a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html">ffnn::layer::ConvolutionVolume</a>&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterCountAtCompileTime, Mode &gt;::setForwardErrorMapping </td>
           <td>(</td>
           <td class="paramtype">ValueType *const&#160;</td>
           <td class="paramname"><em>ptr</em></td><td>)</td>
@@ -816,7 +782,7 @@ template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dyn
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE DepthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic, EmbeddingMode Mode = ColEmbedding&gt; </div>
+template&lt;typename ValueType, FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE DepthAtCompileTime = Eigen::Dynamic, FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic, EmbeddingMode Mode = ColEmbedding&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -840,13 +806,14 @@ template&lt;typename ValueType , FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dyn
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/briancairl/packages/src/ffnn-cpp/ffnn/include/ffnn/layer/<a class="el" href="convolution__volume_8h_source.html">convolution_volume.h</a></li>
+<li>/home/briancairl/packages/src/ffnn-cpp/ffnn/include/ffnn/layer/impl/<a class="el" href="convolution__volume_8hpp_source.html">convolution_volume.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed May 10 2017 17:22:47 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu May 11 2017 11:34:22 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
