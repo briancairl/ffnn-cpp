@@ -79,18 +79,11 @@ bool ConvolutionVolume<TARGS>::initialize(const WeightDistribution& wd, const Bi
     reset();
 
     // Set filter connections weights
+    auto fn = [](ValueType x, const WeightDistribution& dist) {return dist.generate();};
+    for (auto& filter : filters_)
     {
-      auto fn = [](ValueType x, const WeightDistribution& dist) {return dist.generate();};
-      for (auto& filter : filters_)
-      {
-        filter = filter.unaryExpr(boost::bind<ValueType>(fn, _1, wd));
-      }
-    }
-
-    // Set layer biases
-    {
-      auto fn = [](ValueType x, const BiasDistribution& dist) {return dist.generate();};
-      b_ = b_.unaryExpr(boost::bind<ValueType>(fn, _1, bd));
+      filter.kernel = filter.kernel.unaryExpr(boost::bind<ValueType>(fn, _1, wd));
+      filter.bias = bd.generate();
     }
   }
 
@@ -110,7 +103,6 @@ void ConvolutionVolume<TARGS>::reset()
   // Initiliaze all filters and biases
   filters_.setZero(embed_dimension<Mode, ColEmbedding>(Base::input_shape_.height, Base::input_shape_.depth),
                    embed_dimension<Mode, RowEmbedding>(Base::input_shape_.width,  Base::input_shape_.depth));
-  b_.setZero(Base::output_shape_.depth, 1);
 }
 
 template<typename ValueType,
@@ -125,8 +117,8 @@ void ConvolutionVolume<TARGS>::forward(const Eigen::Block<InputBlockType>& input
   // Multiply all filters
   for (OffsetType idx = 0; idx < Base::output_shape_.depth; idx++)
   {
-    output_ptr_[idx]  = input.cwiseProduct(filters_[idx]).sum();
-    output_ptr_[idx] += b_(idx);
+    output_ptr_[idx]  = input.cwiseProduct(filters_[idx].kernel).sum();
+    output_ptr_[idx] += filters_[idx].bias;
   }
 }
 
@@ -143,9 +135,7 @@ void ConvolutionVolume<TARGS>::save(typename ConvolutionVolume<TARGS>::OutputArc
   Base::save(ar, version);
 
   // Save filters
-
-  // Save bias matrix
-  ar & b_;
+  ar & filters_;
 
   FFNN_DEBUG_NAMED("layer::ConvolutionVolume", "Saved");
 }
@@ -163,9 +153,7 @@ void ConvolutionVolume<TARGS>::load(typename ConvolutionVolume<TARGS>::InputArch
   Base::load(ar, version);
 
   // Load filters
-
-  // Load bias matrix
-  ar & b_;
+  ar & filters_;
 
   FFNN_DEBUG_NAMED("layer::ConvolutionVolume", "Loaded");
 }

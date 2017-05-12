@@ -213,7 +213,8 @@ bool Convolution<CONV_TARGS>::backward()
       const ValueType* errmap = receptors_[idx][jdx].getForwardErrorMapping();
       for (const auto& filter : receptors_[idx][jdx].getFilters())
       {
-        Base::backward_error_.block(idx_str, jdx_str, filter.rows(), filter.cols()) += filter * errmap[kdx++];
+        Base::backward_error_.block(idx_str, jdx_str, filter.kernel.rows(), filter.kernel.cols()) +=
+          filter.kernel * errmap[kdx++];
       }
     }
   }

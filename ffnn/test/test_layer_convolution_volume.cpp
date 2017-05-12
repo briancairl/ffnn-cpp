@@ -34,8 +34,8 @@ TEST(TestLayerConvolutionVolume, DynamicInstanceColEmbedding)
   for (const auto& filter : volume.getFilters())
   {
     // Columns should contain embedded depth (default)
-    EXPECT_EQ(filter.rows(), 4 * 8);
-    EXPECT_EQ(filter.cols(), 6);
+    EXPECT_EQ(filter.kernel.rows(), 4 * 8);
+    EXPECT_EQ(filter.kernel.cols(), 6);
     FFNN_DEBUG('\n' << filter);
   }
 }
@@ -55,8 +55,8 @@ TEST(TestLayerConvolutionVolume, StaticInstanceRowEmbedding)
   for (const auto& filter : volume.getFilters())
   {
     // Rows should contain embedded depth (default)
-    EXPECT_EQ(filter.rows(), 4);
-    EXPECT_EQ(filter.cols(), 6 * 8);
+    EXPECT_EQ(filter.kernel.rows(), 4);
+    EXPECT_EQ(filter.kernel.cols(), 6 * 8);
     FFNN_DEBUG('\n' << filter);
   }
 }

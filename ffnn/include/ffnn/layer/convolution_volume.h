@@ -12,6 +12,7 @@
 // FFNN (internal)
 #include <ffnn/layer/internal/shape.h>
 #include <ffnn/layer/internal/interface.h>
+#include <ffnn/layer/internal/filter_bank.h>
 
 namespace ffnn
 {
@@ -35,56 +36,6 @@ constexpr SizeType output_dimension(SizeType n, SizeType fn, SizeType stride)
 {
   return (n - fn) / stride + 1;
 }
-
-
-template<typename KernelMatrixType>
-class FilterBank :
-  public std::conditional
-  <
-    internal::is_alignable_128<KernelMatrixType>::value,
-    std::vector<KernelMatrixType, Eigen::aligned_allocator<typename KernelMatrixType::Scalar>>,
-    std::vector<KernelMatrixType>
-  >::type
-{
-public:
-  typedef typename KernelMatrixType::Scalar ScalarType;
-
-  typedef typename KernelMatrixType::Index SizeType;
-
-  typedef typename KernelMatrixType::Index OffsetType;
-
-  explicit
-  FilterBank(SizeType filter_count)
-  {
-    this->resize(filter_count);
-  }
-
-  void setZero(SizeType height, SizeType width)
-  {
-    for (auto& filter : *this)
-    {
-      filter.setZero(height, width);
-    }
-  }
-
-  FilterBank& operator*=(ScalarType scalar)
-  {
-    for (auto& filter : *this)
-    {
-      filter.array() *= scalar;
-    }
-    return *this;
-  }
-
-  FilterBank& operator+=(ScalarType scalar)
-  {
-    for (auto& filter : *this)
-    {
-      filter.array() += scalar;
-    }
-    return *this;
-  }
-};
 
 template<typename ValueType,
          FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic,
@@ -120,16 +71,10 @@ public:
   typedef typename Base::ShapeType ShapeType;
 
   /// Filter kernel matrix standardization
-  typedef Eigen::Matrix<ValueType,
-                        embed_dimension<Mode, ColEmbedding>(HeightAtCompileTime, DepthAtCompileTime),
-                        embed_dimension<Mode, RowEmbedding>(WidthAtCompileTime,  DepthAtCompileTime),
-                        Mode == ColEmbedding ? Eigen::ColMajor : Eigen::RowMajor> KernelMatrixType;
-
-  /// Bias vector type standardization
-  typedef Eigen::Matrix<ValueType, FilterCountAtCompileTime, 1, Eigen::ColMajor> BiasVectorType;
-
-  /// Filter collection type standardization
-  typedef FilterBank<KernelMatrixType> FilterBankType;
+  typedef internal::FilterBank<ValueType,
+                                embed_dimension<Mode, ColEmbedding>(HeightAtCompileTime, DepthAtCompileTime),
+                                embed_dimension<Mode, RowEmbedding>(WidthAtCompileTime,  DepthAtCompileTime),
+                                Mode == ColEmbedding ? Eigen::ColMajor : Eigen::RowMajor> FilterBankType;
 
   /**
    * @brief
@@ -156,15 +101,6 @@ public:
    */
   template<typename InputBlockType>
   void forward(const Eigen::Block<InputBlockType>& input);
-
-  /**
-   * @brief Exposes internal biasing weights
-   * @return input-biasing vector
-   */
-  inline const BiasVectorType& getBiases() const
-  {
-    return b_;
-  }
 
   /**
    * @brief Exposes internal filters
@@ -213,17 +149,11 @@ private:
   /// Filter bank for receptive field
   FilterBankType filters_;
 
-  /// Bias vector
-  BiasVectorType b_;
-
   // Output mapping
   ValueType* output_ptr_;
 
   // Backward-error mapping
   ValueType* forward_error_ptr_;
-
-  /// Number of filters associated with the field
-  SizeType filter_count_;
 
 public:
   FFNN_REGISTER_SERIALIZABLE(ConvolutionVolume)
@@ -233,8 +163,6 @@ public:
 
   /// Load serializer
   void load(InputArchive& ar, VersionType version);
-
-  EIGEN_MAKE_ALIGNED_OPERATOR_NEW_IF(internal::is_alignable_128<BiasVectorType>::value);
 };
 }  // namespace layer
 }  // namespace ffnn

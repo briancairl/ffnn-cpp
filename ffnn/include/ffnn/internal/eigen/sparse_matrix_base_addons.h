@@ -28,7 +28,7 @@ void save(Archive & ar, const unsigned int version) const
 }
 
 template <class Archive>
-void load(Archive& ar, const unsigned int version) 
+void load(Archive& ar, const unsigned int version)
 {
   using Triplet = typename Eigen::Triplet<Scalar>;
   Index inner_size;
