@@ -173,15 +173,15 @@ bool Convolution<CONV_TARGS>::forward()
   }
 
   // Compute outputs through volumes
-  for (OffsetType idx = 0, idx_str = 0; idx < output_volume_shape_.height; idx++, idx_str += filter_stride_.height)
+  for (OffsetType idx = 0, hdx = 0; idx < output_volume_shape_.height; idx++, hdx += filter_stride_.height)
   {
-    for (OffsetType jdx = 0, jdx_str = 0; jdx < output_volume_shape_.width; jdx++, jdx_str += filter_stride_.width)
+    for (OffsetType jdx = 0, wdx = 0; jdx < output_volume_shape_.width; jdx++, wdx += filter_stride_.width)
     {
       // Get block dimensions
       const auto& ris = receptors_[idx][jdx].inputShape();
 
       // Activate receptor
-      receptors_[idx][jdx].forward(Base::input_.block(idx_str, jdx_str, ris.height, ris.width));
+      receptors_[idx][jdx].forward(Base::input_.block(hdx, wdx, ris.height, ris.width));
     }
   }
   return true;
@@ -204,9 +204,9 @@ bool Convolution<CONV_TARGS>::backward()
   Base::backward_error_.setZero();
 
   // Compute outputs through volumes
-  for (OffsetType idx = 0, idx_str = 0; idx < output_volume_shape_.height; idx++, idx_str += filter_stride_.height)
+  for (OffsetType idx = 0, hdx = 0; idx < output_volume_shape_.height; idx++, hdx += filter_stride_.height)
   {
-    for (OffsetType jdx = 0, jdx_str = 0; jdx < output_volume_shape_.width; jdx++, jdx_str += filter_stride_.width)
+    for (OffsetType jdx = 0, wdx = 0; jdx < output_volume_shape_.width; jdx++, wdx += filter_stride_.width)
     {
       // Get block dimensions
       const auto& ris = receptors_[idx][jdx].inputShape();
@@ -216,8 +216,7 @@ bool Convolution<CONV_TARGS>::backward()
       const ValueType* errmap = receptors_[idx][jdx].getForwardErrorMapping();
       for (const auto& filter : receptors_[idx][jdx].getFilters())
       {
-        Base::backward_error_.block(idx_str, jdx_str, ris.height, ris.width) +=
-          filter.kernel * errmap[kdx++];
+        Base::backward_error_.block(hdx, wdx, ris.height, ris.width) += filter.kernel * errmap[kdx++];
       }
     }
   }
