@@ -30,7 +30,7 @@ class GradientDescent<layer::Convolution<CONV_TARGS>>:
 {
 public:
   /// Layer type standardization
-  typedef typename layer::FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime> LayerType;
+  typedef typename layer::Convolution<CONV_TARGS> LayerType;
 
   /// Scalar type standardization
   typedef typename LayerType::ScalarType ScalarType;
@@ -44,11 +44,8 @@ public:
   /// Matrix type standardization
   typedef typename LayerType::OutputBlockType OutputBlockType;
 
-  /// Receptive-volume type standardization
-  typedef typename LayerType::ConvolutionVolumeType ConvolutionVolumeType;
-
-  /// Recptive-volume bank standardization
-  typedef typename LayerType::ConvolutionVolumeBankType ConvolutionVolumeBankType;
+  /// Receptive-field type standardization
+  typedef typename LayerType::ConvolutionFieldType ConvolutionFieldType;
 
   /**
    * @brief Setup constructor
@@ -56,7 +53,7 @@ public:
    */
   explicit
   GradientDescent(ScalarType lr) :
-    Optimizer<LayerType>("GradientDescent[FullyConnected]"),
+    Optimizer<LayerType>("GradientDescent[Convolution]"),
     lr_(lr)
   {}
   virtual ~GradientDescent() {}
@@ -71,7 +68,7 @@ public:
     reset(layer);
 
     // Reset previous input
-    prev_input_.setZero(layer.input_shape_.size(), 1);
+    prev_input_.setZero(layer.input_shape_.height, layer.input_shape_.width);
   }
 
   /**
@@ -80,11 +77,21 @@ public:
    */
   virtual void reset(LayerType& layer)
   {
-    // Reset weight delta
-    weight_gradient_.setZero(layer.output_shape_.size(), layer.input_shape_.size());
+    // Layer sizing
+    const SizeType& hs = layer.output_volume_shape_.height;
+    const SizeType& ws = layer.output_volume_shape_.width;
+    const SizeType& ds = layer.output_volume_shape_.depth;
 
-    // Reset bias delta
-    bias_gradient_.setZero(layer.output_shape_.size(), 1);
+    // Reset weight delta
+    weight_gradient_.resize(boost::extents[hs][ws]);
+    for (SizeType jdx = 0; jdx < ws; jdx++)
+    {
+      for (SizeType idx = 0; idx < hs; idx++)
+      {
+        // Create receptive field
+        new (&weight_gradient_[idx][jdx]) ConvolutionVolumeType(filter_shape_, ds);
+      }
+    }
   }
 
   /**

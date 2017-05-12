@@ -86,7 +86,7 @@ public:
   typedef ConvolutionVolume<CONV_VOLUME_TARGS> ConvolutionVolumeType;
 
   /// Recptive-volume bank standardization
-  typedef boost::multi_array<ConvolutionVolumeType, 2> ConvolutionVolumeBankType;
+  typedef boost::multi_array<ConvolutionVolumeType, 2> ConvolutionFieldType;
 
   /// Layer optimization type standardization
   typedef optimizer::Optimizer<Self> Optimizer;
@@ -164,7 +164,7 @@ public:
    */
   void setOptimizer(typename Optimizer::Ptr opt);
 
-  inline const ConvolutionVolumeBankType& getConvolutionVolumes() const
+  inline const ConvolutionFieldType& getConvolutionField() const
   {
     return receptors_;
   }
@@ -188,7 +188,7 @@ private:
   void reset();
 
   /// Layer configuration parameters
-  ConvolutionVolumeBankType receptors_;
+  ConvolutionFieldType receptors_;
 
   /// "True" shape of the ouput with no depth-embedding
   ShapeType input_volume_shape_;
