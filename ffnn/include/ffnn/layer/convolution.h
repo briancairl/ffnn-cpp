@@ -22,7 +22,7 @@ namespace ffnn
 {
 namespace layer
 {
-#define CONV_TARGS\
+#define TARGS\
   ValueType,\
   HeightAtCompileTime,\
   WidthAtCompileTime,\
@@ -34,7 +34,7 @@ namespace layer
   Mode,\
   _HiddenLayerShape
 
-#define CONV_VOLUME_TARGS\
+#define VOLUME_TARGS\
   ValueType,\
   FilterHeightAtCompileTime,\
   FilterWidthAtCompileTime,\
@@ -68,7 +68,7 @@ public:
   using Base = Hidden<ValueType, _HiddenLayerShape>;
 
   /// Self type alias
-  using Self = Convolution<CONV_TARGS>;
+  using Self = Convolution<TARGS>;
 
   /// Scalar type standardization
   typedef typename Base::ScalarType ScalarType;
@@ -83,7 +83,7 @@ public:
   typedef typename Base::ShapeType ShapeType;
 
   /// Receptive-volume type standardization
-  typedef ConvolutionVolume<CONV_VOLUME_TARGS> ConvolutionVolumeType;
+  typedef ConvolutionVolume<VOLUME_TARGS> ConvolutionVolumeType;
 
   /// Recptive-volume bank standardization
   typedef boost::multi_array<ConvolutionVolumeType, 2> ConvolutionFieldType;
@@ -152,11 +152,6 @@ public:
   bool update();
 
   /**
-   * @brief Computes previous layer error from current layer output error
-   */ 
-  bool computeBackwardError();
-
-  /**
    * @brief Sets an optimizer used update network weights during back-propagation
    * @param opt  optimizer to set
    * @warning <code>backward</code> and <code>update</code> methods are expected to throw if an
@@ -180,7 +175,7 @@ protected:
 
 private:
   //FFNN_REGISTER_OPTIMIZER(Convolution, Adam);
-  //FFNN_REGISTER_OPTIMIZER(Convolution, GradientDescent);
+  FFNN_REGISTER_OPTIMIZER(Convolution, GradientDescent);
 
   /**
    * @brief Reset all internal volumes
@@ -224,6 +219,6 @@ private:
 #include <ffnn/layer/impl/convolution.hpp>
 
 // Cleanup definitions
-#undef CONV_TARGS
-#undef CONV_VOLUME_TARGS
+#undef TARGS
+#undef VOLUME_TARGS
 #endif  // FFNN_LAYER_CONVOLUTION_H

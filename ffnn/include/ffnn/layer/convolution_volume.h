@@ -103,15 +103,6 @@ public:
   void forward(const Eigen::Block<InputBlockType>& input);
 
   /**
-   * @brief Exposes internal filters
-   * @return filter collection
-   */
-  inline const FilterBankType& getFilters() const
-  {
-    return filters_;
-  }
-
-  /**
    * @brief Sets memory map to contiguous output buffer
    */
   inline void setOutputMapping(ValueType* const ptr)
@@ -135,6 +126,9 @@ public:
     return forward_error_ptr_;
   }
 
+  /// Filter bank for receptive field
+  FilterBankType filters;
+
 private:
   /**
    * @brief Reset filter weights and biases
@@ -145,9 +139,6 @@ private:
    * @brief Unused; does nothing
    */
   bool initialize();
-
-  /// Filter bank for receptive field
-  FilterBankType filters_;
 
   // Output mapping
   ValueType* output_ptr_;

@@ -81,15 +81,6 @@ struct FilterBank :
     }
   }
 
-  void setZero()
-  {
-    for (auto& filter : *this)
-    {
-      filter.kernel.setZero();
-      filter.bias = 0;
-    }
-  }
-
   void operator*=(ValueType scale)
   {
     for (auto& filter : *this)
@@ -101,19 +92,19 @@ struct FilterBank :
 
   void operator-=(const FilterBank& other)
   {
-    for (auto& filter : *this)
+    for (size_t idx = 0UL; idx < this->size(); idx++)
     {
-      filter.kernel -= other.kernel;
-      filter.bias -= other.bias;
+      (*this)[idx].kernel -= other[idx].kernel;
+      (*this)[idx].bias -= other[idx].bias;
     }
   }
 
   void operator+=(const FilterBank& other)
   {
-    for (auto& filter : *this)
+    for (size_t idx = 0UL; idx < this->size(); idx++)
     {
-      filter.kernel += other.kernel;
-      filter.bias += other.bias;
+      (*this)[idx].kernel += other[idx].kernel;
+      (*this)[idx].bias += other[idx].bias;
     }
   }
 

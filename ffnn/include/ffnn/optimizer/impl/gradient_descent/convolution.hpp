@@ -14,6 +14,18 @@ namespace ffnn
 {
 namespace optimizer
 {
+#define TARGS\
+  ValueType,\
+  HeightAtCompileTime,\
+  WidthAtCompileTime,\
+  DepthAtCompileTime,\
+  FilterHeightAtCompileTime,\
+  FilterWidthAtCompileTime,\
+  FilterCountAtCompileTime,\
+  StrideAtCompileTime,\
+  Mode,\
+  _HiddenLayerShape
+
 template<>
 template<typename ValueType,
          FFNN_SIZE_TYPE HeightAtCompileTime,
@@ -23,14 +35,14 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterWidthAtCompileTime,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          FFNN_SIZE_TYPE StrideAtCompileTime,
-         EmbeddingMode Mode,
+         layer::EmbeddingMode Mode,
          typename _HiddenLayerShape>
-class GradientDescent<layer::Convolution<CONV_TARGS>>:
-  public Optimizer<layer::Convolution<CONV_TARGS>>
+class GradientDescent<layer::Convolution<TARGS>>:
+  public Optimizer<layer::Convolution<TARGS>>
 {
 public:
   /// Layer type standardization
-  typedef typename layer::Convolution<CONV_TARGS> LayerType;
+  typedef typename layer::Convolution<TARGS> LayerType;
 
   /// Scalar type standardization
   typedef typename LayerType::ScalarType ScalarType;
@@ -98,7 +110,7 @@ public:
     {
       for (SizeType jdx = 0; jdx < layer.output_volume_shape_.width; jdx++)
       {
-        gradient_[idx][jdx].setZero();
+        gradient_[idx][jdx].filters.setZero(layer.filter_shape_.height, layer.filter_shape_.width);
       }
     }
   }
@@ -133,12 +145,13 @@ public:
     {
       for (OffsetType jdx = 0; jdx < layer.output_volume_shape_.width; jdx++)
       {
-        for (OffsetType kdx = 0; kdx < static_cast<OffsetType>(gradient_[idx][jdx].size()); kdx++)
+        const OffsetType n_filters(gradient_[idx][jdx].filters.size());
+        for (OffsetType kdx = 0; kdx < n_filters; kdx++)
         {
-          const OffsetType iidx((Mode == ColEmbedding) ? (idx * layer.output_volume_shape_.depth + kdx) : idx);
-          const OffsetType jjdx((Mode == RowEmbedding) ? (jdx * layer.output_volume_shape_.depth + kdx) : kdx);
+          const OffsetType iidx((Mode == layer::ColEmbedding) ? (idx * layer.output_volume_shape_.depth + kdx) : idx);
+          const OffsetType jjdx((Mode == layer::RowEmbedding) ? (jdx * layer.output_volume_shape_.depth + kdx) : jdx);
 
-          gradient_[idx][jdx][kdx].kernel += layer.fields_[idx][jdx][kdx].kernel * layer.forward_error_(iidx, jjdx);
+          gradient_[idx][jdx].filters[kdx].kernel += layer.fields_[idx][jdx].filters[kdx].kernel * layer.forward_error_(iidx, jjdx);
         }
       }
     }
@@ -162,8 +175,8 @@ public:
     {
       for (OffsetType jdx = 0; jdx < layer.output_volume_shape_.width; jdx++)
       {
-        layer.fields_[idx][jdx] *= lr_;
-        layer.fields_[idx][jdx] -= gradient_[idx][jdx];
+        layer.fields_[idx][jdx].filters *= lr_;
+        layer.fields_[idx][jdx].filters -= gradient_[idx][jdx].filters;
       }
     }
 
@@ -184,4 +197,5 @@ protected:
 };
 }  // namespace optimizer
 }  // namespace ffnn
+#undef TARGS
 #endif  // FFNN_LAYER_IMPL_GRADIENT_DESCENT_CONVOLUTION_HPP

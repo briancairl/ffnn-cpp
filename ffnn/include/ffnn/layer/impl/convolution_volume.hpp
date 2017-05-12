@@ -30,7 +30,7 @@ template<typename ValueType,
          EmbeddingMode Mode>
 ConvolutionVolume<TARGS>::ConvolutionVolume(const ShapeType& filter_shape, const SizeType& filter_count) :
   Base(filter_shape, ShapeType(1, 1, filter_count)),
-  filters_(filter_count)
+  filters(filter_count)
 {}
 
 template<typename ValueType,
@@ -80,7 +80,7 @@ bool ConvolutionVolume<TARGS>::initialize(const WeightDistribution& wd, const Bi
 
     // Set filter connections weights
     auto fn = [](ValueType x, const WeightDistribution& dist) {return dist.generate();};
-    for (auto& filter : filters_)
+    for (auto& filter : filters)
     {
       filter.kernel = filter.kernel.unaryExpr(boost::bind<ValueType>(fn, _1, wd));
       filter.bias = bd.generate();
@@ -101,8 +101,8 @@ template<typename ValueType,
 void ConvolutionVolume<TARGS>::reset()
 {
   // Initiliaze all filters and biases
-  filters_.setZero(embed_dimension<Mode, ColEmbedding>(Base::input_shape_.height, Base::input_shape_.depth),
-                   embed_dimension<Mode, RowEmbedding>(Base::input_shape_.width,  Base::input_shape_.depth));
+  filters.setZero(embed_dimension<Mode, ColEmbedding>(Base::input_shape_.height, Base::input_shape_.depth),
+                  embed_dimension<Mode, RowEmbedding>(Base::input_shape_.width,  Base::input_shape_.depth));
 }
 
 template<typename ValueType,
@@ -117,8 +117,8 @@ void ConvolutionVolume<TARGS>::forward(const Eigen::Block<InputBlockType>& input
   // Multiply all filters
   for (OffsetType idx = 0; idx < Base::output_shape_.depth; idx++)
   {
-    output_ptr_[idx]  = input.cwiseProduct(filters_[idx].kernel).sum();
-    output_ptr_[idx] += filters_[idx].bias;
+    output_ptr_[idx]  = input.cwiseProduct(filters[idx].kernel).sum();
+    output_ptr_[idx] += filters[idx].bias;
   }
 }
 
@@ -135,7 +135,7 @@ void ConvolutionVolume<TARGS>::save(typename ConvolutionVolume<TARGS>::OutputArc
   Base::save(ar, version);
 
   // Save filters
-  ar & filters_;
+  ar & filters;
 
   FFNN_DEBUG_NAMED("layer::ConvolutionVolume", "Saved");
 }
@@ -153,7 +153,7 @@ void ConvolutionVolume<TARGS>::load(typename ConvolutionVolume<TARGS>::InputArch
   Base::load(ar, version);
 
   // Load filters
-  ar & filters_;
+  ar & filters;
 
   FFNN_DEBUG_NAMED("layer::ConvolutionVolume", "Loaded");
 }

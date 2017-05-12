@@ -27,11 +27,11 @@ TEST(TestLayerConvolutionVolume, DynamicInstanceColEmbedding)
   // Shape supplied in constructor
   Volume volume(Volume::ShapeType(4, 6, 8), 12);
 
-  EXPECT_EQ(volume.getFilters().size(), 12);
+  EXPECT_EQ(volume.filters.size(), 12);
   EXPECT_TRUE(volume.initialize(ffnn::distribution::StandardNormal<float>(),
                                 ffnn::distribution::StandardNormal<float>()));
 
-  for (const auto& filter : volume.getFilters())
+  for (const auto& filter : volume.filters)
   {
     // Columns should contain embedded depth (default)
     EXPECT_EQ(filter.kernel.rows(), 4 * 8);
@@ -48,11 +48,11 @@ TEST(TestLayerConvolutionVolume, StaticInstanceRowEmbedding)
   // Shape inferred from template args
   Volume volume;
 
-  EXPECT_EQ(volume.getFilters().size(), 12);
+  EXPECT_EQ(volume.filters.size(), 12);
   EXPECT_TRUE(volume.initialize(ffnn::distribution::StandardNormal<float>(),
                                 ffnn::distribution::StandardNormal<float>()));
 
-  for (const auto& filter : volume.getFilters())
+  for (const auto& filter : volume.filters)
   {
     // Rows should contain embedded depth (default)
     EXPECT_EQ(filter.kernel.rows(), 4);
