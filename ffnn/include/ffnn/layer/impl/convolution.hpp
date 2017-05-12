@@ -213,10 +213,10 @@ bool Convolution<CONV_TARGS>::backward()
 
       // Sum over all filters
       OffsetType kdx = 0;
-      const ValueType* errmap = receptors_[idx][jdx].getForwardErrorMapping();
+      const ValueType* err = receptors_[idx][jdx].getForwardErrorMapping();
       for (const auto& filter : receptors_[idx][jdx].getFilters())
       {
-        Base::backward_error_.block(hdx, wdx, ris.height, ris.width) += filter.kernel * errmap[kdx++];
+        Base::backward_error_.block(hdx, wdx, ris.height, ris.width) += filter.kernel * err[kdx++];
       }
     }
   }
