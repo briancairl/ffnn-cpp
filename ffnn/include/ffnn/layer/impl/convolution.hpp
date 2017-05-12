@@ -208,12 +208,15 @@ bool Convolution<CONV_TARGS>::backward()
   {
     for (OffsetType jdx = 0, jdx_str = 0; jdx < output_volume_shape_.width; jdx++, jdx_str += filter_stride_.width)
     {
+      // Get block dimensions
+      const auto& ris = receptors_[idx][jdx].inputShape();
+
       // Sum over all filters
       OffsetType kdx = 0;
       const ValueType* errmap = receptors_[idx][jdx].getForwardErrorMapping();
       for (const auto& filter : receptors_[idx][jdx].getFilters())
       {
-        Base::backward_error_.block(idx_str, jdx_str, filter.kernel.rows(), filter.kernel.cols()) +=
+        Base::backward_error_.block(idx_str, jdx_str, ris.height, ris.width) +=
           filter.kernel * errmap[kdx++];
       }
     }
