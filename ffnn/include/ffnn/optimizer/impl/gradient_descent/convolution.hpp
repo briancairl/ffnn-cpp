@@ -5,6 +5,9 @@
 #ifndef FFNN_LAYER_IMPL_GRADIENT_DESCENT_CONVOLUTION_HPP
 #define FFNN_LAYER_IMPL_GRADIENT_DESCENT_CONVOLUTION_HPP
 
+// C++ Standard Library
+#include <type_traits>
+
 // FFNN
 #include <ffnn/assert.h>
 #include <ffnn/logging.h>
@@ -80,7 +83,7 @@ public:
    * @brief Initializes the Optimizer
    * @param[in, out] layer  Layer to optimize
    */
-  virtual void initialize(LayerType& layer)
+  void initialize(LayerType& layer)
   {
     FFNN_ASSERT_MSG(layer.isInitialized(), "Layer to optimize is not initialized.");
 
@@ -103,7 +106,7 @@ public:
    * @brief Resetrs persistent Optimizer states
    * @param[in, out] layer  Layer to optimize
    */
-  virtual void reset(LayerType& layer)
+  void reset(LayerType& layer)
   {
     // Reset weight delta
     for (SizeType idx = 0; idx < layer.output_volume_shape_.height; idx++)
@@ -121,7 +124,7 @@ public:
    * @retval true  if optimization setp was successful
    * @retval false  otherwise
    */
-  virtual bool forward(LayerType& layer)
+  bool forward(LayerType& layer)
   {
     FFNN_ASSERT_MSG(layer.isInitialized(), "Layer to optimize is not initialized.");
 
@@ -136,7 +139,7 @@ public:
    * @retval true  if optimization setp was successful
    * @retval false  otherwise
    */
-  virtual bool backward(LayerType& layer)
+  bool backward(LayerType& layer)
   {
     FFNN_ASSERT_MSG(layer.isInitialized(), "Layer to optimize is not initialized.");
 
@@ -152,6 +155,7 @@ public:
           const OffsetType jjdx((Mode == layer::RowEmbedding) ? (jdx * layer.output_volume_shape_.depth + kdx) : jdx);
 
           gradient_[idx][jdx].filters[kdx].kernel += layer.fields_[idx][jdx].filters[kdx].kernel * layer.forward_error_(iidx, jjdx);
+          gradient_[idx][jdx].filters[kdx].bias += layer.forward_error_(iidx, jjdx);
         }
       }
     }
@@ -166,7 +170,7 @@ public:
    * @retval true  if optimization update was applied successfully
    * @retval false  otherwise
    */
-  virtual bool update(LayerType& layer)
+  bool update(LayerType& layer)
   {
     FFNN_ASSERT_MSG(layer.isInitialized(), "Layer to optimize is not initialized.");
 

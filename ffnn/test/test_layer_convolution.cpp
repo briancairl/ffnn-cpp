@@ -65,9 +65,11 @@ TEST(TestLayerConvolution, StaticInstanceColEmbedding_Forward)
   out_data.setZero();
   (*output) >> out_data;
 
+  FFNN_INFO(out_data);
+
   Eigen::VectorXf out_target(osh.size(), 1);
   out_target.setOnes();
-  //(*output) << out_target;
+  (*output) << out_target;
 
   output->backward();
   convolution->backward();
