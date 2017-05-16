@@ -82,10 +82,10 @@ public:
   typedef typename Base::ShapeType ShapeType;
 
   /// Receptive-volume type standardization
-  typedef ConvolutionVolume<VOLUME_TARGS> ConvolutionVolumeType;
+  typedef ConvolutionVolume<VOLUME_TARGS> ParameterBlockType;
 
   /// Recptive-volume bank standardization
-  typedef boost::multi_array<ConvolutionVolumeType, 2> ConvolutionFieldType;
+  typedef boost::multi_array<ParameterBlockType, 2> ParametersType;
 
   /// Layer optimization type standardization
   typedef optimizer::Optimizer<Self> Optimizer;
@@ -158,9 +158,9 @@ public:
    */
   void setOptimizer(typename Optimizer::Ptr opt);
 
-  inline const ConvolutionFieldType& getConvolutionField() const
+  inline const ParametersType& getParamaters() const
   {
-    return fields_;
+    return parameters_;
   }
 
 protected:
@@ -182,7 +182,7 @@ private:
   void reset();
 
   /// Layer configuration parameters
-  ConvolutionFieldType fields_;
+  ParametersType parameters_;
 
   /// "True" shape of the ouput with no depth-embedding
   ShapeType input_volume_shape_;

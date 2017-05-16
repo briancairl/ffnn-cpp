@@ -62,8 +62,8 @@ public:
   /// Matrix type standardization
   typedef typename LayerType::OutputBlockType OutputBlockType;
 
-  /// Receptive-volume type standardization
-  typedef typename LayerType::ConvolutionVolumeType ConvolutionVolumeType;
+  /// Parameter collection type standardization
+  typedef typename LayerType::ParametersType ParametersType;
 
   /**
    * @brief Setup constructor
@@ -88,7 +88,7 @@ public:
     prev_input_.setZero(layer.input_shape_.height, layer.input_shape_.width);
 
     // Reset weight delta
-    new (&gradient_) ConvolutionVolumeType(layer.filter_shape_, layer.output_volume_shape_.depth);
+    new (&gradient_) ParametersType(layer.filter_shape_, layer.output_volume_shape_.depth);
     reset(layer);
   }
 
@@ -144,7 +144,7 @@ public:
           const OffsetType iidx((Mode == layer::ColEmbedding) ? (idx * layer.output_volume_shape_.depth + kdx) : idx);
           const OffsetType jjdx((Mode == layer::RowEmbedding) ? (jdx * layer.output_volume_shape_.depth + kdx) : jdx);
 
-          gradient_.filters[kdx].kernel += layer.field_.filters[kdx].kernel * layer.forward_error_(iidx, jjdx);
+          gradient_.filters[kdx].kernel += layer.parameters_.filters[kdx].kernel * layer.forward_error_(iidx, jjdx);
           gradient_.filters[kdx].bias += layer.forward_error_(iidx, jjdx);
         }
       }
@@ -166,7 +166,7 @@ public:
 
     // Incorporate learning rate + update weights
     gradient_.filters *= lr_;
-    layer.field_.filters -= gradient_.filters;
+    layer.parameters_.filters -= gradient_.filters;
 
     // Reinitialize optimizer
     reset(layer);
@@ -178,7 +178,7 @@ protected:
   ScalarType lr_;
 
   /// Total parameter gradient
-  ConvolutionVolumeType gradient_;
+  ParametersType gradient_;
 
   /// Previous input
   InputBlockType prev_input_;

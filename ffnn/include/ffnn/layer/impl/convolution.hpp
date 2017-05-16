@@ -141,7 +141,7 @@ bool  Convolution<TARGS>::initialize(const WeightDistribution& wd, const BiasDis
   }
 
   // Intiialize shared weights
-  Base::initialized_ &= field_.initialize(wd, bd);
+  Base::initialized_ &= parameters_.initialize(wd, bd);
   FFNN_ASSERT_MSG(Base::initialized_, "Failed to initialize receptor.");
 
   return Base::initialized_;
@@ -165,7 +165,7 @@ bool Convolution<TARGS>::forward()
   }
 
   // Get block dimensions
-  const auto& ris = field_.inputShape();
+  const auto& ris = parameters_.inputShape();
 
   // Compute outputs through volumes
   for (OffsetType idx = 0, hdx = 0; idx < output_volume_shape_.height; idx++, hdx += filter_stride_.height)
@@ -173,10 +173,10 @@ bool Convolution<TARGS>::forward()
     for (OffsetType jdx = 0, wdx = 0; jdx < output_volume_shape_.width; jdx++, wdx += filter_stride_.width)
     {
       // Set output pointer
-      field_.setOutputMapping(output_mappings_[idx][jdx]);
+      parameters_.setOutputMapping(output_mappings_[idx][jdx]);
 
       // Activate receptor
-      field_.forward(Base::input_.block(hdx, wdx, ris.height, ris.width));
+      parameters_.forward(Base::input_.block(hdx, wdx, ris.height, ris.width));
     }
   }
   return true;
@@ -199,7 +199,7 @@ bool Convolution<TARGS>::backward()
   Base::backward_error_.setZero();
 
   // Get block dimensions
-  const auto& ris = field_.inputShape();
+  const auto& ris = parameters_.inputShape();
 
   // Compute outputs through volumes
   for (OffsetType idx = 0, hdx = 0; idx < output_volume_shape_.height; idx++, hdx += filter_stride_.height)
@@ -208,7 +208,7 @@ bool Convolution<TARGS>::backward()
     {
       // Sum over all filters
       OffsetType kdx = 0;
-      for (const auto& filter : field_.filters)
+      for (const auto& filter : parameters_.filters)
       {
         Base::backward_error_.block(hdx, wdx, ris.height, ris.width) +=
           filter.kernel * forward_error_mappings_[idx][jdx][kdx++];
@@ -249,7 +249,7 @@ template<typename ValueType,
 void Convolution<TARGS>::reset()
 {
   // Create receptive field
-  new (&field_) ConvolutionVolumeType(filter_shape_, output_volume_shape_.depth);
+  new (&parameters_) ParametersType(filter_shape_, output_volume_shape_.depth);
 }
 
 template<typename ValueType,
@@ -327,7 +327,7 @@ void Convolution<TARGS>::save(typename Convolution<TARGS>::OutputArchive& ar,
   Base::save(ar, version);
 
   // Save volumes
-  field_.save(ar, version);
+  parameters_.save(ar, version);
 
   FFNN_DEBUG_NAMED("layer::Convolution", "Saved");
 }
@@ -350,7 +350,7 @@ void Convolution<TARGS>::load(typename Convolution<TARGS>::InputArchive& ar,
 
   // Load volumes
   reset();
-  field_.load(ar, version);
+  parameters_.load(ar, version);
 
   FFNN_DEBUG_NAMED("layer::Convolution", "Loaded");
 }

@@ -82,7 +82,7 @@ public:
   typedef typename Base::ShapeType ShapeType;
 
   /// Receptive-volume type standardization
-  typedef ConvolutionVolume<VOLUME_TARGS> ConvolutionVolumeType;
+  typedef ConvolutionVolume<VOLUME_TARGS> ParametersType;
 
   /// Forward mapping bank standardization
   typedef boost::multi_array<ValueType*, 2> ForwardMapType;
@@ -158,9 +158,9 @@ public:
    */
   void setOptimizer(typename Optimizer::Ptr opt);
 
-  inline const ConvolutionVolumeType& getConvolutionVolume() const
+  inline const ParametersType& getParameters() const
   {
-    return field_;
+    return parameters_;
   }
 
 protected:
@@ -182,7 +182,7 @@ private:
   void reset();
 
   /// Layer configuration parameters
-  ConvolutionVolumeType field_;
+  ParametersType parameters_;
 
   ForwardMapType forward_error_mappings_;
 

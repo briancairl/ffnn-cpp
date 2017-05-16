@@ -146,7 +146,7 @@ bool  LocalConvolution<TARGS>::initialize(const WeightDistribution& wd, const Bi
     for (SizeType jdx = 0; jdx < output_volume_shape_.width; jdx++)
     {
       // Initialize field
-      Base::initialized_ &= fields_[idx][jdx].initialize(wd, bd);
+      Base::initialized_ &= parameters_[idx][jdx].initialize(wd, bd);
 
       // Check that last created field was initialized properly
       FFNN_ASSERT_MSG(Base::initialized_, "Failed to initialize receptor.");
@@ -178,10 +178,10 @@ bool LocalConvolution<TARGS>::forward()
     for (OffsetType jdx = 0, wdx = 0; jdx < output_volume_shape_.width; jdx++, wdx += filter_stride_.width)
     {
       // Get block dimensions
-      const auto& ris = fields_[idx][jdx].inputShape();
+      const auto& ris = parameters_[idx][jdx].inputShape();
 
       // Activate receptor
-      fields_[idx][jdx].forward(Base::input_.block(hdx, wdx, ris.height, ris.width));
+      parameters_[idx][jdx].forward(Base::input_.block(hdx, wdx, ris.height, ris.width));
     }
   }
   return true;
@@ -209,12 +209,12 @@ bool LocalConvolution<TARGS>::backward()
     for (OffsetType jdx = 0, wdx = 0; jdx < output_volume_shape_.width; jdx++, wdx += filter_stride_.width)
     {
       // Get block dimensions
-      const auto& ris = fields_[idx][jdx].inputShape();
+      const auto& ris = parameters_[idx][jdx].inputShape();
 
       // Sum over all filters
       OffsetType kdx = 0;
-      const ValueType* err = fields_[idx][jdx].getForwardErrorMapping();
-      for (const auto& filter : fields_[idx][jdx].filters)
+      const ValueType* err = parameters_[idx][jdx].getForwardErrorMapping();
+      for (const auto& filter : parameters_[idx][jdx].filters)
       {
         Base::backward_error_.block(hdx, wdx, ris.height, ris.width) += filter.kernel * err[kdx++];
       }
@@ -253,13 +253,13 @@ template<typename ValueType,
          typename _HiddenLayerShape>
 void LocalConvolution<TARGS>::reset()
 {
-  fields_.resize(boost::extents[output_volume_shape_.height][output_volume_shape_.width]);
+  parameters_.resize(boost::extents[output_volume_shape_.height][output_volume_shape_.width]);
   for (SizeType jdx = 0; jdx < output_volume_shape_.width; jdx++)
   {
     for (SizeType idx = 0; idx < output_volume_shape_.height; idx++)
     {
       // Create receptive field
-      new (&fields_[idx][jdx]) ConvolutionVolumeType(filter_shape_, output_volume_shape_.depth);
+      new (&parameters_[idx][jdx]) ParameterBlockType(filter_shape_, output_volume_shape_.depth);
     }
   }
 }
@@ -310,10 +310,10 @@ LocalConvolution<TARGS>::connectToForwardLayer(const Layer<ValueType>& next, Off
         idx * output_volume_shape_.depth;
 
       // Set output memory mapping
-      fields_[idx][jdx].setOutputMapping(output_ptr + kdx);
+      parameters_[idx][jdx].setOutputMapping(output_ptr + kdx);
 
       // Set backward-error memory mapping
-      fields_[idx][jdx].setForwardErrorMapping(error_ptr + kdx);
+      parameters_[idx][jdx].setForwardErrorMapping(error_ptr + kdx);
     }
   }
   return offset_after_connect;
@@ -340,7 +340,7 @@ void LocalConvolution<TARGS>::save(typename LocalConvolution<TARGS>::OutputArchi
   {
     for (SizeType jdx = 0; jdx < output_volume_shape_.width; jdx++)
     {
-      fields_[idx][jdx].save(ar, version);
+      parameters_[idx][jdx].save(ar, version);
     }
   }
   FFNN_DEBUG_NAMED("layer::LocalConvolution", "Saved");
@@ -368,7 +368,7 @@ void LocalConvolution<TARGS>::load(typename LocalConvolution<TARGS>::InputArchiv
   {
     for (SizeType jdx = 0; jdx < output_volume_shape_.width; jdx++)
     {
-      fields_[idx][jdx].load(ar, version);
+      parameters_[idx][jdx].load(ar, version);
     }
   }
 

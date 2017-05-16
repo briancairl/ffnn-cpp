@@ -63,10 +63,10 @@ public:
   typedef typename LayerType::OutputBlockType OutputBlockType;
 
   /// Receptive-volume type standardization
-  typedef typename LayerType::ConvolutionVolumeType ConvolutionVolumeType;
+  typedef typename LayerType::ParameterBlockType ParameterBlockType;
 
   /// Receptive-field type standardization
-  typedef typename LayerType::ConvolutionFieldType ConvolutionFieldType;
+  typedef typename LayerType::ParametersType ParametersType;
 
   /**
    * @brief Setup constructor
@@ -74,7 +74,7 @@ public:
    */
   explicit
   GradientDescent(ScalarType lr) :
-    Optimizer<LayerType>("GradientDescent[Convolution]"),
+    Optimizer<LayerType>("GradientDescent[LocalConvolution]"),
     lr_(lr)
   {}
   virtual ~GradientDescent() {}
@@ -96,7 +96,7 @@ public:
     {
       for (SizeType jdx = 0; jdx < layer.output_volume_shape_.width; jdx++)
       {
-        new (&gradient_[idx][jdx]) ConvolutionVolumeType(layer.filter_shape_, layer.output_volume_shape_.depth);
+        new (&gradient_[idx][jdx]) ParameterBlockType(layer.filter_shape_, layer.output_volume_shape_.depth);
       }
     }
     reset(layer);
@@ -154,7 +154,7 @@ public:
           const OffsetType iidx((Mode == layer::ColEmbedding) ? (idx * layer.output_volume_shape_.depth + kdx) : idx);
           const OffsetType jjdx((Mode == layer::RowEmbedding) ? (jdx * layer.output_volume_shape_.depth + kdx) : jdx);
 
-          gradient_[idx][jdx].filters[kdx].kernel += layer.fields_[idx][jdx].filters[kdx].kernel * layer.forward_error_(iidx, jjdx);
+          gradient_[idx][jdx].filters[kdx].kernel += layer.parameters_[idx][jdx].filters[kdx].kernel * layer.forward_error_(iidx, jjdx);
           gradient_[idx][jdx].filters[kdx].bias += layer.forward_error_(iidx, jjdx);
         }
       }
@@ -180,7 +180,7 @@ public:
       for (OffsetType jdx = 0; jdx < layer.output_volume_shape_.width; jdx++)
       {
         gradient_[idx][jdx].filters *= lr_;
-        layer.fields_[idx][jdx].filters -= gradient_[idx][jdx].filters;
+        layer.parameters_[idx][jdx].filters -= gradient_[idx][jdx].filters;
       }
     }
 
@@ -194,7 +194,7 @@ protected:
   ScalarType lr_;
 
   /// Total parameter gradient
-  ConvolutionFieldType gradient_;
+  ParametersType gradient_;
 
   /// Previous input
   InputBlockType prev_input_;
