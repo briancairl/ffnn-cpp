@@ -2,8 +2,8 @@
  * @author Brian Cairl
  * @date 2017
  */
-#ifndef FFNN_LAYER_CONVOLUTION_H
-#define FFNN_LAYER_CONVOLUTION_H
+#ifndef FFNN_LAYER_LOCAL_CONVOLUTION_H
+#define FFNN_LAYER_LOCAL_CONVOLUTION_H
 
 // Boost
 #include "boost/multi_array.hpp"
@@ -86,7 +86,7 @@ public:
   typedef ConvolutionVolume<VOLUME_TARGS> ConvolutionVolumeType;
 
   /// Recptive-volume bank standardization
-  typedef boost::multi_array<ConvolutionVolumeType, 2> LocalConvolutionFieldType;
+  typedef boost::multi_array<ConvolutionVolumeType, 2> ConvolutionFieldType;
 
   /// Layer optimization type standardization
   typedef optimizer::Optimizer<Self> Optimizer;
@@ -96,10 +96,10 @@ public:
    */
   explicit
   LocalConvolution(const ShapeType& input_shape = ShapeType(HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime),
-              const SizeType& filter_height = FilterHeightAtCompileTime,
-              const SizeType& filter_width = FilterWidthAtCompileTime,
-              const SizeType& filter_count = FilterCountAtCompileTime,
-              const SizeType& filter_stride = StrideAtCompileTime);
+                   const SizeType& filter_height = FilterHeightAtCompileTime,
+                   const SizeType& filter_width = FilterWidthAtCompileTime,
+                   const SizeType& filter_count = FilterCountAtCompileTime,
+                   const SizeType& filter_stride = StrideAtCompileTime);
   virtual ~LocalConvolution();
 
   /**
@@ -159,7 +159,7 @@ public:
    */
   void setOptimizer(typename Optimizer::Ptr opt);
 
-  inline const LocalConvolutionFieldType& getLocalConvolutionField() const
+  inline const ConvolutionFieldType& getConvolutionField() const
   {
     return fields_;
   }
@@ -183,7 +183,7 @@ private:
   void reset();
 
   /// Layer configuration parameters
-  LocalConvolutionFieldType fields_;
+  ConvolutionFieldType fields_;
 
   /// "True" shape of the ouput with no depth-embedding
   ShapeType input_volume_shape_;
@@ -221,4 +221,4 @@ private:
 // Cleanup definitions
 #undef TARGS
 #undef VOLUME_TARGS
-#endif  // FFNN_LAYER_CONVOLUTION_H
+#endif  // FFNN_LAYER_LOCAL_CONVOLUTION_H

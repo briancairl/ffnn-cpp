@@ -30,10 +30,10 @@ template<typename ValueType,
          typename _HiddenLayerShape>
 LocalConvolution<TARGS>::
 LocalConvolution(const ShapeType& input_shape,
-            const SizeType& filter_height,
-            const SizeType& filter_width,
-            const SizeType& filter_count,
-            const SizeType& filter_stride) :
+                 const SizeType& filter_height,
+                 const SizeType& filter_width,
+                 const SizeType& filter_count,
+                 const SizeType& filter_stride) :
   Base(ShapeType(embed_dimension<Mode, ColEmbedding>(input_shape.height, input_shape.depth),
                  embed_dimension<Mode, RowEmbedding>(input_shape.width, input_shape.depth)),
        ShapeType(embed_dimension<Mode, ColEmbedding>(output_dimension(input_shape.height, filter_height, filter_stride), filter_count),
@@ -330,7 +330,7 @@ template<typename ValueType,
          EmbeddingMode Mode,
          typename _HiddenLayerShape>
 void LocalConvolution<TARGS>::save(typename LocalConvolution<TARGS>::OutputArchive& ar,
-                              typename LocalConvolution<TARGS>::VersionType version) const
+                                   typename LocalConvolution<TARGS>::VersionType version) const
 {
   ffnn::io::signature::apply<LocalConvolution<TARGS>>(ar);
   Base::save(ar, version);

@@ -20,28 +20,28 @@
 #include <ffnn/layer/activation.h>
 #include <ffnn/layer/layer.h>
 #include <ffnn/layer/input.h>
-#include <ffnn/layer/convolution.h>
+#include <ffnn/layer/local_convolution.h>
 #include <ffnn/layer/output.h>
 #include <ffnn/neuron/lecun_sigmoid.h>
 #include <ffnn/optimizer/gradient_descent.h>
 #include <ffnn/distribution/normal.h>
 
 /***********************************************************/
-// Creates network workflow with one Convolution hidden
+// Creates network workflow with one LocalConvolution hidden
 // layer and updates using a GradientDescent optimizer
 //
 // Tests:
 //    - layer::Input
 //    - layer::Output
-//    - layer::Convolution
+//    - layer::LocalConvolution
 //    - optimizer::GradientDescent
 /***********************************************************/
-TEST(TestLayerConvolutionWithOptimizers, GradientDescent)
+TEST(TestLayerLocalConvolutionWithOptimizers, GradientDescent)
 {
   // Layer-type alias
   using Layer  = ffnn::layer::Layer<float>;
   using Input  = ffnn::layer::Input<float>;
-  using Hidden = ffnn::layer::Convolution<float, 16, 16, 3, 4, 4, 4, 1, ffnn::layer::ColEmbedding>;
+  using Hidden = ffnn::layer::LocalConvolution<float, 16, 16, 3, 4, 4, 8, 1, ffnn::layer::ColEmbedding>;
   using Output = ffnn::layer::Output<float>;
 
   // Layer sizes

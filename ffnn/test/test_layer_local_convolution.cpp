@@ -17,7 +17,7 @@
 
 // FFNN
 #include <ffnn/layer/input.h>
-#include <ffnn/layer/convolution.h>
+#include <ffnn/layer/local_convolution.h>
 #include <ffnn/layer/output.h>
 #include <ffnn/layer/layer.h>
 #include <ffnn/distribution/normal.h>
@@ -26,12 +26,12 @@ TEST(TestLayerConvolution, StaticInstanceColEmbedding_Forward)
 {
   using Layer  = ffnn::layer::Layer<float>;
   using Input  = ffnn::layer::Input<float>;
-  using Convolution = ffnn::layer::Convolution<float, 16, 16, 3, 4, 4, 4, 1, ffnn::layer::ColEmbedding>;
+  using LocalConvolution = ffnn::layer::LocalConvolution<float, 16, 16, 3, 4, 4, 4, 1, ffnn::layer::ColEmbedding>;
   using Output = ffnn::layer::Output<float>;
 
   // Shape inferred from template args
   auto input = boost::make_shared<Input>(16 * 16 * 3);
-  auto convolution = boost::make_shared<Convolution>();
+  auto convolution = boost::make_shared<LocalConvolution>();
   auto output = boost::make_shared<Output>();
 
   ffnn::layer::connect<Layer>(input, convolution);
@@ -70,9 +70,6 @@ TEST(TestLayerConvolution, StaticInstanceColEmbedding_Forward)
   Eigen::VectorXf out_target(osh.size(), 1);
   out_target.setOnes();
   (*output) << out_target;
-
-  output->backward();
-  convolution->backward();
 
   Eigen::Map<Eigen::MatrixXf> om(out_data.data(), osh.height, osh.width);
   FFNN_INFO("\n" << om);

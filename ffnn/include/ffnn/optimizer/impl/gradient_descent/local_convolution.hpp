@@ -2,8 +2,8 @@
  * @note HEADER-ONLY IMPLEMENTATION FILE
  * @warn Do not include directly
  */
-#ifndef FFNN_LAYER_IMPL_GRADIENT_DESCENT_CONVOLUTION_HPP
-#define FFNN_LAYER_IMPL_GRADIENT_DESCENT_CONVOLUTION_HPP
+#ifndef FFNN_LAYER_IMPL_GRADIENT_DESCENT_LOCAL_CONVOLUTION_HPP
+#define FFNN_LAYER_IMPL_GRADIENT_DESCENT_LOCAL_CONVOLUTION_HPP
 
 // C++ Standard Library
 #include <type_traits>
@@ -11,7 +11,7 @@
 // FFNN
 #include <ffnn/assert.h>
 #include <ffnn/logging.h>
-#include <ffnn/layer/convolution.h>
+#include <ffnn/layer/local_convolution.h>
 
 namespace ffnn
 {
@@ -40,12 +40,12 @@ template<typename ValueType,
          FFNN_SIZE_TYPE StrideAtCompileTime,
          layer::EmbeddingMode Mode,
          typename _HiddenLayerShape>
-class GradientDescent<layer::Convolution<TARGS>>:
-  public Optimizer<layer::Convolution<TARGS>>
+class GradientDescent<layer::LocalConvolution<TARGS>>:
+  public Optimizer<layer::LocalConvolution<TARGS>>
 {
 public:
   /// Layer type standardization
-  typedef typename layer::Convolution<TARGS> LayerType;
+  typedef typename layer::LocalConvolution<TARGS> LayerType;
 
   /// Scalar type standardization
   typedef typename LayerType::ScalarType ScalarType;
@@ -202,4 +202,4 @@ protected:
 }  // namespace optimizer
 }  // namespace ffnn
 #undef TARGS
-#endif  // FFNN_LAYER_IMPL_GRADIENT_DESCENT_CONVOLUTION_HPP
+#endif  // FFNN_LAYER_IMPL_GRADIENT_DESCENT_LOCAL_CONVOLUTION_HPP
