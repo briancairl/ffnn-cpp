@@ -9,6 +9,9 @@
 #include <vector>
 #include <type_traits>
 
+// FFNN
+#include <ffnn/layer/convolution_defs.h>
+
 // FFNN (internal)
 #include <ffnn/layer/internal/shape.h>
 #include <ffnn/layer/internal/interface.h>
@@ -18,25 +21,6 @@ namespace ffnn
 {
 namespace layer
 {
-typedef enum
-{
-  RowEmbedding = 0, ///< Embed depth along filter matrix rows
-  ColEmbedding = 1, ///< Embed depth along filter matrix cols
-}
-EmbeddingMode;
-
-template<EmbeddingMode mode, EmbeddingMode ref, typename SizeType>
-constexpr SizeType embed_dimension(SizeType n, SizeType m)
-{
-  return (mode == ref) ? internal::multiply_if_not_dynamic_sizes<SizeType>(n, m) : n;
-}
-
-template<typename SizeType>
-constexpr SizeType output_dimension(SizeType n, SizeType fn, SizeType stride)
-{
-  return (n - fn) / stride + 1;
-}
-
 template<typename ValueType,
          FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic,
          FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic,

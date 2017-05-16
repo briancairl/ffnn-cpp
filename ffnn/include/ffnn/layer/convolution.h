@@ -11,6 +11,7 @@
 // FFNN Layer
 #include <ffnn/layer/layer.h>
 #include <ffnn/layer/hidden.h>
+#include <ffnn/layer/convolution_defs.h>
 #include <ffnn/layer/convolution_volume.h>
 
 // FFNN Optimization

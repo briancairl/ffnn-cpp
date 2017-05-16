@@ -89,7 +89,7 @@ TEST(TestLayerLocalConvolutionWithOptimizers, GradientDescent)
 
   // Check that error montonically decreases
   float prev_error = std::numeric_limits<float>::infinity();
-  for (size_t idx = 0UL; idx < 1e4; idx++)
+  for (size_t idx = 0UL; idx < 500; idx++)
   {
     // Forward activate
     (*input) << input_data;
