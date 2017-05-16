@@ -55,7 +55,7 @@ TEST(TestLayerConvolutionWithOptimizers, GradientDescent)
   // Set optimizer (gradient descent)
   {
     using Optimizer = ffnn::optimizer::GradientDescent<Hidden>;
-    hidden->setOptimizer(boost::make_shared<Optimizer>(1e-4));
+    hidden->setOptimizer(boost::make_shared<Optimizer>(5e-5));
   }
 
   // Create network
@@ -89,7 +89,7 @@ TEST(TestLayerConvolutionWithOptimizers, GradientDescent)
 
   // Check that error montonically decreases
   float prev_error = std::numeric_limits<float>::infinity();
-  for (size_t idx = 0UL; idx < 1e2; idx++)
+  for (size_t idx = 0UL; idx < 5e2; idx++)
   {
     // Forward activate
     (*input) << input_data;
