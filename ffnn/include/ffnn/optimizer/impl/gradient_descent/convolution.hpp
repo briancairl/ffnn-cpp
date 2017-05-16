@@ -179,7 +179,7 @@ public:
     {
       for (OffsetType jdx = 0; jdx < layer.output_volume_shape_.width; jdx++)
       {
-        layer.fields_[idx][jdx].filters *= lr_;
+        gradient_[idx][jdx].filters *= lr_;
         layer.fields_[idx][jdx].filters -= gradient_[idx][jdx].filters;
       }
     }
