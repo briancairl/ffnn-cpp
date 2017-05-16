@@ -33,14 +33,6 @@ namespace layer
   Mode,\
   _HiddenLayerShape
 
-#define VOLUME_TARGS\
-  ValueType,\
-  FilterHeightAtCompileTime,\
-  FilterWidthAtCompileTime,\
-  DepthAtCompileTime,\
-  FilterCountAtCompileTime,\
-  Mode
-
 /**
  * @brief A convolution layer
  */
@@ -82,7 +74,12 @@ public:
   typedef typename Base::ShapeType ShapeType;
 
   /// Receptive-volume type standardization
-  typedef ConvolutionVolume<VOLUME_TARGS> ParametersType;
+  typedef ConvolutionVolume<ValueType,
+                            FilterHeightAtCompileTime,
+                            FilterWidthAtCompileTime,
+                            DepthAtCompileTime,
+                            FilterCountAtCompileTime,
+                            Mode> ParametersType;
 
   /// Forward mapping bank standardization
   typedef boost::multi_array<ValueType*, 2> ForwardMapType;
@@ -223,5 +220,4 @@ private:
 
 // Cleanup definitions
 #undef TARGS
-#undef VOLUME_TARGS
 #endif  // FFNN_LAYER_CONVOLUTION_H

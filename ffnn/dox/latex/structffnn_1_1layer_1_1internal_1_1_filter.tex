@@ -1,0 +1,88 @@
+\hypertarget{structffnn_1_1layer_1_1internal_1_1_filter}{\section{ffnn\-:\-:layer\-:\-:internal\-:\-:Filter$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Option $>$ Struct Template Reference}
+\label{structffnn_1_1layer_1_1internal_1_1_filter}\index{ffnn\-::layer\-::internal\-::\-Filter$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Option $>$@{ffnn\-::layer\-::internal\-::\-Filter$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Option $>$}}
+}
+
+
+{\ttfamily \#include \char`\"{}filter\-\_\-bank.\-h\char`\"{}}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Eigen\-::\-Matrix\\*
+$<$ Value\-Type, \\*
+Height\-At\-Compile\-Time, \\*
+Width\-At\-Compile\-Time, Option $>$ \hyperlink{structffnn_1_1layer_1_1internal_1_1_filter_a366f3c217c51cde60751c95a1fb67c27}{Kernel\-Matrix\-Type}
+\begin{DoxyCompactList}\small\item\em \hyperlink{structffnn_1_1layer_1_1internal_1_1_filter}{Filter} kernel matrix standardization. \end{DoxyCompactList}\item 
+typedef Value\-Type \hyperlink{structffnn_1_1layer_1_1internal_1_1_filter_a918a7aa5f9b29d645c90dcc34af35f84}{Scalar\-Type}
+\begin{DoxyCompactList}\small\item\em Scalar type standardization. \end{DoxyCompactList}\item 
+typedef Kernel\-Matrix\-Type\-::\-Index \hyperlink{structffnn_1_1layer_1_1internal_1_1_filter_adaf4459cd0d17e558b5f5f4773bacf97}{Size\-Type}
+\item 
+typedef Kernel\-Matrix\-Type\-::\-Index \hyperlink{structffnn_1_1layer_1_1internal_1_1_filter_a543008f199d45ea3c353751c78489a4b}{Offset\-Type}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structffnn_1_1layer_1_1internal_1_1_filter_a2c0d28189a7d2de66d082eb873f5b30e}{E\-I\-G\-E\-N\-\_\-\-M\-A\-K\-E\-\_\-\-A\-L\-I\-G\-N\-E\-D\-\_\-\-O\-P\-E\-R\-A\-T\-O\-R\-\_\-\-N\-E\-W\-\_\-\-I\-F} (\hyperlink{structffnn_1_1layer_1_1internal_1_1is__alignable__128}{internal\-::is\-\_\-alignable\-\_\-128}$<$ \hyperlink{structffnn_1_1layer_1_1internal_1_1_filter_a366f3c217c51cde60751c95a1fb67c27}{Kernel\-Matrix\-Type} $>$\-::value)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structffnn_1_1layer_1_1internal_1_1_filter_a366f3c217c51cde60751c95a1fb67c27}{Kernel\-Matrix\-Type} \hyperlink{structffnn_1_1layer_1_1internal_1_1_filter_a4e768c6ca11ca77ce1373bf40e986e78}{kernel}
+\begin{DoxyCompactList}\small\item\em Kernel matrix. \end{DoxyCompactList}\item 
+Value\-Type \hyperlink{structffnn_1_1layer_1_1internal_1_1_filter_ad44b8b75e3dcdf5af8dc89ac73471376}{bias}
+\begin{DoxyCompactList}\small\item\em Biasing scalar. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{structffnn_1_1layer_1_1internal_1_1_filter_a366f3c217c51cde60751c95a1fb67c27}{\index{ffnn\-::layer\-::internal\-::\-Filter@{ffnn\-::layer\-::internal\-::\-Filter}!Kernel\-Matrix\-Type@{Kernel\-Matrix\-Type}}
+\index{Kernel\-Matrix\-Type@{Kernel\-Matrix\-Type}!ffnn::layer::internal::Filter@{ffnn\-::layer\-::internal\-::\-Filter}}
+\subsubsection[{Kernel\-Matrix\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, int Option = Eigen\-::\-Col\-Major$>$ typedef Eigen\-::\-Matrix$<$Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Option$>$ {\bf ffnn\-::layer\-::internal\-::\-Filter}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Option $>$\-::{\bf Kernel\-Matrix\-Type}}}\label{structffnn_1_1layer_1_1internal_1_1_filter_a366f3c217c51cde60751c95a1fb67c27}
+
+
+\hyperlink{structffnn_1_1layer_1_1internal_1_1_filter}{Filter} kernel matrix standardization. 
+
+\hypertarget{structffnn_1_1layer_1_1internal_1_1_filter_a543008f199d45ea3c353751c78489a4b}{\index{ffnn\-::layer\-::internal\-::\-Filter@{ffnn\-::layer\-::internal\-::\-Filter}!Offset\-Type@{Offset\-Type}}
+\index{Offset\-Type@{Offset\-Type}!ffnn::layer::internal::Filter@{ffnn\-::layer\-::internal\-::\-Filter}}
+\subsubsection[{Offset\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, int Option = Eigen\-::\-Col\-Major$>$ typedef Kernel\-Matrix\-Type\-::\-Index {\bf ffnn\-::layer\-::internal\-::\-Filter}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Option $>$\-::{\bf Offset\-Type}}}\label{structffnn_1_1layer_1_1internal_1_1_filter_a543008f199d45ea3c353751c78489a4b}
+\hypertarget{structffnn_1_1layer_1_1internal_1_1_filter_a918a7aa5f9b29d645c90dcc34af35f84}{\index{ffnn\-::layer\-::internal\-::\-Filter@{ffnn\-::layer\-::internal\-::\-Filter}!Scalar\-Type@{Scalar\-Type}}
+\index{Scalar\-Type@{Scalar\-Type}!ffnn::layer::internal::Filter@{ffnn\-::layer\-::internal\-::\-Filter}}
+\subsubsection[{Scalar\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, int Option = Eigen\-::\-Col\-Major$>$ typedef Value\-Type {\bf ffnn\-::layer\-::internal\-::\-Filter}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Option $>$\-::{\bf Scalar\-Type}}}\label{structffnn_1_1layer_1_1internal_1_1_filter_a918a7aa5f9b29d645c90dcc34af35f84}
+
+
+Scalar type standardization. 
+
+\hypertarget{structffnn_1_1layer_1_1internal_1_1_filter_adaf4459cd0d17e558b5f5f4773bacf97}{\index{ffnn\-::layer\-::internal\-::\-Filter@{ffnn\-::layer\-::internal\-::\-Filter}!Size\-Type@{Size\-Type}}
+\index{Size\-Type@{Size\-Type}!ffnn::layer::internal::Filter@{ffnn\-::layer\-::internal\-::\-Filter}}
+\subsubsection[{Size\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, int Option = Eigen\-::\-Col\-Major$>$ typedef Kernel\-Matrix\-Type\-::\-Index {\bf ffnn\-::layer\-::internal\-::\-Filter}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Option $>$\-::{\bf Size\-Type}}}\label{structffnn_1_1layer_1_1internal_1_1_filter_adaf4459cd0d17e558b5f5f4773bacf97}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structffnn_1_1layer_1_1internal_1_1_filter_a2c0d28189a7d2de66d082eb873f5b30e}{\index{ffnn\-::layer\-::internal\-::\-Filter@{ffnn\-::layer\-::internal\-::\-Filter}!E\-I\-G\-E\-N\-\_\-\-M\-A\-K\-E\-\_\-\-A\-L\-I\-G\-N\-E\-D\-\_\-\-O\-P\-E\-R\-A\-T\-O\-R\-\_\-\-N\-E\-W\-\_\-\-I\-F@{E\-I\-G\-E\-N\-\_\-\-M\-A\-K\-E\-\_\-\-A\-L\-I\-G\-N\-E\-D\-\_\-\-O\-P\-E\-R\-A\-T\-O\-R\-\_\-\-N\-E\-W\-\_\-\-I\-F}}
+\index{E\-I\-G\-E\-N\-\_\-\-M\-A\-K\-E\-\_\-\-A\-L\-I\-G\-N\-E\-D\-\_\-\-O\-P\-E\-R\-A\-T\-O\-R\-\_\-\-N\-E\-W\-\_\-\-I\-F@{E\-I\-G\-E\-N\-\_\-\-M\-A\-K\-E\-\_\-\-A\-L\-I\-G\-N\-E\-D\-\_\-\-O\-P\-E\-R\-A\-T\-O\-R\-\_\-\-N\-E\-W\-\_\-\-I\-F}!ffnn::layer::internal::Filter@{ffnn\-::layer\-::internal\-::\-Filter}}
+\subsubsection[{E\-I\-G\-E\-N\-\_\-\-M\-A\-K\-E\-\_\-\-A\-L\-I\-G\-N\-E\-D\-\_\-\-O\-P\-E\-R\-A\-T\-O\-R\-\_\-\-N\-E\-W\-\_\-\-I\-F}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, int Option = Eigen\-::\-Col\-Major$>$ {\bf ffnn\-::layer\-::internal\-::\-Filter}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Option $>$\-::E\-I\-G\-E\-N\-\_\-\-M\-A\-K\-E\-\_\-\-A\-L\-I\-G\-N\-E\-D\-\_\-\-O\-P\-E\-R\-A\-T\-O\-R\-\_\-\-N\-E\-W\-\_\-\-I\-F (
+\begin{DoxyParamCaption}
+\item[{{\bf internal\-::is\-\_\-alignable\-\_\-128}$<$ {\bf Kernel\-Matrix\-Type} $>$\-::value}]{}
+\end{DoxyParamCaption}
+)}}\label{structffnn_1_1layer_1_1internal_1_1_filter_a2c0d28189a7d2de66d082eb873f5b30e}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structffnn_1_1layer_1_1internal_1_1_filter_ad44b8b75e3dcdf5af8dc89ac73471376}{\index{ffnn\-::layer\-::internal\-::\-Filter@{ffnn\-::layer\-::internal\-::\-Filter}!bias@{bias}}
+\index{bias@{bias}!ffnn::layer::internal::Filter@{ffnn\-::layer\-::internal\-::\-Filter}}
+\subsubsection[{bias}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, int Option = Eigen\-::\-Col\-Major$>$ Value\-Type {\bf ffnn\-::layer\-::internal\-::\-Filter}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Option $>$\-::bias}}\label{structffnn_1_1layer_1_1internal_1_1_filter_ad44b8b75e3dcdf5af8dc89ac73471376}
+
+
+Biasing scalar. 
+
+\hypertarget{structffnn_1_1layer_1_1internal_1_1_filter_a4e768c6ca11ca77ce1373bf40e986e78}{\index{ffnn\-::layer\-::internal\-::\-Filter@{ffnn\-::layer\-::internal\-::\-Filter}!kernel@{kernel}}
+\index{kernel@{kernel}!ffnn::layer::internal::Filter@{ffnn\-::layer\-::internal\-::\-Filter}}
+\subsubsection[{kernel}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, int Option = Eigen\-::\-Col\-Major$>$ {\bf Kernel\-Matrix\-Type} {\bf ffnn\-::layer\-::internal\-::\-Filter}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Option $>$\-::kernel}}\label{structffnn_1_1layer_1_1internal_1_1_filter_a4e768c6ca11ca77ce1373bf40e986e78}
+
+
+Kernel matrix. 
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/internal/\hyperlink{filter__bank_8h}{filter\-\_\-bank.\-h}\end{DoxyCompactItemize}

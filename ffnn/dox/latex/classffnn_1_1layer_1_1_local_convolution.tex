@@ -1,0 +1,406 @@
+\hypertarget{classffnn_1_1layer_1_1_local_convolution}{\section{ffnn\-:\-:layer\-:\-:Local\-Convolution$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode, \-\_\-\-Hidden\-Layer\-Shape $>$ Class Template Reference}
+\label{classffnn_1_1layer_1_1_local_convolution}\index{ffnn\-::layer\-::\-Local\-Convolution$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode, \-\_\-\-Hidden\-Layer\-Shape $>$@{ffnn\-::layer\-::\-Local\-Convolution$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode, \-\_\-\-Hidden\-Layer\-Shape $>$}}
+}
+
+
+A convolution layer.  
+
+
+
+
+{\ttfamily \#include \char`\"{}local\-\_\-convolution.\-h\char`\"{}}
+
+
+
+Inheritance diagram for ffnn\-:\-:layer\-:\-:Local\-Convolution$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode, \-\_\-\-Hidden\-Layer\-Shape $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{classffnn_1_1layer_1_1_local_convolution__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ffnn\-:\-:layer\-:\-:Local\-Convolution$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode, \-\_\-\-Hidden\-Layer\-Shape $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{classffnn_1_1layer_1_1_local_convolution__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \hyperlink{classffnn_1_1layer_1_1_local_convolution_a743892f65df49f80cd171a1254cb7548}{Base} = \hyperlink{classffnn_1_1layer_1_1_hidden}{Hidden}$<$ Value\-Type, \-\_\-\-Hidden\-Layer\-Shape $>$
+\begin{DoxyCompactList}\small\item\em Base type alias. \end{DoxyCompactList}\item 
+using \hyperlink{classffnn_1_1layer_1_1_local_convolution_aeac716acfc0babed958f927490d17992}{Self} = \hyperlink{classffnn_1_1layer_1_1_local_convolution}{Local\-Convolution}$<$ \hyperlink{optimizer_2impl_2gradient__descent_2local__convolution_8hpp_a005b9b79411aa786124330e813a99057}{T\-A\-R\-G\-S} $>$
+\begin{DoxyCompactList}\small\item\em Self type alias. \end{DoxyCompactList}\item 
+typedef \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a7f834e3365e5199bcbcd16d9abd63941}{Base\-::\-Scalar\-Type} \hyperlink{classffnn_1_1layer_1_1_local_convolution_a45fb8729213ea0bc40845cc1161fe229}{Scalar\-Type}
+\begin{DoxyCompactList}\small\item\em Scalar type standardization. \end{DoxyCompactList}\item 
+typedef \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_af0567642f60c65b5e87067226a54174b}{Base\-::\-Size\-Type} \hyperlink{classffnn_1_1layer_1_1_local_convolution_acb63c6ee4ca498d7992259aaa7246f26}{Size\-Type}
+\begin{DoxyCompactList}\small\item\em Size type standardization. \end{DoxyCompactList}\item 
+typedef \hyperlink{classffnn_1_1layer_1_1_hidden_ae2409b970adafb0ebc9b2eec62c4aac4}{Base\-::\-Offset\-Type} \hyperlink{classffnn_1_1layer_1_1_local_convolution_ade49c152e28ac5dd35427569ccbc332e}{Offset\-Type}
+\begin{DoxyCompactList}\small\item\em Offset type standardization. \end{DoxyCompactList}\item 
+typedef \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a945709b1d0ea54a51539b80d04485f5f}{Base\-::\-Shape\-Type} \hyperlink{classffnn_1_1layer_1_1_local_convolution_a2f1b1364ef9d3eefc517184e2cd1115b}{Shape\-Type}
+\begin{DoxyCompactList}\small\item\em Dimension type standardization. \end{DoxyCompactList}\item 
+typedef \hyperlink{classffnn_1_1layer_1_1_convolution_volume}{Convolution\-Volume}\\*
+$<$ \hyperlink{local__convolution_8h_a3f78e953733a2dba7219b13336105c26}{V\-O\-L\-U\-M\-E\-\_\-\-T\-A\-R\-G\-S} $>$ \hyperlink{classffnn_1_1layer_1_1_local_convolution_ab24fb486de20440b5e67853b079dbab2}{Parameter\-Block\-Type}
+\begin{DoxyCompactList}\small\item\em Receptive-\/volume type standardization. \end{DoxyCompactList}\item 
+typedef boost\-::multi\-\_\-array\\*
+$<$ \hyperlink{classffnn_1_1layer_1_1_local_convolution_ab24fb486de20440b5e67853b079dbab2}{Parameter\-Block\-Type}, 2 $>$ \hyperlink{classffnn_1_1layer_1_1_local_convolution_a09a482b44ecab19df4547526fb9b8321}{Parameters\-Type}
+\begin{DoxyCompactList}\small\item\em Recptive-\/volume bank standardization. \end{DoxyCompactList}\item 
+typedef \hyperlink{classffnn_1_1optimizer_1_1_optimizer}{optimizer\-::\-Optimizer}\\*
+$<$ \hyperlink{classffnn_1_1layer_1_1_layer_a1d461b24632a849b2c26a5051a9cdbeb}{Self} $>$ \hyperlink{classffnn_1_1layer_1_1_local_convolution_afb859216bf8b2f6510bbb5606d15773b}{Optimizer}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classffnn_1_1layer_1_1_layer}{Layer} optimization type standardization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classffnn_1_1layer_1_1_local_convolution_a54cd9bb2643136fccae8e8ca799603b1}{Local\-Convolution} (const \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a945709b1d0ea54a51539b80d04485f5f}{Shape\-Type} \&input\-\_\-shape=\hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a945709b1d0ea54a51539b80d04485f5f}{Shape\-Type}(Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time), const \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_af0567642f60c65b5e87067226a54174b}{Size\-Type} \&filter\-\_\-height=Filter\-Height\-At\-Compile\-Time, const \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_af0567642f60c65b5e87067226a54174b}{Size\-Type} \&filter\-\_\-width=Filter\-Width\-At\-Compile\-Time, const \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_af0567642f60c65b5e87067226a54174b}{Size\-Type} \&filter\-\_\-count=Filter\-Count\-At\-Compile\-Time, const \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_af0567642f60c65b5e87067226a54174b}{Size\-Type} \&filter\-\_\-stride=Stride\-At\-Compile\-Time)
+\begin{DoxyCompactList}\small\item\em Setup constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classffnn_1_1layer_1_1_local_convolution_aed4220121d8fd239fd4987dd423b57c5}{$\sim$\-Local\-Convolution} ()
+\item 
+bool \hyperlink{classffnn_1_1layer_1_1_local_convolution_ab9d84aaa24b480b95e85e2bc7c717eae}{initialize} ()
+\begin{DoxyCompactList}\small\item\em Initialize the layer. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Weight\-Distribution , typename Bias\-Distribution $>$ }\\bool \hyperlink{classffnn_1_1layer_1_1_local_convolution_a584556bdf0f8c19834dad73f170f7f3a}{initialize} (const Weight\-Distribution \&wd, const Bias\-Distribution \&bd)
+\begin{DoxyCompactList}\small\item\em Initialize layer weights and biases according to particular distributions. \end{DoxyCompactList}\item 
+bool \hyperlink{classffnn_1_1layer_1_1_local_convolution_ad0f643595b7c35e669d41b77c68143df}{forward} ()
+\begin{DoxyCompactList}\small\item\em Performs forward value propagation. \end{DoxyCompactList}\item 
+bool \hyperlink{classffnn_1_1layer_1_1_local_convolution_aa59a3093b68dc8001eaff1f6eef72fc9}{backward} ()
+\begin{DoxyCompactList}\small\item\em Performs backward error propagation. \end{DoxyCompactList}\item 
+bool \hyperlink{classffnn_1_1layer_1_1_local_convolution_a47bfd391c37cc6b5c14fa37c30bff025}{update} ()
+\begin{DoxyCompactList}\small\item\em Applies accumulated layer weight updates computed during optimization. \end{DoxyCompactList}\item 
+void \hyperlink{classffnn_1_1layer_1_1_local_convolution_accffb54b2bf71c6db52ac7bf3a2444f1}{set\-Optimizer} (typename \hyperlink{classffnn_1_1optimizer_1_1_optimizer_ac03e7181934bf0c12a97fc67a60484ab}{Optimizer\-::\-Ptr} opt)
+\begin{DoxyCompactList}\small\item\em Sets an optimizer used update network weights during back-\/propagation. \end{DoxyCompactList}\item 
+const \hyperlink{classffnn_1_1layer_1_1_local_convolution_a09a482b44ecab19df4547526fb9b8321}{Parameters\-Type} \& \hyperlink{classffnn_1_1layer_1_1_local_convolution_a344dedf3ab0c0b2bec77b74975075d0c}{get\-Paramaters} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classffnn_1_1layer_1_1_local_convolution_a16fe67fe182bb44e1b055f61bb960752}{save} (\hyperlink{classffnn_1_1traits_1_1_serializable_a08d986df75d363fa79506d4f6045cb9f}{Output\-Archive} \&ar, \hyperlink{classffnn_1_1traits_1_1_serializable_a08924b3b7d20cb3cb6eafe517d4f7b30}{Version\-Type} version) const 
+\begin{DoxyCompactList}\small\item\em Save serializer. \end{DoxyCompactList}\item 
+void \hyperlink{classffnn_1_1layer_1_1_local_convolution_ae45649dd2f6479208a3694bfab9df39d}{load} (\hyperlink{classffnn_1_1traits_1_1_serializable_a6e626759259f8f370dd4303b4441a234}{Input\-Archive} \&ar, \hyperlink{classffnn_1_1traits_1_1_serializable_a08924b3b7d20cb3cb6eafe517d4f7b30}{Version\-Type} version)
+\begin{DoxyCompactList}\small\item\em Load serializer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Stride\-At\-Compile\-Time = 1, Embedding\-Mode Mode = Col\-Embedding, typename \-\_\-\-Hidden\-Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$              embed\-\_\-dimension$<$\-Mode, Col\-Embedding$>$(\-Height\-At\-Compile\-Time, Depth\-At\-Compile\-Time),              embed\-\_\-dimension$<$\-Mode, Row\-Embedding$>$(\-Width\-At\-Compile\-Time,  Depth\-At\-Compile\-Time),              embed\-\_\-dimension$<$\-Mode, Col\-Embedding$>$(output\-\_\-dimension(\-Height\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Stride\-At\-Compile\-Time), Filter\-Count\-At\-Compile\-Time),              embed\-\_\-dimension$<$\-Mode, Row\-Embedding$>$(output\-\_\-dimension(\-Width\-At\-Compile\-Time,  Filter\-Width\-At\-Compile\-Time,  Stride\-At\-Compile\-Time), Filter\-Count\-At\-Compile\-Time)$>$$>$class ffnn\-::layer\-::\-Local\-Convolution$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode, \-\_\-\-Hidden\-Layer\-Shape $>$}
+
+A convolution layer. 
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classffnn_1_1layer_1_1_local_convolution_a743892f65df49f80cd171a1254cb7548}{\index{ffnn\-::layer\-::\-Local\-Convolution@{ffnn\-::layer\-::\-Local\-Convolution}!Base@{Base}}
+\index{Base@{Base}!ffnn::layer::LocalConvolution@{ffnn\-::layer\-::\-Local\-Convolution}}
+\subsubsection[{Base}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Stride\-At\-Compile\-Time = 1, Embedding\-Mode Mode = Col\-Embedding, typename \-\_\-\-Hidden\-Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$              embed\-\_\-dimension$<$\-Mode, Col\-Embedding$>$(\-Height\-At\-Compile\-Time, Depth\-At\-Compile\-Time),              embed\-\_\-dimension$<$\-Mode, Row\-Embedding$>$(\-Width\-At\-Compile\-Time,  Depth\-At\-Compile\-Time),              embed\-\_\-dimension$<$\-Mode, Col\-Embedding$>$(output\-\_\-dimension(\-Height\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Stride\-At\-Compile\-Time), Filter\-Count\-At\-Compile\-Time),              embed\-\_\-dimension$<$\-Mode, Row\-Embedding$>$(output\-\_\-dimension(\-Width\-At\-Compile\-Time,  Filter\-Width\-At\-Compile\-Time,  Stride\-At\-Compile\-Time), Filter\-Count\-At\-Compile\-Time)$>$$>$ using {\bf ffnn\-::layer\-::\-Local\-Convolution}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode, \-\_\-\-Hidden\-Layer\-Shape $>$\-::{\bf Base} =  {\bf Hidden}$<$Value\-Type, \-\_\-\-Hidden\-Layer\-Shape$>$}}\label{classffnn_1_1layer_1_1_local_convolution_a743892f65df49f80cd171a1254cb7548}
+
+
+Base type alias. 
+
+\hypertarget{classffnn_1_1layer_1_1_local_convolution_ade49c152e28ac5dd35427569ccbc332e}{\index{ffnn\-::layer\-::\-Local\-Convolution@{ffnn\-::layer\-::\-Local\-Convolution}!Offset\-Type@{Offset\-Type}}
+\index{Offset\-Type@{Offset\-Type}!ffnn::layer::LocalConvolution@{ffnn\-::layer\-::\-Local\-Convolution}}
+\subsubsection[{Offset\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Stride\-At\-Compile\-Time = 1, Embedding\-Mode Mode = Col\-Embedding, typename \-\_\-\-Hidden\-Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$              embed\-\_\-dimension$<$\-Mode, Col\-Embedding$>$(\-Height\-At\-Compile\-Time, Depth\-At\-Compile\-Time),              embed\-\_\-dimension$<$\-Mode, Row\-Embedding$>$(\-Width\-At\-Compile\-Time,  Depth\-At\-Compile\-Time),              embed\-\_\-dimension$<$\-Mode, Col\-Embedding$>$(output\-\_\-dimension(\-Height\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Stride\-At\-Compile\-Time), Filter\-Count\-At\-Compile\-Time),              embed\-\_\-dimension$<$\-Mode, Row\-Embedding$>$(output\-\_\-dimension(\-Width\-At\-Compile\-Time,  Filter\-Width\-At\-Compile\-Time,  Stride\-At\-Compile\-Time), Filter\-Count\-At\-Compile\-Time)$>$$>$ typedef {\bf Base\-::\-Offset\-Type} {\bf ffnn\-::layer\-::\-Local\-Convolution}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode, \-\_\-\-Hidden\-Layer\-Shape $>$\-::{\bf Offset\-Type}}}\label{classffnn_1_1layer_1_1_local_convolution_ade49c152e28ac5dd35427569ccbc332e}
+
+
+Offset type standardization. 
+
+\hypertarget{classffnn_1_1layer_1_1_local_convolution_afb859216bf8b2f6510bbb5606d15773b}{\index{ffnn\-::layer\-::\-Local\-Convolution@{ffnn\-::layer\-::\-Local\-Convolution}!Optimizer@{Optimizer}}
+\index{Optimizer@{Optimizer}!ffnn::layer::LocalConvolution@{ffnn\-::layer\-::\-Local\-Convolution}}
+\subsubsection[{Optimizer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Stride\-At\-Compile\-Time = 1, Embedding\-Mode Mode = Col\-Embedding, typename \-\_\-\-Hidden\-Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$              embed\-\_\-dimension$<$\-Mode, Col\-Embedding$>$(\-Height\-At\-Compile\-Time, Depth\-At\-Compile\-Time),              embed\-\_\-dimension$<$\-Mode, Row\-Embedding$>$(\-Width\-At\-Compile\-Time,  Depth\-At\-Compile\-Time),              embed\-\_\-dimension$<$\-Mode, Col\-Embedding$>$(output\-\_\-dimension(\-Height\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Stride\-At\-Compile\-Time), Filter\-Count\-At\-Compile\-Time),              embed\-\_\-dimension$<$\-Mode, Row\-Embedding$>$(output\-\_\-dimension(\-Width\-At\-Compile\-Time,  Filter\-Width\-At\-Compile\-Time,  Stride\-At\-Compile\-Time), Filter\-Count\-At\-Compile\-Time)$>$$>$ typedef {\bf optimizer\-::\-Optimizer}$<${\bf Self}$>$ {\bf ffnn\-::layer\-::\-Local\-Convolution}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode, \-\_\-\-Hidden\-Layer\-Shape $>$\-::{\bf Optimizer}}}\label{classffnn_1_1layer_1_1_local_convolution_afb859216bf8b2f6510bbb5606d15773b}
+
+
+\hyperlink{classffnn_1_1layer_1_1_layer}{Layer} optimization type standardization. 
+
+\hypertarget{classffnn_1_1layer_1_1_local_convolution_ab24fb486de20440b5e67853b079dbab2}{\index{ffnn\-::layer\-::\-Local\-Convolution@{ffnn\-::layer\-::\-Local\-Convolution}!Parameter\-Block\-Type@{Parameter\-Block\-Type}}
+\index{Parameter\-Block\-Type@{Parameter\-Block\-Type}!ffnn::layer::LocalConvolution@{ffnn\-::layer\-::\-Local\-Convolution}}
+\subsubsection[{Parameter\-Block\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Stride\-At\-Compile\-Time = 1, Embedding\-Mode Mode = Col\-Embedding, typename \-\_\-\-Hidden\-Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$              embed\-\_\-dimension$<$\-Mode, Col\-Embedding$>$(\-Height\-At\-Compile\-Time, Depth\-At\-Compile\-Time),              embed\-\_\-dimension$<$\-Mode, Row\-Embedding$>$(\-Width\-At\-Compile\-Time,  Depth\-At\-Compile\-Time),              embed\-\_\-dimension$<$\-Mode, Col\-Embedding$>$(output\-\_\-dimension(\-Height\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Stride\-At\-Compile\-Time), Filter\-Count\-At\-Compile\-Time),              embed\-\_\-dimension$<$\-Mode, Row\-Embedding$>$(output\-\_\-dimension(\-Width\-At\-Compile\-Time,  Filter\-Width\-At\-Compile\-Time,  Stride\-At\-Compile\-Time), Filter\-Count\-At\-Compile\-Time)$>$$>$ typedef {\bf Convolution\-Volume}$<${\bf V\-O\-L\-U\-M\-E\-\_\-\-T\-A\-R\-G\-S}$>$ {\bf ffnn\-::layer\-::\-Local\-Convolution}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode, \-\_\-\-Hidden\-Layer\-Shape $>$\-::{\bf Parameter\-Block\-Type}}}\label{classffnn_1_1layer_1_1_local_convolution_ab24fb486de20440b5e67853b079dbab2}
+
+
+Receptive-\/volume type standardization. 
+
+\hypertarget{classffnn_1_1layer_1_1_local_convolution_a09a482b44ecab19df4547526fb9b8321}{\index{ffnn\-::layer\-::\-Local\-Convolution@{ffnn\-::layer\-::\-Local\-Convolution}!Parameters\-Type@{Parameters\-Type}}
+\index{Parameters\-Type@{Parameters\-Type}!ffnn::layer::LocalConvolution@{ffnn\-::layer\-::\-Local\-Convolution}}
+\subsubsection[{Parameters\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Stride\-At\-Compile\-Time = 1, Embedding\-Mode Mode = Col\-Embedding, typename \-\_\-\-Hidden\-Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$              embed\-\_\-dimension$<$\-Mode, Col\-Embedding$>$(\-Height\-At\-Compile\-Time, Depth\-At\-Compile\-Time),              embed\-\_\-dimension$<$\-Mode, Row\-Embedding$>$(\-Width\-At\-Compile\-Time,  Depth\-At\-Compile\-Time),              embed\-\_\-dimension$<$\-Mode, Col\-Embedding$>$(output\-\_\-dimension(\-Height\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Stride\-At\-Compile\-Time), Filter\-Count\-At\-Compile\-Time),              embed\-\_\-dimension$<$\-Mode, Row\-Embedding$>$(output\-\_\-dimension(\-Width\-At\-Compile\-Time,  Filter\-Width\-At\-Compile\-Time,  Stride\-At\-Compile\-Time), Filter\-Count\-At\-Compile\-Time)$>$$>$ typedef boost\-::multi\-\_\-array$<${\bf Parameter\-Block\-Type}, 2$>$ {\bf ffnn\-::layer\-::\-Local\-Convolution}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode, \-\_\-\-Hidden\-Layer\-Shape $>$\-::{\bf Parameters\-Type}}}\label{classffnn_1_1layer_1_1_local_convolution_a09a482b44ecab19df4547526fb9b8321}
+
+
+Recptive-\/volume bank standardization. 
+
+\hypertarget{classffnn_1_1layer_1_1_local_convolution_a45fb8729213ea0bc40845cc1161fe229}{\index{ffnn\-::layer\-::\-Local\-Convolution@{ffnn\-::layer\-::\-Local\-Convolution}!Scalar\-Type@{Scalar\-Type}}
+\index{Scalar\-Type@{Scalar\-Type}!ffnn::layer::LocalConvolution@{ffnn\-::layer\-::\-Local\-Convolution}}
+\subsubsection[{Scalar\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Stride\-At\-Compile\-Time = 1, Embedding\-Mode Mode = Col\-Embedding, typename \-\_\-\-Hidden\-Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$              embed\-\_\-dimension$<$\-Mode, Col\-Embedding$>$(\-Height\-At\-Compile\-Time, Depth\-At\-Compile\-Time),              embed\-\_\-dimension$<$\-Mode, Row\-Embedding$>$(\-Width\-At\-Compile\-Time,  Depth\-At\-Compile\-Time),              embed\-\_\-dimension$<$\-Mode, Col\-Embedding$>$(output\-\_\-dimension(\-Height\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Stride\-At\-Compile\-Time), Filter\-Count\-At\-Compile\-Time),              embed\-\_\-dimension$<$\-Mode, Row\-Embedding$>$(output\-\_\-dimension(\-Width\-At\-Compile\-Time,  Filter\-Width\-At\-Compile\-Time,  Stride\-At\-Compile\-Time), Filter\-Count\-At\-Compile\-Time)$>$$>$ typedef {\bf Base\-::\-Scalar\-Type} {\bf ffnn\-::layer\-::\-Local\-Convolution}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode, \-\_\-\-Hidden\-Layer\-Shape $>$\-::{\bf Scalar\-Type}}}\label{classffnn_1_1layer_1_1_local_convolution_a45fb8729213ea0bc40845cc1161fe229}
+
+
+Scalar type standardization. 
+
+\hypertarget{classffnn_1_1layer_1_1_local_convolution_aeac716acfc0babed958f927490d17992}{\index{ffnn\-::layer\-::\-Local\-Convolution@{ffnn\-::layer\-::\-Local\-Convolution}!Self@{Self}}
+\index{Self@{Self}!ffnn::layer::LocalConvolution@{ffnn\-::layer\-::\-Local\-Convolution}}
+\subsubsection[{Self}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Stride\-At\-Compile\-Time = 1, Embedding\-Mode Mode = Col\-Embedding, typename \-\_\-\-Hidden\-Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$              embed\-\_\-dimension$<$\-Mode, Col\-Embedding$>$(\-Height\-At\-Compile\-Time, Depth\-At\-Compile\-Time),              embed\-\_\-dimension$<$\-Mode, Row\-Embedding$>$(\-Width\-At\-Compile\-Time,  Depth\-At\-Compile\-Time),              embed\-\_\-dimension$<$\-Mode, Col\-Embedding$>$(output\-\_\-dimension(\-Height\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Stride\-At\-Compile\-Time), Filter\-Count\-At\-Compile\-Time),              embed\-\_\-dimension$<$\-Mode, Row\-Embedding$>$(output\-\_\-dimension(\-Width\-At\-Compile\-Time,  Filter\-Width\-At\-Compile\-Time,  Stride\-At\-Compile\-Time), Filter\-Count\-At\-Compile\-Time)$>$$>$ using {\bf ffnn\-::layer\-::\-Local\-Convolution}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode, \-\_\-\-Hidden\-Layer\-Shape $>$\-::{\bf Self} =  {\bf Local\-Convolution}$<${\bf T\-A\-R\-G\-S}$>$}}\label{classffnn_1_1layer_1_1_local_convolution_aeac716acfc0babed958f927490d17992}
+
+
+Self type alias. 
+
+\hypertarget{classffnn_1_1layer_1_1_local_convolution_a2f1b1364ef9d3eefc517184e2cd1115b}{\index{ffnn\-::layer\-::\-Local\-Convolution@{ffnn\-::layer\-::\-Local\-Convolution}!Shape\-Type@{Shape\-Type}}
+\index{Shape\-Type@{Shape\-Type}!ffnn::layer::LocalConvolution@{ffnn\-::layer\-::\-Local\-Convolution}}
+\subsubsection[{Shape\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Stride\-At\-Compile\-Time = 1, Embedding\-Mode Mode = Col\-Embedding, typename \-\_\-\-Hidden\-Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$              embed\-\_\-dimension$<$\-Mode, Col\-Embedding$>$(\-Height\-At\-Compile\-Time, Depth\-At\-Compile\-Time),              embed\-\_\-dimension$<$\-Mode, Row\-Embedding$>$(\-Width\-At\-Compile\-Time,  Depth\-At\-Compile\-Time),              embed\-\_\-dimension$<$\-Mode, Col\-Embedding$>$(output\-\_\-dimension(\-Height\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Stride\-At\-Compile\-Time), Filter\-Count\-At\-Compile\-Time),              embed\-\_\-dimension$<$\-Mode, Row\-Embedding$>$(output\-\_\-dimension(\-Width\-At\-Compile\-Time,  Filter\-Width\-At\-Compile\-Time,  Stride\-At\-Compile\-Time), Filter\-Count\-At\-Compile\-Time)$>$$>$ typedef {\bf Base\-::\-Shape\-Type} {\bf ffnn\-::layer\-::\-Local\-Convolution}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode, \-\_\-\-Hidden\-Layer\-Shape $>$\-::{\bf Shape\-Type}}}\label{classffnn_1_1layer_1_1_local_convolution_a2f1b1364ef9d3eefc517184e2cd1115b}
+
+
+Dimension type standardization. 
+
+\hypertarget{classffnn_1_1layer_1_1_local_convolution_acb63c6ee4ca498d7992259aaa7246f26}{\index{ffnn\-::layer\-::\-Local\-Convolution@{ffnn\-::layer\-::\-Local\-Convolution}!Size\-Type@{Size\-Type}}
+\index{Size\-Type@{Size\-Type}!ffnn::layer::LocalConvolution@{ffnn\-::layer\-::\-Local\-Convolution}}
+\subsubsection[{Size\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Stride\-At\-Compile\-Time = 1, Embedding\-Mode Mode = Col\-Embedding, typename \-\_\-\-Hidden\-Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$              embed\-\_\-dimension$<$\-Mode, Col\-Embedding$>$(\-Height\-At\-Compile\-Time, Depth\-At\-Compile\-Time),              embed\-\_\-dimension$<$\-Mode, Row\-Embedding$>$(\-Width\-At\-Compile\-Time,  Depth\-At\-Compile\-Time),              embed\-\_\-dimension$<$\-Mode, Col\-Embedding$>$(output\-\_\-dimension(\-Height\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Stride\-At\-Compile\-Time), Filter\-Count\-At\-Compile\-Time),              embed\-\_\-dimension$<$\-Mode, Row\-Embedding$>$(output\-\_\-dimension(\-Width\-At\-Compile\-Time,  Filter\-Width\-At\-Compile\-Time,  Stride\-At\-Compile\-Time), Filter\-Count\-At\-Compile\-Time)$>$$>$ typedef {\bf Base\-::\-Size\-Type} {\bf ffnn\-::layer\-::\-Local\-Convolution}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode, \-\_\-\-Hidden\-Layer\-Shape $>$\-::{\bf Size\-Type}}}\label{classffnn_1_1layer_1_1_local_convolution_acb63c6ee4ca498d7992259aaa7246f26}
+
+
+Size type standardization. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classffnn_1_1layer_1_1_local_convolution_a54cd9bb2643136fccae8e8ca799603b1}{\index{ffnn\-::layer\-::\-Local\-Convolution@{ffnn\-::layer\-::\-Local\-Convolution}!Local\-Convolution@{Local\-Convolution}}
+\index{Local\-Convolution@{Local\-Convolution}!ffnn::layer::LocalConvolution@{ffnn\-::layer\-::\-Local\-Convolution}}
+\subsubsection[{Local\-Convolution}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Height\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Width\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Stride\-At\-Compile\-Time, Embedding\-Mode Mode, typename \-\_\-\-Hidden\-Layer\-Shape $>$ {\bf ffnn\-::layer\-::\-Local\-Convolution}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode, \-\_\-\-Hidden\-Layer\-Shape $>$\-::{\bf Local\-Convolution} (
+\begin{DoxyParamCaption}
+\item[{const {\bf Shape\-Type} \&}]{input\-\_\-shape = {\ttfamily {\bf Shape\-Type}(HeightAtCompileTime,~WidthAtCompileTime,~DepthAtCompileTime)}, }
+\item[{const {\bf Size\-Type} \&}]{filter\-\_\-height = {\ttfamily FilterHeightAtCompileTime}, }
+\item[{const {\bf Size\-Type} \&}]{filter\-\_\-width = {\ttfamily FilterWidthAtCompileTime}, }
+\item[{const {\bf Size\-Type} \&}]{filter\-\_\-count = {\ttfamily FilterCountAtCompileTime}, }
+\item[{const {\bf Size\-Type} \&}]{filter\-\_\-stride = {\ttfamily StrideAtCompileTime}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classffnn_1_1layer_1_1_local_convolution_a54cd9bb2643136fccae8e8ca799603b1}
+
+
+Setup constructor. 
+
+\hypertarget{classffnn_1_1layer_1_1_local_convolution_aed4220121d8fd239fd4987dd423b57c5}{\index{ffnn\-::layer\-::\-Local\-Convolution@{ffnn\-::layer\-::\-Local\-Convolution}!$\sim$\-Local\-Convolution@{$\sim$\-Local\-Convolution}}
+\index{$\sim$\-Local\-Convolution@{$\sim$\-Local\-Convolution}!ffnn::layer::LocalConvolution@{ffnn\-::layer\-::\-Local\-Convolution}}
+\subsubsection[{$\sim$\-Local\-Convolution}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Height\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Width\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Stride\-At\-Compile\-Time, Embedding\-Mode Mode, typename \-\_\-\-Hidden\-Layer\-Shape $>$ {\bf ffnn\-::layer\-::\-Local\-Convolution}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode, \-\_\-\-Hidden\-Layer\-Shape $>$\-::$\sim${\bf Local\-Convolution} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_local_convolution_aed4220121d8fd239fd4987dd423b57c5}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classffnn_1_1layer_1_1_local_convolution_aa59a3093b68dc8001eaff1f6eef72fc9}{\index{ffnn\-::layer\-::\-Local\-Convolution@{ffnn\-::layer\-::\-Local\-Convolution}!backward@{backward}}
+\index{backward@{backward}!ffnn::layer::LocalConvolution@{ffnn\-::layer\-::\-Local\-Convolution}}
+\subsubsection[{backward}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Height\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Width\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Stride\-At\-Compile\-Time, Embedding\-Mode Mode, typename \-\_\-\-Hidden\-Layer\-Shape $>$ bool {\bf ffnn\-::layer\-::\-Local\-Convolution}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode, \-\_\-\-Hidden\-Layer\-Shape $>$\-::backward (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_local_convolution_aa59a3093b68dc8001eaff1f6eef72fc9}
+
+
+Performs backward error propagation. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & if backward-\/propagation succeeded \\
+\hline
+{\em false} & otherwise \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyWarning}{Warning}
+Does not apply layer weight updates 
+
+Will throw if an optimizer has not been associated with this layer 
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classffnn_1_1layer_1_1_local_convolution_accffb54b2bf71c6db52ac7bf3a2444f1}{set\-Optimizer} 
+\end{DoxySeeAlso}
+
+
+Implements \hyperlink{classffnn_1_1layer_1_1_hidden_aac0ee89390b02ff4731678883dd402dd}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, \-\_\-\-Hidden\-Layer\-Shape $>$}.
+
+\hypertarget{classffnn_1_1layer_1_1_local_convolution_ad0f643595b7c35e669d41b77c68143df}{\index{ffnn\-::layer\-::\-Local\-Convolution@{ffnn\-::layer\-::\-Local\-Convolution}!forward@{forward}}
+\index{forward@{forward}!ffnn::layer::LocalConvolution@{ffnn\-::layer\-::\-Local\-Convolution}}
+\subsubsection[{forward}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Height\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Width\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Stride\-At\-Compile\-Time, Embedding\-Mode Mode, typename \-\_\-\-Hidden\-Layer\-Shape $>$ bool {\bf ffnn\-::layer\-::\-Local\-Convolution}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode, \-\_\-\-Hidden\-Layer\-Shape $>$\-::forward (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_local_convolution_ad0f643595b7c35e669d41b77c68143df}
+
+
+Performs forward value propagation. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & if forward-\/propagation succeeded \\
+\hline
+{\em false} & otherwise \\
+\hline
+\end{DoxyRetVals}
+
+
+Implements \hyperlink{classffnn_1_1layer_1_1_hidden_a600b86d72826e8be3eafa53e040e9cbe}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, \-\_\-\-Hidden\-Layer\-Shape $>$}.
+
+\hypertarget{classffnn_1_1layer_1_1_local_convolution_a344dedf3ab0c0b2bec77b74975075d0c}{\index{ffnn\-::layer\-::\-Local\-Convolution@{ffnn\-::layer\-::\-Local\-Convolution}!get\-Paramaters@{get\-Paramaters}}
+\index{get\-Paramaters@{get\-Paramaters}!ffnn::layer::LocalConvolution@{ffnn\-::layer\-::\-Local\-Convolution}}
+\subsubsection[{get\-Paramaters}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Stride\-At\-Compile\-Time = 1, Embedding\-Mode Mode = Col\-Embedding, typename \-\_\-\-Hidden\-Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$              embed\-\_\-dimension$<$\-Mode, Col\-Embedding$>$(\-Height\-At\-Compile\-Time, Depth\-At\-Compile\-Time),              embed\-\_\-dimension$<$\-Mode, Row\-Embedding$>$(\-Width\-At\-Compile\-Time,  Depth\-At\-Compile\-Time),              embed\-\_\-dimension$<$\-Mode, Col\-Embedding$>$(output\-\_\-dimension(\-Height\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Stride\-At\-Compile\-Time), Filter\-Count\-At\-Compile\-Time),              embed\-\_\-dimension$<$\-Mode, Row\-Embedding$>$(output\-\_\-dimension(\-Width\-At\-Compile\-Time,  Filter\-Width\-At\-Compile\-Time,  Stride\-At\-Compile\-Time), Filter\-Count\-At\-Compile\-Time)$>$$>$ const {\bf Parameters\-Type}\& {\bf ffnn\-::layer\-::\-Local\-Convolution}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode, \-\_\-\-Hidden\-Layer\-Shape $>$\-::get\-Paramaters (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1_local_convolution_a344dedf3ab0c0b2bec77b74975075d0c}
+\hypertarget{classffnn_1_1layer_1_1_local_convolution_ab9d84aaa24b480b95e85e2bc7c717eae}{\index{ffnn\-::layer\-::\-Local\-Convolution@{ffnn\-::layer\-::\-Local\-Convolution}!initialize@{initialize}}
+\index{initialize@{initialize}!ffnn::layer::LocalConvolution@{ffnn\-::layer\-::\-Local\-Convolution}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Height\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Width\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Stride\-At\-Compile\-Time, Embedding\-Mode Mode, typename \-\_\-\-Hidden\-Layer\-Shape $>$ bool {\bf ffnn\-::layer\-::\-Local\-Convolution}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode, \-\_\-\-Hidden\-Layer\-Shape $>$\-::initialize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_local_convolution_ab9d84aaa24b480b95e85e2bc7c717eae}
+
+
+Initialize the layer. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & if layer was initialized successfully \\
+\hline
+{\em false} & otherwise\\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyWarning}{Warning}
+If layer is not loaded instance, this method will initialize layer sizings but weights and biases will be zero 
+\end{DoxyWarning}
+
+
+Reimplemented from \hyperlink{classffnn_1_1layer_1_1_hidden_adb70b4a8f5ac4979689f86cab73f48b1}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, \-\_\-\-Hidden\-Layer\-Shape $>$}.
+
+\hypertarget{classffnn_1_1layer_1_1_local_convolution_a584556bdf0f8c19834dad73f170f7f3a}{\index{ffnn\-::layer\-::\-Local\-Convolution@{ffnn\-::layer\-::\-Local\-Convolution}!initialize@{initialize}}
+\index{initialize@{initialize}!ffnn::layer::LocalConvolution@{ffnn\-::layer\-::\-Local\-Convolution}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Height\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Width\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Stride\-At\-Compile\-Time, Embedding\-Mode Mode, typename \-\_\-\-Hidden\-Layer\-Shape $>$ template$<$typename Weight\-Distribution , typename Bias\-Distribution $>$ bool {\bf ffnn\-::layer\-::\-Local\-Convolution}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode, \-\_\-\-Hidden\-Layer\-Shape $>$\-::initialize (
+\begin{DoxyParamCaption}
+\item[{const Weight\-Distribution \&}]{wd, }
+\item[{const Bias\-Distribution \&}]{bd}
+\end{DoxyParamCaption}
+)}}\label{classffnn_1_1layer_1_1_local_convolution_a584556bdf0f8c19834dad73f170f7f3a}
+
+
+Initialize layer weights and biases according to particular distributions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wd} & distribution to sample for connection weights \\
+\hline
+{\em bd} & distribution to sample for biases \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & if layer was initialized successfully \\
+\hline
+{\em false} & otherwise\\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyWarning}{Warning}
+If layer is a loaded instance, this method will initialize layer sizings but weights will not be reset according to the given distributions 
+\end{DoxyWarning}
+\hypertarget{classffnn_1_1layer_1_1_local_convolution_ae45649dd2f6479208a3694bfab9df39d}{\index{ffnn\-::layer\-::\-Local\-Convolution@{ffnn\-::layer\-::\-Local\-Convolution}!load@{load}}
+\index{load@{load}!ffnn::layer::LocalConvolution@{ffnn\-::layer\-::\-Local\-Convolution}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Stride\-At\-Compile\-Time = 1, Embedding\-Mode Mode = Col\-Embedding, typename \-\_\-\-Hidden\-Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$              embed\-\_\-dimension$<$\-Mode, Col\-Embedding$>$(\-Height\-At\-Compile\-Time, Depth\-At\-Compile\-Time),              embed\-\_\-dimension$<$\-Mode, Row\-Embedding$>$(\-Width\-At\-Compile\-Time,  Depth\-At\-Compile\-Time),              embed\-\_\-dimension$<$\-Mode, Col\-Embedding$>$(output\-\_\-dimension(\-Height\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Stride\-At\-Compile\-Time), Filter\-Count\-At\-Compile\-Time),              embed\-\_\-dimension$<$\-Mode, Row\-Embedding$>$(output\-\_\-dimension(\-Width\-At\-Compile\-Time,  Filter\-Width\-At\-Compile\-Time,  Stride\-At\-Compile\-Time), Filter\-Count\-At\-Compile\-Time)$>$$>$ void {\bf ffnn\-::layer\-::\-Local\-Convolution}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode, \-\_\-\-Hidden\-Layer\-Shape $>$\-::load (
+\begin{DoxyParamCaption}
+\item[{{\bf Input\-Archive} \&}]{ar, }
+\item[{{\bf Version\-Type}}]{version}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_local_convolution_ae45649dd2f6479208a3694bfab9df39d}
+
+
+Load serializer. 
+
+
+
+Reimplemented from \hyperlink{classffnn_1_1layer_1_1_layer_a23f5f3c958d888632010327471c7b012}{ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$}.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{classffnn_1_1layer_1_1_local_convolution_ae45649dd2f6479208a3694bfab9df39d_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classffnn_1_1layer_1_1_local_convolution_a16fe67fe182bb44e1b055f61bb960752}{\index{ffnn\-::layer\-::\-Local\-Convolution@{ffnn\-::layer\-::\-Local\-Convolution}!save@{save}}
+\index{save@{save}!ffnn::layer::LocalConvolution@{ffnn\-::layer\-::\-Local\-Convolution}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Stride\-At\-Compile\-Time = 1, Embedding\-Mode Mode = Col\-Embedding, typename \-\_\-\-Hidden\-Layer\-Shape = hidden\-\_\-layer\-\_\-shape$<$              embed\-\_\-dimension$<$\-Mode, Col\-Embedding$>$(\-Height\-At\-Compile\-Time, Depth\-At\-Compile\-Time),              embed\-\_\-dimension$<$\-Mode, Row\-Embedding$>$(\-Width\-At\-Compile\-Time,  Depth\-At\-Compile\-Time),              embed\-\_\-dimension$<$\-Mode, Col\-Embedding$>$(output\-\_\-dimension(\-Height\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Stride\-At\-Compile\-Time), Filter\-Count\-At\-Compile\-Time),              embed\-\_\-dimension$<$\-Mode, Row\-Embedding$>$(output\-\_\-dimension(\-Width\-At\-Compile\-Time,  Filter\-Width\-At\-Compile\-Time,  Stride\-At\-Compile\-Time), Filter\-Count\-At\-Compile\-Time)$>$$>$ void {\bf ffnn\-::layer\-::\-Local\-Convolution}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode, \-\_\-\-Hidden\-Layer\-Shape $>$\-::save (
+\begin{DoxyParamCaption}
+\item[{{\bf Output\-Archive} \&}]{ar, }
+\item[{{\bf Version\-Type}}]{version}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_local_convolution_a16fe67fe182bb44e1b055f61bb960752}
+
+
+Save serializer. 
+
+
+
+Reimplemented from \hyperlink{classffnn_1_1layer_1_1_layer_ac265fc929a178b111337226dd1cb62b6}{ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$}.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{classffnn_1_1layer_1_1_local_convolution_a16fe67fe182bb44e1b055f61bb960752_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classffnn_1_1layer_1_1_local_convolution_accffb54b2bf71c6db52ac7bf3a2444f1}{\index{ffnn\-::layer\-::\-Local\-Convolution@{ffnn\-::layer\-::\-Local\-Convolution}!set\-Optimizer@{set\-Optimizer}}
+\index{set\-Optimizer@{set\-Optimizer}!ffnn::layer::LocalConvolution@{ffnn\-::layer\-::\-Local\-Convolution}}
+\subsubsection[{set\-Optimizer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Height\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Width\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Stride\-At\-Compile\-Time, Embedding\-Mode Mode, typename \-\_\-\-Hidden\-Layer\-Shape $>$ void {\bf ffnn\-::layer\-::\-Local\-Convolution}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode, \-\_\-\-Hidden\-Layer\-Shape $>$\-::set\-Optimizer (
+\begin{DoxyParamCaption}
+\item[{typename {\bf Optimizer\-::\-Ptr}}]{opt}
+\end{DoxyParamCaption}
+)}}\label{classffnn_1_1layer_1_1_local_convolution_accffb54b2bf71c6db52ac7bf3a2444f1}
+
+
+Sets an optimizer used update network weights during back-\/propagation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em opt} & optimizer to set \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+{\ttfamily backward} and {\ttfamily update} methods are expected to throw if an optimizer has not been set explicitly 
+\end{DoxyWarning}
+\hypertarget{classffnn_1_1layer_1_1_local_convolution_a47bfd391c37cc6b5c14fa37c30bff025}{\index{ffnn\-::layer\-::\-Local\-Convolution@{ffnn\-::layer\-::\-Local\-Convolution}!update@{update}}
+\index{update@{update}!ffnn::layer::LocalConvolution@{ffnn\-::layer\-::\-Local\-Convolution}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Height\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Width\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Depth\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Height\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Width\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Filter\-Count\-At\-Compile\-Time, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Stride\-At\-Compile\-Time, Embedding\-Mode Mode, typename \-\_\-\-Hidden\-Layer\-Shape $>$ bool {\bf ffnn\-::layer\-::\-Local\-Convolution}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode, \-\_\-\-Hidden\-Layer\-Shape $>$\-::update (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_local_convolution_a47bfd391c37cc6b5c14fa37c30bff025}
+
+
+Applies accumulated layer weight updates computed during optimization. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & if weight update succeeded \\
+\hline
+{\em false} & otherwise \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyWarning}{Warning}
+Will throw if an optimizer has not been associated with this layer 
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classffnn_1_1layer_1_1_local_convolution_accffb54b2bf71c6db52ac7bf3a2444f1}{set\-Optimizer} 
+\end{DoxySeeAlso}
+
+
+Implements \hyperlink{classffnn_1_1layer_1_1_hidden_ae038d2a1e64fcbbde6166df7d0573ef8}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, \-\_\-\-Hidden\-Layer\-Shape $>$}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/\hyperlink{local__convolution_8h}{local\-\_\-convolution.\-h}\item 
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/impl/\hyperlink{layer_2impl_2local__convolution_8hpp}{local\-\_\-convolution.\-hpp}\end{DoxyCompactItemize}

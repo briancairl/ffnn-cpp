@@ -1,0 +1,360 @@
+\hypertarget{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4}{\section{ffnn\-:\-:optimizer\-:\-:Gradient\-Descent$<$ layer\-:\-:Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$ Class Template Reference}
+\label{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4}\index{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}}
+}
+
+
+{\ttfamily \#include \char`\"{}local\-\_\-convolution.\-hpp\char`\"{}}
+
+
+
+Inheritance diagram for ffnn\-:\-:optimizer\-:\-:Gradient\-Descent$<$ layer\-:\-:Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ffnn\-:\-:optimizer\-:\-:Gradient\-Descent$<$ layer\-:\-:Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \\*
+\hyperlink{classffnn_1_1layer_1_1_local_convolution}{layer\-::\-Local\-Convolution}$<$ \hyperlink{optimizer_2impl_2gradient__descent_2local__convolution_8hpp_a005b9b79411aa786124330e813a99057}{T\-A\-R\-G\-S} $>$ \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_a16ba9a242dbe61604f16ff2ae19a4d1f}{Layer\-Type}
+\begin{DoxyCompactList}\small\item\em Layer type standardization. \end{DoxyCompactList}\item 
+typedef \hyperlink{classffnn_1_1layer_1_1_local_convolution_a45fb8729213ea0bc40845cc1161fe229}{Layer\-Type\-::\-Scalar\-Type} \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_ac3250ac9d0d3a0529a7e18a00f00233f}{Scalar\-Type}
+\begin{DoxyCompactList}\small\item\em Scalar type standardization. \end{DoxyCompactList}\item 
+typedef \hyperlink{classffnn_1_1layer_1_1_local_convolution_acb63c6ee4ca498d7992259aaa7246f26}{Layer\-Type\-::\-Size\-Type} \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_a710d6fff7052b3fc2f032ca74b0c3026}{Size\-Type}
+\begin{DoxyCompactList}\small\item\em Size type standardization. \end{DoxyCompactList}\item 
+typedef \hyperlink{classffnn_1_1layer_1_1_local_convolution_ade49c152e28ac5dd35427569ccbc332e}{Layer\-Type\-::\-Offset\-Type} \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_aef03166f60cff06f14ed5e36cf371a5e}{Offset\-Type}
+\begin{DoxyCompactList}\small\item\em Offset type standardization. \end{DoxyCompactList}\item 
+typedef \hyperlink{classffnn_1_1layer_1_1_hidden_ae401b1af7763caf09a0dffcaf4f2d5e9}{Layer\-Type\-::\-Input\-Block\-Type} \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_af401944b8f1e2b6ed6cea8b8211e25f7}{Input\-Block\-Type}
+\begin{DoxyCompactList}\small\item\em Matrix type standardization. \end{DoxyCompactList}\item 
+typedef \hyperlink{classffnn_1_1layer_1_1_hidden_a9b9e276188ef490ea5301f553225c735}{Layer\-Type\-::\-Output\-Block\-Type} \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_aa20bbed306ab91d1e49da41491764c11}{Output\-Block\-Type}
+\begin{DoxyCompactList}\small\item\em Matrix type standardization. \end{DoxyCompactList}\item 
+typedef \\*
+\hyperlink{classffnn_1_1layer_1_1_local_convolution_ab24fb486de20440b5e67853b079dbab2}{Layer\-Type\-::\-Parameter\-Block\-Type} \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_aa3cf2a9b7dd4078926511651277aa953}{Parameter\-Block\-Type}
+\begin{DoxyCompactList}\small\item\em Receptive-\/volume type standardization. \end{DoxyCompactList}\item 
+typedef \hyperlink{classffnn_1_1layer_1_1_local_convolution_a09a482b44ecab19df4547526fb9b8321}{Layer\-Type\-::\-Parameters\-Type} \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_ac7acd851ffa7a846dc07b2ef46a265ec}{Parameters\-Type}
+\begin{DoxyCompactList}\small\item\em Receptive-\/field type standardization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_ab955a019999863d55d17eaa0c3a792d1}{Gradient\-Descent} (\hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_ac3250ac9d0d3a0529a7e18a00f00233f}{Scalar\-Type} lr)
+\begin{DoxyCompactList}\small\item\em Setup constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_aa2800a21eae222e58705f44064fb9fd9}{$\sim$\-Gradient\-Descent} ()
+\item 
+void \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_a968cbe2160f43f52fd918880ee4832b4}{initialize} (\hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_a16ba9a242dbe61604f16ff2ae19a4d1f}{Layer\-Type} \&layer)
+\begin{DoxyCompactList}\small\item\em Initializes the \hyperlink{classffnn_1_1optimizer_1_1_optimizer}{Optimizer}. \end{DoxyCompactList}\item 
+void \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_a4295c66fd36d4679dfda2a1f1c78b37b}{reset} (\hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_a16ba9a242dbe61604f16ff2ae19a4d1f}{Layer\-Type} \&layer)
+\begin{DoxyCompactList}\small\item\em Resetrs persistent \hyperlink{classffnn_1_1optimizer_1_1_optimizer}{Optimizer} states. \end{DoxyCompactList}\item 
+bool \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_a19104dcb39006cdc50d8b55f027df6c6}{forward} (\hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_a16ba9a242dbe61604f16ff2ae19a4d1f}{Layer\-Type} \&layer)
+\begin{DoxyCompactList}\small\item\em Computes one forward optimization update step. \end{DoxyCompactList}\item 
+bool \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_ab9bd2d9c46a329a2652a397ef01d77aa}{backward} (\hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_a16ba9a242dbe61604f16ff2ae19a4d1f}{Layer\-Type} \&layer)
+\begin{DoxyCompactList}\small\item\em Computes optimization step during backward propogation. \end{DoxyCompactList}\item 
+bool \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_a78a1029caa29a3f5d1548a85dac1a4dd}{update} (\hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_a16ba9a242dbe61604f16ff2ae19a4d1f}{Layer\-Type} \&layer)
+\begin{DoxyCompactList}\small\item\em Applies optimization update. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_ac3250ac9d0d3a0529a7e18a00f00233f}{Scalar\-Type} \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_ae29f1672c8762651046b7783df9b1e51}{lr\-\_\-}
+\begin{DoxyCompactList}\small\item\em Learning rate. \end{DoxyCompactList}\item 
+\hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_ac7acd851ffa7a846dc07b2ef46a265ec}{Parameters\-Type} \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_aca3bb81659bef8b65fb7bf64713bff5e}{gradient\-\_\-}
+\begin{DoxyCompactList}\small\item\em Total parameter gradient. \end{DoxyCompactList}\item 
+\hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_af401944b8f1e2b6ed6cea8b8211e25f7}{Input\-Block\-Type} \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_a3b3340a82cc543a9352c6c50472cb0ac}{prev\-\_\-input\-\_\-}
+\begin{DoxyCompactList}\small\item\em Previous input. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_af401944b8f1e2b6ed6cea8b8211e25f7}{\index{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}!Input\-Block\-Type@{Input\-Block\-Type}}
+\index{Input\-Block\-Type@{Input\-Block\-Type}!ffnn::optimizer::GradientDescent< layer::LocalConvolution< TARGS > >@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}}
+\subsubsection[{Input\-Block\-Type}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Layer\-Type\-::\-Input\-Block\-Type} {\bf ffnn\-::optimizer\-::\-Gradient\-Descent}$<$ {\bf layer\-::\-Local\-Convolution}$<$ {\bf T\-A\-R\-G\-S} $>$ $>$\-::{\bf Input\-Block\-Type}}}\label{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_af401944b8f1e2b6ed6cea8b8211e25f7}
+
+
+Matrix type standardization. 
+
+\hypertarget{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_a16ba9a242dbe61604f16ff2ae19a4d1f}{\index{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}!Layer\-Type@{Layer\-Type}}
+\index{Layer\-Type@{Layer\-Type}!ffnn::optimizer::GradientDescent< layer::LocalConvolution< TARGS > >@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}}
+\subsubsection[{Layer\-Type}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf layer\-::\-Local\-Convolution}$<${\bf T\-A\-R\-G\-S}$>$ {\bf ffnn\-::optimizer\-::\-Gradient\-Descent}$<$ {\bf layer\-::\-Local\-Convolution}$<$ {\bf T\-A\-R\-G\-S} $>$ $>$\-::{\bf Layer\-Type}}}\label{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_a16ba9a242dbe61604f16ff2ae19a4d1f}
+
+
+Layer type standardization. 
+
+\hypertarget{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_aef03166f60cff06f14ed5e36cf371a5e}{\index{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}!Offset\-Type@{Offset\-Type}}
+\index{Offset\-Type@{Offset\-Type}!ffnn::optimizer::GradientDescent< layer::LocalConvolution< TARGS > >@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}}
+\subsubsection[{Offset\-Type}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Layer\-Type\-::\-Offset\-Type} {\bf ffnn\-::optimizer\-::\-Gradient\-Descent}$<$ {\bf layer\-::\-Local\-Convolution}$<$ {\bf T\-A\-R\-G\-S} $>$ $>$\-::{\bf Offset\-Type}}}\label{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_aef03166f60cff06f14ed5e36cf371a5e}
+
+
+Offset type standardization. 
+
+\hypertarget{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_aa20bbed306ab91d1e49da41491764c11}{\index{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}!Output\-Block\-Type@{Output\-Block\-Type}}
+\index{Output\-Block\-Type@{Output\-Block\-Type}!ffnn::optimizer::GradientDescent< layer::LocalConvolution< TARGS > >@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}}
+\subsubsection[{Output\-Block\-Type}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Layer\-Type\-::\-Output\-Block\-Type} {\bf ffnn\-::optimizer\-::\-Gradient\-Descent}$<$ {\bf layer\-::\-Local\-Convolution}$<$ {\bf T\-A\-R\-G\-S} $>$ $>$\-::{\bf Output\-Block\-Type}}}\label{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_aa20bbed306ab91d1e49da41491764c11}
+
+
+Matrix type standardization. 
+
+\hypertarget{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_aa3cf2a9b7dd4078926511651277aa953}{\index{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}!Parameter\-Block\-Type@{Parameter\-Block\-Type}}
+\index{Parameter\-Block\-Type@{Parameter\-Block\-Type}!ffnn::optimizer::GradientDescent< layer::LocalConvolution< TARGS > >@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}}
+\subsubsection[{Parameter\-Block\-Type}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Layer\-Type\-::\-Parameter\-Block\-Type} {\bf ffnn\-::optimizer\-::\-Gradient\-Descent}$<$ {\bf layer\-::\-Local\-Convolution}$<$ {\bf T\-A\-R\-G\-S} $>$ $>$\-::{\bf Parameter\-Block\-Type}}}\label{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_aa3cf2a9b7dd4078926511651277aa953}
+
+
+Receptive-\/volume type standardization. 
+
+\hypertarget{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_ac7acd851ffa7a846dc07b2ef46a265ec}{\index{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}!Parameters\-Type@{Parameters\-Type}}
+\index{Parameters\-Type@{Parameters\-Type}!ffnn::optimizer::GradientDescent< layer::LocalConvolution< TARGS > >@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}}
+\subsubsection[{Parameters\-Type}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Layer\-Type\-::\-Parameters\-Type} {\bf ffnn\-::optimizer\-::\-Gradient\-Descent}$<$ {\bf layer\-::\-Local\-Convolution}$<$ {\bf T\-A\-R\-G\-S} $>$ $>$\-::{\bf Parameters\-Type}}}\label{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_ac7acd851ffa7a846dc07b2ef46a265ec}
+
+
+Receptive-\/field type standardization. 
+
+\hypertarget{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_ac3250ac9d0d3a0529a7e18a00f00233f}{\index{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}!Scalar\-Type@{Scalar\-Type}}
+\index{Scalar\-Type@{Scalar\-Type}!ffnn::optimizer::GradientDescent< layer::LocalConvolution< TARGS > >@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}}
+\subsubsection[{Scalar\-Type}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Layer\-Type\-::\-Scalar\-Type} {\bf ffnn\-::optimizer\-::\-Gradient\-Descent}$<$ {\bf layer\-::\-Local\-Convolution}$<$ {\bf T\-A\-R\-G\-S} $>$ $>$\-::{\bf Scalar\-Type}}}\label{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_ac3250ac9d0d3a0529a7e18a00f00233f}
+
+
+Scalar type standardization. 
+
+\hypertarget{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_a710d6fff7052b3fc2f032ca74b0c3026}{\index{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}!Size\-Type@{Size\-Type}}
+\index{Size\-Type@{Size\-Type}!ffnn::optimizer::GradientDescent< layer::LocalConvolution< TARGS > >@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}}
+\subsubsection[{Size\-Type}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Layer\-Type\-::\-Size\-Type} {\bf ffnn\-::optimizer\-::\-Gradient\-Descent}$<$ {\bf layer\-::\-Local\-Convolution}$<$ {\bf T\-A\-R\-G\-S} $>$ $>$\-::{\bf Size\-Type}}}\label{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_a710d6fff7052b3fc2f032ca74b0c3026}
+
+
+Size type standardization. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_ab955a019999863d55d17eaa0c3a792d1}{\index{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}!Gradient\-Descent@{Gradient\-Descent}}
+\index{Gradient\-Descent@{Gradient\-Descent}!ffnn::optimizer::GradientDescent< layer::LocalConvolution< TARGS > >@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}}
+\subsubsection[{Gradient\-Descent}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ffnn\-::optimizer\-::\-Gradient\-Descent}$<$ {\bf layer\-::\-Local\-Convolution}$<$ {\bf T\-A\-R\-G\-S} $>$ $>$\-::{\bf Gradient\-Descent} (
+\begin{DoxyParamCaption}
+\item[{{\bf Scalar\-Type}}]{lr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_ab955a019999863d55d17eaa0c3a792d1}
+
+
+Setup constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lr} & Learning rate \\
+\hline
+\end{DoxyParams}
+\hypertarget{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_aa2800a21eae222e58705f44064fb9fd9}{\index{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}!$\sim$\-Gradient\-Descent@{$\sim$\-Gradient\-Descent}}
+\index{$\sim$\-Gradient\-Descent@{$\sim$\-Gradient\-Descent}!ffnn::optimizer::GradientDescent< layer::LocalConvolution< TARGS > >@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}}
+\subsubsection[{$\sim$\-Gradient\-Descent}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf ffnn\-::optimizer\-::\-Gradient\-Descent}$<$ {\bf layer\-::\-Local\-Convolution}$<$ {\bf T\-A\-R\-G\-S} $>$ $>$\-::$\sim${\bf Gradient\-Descent} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_aa2800a21eae222e58705f44064fb9fd9}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_ab9bd2d9c46a329a2652a397ef01d77aa}{\index{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}!backward@{backward}}
+\index{backward@{backward}!ffnn::optimizer::GradientDescent< layer::LocalConvolution< TARGS > >@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}}
+\subsubsection[{backward}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf ffnn\-::optimizer\-::\-Gradient\-Descent}$<$ {\bf layer\-::\-Local\-Convolution}$<$ {\bf T\-A\-R\-G\-S} $>$ $>$\-::backward (
+\begin{DoxyParamCaption}
+\item[{{\bf Layer\-Type} \&}]{layer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_ab9bd2d9c46a329a2652a397ef01d77aa}
+
+
+Computes optimization step during backward propogation. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em layer} & Layer to optimize \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & if optimization setp was successful \\
+\hline
+{\em false} & otherwise \\
+\hline
+\end{DoxyRetVals}
+
+
+Implements \hyperlink{classffnn_1_1optimizer_1_1_optimizer_ab1f9b1cae01f93f53ecf7119bedb6369}{ffnn\-::optimizer\-::\-Optimizer$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_ab9bd2d9c46a329a2652a397ef01d77aa_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_a19104dcb39006cdc50d8b55f027df6c6}{\index{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}!forward@{forward}}
+\index{forward@{forward}!ffnn::optimizer::GradientDescent< layer::LocalConvolution< TARGS > >@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}}
+\subsubsection[{forward}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf ffnn\-::optimizer\-::\-Gradient\-Descent}$<$ {\bf layer\-::\-Local\-Convolution}$<$ {\bf T\-A\-R\-G\-S} $>$ $>$\-::forward (
+\begin{DoxyParamCaption}
+\item[{{\bf Layer\-Type} \&}]{layer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_a19104dcb39006cdc50d8b55f027df6c6}
+
+
+Computes one forward optimization update step. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em layer} & Layer to optimize \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & if optimization setp was successful \\
+\hline
+{\em false} & otherwise \\
+\hline
+\end{DoxyRetVals}
+
+
+Implements \hyperlink{classffnn_1_1optimizer_1_1_optimizer_a80505cfdeba0a3c8d1db19a2821613f2}{ffnn\-::optimizer\-::\-Optimizer$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_a19104dcb39006cdc50d8b55f027df6c6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_a968cbe2160f43f52fd918880ee4832b4}{\index{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}!initialize@{initialize}}
+\index{initialize@{initialize}!ffnn::optimizer::GradientDescent< layer::LocalConvolution< TARGS > >@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf ffnn\-::optimizer\-::\-Gradient\-Descent}$<$ {\bf layer\-::\-Local\-Convolution}$<$ {\bf T\-A\-R\-G\-S} $>$ $>$\-::initialize (
+\begin{DoxyParamCaption}
+\item[{{\bf Layer\-Type} \&}]{layer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_a968cbe2160f43f52fd918880ee4832b4}
+
+
+Initializes the \hyperlink{classffnn_1_1optimizer_1_1_optimizer}{Optimizer}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em layer} & Layer to optimize \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classffnn_1_1optimizer_1_1_optimizer_a4302b66ba9b013ae4833eca235ff306a}{ffnn\-::optimizer\-::\-Optimizer$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_a968cbe2160f43f52fd918880ee4832b4_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_a4295c66fd36d4679dfda2a1f1c78b37b}{\index{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}!reset@{reset}}
+\index{reset@{reset}!ffnn::optimizer::GradientDescent< layer::LocalConvolution< TARGS > >@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf ffnn\-::optimizer\-::\-Gradient\-Descent}$<$ {\bf layer\-::\-Local\-Convolution}$<$ {\bf T\-A\-R\-G\-S} $>$ $>$\-::reset (
+\begin{DoxyParamCaption}
+\item[{{\bf Layer\-Type} \&}]{layer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_a4295c66fd36d4679dfda2a1f1c78b37b}
+
+
+Resetrs persistent \hyperlink{classffnn_1_1optimizer_1_1_optimizer}{Optimizer} states. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em layer} & Layer to optimize \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classffnn_1_1optimizer_1_1_optimizer_ade04e7582eb7b833713a9bd33e0e8346}{ffnn\-::optimizer\-::\-Optimizer$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}.
+
+\hypertarget{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_a78a1029caa29a3f5d1548a85dac1a4dd}{\index{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}!update@{update}}
+\index{update@{update}!ffnn::optimizer::GradientDescent< layer::LocalConvolution< TARGS > >@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf ffnn\-::optimizer\-::\-Gradient\-Descent}$<$ {\bf layer\-::\-Local\-Convolution}$<$ {\bf T\-A\-R\-G\-S} $>$ $>$\-::update (
+\begin{DoxyParamCaption}
+\item[{{\bf Layer\-Type} \&}]{layer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_a78a1029caa29a3f5d1548a85dac1a4dd}
+
+
+Applies optimization update. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em layer} & Layer to optimize \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & if optimization update was applied successfully \\
+\hline
+{\em false} & otherwise \\
+\hline
+\end{DoxyRetVals}
+
+
+Implements \hyperlink{classffnn_1_1optimizer_1_1_optimizer_a7c88c2794446e03ccd41628bb25d7a07}{ffnn\-::optimizer\-::\-Optimizer$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_a78a1029caa29a3f5d1548a85dac1a4dd_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_aca3bb81659bef8b65fb7bf64713bff5e}{\index{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}!gradient\-\_\-@{gradient\-\_\-}}
+\index{gradient\-\_\-@{gradient\-\_\-}!ffnn::optimizer::GradientDescent< layer::LocalConvolution< TARGS > >@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}}
+\subsubsection[{gradient\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Parameters\-Type} {\bf ffnn\-::optimizer\-::\-Gradient\-Descent}$<$ {\bf layer\-::\-Local\-Convolution}$<$ {\bf T\-A\-R\-G\-S} $>$ $>$\-::gradient\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_aca3bb81659bef8b65fb7bf64713bff5e}
+
+
+Total parameter gradient. 
+
+\hypertarget{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_ae29f1672c8762651046b7783df9b1e51}{\index{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}!lr\-\_\-@{lr\-\_\-}}
+\index{lr\-\_\-@{lr\-\_\-}!ffnn::optimizer::GradientDescent< layer::LocalConvolution< TARGS > >@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}}
+\subsubsection[{lr\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Scalar\-Type} {\bf ffnn\-::optimizer\-::\-Gradient\-Descent}$<$ {\bf layer\-::\-Local\-Convolution}$<$ {\bf T\-A\-R\-G\-S} $>$ $>$\-::lr\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_ae29f1672c8762651046b7783df9b1e51}
+
+
+Learning rate. 
+
+\hypertarget{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_a3b3340a82cc543a9352c6c50472cb0ac}{\index{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}!prev\-\_\-input\-\_\-@{prev\-\_\-input\-\_\-}}
+\index{prev\-\_\-input\-\_\-@{prev\-\_\-input\-\_\-}!ffnn::optimizer::GradientDescent< layer::LocalConvolution< TARGS > >@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}}
+\subsubsection[{prev\-\_\-input\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Input\-Block\-Type} {\bf ffnn\-::optimizer\-::\-Gradient\-Descent}$<$ {\bf layer\-::\-Local\-Convolution}$<$ {\bf T\-A\-R\-G\-S} $>$ $>$\-::prev\-\_\-input\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_a3b3340a82cc543a9352c6c50472cb0ac}
+
+
+Previous input. 
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/optimizer/impl/gradient\-\_\-descent/\hyperlink{optimizer_2impl_2gradient__descent_2local__convolution_8hpp}{local\-\_\-convolution.\-hpp}\end{DoxyCompactItemize}

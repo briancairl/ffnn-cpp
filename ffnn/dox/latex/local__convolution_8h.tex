@@ -1,0 +1,76 @@
+\hypertarget{local__convolution_8h}{\section{/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/local\-\_\-convolution.h File Reference}
+\label{local__convolution_8h}\index{/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/local\-\_\-convolution.\-h@{/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/local\-\_\-convolution.\-h}}
+}
+{\ttfamily \#include \char`\"{}boost/multi\-\_\-array.\-hpp\char`\"{}}\\*
+{\ttfamily \#include $<$ffnn/layer/layer.\-h$>$}\\*
+{\ttfamily \#include $<$ffnn/layer/hidden.\-h$>$}\\*
+{\ttfamily \#include $<$ffnn/layer/convolution\-\_\-volume.\-h$>$}\\*
+{\ttfamily \#include $<$ffnn/optimizer/fwd.\-h$>$}\\*
+{\ttfamily \#include $<$ffnn/optimizer/optimizer.\-h$>$}\\*
+{\ttfamily \#include $<$ffnn/layer/impl/local\-\_\-convolution.\-hpp$>$}\\*
+Include dependency graph for local\-\_\-convolution.\-h\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{local__convolution_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{local__convolution_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classffnn_1_1layer_1_1_local_convolution}{ffnn\-::layer\-::\-Local\-Convolution$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode, \-\_\-\-Hidden\-Layer\-Shape $>$}
+\begin{DoxyCompactList}\small\item\em A convolution layer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespaceffnn}{ffnn}
+\item 
+\hyperlink{namespaceffnn_1_1layer}{ffnn\-::layer}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{local__convolution_8h_a005b9b79411aa786124330e813a99057}{T\-A\-R\-G\-S}
+\item 
+\#define \hyperlink{local__convolution_8h_a3f78e953733a2dba7219b13336105c26}{V\-O\-L\-U\-M\-E\-\_\-\-T\-A\-R\-G\-S}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{local__convolution_8h_a005b9b79411aa786124330e813a99057}{\index{local\-\_\-convolution.\-h@{local\-\_\-convolution.\-h}!T\-A\-R\-G\-S@{T\-A\-R\-G\-S}}
+\index{T\-A\-R\-G\-S@{T\-A\-R\-G\-S}!local_convolution.h@{local\-\_\-convolution.\-h}}
+\subsubsection[{T\-A\-R\-G\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-A\-R\-G\-S}}\label{local__convolution_8h_a005b9b79411aa786124330e813a99057}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+ValueType,\(\backslash\)
+  HeightAtCompileTime,\(\backslash\)
+  WidthAtCompileTime,\(\backslash\)
+  DepthAtCompileTime,\(\backslash\)
+  FilterHeightAtCompileTime,\(\backslash\)
+  FilterWidthAtCompileTime,\(\backslash\)
+  FilterCountAtCompileTime,\(\backslash\)
+  StrideAtCompileTime,\(\backslash\)
+  Mode,\(\backslash\)
+  \_HiddenLayerShape
+\end{DoxyCode}
+\hypertarget{local__convolution_8h_a3f78e953733a2dba7219b13336105c26}{\index{local\-\_\-convolution.\-h@{local\-\_\-convolution.\-h}!V\-O\-L\-U\-M\-E\-\_\-\-T\-A\-R\-G\-S@{V\-O\-L\-U\-M\-E\-\_\-\-T\-A\-R\-G\-S}}
+\index{V\-O\-L\-U\-M\-E\-\_\-\-T\-A\-R\-G\-S@{V\-O\-L\-U\-M\-E\-\_\-\-T\-A\-R\-G\-S}!local_convolution.h@{local\-\_\-convolution.\-h}}
+\subsubsection[{V\-O\-L\-U\-M\-E\-\_\-\-T\-A\-R\-G\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define V\-O\-L\-U\-M\-E\-\_\-\-T\-A\-R\-G\-S}}\label{local__convolution_8h_a3f78e953733a2dba7219b13336105c26}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+ValueType,\(\backslash\)
+  FilterHeightAtCompileTime,\(\backslash\)
+  FilterWidthAtCompileTime,\(\backslash\)
+  DepthAtCompileTime,\(\backslash\)
+  FilterCountAtCompileTime,\(\backslash\)
+  Mode
+\end{DoxyCode}

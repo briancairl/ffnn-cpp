@@ -1,0 +1,22 @@
+<map id="/home/briancairl/packages/src/ffnn&#45;cpp/ffnn/include/ffnn/layer/local_convolution.h" name="/home/briancairl/packages/src/ffnn&#45;cpp/ffnn/include/ffnn/layer/local_convolution.h">
+<area shape="rect" id="node3" href="$layer_8h.html" title="ffnn/layer/layer.h" alt="" coords="1446,208,1564,235"/>
+<area shape="rect" id="node34" href="$hidden_8h.html" title="ffnn/layer/hidden.h" alt="" coords="1550,117,1679,144"/>
+<area shape="rect" id="node37" href="$convolution__volume_8h.html" title="ffnn/layer/convolution\l_volume.h" alt="" coords="2009,110,2156,151"/>
+<area shape="rect" id="node41" href="$fwd_8h.html" title="ffnn/optimizer/fwd.h" alt="" coords="2181,117,2317,144"/>
+<area shape="rect" id="node42" href="$optimizer_8h.html" title="ffnn/optimizer/optimizer.h" alt="" coords="421,389,589,416"/>
+<area shape="rect" id="node45" href="$layer_2impl_2local__convolution_8hpp.html" title="ffnn/layer/impl/local\l_convolution.hpp" alt="" coords="550,201,684,242"/>
+<area shape="rect" id="node5" href="$serializable_8h.html" title="ffnn/internal/traits\l/serializable.h" alt="" coords="2183,473,2305,514"/>
+<area shape="rect" id="node7" href="$global_8h.html" title="ffnn/config/global.h" alt="" coords="1422,563,1553,589"/>
+<area shape="rect" id="node19" href="$interface_8h.html" title="ffnn/layer/internal\l/interface.h" alt="" coords="1721,291,1844,333"/>
+<area shape="rect" id="node31" href="$layer_8hpp.html" title="ffnn/layer/impl/layer.hpp" alt="" coords="818,389,979,416"/>
+<area shape="rect" id="node9" href="$logging_8h.html" title="ffnn/logging.h" alt="" coords="711,645,811,672"/>
+<area shape="rect" id="node15" href="$sparse__triplet__serialization_8h.html" title="ffnn/internal/eigen\l/sparse_triplet_serialization.h" alt="" coords="2059,638,2249,679"/>
+<area shape="rect" id="node20" href="$unique_8h.html" title="ffnn/internal/traits\l/unique.h" alt="" coords="1671,382,1793,423"/>
+<area shape="rect" id="node25" href="$internal_2signature_8h.html" title="ffnn/internal/signature.h" alt="" coords="1285,480,1443,507"/>
+<area shape="rect" id="node29" href="$shape_8h.html" title="ffnn/layer/internal\l/shape.h" alt="" coords="1969,382,2092,423"/>
+<area shape="rect" id="node33" href="$assert_8h.html" title="ffnn/assert.h" alt="" coords="731,480,825,507"/>
+<area shape="rect" id="node36" href="$hidden_8hpp.html" title="ffnn/layer/impl/hidden.hpp" alt="" coords="1004,389,1175,416"/>
+<area shape="rect" id="node38" href="$filter__bank_8h.html" title="ffnn/layer/internal\l/filter_bank.h" alt="" coords="2071,201,2193,242"/>
+<area shape="rect" id="node39" href="$convolution__volume_8hpp.html" title="ffnn/layer/impl/convolution\l_volume.hpp" alt="" coords="1199,382,1373,423"/>
+<area shape="rect" id="node46" href="$none_8h.html" title="ffnn/optimizer/none.h" alt="" coords="489,299,633,325"/>
+</map>

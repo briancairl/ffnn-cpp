@@ -1,0 +1,7 @@
+<map id="ffnn::optimizer::GradientDescent&lt; layer::Convolution&lt; TARGS &gt; &gt;" name="ffnn::optimizer::GradientDescent&lt; layer::Convolution&lt; TARGS &gt; &gt;">
+<area shape="rect" id="node2" href="$classffnn_1_1optimizer_1_1_optimizer.html" title="ffnn::optimizer::Optimizer\l\&lt; layer::Convolution\&lt; TARGS \&gt; \&gt;" alt="" coords="661,5,883,46"/>
+<area shape="rect" id="node3" href="$classffnn_1_1layer_1_1_convolution_volume.html" title="ffnn::layer::Convolution\lVolume\&lt; VOLUME_TARGS \&gt;" alt="" coords="673,70,871,111"/>
+<area shape="rect" id="node4" href="$classffnn_1_1layer_1_1internal_1_1_interface.html" title="ffnn::layer::internal\l::Interface\&lt; VOLUME_TARGS \&gt;" alt="" coords="395,70,610,111"/>
+<area shape="rect" id="node5" href="$classffnn_1_1traits_1_1_unique.html" title="An object with a unique ID. " alt="" coords="213,77,344,104"/>
+<area shape="rect" id="node6" href="$classffnn_1_1traits_1_1_serializable.html" title="An object which can be saved and loaded. " alt="" coords="6,77,162,104"/>
+</map>
