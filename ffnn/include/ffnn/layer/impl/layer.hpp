@@ -52,7 +52,10 @@ bool connect(const typename LayerType::Ptr& from, const typename LayerType::Ptr&
 template<typename ValueType>
 Layer<ValueType>::Layer(const ShapeType& input_shape, const ShapeType& output_shape) :
   Layer<ValueType>::Base(input_shape, output_shape)
-{}
+{
+  FFNN_INTERNAL_DEBUG_NAMED("layer::Layer", input_shape);
+  FFNN_INTERNAL_DEBUG_NAMED("layer::Layer", output_shape);
+}
 
 template<typename ValueType>
 Layer<ValueType>::~Layer()

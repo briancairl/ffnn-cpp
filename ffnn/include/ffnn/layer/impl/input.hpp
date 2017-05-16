@@ -18,7 +18,9 @@ template<typename ValueType, FFNN_SIZE_TYPE NetworkInputsAtCompileTime>
 Input<TARGS>::Input(SizeType network_input_size) :
   Base(ShapeType(0), ShapeType(network_input_size)),
   next_ptr_(NULL)
-{}
+{
+  FFNN_INTERNAL_DEBUG_NAMED("layer::Layer", "Network input size: " << network_input_size);
+}
 
 template<typename ValueType, FFNN_SIZE_TYPE NetworkInputsAtCompileTime>
 Input<TARGS>::~Input()

@@ -9,110 +9,59 @@
 #include <fstream>
 #include <sstream>
 
+// OpenCV
+#include <opencv2/core/core.hpp>
+#include <opencv2/highgui/highgui.hpp>
+
 // FFNN
-#include <ffnn/aligned_types.h>
 #include <ffnn/logging.h>
 #include <ffnn/layer/activation.h>
 #include <ffnn/layer/layer.h>
 #include <ffnn/layer/input.h>
-#include <ffnn/layer/activation.h>
+#include <ffnn/layer/fully_connected.h>
+#include <ffnn/layer/convolution.h>
 #include <ffnn/layer/output.h>
-#include <ffnn/neuron/sigmoid.h>
-#include <ffnn/neuron/linear.h>
-#include <ffnn/neuron/leaky_rectified_linear.h>
-#include <ffnn/optimizer/adam.h>
-#include <ffnn/io.h>
-
-template<typename ValueType>
-class Leaky :
-  public ffnn::neuron::LeakyRectifiedLinear<ValueType, 1, 100>
-{};
-
-// Layer-type alias
-using Layer  = ffnn::layer::Layer<float>;
-using Input  = ffnn::layer::Input<float>;
-using FC_H1  = ffnn::layer::FullyConnected<float>;
-using FC_H2  = ffnn::layer::FullyConnected<float>;
-using ACT_1  = ffnn::layer::Activation<float, ffnn::neuron::Linear>;
-using ACT_2  = ffnn::layer::Activation<float, Leaky>;
-using Output = ffnn::layer::Output<float>;
-
-void read_vector(std::ifstream& is, Eigen::VectorXf& v, size_t pad = 2)
-{
-  size_t n;
-  is >> n;
-
-  v.setZero(n + pad, 1);
-  for (size_t idx = 0UL; idx < n; idx++)
-  {
-    is >> v(idx);
-  }
-}
+#include <ffnn/neuron/rectified_linear.h>
+#include <ffnn/optimizer/gradient_descent.h>
+#include <ffnn/distribution/normal.h>
 
 // Run tests
 int main(int argc, char** argv)
 {
-  FFNN_INFO("Reading inputs.");
+  cv::Mat img = cv::imread("/home/briancairl/Pictures/tacocat_ds.jpg");
 
-  std::ifstream is(argv[1]);
-  ffnn::aligned::Buffer<Eigen::VectorXf> samples;
-  ffnn::aligned::Buffer<Eigen::VectorXf> targets;
+  cv::Mat f_img;
+  img.convertTo(f_img, CV_32FC3);
+  Eigen::Map<Eigen::MatrixXf> map_img((float*)f_img.data, f_img.channels() * f_img.rows, f_img.cols);
+  Eigen::MatrixXf out_img = map_img;
 
-  size_t count = 10000;
-  while (!is.eof() && --count)
-  {
-    Eigen::VectorXf v;
-    read_vector(is, v); targets.push_back(v);
-    read_vector(is, v); samples.push_back(v);
-  }
-
-  const size_t iterations = 10000;
-  const size_t epoch = 10000-1;
+  // Layer-type alias
+  using Layer  = ffnn::layer::Layer<float>;
+  using Input  = ffnn::layer::Input<float>;
+  using Conv = ffnn::layer::Convolution<float, -1, -1, -1, -1, -1, -1, 1, ffnn::layer::RowEmbedding>;
+  using FullyConnected = ffnn::layer::FullyConnected<float>;
+  using Activation = ffnn::layer::Activation<float, ffnn::neuron::RectifiedLinear<float>>;
+  using Output = ffnn::layer::Output<float>;
 
   // Layer sizes
-  static const Layer::SizeType DIM = samples[0].rows();
+  static const Layer::SizeType DIM = 128 * 128 * 3;
 
   // Create layers
-  auto input = boost::make_shared<Input>(DIM);  
-  auto h1    = boost::make_shared<FC_H1>(DIM, FC_H1::Parameters(1.0/(DIM*DIM)));
-  auto h2    = boost::make_shared<FC_H2>(DIM, FC_H2::Parameters(1.0/(DIM*DIM)));
-  auto a1    = boost::make_shared<ACT_1>();
-  auto a2    = boost::make_shared<ACT_2>();
-  auto output = boost::make_shared<Output>();  
+  auto input = boost::make_shared<Input>(DIM);
+  auto conv = boost::make_shared<Conv>(Conv::ShapeType(128, 128, 3), 31, 31, 5, 10);
+  auto act = boost::make_shared<Activation>();
+  auto fc = boost::make_shared<FullyConnected>(49152);
+  //auto act_out = boost::make_shared<Activation>();
+  auto output = boost::make_shared<Output>();
 
-  double lr = 10.0 / epoch;
+  FFNN_ERROR(conv->inputShape());
 
   // Set optimizer (gradient descent)
-  {
-    using Optimizer = ffnn::optimizer::Adam<FC_H1>;
-    h1->setOptimizer(boost::make_shared<Optimizer>(lr));
-  }
-  {
-    using Optimizer = ffnn::optimizer::Adam<FC_H2>;
-    h2->setOptimizer(boost::make_shared<Optimizer>(lr));
-  }
+  conv->setOptimizer(boost::make_shared<ffnn::optimizer::GradientDescent<Conv>>(5e-8));
+  fc->setOptimizer(boost::make_shared<ffnn::optimizer::GradientDescent<FullyConnected>>(5e-8));
 
   // Create network
-  std::vector<Layer::Ptr> layers({input, h1, a1, h2, a2, output});
-
-  Eigen::setNbThreads(4);
-
-  std::stringstream issname;
-  issname << "/home/brian/network_saves/20_9999.net";
-  FFNN_INFO("Loading : " << issname.str());
-  std::ifstream ifs(issname.str().c_str(), std::ios::binary);
-  for(const auto& layer : layers)
-  {
-    try
-    {
-      ffnn::load(ifs, *layer);
-    }
-    catch (const boost::archive::archive_exception& ex)
-    {
-      FFNN_ERROR(ex.what());
-    }
-  }
-  ifs.close();
+  std::vector<Layer::Ptr> layers({input, conv, act, fc, /*act_out,*/ output});
 
   // Connect layers
   for (size_t idx = 1UL; idx < layers.size(); idx++)
@@ -120,83 +69,58 @@ int main(int argc, char** argv)
     ffnn::layer::connect<Layer>(layers[idx-1UL], layers[idx]);
   }
 
-  // Initialize and check all layers and 
-  for(const auto& layer : layers)
-  {
-    if (!layer->initialize() || !layer->isInitialized())
-    {
-      FFNN_ERROR("Error initializing network.");
-      return 1;
-    }
-  }
+  using ND = ffnn::distribution::Normal<float>;
+
+  // Intializer layers
+  input->initialize();
+  conv->initialize(ND(0, 1.0 / DIM), ND(0, 1.0 / DIM));
+  act->initialize();
+  fc->initialize(ND(0, 1.0 / DIM), ND(0, 1.0 / DIM));
+  //act_out->initialize();
+  output->initialize();
 
   // Check that error montonically decreases
   float prev_error = std::numeric_limits<float>::infinity();
-  for (size_t idx = 0UL; idx < iterations; idx++)
+  for (size_t idx = 0UL; idx < 5000; idx++)
   {
-    FFNN_INFO(idx << " " << epoch << " lr: " << lr);
-    double error = 0;
-    for (size_t jdx = 0UL; jdx < epoch; jdx++)
+    // Forward activate
+    (*input) << map_img;
+    for(const auto& layer : layers)
     {
-      size_t kdx = jdx;
+      layer->forward();
+    }
+    (*output) >> out_img;
 
-      // Forward activate
-      (*input) << samples[kdx];
-      for(const auto& layer : layers)
-      {
-        layer->forward();
-      }
-      Eigen::VectorXf netout(samples[kdx].rows(), 1);
-      (*output) >> netout;
+    // Compute error and check
+    double error = (map_img - out_img).norm();
+    FFNN_INFO(error - prev_error);
 
-      // Compute error and check
-      error += (targets[kdx] - netout).norm();
+    // Set target
+    (*output) << map_img;
 
-      // Set target
-      (*output) << targets[kdx];
-
-      // Backward propogated error
-      for(const auto& layer : layers)
-      {
-        layer->backward();
-      }
+    // Backward propogated error
+    for(const auto& layer : layers)
+    {
+      layer->backward();
     }
 
-    // Trigger optimization
+    // Trigget optimization
     for(const auto& layer : layers)
     {
       layer->update();
     }
 
-    // Save network
-    if (!(idx % 10))
-    {
-      std::stringstream ssname;
-      ssname << "/home/brian/network_saves/" << idx << "_" << epoch << ".net";
-      FFNN_INFO("Saving : " << ssname.str());
-      std::ofstream of(ssname.str().c_str(), std::ios::binary);
-      for(const auto& layer : layers)
-      {
-        try
-        {
-          ffnn::save(of, *layer);
-        }
-        catch (const boost::archive::archive_exception& ex)
-        {
-          FFNN_ERROR(ex.what());
-        }
-      }
-      of.close();
-    }
+    cv::Mat out_img_cv(128, 128, CV_32FC3, out_img.data());
+    cv::normalize(out_img_cv, out_img_cv, 0, 1, cv::NORM_MINMAX, CV_32FC3);
+    cv::imshow("Display window", out_img_cv);
+    cv::waitKey(1);
 
-    // Check for early-stopping
-    FFNN_INFO("Error : " << error);
-    if (std::abs(error - prev_error) < 1e-12)
-    {
-      FFNN_INFO("Training complete");
-      return 0;
-    }
+    // Store previous error
     prev_error = error;
   }
+
+
+  cv::imshow("Display window", img);
+  cv::waitKey(0);
   return 0;
 }

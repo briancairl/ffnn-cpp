@@ -30,10 +30,10 @@ template<typename ValueType,
          typename _HiddenLayerShape>
 Convolution<TARGS>::
 Convolution(const ShapeType& input_shape,
-                 const SizeType& filter_height,
-                 const SizeType& filter_width,
-                 const SizeType& filter_count,
-                 const SizeType& filter_stride) :
+            const SizeType& filter_height,
+            const SizeType& filter_width,
+            const SizeType& filter_count,
+            const SizeType& filter_stride) :
   Base(ShapeType(embed_dimension<Mode, ColEmbedding>(input_shape.height, input_shape.depth),
                  embed_dimension<Mode, RowEmbedding>(input_shape.width, input_shape.depth)),
        ShapeType(embed_dimension<Mode, ColEmbedding>(output_dimension(input_shape.height, filter_height, filter_stride), filter_count),

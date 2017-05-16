@@ -98,6 +98,9 @@ public:
    */
   void reset(LayerType& layer)
   {
+    // Set filter depth
+    gradient_.filters.resize(layer.output_volume_shape_.depth);
+
     // Reset weight delta
     for (SizeType idx = 0; idx < layer.output_volume_shape_.height; idx++)
     {

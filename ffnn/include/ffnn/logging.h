@@ -29,6 +29,7 @@ const char* UNDERLINE = "\033[4m";
 /// Named header for all <code>_NAMED</code> printouts
 #define FFNN_NAME_HEADER(name) ffnn::logging::HEADER << "[" << name << "] " << ffnn::logging::ENDC
 
+#define FFNN_LOGGING_INTERNAL
 #ifdef FFNN_LOGGING_INTERNAL
 /**
  * @brief Prints an named debug message

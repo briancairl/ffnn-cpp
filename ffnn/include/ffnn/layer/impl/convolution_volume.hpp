@@ -29,8 +29,7 @@ template<typename ValueType,
          FFNN_SIZE_TYPE FilterCountAtCompileTime,
          EmbeddingMode Mode>
 ConvolutionVolume<TARGS>::ConvolutionVolume(const ShapeType& filter_shape, const SizeType& filter_count) :
-  Base(filter_shape, ShapeType(1, 1, filter_count)),
-  filters(filter_count)
+  Base(filter_shape, ShapeType(1, 1, filter_count))
 {}
 
 template<typename ValueType,
@@ -100,6 +99,9 @@ template<typename ValueType,
          EmbeddingMode Mode>
 void ConvolutionVolume<TARGS>::reset()
 {
+  // Resize bank
+  filters.resize(Base::output_shape_.depth);
+
   // Initiliaze all filters and biases
   filters.setZero(embed_dimension<Mode, ColEmbedding>(Base::input_shape_.height, Base::input_shape_.depth),
                   embed_dimension<Mode, RowEmbedding>(Base::input_shape_.width,  Base::input_shape_.depth));

@@ -66,11 +66,8 @@ struct FilterBank :
   /// Offset type standardization
   typedef typename FilterType::OffsetType OffsetType;
 
-  explicit
-  FilterBank(SizeType depth)
-  {
-    this->resize(depth);
-  }
+  FilterBank()
+  {}
 
   void setZero(SizeType height, SizeType width)
   {

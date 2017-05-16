@@ -28,7 +28,7 @@ constexpr SizeType embed_dimension(SizeType n, SizeType m)
 template<typename SizeType>
 constexpr SizeType output_dimension(SizeType n, SizeType fn, SizeType stride)
 {
-  return (n - fn) / stride + 1;
+  return internal::is_dynamic<SizeType>(n) ? Eigen::Dynamic : ((n - fn) / stride + 1);
 }
 }  // namespace layer
 }  // namespace ffnn

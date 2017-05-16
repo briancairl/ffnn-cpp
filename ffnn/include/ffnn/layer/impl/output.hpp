@@ -17,7 +17,9 @@ namespace layer
 template<typename ValueType, FFNN_SIZE_TYPE NetworkOutputsAtCompileTime>
 Output<TARGS>::Output() :
   Base(ShapeType(NetworkOutputsAtCompileTime), ShapeType(0))
-{}
+{
+  FFNN_INTERNAL_DEBUG_NAMED("layer::Layer", "Network output size (compile-time): " << NetworkOutputsAtCompileTime);
+}
 
 template<typename ValueType, FFNN_SIZE_TYPE NetworkOutputsAtCompileTime>
 Output<TARGS>::~Output()

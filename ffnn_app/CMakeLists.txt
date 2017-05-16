@@ -18,6 +18,7 @@ endif()
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -DEIGEN_NO_DEBUG -DFFNN_ALLOW_LOGGING -march=native -msse2")
 
 find_package(Boost REQUIRED COMPONENTS thread random serialization)
+find_package(OpenCV REQUIRED)
 find_package(Eigen3 REQUIRED)
 find_package(ffnn REQUIRED)
 
@@ -34,6 +35,7 @@ include_directories(
   ${Boost_INCLUDE_DIRS}
   ${EIGEN3_INCLUDE_DIR}
   ${catkin_INCLUDE_DIRS}
+  ${OpenCV_INCLUDE_DIRS}
 )
 
 add_executable(train
@@ -44,15 +46,5 @@ target_link_libraries(train
   ${catkin_LIBRARIES}
   ${EIGEN_LIBRARIES}
   ${GTEST_LIBRARIES}
+  ${OpenCV_LIBRARIES}
 )
-
-add_executable(test_trained
-  src/test_trained.cpp
-)
-target_link_libraries(test_trained
-  ${Boost_LIBRARIES}
-  ${catkin_LIBRARIES}
-  ${EIGEN_LIBRARIES}
-  ${GTEST_LIBRARIES}
-)
-

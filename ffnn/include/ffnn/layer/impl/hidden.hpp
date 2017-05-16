@@ -22,11 +22,13 @@ template<typename ValueType,
          typename _OutputBlockType>
 Hidden<TARGS>::Hidden(const ShapeType& input_shape, const ShapeType& output_shape) :
   Base(input_shape, output_shape),
-  input_(NULL, LayerShape::input_height, LayerShape::input_width),
-  output_(NULL, LayerShape::output_height, LayerShape::output_width),
-  backward_error_(NULL, LayerShape::input_height, LayerShape::input_width),
-  forward_error_(NULL, LayerShape::output_height, LayerShape::output_width)
+  input_(NULL, input_shape.height, input_shape.width),
+  output_(NULL,output_shape.height, output_shape.width),
+  backward_error_(NULL, input_shape.height, input_shape.width),
+  forward_error_(NULL, output_shape.height, output_shape.width)
 {
+  FFNN_INTERNAL_DEBUG_NAMED("layer::Hidden", input_shape);
+  FFNN_INTERNAL_DEBUG_NAMED("layer::Hidden", output_shape);
 }
 
 template<typename ValueType,
