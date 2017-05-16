@@ -2,8 +2,8 @@
  * @author Brian Cairl
  * @date 2017
  */
-#ifndef FFNN_LAYER_LOCAL_CONVOLUTION_H
-#define FFNN_LAYER_LOCAL_CONVOLUTION_H
+#ifndef FFNN_LAYER_CONVOLUTION_H
+#define FFNN_LAYER_CONVOLUTION_H
 
 // Boost
 #include "boost/multi_array.hpp"
@@ -59,7 +59,7 @@ template <typename ValueType,
               embed_dimension<Mode, RowEmbedding>(WidthAtCompileTime,  DepthAtCompileTime),
               embed_dimension<Mode, ColEmbedding>(output_dimension(HeightAtCompileTime, FilterHeightAtCompileTime, StrideAtCompileTime), FilterCountAtCompileTime),
               embed_dimension<Mode, RowEmbedding>(output_dimension(WidthAtCompileTime,  FilterWidthAtCompileTime,  StrideAtCompileTime), FilterCountAtCompileTime)>>
-class LocalConvolution :
+class Convolution :
   public Hidden<ValueType, _HiddenLayerShape>
 {
 public:
@@ -67,7 +67,7 @@ public:
   using Base = Hidden<ValueType, _HiddenLayerShape>;
 
   /// Self type alias
-  using Self = LocalConvolution<TARGS>;
+  using Self = Convolution<TARGS>;
 
   /// Scalar type standardization
   typedef typename Base::ScalarType ScalarType;
@@ -84,8 +84,8 @@ public:
   /// Receptive-volume type standardization
   typedef ConvolutionVolume<VOLUME_TARGS> ConvolutionVolumeType;
 
-  /// Recptive-volume bank standardization
-  typedef boost::multi_array<ConvolutionVolumeType, 2> ConvolutionFieldType;
+  /// Forward mapping bank standardization
+  typedef boost::multi_array<ValueType*, 2> ForwardMapType;
 
   /// Layer optimization type standardization
   typedef optimizer::Optimizer<Self> Optimizer;
@@ -94,12 +94,12 @@ public:
    * @brief Setup constructor
    */
   explicit
-  LocalConvolution(const ShapeType& input_shape = ShapeType(HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime),
-                   const SizeType& filter_height = FilterHeightAtCompileTime,
-                   const SizeType& filter_width = FilterWidthAtCompileTime,
-                   const SizeType& filter_count = FilterCountAtCompileTime,
-                   const SizeType& filter_stride = StrideAtCompileTime);
-  virtual ~LocalConvolution();
+  Convolution(const ShapeType& input_shape = ShapeType(HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime),
+              const SizeType& filter_height = FilterHeightAtCompileTime,
+              const SizeType& filter_width = FilterWidthAtCompileTime,
+              const SizeType& filter_count = FilterCountAtCompileTime,
+              const SizeType& filter_stride = StrideAtCompileTime);
+  virtual ~Convolution();
 
   /**
    * @brief Initialize the layer
@@ -158,13 +158,13 @@ public:
    */
   void setOptimizer(typename Optimizer::Ptr opt);
 
-  inline const ConvolutionFieldType& getConvolutionField() const
+  inline const ConvolutionVolumeType& getConvolutionVolume() const
   {
-    return fields_;
+    return field_;
   }
 
 protected:
-  FFNN_REGISTER_SERIALIZABLE(LocalConvolution)
+  FFNN_REGISTER_SERIALIZABLE(Convolution)
 
   /// Save serializer
   void save(OutputArchive& ar, VersionType version) const;
@@ -173,8 +173,8 @@ protected:
   void load(InputArchive& ar, VersionType version);
 
 private:
-  //FFNN_REGISTER_OPTIMIZER(LocalConvolution, Adam);
-  FFNN_REGISTER_OPTIMIZER(LocalConvolution, GradientDescent);
+  //FFNN_REGISTER_OPTIMIZER(Convolution, Adam);
+  FFNN_REGISTER_OPTIMIZER(Convolution, GradientDescent);
 
   /**
    * @brief Reset all internal volumes
@@ -182,7 +182,11 @@ private:
   void reset();
 
   /// Layer configuration parameters
-  ConvolutionFieldType fields_;
+  ConvolutionVolumeType field_;
+
+  ForwardMapType forward_error_mappings_;
+
+  ForwardMapType output_mappings_;
 
   /// "True" shape of the ouput with no depth-embedding
   ShapeType input_volume_shape_;
@@ -215,9 +219,9 @@ private:
 }  // namespace ffnn
 
 /// FFNN (implementation)
-#include <ffnn/layer/impl/local_convolution.hpp>
+#include <ffnn/layer/impl/convolution.hpp>
 
 // Cleanup definitions
 #undef TARGS
 #undef VOLUME_TARGS
-#endif  // FFNN_LAYER_LOCAL_CONVOLUTION_H
+#endif  // FFNN_LAYER_CONVOLUTION_H

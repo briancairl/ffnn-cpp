@@ -144,6 +144,25 @@ target_link_libraries(test_layer_sparsely_connected_training
 # Tests:
 #    - layer::Input
 #    - layer::Output
+#    - layer::Convolution
+#  	 - optimizer::GradientDescent[Convolution]
+#  	 - optimizer::GradientDescent[Activation]
+##############################################################
+
+catkin_add_gtest(test_layer_convolution_training
+  test_layer_convolution_training.cpp
+)
+target_link_libraries(test_layer_convolution_training
+  ${Boost_LIBRARIES}
+  ${catkin_LIBRARIES}
+  ${EIGEN_LIBRARIES}
+  ${GTEST_LIBRARIES}
+)
+
+##############################################################
+# Tests:
+#    - layer::Input
+#    - layer::Output
 #    - layer::LocalConvolution
 #  	 - optimizer::GradientDescent[LocalConvolution]
 #  	 - optimizer::GradientDescent[Activation]
