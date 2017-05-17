@@ -136,10 +136,13 @@ public:
   {
     FFNN_ASSERT_MSG(layer.isInitialized(), "Layer to optimize is not initialized.");
 
+    // Get block dimensions
+    const auto& ris = layer.parameters_.inputShape();
+
     // Reset weight delta
-    for (OffsetType idx = 0; idx < layer.output_volume_shape_.height; idx++)
+    for (OffsetType idx = 0, hdx = 0; idx < layer.output_volume_shape_.height; idx++, hdx += layer.filter_stride_.height)
     {
-      for (OffsetType jdx = 0; jdx < layer.output_volume_shape_.width; jdx++)
+      for (OffsetType jdx = 0, wdx = 0; jdx < layer.output_volume_shape_.width; jdx++, wdx += layer.filter_stride_.width)
       {
         const OffsetType n_filters(gradient_.filters.size());
         for (OffsetType kdx = 0; kdx < n_filters; kdx++)
@@ -147,7 +150,7 @@ public:
           const OffsetType iidx((Mode == layer::ColEmbedding) ? (idx * layer.output_volume_shape_.depth + kdx) : idx);
           const OffsetType jjdx((Mode == layer::RowEmbedding) ? (jdx * layer.output_volume_shape_.depth + kdx) : jdx);
 
-          gradient_.filters[kdx].kernel += layer.parameters_.filters[kdx].kernel * layer.forward_error_(iidx, jjdx);
+          gradient_.filters[kdx].kernel += prev_input_.block(hdx, wdx, ris.height, ris.width) * layer.forward_error_(iidx, jjdx);
           gradient_.filters[kdx].bias += layer.forward_error_(iidx, jjdx);
         }
       }

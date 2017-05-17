@@ -48,7 +48,7 @@ int main(int argc, char** argv)
 
   // Create layers
   auto input = boost::make_shared<Input>(DIM);
-  auto conv = boost::make_shared<Conv>(Conv::ShapeType(128, 128, 3), 31, 31, 5, 10);
+  auto conv = boost::make_shared<Conv>(Conv::ShapeType(128, 128, 3), 5, 5, 3, 5);
   auto act = boost::make_shared<Activation>();
   auto fc = boost::make_shared<FullyConnected>(49152);
   //auto act_out = boost::make_shared<Activation>();
@@ -73,11 +73,15 @@ int main(int argc, char** argv)
 
   // Intializer layers
   input->initialize();
-  conv->initialize(ND(0, 1.0 / DIM), ND(0, 1.0 / DIM));
+  conv->initialize(ND(0, 0.1), ND(0, 2.0 / DIM));
   act->initialize();
   fc->initialize(ND(0, 1.0 / DIM), ND(0, 1.0 / DIM));
   //act_out->initialize();
   output->initialize();
+
+  // Create windows for display grids
+  cv::namedWindow("Kernel", CV_WINDOW_NORMAL);
+  cv::namedWindow("Output", CV_WINDOW_NORMAL);
 
   // Check that error montonically decreases
   float prev_error = std::numeric_limits<float>::infinity();
@@ -110,9 +114,14 @@ int main(int argc, char** argv)
       layer->update();
     }
 
+    cv::Mat kernel_img_cv(5, 5, CV_32FC3, const_cast<float*>(conv->getParameters().filters[1].kernel.data()));
+    cv::Mat kernel_img_cv_norm;
+    cv::normalize(kernel_img_cv, kernel_img_cv_norm, 0, 1, cv::NORM_MINMAX, CV_32FC3);
+    cv::imshow("Kernel", kernel_img_cv_norm);
+
     cv::Mat out_img_cv(128, 128, CV_32FC3, out_img.data());
     cv::normalize(out_img_cv, out_img_cv, 0, 1, cv::NORM_MINMAX, CV_32FC3);
-    cv::imshow("Display window", out_img_cv);
+    cv::imshow("Output", out_img_cv);
     cv::waitKey(1);
 
     // Store previous error
