@@ -72,7 +72,7 @@ int main(int argc, char** argv)
 
   // Intializer layers
   input->initialize();
-  conv->initialize(ND(0, 0.1/ DIM / DIM), ND(0, 5.0/ DIM / DIM));
+  conv->initialize(ND(0, 100.0/ DIM / DIM), ND(0, 5.0/ DIM / DIM));
   act->initialize();
   fc->initialize(ND(0, 1.0 / DIM / DIM), ND(0, 1.0 / DIM / DIM));
   //act_out->initialize();
@@ -86,11 +86,12 @@ int main(int argc, char** argv)
 
 
   // Check that error montonically decreases
-  float prev_error = std::numeric_limits<float>::infinity();
+  double prev_error = std::numeric_limits<double>::infinity();
+  double error = 0;
   for (size_t idx = 0UL; idx < 1e9; idx++)
   {
 
-    const double angle = (double)(idx % 360);
+    const double angle = (double)(idx % 5) * M_PI/5;
     cv::Point2f src_center(f_img.cols/2.0F, f_img.rows/2.0F);
     cv::Mat rot_mat = cv::getRotationMatrix2D(src_center, angle, 1.0);
     cv::Mat dst;
@@ -110,7 +111,7 @@ int main(int argc, char** argv)
     (*output) >> out_img;
 
     // Compute error and check
-    double error = (map_img - out_img).norm();
+    error += (trg_img - out_img).norm();
 
     // Set target
     (*output) << trg_img;
@@ -122,7 +123,7 @@ int main(int argc, char** argv)
     }
 
     // Trigget optimization
-    if (!(idx%360))
+    if (!(idx%5))
     {
       FFNN_INFO(error - prev_error);
 
@@ -132,35 +133,36 @@ int main(int argc, char** argv)
       }
 
       {
-        Eigen::Matrix<float, -1, -1, Eigen::RowMajor> ok = conv->getParameters().filters[0].kernel.transpose();
+        Eigen::Matrix<float, -1, -1, Eigen::RowMajor> ok = conv->getParameters().filters[0].kernel;
         cv::Mat kernel_img_cv(15, 15, CV_32FC3, const_cast<float*>(ok.data()));
         cv::Mat kernel_img_cv_norm;
         cv::normalize(kernel_img_cv, kernel_img_cv_norm, 0, 1, cv::NORM_MINMAX, CV_32FC3);
         cv::imshow("Kernel-0", kernel_img_cv_norm);
       }
       {
-        Eigen::Matrix<float, -1, -1, Eigen::RowMajor> ok = conv->getParameters().filters[1].kernel.transpose();
+        Eigen::Matrix<float, -1, -1, Eigen::RowMajor> ok = conv->getParameters().filters[1].kernel;
         cv::Mat kernel_img_cv(15, 15, CV_32FC3, const_cast<float*>(ok.data()));
         cv::Mat kernel_img_cv_norm;
         cv::normalize(kernel_img_cv, kernel_img_cv_norm, 0, 1, cv::NORM_MINMAX, CV_32FC3);
         cv::imshow("Kernel-1", kernel_img_cv_norm);
       }
       {
-        Eigen::Matrix<float, -1, -1, Eigen::RowMajor> ok = conv->getParameters().filters[2].kernel.transpose();
+        Eigen::Matrix<float, -1, -1, Eigen::RowMajor> ok = conv->getParameters().filters[2].kernel;
         cv::Mat kernel_img_cv(15, 15, CV_32FC3, const_cast<float*>(ok.data()));
         cv::Mat kernel_img_cv_norm;
         cv::normalize(kernel_img_cv, kernel_img_cv_norm, 0, 1, cv::NORM_MINMAX, CV_32FC3);
         cv::imshow("Kernel-2", kernel_img_cv_norm);
       }
+
+      // Store previous error
+      prev_error = error;
+      error = 0;
     }
 
     cv::Mat out_img_cv(128, 128, CV_32FC3, out_img.data());
     cv::normalize(out_img_cv, out_img_cv, 0, 1, cv::NORM_MINMAX, CV_32FC3);
     cv::imshow("Output", out_img_cv);
     cv::waitKey(1);
-
-    // Store previous error
-    prev_error = error;
   }
 
 
