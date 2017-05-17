@@ -58,7 +58,7 @@ int main(int argc, char** argv)
 
   // Set optimizer (gradient descent)
   conv->setOptimizer(boost::make_shared<ffnn::optimizer::GradientDescent<Conv>>(5e-11));
-  fc->setOptimizer(boost::make_shared<ffnn::optimizer::GradientDescent<FullyConnected>>(5e-7));
+  fc->setOptimizer(boost::make_shared<ffnn::optimizer::GradientDescent<FullyConnected>>(5e-11));
 
   // Create network
   std::vector<Layer::Ptr> layers({input, conv, act, fc, /*act_out,*/ output});
@@ -73,7 +73,7 @@ int main(int argc, char** argv)
 
   // Intializer layers
   input->initialize();
-  conv->initialize(ND(0, 5.0/ DIM), ND(0, 2.0/ DIM));
+  conv->initialize(ND(0, 0.1/ DIM), ND(0, 5.0/ DIM));
   act->initialize();
   fc->initialize(ND(0, 1.0 / DIM), ND(0, 1.0 / DIM));
   //act_out->initialize();
