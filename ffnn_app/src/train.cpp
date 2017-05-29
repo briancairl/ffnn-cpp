@@ -47,7 +47,7 @@ int main(int argc, char** argv)
 
   // Create layers
   auto input = boost::make_shared<Input>(DIM);
-  auto conv = boost::make_shared<Conv>(Conv::ShapeType(128, 128, 3), 10, 10, 3, 4);
+  auto conv = boost::make_shared<Conv>(Conv::ShapeType(128, 128, 3), 5, 5, 3, 1);
   auto act = boost::make_shared<Activation>();
   auto fc = boost::make_shared<FullyConnected>(1);
   //auto act_out = boost::make_shared<Activation>();
@@ -56,8 +56,8 @@ int main(int argc, char** argv)
   FFNN_ERROR(conv->inputShape());
 
   // Set optimizer (gradient descent)
-  conv->setOptimizer(boost::make_shared<ffnn::optimizer::GradientDescent<Conv>>(5e-9));
-  fc->setOptimizer(boost::make_shared<ffnn::optimizer::GradientDescent<FullyConnected>>(5e-9));
+  conv->setOptimizer(boost::make_shared<ffnn::optimizer::GradientDescent<Conv>>(5e-10));
+  fc->setOptimizer(boost::make_shared<ffnn::optimizer::GradientDescent<FullyConnected>>(5e-10));
 
   // Create network
   std::vector<Layer::Ptr> layers({input, conv, act, fc, /*act_out,*/ output});
@@ -91,7 +91,7 @@ int main(int argc, char** argv)
   for (size_t idx = 0UL; idx < 1e9; idx++)
   {
 
-    const double angle =  (180.0 / 4.0) * (double)(idx % 4) / 4.0;
+    const double angle =  (180.0 / 2) * (double)(idx % 10) / 10.0;
     cv::Point2f src_center(f_img.cols/2.0F, f_img.rows/2.0F);
     cv::Mat rot_mat = cv::getRotationMatrix2D(src_center, angle, 1.0);
     cv::Mat dst;
@@ -102,7 +102,7 @@ int main(int argc, char** argv)
     Eigen::MatrixXf target_signal(1, 1);
     Eigen::MatrixXf output_signal(1, 1);
 
-    target_signal(0) = static_cast<double>(idx % 4)/4.0;
+    target_signal(0) = static_cast<double>(idx % 10)/10.0;
 
     // Forward activate
     (*input) << input_img;
@@ -136,21 +136,21 @@ int main(int argc, char** argv)
 
       {
         Eigen::Matrix<float, -1, -1, Eigen::ColMajor> ok = conv->getParameters().filters[0].kernel;
-        cv::Mat kernel_img_cv(10, 10, CV_32FC3, const_cast<float*>(ok.data()));
+        cv::Mat kernel_img_cv(5, 5, CV_32FC3, const_cast<float*>(ok.data()));
         cv::Mat kernel_img_cv_norm;
         cv::normalize(kernel_img_cv, kernel_img_cv_norm, 0, 1, cv::NORM_MINMAX, CV_32FC3);
         cv::imshow("Kernel-0", kernel_img_cv_norm);
       }
       {
         Eigen::Matrix<float, -1, -1, Eigen::ColMajor> ok = conv->getParameters().filters[1].kernel;
-        cv::Mat kernel_img_cv(10, 10, CV_32FC3, const_cast<float*>(ok.data()));
+        cv::Mat kernel_img_cv(5, 5, CV_32FC3, const_cast<float*>(ok.data()));
         cv::Mat kernel_img_cv_norm;
         cv::normalize(kernel_img_cv, kernel_img_cv_norm, 0, 1, cv::NORM_MINMAX, CV_32FC3);
         cv::imshow("Kernel-1", kernel_img_cv_norm);
       }
       {
         Eigen::Matrix<float, -1, -1, Eigen::ColMajor> ok = conv->getParameters().filters[2].kernel;
-        cv::Mat kernel_img_cv(10, 10, CV_32FC3, const_cast<float*>(ok.data()));
+        cv::Mat kernel_img_cv(5, 5, CV_32FC3, const_cast<float*>(ok.data()));
         cv::Mat kernel_img_cv_norm;
         cv::normalize(kernel_img_cv, kernel_img_cv_norm, 0, 1, cv::NORM_MINMAX, CV_32FC3);
         cv::imshow("Kernel-2", kernel_img_cv_norm);
