@@ -290,21 +290,22 @@ Convolution<TARGS>::connectToForwardLayer(const Layer<ValueType>& next, OffsetTy
   forward_error_mappings_.resize(boost::extents[output_volume_shape_.height][output_volume_shape_.width]);
 
   // Map to individual volumes
-  ValueType* output_ptr = const_cast<ValueType*>(next.getInputBuffer().data());
-  ValueType* error_ptr = const_cast<ValueType*>(next.getBackwardErrorBuffer().data());
-  const OffsetType major_step = ((Mode == ColEmbedding) ? Base::output_shape_.height : Base::output_shape_.width);
-  for (SizeType jdx = 0; jdx < output_volume_shape_.width; jdx++)
+  ValueType* out_ptr = const_cast<ValueType*>(next.getInputBuffer().data());
+  ValueType* err_ptr = const_cast<ValueType*>(next.getBackwardErrorBuffer().data());
+  for (SizeType idx = 0; idx < output_volume_shape_.height; idx++)
   {
-    for (SizeType idx = 0; idx < output_volume_shape_.height; idx++)
+    for (SizeType jdx = 0; jdx < output_volume_shape_.width; jdx++)
     {
       // Compute pointer offset
-      const OffsetType kdx = jdx * major_step + idx * output_volume_shape_.depth;
+      const OffsetType kdx = (Mode == ColEmbedding) ?
+                             jdx * Base::output_shape_.height + idx * output_volume_shape_.depth :
+                             idx * Base::output_shape_.width  + jdx * output_volume_shape_.depth;
 
       // Set output memory mapping
-      output_mappings_[idx][jdx] = output_ptr + kdx;
+      output_mappings_[idx][jdx] = out_ptr + kdx;
 
       // Set backward-error memory mapping
-      forward_error_mappings_[idx][jdx] = error_ptr + kdx;
+      forward_error_mappings_[idx][jdx] = err_ptr + kdx;
     }
   }
   return offset_after_connect;

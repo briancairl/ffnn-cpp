@@ -29,7 +29,7 @@
 // Run tests
 int main(int argc, char** argv)
 {
-  cv::Mat img = cv::imread("/home/briancairl/Pictures/tacocat_ds.jpg");
+  cv::Mat img = cv::imread("/home/brian/Desktop/tacocat.png");
 
   cv::Mat f_img;
   img.convertTo(f_img, CV_32FC3);
@@ -37,7 +37,7 @@ int main(int argc, char** argv)
   // Layer-type alias
   using Layer  = ffnn::layer::Layer<float>;
   using Input  = ffnn::layer::Input<float>;
-  using Conv = ffnn::layer::Convolution<float, -1, -1, -1, -1, -1, -1, 1, ffnn::layer::RowEmbedding>;
+  using Conv = ffnn::layer::Convolution<float, -1, -1, -1, -1, -1, -1, 1, ffnn::layer::ColEmbedding>;
   using FullyConnected = ffnn::layer::FullyConnected<float>;
   using Activation = ffnn::layer::Activation<float, ffnn::neuron::RectifiedLinear<float>>;
   using Output = ffnn::layer::Output<float>;
@@ -47,17 +47,17 @@ int main(int argc, char** argv)
 
   // Create layers
   auto input = boost::make_shared<Input>(DIM);
-  auto conv = boost::make_shared<Conv>(Conv::ShapeType(128, 128, 3), 15, 15, 3, 10);
+  auto conv = boost::make_shared<Conv>(Conv::ShapeType(128, 128, 3), 10, 10, 3, 4);
   auto act = boost::make_shared<Activation>();
-  auto fc = boost::make_shared<FullyConnected>(49152);
+  auto fc = boost::make_shared<FullyConnected>(1);
   //auto act_out = boost::make_shared<Activation>();
   auto output = boost::make_shared<Output>();
 
   FFNN_ERROR(conv->inputShape());
 
   // Set optimizer (gradient descent)
-  conv->setOptimizer(boost::make_shared<ffnn::optimizer::GradientDescent<Conv>>(5e-11));
-  fc->setOptimizer(boost::make_shared<ffnn::optimizer::GradientDescent<FullyConnected>>(5e-11));
+  conv->setOptimizer(boost::make_shared<ffnn::optimizer::GradientDescent<Conv>>(5e-10));
+  fc->setOptimizer(boost::make_shared<ffnn::optimizer::GradientDescent<FullyConnected>>(5e-10));
 
   // Create network
   std::vector<Layer::Ptr> layers({input, conv, act, fc, /*act_out,*/ output});
@@ -72,10 +72,9 @@ int main(int argc, char** argv)
 
   // Intializer layers
   input->initialize();
-  conv->initialize(ND(0, 100.0/ DIM / DIM), ND(0, 5.0/ DIM / DIM));
+  conv->initialize(ND(0, 1.0/ DIM / DIM), ND(0, 1.0/ DIM / DIM));
   act->initialize();
   fc->initialize(ND(0, 1.0 / DIM / DIM), ND(0, 1.0 / DIM / DIM));
-  //act_out->initialize();
   output->initialize();
 
   // Create windows for display grids
@@ -83,6 +82,7 @@ int main(int argc, char** argv)
   cv::namedWindow("Kernel-1", CV_WINDOW_NORMAL);
   cv::namedWindow("Kernel-2", CV_WINDOW_NORMAL);
   cv::namedWindow("Output", CV_WINDOW_NORMAL);
+  cv::namedWindow("Conv Output", CV_WINDOW_NORMAL);
 
 
   // Check that error montonically decreases
@@ -91,30 +91,32 @@ int main(int argc, char** argv)
   for (size_t idx = 0UL; idx < 1e9; idx++)
   {
 
-    const double angle = (double)(idx % 5) * M_PI/5;
+    const double angle = 180 * (double)(idx % 5) * (M_PI) / 5.0;
     cv::Point2f src_center(f_img.cols/2.0F, f_img.rows/2.0F);
     cv::Mat rot_mat = cv::getRotationMatrix2D(src_center, angle, 1.0);
     cv::Mat dst;
     cv::warpAffine(f_img, dst, rot_mat, f_img.size());
 
     // Creat eigen mapping
-    Eigen::Map<Eigen::MatrixXf> map_img((float*)dst.data, dst.channels() * dst.rows, dst.cols);
-    Eigen::Map<Eigen::MatrixXf> trg_img((float*)f_img.data, f_img.channels() * f_img.rows, f_img.cols);
-    Eigen::MatrixXf out_img(map_img.rows(), map_img.cols());
+    Eigen::Map<Eigen::MatrixXf> input_img((float*)dst.data, dst.channels() * dst.rows, dst.cols);
+    Eigen::MatrixXf target_signal(1, 1);
+    Eigen::MatrixXf output_signal(1, 1);
+
+    target_signal(0) = std::exp(-angle * angle);
 
     // Forward activate
-    (*input) << map_img;
+    (*input) << input_img;
     for(const auto& layer : layers)
     {
       layer->forward();
     }
-    (*output) >> out_img;
+    (*output) >> output_signal;
 
     // Compute error and check
-    error += (trg_img - out_img).norm();
+    error += (target_signal - output_signal).norm();
 
-    // Set target
-    (*output) << trg_img;
+    // Set target_signal
+    (*output) << target_signal;
 
     // Backward propogated error
     for(const auto& layer : layers)
@@ -132,23 +134,24 @@ int main(int argc, char** argv)
         layer->update();
       }
 
+
       {
-        Eigen::Matrix<float, -1, -1, Eigen::RowMajor> ok = conv->getParameters().filters[0].kernel;
-        cv::Mat kernel_img_cv(15, 15, CV_32FC3, const_cast<float*>(ok.data()));
+        Eigen::Matrix<float, -1, -1, Eigen::ColMajor> ok = conv->getParameters().filters[0].kernel;
+        cv::Mat kernel_img_cv(10, 10, CV_32FC3, const_cast<float*>(ok.data()));
         cv::Mat kernel_img_cv_norm;
         cv::normalize(kernel_img_cv, kernel_img_cv_norm, 0, 1, cv::NORM_MINMAX, CV_32FC3);
         cv::imshow("Kernel-0", kernel_img_cv_norm);
       }
       {
-        Eigen::Matrix<float, -1, -1, Eigen::RowMajor> ok = conv->getParameters().filters[1].kernel;
-        cv::Mat kernel_img_cv(15, 15, CV_32FC3, const_cast<float*>(ok.data()));
+        Eigen::Matrix<float, -1, -1, Eigen::ColMajor> ok = conv->getParameters().filters[1].kernel;
+        cv::Mat kernel_img_cv(10, 10, CV_32FC3, const_cast<float*>(ok.data()));
         cv::Mat kernel_img_cv_norm;
         cv::normalize(kernel_img_cv, kernel_img_cv_norm, 0, 1, cv::NORM_MINMAX, CV_32FC3);
         cv::imshow("Kernel-1", kernel_img_cv_norm);
       }
       {
-        Eigen::Matrix<float, -1, -1, Eigen::RowMajor> ok = conv->getParameters().filters[2].kernel;
-        cv::Mat kernel_img_cv(15, 15, CV_32FC3, const_cast<float*>(ok.data()));
+        Eigen::Matrix<float, -1, -1, Eigen::ColMajor> ok = conv->getParameters().filters[2].kernel;
+        cv::Mat kernel_img_cv(10, 10, CV_32FC3, const_cast<float*>(ok.data()));
         cv::Mat kernel_img_cv_norm;
         cv::normalize(kernel_img_cv, kernel_img_cv_norm, 0, 1, cv::NORM_MINMAX, CV_32FC3);
         cv::imshow("Kernel-2", kernel_img_cv_norm);
@@ -159,9 +162,12 @@ int main(int argc, char** argv)
       error = 0;
     }
 
-    cv::Mat out_img_cv(128, 128, CV_32FC3, out_img.data());
-    cv::normalize(out_img_cv, out_img_cv, 0, 1, cv::NORM_MINMAX, CV_32FC3);
-    cv::imshow("Output", out_img_cv);
+    {
+      cv::Mat kernel_img_cv(conv->outputShape().height / 3, conv->outputShape().width, CV_32FC3, const_cast<float*>(fc->getInputBuffer().data()));
+      cv::Mat kernel_img_cv_norm;
+      cv::normalize(kernel_img_cv, kernel_img_cv_norm, 0, 1, cv::NORM_MINMAX, CV_32FC3);
+      cv::imshow("Conv Output", kernel_img_cv_norm);
+    }
     cv::waitKey(1);
   }
 
