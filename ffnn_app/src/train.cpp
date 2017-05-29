@@ -56,8 +56,8 @@ int main(int argc, char** argv)
   FFNN_ERROR(conv->inputShape());
 
   // Set optimizer (gradient descent)
-  conv->setOptimizer(boost::make_shared<ffnn::optimizer::GradientDescent<Conv>>(5e-10));
-  fc->setOptimizer(boost::make_shared<ffnn::optimizer::GradientDescent<FullyConnected>>(5e-10));
+  conv->setOptimizer(boost::make_shared<ffnn::optimizer::GradientDescent<Conv>>(5e-9));
+  fc->setOptimizer(boost::make_shared<ffnn::optimizer::GradientDescent<FullyConnected>>(5e-9));
 
   // Create network
   std::vector<Layer::Ptr> layers({input, conv, act, fc, /*act_out,*/ output});
@@ -72,9 +72,9 @@ int main(int argc, char** argv)
 
   // Intializer layers
   input->initialize();
-  conv->initialize(ND(0, 1.0/ DIM / DIM), ND(0, 1.0/ DIM / DIM));
+  conv->initialize(ND(0, 10.0/ DIM / DIM), ND(0, 10.0/ DIM / DIM));
   act->initialize();
-  fc->initialize(ND(0, 1.0 / DIM / DIM), ND(0, 1.0 / DIM / DIM));
+  fc->initialize(ND(0, 10.0 / DIM / DIM), ND(0, 10.0 / DIM / DIM));
   output->initialize();
 
   // Create windows for display grids
@@ -91,7 +91,7 @@ int main(int argc, char** argv)
   for (size_t idx = 0UL; idx < 1e9; idx++)
   {
 
-    const double angle = 180 * (double)(idx % 5) * (M_PI) / 5.0;
+    const double angle =  (180.0 / 4.0) * (double)(idx % 4) / 4.0;
     cv::Point2f src_center(f_img.cols/2.0F, f_img.rows/2.0F);
     cv::Mat rot_mat = cv::getRotationMatrix2D(src_center, angle, 1.0);
     cv::Mat dst;
@@ -102,7 +102,7 @@ int main(int argc, char** argv)
     Eigen::MatrixXf target_signal(1, 1);
     Eigen::MatrixXf output_signal(1, 1);
 
-    target_signal(0) = std::exp(-angle * angle);
+    target_signal(0) = static_cast<double>(idx % 4)/4.0;
 
     // Forward activate
     (*input) << input_img;
@@ -125,7 +125,7 @@ int main(int argc, char** argv)
     }
 
     // Trigget optimization
-    if (!(idx%5))
+    if (!(idx%10))
     {
       FFNN_INFO(error - prev_error);
 
@@ -133,7 +133,6 @@ int main(int argc, char** argv)
       {
         layer->update();
       }
-
 
       {
         Eigen::Matrix<float, -1, -1, Eigen::ColMajor> ok = conv->getParameters().filters[0].kernel;
