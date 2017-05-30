@@ -15,6 +15,12 @@
 
 namespace ffnn
 {
+/**
+ * @brief Saves a serializable object
+ * @param os  stl-compliant output stream
+ * @param object  serializable object
+ * @param version  version specifier
+ */
 template<typename SerializableType>
 inline void save(std::ostream& os,
                  const SerializableType& object,
@@ -25,6 +31,12 @@ inline void save(std::ostream& os,
   object.save(archive, version);
 }
 
+/**
+ * @brief Loads a serializable object
+ * @param is  stl-compliant input stream
+ * @param object  serializable object
+ * @param version  version specifier
+ */
 template<typename SerializableType>
 inline void load(std::istream& is,
                  SerializableType& object,
