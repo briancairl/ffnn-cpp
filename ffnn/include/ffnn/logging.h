@@ -15,10 +15,10 @@ namespace logging
 /// @defgroup UnicodeColorDefinitions
 /// @{
 const char* HEADER = "\033[95m";
-const char* BLUE = "\033[94m";
-const char* GREEN = "\033[92m";
+const char* DEBUG = "\033[94m";
+const char* INFO = "\033[92m";
 const char* WARN = "\033[93m";
-const char* DEEP = "\033[96m";
+const char* INTERNAL = "\033[96m";
 const char* FAIL = "\033[91m";
 const char* ENDC = "\033[0m";
 const char* BOLD = "\033[1m";
@@ -38,7 +38,7 @@ const char* UNDERLINE = "\033[4m";
  * @warning Will not log when <code>FFNN_NO_LOGGING</code> is defined
  */
 #define FFNN_INTERNAL_DEBUG_NAMED(name, msg)\
-{std::cout << FFNN_NAME_HEADER(name) << ffnn::logging::DEEP << msg << ffnn::logging::ENDC << std::endl;}
+{std::cout << FFNN_NAME_HEADER(name) << ffnn::logging::INTERNAL << msg << ffnn::logging::ENDC << std::endl;}
 #else
 #define FFNN_INTERNAL_DEBUG_NAMED(name, msg) (void(0))
 #endif
@@ -51,7 +51,7 @@ const char* UNDERLINE = "\033[4m";
  * @warning Will not log when <code>FFNN_NO_LOGGING</code> is defined
  */
 #define FFNN_DEBUG_NAMED(name, msg)\
-{std::cout << FFNN_NAME_HEADER(name) << ffnn::logging::BLUE << msg << ffnn::logging::ENDC << std::endl;}
+{std::cout << FFNN_NAME_HEADER(name) << ffnn::logging::DEBUG << msg << ffnn::logging::ENDC << std::endl;}
 
 /**
  * @brief Prints an named warning message
@@ -74,7 +74,7 @@ const char* UNDERLINE = "\033[4m";
  * @warning Will not log when <code>FFNN_NO_LOGGING</code> is defined
  */
 #define FFNN_INFO_NAMED(name, msg)\
-{std::cout << FFNN_NAME_HEADER(name) << ffnn::logging::GREEN << msg << ffnn::logging::ENDC << std::endl;}
+{std::cout << FFNN_NAME_HEADER(name) << ffnn::logging::INFO << msg << ffnn::logging::ENDC << std::endl;}
 
 #if FFNN_SUPRESS_ERROR_LOGGING
 #define FFNN_ERROR_NAMED(name, msg) (void(0))

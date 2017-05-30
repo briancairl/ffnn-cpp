@@ -11,6 +11,7 @@
 
 // FFNN (internal)
 #include <ffnn/layer/internal/shape.h>
+#include <ffnn/internal/traits.h>
 
 // FFNN
 #include <ffnn/layer/hidden.h>
@@ -180,8 +181,9 @@ private:
   typename Optimizer::Ptr opt_;
 
 public:
-  EIGEN_MAKE_ALIGNED_OPERATOR_NEW_IF(internal::is_alignable_128<WeightMatrixType>::value ||
-                                     internal::is_alignable_128<BiasVectorType>::value);
+  EIGEN_MAKE_ALIGNED_OPERATOR_NEW_IF(
+    ffnn::internal::traits::is_alignable_128<WeightMatrixType>::value ||
+    ffnn::internal::traits::is_alignable_128<BiasVectorType>::value);
 };
 }  // namespace layer
 }  // namespace ffnn

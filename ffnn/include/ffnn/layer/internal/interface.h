@@ -6,8 +6,8 @@
 #define FFNN_LAYER_INTERNAL_INTERFACE_H
 
 // FFNN (internal)
-#include <ffnn/internal/traits/serializable.h>
-#include <ffnn/internal/traits/unique.h>
+#include <ffnn/internal/serializable.h>
+#include <ffnn/internal/unique.h>
 #include <ffnn/internal/signature.h>
 #include <ffnn/layer/internal/shape.h>
 
@@ -25,7 +25,7 @@ namespace internal
  */
 template<typename ValueType>
 class Interface :
-  public traits::Unique
+  public ffnn::internal::Unique
 {
 public:
   /// Scalar type standardization
@@ -109,7 +109,7 @@ protected:
   void save(OutputArchive& ar, VersionType version) const
   {
     ffnn::io::signature::apply<Interface<ValueType>>(ar);
-    traits::Unique::save(ar, version);
+    ffnn::internal::Unique::save(ar, version);
 
     // Save flags
     ar & initialized_;
@@ -123,7 +123,7 @@ protected:
   void load(InputArchive& ar, VersionType version)
   {
     ffnn::io::signature::check<Interface<ValueType>>(ar);
-    traits::Unique::load(ar, version);
+    ffnn::internal::Unique::load(ar, version);
 
     // Load flags
     ar & initialized_;

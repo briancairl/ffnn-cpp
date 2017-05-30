@@ -12,6 +12,7 @@
 #include <ffnn/layer/internal/shape.h>
 
 // FFNN
+#include <ffnn/internal/traits.h>
 #include <ffnn/layer/hidden.h>
 #include <ffnn/neuron/neuron.h>
 #include <ffnn/optimizer/optimizer.h>
@@ -172,7 +173,7 @@ private:
   typename Optimizer::Ptr opt_;
 
 public:
-  EIGEN_MAKE_ALIGNED_OPERATOR_NEW_IF(internal::is_alignable_128<BiasVectorType>::value);
+  EIGEN_MAKE_ALIGNED_OPERATOR_NEW_IF(ffnn::internal::traits::is_alignable_128<BiasVectorType>::value);
 };
 }  // namespace layer
 }  // namespace ffnn

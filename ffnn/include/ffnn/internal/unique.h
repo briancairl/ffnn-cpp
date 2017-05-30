@@ -2,8 +2,8 @@
  * @author Brian Cairl
  * @date 2017
  */
-#ifndef FFNN_INTERNAL_TRAITS_UNIQUE_H
-#define FFNN_INTERNAL_TRAITS_UNIQUE_H
+#ifndef FFNN_INTERNAL_UNIQUE_H
+#define FFNN_INTERNAL_UNIQUE_H
 
 // C++ Standard Library
 #include <string>
@@ -14,12 +14,12 @@
 #include <boost/uuid/uuid_io.hpp>
 
 // FFNN (internal)
-#include <ffnn/internal/traits/serializable.h>
+#include <ffnn/internal/serializable.h>
 #include <ffnn/internal/signature.h>
 
 namespace ffnn
 {
-namespace traits
+namespace internal
 {
 /**
  * @brief An object with a unique ID
@@ -37,7 +37,7 @@ public:
     static boost::uuids::basic_random_generator<boost::mt19937> id_gen_;
 
     // Generate a new UUID
-    setID(boost::uuids::to_string(id_gen_()));
+    id_ = boost::uuids::to_string(id_gen_());
   }
 
   /**
@@ -49,17 +49,8 @@ public:
     return id_;
   }
 
-  /**
-   * @brief Sets an ID
-   * @param id  ID to set
-   */
-  inline void setID(const std::string& id)
-  {
-    id_ = id;
-  }
-
 protected:
-  FFNN_REGISTER_SERIALIZABLE();
+  FFNN_REGISTER_SERIALIZABLE(Unique);
 
   void save(OutputArchive& ar, VersionType) const
   {
@@ -77,6 +68,6 @@ private:
   /// UUID string associated with this class
   std::string id_;
 };
-}  // namespace traits
+}  // namespace internal
 }  // namespace ffnn
-#endif  // FFNN_INTERNAL_TRAITS_UNIQUE_H
+#endif  // FFNN_INTERNAL_UNIQUE_H

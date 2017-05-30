@@ -9,7 +9,7 @@
 #include <type_traits>
 
 // FFNN (internal)
-#include <ffnn/internal/traits/serializable.h>
+#include <ffnn/internal/serializable.h>
 #include <ffnn/internal/signature.h>
 
 // FFNN

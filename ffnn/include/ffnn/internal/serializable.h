@@ -2,8 +2,8 @@
  * @author Brian Cairl
  * @date 2017
  */
-#ifndef FFNN_INTERNAL_TRAITS_SERIALIZABLE_H
-#define FFNN_INTERNAL_TRAITS_SERIALIZABLE_H
+#ifndef FFNN_INTERNAL_SERIALIZABLE_H
+#define FFNN_INTERNAL_SERIALIZABLE_H
 
 // C++ Standard Library
 #include <iostream>
@@ -23,7 +23,7 @@ void load(std::istream& is,
           Serializable& object,
           const typename Serializable::VersionType version = 0);
 
-namespace traits
+namespace internal
 {
 /**
  * @brief An object which can be saved and loaded
@@ -50,9 +50,9 @@ public:
  * @warning Must be placed in the <code>protected</code> portion of a class definition
  */
 #define FFNN_REGISTER_SERIALIZABLE(object)\
-  typedef ::ffnn::traits::Serializable::VersionType VersionType;\
-  typedef ::ffnn::traits::Serializable::InputArchive InputArchive;\
-  typedef ::ffnn::traits::Serializable::OutputArchive OutputArchive;\
+  typedef ::ffnn::internal::Serializable::VersionType VersionType;\
+  typedef ::ffnn::internal::Serializable::InputArchive InputArchive;\
+  typedef ::ffnn::internal::Serializable::OutputArchive OutputArchive;\
   template<typename SerializableType>\
     friend void ::ffnn::save(std::ostream& os,\
                              const SerializableType& object,\
@@ -62,6 +62,6 @@ public:
                              SerializableType& object,\
                              const typename SerializableType::VersionType version);
 
-}  // namespace traits
+}  // namespace internal
 }  // namespace ffnn
-#endif  // FFNN_INTERNAL_TRAITS_SERIALIZABLE_H
+#endif  // FFNN_INTERNAL_SERIALIZABLE_H

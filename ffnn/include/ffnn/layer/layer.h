@@ -9,7 +9,7 @@
 #include <map>
 
 // FFNN (internal)
-#include <ffnn/internal/traits/serializable.h>
+#include <ffnn/internal/serializable.h>
 
 // FFNN
 #include <ffnn/config/global.h>

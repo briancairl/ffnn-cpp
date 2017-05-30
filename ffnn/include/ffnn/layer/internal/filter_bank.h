@@ -11,6 +11,7 @@
 
 // FFNN (internal)
 #include <ffnn/layer/internal/shape.h>
+#include <ffnn/internal/traits.h>
 #include <ffnn/layer/internal/interface.h>
 
 namespace ffnn
@@ -44,7 +45,7 @@ struct Filter
   // Index type standardization
   typedef typename KernelMatrixType::Index OffsetType;
 
-  EIGEN_MAKE_ALIGNED_OPERATOR_NEW_IF(internal::is_alignable_128<KernelMatrixType>::value);
+  EIGEN_MAKE_ALIGNED_OPERATOR_NEW_IF(ffnn::internal::traits::is_alignable_128<KernelMatrixType>::value);
 };
 
 template<typename ValueType,
