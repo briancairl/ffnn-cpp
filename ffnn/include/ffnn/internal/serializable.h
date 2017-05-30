@@ -7,6 +7,7 @@
 
 // C++ Standard Library
 #include <iostream>
+#include <type_traits>
 
 // FFNN
 #include <ffnn/config/global.h>
@@ -50,6 +51,7 @@ public:
  * @warning Must be placed in the <code>protected</code> portion of a class definition
  */
 #define FFNN_REGISTER_SERIALIZABLE(object)\
+  typedef std::true_type IsSerializable;\
   typedef ::ffnn::internal::Serializable::VersionType VersionType;\
   typedef ::ffnn::internal::Serializable::InputArchive InputArchive;\
   typedef ::ffnn::internal::Serializable::OutputArchive OutputArchive;\

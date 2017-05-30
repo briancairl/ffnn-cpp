@@ -20,6 +20,7 @@ inline void save(std::ostream& os,
                  const SerializableType& object,
                  const typename SerializableType::VersionType version = 0)
 {
+  // Save data
   typename SerializableType::OutputArchive archive(os);
   object.save(archive, version);
 }
