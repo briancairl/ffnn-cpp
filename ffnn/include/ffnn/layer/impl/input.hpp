@@ -37,7 +37,7 @@ bool Input<TARGS>::initialize()
                      "<" <<
                      Base::getID() <<
                      "> initialized as network input (net-in=" <<
-                     Base::outputShape().size() <<
+                     Base::getOutputShape().size() <<
                      ")");
     return true;
   }
@@ -52,7 +52,7 @@ Input<TARGS>::connectToForwardLayer(const Base& next, OffsetType offset)
   next_ptr_ = const_cast<ValueType*>(next.getInputBuffer().data());
 
   // Return next offset after assigning buffer segments
-  return this->outputShape().size();
+  return this->getOutputShape().size();
 }
 
 template<typename ValueType, FFNN_SIZE_TYPE NetworkInputsAtCompileTime>
@@ -60,7 +60,7 @@ template<typename NetworkInputType>
 void Input<TARGS>::operator<<(const NetworkInputType& input) const
 {
   // Check input data size
-  FFNN_ASSERT_MSG(input.size() == Base::outputShape().size(),
+  FFNN_ASSERT_MSG(input.size() == Base::getOutputShape().size(),
                   "Input data size does not match expected network input size.");
 
   // Copy input data to first network layer

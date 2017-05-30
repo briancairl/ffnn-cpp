@@ -47,7 +47,7 @@ bool Output<TARGS>::initialize()
   // Do basic initialization and connect last hidden layer
   if (Base::initialize())
   {
-    if (Base::connectInputLayers() != Base::inputShape().size())
+    if (Base::connectInputLayers() != Base::getInputShape().size())
     {
       // Error initializing
       Base::initialized_ = false;
@@ -57,7 +57,7 @@ bool Output<TARGS>::initialize()
       FFNN_DEBUG_NAMED("layer::Output",
                        "<" << Base::getID() <<
                        "> initialized as network output (net-out=" <<
-                       Base::inputShape().size() << ")");
+                       Base::getInputShape().size() << ")");
       return true;
     }
   }
@@ -77,7 +77,7 @@ template<typename NetworkOutputType>
 void Output<TARGS>::operator>>(NetworkOutputType& output)
 {
   // Check output data size
-  FFNN_ASSERT_MSG(output.size() == Base::inputShape().size(),
+  FFNN_ASSERT_MSG(output.size() == Base::getInputShape().size(),
                   "Output object size does not match expected network output size.");
 
   // Copy output data from last network layer
@@ -91,7 +91,7 @@ template<typename NetworkTargetType>
 void Output<TARGS>::operator<<(const NetworkTargetType& target)
 {
   // Check target data size
-  FFNN_ASSERT_MSG(target.size() == Base::inputShape().size(),
+  FFNN_ASSERT_MSG(target.size() == Base::getInputShape().size(),
                   "Target object size does not match expected network output size.");
 
   // Compute network error

@@ -178,7 +178,7 @@ bool LocalConvolution<TARGS>::forward()
     for (OffsetType jdx = 0, wdx = 0; jdx < output_volume_shape_.width; jdx++, wdx += filter_stride_.width)
     {
       // Get block dimensions
-      const auto& ris = parameters_[idx][jdx].inputShape();
+      const auto& ris = parameters_[idx][jdx].getInputShape();
 
       // Activate receptor
       parameters_[idx][jdx].forward(Base::input_.block(hdx, wdx, ris.height, ris.width));
@@ -209,7 +209,7 @@ bool LocalConvolution<TARGS>::backward()
     for (OffsetType jdx = 0, wdx = 0; jdx < output_volume_shape_.width; jdx++, wdx += filter_stride_.width)
     {
       // Get block dimensions
-      const auto& ris = parameters_[idx][jdx].inputShape();
+      const auto& ris = parameters_[idx][jdx].getInputShape();
 
       // Sum over all filters
       OffsetType kdx = 0;

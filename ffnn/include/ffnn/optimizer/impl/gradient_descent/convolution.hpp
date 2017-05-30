@@ -137,7 +137,7 @@ public:
     FFNN_ASSERT_MSG(layer.isInitialized(), "Layer to optimize is not initialized.");
 
     // Get block dimensions
-    const auto& ris = layer.parameters_.inputShape();
+    const auto& ris = layer.parameters_.getInputShape();
 
     // Reset weight delta
     for (OffsetType idx = 0, hdx = 0; idx < layer.output_volume_shape_.height; idx++, hdx += layer.filter_stride_.height)

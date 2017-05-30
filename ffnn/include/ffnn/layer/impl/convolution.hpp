@@ -165,7 +165,7 @@ bool Convolution<TARGS>::forward()
   }
 
   // Get block dimensions
-  const auto& ris = parameters_.inputShape();
+  const auto& ris = parameters_.getInputShape();
 
   // Compute outputs through volumes
   for (OffsetType idx = 0, hdx = 0; idx < output_volume_shape_.height; idx++, hdx += filter_stride_.height)
@@ -199,7 +199,7 @@ bool Convolution<TARGS>::backward()
   Base::backward_error_.setZero();
 
   // Get block dimensions
-  const auto& ris = parameters_.inputShape();
+  const auto& ris = parameters_.getInputShape();
 
   // Compute outputs through volumes
   for (OffsetType idx = 0, hdx = 0; idx < output_volume_shape_.height; idx++, hdx += filter_stride_.height)

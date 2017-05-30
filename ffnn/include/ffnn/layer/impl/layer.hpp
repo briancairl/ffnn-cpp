@@ -74,13 +74,13 @@ bool Layer<ValueType>::initialize()
   }
 
   // Allocate input/error buffers
-  if (Base::inputShape().size() > 0 && input_buffer_.empty() && backward_error_buffer_.empty())
+  if (Base::getInputShape().size() > 0 && input_buffer_.empty() && backward_error_buffer_.empty())
   {
     // Allocate input buffer
-    input_buffer_.resize(Base::inputShape().size(), 0);
+    input_buffer_.resize(Base::getInputShape().size(), 0);
 
     // Allocate backward error buffer
-    backward_error_buffer_.resize(Base::inputShape().size(), 0);
+    backward_error_buffer_.resize(Base::getInputShape().size(), 0);
   }
 
   // Set initialization flag
@@ -132,8 +132,15 @@ template<typename ValueType>
 void Layer<ValueType>::save(typename Layer<ValueType>::OutputArchive& ar,
                             typename Layer<ValueType>::VersionType version) const
 {
-  ffnn::io::signature::apply<Layer<ValueType>>(ar);
+  ffnn::io::signature::apply<Self>(ar);
   Base::save(ar, version);
+
+  // Save flags
+  ar & initialized_;
+
+  // Save dimensions
+  ar & input_shape_;
+  ar & output_shape_;
 
   // Save connection information
   SizeType layer_count = prev_.size();
@@ -150,8 +157,15 @@ template<typename ValueType>
 void Layer<ValueType>::load(typename Layer<ValueType>::InputArchive& ar,
                             typename Layer<ValueType>::VersionType version)
 {
-  ffnn::io::signature::check<Layer<ValueType>>(ar);
+  ffnn::io::signature::check<Self>(ar);
   Base::load(ar, version);
+
+  // Load flags
+  ar & initialized_;
+
+  // Load dimensions
+  ar & input_shape_;
+  ar & output_shape_;
 
   // Load connection information
   SizeType layer_count;
@@ -165,6 +179,8 @@ void Layer<ValueType>::load(typename Layer<ValueType>::InputArchive& ar,
     // Create connection with empty layer data (promise)
     prev_.emplace(id, typename Self::Ptr());
   }
+
+  setup_required_ = false;
   FFNN_DEBUG_NAMED("layer::Layer", "Loaded");
 }
 }  // namespace layer

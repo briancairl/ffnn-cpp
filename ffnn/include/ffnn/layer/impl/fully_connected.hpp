@@ -74,9 +74,9 @@ bool FullyConnected<TARGS>::initialize()
                    "<" <<
                    Base::getID() <<
                    "> initialized as (in=" <<
-                   Base::inputShape().size() <<
+                   Base::getInputShape().size() <<
                    ", out=" <<
-                   Base::outputShape().size() <<
+                   Base::getOutputShape().size() <<
                    ") [with 1 biasing input] (optimizer=" <<
                    opt_->name() <<
                    ")");
@@ -164,8 +164,8 @@ template<typename ValueType,
 void FullyConnected<TARGS>::reset()
 {
   // Zero out connection weights and biases with appropriate size
-  w_.setZero(Base::outputShape().size(), Base::inputShape().size());
-  b_.setZero(Base::outputShape().size(), 1);
+  w_.setZero(Base::getOutputShape().size(), Base::getInputShape().size());
+  b_.setZero(Base::getOutputShape().size(), 1);
 }
 
 template<typename ValueType,

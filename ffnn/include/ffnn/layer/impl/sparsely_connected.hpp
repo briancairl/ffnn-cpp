@@ -70,9 +70,9 @@ bool SparselyConnected<TARGS>::initialize()
                    "<" <<
                    Base::getID() <<
                    "> initialized as (in=" <<
-                   Base::inputShape().size() <<
+                   Base::getInputShape().size() <<
                    ", out=" <<
-                   Base::outputShape().size() <<
+                   Base::getOutputShape().size() <<
                    ") [with 1 biasing input] (optimizer=" <<
                    opt_->name() <<
                    ")");
@@ -96,9 +96,9 @@ bool SparselyConnected<TARGS>::initialize(const WeightDistribution& wd,
     if (Base::setupRequired())
     {
       // Build weight matrix
-      for (SizeType idx = 0; idx < Base::outputShape().size(); idx++)
+      for (SizeType idx = 0; idx < Base::getOutputShape().size(); idx++)
       {
-        for (SizeType jdx = 0; jdx < Base::inputShape().size(); jdx++)
+        for (SizeType jdx = 0; jdx < Base::getInputShape().size(); jdx++)
         {
           if (cd.cdf(cd.generate()) < connection_probability)
           {
@@ -172,8 +172,8 @@ template<typename ValueType,
 void SparselyConnected<TARGS>::reset()
 {
   // Zero out connection weights and biases with appropriate size
-  w_.resize(Base::outputShape().size(), Base::inputShape().size());
-  b_.setRandom(Base::outputShape().size(), 1);
+  w_.resize(Base::getOutputShape().size(), Base::getInputShape().size());
+  b_.setRandom(Base::getOutputShape().size(), 1);
 }
 
 template<typename ValueType,

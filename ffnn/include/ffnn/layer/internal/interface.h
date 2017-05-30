@@ -56,7 +56,7 @@ public:
   /**
    * @brief Returns the Interface input dimension oject
    */
-  inline const ShapeType& inputShape() const
+  inline const ShapeType& getInputShape() const
   {
     return input_shape_;
   }
@@ -64,7 +64,7 @@ public:
   /**
    * @brief Returns the Interface output dimension oject
    */
-  inline const ShapeType& outputShape() const
+  inline const ShapeType& getOutputShape() const
   {
     return output_shape_;
   }

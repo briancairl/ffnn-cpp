@@ -56,18 +56,18 @@ bool Activation<TARGS>::initialize()
   Base::output_shape_ = Base::input_shape_;
 
   // Initialize neurons
-  neurons_.resize(Base::outputShape().size());
+  neurons_.resize(Base::getOutputShape().size());
 
   FFNN_DEBUG_NAMED("layer::Activation",
                    "<" <<
                    Base::getID() <<
                    "> initialized as (in=" <<
-                   Base::inputShape().size() <<
+                   Base::getInputShape().size() <<
                    ", out=" <<
-                   Base::outputShape().size() <<
+                   Base::getOutputShape().size() <<
                    ")");
 
-  return Base::outputShape().size() == Base::inputShape().size();
+  return Base::getOutputShape().size() == Base::getInputShape().size();
 }
 
 template<typename ValueType,
@@ -77,7 +77,7 @@ template<typename ValueType,
 bool Activation<TARGS>::forward()
 {
   // Compute neuron outputs
-  for (SizeType idx = 0; idx < Base::inputShape().size(); idx++)
+  for (SizeType idx = 0; idx < Base::getInputShape().size(); idx++)
   {
     neurons_[idx](Base::input_(idx), Base::output_(idx));
   }
@@ -92,7 +92,7 @@ bool Activation<TARGS>::backward()
 {
   // Compute neuron derivatives
   Base::backward_error_.noalias() = Base::output_;
-  for (SizeType idx = 0; idx < Base::outputShape().size(); idx++)
+  for (SizeType idx = 0; idx < Base::getOutputShape().size(); idx++)
   {
     neurons_[idx].derivative(Base::input_(idx), Base::backward_error_(idx));
   }

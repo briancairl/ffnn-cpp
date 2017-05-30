@@ -8,12 +8,11 @@
 // C++ Standard Library
 #include <map>
 
-// FFNN (internal)
-#include <ffnn/internal/serializable.h>
-
 // FFNN
 #include <ffnn/config/global.h>
-#include <ffnn/layer/internal/interface.h>
+#include <ffnn/internal/serializable.h>
+#include <ffnn/internal/unique.h>
+#include <ffnn/layer/internal/shape.h>
 
 namespace ffnn
 {
@@ -24,7 +23,7 @@ namespace layer
  */
 template<typename ValueType>
 class Layer :
-  public internal::Interface<ValueType>
+  public internal::Unique
 {
 /// Connects Layer objects
 template<typename LayerType>
@@ -32,7 +31,7 @@ friend bool connect(const typename LayerType::Ptr& from,
                     const typename LayerType::Ptr& to);
 public:
   /// Base type alias
-  using Base = internal::Interface<ValueType>;
+  using Base = internal::Unique;
 
   /// Self type alias
   using Self = Layer<ValueType>;
@@ -47,16 +46,16 @@ public:
   typedef std::vector<ValueType, Eigen::aligned_allocator<ValueType>> BufferType;
 
   /// Scalar type standardization
-  typedef typename Base::ScalarType ScalarType;
+  typedef ValueType ScalarType;
 
   /// Size type standardization
-  typedef typename Base::SizeType SizeType;
+  typedef FFNN_SIZE_TYPE SizeType;
 
   /// Offset type standardization
-  typedef typename Base::OffsetType OffsetType;
+  typedef FFNN_OFFSET_TYPE OffsetType;
 
   /// Dimension type standardization
-  typedef typename Base::ShapeType ShapeType;
+  typedef Shape<SizeType> ShapeType;
 
   /**
    * @brief Setup constructor
@@ -72,34 +71,33 @@ public:
   virtual bool initialize();
 
   /**
+   * @brief Applies layer weight updates
+   * @retval true  if weight update succeeded
+   * @retval false  otherwise
+   */
+  virtual bool update() = 0;
+
+  /**
    * @brief Forward value propagation
    * @retval true  if forward-propagation succeeded
    * @retval false  otherwise
    */
-  virtual bool forward()
-  {
-    return true;
-  }
+  virtual bool forward() = 0;
 
   /**
    * @brief Backward value propagation
    * @retval true  if backward-propagation succeeded
    * @retval false  otherwise
    */
-  virtual bool backward()
-  {
-    return true;
-  }
+  virtual bool backward() = 0;
 
   /**
-   * @brief Applies layer weight updates
-   * @retval true  if weight update succeeded
-   * @retval false  otherwise
+   * @brief Maps outputs of this layer to inputs of the next
+   * @param next  a subsequent layer
+   * @param offset  offset index of a memory location in the input buffer of the next layer
+   * @retval <code>offset + output_shape_.size()</code>
    */
-  virtual bool update()
-  {
-    return true;
-  }
+  virtual OffsetType connectToForwardLayer(const Self& next, OffsetType offset) = 0;
 
   /**
    * @brief Exposes const reference to raw data input buffer
@@ -118,12 +116,48 @@ public:
   }
 
   /**
-   * @brief Maps outputs of this layer to inputs of the next
-   * @param next  a subsequent layer
-   * @param offset  offset index of a memory location in the input buffer of the next layer
-   * @retval <code>offset + output_shape_.size()</code>
+   * @brief Returns the Interface input dimension oject
    */
-  virtual OffsetType connectToForwardLayer(const Self& next, OffsetType offset) = 0;
+  inline const ShapeType& getInputShape() const
+  {
+    return input_shape_;
+  }
+
+  /**
+   * @brief Returns the Interface output dimension oject
+   */
+  inline const ShapeType& getOutputShape() const
+  {
+    return output_shape_;
+  }
+
+  /**
+   * @brief Returns the total number counted (evaluated) inputs
+   */
+  virtual SizeType evaluateInputSize() const
+  {
+    return input_shape_.size();
+  }
+
+  /**
+   * @brief Returns true if layer has been initialized
+   * @retval true  if layer is initialized
+   * @retval false  otherwise
+   */
+  virtual bool isInitialized() const
+  {
+    return initialized_;
+  }
+
+  /**
+   * @brief Returns true if portions of the interface must be setup
+   * @retval true  if reinitialization allowed
+   * @retval false  otherwise
+   */
+  bool setupRequired() const
+  {
+    return setup_required_;
+  }
 
 protected:
   // Register serialization material
@@ -155,6 +189,18 @@ protected:
 
   /// Raw bakward error value buffer
   BufferType backward_error_buffer_;
+
+  /// Total number of input connections
+  ShapeType input_shape_;
+
+  /// Total number of output connections
+  ShapeType output_shape_;
+
+  /// Flags which indicated that layer has been initialized
+  bool initialized_;
+
+  /// Flags which indicates that layer should be initialized normally
+  bool setup_required_;
 };
 }  // namespace layer
 }  // namespace ffnn
