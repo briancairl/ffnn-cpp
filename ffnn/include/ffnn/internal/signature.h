@@ -10,20 +10,33 @@
 #include <typeinfo>
 #include <typeindex>
 
+// GCC
+#ifdef __GNUC__
+#include <cxxabi.h>
+#endif
+
 namespace ffnn
 {
-namespace io
+namespace internal
 {
 namespace signature
 {
 /**
- * @brief Creates a type-signature for a SerializableType
- * @return type signature string
+ * @brief Generates a type signature string for a type
+ * @return type signature
+ * @note If using GCC, the signature will be human-readable.
  */
-template<typename SerializableType>
-const char* signature()
+template<typename Type>
+const std::string signature()
 {
-  return typeid(SerializableType).name();
+  const char* tag  = typeid(Type).name();
+#ifdef __GNUC__
+  int status;
+  const char* type = abi::__cxa_demangle(tag, 0, 0, &status);
+  return std::string(type);
+#else
+  return std::string(tag);
+#endif
 }
 
 /**

@@ -12,9 +12,11 @@
 
 TEST(TestLayerShape, ShapeAtCompileTime)
 {
-  const auto h = ffnn::layer::ShapeAtCompileTime<int, 1, 2, 3>::HeightAtCompileTime;
-  const auto w = ffnn::layer::ShapeAtCompileTime<int, 1, 2, 3>::WidthAtCompileTime;
-  const auto d = ffnn::layer::ShapeAtCompileTime<int, 1, 2, 3>::DepthAtCompileTime;
+  typedef ffnn::layer::ShapeAtCompileTime<int, 1, 2, 3> TestShape;
+
+  const auto h = TestShape::HeightAtCompileTime;
+  const auto w = TestShape::WidthAtCompileTime;
+  const auto d = TestShape::DepthAtCompileTime;
   EXPECT_EQ(h, 1);
   EXPECT_EQ(w, 2);
   EXPECT_EQ(d, 3);
