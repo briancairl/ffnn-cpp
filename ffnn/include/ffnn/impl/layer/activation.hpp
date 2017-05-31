@@ -15,12 +15,12 @@
 #include <ffnn/optimizer/none.h>
 #include <ffnn/internal/signature.h>
 
+#define TARGS ValueType, NeuronType, SizeAtCompileTime, _HiddenLayerShape
+
 namespace ffnn
 {
 namespace layer
 {
-#define TARGS ValueType, NeuronType, SizeAtCompileTime, _HiddenLayerShape
-
 template<typename ValueType,
          typename NeuronType,
          FFNN_SIZE_TYPE SizeAtCompileTime,

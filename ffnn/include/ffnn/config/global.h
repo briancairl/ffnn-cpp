@@ -72,4 +72,10 @@
 #include <Eigen/Core>
 #include <Eigen/Dense>
 #include <Eigen/Sparse>
+
+namespace ffnn
+{
+  typedef FFNN_SIZE_TYPE size_type;
+  typedef FFNN_OFFSET_TYPE offset_type;
+}
 #endif  // FFNN_GLOBAL_H

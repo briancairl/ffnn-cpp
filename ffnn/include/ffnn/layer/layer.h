@@ -7,12 +7,13 @@
 
 // C++ Standard Library
 #include <map>
+#include <type_traits>
 
 // FFNN
 #include <ffnn/config/global.h>
 #include <ffnn/internal/serializable.h>
 #include <ffnn/internal/unique.h>
-#include <ffnn/layer/internal/shape.h>
+#include <ffnn/layer/shape.h>
 
 namespace ffnn
 {
@@ -42,20 +43,24 @@ public:
   /// Constant shared resource standardization
   typedef boost::shared_ptr<const Self> ConstPtr;
 
-  /// Buffer type standardization
-  typedef std::vector<ValueType, Eigen::aligned_allocator<ValueType>> BufferType;
-
   /// Scalar type standardization
   typedef ValueType ScalarType;
 
   /// Size type standardization
-  typedef FFNN_SIZE_TYPE SizeType;
+  typedef ffnn::size_type SizeType;
 
   /// Offset type standardization
-  typedef FFNN_OFFSET_TYPE OffsetType;
+  typedef ffnn::offset_type OffsetType;
 
   /// Dimension type standardization
   typedef Shape<SizeType> ShapeType;
+
+  /// Buffer type standardization
+  typedef std::conditional<
+    std::is_floating_point<ValueType>::value,
+    std::vector<ValueType, Eigen::aligned_allocator<ValueType>>,
+    std::vector<ValueType>,
+  >::type BufferType;
 
   /**
    * @brief Setup constructor
@@ -187,7 +192,7 @@ protected:
   /// Raw input value buffer
   BufferType input_buffer_;
 
-  /// Raw bakward error value buffer
+  /// Raw backward error value buffer
   BufferType backward_error_buffer_;
 
   /// Total number of input connections

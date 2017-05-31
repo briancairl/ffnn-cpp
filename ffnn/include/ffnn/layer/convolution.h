@@ -9,94 +9,171 @@
 #include "boost/multi_array.hpp"
 
 // FFNN Layer
+#include <ffnn/distribution/distribution.h>
+#include <ffnn/distribution/normal.h>
 #include <ffnn/layer/layer.h>
 #include <ffnn/layer/hidden.h>
-#include <ffnn/layer/convolution_defs.h>
-#include <ffnn/layer/convolution_volume.h>
-
-// FFNN Optimization
 #include <ffnn/optimizer/fwd.h>
 #include <ffnn/optimizer/optimizer.h>
+#include <ffnn/layer/convolution/defs.h>
+#include <ffnn/layer/convolution/filter.h>
 
 namespace ffnn
 {
 namespace layer
 {
-#define TARGS\
-  ValueType,\
-  HeightAtCompileTime,\
-  WidthAtCompileTime,\
-  DepthAtCompileTime,\
-  FilterHeightAtCompileTime,\
-  FilterWidthAtCompileTime,\
-  FilterCountAtCompileTime,\
-  StrideAtCompileTime,\
-  Mode,\
-  _HiddenLayerShape
-
 /**
  * @brief A convolution layer
  */
 template <typename ValueType,
-          FFNN_SIZE_TYPE HeightAtCompileTime = Eigen::Dynamic,
-          FFNN_SIZE_TYPE WidthAtCompileTime = Eigen::Dynamic,
-          FFNN_SIZE_TYPE DepthAtCompileTime = Eigen::Dynamic,
-          FFNN_SIZE_TYPE FilterHeightAtCompileTime = Eigen::Dynamic,
-          FFNN_SIZE_TYPE FilterWidthAtCompileTime = Eigen::Dynamic,
-          FFNN_SIZE_TYPE FilterCountAtCompileTime = Eigen::Dynamic,
-          FFNN_SIZE_TYPE StrideAtCompileTime = 1,
+          ffnn::size_type HeightAtCompileTime = Eigen::Dynamic,
+          ffnn::size_type WidthAtCompileTime = Eigen::Dynamic,
+          ffnn::size_type DepthAtCompileTime = Eigen::Dynamic,
+          ffnn::size_type FilterHeightAtCompileTime = Eigen::Dynamic,
+          ffnn::size_type FilterWidthAtCompileTime = Eigen::Dynamic,
+          ffnn::size_type FilterDepthAtCompileTime = Eigen::Dynamic,
+          ffnn::size_type StrideAtCompileTime = 1,
           EmbeddingMode Mode = ColEmbedding,
           typename _HiddenLayerShape =
             hidden_layer_shape<
-              embed_dimension<Mode, ColEmbedding>(HeightAtCompileTime, DepthAtCompileTime),
-              embed_dimension<Mode, RowEmbedding>(WidthAtCompileTime,  DepthAtCompileTime),
-              embed_dimension<Mode, ColEmbedding>(output_dimension(HeightAtCompileTime, FilterHeightAtCompileTime, StrideAtCompileTime), FilterCountAtCompileTime),
-              embed_dimension<Mode, RowEmbedding>(output_dimension(WidthAtCompileTime,  FilterWidthAtCompileTime,  StrideAtCompileTime), FilterCountAtCompileTime)>>
+              convolution::embed_dimension<Mode, ColEmbedding>(HeightAtCompileTime, DepthAtCompileTime),
+              convolution::embed_dimension<Mode, RowEmbedding>(WidthAtCompileTime,  DepthAtCompileTime),
+              convolution::embed_dimension<Mode, ColEmbedding>(convolution::output_dimension(HeightAtCompileTime, FilterHeightAtCompileTime, StrideAtCompileTime), FilterDepthAtCompileTime),
+              convolution::embed_dimension<Mode, RowEmbedding>(convolution::output_dimension(WidthAtCompileTime,  FilterWidthAtCompileTime,  StrideAtCompileTime), FilterDepthAtCompileTime)>>
 class Convolution :
   public Hidden<ValueType, _HiddenLayerShape>
 {
 public:
   /// Base type alias
-  using Base = Hidden<ValueType, _HiddenLayerShape>;
+  using BaseType = Hidden<ValueType, _HiddenLayerShape>;
 
   /// Self type alias
-  using Self = Convolution<TARGS>;
+  using SelfType = Convolution<ValueType,
+                               HeightAtCompileTime,
+                               WidthAtCompileTime,
+                               DepthAtCompileTime,
+                               FilterHeightAtCompileTime,
+                               FilterWidthAtCompileTime,
+                               FilterDepthAtCompileTime,
+                               StrideAtCompileTime,
+                               Mode,
+                               _HiddenLayerShape>;
 
   /// Scalar type standardization
-  typedef typename Base::ScalarType ScalarType;
+  typedef typename BaseType::ScalarType ScalarType;
 
   /// Size type standardization
-  typedef typename Base::SizeType SizeType;
+  typedef typename BaseType::SizeType SizeType;
 
   /// Offset type standardization
-  typedef typename Base::OffsetType OffsetType;
+  typedef typename BaseType::OffsetType OffsetType;
 
   /// Dimension type standardization
-  typedef typename Base::ShapeType ShapeType;
+  typedef typename BaseType::ShapeType ShapeType;
 
   /// Receptive-volume type standardization
-  typedef ConvolutionVolume<ValueType,
-                            FilterHeightAtCompileTime,
-                            FilterWidthAtCompileTime,
-                            DepthAtCompileTime,
-                            FilterCountAtCompileTime,
-                            Mode> ParametersType;
+  typedef Filter<ValueType,
+                 convolution::embed_dimension<Mode, ColEmbedding>(FilterHeightAtCompileTime, DepthAtCompileTime),
+                 convolution::embed_dimension<Mode, RowEmbedding>(FilterWidthAtCompileTime,  DepthAtCompileTime),
+                 (Mode == ColEmbedding) ? Eigen::ColMajor : Eigen::RowMajor>
+                 FilterType;
 
-  /// Forward mapping bank standardization
+  /// 2D-value mapping standardization
   typedef boost::multi_array<ValueType*, 2> ForwardMapType;
 
   /// Layer optimization type standardization
-  typedef optimizer::Optimizer<Self> Optimizer;
+  typedef optimizer::Optimizer<SelfType> Optimizer;
+
+  /// Dsitribution standardization
+  typedef distribution::Distribution<ScalarType> Distribution;
+
+  /// Layer configuration struct
+  class Configuration
+  {
+  public:
+    friend SelfType;
+
+    Configuration() :
+      input_shape_(HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime),
+      filter_shape_(FilterHeightAtCompileTime, FilterWidthAtCompileTime, FilterDepthAtCompileTime),
+      parameter_dist_(boost::make_shared<typename distribution::StandardNormal<SelfType>>())
+      opt_(boost::make_shared<typename optimizer::None<SelfType>>())
+    {
+      /// Set defaults shape options
+      setShapeOptions(input_shape_, filter_shape_, 1)
+    }
+
+    inline Configuration& setOptimizer(const typename Optimizer::Ptr& opt)
+    {
+      opt_ = opt;
+      return *this;
+    }
+
+    inline Configuration& setParameterDistribution(const typename Distribution::Ptr& opt)
+    {
+      opt_ = opt;
+      return *this;
+    }
+
+    inline Configuration& setShapeOptions(const ShapeType& input_shape,
+                                          const ShapeType& filter_shape,
+                                          const SizeType stride)
+    {
+      // Set layer input shape
+      input_shape_ = input_shape;
+
+      // Setup output shape before depth embdedding
+      const SizeType h_proto = convolution::output_dimension(input_shape.height, filter_shape.height, stride);
+      const SizeType w_proto = convolution::output_dimension(input_shape.width, filter_shape.width, stride);
+
+      // Set depth-embedded output shape
+      output_shape_.width  = convolution::embed_dimension<Mode, ColEmbedding>(h_proto, filter_shape.depth);
+      output_shape_.height = convolution::embed_dimension<Mode, RowEmbedding>(w_proto, filter_shape.depth);
+      output_shape_.depth  = 1;
+      return *this;
+    }
+
+    inline Configuration& setFilterOptions(const ShapeType& shape, SizeType stride = 1)
+    {
+      return *this;
+    }
+
+  private:
+    /// Shape of layer input
+    ShapeType input_shape_;
+
+    /// Shape of layer output
+    ShapeType output_shape_;
+
+    /// Shape of receptive fields
+    ShapeType filter_shape_;
+
+    /// Stride between receptive fields
+    ShapeType stride_shape_;
+
+    /// Embdedded shape of layer input
+    ShapeType embedded_input_shape_;
+
+    /// Embdedded shape of layer output
+    ShapeType embedded_output_shape_;
+
+    /**
+     * @brief Distribution of initializing layer parameters
+     */
+    typename Distribution::Ptr parameter_dist_;
+
+    /**
+     * @brief Weight optimization resource
+     * @note  This will be the <code>optimizer::None</code> type by default
+     * @see   setOptimizer
+     */
+    typename Optimizer::Ptr opt_;
+  };
 
   /**
    * @brief Setup constructor
    */
-  explicit
-  Convolution(const ShapeType& input_shape = ShapeType(HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime),
-              const SizeType& filter_height = FilterHeightAtCompileTime,
-              const SizeType& filter_width = FilterWidthAtCompileTime,
-              const SizeType& filter_count = FilterCountAtCompileTime,
-              const SizeType& filter_stride = StrideAtCompileTime);
+  explicit Convolution(const Configuration& config = Configuration());
   virtual ~Convolution();
 
   /**
@@ -108,19 +185,6 @@ public:
    *          but weights and biases will be zero
    */
   bool initialize();
-
-  /**
-   * @brief Initialize layer weights and biases according to particular distributions
-   * @param wd  distribution to sample for connection weights
-   * @param bd  distribution to sample for biases
-   * @retval true  if layer was initialized successfully
-   * @retval false otherwise
-   *
-   * @warning If layer is a loaded instance, this method will initialize layer sizings
-   *          but weights will not be reset according to the given distributions
-   */
-  template<typename WeightDistribution, typename BiasDistribution>
-  bool initialize(const WeightDistribution& wd, const BiasDistribution& bd);
 
   /**
    * @brief Performs forward value propagation
@@ -148,14 +212,6 @@ public:
    */
   bool update();
 
-  /**
-   * @brief Sets an optimizer used update network weights during back-propagation
-   * @param opt  optimizer to set
-   * @warning <code>backward</code> and <code>update</code> methods are expected to throw if an
-   *          optimizer has not been set explicitly
-   */
-  void setOptimizer(typename Optimizer::Ptr opt);
-
   inline const ParametersType& getParameters() const
   {
     return parameters_;
@@ -179,31 +235,23 @@ private:
    */
   void reset();
 
+  /// User layer configurations
+  Configuration config_;
+
+  /// Shape of the ouput with no depth-embedding
+  ShapeType input_volume_shape_;
+
+  /// Shape of the ouput with no depth-embedding
+  ShapeType output_volume_shape_;
+
   /// Layer configuration parameters
   ParametersType parameters_;
 
+  /// Forward error mapping grid
   ForwardMapType forward_error_mappings_;
 
+  /// Output value mapping grid
   ForwardMapType output_mappings_;
-
-  /// "True" shape of the ouput with no depth-embedding
-  ShapeType input_volume_shape_;
-
-  /// "True" shape of the ouput with no depth-embedding
-  ShapeType output_volume_shape_;
-
-  /// Shape of receptive fields
-  ShapeType filter_shape_;
-
-  /// Stride between receptive fields
-  ShapeType filter_stride_;
-
-  /**
-   * @brief Weight optimization resource
-   * @note  This will be the <code>optimizer::None</code> type by default
-   * @see   setOptimizer
-   */
-  typename Optimizer::Ptr opt_;
 
   /**
    * @brief Maps outputs of this layer to inputs of the next
@@ -217,8 +265,5 @@ private:
 }  // namespace ffnn
 
 /// FFNN (implementation)
-#include <ffnn/layer/impl/convolution.hpp>
-
-// Cleanup definitions
-#undef TARGS
+#include <ffnn/impl/layer/convolution.hpp>
 #endif  // FFNN_LAYER_CONVOLUTION_H

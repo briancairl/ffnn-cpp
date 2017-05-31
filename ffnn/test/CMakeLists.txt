@@ -32,7 +32,15 @@ target_link_libraries(test_layer_local_convolution
   ${GTEST_LIBRARIES}
 )
 
-
+catkin_add_gtest(test_layer_shape
+  test_layer_shape.cpp
+)
+target_link_libraries(test_layer_shape
+  ${Boost_LIBRARIES}
+  ${catkin_LIBRARIES}
+  ${EIGEN_LIBRARIES}
+  ${GTEST_LIBRARIES}
+)
 
 #-------------------------------------------------------------
 # IO
@@ -40,8 +48,8 @@ target_link_libraries(test_layer_local_convolution
 
 ##############################################################
 # Tests:
-# 	- Save
-# 	- Load
+#   - Save
+#   - Load
 #   - layer::Input
 #   - layer::Output
 #   - layer::FullyConnected
@@ -59,8 +67,8 @@ target_link_libraries(test_layer_fully_connected_io
 
 ##############################################################
 # Tests:
-# 	- Save
-# 	- Load
+#   - Save
+#   - Load
 #   - layer::Input
 #   - layer::Output
 #   - layer::SparselyConnected

@@ -16,12 +16,20 @@ namespace io
 {
 namespace signature
 {
+/**
+ * @brief Creates a type-signature for a SerializableType
+ * @return type signature string
+ */
 template<typename SerializableType>
 const char* signature()
 {
   return typeid(SerializableType).name();
 }
 
+/**
+ * @brief Apply type signature to an archive
+ * @param[in,out] archive  output archive
+ */
 template<typename SerializableType, typename Archive>
 void apply(Archive& archive)
 {
@@ -32,6 +40,10 @@ void apply(Archive& archive)
   archive & signature;
 }
 
+/**
+ * @brief Checks a type signature read from an archive
+ * @param[in,out] archive  input archive
+ */
 template<typename SerializableType, typename Archive>
 void check(Archive& archive)
 {
