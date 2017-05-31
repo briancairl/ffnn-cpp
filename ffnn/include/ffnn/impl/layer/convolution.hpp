@@ -31,40 +31,28 @@ namespace ffnn
 namespace layer
 {
 template<typename ValueType,
-         ffnn::size_type HeightAtCompileTime,
-         ffnn::size_type WidthAtCompileTime,
-         ffnn::size_type DepthAtCompileTime,
-         ffnn::size_type FilterHeightAtCompileTime,
-         ffnn::size_type FilterWidthAtCompileTime,
-         ffnn::size_type FilterDepthAtCompileTime,
-         ffnn::size_type StrideAtCompileTime,
+         size_type HeightAtCompileTime,
+         size_type WidthAtCompileTime,
+         size_type DepthAtCompileTime,
+         size_type FilterHeightAtCompileTime,
+         size_type FilterWidthAtCompileTime,
+         size_type FilterDepthAtCompileTime,
+         size_type StrideAtCompileTime,
          EmbeddingMode Mode,
          typename _HiddenLayerShape>
 Convolution<TARGS>::
 Convolution(const Configuration& config) :
   Base(config.embedded_input_shape_, config.embedded_output_shape_)
-  Base(ShapeType(convolution::embed_dimension<Mode, ColEmbedding>(input_shape.height, input_shape.depth),
-                 convolution::embed_dimension<Mode, RowEmbedding>(input_shape.width, input_shape.depth)),
-       ShapeType(convolution::embed_dimension<Mode, ColEmbedding>(convolution::output_dimension(input_shape.height, filter_shape.height, stride), filter_shape.depth),
-                 convolution::embed_dimension<Mode, RowEmbedding>(convolution::output_dimension(input_shape.width, filter_shape.width, stride), filter_shape.depth))),
-  input_volume_shape_(input_shape),
-  output_volume_shape_(convolution::output_dimension(input_shape.height, filter_shape.height, stride),
-                       convolution::output_dimension(input_shape.width, filter_shape.width, stride),
-                       filter_shape.depth),
-  filter_shape_(convolution::embed_dimension<Mode, ColEmbedding>(filter_shape.height, input_shape.depth),
-                convolution::embed_dimension<Mode, RowEmbedding>(filter_shape.width,  input_shape.depth)),
-  stride_(convolution::embed_dimension<Mode, ColEmbedding>(stride, input_shape.depth),
-          convolution::embed_dimension<Mode, RowEmbedding>(stride, input_shape.depth))
 {}
 
 template<typename ValueType,
-         ffnn::size_type HeightAtCompileTime,
-         ffnn::size_type WidthAtCompileTime,
-         ffnn::size_type DepthAtCompileTime,
-         ffnn::size_type FilterHeightAtCompileTime,
-         ffnn::size_type FilterWidthAtCompileTime,
-         ffnn::size_type FilterDepthAtCompileTime,
-         ffnn::size_type StrideAtCompileTime,
+         size_type HeightAtCompileTime,
+         size_type WidthAtCompileTime,
+         size_type DepthAtCompileTime,
+         size_type FilterHeightAtCompileTime,
+         size_type FilterWidthAtCompileTime,
+         size_type FilterDepthAtCompileTime,
+         size_type StrideAtCompileTime,
          EmbeddingMode Mode,
          typename _HiddenLayerShape>
 Convolution<TARGS>::~Convolution()
@@ -73,13 +61,13 @@ Convolution<TARGS>::~Convolution()
 }
 
 template<typename ValueType,
-         ffnn::size_type HeightAtCompileTime,
-         ffnn::size_type WidthAtCompileTime,
-         ffnn::size_type DepthAtCompileTime,
-         ffnn::size_type FilterHeightAtCompileTime,
-         ffnn::size_type FilterWidthAtCompileTime,
-         ffnn::size_type FilterDepthAtCompileTime,
-         ffnn::size_type StrideAtCompileTime,
+         size_type HeightAtCompileTime,
+         size_type WidthAtCompileTime,
+         size_type DepthAtCompileTime,
+         size_type FilterHeightAtCompileTime,
+         size_type FilterWidthAtCompileTime,
+         size_type FilterDepthAtCompileTime,
+         size_type StrideAtCompileTime,
          EmbeddingMode Mode,
          typename _HiddenLayerShape>
 bool Convolution<TARGS>::initialize()
@@ -125,13 +113,13 @@ bool Convolution<TARGS>::initialize()
 }
 
 template<typename ValueType,
-         ffnn::size_type HeightAtCompileTime,
-         ffnn::size_type WidthAtCompileTime,
-         ffnn::size_type DepthAtCompileTime,
-         ffnn::size_type FilterHeightAtCompileTime,
-         ffnn::size_type FilterWidthAtCompileTime,
-         ffnn::size_type FilterDepthAtCompileTime,
-         ffnn::size_type StrideAtCompileTime,
+         size_type HeightAtCompileTime,
+         size_type WidthAtCompileTime,
+         size_type DepthAtCompileTime,
+         size_type FilterHeightAtCompileTime,
+         size_type FilterWidthAtCompileTime,
+         size_type FilterDepthAtCompileTime,
+         size_type StrideAtCompileTime,
          EmbeddingMode Mode,
          typename _HiddenLayerShape>
 template<typename WeightDistribution,
@@ -156,13 +144,13 @@ bool  Convolution<TARGS>::initialize(const WeightDistribution& wd, const BiasDis
 }
 
 template<typename ValueType,
-         ffnn::size_type HeightAtCompileTime,
-         ffnn::size_type WidthAtCompileTime,
-         ffnn::size_type DepthAtCompileTime,
-         ffnn::size_type FilterHeightAtCompileTime,
-         ffnn::size_type FilterWidthAtCompileTime,
-         ffnn::size_type FilterDepthAtCompileTime,
-         ffnn::size_type StrideAtCompileTime,
+         size_type HeightAtCompileTime,
+         size_type WidthAtCompileTime,
+         size_type DepthAtCompileTime,
+         size_type FilterHeightAtCompileTime,
+         size_type FilterWidthAtCompileTime,
+         size_type FilterDepthAtCompileTime,
+         size_type StrideAtCompileTime,
          EmbeddingMode Mode,
          typename _HiddenLayerShape>
 bool Convolution<TARGS>::forward()
@@ -176,9 +164,9 @@ bool Convolution<TARGS>::forward()
   const auto& ris = parameters_.getInputShape();
 
   // Compute outputs through volumes
-  for (OffsetType idx = 0, hdx = 0; idx < output_volume_shape_.height; idx++, hdx += stride_.height)
+  for (offset_type idx = 0, hdx = 0; idx < output_volume_shape_.height; idx++, hdx += stride_.height)
   {
-    for (OffsetType jdx = 0, wdx = 0; jdx < output_volume_shape_.width; jdx++, wdx += stride_.width)
+    for (offset_type jdx = 0, wdx = 0; jdx < output_volume_shape_.width; jdx++, wdx += stride_.width)
     {
       // Set output pointer
       parameters_.setOutputMapping(output_mappings_[idx][jdx]);
@@ -191,13 +179,13 @@ bool Convolution<TARGS>::forward()
 }
 
 template<typename ValueType,
-         ffnn::size_type HeightAtCompileTime,
-         ffnn::size_type WidthAtCompileTime,
-         ffnn::size_type DepthAtCompileTime,
-         ffnn::size_type FilterHeightAtCompileTime,
-         ffnn::size_type FilterWidthAtCompileTime,
-         ffnn::size_type FilterDepthAtCompileTime,
-         ffnn::size_type StrideAtCompileTime,
+         size_type HeightAtCompileTime,
+         size_type WidthAtCompileTime,
+         size_type DepthAtCompileTime,
+         size_type FilterHeightAtCompileTime,
+         size_type FilterWidthAtCompileTime,
+         size_type FilterDepthAtCompileTime,
+         size_type StrideAtCompileTime,
          EmbeddingMode Mode,
          typename _HiddenLayerShape>
 bool Convolution<TARGS>::backward()
@@ -210,12 +198,12 @@ bool Convolution<TARGS>::backward()
   const auto& ris = parameters_.getInputShape();
 
   // Compute outputs through volumes
-  for (OffsetType idx = 0, hdx = 0; idx < output_volume_shape_.height; idx++, hdx += stride_.height)
+  for (offset_type idx = 0, hdx = 0; idx < output_volume_shape_.height; idx++, hdx += stride_.height)
   {
-    for (OffsetType jdx = 0, wdx = 0; jdx < output_volume_shape_.width; jdx++, wdx += stride_.width)
+    for (offset_type jdx = 0, wdx = 0; jdx < output_volume_shape_.width; jdx++, wdx += stride_.width)
     {
       // Sum over all filters
-      OffsetType kdx = 0;
+      offset_type kdx = 0;
       for (const auto& filter : parameters_.filters)
       {
         BaseType::backward_error_.block(hdx, wdx, ris.height, ris.width) +=
@@ -229,13 +217,13 @@ bool Convolution<TARGS>::backward()
 }
 
 template<typename ValueType,
-         ffnn::size_type HeightAtCompileTime,
-         ffnn::size_type WidthAtCompileTime,
-         ffnn::size_type DepthAtCompileTime,
-         ffnn::size_type FilterHeightAtCompileTime,
-         ffnn::size_type FilterWidthAtCompileTime,
-         ffnn::size_type FilterDepthAtCompileTime,
-         ffnn::size_type StrideAtCompileTime,
+         size_type HeightAtCompileTime,
+         size_type WidthAtCompileTime,
+         size_type DepthAtCompileTime,
+         size_type FilterHeightAtCompileTime,
+         size_type FilterWidthAtCompileTime,
+         size_type FilterDepthAtCompileTime,
+         size_type StrideAtCompileTime,
          EmbeddingMode Mode,
          typename _HiddenLayerShape>
 bool Convolution<TARGS>::update()
@@ -245,13 +233,13 @@ bool Convolution<TARGS>::update()
 }
 
 template<typename ValueType,
-         ffnn::size_type HeightAtCompileTime,
-         ffnn::size_type WidthAtCompileTime,
-         ffnn::size_type DepthAtCompileTime,
-         ffnn::size_type FilterHeightAtCompileTime,
-         ffnn::size_type FilterWidthAtCompileTime,
-         ffnn::size_type FilterDepthAtCompileTime,
-         ffnn::size_type StrideAtCompileTime,
+         size_type HeightAtCompileTime,
+         size_type WidthAtCompileTime,
+         size_type DepthAtCompileTime,
+         size_type FilterHeightAtCompileTime,
+         size_type FilterWidthAtCompileTime,
+         size_type FilterDepthAtCompileTime,
+         size_type StrideAtCompileTime,
          EmbeddingMode Mode,
          typename _HiddenLayerShape>
 void Convolution<TARGS>::reset()
@@ -261,13 +249,13 @@ void Convolution<TARGS>::reset()
 }
 
 template<typename ValueType,
-         ffnn::size_type HeightAtCompileTime,
-         ffnn::size_type WidthAtCompileTime,
-         ffnn::size_type DepthAtCompileTime,
-         ffnn::size_type FilterHeightAtCompileTime,
-         ffnn::size_type FilterWidthAtCompileTime,
-         ffnn::size_type FilterDepthAtCompileTime,
-         ffnn::size_type StrideAtCompileTime,
+         size_type HeightAtCompileTime,
+         size_type WidthAtCompileTime,
+         size_type DepthAtCompileTime,
+         size_type FilterHeightAtCompileTime,
+         size_type FilterWidthAtCompileTime,
+         size_type FilterDepthAtCompileTime,
+         size_type StrideAtCompileTime,
          EmbeddingMode Mode,
          typename _HiddenLayerShape>
 void Convolution<TARGS>::setOptimizer(typename Optimizer::Ptr opt)
@@ -277,21 +265,19 @@ void Convolution<TARGS>::setOptimizer(typename Optimizer::Ptr opt)
 }
 
 template<typename ValueType,
-         ffnn::size_type HeightAtCompileTime,
-         ffnn::size_type WidthAtCompileTime,
-         ffnn::size_type DepthAtCompileTime,
-         ffnn::size_type FilterHeightAtCompileTime,
-         ffnn::size_type FilterWidthAtCompileTime,
-         ffnn::size_type FilterDepthAtCompileTime,
-         ffnn::size_type StrideAtCompileTime,
+         size_type HeightAtCompileTime,
+         size_type WidthAtCompileTime,
+         size_type DepthAtCompileTime,
+         size_type FilterHeightAtCompileTime,
+         size_type FilterWidthAtCompileTime,
+         size_type FilterDepthAtCompileTime,
+         size_type StrideAtCompileTime,
          EmbeddingMode Mode,
          typename _HiddenLayerShape>
-typename
-Convolution<TARGS>::OffsetType
-Convolution<TARGS>::connectToForwardLayer(const Layer<ValueType>& next, OffsetType offset)
+offset_type Convolution<TARGS>::connectToForwardLayer(const Layer<ValueType>& next, offset_type offset)
 {
   // Connect outputs
-  OffsetType offset_after_connect = BaseType::connectToForwardLayer(next, offset);
+  offset_type offset_after_connect = BaseType::connectToForwardLayer(next, offset);
 
   // Resize mapping matrices
   output_mappings_.resize(boost::extents[output_volume_shape_.height][output_volume_shape_.width]);
@@ -300,12 +286,12 @@ Convolution<TARGS>::connectToForwardLayer(const Layer<ValueType>& next, OffsetTy
   // Map to individual volumes
   ValueType* out_ptr = const_cast<ValueType*>(next.getInputBuffer().data());
   ValueType* err_ptr = const_cast<ValueType*>(next.getBackwardErrorBuffer().data());
-  for (SizeType idx = 0; idx < output_volume_shape_.height; idx++)
+  for (size_type idx = 0; idx < output_volume_shape_.height; idx++)
   {
-    for (SizeType jdx = 0; jdx < output_volume_shape_.width; jdx++)
+    for (size_type jdx = 0; jdx < output_volume_shape_.width; jdx++)
     {
       // Compute pointer offset
-      const OffsetType kdx = (Mode == ColEmbedding) ?
+      const offset_type kdx = (Mode == ColEmbedding) ?
                              jdx * BaseType::output_shape_.height + idx * output_volume_shape_.depth :
                              idx * BaseType::output_shape_.width  + jdx * output_volume_shape_.depth;
 
@@ -320,13 +306,13 @@ Convolution<TARGS>::connectToForwardLayer(const Layer<ValueType>& next, OffsetTy
 }
 
 template<typename ValueType,
-         ffnn::size_type HeightAtCompileTime,
-         ffnn::size_type WidthAtCompileTime,
-         ffnn::size_type DepthAtCompileTime,
-         ffnn::size_type FilterHeightAtCompileTime,
-         ffnn::size_type FilterWidthAtCompileTime,
-         ffnn::size_type FilterDepthAtCompileTime,
-         ffnn::size_type StrideAtCompileTime,
+         size_type HeightAtCompileTime,
+         size_type WidthAtCompileTime,
+         size_type DepthAtCompileTime,
+         size_type FilterHeightAtCompileTime,
+         size_type FilterWidthAtCompileTime,
+         size_type FilterDepthAtCompileTime,
+         size_type StrideAtCompileTime,
          EmbeddingMode Mode,
          typename _HiddenLayerShape>
 void Convolution<TARGS>::save(typename Convolution<TARGS>::OutputArchive& ar,
@@ -342,13 +328,13 @@ void Convolution<TARGS>::save(typename Convolution<TARGS>::OutputArchive& ar,
 }
 
 template<typename ValueType,
-         ffnn::size_type HeightAtCompileTime,
-         ffnn::size_type WidthAtCompileTime,
-         ffnn::size_type DepthAtCompileTime,
-         ffnn::size_type FilterHeightAtCompileTime,
-         ffnn::size_type FilterWidthAtCompileTime,
-         ffnn::size_type FilterDepthAtCompileTime,
-         ffnn::size_type StrideAtCompileTime,
+         size_type HeightAtCompileTime,
+         size_type WidthAtCompileTime,
+         size_type DepthAtCompileTime,
+         size_type FilterHeightAtCompileTime,
+         size_type FilterWidthAtCompileTime,
+         size_type FilterDepthAtCompileTime,
+         size_type StrideAtCompileTime,
          EmbeddingMode Mode,
          typename _HiddenLayerShape>
 void Convolution<TARGS>::load(typename Convolution<TARGS>::InputArchive& ar,

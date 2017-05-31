@@ -26,13 +26,13 @@ namespace layer
  * @brief A convolution layer
  */
 template <typename ValueType,
-          ffnn::size_type HeightAtCompileTime = Eigen::Dynamic,
-          ffnn::size_type WidthAtCompileTime = Eigen::Dynamic,
-          ffnn::size_type DepthAtCompileTime = Eigen::Dynamic,
-          ffnn::size_type FilterHeightAtCompileTime = Eigen::Dynamic,
-          ffnn::size_type FilterWidthAtCompileTime = Eigen::Dynamic,
-          ffnn::size_type FilterDepthAtCompileTime = Eigen::Dynamic,
-          ffnn::size_type StrideAtCompileTime = 1,
+          size_type HeightAtCompileTime = Eigen::Dynamic,
+          size_type WidthAtCompileTime = Eigen::Dynamic,
+          size_type DepthAtCompileTime = Eigen::Dynamic,
+          size_type FilterHeightAtCompileTime = Eigen::Dynamic,
+          size_type FilterWidthAtCompileTime = Eigen::Dynamic,
+          size_type FilterDepthAtCompileTime = Eigen::Dynamic,
+          size_type StrideAtCompileTime = 1,
           EmbeddingMode Mode = ColEmbedding,
           typename _HiddenLayerShape =
             hidden_layer_shape<
@@ -59,14 +59,8 @@ public:
                                Mode,
                                _HiddenLayerShape>;
 
-  /// Scalar type standardization
-  typedef typename BaseType::ScalarType ScalarType;
-
-  /// Size type standardization
-  typedef typename BaseType::SizeType SizeType;
-
-  /// Offset type standardization
-  typedef typename BaseType::OffsetType OffsetType;
+  /// Real-value type standardization
+  typedef ValueType ScalarType;
 
   /// Dimension type standardization
   typedef typename BaseType::ShapeType ShapeType;
@@ -85,7 +79,7 @@ public:
   typedef optimizer::Optimizer<SelfType> Optimizer;
 
   /// Dsitribution standardization
-  typedef distribution::Distribution<ScalarType> Distribution;
+  typedef distribution::Distribution<ValueType> Distribution;
 
   /// Layer configuration struct
   class Configuration
@@ -93,6 +87,9 @@ public:
   public:
     friend SelfType;
 
+    /**
+     * @brief Default constructor
+     */
     Configuration() :
       input_shape_(HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime),
       filter_shape_(FilterHeightAtCompileTime, FilterWidthAtCompileTime, FilterDepthAtCompileTime),
@@ -100,24 +97,40 @@ public:
       opt_(boost::make_shared<typename optimizer::None<SelfType>>())
     {
       /// Set defaults shape options
-      setShapeOptions(input_shape_, filter_shape_, 1)
+      setShapeOptions(input_shape_, filter_shape_);
     }
 
+    /**
+     * @brief Sets layer optimization resource
+     * @param opt  layer optimizer
+     * @return *this
+     */
     inline Configuration& setOptimizer(const typename Optimizer::Ptr& opt)
     {
       opt_ = opt;
       return *this;
     }
 
-    inline Configuration& setParameterDistribution(const typename Distribution::Ptr& opt)
+    /**
+     * @brief Sets layer parameter initialization distribution
+     * @param dist  layer distribution resource
+     * @return *this
+     */
+    inline Configuration& setParameterDistribution(const typename Distribution::Ptr& dist)
     {
-      opt_ = opt;
+      parameter_dist_ = dist;
       return *this;
     }
 
+    /**
+     * @brief Sets layer shape options
+     * @param dist  layer distribution resource
+     * @return *this
+     */
     inline Configuration& setShapeOptions(const ShapeType& input_shape,
                                           const ShapeType& filter_shape,
-                                          const SizeType stride)
+                                          size_type height_stride = 1,
+                                          size_type width_stride = 1)
     {
       // Set layer input shape
       input_shape_ = input_shape;
@@ -126,17 +139,18 @@ public:
       embedded_input_shape_ = embed_shape_transform<Mode>(input_shape_);
 
       // Setup output shape before depth embdedding
-      output_shape_.height = convolution::output_dimension(input_shape.height, filter_shape.height, stride);
-      output_shape_.width  = convolution::output_dimension(input_shape.width,  filter_shape.width,  stride);
+      output_shape_.height = convolution::output_dimension(input_shape.height, filter_shape.height, height_stride);
+      output_shape_.width  = convolution::output_dimension(input_shape.width,  filter_shape.width,  width_stride);
       output_shape_.depth  = filter_shape.depth;
 
       // Set depth-embedded output shape
       embedded_output_shape_ = embed_shape_transform<Mode>(output_shape_);
-      return *this;
-    }
 
-    inline Configuration& setFilterOptions(const ShapeType& shape, SizeType stride = 1)
-    {
+      // Set stride shape
+      stride_shape_.height = height_stride;
+      stride_shape_.width  = width_stride;
+      stride_shape_.depth  = input_shape.depth;
+      stride_shape_ = embed_shape_transform<Mode>(stride_shape_);
       return *this;
     }
 
@@ -261,7 +275,7 @@ private:
    * @param offset  offset index of a memory location in the input buffer of the next layer
    * @retval <code>offset + output_shape_.size()</code>
    */
-  OffsetType connectToForwardLayer(const Layer<ValueType>& next, OffsetType offset);
+  offset_type connectToForwardLayer(const Layer<ValueType>& next, offset_type offset);
 };
 }  // namespace layer
 }  // namespace ffnn
