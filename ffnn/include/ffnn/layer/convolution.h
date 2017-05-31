@@ -122,14 +122,16 @@ public:
       // Set layer input shape
       input_shape_ = input_shape;
 
+      // Set depth-embedded input shape
+      embedded_input_shape_ = embed_shape_transform<Mode>(input_shape_);
+
       // Setup output shape before depth embdedding
-      const SizeType h_proto = convolution::output_dimension(input_shape.height, filter_shape.height, stride);
-      const SizeType w_proto = convolution::output_dimension(input_shape.width, filter_shape.width, stride);
+      output_shape_.height = convolution::output_dimension(input_shape.height, filter_shape.height, stride);
+      output_shape_.width  = convolution::output_dimension(input_shape.width,  filter_shape.width,  stride);
+      output_shape_.depth  = filter_shape.depth;
 
       // Set depth-embedded output shape
-      output_shape_.width  = convolution::embed_dimension<Mode, ColEmbedding>(h_proto, filter_shape.depth);
-      output_shape_.height = convolution::embed_dimension<Mode, RowEmbedding>(w_proto, filter_shape.depth);
-      output_shape_.depth  = 1;
+      embedded_output_shape_ = embed_shape_transform<Mode>(output_shape_);
       return *this;
     }
 

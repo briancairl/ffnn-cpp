@@ -48,6 +48,16 @@ constexpr SizeType output_dimension(SizeType n, SizeType fn, SizeType stride)
           internal::is_dynamic<SizeType>(fn) ||
           internal::is_dynamic<SizeType>(stride)) ? Eigen::Dynamic : ((n - fn) / stride + 1);
 }
+
+
+template<EmbeddingMode mode>
+Shape embed_shape_transform(const Shape& shape)
+{
+  const auto he = embed_dimension<mode, ColEmbedding>(shape.height, shape.depth);
+  const auto we = embed_dimension<mode, RowEmbedding>(shape.width,  shape.depth);
+  return Shape(he, we, 1);
+}
+
 }  // namespace convolution
 }  // namespace layer
 }  // namespace ffnn
