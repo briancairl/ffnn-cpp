@@ -46,14 +46,8 @@ public:
   /// Scalar type standardization
   typedef ValueType ScalarType;
 
-  /// Size type standardization
-  typedef ffnn::size_type SizeType;
-
-  /// Offset type standardization
-  typedef ffnn::offset_type OffsetType;
-
   /// Dimension type standardization
-  typedef Shape<SizeType> ShapeType;
+  typedef Shape<size_type> ShapeType;
 
   /// Buffer type standardization
   typedef std::conditional<
@@ -102,7 +96,7 @@ public:
    * @param offset  offset index of a memory location in the input buffer of the next layer
    * @retval <code>offset + output_shape_.size()</code>
    */
-  virtual OffsetType connectToForwardLayer(const Self& next, OffsetType offset) = 0;
+  virtual offset_type connectToForwardLayer(const Self& next, offset_type offset) = 0;
 
   /**
    * @brief Exposes const reference to raw data input buffer
@@ -139,7 +133,7 @@ public:
   /**
    * @brief Returns the total number counted (evaluated) inputs
    */
-  virtual SizeType evaluateInputSize() const
+  virtual size_type evaluateInputSize() const
   {
     return input_shape_.size();
   }
@@ -178,13 +172,13 @@ protected:
    * @brief Counts the number of inputs from outputs of previous layers
    * @return total input count
    */
-  SizeType evaluateInputSize() const;
+  size_type evaluateInputSize() const;
 
   /**
    * @brief Connects all previous layer to Layer input
    * @retval <code>input_shape_.size()</code>
    */
-  OffsetType connectInputLayers();
+  offset_type connectInputLayers();
 
   /// Pointers to previous layers
   std::map<std::string, typename Self::Ptr> prev_;
@@ -211,5 +205,5 @@ protected:
 }  // namespace ffnn
 
 /// FFNN (implementation)
-#include <ffnn/layer/impl/layer.hpp>
+#include <ffnn/impl/layer/layer.hpp>
 #endif  // FFNN_LAYER_LAYER_H

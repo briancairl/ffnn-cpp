@@ -85,6 +85,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">ffnn Namespace Reference</div>  </div>
@@ -95,7 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Namespaces</h2></td></tr>
 <tr class="memitem:namespaceffnn_1_1distribution"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceffnn_1_1distribution.html">distribution</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespaceffnn_1_1io"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceffnn_1_1io.html">io</a></td></tr>
+<tr class="memitem:namespaceffnn_1_1internal"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceffnn_1_1internal.html">internal</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespaceffnn_1_1layer"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceffnn_1_1layer.html">layer</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -105,8 +106,13 @@ Namespaces</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespaceffnn_1_1optimizer"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceffnn_1_1optimizer.html">optimizer</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespaceffnn_1_1traits"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceffnn_1_1traits.html">traits</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a63b90a2fd70eb76684eac482a51633e5"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceffnn.html#a63b90a2fd70eb76684eac482a51633e5">size_type</a></td></tr>
+<tr class="separator:a63b90a2fd70eb76684eac482a51633e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add5752d74b38c6e9b200f3d696fc3ec8"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="global_8h.html#af04b6e835b960cffc7ed05dfd1685ba0">FFNN_OFFSET_TYPE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceffnn.html#add5752d74b38c6e9b200f3d696fc3ec8">offset_type</a></td></tr>
+<tr class="separator:add5752d74b38c6e9b200f3d696fc3ec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -118,16 +124,43 @@ Functions</h2></td></tr>
 <tr class="separator:a365753310c86d8142fa5b785cc16004a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25c692ab6bf9799deb7c4282ee85bdd6"><td class="memTemplParams" colspan="2">template&lt;typename SerializableType &gt; </td></tr>
 <tr class="memitem:a25c692ab6bf9799deb7c4282ee85bdd6"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceffnn.html#a25c692ab6bf9799deb7c4282ee85bdd6">save</a> (std::ostream &amp;os, const SerializableType &amp;object, const typename SerializableType::VersionType version=0)</td></tr>
+<tr class="memdesc:a25c692ab6bf9799deb7c4282ee85bdd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Saves a serializable object.  <a href="#a25c692ab6bf9799deb7c4282ee85bdd6">More...</a><br/></td></tr>
 <tr class="separator:a25c692ab6bf9799deb7c4282ee85bdd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a94ff5b786bc42fa02bcf27ed86854a71"><td class="memTemplParams" colspan="2">template&lt;typename SerializableType &gt; </td></tr>
 <tr class="memitem:a94ff5b786bc42fa02bcf27ed86854a71"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceffnn.html#a94ff5b786bc42fa02bcf27ed86854a71">load</a> (std::istream &amp;is, SerializableType &amp;object, const typename SerializableType::VersionType version=0)</td></tr>
+<tr class="memdesc:a94ff5b786bc42fa02bcf27ed86854a71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a serializable object.  <a href="#a94ff5b786bc42fa02bcf27ed86854a71">More...</a><br/></td></tr>
 <tr class="separator:a94ff5b786bc42fa02bcf27ed86854a71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Brian Cairl </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2017</dd></dl>
 <dl class="section note"><dt>Note</dt><dd>HEADER-ONLY IMPLEMENTATION FILE  Do not include directly </dd></dl>
-</div><h2 class="groupheader">Function Documentation</h2>
+</div><h2 class="groupheader">Typedef Documentation</h2>
+<a class="anchor" id="add5752d74b38c6e9b200f3d696fc3ec8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="global_8h.html#af04b6e835b960cffc7ed05dfd1685ba0">FFNN_OFFSET_TYPE</a> <a class="el" href="namespaceffnn.html#add5752d74b38c6e9b200f3d696fc3ec8">ffnn::offset_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a63b90a2fd70eb76684eac482a51633e5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="global_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> <a class="el" href="namespaceffnn.html#a63b90a2fd70eb76684eac482a51633e5">ffnn::size_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a365753310c86d8142fa5b785cc16004a"></a>
 <div class="memitem">
 <div class="memproto">
@@ -201,6 +234,16 @@ template&lt;typename SerializableType &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Loads a serializable object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">is</td><td>stl-compliant input stream </td></tr>
+    <tr><td class="paramname">object</td><td>serializable object </td></tr>
+    <tr><td class="paramname">version</td><td>version specifier </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -278,12 +321,22 @@ template&lt;typename SerializableType &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Saves a serializable object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">os</td><td>stl-compliant output stream </td></tr>
+    <tr><td class="paramname">object</td><td>serializable object </td></tr>
+    <tr><td class="paramname">version</td><td>version specifier </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2017 11:34:22 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 31 2017 23:57:13 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

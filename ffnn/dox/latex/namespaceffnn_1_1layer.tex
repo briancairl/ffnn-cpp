@@ -4,22 +4,20 @@
 \subsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{namespaceffnn_1_1layer_1_1internal}{internal}
+\hyperlink{namespaceffnn_1_1layer_1_1convolution}{convolution}
 \end{DoxyCompactItemize}
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 class \hyperlink{classffnn_1_1layer_1_1_activation}{Activation}
 \begin{DoxyCompactList}\small\item\em \hyperlink{classffnn_1_1layer_1_1_activation}{Activation} layer. \end{DoxyCompactList}\item 
+struct \hyperlink{structffnn_1_1layer_1_1convolution__layer__traits}{convolution\-\_\-layer\-\_\-traits}
+\begin{DoxyCompactList}\small\item\em Describes compile-\/time traits used to set up a \hyperlink{classffnn_1_1layer_1_1_convolution}{Convolution} object. \end{DoxyCompactList}\item 
 class \hyperlink{classffnn_1_1layer_1_1_convolution}{Convolution}
 \begin{DoxyCompactList}\small\item\em A convolution layer. \end{DoxyCompactList}\item 
-class \hyperlink{classffnn_1_1layer_1_1_filter_bank}{Filter\-Bank}
-\item 
-class \hyperlink{classffnn_1_1layer_1_1_convolution_volume}{Convolution\-Volume}
-\item 
 class \hyperlink{classffnn_1_1layer_1_1_fully_connected}{Fully\-Connected}
 \begin{DoxyCompactList}\small\item\em A fully-\/connected layer. \end{DoxyCompactList}\item 
-struct \hyperlink{structffnn_1_1layer_1_1hidden__layer__shape}{hidden\-\_\-layer\-\_\-shape}
+struct \hyperlink{structffnn_1_1layer_1_1hidden__layer__traits}{hidden\-\_\-layer\-\_\-traits}
 \item 
 class \hyperlink{classffnn_1_1layer_1_1_hidden}{Hidden}
 \begin{DoxyCompactList}\small\item\em A network hidden-\/layer object. \end{DoxyCompactList}\item 
@@ -29,39 +27,27 @@ class \hyperlink{classffnn_1_1layer_1_1_layer}{Layer}
 \begin{DoxyCompactList}\small\item\em Base object for all layer types. \end{DoxyCompactList}\item 
 class \hyperlink{classffnn_1_1layer_1_1_output}{Output}
 \begin{DoxyCompactList}\small\item\em A layer which handles network outputs. \end{DoxyCompactList}\item 
-class \hyperlink{classffnn_1_1layer_1_1_sparsely_connected}{Sparsely\-Connected}
-\begin{DoxyCompactList}\small\item\em A fully-\/connected layer. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Enumerations}
-\begin{DoxyCompactItemize}
-\item 
-enum \hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69a}{Embedding\-Mode} \{ \hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aa91eb0d1f175a08e2b2991cae348c827d}{Row\-Embedding} = 0, 
-\hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aa42ac01b35d45fd60256ef5008c96c049}{Col\-Embedding} = 1
- \}
-\end{DoxyCompactItemize}
+struct \hyperlink{structffnn_1_1layer_1_1_shape_at_compile_time}{Shape\-At\-Compile\-Time}
+\begin{DoxyCompactList}\small\item\em Compile-\/time \hyperlink{structffnn_1_1layer_1_1_shape}{Shape} structure representing the dimensions of an object with volume. \end{DoxyCompactList}\item 
+struct \hyperlink{structffnn_1_1layer_1_1_shape}{Shape}
+\begin{DoxyCompactList}\small\item\em \hyperlink{structffnn_1_1layer_1_1_shape}{Shape} structure representing the dimensions of an object with volume. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$Embedding\-Mode mode, Embedding\-Mode ref, typename Size\-Type $>$ }\\constexpr Size\-Type \hyperlink{namespaceffnn_1_1layer_ad128f693900faa5bcf2cdd0ef8e7eee6}{embed\-\_\-dimension} (Size\-Type n, Size\-Type m)
-\item 
-{\footnotesize template$<$typename Size\-Type $>$ }\\constexpr Size\-Type \hyperlink{namespaceffnn_1_1layer_ac1d8b4e852293231055d1257f1e83e60}{output\-\_\-dimension} (Size\-Type n, Size\-Type fn, Size\-Type stride)
-\item 
 {\footnotesize template$<$typename Layer\-Type $>$ }\\bool \hyperlink{namespaceffnn_1_1layer_a33fc9c6c7eb5fbdef14e0aa0db97dd13}{connect} (const typename Layer\-Type\-::\-Ptr \&from, const typename Layer\-Type\-::\-Ptr \&to)
+\item 
+{\footnotesize template$<$typename Size\-Type $>$ }\\constexpr bool \hyperlink{namespaceffnn_1_1layer_a83ba223c7b7eb8e3d926b98b266f24c8}{is\-\_\-dynamic} (Size\-Type n)
+\begin{DoxyCompactList}\small\item\em Checks if size represents a dynamic size. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Size\-Type $>$ }\\constexpr bool \hyperlink{namespaceffnn_1_1layer_a9369bd9ca711c303dd6709fbb50ef169}{is\-\_\-dynamic} (Size\-Type n, Size\-Type m)
+\begin{DoxyCompactList}\small\item\em Checks if a pair of sizes is dynamic. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Size\-Type $>$ }\\constexpr bool \hyperlink{namespaceffnn_1_1layer_a6a3ca00311f112957ed5ca16b5b3acdd}{is\-\_\-dynamic} (Size\-Type n, Size\-Type m, Size\-Type l)
+\begin{DoxyCompactList}\small\item\em Checks if a triplet of sizes is dynamic. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Size\-Type $>$ }\\constexpr Size\-Type \hyperlink{namespaceffnn_1_1layer_a311eb389a31756b22de7d4ca5b64b575}{multiply\-\_\-if\-\_\-not\-\_\-dynamic\-\_\-sizes} (Size\-Type n, Size\-Type m)
+\begin{DoxyCompactList}\small\item\em Multiplies a pair of sizes if all sizes are static. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Size\-Type $>$ }\\constexpr Size\-Type \hyperlink{namespaceffnn_1_1layer_ad4cdb22bcffa10bf7bdc376f1a351c41}{multiply\-\_\-if\-\_\-not\-\_\-dynamic\-\_\-sizes} (Size\-Type n, Size\-Type m, Size\-Type l)
+\begin{DoxyCompactList}\small\item\em Multiplies a triplet of sizes if all sizes are static. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Size\-Type $>$ }\\std\-::ostream \& \hyperlink{namespaceffnn_1_1layer_a5604719421dd11309bad1f25126f5bd7}{operator$<$$<$} (std\-::ostream \&os, const \hyperlink{structffnn_1_1layer_1_1_shape}{Shape}$<$ Size\-Type $>$ \&dim)
 \end{DoxyCompactItemize}
-
-
-\subsection{Enumeration Type Documentation}
-\hypertarget{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69a}{\index{ffnn\-::layer@{ffnn\-::layer}!Embedding\-Mode@{Embedding\-Mode}}
-\index{Embedding\-Mode@{Embedding\-Mode}!ffnn::layer@{ffnn\-::layer}}
-\subsubsection[{Embedding\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf ffnn\-::layer\-::\-Embedding\-Mode}}}\label{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69a}
-\begin{Desc}
-\item[Enumerator]\par
-\begin{description}
-\index{Row\-Embedding@{Row\-Embedding}!ffnn\-::layer@{ffnn\-::layer}}\index{ffnn\-::layer@{ffnn\-::layer}!Row\-Embedding@{Row\-Embedding}}\item[{\em 
-\hypertarget{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aa91eb0d1f175a08e2b2991cae348c827d}{Row\-Embedding}\label{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aa91eb0d1f175a08e2b2991cae348c827d}
-}]Embed depth along filter matrix rows. \index{Col\-Embedding@{Col\-Embedding}!ffnn\-::layer@{ffnn\-::layer}}\index{ffnn\-::layer@{ffnn\-::layer}!Col\-Embedding@{Col\-Embedding}}\item[{\em 
-\hypertarget{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aa42ac01b35d45fd60256ef5008c96c049}{Col\-Embedding}\label{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69aa42ac01b35d45fd60256ef5008c96c049}
-}]Embed depth along filter matrix cols. \end{description}
-\end{Desc}
 
 
 \subsection{Function Documentation}
@@ -73,20 +59,196 @@ enum \hyperlink{namespaceffnn_1_1layer_a254f16beba4fb335d935e9b43bb9e69a}{Embedd
 \item[{const typename Layer\-Type\-::\-Ptr \&}]{to}
 \end{DoxyParamCaption}
 )}}\label{namespaceffnn_1_1layer_a33fc9c6c7eb5fbdef14e0aa0db97dd13}
-\hypertarget{namespaceffnn_1_1layer_ad128f693900faa5bcf2cdd0ef8e7eee6}{\index{ffnn\-::layer@{ffnn\-::layer}!embed\-\_\-dimension@{embed\-\_\-dimension}}
-\index{embed\-\_\-dimension@{embed\-\_\-dimension}!ffnn::layer@{ffnn\-::layer}}
-\subsubsection[{embed\-\_\-dimension}]{\setlength{\rightskip}{0pt plus 5cm}template$<$Embedding\-Mode mode, Embedding\-Mode ref, typename Size\-Type $>$ constexpr Size\-Type ffnn\-::layer\-::embed\-\_\-dimension (
+\hypertarget{namespaceffnn_1_1layer_a83ba223c7b7eb8e3d926b98b266f24c8}{\index{ffnn\-::layer@{ffnn\-::layer}!is\-\_\-dynamic@{is\-\_\-dynamic}}
+\index{is\-\_\-dynamic@{is\-\_\-dynamic}!ffnn::layer@{ffnn\-::layer}}
+\subsubsection[{is\-\_\-dynamic}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Size\-Type $>$ constexpr bool ffnn\-::layer\-::is\-\_\-dynamic (
+\begin{DoxyParamCaption}
+\item[{Size\-Type}]{n}
+\end{DoxyParamCaption}
+)}}\label{namespaceffnn_1_1layer_a83ba223c7b7eb8e3d926b98b266f24c8}
+
+
+Checks if size represents a dynamic size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & interger dimension \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & if dimension represents a dynamic size \\
+\hline
+{\em false} & otherwise \\
+\hline
+\end{DoxyRetVals}
+
+
+Referenced by is\-\_\-dynamic(), and multiply\-\_\-if\-\_\-not\-\_\-dynamic\-\_\-sizes().
+
+\hypertarget{namespaceffnn_1_1layer_a9369bd9ca711c303dd6709fbb50ef169}{\index{ffnn\-::layer@{ffnn\-::layer}!is\-\_\-dynamic@{is\-\_\-dynamic}}
+\index{is\-\_\-dynamic@{is\-\_\-dynamic}!ffnn::layer@{ffnn\-::layer}}
+\subsubsection[{is\-\_\-dynamic}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Size\-Type $>$ constexpr bool ffnn\-::layer\-::is\-\_\-dynamic (
 \begin{DoxyParamCaption}
 \item[{Size\-Type}]{n, }
 \item[{Size\-Type}]{m}
 \end{DoxyParamCaption}
-)}}\label{namespaceffnn_1_1layer_ad128f693900faa5bcf2cdd0ef8e7eee6}
-\hypertarget{namespaceffnn_1_1layer_ac1d8b4e852293231055d1257f1e83e60}{\index{ffnn\-::layer@{ffnn\-::layer}!output\-\_\-dimension@{output\-\_\-dimension}}
-\index{output\-\_\-dimension@{output\-\_\-dimension}!ffnn::layer@{ffnn\-::layer}}
-\subsubsection[{output\-\_\-dimension}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Size\-Type $>$ constexpr Size\-Type ffnn\-::layer\-::output\-\_\-dimension (
+)}}\label{namespaceffnn_1_1layer_a9369bd9ca711c303dd6709fbb50ef169}
+
+
+Checks if a pair of sizes is dynamic. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & interger dimension \\
+\hline
+{\em m} & interger dimension \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & if either dimension represents a dynamic size \\
+\hline
+{\em false} & otherwise \\
+\hline
+\end{DoxyRetVals}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{namespaceffnn_1_1layer_a9369bd9ca711c303dd6709fbb50ef169_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{namespaceffnn_1_1layer_a6a3ca00311f112957ed5ca16b5b3acdd}{\index{ffnn\-::layer@{ffnn\-::layer}!is\-\_\-dynamic@{is\-\_\-dynamic}}
+\index{is\-\_\-dynamic@{is\-\_\-dynamic}!ffnn::layer@{ffnn\-::layer}}
+\subsubsection[{is\-\_\-dynamic}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Size\-Type $>$ constexpr bool ffnn\-::layer\-::is\-\_\-dynamic (
 \begin{DoxyParamCaption}
 \item[{Size\-Type}]{n, }
-\item[{Size\-Type}]{fn, }
-\item[{Size\-Type}]{stride}
+\item[{Size\-Type}]{m, }
+\item[{Size\-Type}]{l}
 \end{DoxyParamCaption}
-)}}\label{namespaceffnn_1_1layer_ac1d8b4e852293231055d1257f1e83e60}
+)}}\label{namespaceffnn_1_1layer_a6a3ca00311f112957ed5ca16b5b3acdd}
+
+
+Checks if a triplet of sizes is dynamic. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & interger dimension \\
+\hline
+{\em m} & interger dimension \\
+\hline
+{\em l} & interger dimension \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & if any dimension represents a dynamic size \\
+\hline
+{\em false} & otherwise \\
+\hline
+\end{DoxyRetVals}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{namespaceffnn_1_1layer_a6a3ca00311f112957ed5ca16b5b3acdd_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{namespaceffnn_1_1layer_a311eb389a31756b22de7d4ca5b64b575}{\index{ffnn\-::layer@{ffnn\-::layer}!multiply\-\_\-if\-\_\-not\-\_\-dynamic\-\_\-sizes@{multiply\-\_\-if\-\_\-not\-\_\-dynamic\-\_\-sizes}}
+\index{multiply\-\_\-if\-\_\-not\-\_\-dynamic\-\_\-sizes@{multiply\-\_\-if\-\_\-not\-\_\-dynamic\-\_\-sizes}!ffnn::layer@{ffnn\-::layer}}
+\subsubsection[{multiply\-\_\-if\-\_\-not\-\_\-dynamic\-\_\-sizes}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Size\-Type $>$ constexpr Size\-Type ffnn\-::layer\-::multiply\-\_\-if\-\_\-not\-\_\-dynamic\-\_\-sizes (
+\begin{DoxyParamCaption}
+\item[{Size\-Type}]{n, }
+\item[{Size\-Type}]{m}
+\end{DoxyParamCaption}
+)}}\label{namespaceffnn_1_1layer_a311eb389a31756b22de7d4ca5b64b575}
+
+
+Multiplies a pair of sizes if all sizes are static. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & interger dimension \\
+\hline
+{\em m} & interger dimension \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em (n$\ast$m)} & if sizes are not dynamic \\
+\hline
+{\em Eigen\-::\-Dynamic} & otherwise \\
+\hline
+\end{DoxyRetVals}
+
+
+Referenced by ffnn\-::layer\-::\-Shape$<$ Size\-Type $>$\-::size().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{namespaceffnn_1_1layer_a311eb389a31756b22de7d4ca5b64b575_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{namespaceffnn_1_1layer_ad4cdb22bcffa10bf7bdc376f1a351c41}{\index{ffnn\-::layer@{ffnn\-::layer}!multiply\-\_\-if\-\_\-not\-\_\-dynamic\-\_\-sizes@{multiply\-\_\-if\-\_\-not\-\_\-dynamic\-\_\-sizes}}
+\index{multiply\-\_\-if\-\_\-not\-\_\-dynamic\-\_\-sizes@{multiply\-\_\-if\-\_\-not\-\_\-dynamic\-\_\-sizes}!ffnn::layer@{ffnn\-::layer}}
+\subsubsection[{multiply\-\_\-if\-\_\-not\-\_\-dynamic\-\_\-sizes}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Size\-Type $>$ constexpr Size\-Type ffnn\-::layer\-::multiply\-\_\-if\-\_\-not\-\_\-dynamic\-\_\-sizes (
+\begin{DoxyParamCaption}
+\item[{Size\-Type}]{n, }
+\item[{Size\-Type}]{m, }
+\item[{Size\-Type}]{l}
+\end{DoxyParamCaption}
+)}}\label{namespaceffnn_1_1layer_ad4cdb22bcffa10bf7bdc376f1a351c41}
+
+
+Multiplies a triplet of sizes if all sizes are static. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & interger dimension \\
+\hline
+{\em m} & interger dimension \\
+\hline
+{\em l} & interger dimension \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em (n$\ast$m$\ast$l)} & if sizes are not dynamic \\
+\hline
+{\em Eigen\-::\-Dynamic} & otherwise \\
+\hline
+\end{DoxyRetVals}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{namespaceffnn_1_1layer_ad4cdb22bcffa10bf7bdc376f1a351c41_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{namespaceffnn_1_1layer_a5604719421dd11309bad1f25126f5bd7}{\index{ffnn\-::layer@{ffnn\-::layer}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!ffnn::layer@{ffnn\-::layer}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Size\-Type $>$ std\-::ostream\& ffnn\-::layer\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{os, }
+\item[{const Shape$<$ Size\-Type $>$ \&}]{dim}
+\end{DoxyParamCaption}
+)}}\label{namespaceffnn_1_1layer_a5604719421dd11309bad1f25126f5bd7}

@@ -13,6 +13,7 @@ var searchData=
   ['adamstates',['AdamStates',['../classffnn_1_1optimizer_1_1_adam_states.html',1,'ffnn::optimizer']]],
   ['adamstates_3c_20biasvectortype_20_3e',['AdamStates&lt; BiasVectorType &gt;',['../classffnn_1_1optimizer_1_1_adam_states.html',1,'ffnn::optimizer']]],
   ['adamstates_3c_20weightmatrixtype_20_3e',['AdamStates&lt; WeightMatrixType &gt;',['../classffnn_1_1optimizer_1_1_adam_states.html',1,'ffnn::optimizer']]],
-  ['apply',['apply',['../namespaceffnn_1_1io_1_1signature.html#aa8cfcde5b52b546324985a0127aa44a3',1,'ffnn::io::signature']]],
+  ['apply',['apply',['../namespaceffnn_1_1internal_1_1signature.html#a6109f0a8c643d2795e9ba2715fe2d684',1,'ffnn::internal::signature']]],
+  ['array',['array',['../structffnn_1_1layer_1_1convolution_1_1_filter.html#af69a171a3fd2701e0f69ddd1530a0cdb',1,'ffnn::layer::convolution::Filter']]],
   ['assert_2eh',['assert.h',['../assert_8h.html',1,'']]]
 ];

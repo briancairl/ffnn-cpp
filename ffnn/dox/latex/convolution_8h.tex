@@ -2,26 +2,38 @@
 \label{convolution_8h}\index{/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/convolution.\-h@{/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/convolution.\-h}}
 }
 {\ttfamily \#include \char`\"{}boost/multi\-\_\-array.\-hpp\char`\"{}}\\*
+{\ttfamily \#include $<$ffnn/distribution/distribution.\-h$>$}\\*
+{\ttfamily \#include $<$ffnn/distribution/normal.\-h$>$}\\*
 {\ttfamily \#include $<$ffnn/layer/layer.\-h$>$}\\*
 {\ttfamily \#include $<$ffnn/layer/hidden.\-h$>$}\\*
-{\ttfamily \#include $<$ffnn/layer/convolution\-\_\-volume.\-h$>$}\\*
-{\ttfamily \#include $<$ffnn/neuron/neuron.\-h$>$}\\*
 {\ttfamily \#include $<$ffnn/optimizer/fwd.\-h$>$}\\*
 {\ttfamily \#include $<$ffnn/optimizer/optimizer.\-h$>$}\\*
-{\ttfamily \#include $<$ffnn/layer/impl/convolution.\-hpp$>$}\\*
-Include dependency graph for convolution.\-h\-:
-\nopagebreak
+{\ttfamily \#include $<$ffnn/layer/convolution/defs.\-h$>$}\\*
+{\ttfamily \#include $<$ffnn/layer/convolution/filter.\-h$>$}\\*
+{\ttfamily \#include $<$ffnn/impl/layer/convolution.\-hpp$>$}\\*
+Include dependency graph for convolution.\-h\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{convolution_8h__incl}
 \end{center}
 \end{figure}
+This graph shows which files directly or indirectly include this file\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{convolution_8h__dep__incl}
+\end{center}
+\end{figure}
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \hyperlink{classffnn_1_1layer_1_1_convolution}{ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Count\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode, \-\_\-\-Hidden\-Layer\-Shape $>$}
-\begin{DoxyCompactList}\small\item\em A convolution layer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+struct \hyperlink{structffnn_1_1layer_1_1convolution__layer__traits}{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Kernel\-Height\-At\-Compile\-Time, Kernel\-Width\-At\-Compile\-Time, Kernel\-Count\-At\-Compile\-Time, Row\-Stride\-At\-Compile\-Time, Col\-Stride\-At\-Compile\-Time, Mode $>$}
+\begin{DoxyCompactList}\small\item\em Describes compile-\/time traits used to set up a \hyperlink{classffnn_1_1layer_1_1_convolution}{Convolution} object. \end{DoxyCompactList}\item 
+class \hyperlink{classffnn_1_1layer_1_1_convolution}{ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Layer\-Traits $>$}
+\begin{DoxyCompactList}\small\item\em A convolution layer. \end{DoxyCompactList}\item 
+class \hyperlink{classffnn_1_1layer_1_1_convolution_1_1_configuration}{ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Layer\-Traits $>$\-::\-Configuration}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classffnn_1_1layer_1_1_layer}{Layer} configuration struct. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
@@ -29,41 +41,3 @@ class \hyperlink{classffnn_1_1layer_1_1_convolution}{ffnn\-::layer\-::\-Convolut
 \item 
 \hyperlink{namespaceffnn_1_1layer}{ffnn\-::layer}
 \end{DoxyCompactItemize}
-\subsection*{Macros}
-\begin{DoxyCompactItemize}
-\item 
-\#define \hyperlink{convolution_8h_a30c3dcfd336a244f4421fe701352d1e4}{C\-O\-N\-V\-\_\-\-T\-A\-R\-G\-S}
-\item 
-\#define \hyperlink{convolution_8h_a054b25d3efc67e1baaedfbc7305f8f50}{C\-O\-N\-V\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-T\-A\-R\-G\-S}
-\end{DoxyCompactItemize}
-
-
-\subsection{Macro Definition Documentation}
-\hypertarget{convolution_8h_a30c3dcfd336a244f4421fe701352d1e4}{\index{convolution.\-h@{convolution.\-h}!C\-O\-N\-V\-\_\-\-T\-A\-R\-G\-S@{C\-O\-N\-V\-\_\-\-T\-A\-R\-G\-S}}
-\index{C\-O\-N\-V\-\_\-\-T\-A\-R\-G\-S@{C\-O\-N\-V\-\_\-\-T\-A\-R\-G\-S}!convolution.h@{convolution.\-h}}
-\subsubsection[{C\-O\-N\-V\-\_\-\-T\-A\-R\-G\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-O\-N\-V\-\_\-\-T\-A\-R\-G\-S}}\label{convolution_8h_a30c3dcfd336a244f4421fe701352d1e4}
-{\bfseries Value\-:}
-\begin{DoxyCode}
-ValueType,\(\backslash\)
-  HeightAtCompileTime,\(\backslash\)
-  WidthAtCompileTime,\(\backslash\)
-  DepthAtCompileTime,\(\backslash\)
-  FilterHeightAtCompileTime,\(\backslash\)
-  FilterWidthAtCompileTime,\(\backslash\)
-  FilterCountAtCompileTime,\(\backslash\)
-  StrideAtCompileTime,\(\backslash\)
-  Mode,\(\backslash\)
-  \_HiddenLayerShape
-\end{DoxyCode}
-\hypertarget{convolution_8h_a054b25d3efc67e1baaedfbc7305f8f50}{\index{convolution.\-h@{convolution.\-h}!C\-O\-N\-V\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-T\-A\-R\-G\-S@{C\-O\-N\-V\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-T\-A\-R\-G\-S}}
-\index{C\-O\-N\-V\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-T\-A\-R\-G\-S@{C\-O\-N\-V\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-T\-A\-R\-G\-S}!convolution.h@{convolution.\-h}}
-\subsubsection[{C\-O\-N\-V\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-T\-A\-R\-G\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-O\-N\-V\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-T\-A\-R\-G\-S}}\label{convolution_8h_a054b25d3efc67e1baaedfbc7305f8f50}
-{\bfseries Value\-:}
-\begin{DoxyCode}
-ValueType,\(\backslash\)
-  FilterHeightAtCompileTime,\(\backslash\)
-  FilterWidthAtCompileTime,\(\backslash\)
-  DepthAtCompileTime,\(\backslash\)
-  FilterCountAtCompileTime,\(\backslash\)
-  Mode
-\end{DoxyCode}

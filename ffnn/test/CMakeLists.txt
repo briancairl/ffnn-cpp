@@ -12,16 +12,6 @@ target_link_libraries(test_layer_hidden
   ${GTEST_LIBRARIES}
 )
 
-catkin_add_gtest(test_layer_convolution_volume
-  test_layer_convolution_volume.cpp
-)
-target_link_libraries(test_layer_convolution_volume
-  ${Boost_LIBRARIES}
-  ${catkin_LIBRARIES}
-  ${EIGEN_LIBRARIES}
-  ${GTEST_LIBRARIES}
-)
-
 catkin_add_gtest(test_layer_local_convolution
   test_layer_local_convolution.cpp
 )
@@ -36,6 +26,26 @@ catkin_add_gtest(test_layer_shape
   test_layer_shape.cpp
 )
 target_link_libraries(test_layer_shape
+  ${Boost_LIBRARIES}
+  ${catkin_LIBRARIES}
+  ${EIGEN_LIBRARIES}
+  ${GTEST_LIBRARIES}
+)
+
+catkin_add_gtest(test_layer_convolution_filter
+  test_layer_convolution_filter.cpp
+)
+target_link_libraries(test_layer_convolution_filter
+  ${Boost_LIBRARIES}
+  ${catkin_LIBRARIES}
+  ${EIGEN_LIBRARIES}
+  ${GTEST_LIBRARIES}
+)
+
+catkin_add_gtest(test_layer_convolution
+  test_layer_convolution.cpp
+)
+target_link_libraries(test_layer_convolution
   ${Boost_LIBRARIES}
   ${catkin_LIBRARIES}
   ${EIGEN_LIBRARIES}
@@ -59,25 +69,6 @@ catkin_add_gtest(test_layer_fully_connected_io
   test_layer_fully_connected_io.cpp
 )
 target_link_libraries(test_layer_fully_connected_io
-  ${Boost_LIBRARIES}
-  ${catkin_LIBRARIES}
-  ${EIGEN_LIBRARIES}
-  ${GTEST_LIBRARIES}
-)
-
-##############################################################
-# Tests:
-#   - Save
-#   - Load
-#   - layer::Input
-#   - layer::Output
-#   - layer::SparselyConnected
-##############################################################
-
-catkin_add_gtest(test_layer_sparsely_connected_io
-  test_layer_sparsely_connected_io.cpp
-)
-target_link_libraries(test_layer_sparsely_connected_io
   ${Boost_LIBRARIES}
   ${catkin_LIBRARIES}
   ${EIGEN_LIBRARIES}
@@ -124,24 +115,6 @@ catkin_add_gtest(test_layer_fully_connected_training
   test_layer_fully_connected_training.cpp
 )
 target_link_libraries(test_layer_fully_connected_training
-  ${Boost_LIBRARIES}
-  ${catkin_LIBRARIES}
-  ${EIGEN_LIBRARIES}
-  ${GTEST_LIBRARIES}
-)
-
-##############################################################
-# Tests:
-#    - layer::Input
-#    - layer::Output
-#    - layer::SparselyConnected
-#  	 - optimizer::GradientDescent
-##############################################################
-
-catkin_add_gtest(test_layer_sparsely_connected_training
-  test_layer_sparsely_connected_training.cpp
-)
-target_link_libraries(test_layer_sparsely_connected_training
   ${Boost_LIBRARIES}
   ${catkin_LIBRARIES}
   ${EIGEN_LIBRARIES}

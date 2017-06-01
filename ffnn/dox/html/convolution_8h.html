@@ -89,34 +89,48 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#define-members">Macros</a>  </div>
+<a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
 <div class="title">convolution.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;boost/multi_array.hpp&quot;</code><br/>
+<code>#include &lt;<a class="el" href="distribution_8h_source.html">ffnn/distribution/distribution.h</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="normal_8h_source.html">ffnn/distribution/normal.h</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="layer_8h_source.html">ffnn/layer/layer.h</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="hidden_8h_source.html">ffnn/layer/hidden.h</a>&gt;</code><br/>
-<code>#include &lt;<a class="el" href="convolution__volume_8h_source.html">ffnn/layer/convolution_volume.h</a>&gt;</code><br/>
-<code>#include &lt;<a class="el" href="neuron_8h_source.html">ffnn/neuron/neuron.h</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="fwd_8h_source.html">ffnn/optimizer/fwd.h</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="optimizer_8h_source.html">ffnn/optimizer/optimizer.h</a>&gt;</code><br/>
-<code>#include &lt;<a class="el" href="convolution_8hpp_source.html">ffnn/layer/impl/convolution.hpp</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="defs_8h_source.html">ffnn/layer/convolution/defs.h</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="filter_8h_source.html">ffnn/layer/convolution/filter.h</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="impl_2layer_2convolution_8hpp_source.html">ffnn/impl/layer/convolution.hpp</a>&gt;</code><br/>
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for convolution.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="convolution_8h__incl.png" border="0" usemap="#_2home_2briancairl_2packages_2src_2ffnn-cpp_2ffnn_2include_2ffnn_2layer_2convolution_8h" alt=""/></div>
 <map name="_2home_2briancairl_2packages_2src_2ffnn-cpp_2ffnn_2include_2ffnn_2layer_2convolution_8h" id="_2home_2briancairl_2packages_2src_2ffnn-cpp_2ffnn_2include_2ffnn_2layer_2convolution_8h">
-<area shape="rect" id="node3" href="layer_8h.html" title="ffnn/layer/layer.h" alt="" coords="453,192,571,219"/><area shape="rect" id="node34" href="hidden_8h.html" title="ffnn/layer/hidden.h" alt="" coords="837,109,965,136"/><area shape="rect" id="node37" href="convolution__volume_8h.html" title="ffnn/layer/convolution\l_volume.h" alt="" coords="763,185,909,226"/><area shape="rect" id="node40" href="neuron_8h.html" title="ffnn/neuron/neuron.h" alt="" coords="984,192,1124,219"/><area shape="rect" id="node41" href="fwd_8h.html" title="ffnn/optimizer/fwd.h" alt="" coords="2262,109,2399,136"/><area shape="rect" id="node42" href="optimizer_8h.html" title="ffnn/optimizer/optimizer.h" alt="" coords="1918,373,2087,400"/><area shape="rect" id="node45" href="convolution_8hpp.html" title="ffnn/layer/impl/convolution.hpp" alt="" coords="1777,192,1975,219"/><area shape="rect" id="node5" href="serializable_8h.html" title="ffnn/internal/traits\l/serializable.h" alt="" coords="93,457,216,498"/><area shape="rect" id="node7" href="global_8h.html" title="ffnn/config/global.h" alt="" coords="694,547,825,573"/><area shape="rect" id="node19" href="interface_8h.html" title="ffnn/layer/internal\l/interface.h" alt="" coords="451,275,573,317"/><area shape="rect" id="node31" href="layer_8hpp.html" title="ffnn/layer/impl/layer.hpp" alt="" coords="1083,373,1244,400"/><area shape="rect" id="node9" href="logging_8h.html" title="ffnn/logging.h" alt="" coords="1507,629,1607,656"/><area shape="rect" id="node15" href="sparse__triplet__serialization_8h.html" title="ffnn/internal/eigen\l/sparse_triplet_serialization.h" alt="" coords="847,622,1037,663"/><area shape="rect" id="node20" href="unique_8h.html" title="ffnn/internal/traits\l/unique.h" alt="" coords="524,366,647,407"/><area shape="rect" id="node25" href="internal_2signature_8h.html" title="ffnn/internal/signature.h" alt="" coords="1265,464,1423,491"/><area shape="rect" id="node29" href="shape_8h.html" title="ffnn/layer/internal\l/shape.h" alt="" coords="377,366,500,407"/><area shape="rect" id="node33" href="assert_8h.html" title="ffnn/assert.h" alt="" coords="1681,464,1775,491"/><area shape="rect" id="node36" href="hidden_8hpp.html" title="ffnn/layer/impl/hidden.hpp" alt="" coords="1320,373,1491,400"/><area shape="rect" id="node38" href="convolution__volume_8hpp.html" title="ffnn/layer/impl/convolution\l_volume.hpp" alt="" coords="1515,366,1689,407"/><area shape="rect" id="node46" href="none_8h.html" title="ffnn/optimizer/none.h" alt="" coords="1816,283,1960,309"/></map>
+<area shape="rect" id="node3" href="distribution_8h.html" title="ffnn/distribution/distribution.h" alt="" coords="432,109,621,136"/><area shape="rect" id="node4" href="normal_8h.html" title="ffnn/distribution/normal.h" alt="" coords="645,109,809,136"/><area shape="rect" id="node10" href="layer_8h.html" title="ffnn/layer/layer.h" alt="" coords="899,192,1017,219"/><area shape="rect" id="node37" href="hidden_8h.html" title="ffnn/layer/hidden.h" alt="" coords="1237,109,1365,136"/><area shape="rect" id="node41" href="fwd_8h.html" title="ffnn/optimizer/fwd.h" alt="" coords="1390,109,1527,136"/><area shape="rect" id="node42" href="optimizer_8h.html" title="ffnn/optimizer/optimizer.h" alt="" coords="2113,283,2281,309"/><area shape="rect" id="node45" href="defs_8h.html" title="ffnn/layer/convolution\l/defs.h" alt="" coords="1741,366,1888,407"/><area shape="rect" id="node46" href="filter_8h.html" title="ffnn/layer/convolution\l/filter.h" alt="" coords="1568,275,1715,317"/><area shape="rect" id="node49" href="impl_2layer_2convolution_8hpp.html" title="ffnn/impl/layer/convolution.hpp" alt="" coords="2649,109,2847,136"/><area shape="rect" id="node13" href="global_8h.html" title="ffnn/config/global.h" alt="" coords="1859,456,1991,483"/><area shape="rect" id="node26" href="serializable_8h.html" title="ffnn/internal/serializable.h" alt="" coords="875,373,1045,400"/><area shape="rect" id="node27" href="unique_8h.html" title="ffnn/internal/unique.h" alt="" coords="779,283,921,309"/><area shape="rect" id="node35" href="shape_8h.html" title="ffnn/layer/shape.h" alt="" coords="1121,373,1247,400"/><area shape="rect" id="node15" href="logging_8h.html" title="ffnn/logging.h" alt="" coords="2661,539,2760,565"/><area shape="rect" id="node22" href="sparse__triplet__serialization_8h.html" title="ffnn/internal/eigen\l/sparse_triplet_serialization.h" alt="" coords="1494,531,1684,573"/><area shape="rect" id="node32" href="signature_8h.html" title="ffnn/internal/signature.h" alt="" coords="2550,373,2708,400"/><area shape="rect" id="node39" href="assert_8h.html" title="ffnn/assert.h" alt="" coords="2733,373,2827,400"/><area shape="rect" id="node48" href="traits_8h.html" title="ffnn/internal/traits.h" alt="" coords="1457,373,1591,400"/><area shape="rect" id="node50" href="none_8h.html" title="ffnn/optimizer/none.h" alt="" coords="2455,192,2599,219"/></map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="convolution_8h__dep__incl.png" border="0" usemap="#_2home_2briancairl_2packages_2src_2ffnn-cpp_2ffnn_2include_2ffnn_2layer_2convolution_8hdep" alt=""/></div>
+<map name="_2home_2briancairl_2packages_2src_2ffnn-cpp_2ffnn_2include_2ffnn_2layer_2convolution_8hdep" id="_2home_2briancairl_2packages_2src_2ffnn-cpp_2ffnn_2include_2ffnn_2layer_2convolution_8hdep">
+<area shape="rect" id="node2" href="optimizer_2impl_2gradient__descent_2convolution_8hpp.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/optimizer/impl/gradient\l_descent/convolution.hpp" alt="" coords="23,110,205,181"/><area shape="rect" id="node3" href="gradient__descent_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/optimizer/gradient_descent.h" alt="" coords="5,229,224,285"/><area shape="rect" id="node4" href="adam_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/optimizer/adam.h" alt="" coords="27,333,201,389"/></map>
 </div>
 </div>
 <p><a href="convolution_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution.html">ffnn::layer::Convolution&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterHeightAtCompileTime, FilterWidthAtCompileTime, FilterCountAtCompileTime, StrideAtCompileTime, Mode, _HiddenLayerShape &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structffnn_1_1layer_1_1convolution__layer__traits.html">ffnn::layer::convolution_layer_traits&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, KernelHeightAtCompileTime, KernelWidthAtCompileTime, KernelCountAtCompileTime, RowStrideAtCompileTime, ColStrideAtCompileTime, Mode &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Describes compile-time traits used to set up a <a class="el" href="classffnn_1_1layer_1_1_convolution.html" title="A convolution layer. ">Convolution</a> object.  <a href="structffnn_1_1layer_1_1convolution__layer__traits.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution.html">ffnn::layer::Convolution&lt; ValueType, LayerTraits &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A convolution layer.  <a href="classffnn_1_1layer_1_1_convolution.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution_1_1_configuration.html">ffnn::layer::Convolution&lt; ValueType, LayerTraits &gt;::Configuration</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classffnn_1_1layer_1_1_layer.html" title="Base object for all layer types. ">Layer</a> configuration struct.  <a href="classffnn_1_1layer_1_1_convolution_1_1_configuration.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
@@ -125,59 +139,11 @@ Namespaces</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespaceffnn_1_1layer"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceffnn_1_1layer.html">ffnn::layer</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a30c3dcfd336a244f4421fe701352d1e4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="convolution_8h.html#a30c3dcfd336a244f4421fe701352d1e4">CONV_TARGS</a></td></tr>
-<tr class="separator:a30c3dcfd336a244f4421fe701352d1e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a054b25d3efc67e1baaedfbc7305f8f50"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="convolution_8h.html#a054b25d3efc67e1baaedfbc7305f8f50">CONV_VOLUME_TARGS</a></td></tr>
-<tr class="separator:a054b25d3efc67e1baaedfbc7305f8f50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="a30c3dcfd336a244f4421fe701352d1e4"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CONV_TARGS</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">ValueType,\</div>
-<div class="line">  HeightAtCompileTime,\</div>
-<div class="line">  WidthAtCompileTime,\</div>
-<div class="line">  DepthAtCompileTime,\</div>
-<div class="line">  FilterHeightAtCompileTime,\</div>
-<div class="line">  FilterWidthAtCompileTime,\</div>
-<div class="line">  FilterCountAtCompileTime,\</div>
-<div class="line">  StrideAtCompileTime,\</div>
-<div class="line">  Mode,\</div>
-<div class="line">  _HiddenLayerShape</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a054b25d3efc67e1baaedfbc7305f8f50"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CONV_VOLUME_TARGS</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">ValueType,\</div>
-<div class="line">  FilterHeightAtCompileTime,\</div>
-<div class="line">  FilterWidthAtCompileTime,\</div>
-<div class="line">  DepthAtCompileTime,\</div>
-<div class="line">  FilterCountAtCompileTime,\</div>
-<div class="line">  Mode</div>
-</div><!-- fragment -->
-</div>
-</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2017 11:34:22 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 31 2017 23:57:13 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

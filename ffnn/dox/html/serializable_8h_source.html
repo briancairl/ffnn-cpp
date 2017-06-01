@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>FFNN: /home/briancairl/packages/src/ffnn-cpp/ffnn/include/ffnn/internal/traits/serializable.h Source File</title>
+<title>FFNN: /home/briancairl/packages/src/ffnn-cpp/ffnn/include/ffnn/internal/serializable.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -83,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_5926a80ed3446c810579ca6fe92ab4ca.html">include</a></li><li class="navelem"><a class="el" href="dir_18fff403c5eccb83d761ba51d6ac7b98.html">ffnn</a></li><li class="navelem"><a class="el" href="dir_4eadc565f6984684b9966e19a649c405.html">internal</a></li><li class="navelem"><a class="el" href="dir_c63ec65a8b1338bb36ab8522e8ef0dc6.html">traits</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_5926a80ed3446c810579ca6fe92ab4ca.html">include</a></li><li class="navelem"><a class="el" href="dir_18fff403c5eccb83d761ba51d6ac7b98.html">ffnn</a></li><li class="navelem"><a class="el" href="dir_4eadc565f6984684b9966e19a649c405.html">internal</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -92,75 +92,77 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <a href="serializable_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef FFNN_INTERNAL_TRAITS_SERIALIZABLE_H</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define FFNN_INTERNAL_TRAITS_SERIALIZABLE_H</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef FFNN_INTERNAL_SERIALIZABLE_H</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define FFNN_INTERNAL_SERIALIZABLE_H</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// C++ Standard Library</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// FFNN</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="global_8h.html">ffnn/config/global.h</a>&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace </span>ffnn</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Serializable&gt;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceffnn.html#a1d292f830b9e27ce3965b0c18231b7fc">save</a>(std::ostream&amp; os,</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;          <span class="keyword">const</span> Serializable&amp; <span class="keywordtype">object</span>,</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;          <span class="keyword">const</span> <span class="keyword">typename</span> Serializable::VersionType version = 0);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Serializable&gt;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceffnn.html#a365753310c86d8142fa5b785cc16004a">load</a>(std::istream&amp; is,</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;          Serializable&amp; <span class="keywordtype">object</span>,</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;          <span class="keyword">const</span> <span class="keyword">typename</span> Serializable::VersionType version = 0);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="namespaceffnn_1_1traits.html">   26</a></span>&#160;<span class="keyword">namespace </span>traits</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classffnn_1_1traits_1_1_serializable.html">   31</a></span>&#160;<span class="keyword">class </span><a class="code" href="classffnn_1_1traits_1_1_serializable.html">Serializable</a></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classffnn_1_1traits_1_1_serializable.html#a08924b3b7d20cb3cb6eafe517d4f7b30">   35</a></span>&#160;  <span class="keyword">typedef</span> <a class="code" href="global_8h.html#a0678a9de3e627b6d8dbba2f2733b4bab">FFNN_SERIALIZATION_VERSION_TYPE</a> <a class="code" href="classffnn_1_1traits_1_1_serializable.html#a08924b3b7d20cb3cb6eafe517d4f7b30">VersionType</a>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classffnn_1_1traits_1_1_serializable.html#a6e626759259f8f370dd4303b4441a234">   38</a></span>&#160;  <span class="keyword">typedef</span> <a class="code" href="global_8h.html#aa6057cb3965fa4db202231a2817b960b">FFNN_SERIALIZATION_INPUT_ARCHIVE_TYPE</a> <a class="code" href="classffnn_1_1traits_1_1_serializable.html#a6e626759259f8f370dd4303b4441a234">InputArchive</a>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classffnn_1_1traits_1_1_serializable.html#a08d986df75d363fa79506d4f6045cb9f">   41</a></span>&#160;  <span class="keyword">typedef</span> <a class="code" href="global_8h.html#a5c59f6dbef7cac034dd58fc9752c9ea6">FFNN_SERIALIZATION_OUTPUT_ARCHIVE_TYPE</a> <a class="code" href="classffnn_1_1traits_1_1_serializable.html#a08d986df75d363fa79506d4f6045cb9f">OutputArchive</a>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classffnn_1_1traits_1_1_serializable.html#a1ce20cc28ccd872b89d226ccac9dcf7d">save</a>(<a class="code" href="classffnn_1_1traits_1_1_serializable.html#a08d986df75d363fa79506d4f6045cb9f">OutputArchive</a>&amp; ar, <a class="code" href="classffnn_1_1traits_1_1_serializable.html#a08924b3b7d20cb3cb6eafe517d4f7b30">VersionType</a>) <span class="keyword">const</span> = 0;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classffnn_1_1traits_1_1_serializable.html#aa1383f0b72501d31aacb6be52e7b5eba">load</a>(<a class="code" href="classffnn_1_1traits_1_1_serializable.html#a6e626759259f8f370dd4303b4441a234">InputArchive</a>&amp; ar, <a class="code" href="classffnn_1_1traits_1_1_serializable.html#a08924b3b7d20cb3cb6eafe517d4f7b30">VersionType</a>) = 0;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;};</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="serializable_8h.html#a3937bc18361c33fe981fe2725f70ebc5">   52</a></span>&#160;<span class="preprocessor">#define FFNN_REGISTER_SERIALIZABLE(object)\</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">  typedef ::ffnn::traits::Serializable::VersionType VersionType;\</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">  typedef ::ffnn::traits::Serializable::InputArchive InputArchive;\</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">  typedef ::ffnn::traits::Serializable::OutputArchive OutputArchive;\</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">  template&lt;typename SerializableType&gt;\</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">    friend void ::ffnn::save(std::ostream&amp; os,\</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">                             const SerializableType&amp; object,\</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">                             const typename SerializableType::VersionType version);\</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">  template&lt;typename SerializableType&gt;\</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">    friend void ::ffnn::load(std::istream&amp; is,\</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">                             SerializableType&amp; object,\</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">                             const typename SerializableType::VersionType version);</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}  <span class="comment">// namespace traits</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}  <span class="comment">// namespace ffnn</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#endif  // FFNN_INTERNAL_TRAITS_SERIALIZABLE_H</span></div>
-<div class="ttc" id="classffnn_1_1traits_1_1_serializable_html_a08924b3b7d20cb3cb6eafe517d4f7b30"><div class="ttname"><a href="classffnn_1_1traits_1_1_serializable.html#a08924b3b7d20cb3cb6eafe517d4f7b30">ffnn::traits::Serializable::VersionType</a></div><div class="ttdeci">FFNN_SERIALIZATION_VERSION_TYPE VersionType</div><div class="ttdoc">Class-version type standardization. </div><div class="ttdef"><b>Definition:</b> serializable.h:35</div></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;type_traits&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">// FFNN</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="global_8h.html">ffnn/config/global.h</a>&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace </span>ffnn</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Serializable&gt;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceffnn.html#a1d292f830b9e27ce3965b0c18231b7fc">save</a>(std::ostream&amp; os,</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;          <span class="keyword">const</span> Serializable&amp; <span class="keywordtype">object</span>,</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;          <span class="keyword">const</span> <span class="keyword">typename</span> Serializable::VersionType version = 0);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> Serializable&gt;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceffnn.html#a365753310c86d8142fa5b785cc16004a">load</a>(std::istream&amp; is,</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;          Serializable&amp; <span class="keywordtype">object</span>,</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;          <span class="keyword">const</span> <span class="keyword">typename</span> Serializable::VersionType version = 0);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="namespaceffnn_1_1internal.html">   27</a></span>&#160;<span class="keyword">namespace </span>internal</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classffnn_1_1internal_1_1_serializable.html">   32</a></span>&#160;<span class="keyword">class </span><a class="code" href="classffnn_1_1internal_1_1_serializable.html">Serializable</a></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classffnn_1_1internal_1_1_serializable.html#a32fe7d82b0caf9fe8b6fb7c312a26028">   36</a></span>&#160;  <span class="keyword">typedef</span> <a class="code" href="global_8h.html#a0678a9de3e627b6d8dbba2f2733b4bab">FFNN_SERIALIZATION_VERSION_TYPE</a> <a class="code" href="classffnn_1_1internal_1_1_serializable.html#a32fe7d82b0caf9fe8b6fb7c312a26028">VersionType</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classffnn_1_1internal_1_1_serializable.html#aadc27d79d606f35a82dd88bad33fa6d2">   39</a></span>&#160;  <span class="keyword">typedef</span> <a class="code" href="global_8h.html#aa6057cb3965fa4db202231a2817b960b">FFNN_SERIALIZATION_INPUT_ARCHIVE_TYPE</a> <a class="code" href="classffnn_1_1internal_1_1_serializable.html#aadc27d79d606f35a82dd88bad33fa6d2">InputArchive</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classffnn_1_1internal_1_1_serializable.html#acf5baead716eb277337a4437e88a5743">   42</a></span>&#160;  <span class="keyword">typedef</span> <a class="code" href="global_8h.html#a5c59f6dbef7cac034dd58fc9752c9ea6">FFNN_SERIALIZATION_OUTPUT_ARCHIVE_TYPE</a> <a class="code" href="classffnn_1_1internal_1_1_serializable.html#acf5baead716eb277337a4437e88a5743">OutputArchive</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classffnn_1_1internal_1_1_serializable.html#a98b43aa17c4986e8a1b809b9d64796bb">save</a>(<a class="code" href="classffnn_1_1internal_1_1_serializable.html#acf5baead716eb277337a4437e88a5743">OutputArchive</a>&amp; ar, <a class="code" href="classffnn_1_1internal_1_1_serializable.html#a32fe7d82b0caf9fe8b6fb7c312a26028">VersionType</a>) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classffnn_1_1internal_1_1_serializable.html#aea103381005de4fda86d42fd6af25513">load</a>(<a class="code" href="classffnn_1_1internal_1_1_serializable.html#aadc27d79d606f35a82dd88bad33fa6d2">InputArchive</a>&amp; ar, <a class="code" href="classffnn_1_1internal_1_1_serializable.html#a32fe7d82b0caf9fe8b6fb7c312a26028">VersionType</a>) = 0;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;};</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="serializable_8h.html#a3937bc18361c33fe981fe2725f70ebc5">   53</a></span>&#160;<span class="preprocessor">#define FFNN_REGISTER_SERIALIZABLE(object)\</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">  typedef std::true_type IsSerializable;\</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">  typedef ::ffnn::internal::Serializable::VersionType VersionType;\</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">  typedef ::ffnn::internal::Serializable::InputArchive InputArchive;\</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">  typedef ::ffnn::internal::Serializable::OutputArchive OutputArchive;\</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">  template&lt;typename SerializableType&gt;\</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">    friend void ::ffnn::save(std::ostream&amp; os,\</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">                             const SerializableType&amp; object,\</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">                             const typename SerializableType::VersionType version);\</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">  template&lt;typename SerializableType&gt;\</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">    friend void ::ffnn::load(std::istream&amp; is,\</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">                             SerializableType&amp; object,\</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">                             const typename SerializableType::VersionType version);</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}  <span class="comment">// namespace internal</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}  <span class="comment">// namespace ffnn</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#endif  // FFNN_INTERNAL_SERIALIZABLE_H</span></div>
 <div class="ttc" id="namespaceffnn_html_a365753310c86d8142fa5b785cc16004a"><div class="ttname"><a href="namespaceffnn.html#a365753310c86d8142fa5b785cc16004a">ffnn::load</a></div><div class="ttdeci">void load(std::istream &amp;is, Serializable &amp;object, const typename Serializable::VersionType version=0)</div></div>
 <div class="ttc" id="global_8h_html"><div class="ttname"><a href="global_8h.html">global.h</a></div></div>
 <div class="ttc" id="namespaceffnn_html_a1d292f830b9e27ce3965b0c18231b7fc"><div class="ttname"><a href="namespaceffnn.html#a1d292f830b9e27ce3965b0c18231b7fc">ffnn::save</a></div><div class="ttdeci">void save(std::ostream &amp;os, const Serializable &amp;object, const typename Serializable::VersionType version=0)</div></div>
-<div class="ttc" id="classffnn_1_1traits_1_1_serializable_html_a08d986df75d363fa79506d4f6045cb9f"><div class="ttname"><a href="classffnn_1_1traits_1_1_serializable.html#a08d986df75d363fa79506d4f6045cb9f">ffnn::traits::Serializable::OutputArchive</a></div><div class="ttdeci">FFNN_SERIALIZATION_OUTPUT_ARCHIVE_TYPE OutputArchive</div><div class="ttdoc">Output (save) archive type. </div><div class="ttdef"><b>Definition:</b> serializable.h:41</div></div>
-<div class="ttc" id="classffnn_1_1traits_1_1_serializable_html"><div class="ttname"><a href="classffnn_1_1traits_1_1_serializable.html">ffnn::traits::Serializable</a></div><div class="ttdoc">An object which can be saved and loaded. </div><div class="ttdef"><b>Definition:</b> serializable.h:31</div></div>
-<div class="ttc" id="classffnn_1_1traits_1_1_serializable_html_aa1383f0b72501d31aacb6be52e7b5eba"><div class="ttname"><a href="classffnn_1_1traits_1_1_serializable.html#aa1383f0b72501d31aacb6be52e7b5eba">ffnn::traits::Serializable::load</a></div><div class="ttdeci">virtual void load(InputArchive &amp;ar, VersionType)=0</div></div>
+<div class="ttc" id="classffnn_1_1internal_1_1_serializable_html_a98b43aa17c4986e8a1b809b9d64796bb"><div class="ttname"><a href="classffnn_1_1internal_1_1_serializable.html#a98b43aa17c4986e8a1b809b9d64796bb">ffnn::internal::Serializable::save</a></div><div class="ttdeci">virtual void save(OutputArchive &amp;ar, VersionType) const =0</div></div>
+<div class="ttc" id="classffnn_1_1internal_1_1_serializable_html_a32fe7d82b0caf9fe8b6fb7c312a26028"><div class="ttname"><a href="classffnn_1_1internal_1_1_serializable.html#a32fe7d82b0caf9fe8b6fb7c312a26028">ffnn::internal::Serializable::VersionType</a></div><div class="ttdeci">FFNN_SERIALIZATION_VERSION_TYPE VersionType</div><div class="ttdoc">Class-version type standardization. </div><div class="ttdef"><b>Definition:</b> serializable.h:36</div></div>
+<div class="ttc" id="classffnn_1_1internal_1_1_serializable_html_acf5baead716eb277337a4437e88a5743"><div class="ttname"><a href="classffnn_1_1internal_1_1_serializable.html#acf5baead716eb277337a4437e88a5743">ffnn::internal::Serializable::OutputArchive</a></div><div class="ttdeci">FFNN_SERIALIZATION_OUTPUT_ARCHIVE_TYPE OutputArchive</div><div class="ttdoc">Output (save) archive type. </div><div class="ttdef"><b>Definition:</b> serializable.h:42</div></div>
 <div class="ttc" id="global_8h_html_a5c59f6dbef7cac034dd58fc9752c9ea6"><div class="ttname"><a href="global_8h.html#a5c59f6dbef7cac034dd58fc9752c9ea6">FFNN_SERIALIZATION_OUTPUT_ARCHIVE_TYPE</a></div><div class="ttdeci">#define FFNN_SERIALIZATION_OUTPUT_ARCHIVE_TYPE</div><div class="ttdef"><b>Definition:</b> global.h:61</div></div>
-<div class="ttc" id="classffnn_1_1traits_1_1_serializable_html_a1ce20cc28ccd872b89d226ccac9dcf7d"><div class="ttname"><a href="classffnn_1_1traits_1_1_serializable.html#a1ce20cc28ccd872b89d226ccac9dcf7d">ffnn::traits::Serializable::save</a></div><div class="ttdeci">virtual void save(OutputArchive &amp;ar, VersionType) const =0</div></div>
-<div class="ttc" id="classffnn_1_1traits_1_1_serializable_html_a6e626759259f8f370dd4303b4441a234"><div class="ttname"><a href="classffnn_1_1traits_1_1_serializable.html#a6e626759259f8f370dd4303b4441a234">ffnn::traits::Serializable::InputArchive</a></div><div class="ttdeci">FFNN_SERIALIZATION_INPUT_ARCHIVE_TYPE InputArchive</div><div class="ttdoc">Input (load) archive type. </div><div class="ttdef"><b>Definition:</b> serializable.h:38</div></div>
+<div class="ttc" id="classffnn_1_1internal_1_1_serializable_html"><div class="ttname"><a href="classffnn_1_1internal_1_1_serializable.html">ffnn::internal::Serializable</a></div><div class="ttdoc">An object which can be saved and loaded. </div><div class="ttdef"><b>Definition:</b> serializable.h:32</div></div>
+<div class="ttc" id="classffnn_1_1internal_1_1_serializable_html_aea103381005de4fda86d42fd6af25513"><div class="ttname"><a href="classffnn_1_1internal_1_1_serializable.html#aea103381005de4fda86d42fd6af25513">ffnn::internal::Serializable::load</a></div><div class="ttdeci">virtual void load(InputArchive &amp;ar, VersionType)=0</div></div>
 <div class="ttc" id="global_8h_html_a0678a9de3e627b6d8dbba2f2733b4bab"><div class="ttname"><a href="global_8h.html#a0678a9de3e627b6d8dbba2f2733b4bab">FFNN_SERIALIZATION_VERSION_TYPE</a></div><div class="ttdeci">#define FFNN_SERIALIZATION_VERSION_TYPE</div><div class="ttdef"><b>Definition:</b> global.h:52</div></div>
+<div class="ttc" id="classffnn_1_1internal_1_1_serializable_html_aadc27d79d606f35a82dd88bad33fa6d2"><div class="ttname"><a href="classffnn_1_1internal_1_1_serializable.html#aadc27d79d606f35a82dd88bad33fa6d2">ffnn::internal::Serializable::InputArchive</a></div><div class="ttdeci">FFNN_SERIALIZATION_INPUT_ARCHIVE_TYPE InputArchive</div><div class="ttdoc">Input (load) archive type. </div><div class="ttdef"><b>Definition:</b> serializable.h:39</div></div>
 <div class="ttc" id="global_8h_html_aa6057cb3965fa4db202231a2817b960b"><div class="ttname"><a href="global_8h.html#aa6057cb3965fa4db202231a2817b960b">FFNN_SERIALIZATION_INPUT_ARCHIVE_TYPE</a></div><div class="ttdeci">#define FFNN_SERIALIZATION_INPUT_ARCHIVE_TYPE</div><div class="ttdef"><b>Definition:</b> global.h:62</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2017 11:34:21 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 31 2017 23:57:13 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

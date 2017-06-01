@@ -8,35 +8,64 @@
 \subsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-typedef std\-::true\-\_\-type \hyperlink{classffnn_1_1distribution_1_1_distribution_aa553d99dbb2eb2ed0633a916c6ba04ea}{Is\-Distribution}
-\begin{DoxyCompactList}\small\item\em Require that Value\-Type is floating point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+typedef \hyperlink{classffnn_1_1distribution_1_1_distribution}{Distribution}$<$ Value\-Type $>$ \hyperlink{classffnn_1_1distribution_1_1_distribution_ae1a3da8f16a034d6c051fcfdcf69f0d2}{Self\-Type}
+\begin{DoxyCompactList}\small\item\em Self type standarization. \end{DoxyCompactList}\item 
+typedef Value\-Type \hyperlink{classffnn_1_1distribution_1_1_distribution_ad62797f0dcb4bb4698bdf17e3f3b07bb}{Scalar\-Type}
+\begin{DoxyCompactList}\small\item\em Self type standarization. \end{DoxyCompactList}\item 
+typedef boost\-::shared\-\_\-ptr\\*
+$<$ \hyperlink{classffnn_1_1distribution_1_1_distribution_ae1a3da8f16a034d6c051fcfdcf69f0d2}{Self\-Type} $>$ \hyperlink{classffnn_1_1distribution_1_1_distribution_a51d4ea875b70b07862c5f68b20c8f41a}{Ptr}
+\begin{DoxyCompactList}\small\item\em Shared resource standardization. \end{DoxyCompactList}\item 
+typedef boost\-::shared\-\_\-ptr\\*
+$<$ const \hyperlink{classffnn_1_1distribution_1_1_distribution_ae1a3da8f16a034d6c051fcfdcf69f0d2}{Self\-Type} $>$ \hyperlink{classffnn_1_1distribution_1_1_distribution_a829c8056b31313f6196f5659ca9503cc}{Const\-Ptr}
+\begin{DoxyCompactList}\small\item\em Constant shared resource standardization. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-virtual Value\-Type \hyperlink{classffnn_1_1distribution_1_1_distribution_adfbfb073a8df2f255961aa44743aaddb}{generate} () const =0
+virtual \hyperlink{classffnn_1_1distribution_1_1_distribution_ad62797f0dcb4bb4698bdf17e3f3b07bb}{Scalar\-Type} \hyperlink{classffnn_1_1distribution_1_1_distribution_a150f344a8fe585fdebd462a4a07ec0ed}{generate} () const =0
 \begin{DoxyCompactList}\small\item\em Generates a random value according to given distribution. \end{DoxyCompactList}\item 
-virtual Value\-Type \hyperlink{classffnn_1_1distribution_1_1_distribution_abd2db033dd692d4b78915734c5c02204}{cdf} (const Value\-Type \&value) const =0
+virtual \hyperlink{classffnn_1_1distribution_1_1_distribution_ad62797f0dcb4bb4698bdf17e3f3b07bb}{Scalar\-Type} \hyperlink{classffnn_1_1distribution_1_1_distribution_aaa3f1b954382c25a5fc50da0de37722c}{cdf} (const \hyperlink{classffnn_1_1distribution_1_1_distribution_ad62797f0dcb4bb4698bdf17e3f3b07bb}{Scalar\-Type} \&value) const =0
 \begin{DoxyCompactList}\small\item\em Computes C\-D\-F of distribution at specified point. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Member Typedef Documentation}
-\hypertarget{classffnn_1_1distribution_1_1_distribution_aa553d99dbb2eb2ed0633a916c6ba04ea}{\index{ffnn\-::distribution\-::\-Distribution@{ffnn\-::distribution\-::\-Distribution}!Is\-Distribution@{Is\-Distribution}}
-\index{Is\-Distribution@{Is\-Distribution}!ffnn::distribution::Distribution@{ffnn\-::distribution\-::\-Distribution}}
-\subsubsection[{Is\-Distribution}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type $>$ typedef std\-::true\-\_\-type {\bf ffnn\-::distribution\-::\-Distribution}$<$ Value\-Type $>$\-::{\bf Is\-Distribution}}}\label{classffnn_1_1distribution_1_1_distribution_aa553d99dbb2eb2ed0633a916c6ba04ea}
+\hypertarget{classffnn_1_1distribution_1_1_distribution_a829c8056b31313f6196f5659ca9503cc}{\index{ffnn\-::distribution\-::\-Distribution@{ffnn\-::distribution\-::\-Distribution}!Const\-Ptr@{Const\-Ptr}}
+\index{Const\-Ptr@{Const\-Ptr}!ffnn::distribution::Distribution@{ffnn\-::distribution\-::\-Distribution}}
+\subsubsection[{Const\-Ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type $>$ typedef boost\-::shared\-\_\-ptr$<$const {\bf Self\-Type}$>$ {\bf ffnn\-::distribution\-::\-Distribution}$<$ Value\-Type $>$\-::{\bf Const\-Ptr}}}\label{classffnn_1_1distribution_1_1_distribution_a829c8056b31313f6196f5659ca9503cc}
 
 
-Require that Value\-Type is floating point. 
+Constant shared resource standardization. 
+
+\hypertarget{classffnn_1_1distribution_1_1_distribution_a51d4ea875b70b07862c5f68b20c8f41a}{\index{ffnn\-::distribution\-::\-Distribution@{ffnn\-::distribution\-::\-Distribution}!Ptr@{Ptr}}
+\index{Ptr@{Ptr}!ffnn::distribution::Distribution@{ffnn\-::distribution\-::\-Distribution}}
+\subsubsection[{Ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type $>$ typedef boost\-::shared\-\_\-ptr$<${\bf Self\-Type}$>$ {\bf ffnn\-::distribution\-::\-Distribution}$<$ Value\-Type $>$\-::{\bf Ptr}}}\label{classffnn_1_1distribution_1_1_distribution_a51d4ea875b70b07862c5f68b20c8f41a}
+
+
+Shared resource standardization. 
+
+\hypertarget{classffnn_1_1distribution_1_1_distribution_ad62797f0dcb4bb4698bdf17e3f3b07bb}{\index{ffnn\-::distribution\-::\-Distribution@{ffnn\-::distribution\-::\-Distribution}!Scalar\-Type@{Scalar\-Type}}
+\index{Scalar\-Type@{Scalar\-Type}!ffnn::distribution::Distribution@{ffnn\-::distribution\-::\-Distribution}}
+\subsubsection[{Scalar\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type $>$ typedef Value\-Type {\bf ffnn\-::distribution\-::\-Distribution}$<$ Value\-Type $>$\-::{\bf Scalar\-Type}}}\label{classffnn_1_1distribution_1_1_distribution_ad62797f0dcb4bb4698bdf17e3f3b07bb}
+
+
+Self type standarization. 
+
+\hypertarget{classffnn_1_1distribution_1_1_distribution_ae1a3da8f16a034d6c051fcfdcf69f0d2}{\index{ffnn\-::distribution\-::\-Distribution@{ffnn\-::distribution\-::\-Distribution}!Self\-Type@{Self\-Type}}
+\index{Self\-Type@{Self\-Type}!ffnn::distribution::Distribution@{ffnn\-::distribution\-::\-Distribution}}
+\subsubsection[{Self\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type $>$ typedef {\bf Distribution}$<$Value\-Type$>$ {\bf ffnn\-::distribution\-::\-Distribution}$<$ Value\-Type $>$\-::{\bf Self\-Type}}}\label{classffnn_1_1distribution_1_1_distribution_ae1a3da8f16a034d6c051fcfdcf69f0d2}
+
+
+Self type standarization. 
 
 
 
 \subsection{Member Function Documentation}
-\hypertarget{classffnn_1_1distribution_1_1_distribution_abd2db033dd692d4b78915734c5c02204}{\index{ffnn\-::distribution\-::\-Distribution@{ffnn\-::distribution\-::\-Distribution}!cdf@{cdf}}
+\hypertarget{classffnn_1_1distribution_1_1_distribution_aaa3f1b954382c25a5fc50da0de37722c}{\index{ffnn\-::distribution\-::\-Distribution@{ffnn\-::distribution\-::\-Distribution}!cdf@{cdf}}
 \index{cdf@{cdf}!ffnn::distribution::Distribution@{ffnn\-::distribution\-::\-Distribution}}
-\subsubsection[{cdf}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type $>$ virtual Value\-Type {\bf ffnn\-::distribution\-::\-Distribution}$<$ Value\-Type $>$\-::cdf (
+\subsubsection[{cdf}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type $>$ virtual {\bf Scalar\-Type} {\bf ffnn\-::distribution\-::\-Distribution}$<$ Value\-Type $>$\-::cdf (
 \begin{DoxyParamCaption}
-\item[{const Value\-Type \&}]{value}
+\item[{const {\bf Scalar\-Type} \&}]{value}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classffnn_1_1distribution_1_1_distribution_abd2db033dd692d4b78915734c5c02204}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classffnn_1_1distribution_1_1_distribution_aaa3f1b954382c25a5fc50da0de37722c}
 
 
 Computes C\-D\-F of distribution at specified point. 
@@ -49,13 +78,13 @@ Computes C\-D\-F of distribution at specified point.
 \begin{DoxyReturn}{Returns}
 cumulative probability 
 \end{DoxyReturn}
-\hypertarget{classffnn_1_1distribution_1_1_distribution_adfbfb073a8df2f255961aa44743aaddb}{\index{ffnn\-::distribution\-::\-Distribution@{ffnn\-::distribution\-::\-Distribution}!generate@{generate}}
+\hypertarget{classffnn_1_1distribution_1_1_distribution_a150f344a8fe585fdebd462a4a07ec0ed}{\index{ffnn\-::distribution\-::\-Distribution@{ffnn\-::distribution\-::\-Distribution}!generate@{generate}}
 \index{generate@{generate}!ffnn::distribution::Distribution@{ffnn\-::distribution\-::\-Distribution}}
-\subsubsection[{generate}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type $>$ virtual Value\-Type {\bf ffnn\-::distribution\-::\-Distribution}$<$ Value\-Type $>$\-::generate (
+\subsubsection[{generate}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type $>$ virtual {\bf Scalar\-Type} {\bf ffnn\-::distribution\-::\-Distribution}$<$ Value\-Type $>$\-::generate (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classffnn_1_1distribution_1_1_distribution_adfbfb073a8df2f255961aa44743aaddb}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classffnn_1_1distribution_1_1_distribution_a150f344a8fe585fdebd462a4a07ec0ed}
 
 
 Generates a random value according to given distribution. 

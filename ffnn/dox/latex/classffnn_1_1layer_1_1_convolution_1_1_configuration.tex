@@ -1,0 +1,166 @@
+\hypertarget{classffnn_1_1layer_1_1_convolution_1_1_configuration}{\section{ffnn\-:\-:layer\-:\-:Convolution$<$ Value\-Type, Layer\-Traits $>$\-:\-:Configuration Class Reference}
+\label{classffnn_1_1layer_1_1_convolution_1_1_configuration}\index{ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Layer\-Traits $>$\-::\-Configuration@{ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Layer\-Traits $>$\-::\-Configuration}}
+}
+
+
+\hyperlink{classffnn_1_1layer_1_1_layer}{Layer} configuration struct.  
+
+
+
+
+{\ttfamily \#include \char`\"{}convolution.\-h\char`\"{}}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classffnn_1_1layer_1_1_convolution_1_1_configuration_a1c4df8e851c7205c80ddeb35f05ae7c4}{Configuration} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classffnn_1_1layer_1_1_convolution_1_1_configuration}{Configuration} \& \hyperlink{classffnn_1_1layer_1_1_convolution_1_1_configuration_a13f1eeca186c18bc1d1d95dcbc7572c0}{set\-Optimizer} (const typename \hyperlink{classffnn_1_1optimizer_1_1_optimizer_ac03e7181934bf0c12a97fc67a60484ab}{Optimizer\-Type\-::\-Ptr} \&optimizer)
+\begin{DoxyCompactList}\small\item\em Sets layer optimization resource. \end{DoxyCompactList}\item 
+\hyperlink{classffnn_1_1layer_1_1_convolution_1_1_configuration}{Configuration} \& \hyperlink{classffnn_1_1layer_1_1_convolution_1_1_configuration_a9a8c8d9ecfbb6cbbe02e9b0d4cbab0d5}{set\-Parameter\-Distribution} (const typename Distributiontype\-::\-Ptr \&distribution)
+\begin{DoxyCompactList}\small\item\em Sets layer parameter initialization distribution. \end{DoxyCompactList}\item 
+\hyperlink{classffnn_1_1layer_1_1_convolution_1_1_configuration}{Configuration} \& \hyperlink{classffnn_1_1layer_1_1_convolution_1_1_configuration_a66f5875cd02f5f632860b08cb18a411d}{set\-Input\-Shape} (const \hyperlink{classffnn_1_1layer_1_1_convolution_a70e1c8cd31ce4b5eef308c4b036d8393}{Shape\-Type} \&input\-\_\-shape)
+\begin{DoxyCompactList}\small\item\em Sets layer input shape. \end{DoxyCompactList}\item 
+\hyperlink{classffnn_1_1layer_1_1_convolution_1_1_configuration}{Configuration} \& \hyperlink{classffnn_1_1layer_1_1_convolution_1_1_configuration_af99746e574944cf6c22045e466f41043}{set\-Filter\-Shape} (const \hyperlink{classffnn_1_1layer_1_1_convolution_a70e1c8cd31ce4b5eef308c4b036d8393}{Shape\-Type} \&filter\-\_\-shape)
+\begin{DoxyCompactList}\small\item\em Sets layer filter shape options. \end{DoxyCompactList}\item 
+\hyperlink{classffnn_1_1layer_1_1_convolution_1_1_configuration}{Configuration} \& \hyperlink{classffnn_1_1layer_1_1_convolution_1_1_configuration_a0f9a97644735bdb6d8396f9910753962}{set\-Stride} (\hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} row\-\_\-stride, \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} col\-\_\-stride=-\/1)
+\begin{DoxyCompactList}\small\item\em Sets filter stride options. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+friend \hyperlink{classffnn_1_1layer_1_1_convolution_1_1_configuration_aa21d93db4f05a3777606069ec91c0b45}{Self\-Type}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Value\-Type, typename Layer\-Traits = convolution\-\_\-layer\-\_\-traits$<$\-Value\-Type$>$$>$class ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Layer\-Traits $>$\-::\-Configuration}
+
+\hyperlink{classffnn_1_1layer_1_1_layer}{Layer} configuration struct. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classffnn_1_1layer_1_1_convolution_1_1_configuration_a1c4df8e851c7205c80ddeb35f05ae7c4}{\index{ffnn\-::layer\-::\-Convolution\-::\-Configuration@{ffnn\-::layer\-::\-Convolution\-::\-Configuration}!Configuration@{Configuration}}
+\index{Configuration@{Configuration}!ffnn::layer::Convolution::Configuration@{ffnn\-::layer\-::\-Convolution\-::\-Configuration}}
+\subsubsection[{Configuration}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Traits = convolution\-\_\-layer\-\_\-traits$<$\-Value\-Type$>$$>$ {\bf ffnn\-::layer\-::\-Convolution}$<$ Value\-Type, Layer\-Traits $>$\-::Configuration\-::\-Configuration (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1_convolution_1_1_configuration_a1c4df8e851c7205c80ddeb35f05ae7c4}
+
+
+Default constructor. 
+
+Try to resolve from template arguments 
+
+\subsection{Member Function Documentation}
+\hypertarget{classffnn_1_1layer_1_1_convolution_1_1_configuration_af99746e574944cf6c22045e466f41043}{\index{ffnn\-::layer\-::\-Convolution\-::\-Configuration@{ffnn\-::layer\-::\-Convolution\-::\-Configuration}!set\-Filter\-Shape@{set\-Filter\-Shape}}
+\index{set\-Filter\-Shape@{set\-Filter\-Shape}!ffnn::layer::Convolution::Configuration@{ffnn\-::layer\-::\-Convolution\-::\-Configuration}}
+\subsubsection[{set\-Filter\-Shape}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Traits = convolution\-\_\-layer\-\_\-traits$<$\-Value\-Type$>$$>$ {\bf Configuration}\& {\bf ffnn\-::layer\-::\-Convolution}$<$ Value\-Type, Layer\-Traits $>$\-::Configuration\-::set\-Filter\-Shape (
+\begin{DoxyParamCaption}
+\item[{const {\bf Shape\-Type} \&}]{filter\-\_\-shape}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1_convolution_1_1_configuration_af99746e574944cf6c22045e466f41043}
+
+
+Sets layer filter shape options. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filter\-\_\-shape} & shape of the receptive field \par
+ {\bfseries Note\-: } The shape specified here is {\ttfamily (H, W, N-\/\-Kernels)}. Each kernel actually has the dimensions {\ttfamily (H, W, D)}, where {\ttfamily (D)}, is the depth of the layer input, and corresponds to the value of {\ttfamily input\-\_\-shape.\-depth} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$\ast$this 
+\end{DoxyReturn}
+\hypertarget{classffnn_1_1layer_1_1_convolution_1_1_configuration_a66f5875cd02f5f632860b08cb18a411d}{\index{ffnn\-::layer\-::\-Convolution\-::\-Configuration@{ffnn\-::layer\-::\-Convolution\-::\-Configuration}!set\-Input\-Shape@{set\-Input\-Shape}}
+\index{set\-Input\-Shape@{set\-Input\-Shape}!ffnn::layer::Convolution::Configuration@{ffnn\-::layer\-::\-Convolution\-::\-Configuration}}
+\subsubsection[{set\-Input\-Shape}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Traits = convolution\-\_\-layer\-\_\-traits$<$\-Value\-Type$>$$>$ {\bf Configuration}\& {\bf ffnn\-::layer\-::\-Convolution}$<$ Value\-Type, Layer\-Traits $>$\-::Configuration\-::set\-Input\-Shape (
+\begin{DoxyParamCaption}
+\item[{const {\bf Shape\-Type} \&}]{input\-\_\-shape}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1_convolution_1_1_configuration_a66f5875cd02f5f632860b08cb18a411d}
+
+
+Sets layer input shape. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\-\_\-shape} & shape of the layer input \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$\ast$this 
+\end{DoxyReturn}
+\hypertarget{classffnn_1_1layer_1_1_convolution_1_1_configuration_a13f1eeca186c18bc1d1d95dcbc7572c0}{\index{ffnn\-::layer\-::\-Convolution\-::\-Configuration@{ffnn\-::layer\-::\-Convolution\-::\-Configuration}!set\-Optimizer@{set\-Optimizer}}
+\index{set\-Optimizer@{set\-Optimizer}!ffnn::layer::Convolution::Configuration@{ffnn\-::layer\-::\-Convolution\-::\-Configuration}}
+\subsubsection[{set\-Optimizer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Traits = convolution\-\_\-layer\-\_\-traits$<$\-Value\-Type$>$$>$ {\bf Configuration}\& {\bf ffnn\-::layer\-::\-Convolution}$<$ Value\-Type, Layer\-Traits $>$\-::Configuration\-::set\-Optimizer (
+\begin{DoxyParamCaption}
+\item[{const typename {\bf Optimizer\-Type\-::\-Ptr} \&}]{optimizer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1_convolution_1_1_configuration_a13f1eeca186c18bc1d1d95dcbc7572c0}
+
+
+Sets layer optimization resource. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em optimizer} & layer optimizer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$\ast$this 
+\end{DoxyReturn}
+\hypertarget{classffnn_1_1layer_1_1_convolution_1_1_configuration_a9a8c8d9ecfbb6cbbe02e9b0d4cbab0d5}{\index{ffnn\-::layer\-::\-Convolution\-::\-Configuration@{ffnn\-::layer\-::\-Convolution\-::\-Configuration}!set\-Parameter\-Distribution@{set\-Parameter\-Distribution}}
+\index{set\-Parameter\-Distribution@{set\-Parameter\-Distribution}!ffnn::layer::Convolution::Configuration@{ffnn\-::layer\-::\-Convolution\-::\-Configuration}}
+\subsubsection[{set\-Parameter\-Distribution}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Traits = convolution\-\_\-layer\-\_\-traits$<$\-Value\-Type$>$$>$ {\bf Configuration}\& {\bf ffnn\-::layer\-::\-Convolution}$<$ Value\-Type, Layer\-Traits $>$\-::Configuration\-::set\-Parameter\-Distribution (
+\begin{DoxyParamCaption}
+\item[{const typename Distributiontype\-::\-Ptr \&}]{distribution}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1_convolution_1_1_configuration_a9a8c8d9ecfbb6cbbe02e9b0d4cbab0d5}
+
+
+Sets layer parameter initialization distribution. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em distribution} & layer distributionribution resource \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$\ast$this 
+\end{DoxyReturn}
+\hypertarget{classffnn_1_1layer_1_1_convolution_1_1_configuration_a0f9a97644735bdb6d8396f9910753962}{\index{ffnn\-::layer\-::\-Convolution\-::\-Configuration@{ffnn\-::layer\-::\-Convolution\-::\-Configuration}!set\-Stride@{set\-Stride}}
+\index{set\-Stride@{set\-Stride}!ffnn::layer::Convolution::Configuration@{ffnn\-::layer\-::\-Convolution\-::\-Configuration}}
+\subsubsection[{set\-Stride}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Traits = convolution\-\_\-layer\-\_\-traits$<$\-Value\-Type$>$$>$ {\bf Configuration}\& {\bf ffnn\-::layer\-::\-Convolution}$<$ Value\-Type, Layer\-Traits $>$\-::Configuration\-::set\-Stride (
+\begin{DoxyParamCaption}
+\item[{{\bf size\-\_\-type}}]{row\-\_\-stride, }
+\item[{{\bf size\-\_\-type}}]{col\-\_\-stride = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1_convolution_1_1_configuration_a0f9a97644735bdb6d8396f9910753962}
+
+
+Sets filter stride options. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row\-\_\-stride} & filter stride along rows of input volume \par
+ {\bfseries Note\-: } If {\ttfamily row\-\_\-stride} is not specified, it is defaulted to {\ttfamily 1} \\
+\hline
+{\em col\-\_\-stride} & filter stride along rows of input volume \par
+ {\bfseries Note\-: } If {\ttfamily col\-\_\-stride} is not specified, it is defaulted to {\ttfamily row\-\_\-stride} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$\ast$this 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classffnn_1_1layer_1_1_convolution_1_1_configuration_aa21d93db4f05a3777606069ec91c0b45}{\index{ffnn\-::layer\-::\-Convolution\-::\-Configuration@{ffnn\-::layer\-::\-Convolution\-::\-Configuration}!Self\-Type@{Self\-Type}}
+\index{Self\-Type@{Self\-Type}!ffnn::layer::Convolution::Configuration@{ffnn\-::layer\-::\-Convolution\-::\-Configuration}}
+\subsubsection[{Self\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Traits = convolution\-\_\-layer\-\_\-traits$<$\-Value\-Type$>$$>$ friend {\bf ffnn\-::layer\-::\-Convolution}$<$ Value\-Type, Layer\-Traits $>$\-::Configuration\-::\-Self\-Type}}\label{classffnn_1_1layer_1_1_convolution_1_1_configuration_aa21d93db4f05a3777606069ec91c0b45}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/\hyperlink{convolution_8h}{convolution.\-h}\end{DoxyCompactItemize}

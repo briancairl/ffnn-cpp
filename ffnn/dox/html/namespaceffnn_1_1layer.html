@@ -90,7 +90,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">ffnn::layer Namespace Reference</div>  </div>
@@ -99,7 +98,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:namespaceffnn_1_1layer_1_1internal"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceffnn_1_1layer_1_1internal.html">internal</a></td></tr>
+<tr class="memitem:namespaceffnn_1_1layer_1_1convolution"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceffnn_1_1layer_1_1convolution.html">convolution</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
@@ -107,17 +106,16 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_activation.html">Activation</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classffnn_1_1layer_1_1_activation.html" title="Activation layer. ">Activation</a> layer.  <a href="classffnn_1_1layer_1_1_activation.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structffnn_1_1layer_1_1convolution__layer__traits.html">convolution_layer_traits</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Describes compile-time traits used to set up a <a class="el" href="classffnn_1_1layer_1_1_convolution.html" title="A convolution layer. ">Convolution</a> object.  <a href="structffnn_1_1layer_1_1convolution__layer__traits.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution.html">Convolution</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A convolution layer.  <a href="classffnn_1_1layer_1_1_convolution.html#details">More...</a><br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_filter_bank.html">FilterBank</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html">ConvolutionVolume</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_fully_connected.html">FullyConnected</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A fully-connected layer.  <a href="classffnn_1_1layer_1_1_fully_connected.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structffnn_1_1layer_1_1hidden__layer__shape.html">hidden_layer_shape</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structffnn_1_1layer_1_1hidden__layer__traits.html">hidden_layer_traits</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html">Hidden</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A network hidden-layer object.  <a href="classffnn_1_1layer_1_1_hidden.html#details">More...</a><br/></td></tr>
@@ -131,50 +129,42 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_output.html">Output</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A layer which handles network outputs.  <a href="classffnn_1_1layer_1_1_output.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_sparsely_connected.html">SparselyConnected</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A fully-connected layer.  <a href="classffnn_1_1layer_1_1_sparsely_connected.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structffnn_1_1layer_1_1_shape_at_compile_time.html">ShapeAtCompileTime</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compile-time <a class="el" href="structffnn_1_1layer_1_1_shape.html" title="Shape structure representing the dimensions of an object with volume. ">Shape</a> structure representing the dimensions of an object with volume.  <a href="structffnn_1_1layer_1_1_shape_at_compile_time.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:a254f16beba4fb335d935e9b43bb9e69a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceffnn_1_1layer.html#a254f16beba4fb335d935e9b43bb9e69a">EmbeddingMode</a> { <a class="el" href="namespaceffnn_1_1layer.html#a254f16beba4fb335d935e9b43bb9e69aa91eb0d1f175a08e2b2991cae348c827d">RowEmbedding</a> = 0, 
-<a class="el" href="namespaceffnn_1_1layer.html#a254f16beba4fb335d935e9b43bb9e69aa42ac01b35d45fd60256ef5008c96c049">ColEmbedding</a> = 1
- }</td></tr>
-<tr class="separator:a254f16beba4fb335d935e9b43bb9e69a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structffnn_1_1layer_1_1_shape.html">Shape</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structffnn_1_1layer_1_1_shape.html" title="Shape structure representing the dimensions of an object with volume. ">Shape</a> structure representing the dimensions of an object with volume.  <a href="structffnn_1_1layer_1_1_shape.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ad128f693900faa5bcf2cdd0ef8e7eee6"><td class="memTemplParams" colspan="2">template&lt;EmbeddingMode mode, EmbeddingMode ref, typename SizeType &gt; </td></tr>
-<tr class="memitem:ad128f693900faa5bcf2cdd0ef8e7eee6"><td class="memTemplItemLeft" align="right" valign="top">constexpr SizeType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceffnn_1_1layer.html#ad128f693900faa5bcf2cdd0ef8e7eee6">embed_dimension</a> (SizeType n, SizeType m)</td></tr>
-<tr class="separator:ad128f693900faa5bcf2cdd0ef8e7eee6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1d8b4e852293231055d1257f1e83e60"><td class="memTemplParams" colspan="2">template&lt;typename SizeType &gt; </td></tr>
-<tr class="memitem:ac1d8b4e852293231055d1257f1e83e60"><td class="memTemplItemLeft" align="right" valign="top">constexpr SizeType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceffnn_1_1layer.html#ac1d8b4e852293231055d1257f1e83e60">output_dimension</a> (SizeType n, SizeType fn, SizeType stride)</td></tr>
-<tr class="separator:ac1d8b4e852293231055d1257f1e83e60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33fc9c6c7eb5fbdef14e0aa0db97dd13"><td class="memTemplParams" colspan="2">template&lt;typename LayerType &gt; </td></tr>
 <tr class="memitem:a33fc9c6c7eb5fbdef14e0aa0db97dd13"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceffnn_1_1layer.html#a33fc9c6c7eb5fbdef14e0aa0db97dd13">connect</a> (const typename LayerType::Ptr &amp;from, const typename LayerType::Ptr &amp;to)</td></tr>
 <tr class="separator:a33fc9c6c7eb5fbdef14e0aa0db97dd13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83ba223c7b7eb8e3d926b98b266f24c8"><td class="memTemplParams" colspan="2">template&lt;typename SizeType &gt; </td></tr>
+<tr class="memitem:a83ba223c7b7eb8e3d926b98b266f24c8"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceffnn_1_1layer.html#a83ba223c7b7eb8e3d926b98b266f24c8">is_dynamic</a> (SizeType n)</td></tr>
+<tr class="memdesc:a83ba223c7b7eb8e3d926b98b266f24c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if size represents a dynamic size.  <a href="#a83ba223c7b7eb8e3d926b98b266f24c8">More...</a><br/></td></tr>
+<tr class="separator:a83ba223c7b7eb8e3d926b98b266f24c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9369bd9ca711c303dd6709fbb50ef169"><td class="memTemplParams" colspan="2">template&lt;typename SizeType &gt; </td></tr>
+<tr class="memitem:a9369bd9ca711c303dd6709fbb50ef169"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceffnn_1_1layer.html#a9369bd9ca711c303dd6709fbb50ef169">is_dynamic</a> (SizeType n, SizeType m)</td></tr>
+<tr class="memdesc:a9369bd9ca711c303dd6709fbb50ef169"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a pair of sizes is dynamic.  <a href="#a9369bd9ca711c303dd6709fbb50ef169">More...</a><br/></td></tr>
+<tr class="separator:a9369bd9ca711c303dd6709fbb50ef169"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a3ca00311f112957ed5ca16b5b3acdd"><td class="memTemplParams" colspan="2">template&lt;typename SizeType &gt; </td></tr>
+<tr class="memitem:a6a3ca00311f112957ed5ca16b5b3acdd"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceffnn_1_1layer.html#a6a3ca00311f112957ed5ca16b5b3acdd">is_dynamic</a> (SizeType n, SizeType m, SizeType l)</td></tr>
+<tr class="memdesc:a6a3ca00311f112957ed5ca16b5b3acdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a triplet of sizes is dynamic.  <a href="#a6a3ca00311f112957ed5ca16b5b3acdd">More...</a><br/></td></tr>
+<tr class="separator:a6a3ca00311f112957ed5ca16b5b3acdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a311eb389a31756b22de7d4ca5b64b575"><td class="memTemplParams" colspan="2">template&lt;typename SizeType &gt; </td></tr>
+<tr class="memitem:a311eb389a31756b22de7d4ca5b64b575"><td class="memTemplItemLeft" align="right" valign="top">constexpr SizeType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceffnn_1_1layer.html#a311eb389a31756b22de7d4ca5b64b575">multiply_if_not_dynamic_sizes</a> (SizeType n, SizeType m)</td></tr>
+<tr class="memdesc:a311eb389a31756b22de7d4ca5b64b575"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplies a pair of sizes if all sizes are static.  <a href="#a311eb389a31756b22de7d4ca5b64b575">More...</a><br/></td></tr>
+<tr class="separator:a311eb389a31756b22de7d4ca5b64b575"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4cdb22bcffa10bf7bdc376f1a351c41"><td class="memTemplParams" colspan="2">template&lt;typename SizeType &gt; </td></tr>
+<tr class="memitem:ad4cdb22bcffa10bf7bdc376f1a351c41"><td class="memTemplItemLeft" align="right" valign="top">constexpr SizeType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceffnn_1_1layer.html#ad4cdb22bcffa10bf7bdc376f1a351c41">multiply_if_not_dynamic_sizes</a> (SizeType n, SizeType m, SizeType l)</td></tr>
+<tr class="memdesc:ad4cdb22bcffa10bf7bdc376f1a351c41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplies a triplet of sizes if all sizes are static.  <a href="#ad4cdb22bcffa10bf7bdc376f1a351c41">More...</a><br/></td></tr>
+<tr class="separator:ad4cdb22bcffa10bf7bdc376f1a351c41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5604719421dd11309bad1f25126f5bd7"><td class="memTemplParams" colspan="2">template&lt;typename SizeType &gt; </td></tr>
+<tr class="memitem:a5604719421dd11309bad1f25126f5bd7"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceffnn_1_1layer.html#a5604719421dd11309bad1f25126f5bd7">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="structffnn_1_1layer_1_1_shape.html">Shape</a>&lt; SizeType &gt; &amp;dim)</td></tr>
+<tr class="separator:a5604719421dd11309bad1f25126f5bd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Enumeration Type Documentation</h2>
-<a class="anchor" id="a254f16beba4fb335d935e9b43bb9e69a"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="namespaceffnn_1_1layer.html#a254f16beba4fb335d935e9b43bb9e69a">ffnn::layer::EmbeddingMode</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="a254f16beba4fb335d935e9b43bb9e69aa91eb0d1f175a08e2b2991cae348c827d"></a>RowEmbedding</em>&#160;</td><td class="fielddoc">
-<p>Embed depth along filter matrix rows. </p>
-</td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a254f16beba4fb335d935e9b43bb9e69aa42ac01b35d45fd60256ef5008c96c049"></a>ColEmbedding</em>&#160;</td><td class="fielddoc">
-<p>Embed depth along filter matrix cols. </p>
-</td></tr>
-</table>
-
-</div>
-</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a33fc9c6c7eb5fbdef14e0aa0db97dd13"></a>
 <div class="memitem">
@@ -204,14 +194,49 @@ template&lt;typename LayerType &gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ad128f693900faa5bcf2cdd0ef8e7eee6"></a>
+<a class="anchor" id="a83ba223c7b7eb8e3d926b98b266f24c8"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;EmbeddingMode mode, EmbeddingMode ref, typename SizeType &gt; </div>
+template&lt;typename SizeType &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">constexpr SizeType ffnn::layer::embed_dimension </td>
+          <td class="memname">constexpr bool ffnn::layer::is_dynamic </td>
+          <td>(</td>
+          <td class="paramtype">SizeType&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if size represents a dynamic size. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>interger dimension </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">true</td><td>if dimension represents a dynamic size </td></tr>
+    <tr><td class="paramname">false</td><td>otherwise </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Referenced by <a class="el" href="namespaceffnn_1_1layer.html#a9369bd9ca711c303dd6709fbb50ef169">is_dynamic()</a>, and <a class="el" href="namespaceffnn_1_1layer.html#a311eb389a31756b22de7d4ca5b64b575">multiply_if_not_dynamic_sizes()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9369bd9ca711c303dd6709fbb50ef169"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename SizeType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool ffnn::layer::is_dynamic </td>
           <td>(</td>
           <td class="paramtype">SizeType&#160;</td>
           <td class="paramname"><em>n</em>, </td>
@@ -230,16 +255,41 @@ template&lt;EmbeddingMode mode, EmbeddingMode ref, typename SizeType &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Checks if a pair of sizes is dynamic. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>interger dimension </td></tr>
+    <tr><td class="paramname">m</td><td>interger dimension </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">true</td><td>if either dimension represents a dynamic size </td></tr>
+    <tr><td class="paramname">false</td><td>otherwise </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceffnn_1_1layer_a9369bd9ca711c303dd6709fbb50ef169_cgraph.png" border="0" usemap="#namespaceffnn_1_1layer_a9369bd9ca711c303dd6709fbb50ef169_cgraph" alt=""/></div>
+<map name="namespaceffnn_1_1layer_a9369bd9ca711c303dd6709fbb50ef169_cgraph" id="namespaceffnn_1_1layer_a9369bd9ca711c303dd6709fbb50ef169_cgraph">
+<area shape="rect" id="node2" href="namespaceffnn_1_1layer.html#a83ba223c7b7eb8e3d926b98b266f24c8" title="Checks if size represents a dynamic size. " alt="" coords="208,5,363,32"/></map>
+</div>
+</p>
+
 </div>
 </div>
-<a class="anchor" id="ac1d8b4e852293231055d1257f1e83e60"></a>
+<a class="anchor" id="a6a3ca00311f112957ed5ca16b5b3acdd"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename SizeType &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">constexpr SizeType ffnn::layer::output_dimension </td>
+          <td class="memname">constexpr bool ffnn::layer::is_dynamic </td>
           <td>(</td>
           <td class="paramtype">SizeType&#160;</td>
           <td class="paramname"><em>n</em>, </td>
@@ -248,13 +298,182 @@ template&lt;typename SizeType &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">SizeType&#160;</td>
-          <td class="paramname"><em>fn</em>, </td>
+          <td class="paramname"><em>m</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">SizeType&#160;</td>
-          <td class="paramname"><em>stride</em>&#160;</td>
+          <td class="paramname"><em>l</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if a triplet of sizes is dynamic. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>interger dimension </td></tr>
+    <tr><td class="paramname">m</td><td>interger dimension </td></tr>
+    <tr><td class="paramname">l</td><td>interger dimension </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">true</td><td>if any dimension represents a dynamic size </td></tr>
+    <tr><td class="paramname">false</td><td>otherwise </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceffnn_1_1layer_a6a3ca00311f112957ed5ca16b5b3acdd_cgraph.png" border="0" usemap="#namespaceffnn_1_1layer_a6a3ca00311f112957ed5ca16b5b3acdd_cgraph" alt=""/></div>
+<map name="namespaceffnn_1_1layer_a6a3ca00311f112957ed5ca16b5b3acdd_cgraph" id="namespaceffnn_1_1layer_a6a3ca00311f112957ed5ca16b5b3acdd_cgraph">
+<area shape="rect" id="node2" href="namespaceffnn_1_1layer.html#a83ba223c7b7eb8e3d926b98b266f24c8" title="Checks if size represents a dynamic size. " alt="" coords="208,5,363,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a311eb389a31756b22de7d4ca5b64b575"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename SizeType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr SizeType ffnn::layer::multiply_if_not_dynamic_sizes </td>
+          <td>(</td>
+          <td class="paramtype">SizeType&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SizeType&#160;</td>
+          <td class="paramname"><em>m</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Multiplies a pair of sizes if all sizes are static. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>interger dimension </td></tr>
+    <tr><td class="paramname">m</td><td>interger dimension </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">(n*m)</td><td>if sizes are not dynamic </td></tr>
+    <tr><td class="paramname">Eigen::Dynamic</td><td>otherwise </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Referenced by <a class="el" href="structffnn_1_1layer_1_1_shape.html#a6e8ffdbc3feeb20a1f246b3ec56e40ca">ffnn::layer::Shape&lt; SizeType &gt;::size()</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceffnn_1_1layer_a311eb389a31756b22de7d4ca5b64b575_cgraph.png" border="0" usemap="#namespaceffnn_1_1layer_a311eb389a31756b22de7d4ca5b64b575_cgraph" alt=""/></div>
+<map name="namespaceffnn_1_1layer_a311eb389a31756b22de7d4ca5b64b575_cgraph" id="namespaceffnn_1_1layer_a311eb389a31756b22de7d4ca5b64b575_cgraph">
+<area shape="rect" id="node2" href="namespaceffnn_1_1layer.html#a83ba223c7b7eb8e3d926b98b266f24c8" title="Checks if size represents a dynamic size. " alt="" coords="208,12,363,39"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ad4cdb22bcffa10bf7bdc376f1a351c41"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename SizeType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr SizeType ffnn::layer::multiply_if_not_dynamic_sizes </td>
+          <td>(</td>
+          <td class="paramtype">SizeType&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SizeType&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SizeType&#160;</td>
+          <td class="paramname"><em>l</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Multiplies a triplet of sizes if all sizes are static. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>interger dimension </td></tr>
+    <tr><td class="paramname">m</td><td>interger dimension </td></tr>
+    <tr><td class="paramname">l</td><td>interger dimension </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">(n*m*l)</td><td>if sizes are not dynamic </td></tr>
+    <tr><td class="paramname">Eigen::Dynamic</td><td>otherwise </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespaceffnn_1_1layer_ad4cdb22bcffa10bf7bdc376f1a351c41_cgraph.png" border="0" usemap="#namespaceffnn_1_1layer_ad4cdb22bcffa10bf7bdc376f1a351c41_cgraph" alt=""/></div>
+<map name="namespaceffnn_1_1layer_ad4cdb22bcffa10bf7bdc376f1a351c41_cgraph" id="namespaceffnn_1_1layer_ad4cdb22bcffa10bf7bdc376f1a351c41_cgraph">
+<area shape="rect" id="node2" href="namespaceffnn_1_1layer.html#a83ba223c7b7eb8e3d926b98b266f24c8" title="Checks if size represents a dynamic size. " alt="" coords="208,12,363,39"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a5604719421dd11309bad1f25126f5bd7"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename SizeType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; ffnn::layer::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Shape&lt; SizeType &gt; &amp;&#160;</td>
+          <td class="paramname"><em>dim</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -269,7 +488,7 @@ template&lt;typename SizeType &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2017 11:34:22 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 31 2017 23:57:13 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

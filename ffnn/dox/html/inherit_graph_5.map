@@ -1,3 +1,11 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$structffnn_1_1distribution_1_1_standard_normal_parameters.html" title="ffnn::distribution\l::StandardNormalParameters\l\&lt; ValueType \&gt;" alt="" coords="6,4,197,60"/>
+<area shape="rect" id="node1" href="$classffnn_1_1internal_1_1_serializable.html" title="An object which can be saved and loaded. " alt="" coords="6,155,175,181"/>
+<area shape="rect" id="node2" href="$classffnn_1_1internal_1_1_unique.html" title="An object with a unique ID. " alt="" coords="225,155,367,181"/>
+<area shape="rect" id="node3" href="$classffnn_1_1layer_1_1_layer.html" title="Base object for all layer types. " alt="" coords="416,147,536,189"/>
+<area shape="rect" id="node4" href="$classffnn_1_1layer_1_1_hidden.html" title="A network hidden&#45;layer object. " alt="" coords="596,5,807,75"/>
+<area shape="rect" id="node5" href="$classffnn_1_1layer_1_1_input.html" title="A layer which handles network inputs. " alt="" coords="607,100,796,156"/>
+<area shape="rect" id="node6" href="$classffnn_1_1layer_1_1_output.html" title="A layer which handles network outputs. " alt="" coords="602,180,801,236"/>
+<area shape="rect" id="node7" href="$classffnn_1_1layer_1_1_hidden.html" title="ffnn::layer::Hidden\l\&lt; ValueType, _HiddenLayerShape \&gt;" alt="" coords="585,259,818,301"/>
+<area shape="rect" id="node8" href="$classffnn_1_1layer_1_1_activation.html" title="Activation layer. " alt="" coords="901,201,1131,271"/>
+<area shape="rect" id="node9" href="$classffnn_1_1layer_1_1_fully_connected.html" title="A fully&#45;connected layer. " alt="" coords="867,296,1165,352"/>
 </map>

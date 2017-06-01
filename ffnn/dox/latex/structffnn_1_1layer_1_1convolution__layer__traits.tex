@@ -1,0 +1,257 @@
+\hypertarget{structffnn_1_1layer_1_1convolution__layer__traits}{\section{ffnn\-:\-:layer\-:\-:convolution\-\_\-layer\-\_\-traits$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Kernel\-Height\-At\-Compile\-Time, Kernel\-Width\-At\-Compile\-Time, Kernel\-Count\-At\-Compile\-Time, Row\-Stride\-At\-Compile\-Time, Col\-Stride\-At\-Compile\-Time, Mode $>$ Struct Template Reference}
+\label{structffnn_1_1layer_1_1convolution__layer__traits}\index{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Kernel\-Height\-At\-Compile\-Time, Kernel\-Width\-At\-Compile\-Time, Kernel\-Count\-At\-Compile\-Time, Row\-Stride\-At\-Compile\-Time, Col\-Stride\-At\-Compile\-Time, Mode $>$@{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Kernel\-Height\-At\-Compile\-Time, Kernel\-Width\-At\-Compile\-Time, Kernel\-Count\-At\-Compile\-Time, Row\-Stride\-At\-Compile\-Time, Col\-Stride\-At\-Compile\-Time, Mode $>$}}
+}
+
+
+Describes compile-\/time traits used to set up a \hyperlink{classffnn_1_1layer_1_1_convolution}{Convolution} object.  
+
+
+
+
+{\ttfamily \#include \char`\"{}convolution.\-h\char`\"{}}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef filter\-\_\-traits\\*
+$<$ Value\-Type, \hyperlink{structffnn_1_1layer_1_1convolution__layer__traits_ad6fb939fee90c196d31a8c98f663caa3}{kernel\-\_\-height}, \\*
+\hyperlink{structffnn_1_1layer_1_1convolution__layer__traits_ad6fb939fee90c196d31a8c98f663caa3}{kernel\-\_\-height}, \hyperlink{structffnn_1_1layer_1_1convolution__layer__traits_a508a1594a6f77f6f536744cd40e2b9fd}{input\-\_\-depth}, \\*
+\hyperlink{structffnn_1_1layer_1_1convolution__layer__traits_a4cdb0a6a0f47662f59f77beff2b406e5}{kernel\-\_\-count}, \hyperlink{structffnn_1_1layer_1_1convolution__layer__traits_ab598247847360cd7a710c9b0b14496ae}{embedding\-\_\-mode} $>$ \hyperlink{structffnn_1_1layer_1_1convolution__layer__traits_acea1d4d335c6bfe4151ac326f1a341de}{Filter\-Traits}
+\begin{DoxyCompactList}\small\item\em Kernel traits standardization. \end{DoxyCompactList}\item 
+typedef \hyperlink{structffnn_1_1layer_1_1hidden__layer__traits}{hidden\-\_\-layer\-\_\-traits}\\*
+$<$ \hyperlink{structffnn_1_1layer_1_1convolution__layer__traits_a749c38192fa7552eb5cd5ebc4b564592}{embedded\-\_\-input\-\_\-height}, \\*
+\hyperlink{structffnn_1_1layer_1_1convolution__layer__traits_ae43600771fd374186af19f38dd2805bf}{embedded\-\_\-input\-\_\-width}, \\*
+\hyperlink{structffnn_1_1layer_1_1convolution__layer__traits_a00abec5f1e390a13ce4fc9daf67e5ca7}{embedded\-\_\-output\-\_\-height}, \\*
+\hyperlink{structffnn_1_1layer_1_1convolution__layer__traits_a34a2b3bbb6a24b89d48554b7c56d9654}{embedded\-\_\-output\-\_\-width} $>$\\*
+ Hidden\-Layer\-Traits typedef \\*
+\hyperlink{classffnn_1_1layer_1_1_hidden}{Hidden}$<$ Value\-Type, \\*
+Hidden\-Layer\-Traits $>$ \hyperlink{structffnn_1_1layer_1_1convolution__layer__traits_a53bf482ee85839d3c314180598c931b4}{Hidden\-Layer\-Type}
+\begin{DoxyCompactList}\small\item\em Compile-\/time Base\-Type traits. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr Embedding\-Mode \hyperlink{structffnn_1_1layer_1_1convolution__layer__traits_ab598247847360cd7a710c9b0b14496ae}{embedding\-\_\-mode} = Mode
+\begin{DoxyCompactList}\small\item\em Data embedding mode. \end{DoxyCompactList}\item 
+static constexpr \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} \hyperlink{structffnn_1_1layer_1_1convolution__layer__traits_ad6fb939fee90c196d31a8c98f663caa3}{kernel\-\_\-height} = Kernel\-Height\-At\-Compile\-Time
+\begin{DoxyCompactList}\small\item\em Kernel kernel height. \end{DoxyCompactList}\item 
+static constexpr \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} \hyperlink{structffnn_1_1layer_1_1convolution__layer__traits_a2aafad04475fbeb3b5947ed693859028}{kernel\-\_\-width} = Kernel\-Width\-At\-Compile\-Time
+\begin{DoxyCompactList}\small\item\em Kernel kernel width. \end{DoxyCompactList}\item 
+static constexpr \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} \hyperlink{structffnn_1_1layer_1_1convolution__layer__traits_a4cdb0a6a0f47662f59f77beff2b406e5}{kernel\-\_\-count} = Kernel\-Count\-At\-Compile\-Time
+\begin{DoxyCompactList}\small\item\em Number of filter kernels. \end{DoxyCompactList}\item 
+static constexpr \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} \hyperlink{structffnn_1_1layer_1_1convolution__layer__traits_a6b62abb46818fb4d09b096e53089b4f4}{row\-\_\-stride} = Row\-Stride\-At\-Compile\-Time
+\begin{DoxyCompactList}\small\item\em Filter stride along input rows. \end{DoxyCompactList}\item 
+static constexpr \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} \hyperlink{structffnn_1_1layer_1_1convolution__layer__traits_a36aab5cc1478feddd1085cf54b44246e}{col\-\_\-stride} = Col\-Stride\-At\-Compile\-Time
+\begin{DoxyCompactList}\small\item\em Filter stride along input cols. \end{DoxyCompactList}\item 
+static constexpr \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} \hyperlink{structffnn_1_1layer_1_1convolution__layer__traits_a94cdb215d2fa97936542f44551bea669}{input\-\_\-height} = Height\-At\-Compile\-Time
+\begin{DoxyCompactList}\small\item\em \hyperlink{classffnn_1_1layer_1_1_input}{Input} volume height. \end{DoxyCompactList}\item 
+static constexpr \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} \hyperlink{structffnn_1_1layer_1_1convolution__layer__traits_aeb9e3903c86bc692b6cee14434537e46}{input\-\_\-width} = Width\-At\-Compile\-Time
+\begin{DoxyCompactList}\small\item\em \hyperlink{classffnn_1_1layer_1_1_input}{Input} volume width. \end{DoxyCompactList}\item 
+static constexpr \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} \hyperlink{structffnn_1_1layer_1_1convolution__layer__traits_a508a1594a6f77f6f536744cd40e2b9fd}{input\-\_\-depth} = Depth\-At\-Compile\-Time
+\begin{DoxyCompactList}\small\item\em \hyperlink{classffnn_1_1layer_1_1_input}{Input} volume depth. \end{DoxyCompactList}\item 
+static constexpr \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} \hyperlink{structffnn_1_1layer_1_1convolution__layer__traits_a352db60c55310a92c32b68ecec8967db}{output\-\_\-height}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classffnn_1_1layer_1_1_output}{Output} volume height. \end{DoxyCompactList}\item 
+static constexpr \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} \hyperlink{structffnn_1_1layer_1_1convolution__layer__traits_a8139122e587481fb9584f2b446e4ea11}{output\-\_\-width}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classffnn_1_1layer_1_1_output}{Output} volume width. \end{DoxyCompactList}\item 
+static constexpr \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} \hyperlink{structffnn_1_1layer_1_1convolution__layer__traits_ad2c2cfab03dd0a071bf0497ecf514086}{output\-\_\-depth} = Kernel\-Count\-At\-Compile\-Time
+\begin{DoxyCompactList}\small\item\em \hyperlink{classffnn_1_1layer_1_1_output}{Output} volume depth. \end{DoxyCompactList}\item 
+static constexpr \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} \hyperlink{structffnn_1_1layer_1_1convolution__layer__traits_a749c38192fa7552eb5cd5ebc4b564592}{embedded\-\_\-input\-\_\-height}
+\begin{DoxyCompactList}\small\item\em Depth-\/embedded input height. \end{DoxyCompactList}\item 
+static constexpr \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} \hyperlink{structffnn_1_1layer_1_1convolution__layer__traits_ae43600771fd374186af19f38dd2805bf}{embedded\-\_\-input\-\_\-width}
+\begin{DoxyCompactList}\small\item\em Depth-\/embedded input width. \end{DoxyCompactList}\item 
+static constexpr \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} \hyperlink{structffnn_1_1layer_1_1convolution__layer__traits_a00abec5f1e390a13ce4fc9daf67e5ca7}{embedded\-\_\-output\-\_\-height}
+\begin{DoxyCompactList}\small\item\em Depth-\/embedded output height. \end{DoxyCompactList}\item 
+static constexpr \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} \hyperlink{structffnn_1_1layer_1_1convolution__layer__traits_a34a2b3bbb6a24b89d48554b7c56d9654}{embedded\-\_\-output\-\_\-width}
+\begin{DoxyCompactList}\small\item\em Depth-\/embedded output width. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Value\-Type, size\-\_\-type Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Row\-Stride\-At\-Compile\-Time = 1, size\-\_\-type Col\-Stride\-At\-Compile\-Time = -\/1, Embedding\-Mode Mode = Col\-Embedding$>$struct ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Kernel\-Height\-At\-Compile\-Time, Kernel\-Width\-At\-Compile\-Time, Kernel\-Count\-At\-Compile\-Time, Row\-Stride\-At\-Compile\-Time, Col\-Stride\-At\-Compile\-Time, Mode $>$}
+
+Describes compile-\/time traits used to set up a \hyperlink{classffnn_1_1layer_1_1_convolution}{Convolution} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Value\-Type} & scalar value type \\
+\hline
+{\em Height\-At\-Compile\-Time} & height of the filter kernel \\
+\hline
+{\em Width\-At\-Compile\-Time} & width of the filter kernel \\
+\hline
+{\em Depth\-At\-Compile\-Time} & depth of the filter kernel \\
+\hline
+{\em Kernels\-At\-Compile\-Time} & number of kernels this filter will have \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{structffnn_1_1layer_1_1convolution__layer__traits_acea1d4d335c6bfe4151ac326f1a341de}{\index{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits@{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}!Filter\-Traits@{Filter\-Traits}}
+\index{Filter\-Traits@{Filter\-Traits}!ffnn::layer::convolution_layer_traits@{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}}
+\subsubsection[{Filter\-Traits}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , size\-\_\-type Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Row\-Stride\-At\-Compile\-Time = 1, size\-\_\-type Col\-Stride\-At\-Compile\-Time = -\/1, Embedding\-Mode Mode = Col\-Embedding$>$ typedef filter\-\_\-traits$<$ Value\-Type, {\bf kernel\-\_\-height}, {\bf kernel\-\_\-height}, {\bf input\-\_\-depth}, {\bf kernel\-\_\-count}, {\bf embedding\-\_\-mode} $>$ {\bf ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Kernel\-Height\-At\-Compile\-Time, Kernel\-Width\-At\-Compile\-Time, Kernel\-Count\-At\-Compile\-Time, Row\-Stride\-At\-Compile\-Time, Col\-Stride\-At\-Compile\-Time, Mode $>$\-::{\bf Filter\-Traits}}}\label{structffnn_1_1layer_1_1convolution__layer__traits_acea1d4d335c6bfe4151ac326f1a341de}
+
+
+Kernel traits standardization. 
+
+\hypertarget{structffnn_1_1layer_1_1convolution__layer__traits_a53bf482ee85839d3c314180598c931b4}{\index{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits@{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}!Hidden\-Layer\-Type@{Hidden\-Layer\-Type}}
+\index{Hidden\-Layer\-Type@{Hidden\-Layer\-Type}!ffnn::layer::convolution_layer_traits@{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}}
+\subsubsection[{Hidden\-Layer\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , size\-\_\-type Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Row\-Stride\-At\-Compile\-Time = 1, size\-\_\-type Col\-Stride\-At\-Compile\-Time = -\/1, Embedding\-Mode Mode = Col\-Embedding$>$ typedef {\bf hidden\-\_\-layer\-\_\-traits}$<$ {\bf embedded\-\_\-input\-\_\-height}, {\bf embedded\-\_\-input\-\_\-width}, {\bf embedded\-\_\-output\-\_\-height}, {\bf embedded\-\_\-output\-\_\-width} $>$ Hidden\-Layer\-Traits typedef {\bf Hidden}$<$Value\-Type, Hidden\-Layer\-Traits$>$ {\bf ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Kernel\-Height\-At\-Compile\-Time, Kernel\-Width\-At\-Compile\-Time, Kernel\-Count\-At\-Compile\-Time, Row\-Stride\-At\-Compile\-Time, Col\-Stride\-At\-Compile\-Time, Mode $>$\-::{\bf Hidden\-Layer\-Type}}}\label{structffnn_1_1layer_1_1convolution__layer__traits_a53bf482ee85839d3c314180598c931b4}
+
+
+Compile-\/time Base\-Type traits. 
+
+Base type standardization 
+
+\subsection{Member Data Documentation}
+\hypertarget{structffnn_1_1layer_1_1convolution__layer__traits_a36aab5cc1478feddd1085cf54b44246e}{\index{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits@{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}!col\-\_\-stride@{col\-\_\-stride}}
+\index{col\-\_\-stride@{col\-\_\-stride}!ffnn::layer::convolution_layer_traits@{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}}
+\subsubsection[{col\-\_\-stride}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , size\-\_\-type Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Row\-Stride\-At\-Compile\-Time = 1, size\-\_\-type Col\-Stride\-At\-Compile\-Time = -\/1, Embedding\-Mode Mode = Col\-Embedding$>$ constexpr {\bf size\-\_\-type} {\bf ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Kernel\-Height\-At\-Compile\-Time, Kernel\-Width\-At\-Compile\-Time, Kernel\-Count\-At\-Compile\-Time, Row\-Stride\-At\-Compile\-Time, Col\-Stride\-At\-Compile\-Time, Mode $>$\-::col\-\_\-stride = Col\-Stride\-At\-Compile\-Time\hspace{0.3cm}{\ttfamily [static]}}}\label{structffnn_1_1layer_1_1convolution__layer__traits_a36aab5cc1478feddd1085cf54b44246e}
+
+
+Filter stride along input cols. 
+
+\hypertarget{structffnn_1_1layer_1_1convolution__layer__traits_a749c38192fa7552eb5cd5ebc4b564592}{\index{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits@{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}!embedded\-\_\-input\-\_\-height@{embedded\-\_\-input\-\_\-height}}
+\index{embedded\-\_\-input\-\_\-height@{embedded\-\_\-input\-\_\-height}!ffnn::layer::convolution_layer_traits@{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}}
+\subsubsection[{embedded\-\_\-input\-\_\-height}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , size\-\_\-type Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Row\-Stride\-At\-Compile\-Time = 1, size\-\_\-type Col\-Stride\-At\-Compile\-Time = -\/1, Embedding\-Mode Mode = Col\-Embedding$>$ constexpr {\bf size\-\_\-type} {\bf ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Kernel\-Height\-At\-Compile\-Time, Kernel\-Width\-At\-Compile\-Time, Kernel\-Count\-At\-Compile\-Time, Row\-Stride\-At\-Compile\-Time, Col\-Stride\-At\-Compile\-Time, Mode $>$\-::embedded\-\_\-input\-\_\-height\hspace{0.3cm}{\ttfamily [static]}}}\label{structffnn_1_1layer_1_1convolution__layer__traits_a749c38192fa7552eb5cd5ebc4b564592}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+    convolution::embed\_dimension<Mode, ColEmbedding>(\hyperlink{structffnn_1_1layer_1_1convolution__layer__traits_a94cdb215d2fa97936542f44551bea669}{input\_height}, 
+      \hyperlink{structffnn_1_1layer_1_1convolution__layer__traits_a508a1594a6f77f6f536744cd40e2b9fd}{input\_depth})
+\end{DoxyCode}
+
+
+Depth-\/embedded input height. 
+
+\hypertarget{structffnn_1_1layer_1_1convolution__layer__traits_ae43600771fd374186af19f38dd2805bf}{\index{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits@{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}!embedded\-\_\-input\-\_\-width@{embedded\-\_\-input\-\_\-width}}
+\index{embedded\-\_\-input\-\_\-width@{embedded\-\_\-input\-\_\-width}!ffnn::layer::convolution_layer_traits@{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}}
+\subsubsection[{embedded\-\_\-input\-\_\-width}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , size\-\_\-type Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Row\-Stride\-At\-Compile\-Time = 1, size\-\_\-type Col\-Stride\-At\-Compile\-Time = -\/1, Embedding\-Mode Mode = Col\-Embedding$>$ constexpr {\bf size\-\_\-type} {\bf ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Kernel\-Height\-At\-Compile\-Time, Kernel\-Width\-At\-Compile\-Time, Kernel\-Count\-At\-Compile\-Time, Row\-Stride\-At\-Compile\-Time, Col\-Stride\-At\-Compile\-Time, Mode $>$\-::embedded\-\_\-input\-\_\-width\hspace{0.3cm}{\ttfamily [static]}}}\label{structffnn_1_1layer_1_1convolution__layer__traits_ae43600771fd374186af19f38dd2805bf}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+    convolution::embed\_dimension<Mode, RowEmbedding>(\hyperlink{structffnn_1_1layer_1_1convolution__layer__traits_aeb9e3903c86bc692b6cee14434537e46}{input\_width},  
+      \hyperlink{structffnn_1_1layer_1_1convolution__layer__traits_a508a1594a6f77f6f536744cd40e2b9fd}{input\_depth})
+\end{DoxyCode}
+
+
+Depth-\/embedded input width. 
+
+\hypertarget{structffnn_1_1layer_1_1convolution__layer__traits_a00abec5f1e390a13ce4fc9daf67e5ca7}{\index{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits@{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}!embedded\-\_\-output\-\_\-height@{embedded\-\_\-output\-\_\-height}}
+\index{embedded\-\_\-output\-\_\-height@{embedded\-\_\-output\-\_\-height}!ffnn::layer::convolution_layer_traits@{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}}
+\subsubsection[{embedded\-\_\-output\-\_\-height}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , size\-\_\-type Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Row\-Stride\-At\-Compile\-Time = 1, size\-\_\-type Col\-Stride\-At\-Compile\-Time = -\/1, Embedding\-Mode Mode = Col\-Embedding$>$ constexpr {\bf size\-\_\-type} {\bf ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Kernel\-Height\-At\-Compile\-Time, Kernel\-Width\-At\-Compile\-Time, Kernel\-Count\-At\-Compile\-Time, Row\-Stride\-At\-Compile\-Time, Col\-Stride\-At\-Compile\-Time, Mode $>$\-::embedded\-\_\-output\-\_\-height\hspace{0.3cm}{\ttfamily [static]}}}\label{structffnn_1_1layer_1_1convolution__layer__traits_a00abec5f1e390a13ce4fc9daf67e5ca7}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+    convolution::embed\_dimension<Mode, ColEmbedding>(\hyperlink{structffnn_1_1layer_1_1convolution__layer__traits_a352db60c55310a92c32b68ecec8967db}{output\_height}, 
+      \hyperlink{structffnn_1_1layer_1_1convolution__layer__traits_ad2c2cfab03dd0a071bf0497ecf514086}{output\_depth})
+\end{DoxyCode}
+
+
+Depth-\/embedded output height. 
+
+\hypertarget{structffnn_1_1layer_1_1convolution__layer__traits_a34a2b3bbb6a24b89d48554b7c56d9654}{\index{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits@{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}!embedded\-\_\-output\-\_\-width@{embedded\-\_\-output\-\_\-width}}
+\index{embedded\-\_\-output\-\_\-width@{embedded\-\_\-output\-\_\-width}!ffnn::layer::convolution_layer_traits@{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}}
+\subsubsection[{embedded\-\_\-output\-\_\-width}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , size\-\_\-type Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Row\-Stride\-At\-Compile\-Time = 1, size\-\_\-type Col\-Stride\-At\-Compile\-Time = -\/1, Embedding\-Mode Mode = Col\-Embedding$>$ constexpr {\bf size\-\_\-type} {\bf ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Kernel\-Height\-At\-Compile\-Time, Kernel\-Width\-At\-Compile\-Time, Kernel\-Count\-At\-Compile\-Time, Row\-Stride\-At\-Compile\-Time, Col\-Stride\-At\-Compile\-Time, Mode $>$\-::embedded\-\_\-output\-\_\-width\hspace{0.3cm}{\ttfamily [static]}}}\label{structffnn_1_1layer_1_1convolution__layer__traits_a34a2b3bbb6a24b89d48554b7c56d9654}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+    convolution::embed\_dimension<Mode, RowEmbedding>(\hyperlink{structffnn_1_1layer_1_1convolution__layer__traits_a8139122e587481fb9584f2b446e4ea11}{output\_width},  
+      \hyperlink{structffnn_1_1layer_1_1convolution__layer__traits_ad2c2cfab03dd0a071bf0497ecf514086}{output\_depth})
+\end{DoxyCode}
+
+
+Depth-\/embedded output width. 
+
+\hypertarget{structffnn_1_1layer_1_1convolution__layer__traits_ab598247847360cd7a710c9b0b14496ae}{\index{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits@{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}!embedding\-\_\-mode@{embedding\-\_\-mode}}
+\index{embedding\-\_\-mode@{embedding\-\_\-mode}!ffnn::layer::convolution_layer_traits@{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}}
+\subsubsection[{embedding\-\_\-mode}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , size\-\_\-type Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Row\-Stride\-At\-Compile\-Time = 1, size\-\_\-type Col\-Stride\-At\-Compile\-Time = -\/1, Embedding\-Mode Mode = Col\-Embedding$>$ constexpr Embedding\-Mode {\bf ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Kernel\-Height\-At\-Compile\-Time, Kernel\-Width\-At\-Compile\-Time, Kernel\-Count\-At\-Compile\-Time, Row\-Stride\-At\-Compile\-Time, Col\-Stride\-At\-Compile\-Time, Mode $>$\-::embedding\-\_\-mode = Mode\hspace{0.3cm}{\ttfamily [static]}}}\label{structffnn_1_1layer_1_1convolution__layer__traits_ab598247847360cd7a710c9b0b14496ae}
+
+
+Data embedding mode. 
+
+\hypertarget{structffnn_1_1layer_1_1convolution__layer__traits_a508a1594a6f77f6f536744cd40e2b9fd}{\index{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits@{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}!input\-\_\-depth@{input\-\_\-depth}}
+\index{input\-\_\-depth@{input\-\_\-depth}!ffnn::layer::convolution_layer_traits@{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}}
+\subsubsection[{input\-\_\-depth}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , size\-\_\-type Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Row\-Stride\-At\-Compile\-Time = 1, size\-\_\-type Col\-Stride\-At\-Compile\-Time = -\/1, Embedding\-Mode Mode = Col\-Embedding$>$ constexpr {\bf size\-\_\-type} {\bf ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Kernel\-Height\-At\-Compile\-Time, Kernel\-Width\-At\-Compile\-Time, Kernel\-Count\-At\-Compile\-Time, Row\-Stride\-At\-Compile\-Time, Col\-Stride\-At\-Compile\-Time, Mode $>$\-::input\-\_\-depth = Depth\-At\-Compile\-Time\hspace{0.3cm}{\ttfamily [static]}}}\label{structffnn_1_1layer_1_1convolution__layer__traits_a508a1594a6f77f6f536744cd40e2b9fd}
+
+
+\hyperlink{classffnn_1_1layer_1_1_input}{Input} volume depth. 
+
+\hypertarget{structffnn_1_1layer_1_1convolution__layer__traits_a94cdb215d2fa97936542f44551bea669}{\index{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits@{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}!input\-\_\-height@{input\-\_\-height}}
+\index{input\-\_\-height@{input\-\_\-height}!ffnn::layer::convolution_layer_traits@{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}}
+\subsubsection[{input\-\_\-height}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , size\-\_\-type Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Row\-Stride\-At\-Compile\-Time = 1, size\-\_\-type Col\-Stride\-At\-Compile\-Time = -\/1, Embedding\-Mode Mode = Col\-Embedding$>$ constexpr {\bf size\-\_\-type} {\bf ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Kernel\-Height\-At\-Compile\-Time, Kernel\-Width\-At\-Compile\-Time, Kernel\-Count\-At\-Compile\-Time, Row\-Stride\-At\-Compile\-Time, Col\-Stride\-At\-Compile\-Time, Mode $>$\-::input\-\_\-height = Height\-At\-Compile\-Time\hspace{0.3cm}{\ttfamily [static]}}}\label{structffnn_1_1layer_1_1convolution__layer__traits_a94cdb215d2fa97936542f44551bea669}
+
+
+\hyperlink{classffnn_1_1layer_1_1_input}{Input} volume height. 
+
+\hypertarget{structffnn_1_1layer_1_1convolution__layer__traits_aeb9e3903c86bc692b6cee14434537e46}{\index{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits@{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}!input\-\_\-width@{input\-\_\-width}}
+\index{input\-\_\-width@{input\-\_\-width}!ffnn::layer::convolution_layer_traits@{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}}
+\subsubsection[{input\-\_\-width}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , size\-\_\-type Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Row\-Stride\-At\-Compile\-Time = 1, size\-\_\-type Col\-Stride\-At\-Compile\-Time = -\/1, Embedding\-Mode Mode = Col\-Embedding$>$ constexpr {\bf size\-\_\-type} {\bf ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Kernel\-Height\-At\-Compile\-Time, Kernel\-Width\-At\-Compile\-Time, Kernel\-Count\-At\-Compile\-Time, Row\-Stride\-At\-Compile\-Time, Col\-Stride\-At\-Compile\-Time, Mode $>$\-::input\-\_\-width = Width\-At\-Compile\-Time\hspace{0.3cm}{\ttfamily [static]}}}\label{structffnn_1_1layer_1_1convolution__layer__traits_aeb9e3903c86bc692b6cee14434537e46}
+
+
+\hyperlink{classffnn_1_1layer_1_1_input}{Input} volume width. 
+
+\hypertarget{structffnn_1_1layer_1_1convolution__layer__traits_a4cdb0a6a0f47662f59f77beff2b406e5}{\index{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits@{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}!kernel\-\_\-count@{kernel\-\_\-count}}
+\index{kernel\-\_\-count@{kernel\-\_\-count}!ffnn::layer::convolution_layer_traits@{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}}
+\subsubsection[{kernel\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , size\-\_\-type Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Row\-Stride\-At\-Compile\-Time = 1, size\-\_\-type Col\-Stride\-At\-Compile\-Time = -\/1, Embedding\-Mode Mode = Col\-Embedding$>$ constexpr {\bf size\-\_\-type} {\bf ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Kernel\-Height\-At\-Compile\-Time, Kernel\-Width\-At\-Compile\-Time, Kernel\-Count\-At\-Compile\-Time, Row\-Stride\-At\-Compile\-Time, Col\-Stride\-At\-Compile\-Time, Mode $>$\-::kernel\-\_\-count = Kernel\-Count\-At\-Compile\-Time\hspace{0.3cm}{\ttfamily [static]}}}\label{structffnn_1_1layer_1_1convolution__layer__traits_a4cdb0a6a0f47662f59f77beff2b406e5}
+
+
+Number of filter kernels. 
+
+\hypertarget{structffnn_1_1layer_1_1convolution__layer__traits_ad6fb939fee90c196d31a8c98f663caa3}{\index{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits@{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}!kernel\-\_\-height@{kernel\-\_\-height}}
+\index{kernel\-\_\-height@{kernel\-\_\-height}!ffnn::layer::convolution_layer_traits@{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}}
+\subsubsection[{kernel\-\_\-height}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , size\-\_\-type Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Row\-Stride\-At\-Compile\-Time = 1, size\-\_\-type Col\-Stride\-At\-Compile\-Time = -\/1, Embedding\-Mode Mode = Col\-Embedding$>$ constexpr {\bf size\-\_\-type} {\bf ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Kernel\-Height\-At\-Compile\-Time, Kernel\-Width\-At\-Compile\-Time, Kernel\-Count\-At\-Compile\-Time, Row\-Stride\-At\-Compile\-Time, Col\-Stride\-At\-Compile\-Time, Mode $>$\-::kernel\-\_\-height = Kernel\-Height\-At\-Compile\-Time\hspace{0.3cm}{\ttfamily [static]}}}\label{structffnn_1_1layer_1_1convolution__layer__traits_ad6fb939fee90c196d31a8c98f663caa3}
+
+
+Kernel kernel height. 
+
+\hypertarget{structffnn_1_1layer_1_1convolution__layer__traits_a2aafad04475fbeb3b5947ed693859028}{\index{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits@{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}!kernel\-\_\-width@{kernel\-\_\-width}}
+\index{kernel\-\_\-width@{kernel\-\_\-width}!ffnn::layer::convolution_layer_traits@{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}}
+\subsubsection[{kernel\-\_\-width}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , size\-\_\-type Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Row\-Stride\-At\-Compile\-Time = 1, size\-\_\-type Col\-Stride\-At\-Compile\-Time = -\/1, Embedding\-Mode Mode = Col\-Embedding$>$ constexpr {\bf size\-\_\-type} {\bf ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Kernel\-Height\-At\-Compile\-Time, Kernel\-Width\-At\-Compile\-Time, Kernel\-Count\-At\-Compile\-Time, Row\-Stride\-At\-Compile\-Time, Col\-Stride\-At\-Compile\-Time, Mode $>$\-::kernel\-\_\-width = Kernel\-Width\-At\-Compile\-Time\hspace{0.3cm}{\ttfamily [static]}}}\label{structffnn_1_1layer_1_1convolution__layer__traits_a2aafad04475fbeb3b5947ed693859028}
+
+
+Kernel kernel width. 
+
+\hypertarget{structffnn_1_1layer_1_1convolution__layer__traits_ad2c2cfab03dd0a071bf0497ecf514086}{\index{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits@{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}!output\-\_\-depth@{output\-\_\-depth}}
+\index{output\-\_\-depth@{output\-\_\-depth}!ffnn::layer::convolution_layer_traits@{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}}
+\subsubsection[{output\-\_\-depth}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , size\-\_\-type Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Row\-Stride\-At\-Compile\-Time = 1, size\-\_\-type Col\-Stride\-At\-Compile\-Time = -\/1, Embedding\-Mode Mode = Col\-Embedding$>$ constexpr {\bf size\-\_\-type} {\bf ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Kernel\-Height\-At\-Compile\-Time, Kernel\-Width\-At\-Compile\-Time, Kernel\-Count\-At\-Compile\-Time, Row\-Stride\-At\-Compile\-Time, Col\-Stride\-At\-Compile\-Time, Mode $>$\-::output\-\_\-depth = Kernel\-Count\-At\-Compile\-Time\hspace{0.3cm}{\ttfamily [static]}}}\label{structffnn_1_1layer_1_1convolution__layer__traits_ad2c2cfab03dd0a071bf0497ecf514086}
+
+
+\hyperlink{classffnn_1_1layer_1_1_output}{Output} volume depth. 
+
+\hypertarget{structffnn_1_1layer_1_1convolution__layer__traits_a352db60c55310a92c32b68ecec8967db}{\index{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits@{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}!output\-\_\-height@{output\-\_\-height}}
+\index{output\-\_\-height@{output\-\_\-height}!ffnn::layer::convolution_layer_traits@{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}}
+\subsubsection[{output\-\_\-height}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , size\-\_\-type Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Row\-Stride\-At\-Compile\-Time = 1, size\-\_\-type Col\-Stride\-At\-Compile\-Time = -\/1, Embedding\-Mode Mode = Col\-Embedding$>$ constexpr {\bf size\-\_\-type} {\bf ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Kernel\-Height\-At\-Compile\-Time, Kernel\-Width\-At\-Compile\-Time, Kernel\-Count\-At\-Compile\-Time, Row\-Stride\-At\-Compile\-Time, Col\-Stride\-At\-Compile\-Time, Mode $>$\-::output\-\_\-height\hspace{0.3cm}{\ttfamily [static]}}}\label{structffnn_1_1layer_1_1convolution__layer__traits_a352db60c55310a92c32b68ecec8967db}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+    \hyperlink{namespaceffnn_1_1layer_1_1convolution_aca263840b789df041d868a8a87dbf36a}{convolution::output\_dimension}(HeightAtCompileTime, 
+      \hyperlink{structffnn_1_1layer_1_1convolution__layer__traits_ad6fb939fee90c196d31a8c98f663caa3}{kernel\_height}, \hyperlink{structffnn_1_1layer_1_1convolution__layer__traits_a6b62abb46818fb4d09b096e53089b4f4}{row\_stride})
+\end{DoxyCode}
+
+
+\hyperlink{classffnn_1_1layer_1_1_output}{Output} volume height. 
+
+\hypertarget{structffnn_1_1layer_1_1convolution__layer__traits_a8139122e587481fb9584f2b446e4ea11}{\index{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits@{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}!output\-\_\-width@{output\-\_\-width}}
+\index{output\-\_\-width@{output\-\_\-width}!ffnn::layer::convolution_layer_traits@{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}}
+\subsubsection[{output\-\_\-width}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , size\-\_\-type Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Row\-Stride\-At\-Compile\-Time = 1, size\-\_\-type Col\-Stride\-At\-Compile\-Time = -\/1, Embedding\-Mode Mode = Col\-Embedding$>$ constexpr {\bf size\-\_\-type} {\bf ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Kernel\-Height\-At\-Compile\-Time, Kernel\-Width\-At\-Compile\-Time, Kernel\-Count\-At\-Compile\-Time, Row\-Stride\-At\-Compile\-Time, Col\-Stride\-At\-Compile\-Time, Mode $>$\-::output\-\_\-width\hspace{0.3cm}{\ttfamily [static]}}}\label{structffnn_1_1layer_1_1convolution__layer__traits_a8139122e587481fb9584f2b446e4ea11}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+    \hyperlink{namespaceffnn_1_1layer_1_1convolution_aca263840b789df041d868a8a87dbf36a}{convolution::output\_dimension}(WidthAtCompileTime,  
+      \hyperlink{structffnn_1_1layer_1_1convolution__layer__traits_ad6fb939fee90c196d31a8c98f663caa3}{kernel\_height}, \hyperlink{structffnn_1_1layer_1_1convolution__layer__traits_a36aab5cc1478feddd1085cf54b44246e}{col\_stride})
+\end{DoxyCode}
+
+
+\hyperlink{classffnn_1_1layer_1_1_output}{Output} volume width. 
+
+\hypertarget{structffnn_1_1layer_1_1convolution__layer__traits_a6b62abb46818fb4d09b096e53089b4f4}{\index{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits@{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}!row\-\_\-stride@{row\-\_\-stride}}
+\index{row\-\_\-stride@{row\-\_\-stride}!ffnn::layer::convolution_layer_traits@{ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}}
+\subsubsection[{row\-\_\-stride}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , size\-\_\-type Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Row\-Stride\-At\-Compile\-Time = 1, size\-\_\-type Col\-Stride\-At\-Compile\-Time = -\/1, Embedding\-Mode Mode = Col\-Embedding$>$ constexpr {\bf size\-\_\-type} {\bf ffnn\-::layer\-::convolution\-\_\-layer\-\_\-traits}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Kernel\-Height\-At\-Compile\-Time, Kernel\-Width\-At\-Compile\-Time, Kernel\-Count\-At\-Compile\-Time, Row\-Stride\-At\-Compile\-Time, Col\-Stride\-At\-Compile\-Time, Mode $>$\-::row\-\_\-stride = Row\-Stride\-At\-Compile\-Time\hspace{0.3cm}{\ttfamily [static]}}}\label{structffnn_1_1layer_1_1convolution__layer__traits_a6b62abb46818fb4d09b096e53089b4f4}
+
+
+Filter stride along input rows. 
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/\hyperlink{convolution_8h}{convolution.\-h}\end{DoxyCompactItemize}

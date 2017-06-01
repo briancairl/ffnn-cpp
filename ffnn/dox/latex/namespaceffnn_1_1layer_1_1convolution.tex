@@ -1,0 +1,116 @@
+\hypertarget{namespaceffnn_1_1layer_1_1convolution}{\section{ffnn\-:\-:layer\-:\-:convolution Namespace Reference}
+\label{namespaceffnn_1_1layer_1_1convolution}\index{ffnn\-::layer\-::convolution@{ffnn\-::layer\-::convolution}}
+}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structffnn_1_1layer_1_1convolution_1_1filter__traits}{filter\-\_\-traits}
+\begin{DoxyCompactList}\small\item\em Describes compile-\/time traits used to set up a \hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter}{Filter} object. \end{DoxyCompactList}\item 
+struct \hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter}{Filter}
+\begin{DoxyCompactList}\small\item\em Sets all \hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter}{Filter} kernels and scalar bias unit to zero. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{namespaceffnn_1_1layer_1_1convolution_ad420d4eb8edd7c254d1f0aaaad81017f}{Embedding\-Mode} \{ \hyperlink{namespaceffnn_1_1layer_1_1convolution_ad420d4eb8edd7c254d1f0aaaad81017fa1c03b5145e31615496457aa687a180c2}{Row\-Embedding} = 0, 
+\hyperlink{namespaceffnn_1_1layer_1_1convolution_ad420d4eb8edd7c254d1f0aaaad81017fae2ba27e8fa1aed3f003e54947f37d17e}{Col\-Embedding} = 1
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$Embedding\-Mode mode, Embedding\-Mode ref, typename Size\-Type $>$ }\\constexpr Size\-Type \hyperlink{namespaceffnn_1_1layer_1_1convolution_a0cca23056b3d9d79e6604c9419814351}{embed\-\_\-dimension} (Size\-Type n, Size\-Type m)
+\begin{DoxyCompactList}\small\item\em Selects size or depth-\/embedded size based on embedding mode. \end{DoxyCompactList}\item 
+{\footnotesize template$<$Embedding\-Mode mode, typename Shape\-Type $>$ }\\Shape\-Type \hyperlink{namespaceffnn_1_1layer_1_1convolution_a773c97d21219b026d77a46ac642ef4e6}{embed\-\_\-shape\-\_\-transform} (const Shape\-Type \&shape)
+\begin{DoxyCompactList}\small\item\em Transforms shape dimensions to a depth-\/embedded representation. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Size\-Type $>$ }\\constexpr Size\-Type \hyperlink{namespaceffnn_1_1layer_1_1convolution_aca263840b789df041d868a8a87dbf36a}{output\-\_\-dimension} (Size\-Type n, Size\-Type fn, Size\-Type stride)
+\begin{DoxyCompactList}\small\item\em Computes convolution output size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{namespaceffnn_1_1layer_1_1convolution_ad420d4eb8edd7c254d1f0aaaad81017f}{\index{ffnn\-::layer\-::convolution@{ffnn\-::layer\-::convolution}!Embedding\-Mode@{Embedding\-Mode}}
+\index{Embedding\-Mode@{Embedding\-Mode}!ffnn::layer::convolution@{ffnn\-::layer\-::convolution}}
+\subsubsection[{Embedding\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf ffnn\-::layer\-::convolution\-::\-Embedding\-Mode}}}\label{namespaceffnn_1_1layer_1_1convolution_ad420d4eb8edd7c254d1f0aaaad81017f}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Row\-Embedding@{Row\-Embedding}!ffnn\-::layer\-::convolution@{ffnn\-::layer\-::convolution}}\index{ffnn\-::layer\-::convolution@{ffnn\-::layer\-::convolution}!Row\-Embedding@{Row\-Embedding}}\item[{\em 
+\hypertarget{namespaceffnn_1_1layer_1_1convolution_ad420d4eb8edd7c254d1f0aaaad81017fa1c03b5145e31615496457aa687a180c2}{Row\-Embedding}\label{namespaceffnn_1_1layer_1_1convolution_ad420d4eb8edd7c254d1f0aaaad81017fa1c03b5145e31615496457aa687a180c2}
+}]Embed depth along filter matrix rows. \index{Col\-Embedding@{Col\-Embedding}!ffnn\-::layer\-::convolution@{ffnn\-::layer\-::convolution}}\index{ffnn\-::layer\-::convolution@{ffnn\-::layer\-::convolution}!Col\-Embedding@{Col\-Embedding}}\item[{\em 
+\hypertarget{namespaceffnn_1_1layer_1_1convolution_ad420d4eb8edd7c254d1f0aaaad81017fae2ba27e8fa1aed3f003e54947f37d17e}{Col\-Embedding}\label{namespaceffnn_1_1layer_1_1convolution_ad420d4eb8edd7c254d1f0aaaad81017fae2ba27e8fa1aed3f003e54947f37d17e}
+}]Embed depth along filter matrix cols. \end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{namespaceffnn_1_1layer_1_1convolution_a0cca23056b3d9d79e6604c9419814351}{\index{ffnn\-::layer\-::convolution@{ffnn\-::layer\-::convolution}!embed\-\_\-dimension@{embed\-\_\-dimension}}
+\index{embed\-\_\-dimension@{embed\-\_\-dimension}!ffnn::layer::convolution@{ffnn\-::layer\-::convolution}}
+\subsubsection[{embed\-\_\-dimension}]{\setlength{\rightskip}{0pt plus 5cm}template$<$Embedding\-Mode mode, Embedding\-Mode ref, typename Size\-Type $>$ constexpr Size\-Type ffnn\-::layer\-::convolution\-::embed\-\_\-dimension (
+\begin{DoxyParamCaption}
+\item[{Size\-Type}]{n, }
+\item[{Size\-Type}]{m}
+\end{DoxyParamCaption}
+)}}\label{namespaceffnn_1_1layer_1_1convolution_a0cca23056b3d9d79e6604c9419814351}
+
+
+Selects size or depth-\/embedded size based on embedding mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & interger dimension \\
+\hline
+{\em m} & interger dimension \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em (n$\ast$m)} & if (mode == ref) and sizes are not dynamic \\
+\hline
+{\em n} & if (mode != ref) \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{namespaceffnn_1_1layer_1_1convolution_a773c97d21219b026d77a46ac642ef4e6}{\index{ffnn\-::layer\-::convolution@{ffnn\-::layer\-::convolution}!embed\-\_\-shape\-\_\-transform@{embed\-\_\-shape\-\_\-transform}}
+\index{embed\-\_\-shape\-\_\-transform@{embed\-\_\-shape\-\_\-transform}!ffnn::layer::convolution@{ffnn\-::layer\-::convolution}}
+\subsubsection[{embed\-\_\-shape\-\_\-transform}]{\setlength{\rightskip}{0pt plus 5cm}template$<$Embedding\-Mode mode, typename Shape\-Type $>$ Shape\-Type ffnn\-::layer\-::convolution\-::embed\-\_\-shape\-\_\-transform (
+\begin{DoxyParamCaption}
+\item[{const Shape\-Type \&}]{shape}
+\end{DoxyParamCaption}
+)}}\label{namespaceffnn_1_1layer_1_1convolution_a773c97d21219b026d77a46ac642ef4e6}
+
+
+Transforms shape dimensions to a depth-\/embedded representation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shape} & original shape repsentation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+depth-\/embedded version of shape 
+\end{DoxyReturn}
+\hypertarget{namespaceffnn_1_1layer_1_1convolution_aca263840b789df041d868a8a87dbf36a}{\index{ffnn\-::layer\-::convolution@{ffnn\-::layer\-::convolution}!output\-\_\-dimension@{output\-\_\-dimension}}
+\index{output\-\_\-dimension@{output\-\_\-dimension}!ffnn::layer::convolution@{ffnn\-::layer\-::convolution}}
+\subsubsection[{output\-\_\-dimension}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Size\-Type $>$ constexpr Size\-Type ffnn\-::layer\-::convolution\-::output\-\_\-dimension (
+\begin{DoxyParamCaption}
+\item[{Size\-Type}]{n, }
+\item[{Size\-Type}]{fn, }
+\item[{Size\-Type}]{stride}
+\end{DoxyParamCaption}
+)}}\label{namespaceffnn_1_1layer_1_1convolution_aca263840b789df041d868a8a87dbf36a}
+
+
+Computes convolution output size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & convolution input layer dimension \\
+\hline
+{\em fn} & filter dimension \\
+\hline
+{\em stide} & filter stride \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em size} & if sizes are not dynamic \\
+\hline
+\end{DoxyRetVals}

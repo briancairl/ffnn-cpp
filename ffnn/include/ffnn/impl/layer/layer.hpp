@@ -89,9 +89,9 @@ bool Layer<ValueType>::initialize()
 }
 
 template<typename ValueType>
-typename Layer<ValueType>::SizeType Layer<ValueType>::evaluateInputSize() const
+size_type Layer<ValueType>::evaluateInputSize() const
 {
-  SizeType count(0);
+  size_type count(0);
   for (const auto& connection : prev_)
   {
     FFNN_ASSERT_MSG(connection.second, "Virtual connection is missing layer.");
@@ -132,7 +132,7 @@ template<typename ValueType>
 void Layer<ValueType>::save(typename Layer<ValueType>::OutputArchive& ar,
                             typename Layer<ValueType>::VersionType version) const
 {
-  ffnn::io::signature::apply<Self>(ar);
+  ffnn::internal::signature::apply<Self>(ar);
   Base::save(ar, version);
 
   // Save flags
@@ -143,7 +143,7 @@ void Layer<ValueType>::save(typename Layer<ValueType>::OutputArchive& ar,
   ar & output_shape_;
 
   // Save connection information
-  SizeType layer_count = prev_.size();
+  size_type layer_count = prev_.size();
   ar & layer_count;
   for (const auto& connection : prev_)
   {
@@ -157,7 +157,7 @@ template<typename ValueType>
 void Layer<ValueType>::load(typename Layer<ValueType>::InputArchive& ar,
                             typename Layer<ValueType>::VersionType version)
 {
-  ffnn::io::signature::check<Self>(ar);
+  ffnn::internal::signature::check<Self>(ar);
   Base::load(ar, version);
 
   // Load flags
@@ -168,9 +168,9 @@ void Layer<ValueType>::load(typename Layer<ValueType>::InputArchive& ar,
   ar & output_shape_;
 
   // Load connection information
-  SizeType layer_count;
+  size_type layer_count;
   ar & layer_count;
-  for (SizeType idx = 0; idx < layer_count; idx++)
+  for (size_type idx = 0; idx < layer_count; idx++)
   {
     // Load ID
     std::string id;

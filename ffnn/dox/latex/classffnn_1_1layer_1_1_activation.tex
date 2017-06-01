@@ -33,7 +33,7 @@ Collaboration diagram for ffnn\-:\-:layer\-:\-:Activation$<$ Value\-Type, Neuron
 \item 
 using \hyperlink{classffnn_1_1layer_1_1_activation_a2f462178d98a5439e13962796c483459}{Base} = \hyperlink{classffnn_1_1layer_1_1_hidden}{Hidden}$<$ Value\-Type, \-\_\-\-Hidden\-Layer\-Shape $>$
 \begin{DoxyCompactList}\small\item\em Base type alias. \end{DoxyCompactList}\item 
-typedef \hyperlink{classffnn_1_1layer_1_1internal_1_1_interface_a7f834e3365e5199bcbcd16d9abd63941}{Base\-::\-Scalar\-Type} \hyperlink{classffnn_1_1layer_1_1_activation_a4ca1ce43c5be7e5b8950af7cb262daca}{Scalar\-Type}
+typedef \hyperlink{classffnn_1_1layer_1_1_layer_a3d482813f86f1ec69554b4592c478c32}{Base\-::\-Scalar\-Type} \hyperlink{classffnn_1_1layer_1_1_activation_a4ca1ce43c5be7e5b8950af7cb262daca}{Scalar\-Type}
 \begin{DoxyCompactList}\small\item\em Scalar type standardization. \end{DoxyCompactList}\item 
 typedef \hyperlink{classffnn_1_1layer_1_1_hidden_ac148012cb544a39841675601090cd4c8}{Base\-::\-Size\-Type} \hyperlink{classffnn_1_1layer_1_1_activation_a6a7b6dd86eb70b72a179ce9951fb1149}{Size\-Type}
 \begin{DoxyCompactList}\small\item\em Size type standardization. \end{DoxyCompactList}\item 
@@ -57,9 +57,9 @@ bool \hyperlink{classffnn_1_1layer_1_1_activation_a24a044458729f72466af06153851f
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{classffnn_1_1layer_1_1_activation_af4fa0c4e44033921fe6ada1dcd0c0560}{save} (\hyperlink{classffnn_1_1traits_1_1_serializable_a08d986df75d363fa79506d4f6045cb9f}{Output\-Archive} \&ar, \hyperlink{classffnn_1_1traits_1_1_serializable_a08924b3b7d20cb3cb6eafe517d4f7b30}{Version\-Type} version) const 
+void \hyperlink{classffnn_1_1layer_1_1_activation_af4fa0c4e44033921fe6ada1dcd0c0560}{save} (\hyperlink{classffnn_1_1internal_1_1_serializable_acf5baead716eb277337a4437e88a5743}{Output\-Archive} \&ar, \hyperlink{classffnn_1_1internal_1_1_serializable_a32fe7d82b0caf9fe8b6fb7c312a26028}{Version\-Type} version) const 
 \begin{DoxyCompactList}\small\item\em Save serializer. \end{DoxyCompactList}\item 
-void \hyperlink{classffnn_1_1layer_1_1_activation_abf041de6c530dfb271dd42689927eebe}{load} (\hyperlink{classffnn_1_1traits_1_1_serializable_a6e626759259f8f370dd4303b4441a234}{Input\-Archive} \&ar, \hyperlink{classffnn_1_1traits_1_1_serializable_a08924b3b7d20cb3cb6eafe517d4f7b30}{Version\-Type} version)
+void \hyperlink{classffnn_1_1layer_1_1_activation_abf041de6c530dfb271dd42689927eebe}{load} (\hyperlink{classffnn_1_1internal_1_1_serializable_aadc27d79d606f35a82dd88bad33fa6d2}{Input\-Archive} \&ar, \hyperlink{classffnn_1_1internal_1_1_serializable_a32fe7d82b0caf9fe8b6fb7c312a26028}{Version\-Type} version)
 \begin{DoxyCompactList}\small\item\em Load serializer. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
@@ -195,12 +195,11 @@ Load serializer.
 
 
 
-Reimplemented from \hyperlink{classffnn_1_1traits_1_1_unique_af1e937c2908ed2ff707d6a7d1b5b13d2}{ffnn\-::traits\-::\-Unique}.
+Reimplemented from \hyperlink{classffnn_1_1internal_1_1_unique_a926ca4f63e3f6f0cf812af7f6ed2d88c}{ffnn\-::internal\-::\-Unique}.
 
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -223,12 +222,11 @@ Save serializer.
 
 
 
-Reimplemented from \hyperlink{classffnn_1_1traits_1_1_unique_ad8be6fcb9a7519603b2aab19b3c6d593}{ffnn\-::traits\-::\-Unique}.
+Reimplemented from \hyperlink{classffnn_1_1internal_1_1_unique_a21fd15cd137dd1cccd23a57fb45649f4}{ffnn\-::internal\-::\-Unique}.
 
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -265,4 +263,4 @@ Implements \hyperlink{classffnn_1_1layer_1_1_hidden_ae038d2a1e64fcbbde6166df7d05
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
 /home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/\hyperlink{activation_8h}{activation.\-h}\item 
-/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/impl/\hyperlink{activation_8hpp}{activation.\-hpp}\end{DoxyCompactItemize}
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/impl/layer/\hyperlink{activation_8hpp}{activation.\-hpp}\end{DoxyCompactItemize}

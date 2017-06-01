@@ -5,9 +5,6 @@
 #ifndef FFNN_LAYER_CONVOLUTION_DEFS_H
 #define FFNN_LAYER_CONVOLUTION_DEFS_H
 
-// FFNN (internal)
-#include <ffnn/layer/internal/shape.h>
-
 namespace ffnn
 {
 namespace layer
@@ -31,7 +28,20 @@ EmbeddingMode;
 template<EmbeddingMode mode, EmbeddingMode ref, typename SizeType>
 constexpr SizeType embed_dimension(SizeType n, SizeType m)
 {
-  return (mode == ref) ? internal::multiply_if_not_dynamic_sizes<SizeType>(n, m) : n;
+  return (mode == ref) ? multiply_if_not_dynamic_sizes<SizeType>(n, m) : n;
+}
+
+/**
+ * @brief Transforms shape dimensions to a depth-embedded representation
+ * @param shape  original shape repsentation
+ * @return depth-embedded version of shape
+ */
+template<EmbeddingMode mode, typename ShapeType>
+ShapeType embed_shape_transform(const ShapeType& shape)
+{
+  const auto he = embed_dimension<mode, ColEmbedding>(shape.height, shape.depth);
+  const auto we = embed_dimension<mode, RowEmbedding>(shape.width,  shape.depth);
+  return ShapeType(he, we, 1);
 }
 
 /**
@@ -44,20 +54,10 @@ constexpr SizeType embed_dimension(SizeType n, SizeType m)
 template<typename SizeType>
 constexpr SizeType output_dimension(SizeType n, SizeType fn, SizeType stride)
 {
-  return (internal::is_dynamic<SizeType>(n)  ||
-          internal::is_dynamic<SizeType>(fn) ||
-          internal::is_dynamic<SizeType>(stride)) ? Eigen::Dynamic : ((n - fn) / stride + 1);
+  return (is_dynamic<SizeType>(n)  ||
+          is_dynamic<SizeType>(fn) ||
+          is_dynamic<SizeType>(stride)) ? Eigen::Dynamic : ((n - fn) / stride + 1);
 }
-
-
-template<EmbeddingMode mode>
-Shape embed_shape_transform(const Shape& shape)
-{
-  const auto he = embed_dimension<mode, ColEmbedding>(shape.height, shape.depth);
-  const auto we = embed_dimension<mode, RowEmbedding>(shape.width,  shape.depth);
-  return Shape(he, we, 1);
-}
-
 }  // namespace convolution
 }  // namespace layer
 }  // namespace ffnn

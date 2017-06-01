@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classffnn_1_1optimizer_1_1_optimizer.html" title="ffnn::optimizer::Optimizer\l\&lt; layer::SparselyConnected\l\&lt; ValueType, InputsAtCompileTime,\l OutputsAtCompileTime \&gt; \&gt;" alt="" coords="5,5,240,75"/>
+<area shape="rect" id="node2" href="$classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_sparsely_connected_3_01_value_type_00_e6c27913ab0d90f52f73031aa88c19bf.html" title="ffnn::optimizer::Gradient\lDescent\&lt; layer::SparselyConnected\l\&lt; ValueType, InputsAtCompileTime,\l OutputsAtCompileTime \&gt; \&gt;" alt="" coords="288,5,523,75"/>
+<area shape="rect" id="node3" href="$classffnn_1_1optimizer_1_1_adam_3_01layer_1_1_sparsely_connected_3_01_value_type_00_01_inputs_at5101e46d32858ec2169acdeede08d723.html" title="ffnn::optimizer::Adam\l\&lt; layer::SparselyConnected\l\&lt; ValueType, InputsAtCompileTime,\l OutputsAtCompileTime \&gt; \&gt;" alt="" coords="571,5,805,75"/>
+</map>

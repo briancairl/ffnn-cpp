@@ -25,7 +25,7 @@ template<FFNN_SIZE_TYPE InputHeightAtCompileTime  = Eigen::Dynamic,
          FFNN_SIZE_TYPE InputWidthAtCompileTime   = Eigen::Dynamic,
          FFNN_SIZE_TYPE OutputHeightAtCompileTime = Eigen::Dynamic,
          FFNN_SIZE_TYPE OutputWidthAtCompileTime  = Eigen::Dynamic>
-struct hidden_layer_shape
+struct hidden_layer_traits
 {
   constexpr static FFNN_SIZE_TYPE input_height  = InputHeightAtCompileTime;
   constexpr static FFNN_SIZE_TYPE input_width   = InputWidthAtCompileTime;
@@ -37,7 +37,7 @@ struct hidden_layer_shape
  * @brief A network hidden-layer object
  */
 template<typename ValueType,
-         typename LayerShape = hidden_layer_shape<>,
+         typename LayerShape = hidden_layer_traits<>,
          typename _InputBlockType  = Eigen::Matrix<ValueType, LayerShape::input_height,  LayerShape::input_width,  Eigen::ColMajor>,
          typename _OutputBlockType = Eigen::Matrix<ValueType, LayerShape::output_height, LayerShape::output_width, Eigen::ColMajor>>
 class Hidden :
@@ -139,5 +139,5 @@ protected:
 }  // namespace ffnn
 
 /// FFNN (implementation)
-#include <ffnn/layer/impl/hidden.hpp>
+#include <ffnn/impl/layer/hidden.hpp>
 #endif  // FFNN_LAYER_INTERNAL_HIDDEN_INTERFACE_H

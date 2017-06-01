@@ -1,0 +1,90 @@
+\hypertarget{namespaceffnn_1_1internal_1_1signature}{\section{ffnn\-:\-:internal\-:\-:signature Namespace Reference}
+\label{namespaceffnn_1_1internal_1_1signature}\index{ffnn\-::internal\-::signature@{ffnn\-::internal\-::signature}}
+}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Type $>$ }\\const std\-::string \hyperlink{namespaceffnn_1_1internal_1_1signature_a5c9daef9afab6c4cacf3376c2aa3ec13}{signature} ()
+\begin{DoxyCompactList}\small\item\em Generates a type signature string for a type. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Serializable\-Type , typename Archive $>$ }\\void \hyperlink{namespaceffnn_1_1internal_1_1signature_a6109f0a8c643d2795e9ba2715fe2d684}{apply} (Archive \&archive)
+\begin{DoxyCompactList}\small\item\em Apply type signature to an archive. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Serializable\-Type , typename Archive $>$ }\\void \hyperlink{namespaceffnn_1_1internal_1_1signature_a72b327fe2a4910dc1e04a22ba10422b9}{check} (Archive \&archive)
+\begin{DoxyCompactList}\small\item\em Checks a type signature read from an archive. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{namespaceffnn_1_1internal_1_1signature_a6109f0a8c643d2795e9ba2715fe2d684}{\index{ffnn\-::internal\-::signature@{ffnn\-::internal\-::signature}!apply@{apply}}
+\index{apply@{apply}!ffnn::internal::signature@{ffnn\-::internal\-::signature}}
+\subsubsection[{apply}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Serializable\-Type , typename Archive $>$ void ffnn\-::internal\-::signature\-::apply (
+\begin{DoxyParamCaption}
+\item[{Archive \&}]{archive}
+\end{DoxyParamCaption}
+)}}\label{namespaceffnn_1_1internal_1_1signature_a6109f0a8c643d2795e9ba2715fe2d684}
+
+
+Apply type signature to an archive. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em archive} & output archive \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{namespaceffnn_1_1internal_1_1signature_a6109f0a8c643d2795e9ba2715fe2d684_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{namespaceffnn_1_1internal_1_1signature_a72b327fe2a4910dc1e04a22ba10422b9}{\index{ffnn\-::internal\-::signature@{ffnn\-::internal\-::signature}!check@{check}}
+\index{check@{check}!ffnn::internal::signature@{ffnn\-::internal\-::signature}}
+\subsubsection[{check}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Serializable\-Type , typename Archive $>$ void ffnn\-::internal\-::signature\-::check (
+\begin{DoxyParamCaption}
+\item[{Archive \&}]{archive}
+\end{DoxyParamCaption}
+)}}\label{namespaceffnn_1_1internal_1_1signature_a72b327fe2a4910dc1e04a22ba10422b9}
+
+
+Checks a type signature read from an archive. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em archive} & input archive \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{namespaceffnn_1_1internal_1_1signature_a72b327fe2a4910dc1e04a22ba10422b9_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{namespaceffnn_1_1internal_1_1signature_a5c9daef9afab6c4cacf3376c2aa3ec13}{\index{ffnn\-::internal\-::signature@{ffnn\-::internal\-::signature}!signature@{signature}}
+\index{signature@{signature}!ffnn::internal::signature@{ffnn\-::internal\-::signature}}
+\subsubsection[{signature}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Type $>$ const std\-::string ffnn\-::internal\-::signature\-::signature (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{namespaceffnn_1_1internal_1_1signature_a5c9daef9afab6c4cacf3376c2aa3ec13}
+
+
+Generates a type signature string for a type. 
+
+\begin{DoxyReturn}{Returns}
+type signature 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If using G\-C\-C, the signature will be human-\/readable. 
+\end{DoxyNote}
+
+
+Referenced by apply(), and check().
+

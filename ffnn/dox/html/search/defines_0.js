@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['conv_5ftargs',['CONV_TARGS',['../convolution_8h.html#a30c3dcfd336a244f4421fe701352d1e4',1,'convolution.h']]],
-  ['conv_5fvolume_5ftargs',['CONV_VOLUME_TARGS',['../convolution_8h.html#a054b25d3efc67e1baaedfbc7305f8f50',1,'convolution.h']]]
+  ['eigen_5fdensebase_5fplugin',['EIGEN_DENSEBASE_PLUGIN',['../global_8h.html#a90ac195153d63737038c5b747962f4df',1,'global.h']]],
+  ['eigen_5fsparsematrixbase_5fplugin',['EIGEN_SPARSEMATRIXBASE_PLUGIN',['../global_8h.html#aa89f613d1f2b0a743675e959929fbf5f',1,'global.h']]]
 ];

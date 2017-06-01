@@ -1,0 +1,5 @@
+<map id="ffnn::layer::Shape::valid" name="ffnn::layer::Shape::valid">
+<area shape="rect" id="node2" href="$structffnn_1_1layer_1_1_shape.html#a6e8ffdbc3feeb20a1f246b3ec56e40ca" title="ffnn::layer::Shape\l::size" alt="" coords="179,5,304,46"/>
+<area shape="rect" id="node3" href="$namespaceffnn_1_1layer.html#a311eb389a31756b22de7d4ca5b64b575" title="Multiplies a pair of sizes if all sizes are static. " alt="" coords="352,5,507,46"/>
+<area shape="rect" id="node4" href="$namespaceffnn_1_1layer.html#a83ba223c7b7eb8e3d926b98b266f24c8" title="Checks if size represents a dynamic size. " alt="" coords="555,12,709,39"/>
+</map>

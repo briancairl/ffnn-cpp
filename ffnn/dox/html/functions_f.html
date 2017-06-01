@@ -123,29 +123,36 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <h3><a class="anchor" id="index_f"></a>- f -</h3><ul>
 <li>FFNN_REGISTER_SERIALIZABLE()
-: <a class="el" href="classffnn_1_1traits_1_1_unique.html#ac148b363df35196340005f9195db26bd">ffnn::traits::Unique</a>
+: <a class="el" href="classffnn_1_1internal_1_1_unique.html#ace4b1ad17d5dbcc4dcd555435753ab4a">ffnn::internal::Unique</a>
 </li>
-<li>FilterBank()
-: <a class="el" href="classffnn_1_1layer_1_1_filter_bank.html#a5b057c2a52caabd6b53e9398c2969318">ffnn::layer::FilterBank&lt; KernelMatrixType &gt;</a>
+<li>Filter()
+: <a class="el" href="structffnn_1_1layer_1_1convolution_1_1_filter.html#af80132b0fc2f143b51c5a74b67bd8087">ffnn::layer::convolution::Filter&lt; ValueType, FilterTraits &gt;</a>
 </li>
-<li>FilterBankType
-: <a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html#a73cb805b7ffa2bc96461412e1cf958f9">ffnn::layer::ConvolutionVolume&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterCountAtCompileTime, Mode &gt;</a>
+<li>FilterTraits
+: <a class="el" href="classffnn_1_1layer_1_1_convolution.html#a747e95b6530d029de9ddcfd92cb0317a">ffnn::layer::Convolution&lt; ValueType, LayerTraits &gt;</a>
+, <a class="el" href="structffnn_1_1layer_1_1convolution__layer__traits.html#acea1d4d335c6bfe4151ac326f1a341de">ffnn::layer::convolution_layer_traits&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, KernelHeightAtCompileTime, KernelWidthAtCompileTime, KernelCountAtCompileTime, RowStrideAtCompileTime, ColStrideAtCompileTime, Mode &gt;</a>
+</li>
+<li>FilterType
+: <a class="el" href="classffnn_1_1layer_1_1_convolution.html#a992ae89b4a496563a3a7578d522a8f04">ffnn::layer::Convolution&lt; ValueType, LayerTraits &gt;</a>
 </li>
 <li>forward()
 : <a class="el" href="classffnn_1_1layer_1_1_activation.html#a8435ed1feadfcfc2343dd65a1542fe23">ffnn::layer::Activation&lt; ValueType, NeuronType, SizeAtCompileTime, _HiddenLayerShape &gt;</a>
-, <a class="el" href="classffnn_1_1layer_1_1_convolution.html#abb5a0822c5af574633a17f686191ab61">ffnn::layer::Convolution&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterHeightAtCompileTime, FilterWidthAtCompileTime, FilterCountAtCompileTime, StrideAtCompileTime, Mode, _HiddenLayerShape &gt;</a>
-, <a class="el" href="classffnn_1_1layer_1_1_convolution_volume.html#ad4659abd7e536b6b7e6c61ae2a0299b1">ffnn::layer::ConvolutionVolume&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterCountAtCompileTime, Mode &gt;</a>
+, <a class="el" href="classffnn_1_1layer_1_1_convolution.html#a86d3151b859c361501f83da01f53b3b9">ffnn::layer::Convolution&lt; ValueType, LayerTraits &gt;</a>
 , <a class="el" href="classffnn_1_1layer_1_1_fully_connected.html#a350e7910bd416f67d30113425ea74f59">ffnn::layer::FullyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape &gt;</a>
 , <a class="el" href="classffnn_1_1layer_1_1_hidden.html#a600b86d72826e8be3eafa53e040e9cbe">ffnn::layer::Hidden&lt; ValueType, LayerShape, _InputBlockType, _OutputBlockType &gt;</a>
-, <a class="el" href="classffnn_1_1layer_1_1_layer.html#a832518de9beb442be0764e49ab24d78d">ffnn::layer::Layer&lt; ValueType &gt;</a>
-, <a class="el" href="classffnn_1_1layer_1_1_sparsely_connected.html#a0acb482045ac19809d05ef891358121c">ffnn::layer::SparselyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape &gt;</a>
+, <a class="el" href="classffnn_1_1layer_1_1_layer.html#aa47aae451c4a9ee4daef90b60ac291a1">ffnn::layer::Layer&lt; ValueType &gt;</a>
+, <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4.html#a873062535938aebab53a62d93f3e7db7">ffnn::optimizer::GradientDescent&lt; layer::Convolution&lt; TARGS &gt; &gt;</a>
 , <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_5f7b01db2ae4d39760d70ee323649a60.html#afa8fe46160d16887fc7abb4de34a65e5">ffnn::optimizer::GradientDescent&lt; layer::FullyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt; &gt;</a>
+, <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4.html#a19104dcb39006cdc50d8b55f027df6c6">ffnn::optimizer::GradientDescent&lt; layer::LocalConvolution&lt; TARGS &gt; &gt;</a>
 , <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_sparsely_connected_3_01_value_type_00_e6c27913ab0d90f52f73031aa88c19bf.html#a7e9882cd69c5d4ee64f5614614e9d96c">ffnn::optimizer::GradientDescent&lt; layer::SparselyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt; &gt;</a>
 , <a class="el" href="classffnn_1_1optimizer_1_1_none.html#a4aa65aa33dc45fa3b5d30e7f2a7169f2">ffnn::optimizer::None&lt; LayerType &gt;</a>
 , <a class="el" href="classffnn_1_1optimizer_1_1_optimizer.html#a80505cfdeba0a3c8d1db19a2821613f2">ffnn::optimizer::Optimizer&lt; LayerType &gt;</a>
 </li>
 <li>forward_error_
 : <a class="el" href="classffnn_1_1layer_1_1_hidden.html#af1f439bdd3645a5ee444455d822b5143">ffnn::layer::Hidden&lt; ValueType, LayerShape, _InputBlockType, _OutputBlockType &gt;</a>
+</li>
+<li>ForwardValueMapType
+: <a class="el" href="classffnn_1_1layer_1_1_convolution.html#a80b64b079d5e7d5a69779574989e8cce">ffnn::layer::Convolution&lt; ValueType, LayerTraits &gt;</a>
 </li>
 <li>FullyConnected()
 : <a class="el" href="classffnn_1_1layer_1_1_fully_connected.html#a3d846cacf7bcbab5dd193b30a16011f2">ffnn::layer::FullyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape &gt;</a>
@@ -154,7 +161,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2017 11:34:22 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 31 2017 23:57:13 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

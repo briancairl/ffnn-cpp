@@ -6,7 +6,7 @@
 \item 
 \hyperlink{namespaceffnn_1_1distribution}{distribution}
 \item 
-\hyperlink{namespaceffnn_1_1io}{io}
+\hyperlink{namespaceffnn_1_1internal}{internal}
 \item 
 \hyperlink{namespaceffnn_1_1layer}{layer}
 \item 
@@ -15,8 +15,13 @@
 \hyperlink{namespaceffnn_1_1neuron}{neuron}
 \item 
 \hyperlink{namespaceffnn_1_1optimizer}{optimizer}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
 \item 
-\hyperlink{namespaceffnn_1_1traits}{traits}
+typedef \hyperlink{global_8h_aab5a5a098c5bf31f4176f4a141d2ef65}{F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E} \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type}
+\item 
+typedef \hyperlink{global_8h_af04b6e835b960cffc7ed05dfd1685ba0}{F\-F\-N\-N\-\_\-\-O\-F\-F\-S\-E\-T\-\_\-\-T\-Y\-P\-E} \hyperlink{namespaceffnn_add5752d74b38c6e9b200f3d696fc3ec8}{offset\-\_\-type}
 \end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
@@ -26,9 +31,9 @@
 {\footnotesize template$<$typename Serializable $>$ }\\void \hyperlink{namespaceffnn_a365753310c86d8142fa5b785cc16004a}{load} (std\-::istream \&is, Serializable \&object, const typename Serializable\-::\-Version\-Type version=0)
 \item 
 {\footnotesize template$<$typename Serializable\-Type $>$ }\\void \hyperlink{namespaceffnn_a25c692ab6bf9799deb7c4282ee85bdd6}{save} (std\-::ostream \&os, const Serializable\-Type \&object, const typename Serializable\-Type\-::\-Version\-Type version=0)
-\item 
+\begin{DoxyCompactList}\small\item\em Saves a serializable object. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Serializable\-Type $>$ }\\void \hyperlink{namespaceffnn_a94ff5b786bc42fa02bcf27ed86854a71}{load} (std\-::istream \&is, Serializable\-Type \&object, const typename Serializable\-Type\-::\-Version\-Type version=0)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Loads a serializable object. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -41,6 +46,15 @@ Brian Cairl
 \begin{DoxyNote}{Note}
 H\-E\-A\-D\-E\-R-\/\-O\-N\-L\-Y I\-M\-P\-L\-E\-M\-E\-N\-T\-A\-T\-I\-O\-N F\-I\-L\-E  Do not include directly 
 \end{DoxyNote}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{namespaceffnn_add5752d74b38c6e9b200f3d696fc3ec8}{\index{ffnn@{ffnn}!offset\-\_\-type@{offset\-\_\-type}}
+\index{offset\-\_\-type@{offset\-\_\-type}!ffnn@{ffnn}}
+\subsubsection[{offset\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf F\-F\-N\-N\-\_\-\-O\-F\-F\-S\-E\-T\-\_\-\-T\-Y\-P\-E} {\bf ffnn\-::offset\-\_\-type}}}\label{namespaceffnn_add5752d74b38c6e9b200f3d696fc3ec8}
+\hypertarget{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{\index{ffnn@{ffnn}!size\-\_\-type@{size\-\_\-type}}
+\index{size\-\_\-type@{size\-\_\-type}!ffnn@{ffnn}}
+\subsubsection[{size\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E} {\bf ffnn\-::size\-\_\-type}}}\label{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}
 
 
 \subsection{Function Documentation}
@@ -62,6 +76,19 @@ H\-E\-A\-D\-E\-R-\/\-O\-N\-L\-Y I\-M\-P\-L\-E\-M\-E\-N\-T\-A\-T\-I\-O\-N F\-I\-L
 \item[{const typename Serializable\-Type\-::\-Version\-Type}]{version = {\ttfamily 0}}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{namespaceffnn_a94ff5b786bc42fa02bcf27ed86854a71}
+
+
+Loads a serializable object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em is} & stl-\/compliant input stream \\
+\hline
+{\em object} & serializable object \\
+\hline
+{\em version} & version specifier \\
+\hline
+\end{DoxyParams}
 \hypertarget{namespaceffnn_a1d292f830b9e27ce3965b0c18231b7fc}{\index{ffnn@{ffnn}!save@{save}}
 \index{save@{save}!ffnn@{ffnn}}
 \subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Serializable $>$ void ffnn\-::save (
@@ -80,3 +107,16 @@ H\-E\-A\-D\-E\-R-\/\-O\-N\-L\-Y I\-M\-P\-L\-E\-M\-E\-N\-T\-A\-T\-I\-O\-N F\-I\-L
 \item[{const typename Serializable\-Type\-::\-Version\-Type}]{version = {\ttfamily 0}}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{namespaceffnn_a25c692ab6bf9799deb7c4282ee85bdd6}
+
+
+Saves a serializable object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & stl-\/compliant output stream \\
+\hline
+{\em object} & serializable object \\
+\hline
+{\em version} & version specifier \\
+\hline
+\end{DoxyParams}

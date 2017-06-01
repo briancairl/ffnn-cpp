@@ -1,0 +1,10 @@
+<map id="ffnn::internal::Unique" name="ffnn::internal::Unique">
+<area shape="rect" id="node3" href="$classffnn_1_1layer_1_1_layer.html" title="Base object for all layer types. " alt="" coords="416,103,536,145"/>
+<area shape="rect" id="node2" href="$classffnn_1_1internal_1_1_serializable.html" title="An object which can be saved and loaded. " alt="" coords="6,111,175,137"/>
+<area shape="rect" id="node4" href="$classffnn_1_1layer_1_1_hidden.html" title="A network hidden&#45;layer object. " alt="" coords="597,5,726,46"/>
+<area shape="rect" id="node5" href="$classffnn_1_1layer_1_1_input.html" title="A layer which handles network inputs. " alt="" coords="603,70,720,111"/>
+<area shape="rect" id="node6" href="$classffnn_1_1layer_1_1_output.html" title="A layer which handles network outputs. " alt="" coords="598,135,725,177"/>
+<area shape="rect" id="node7" href="$classffnn_1_1layer_1_1_hidden.html" title="Hidden\&lt; ValueType,\l _HiddenLayerShape \&gt;" alt="" coords="584,201,739,242"/>
+<area shape="rect" id="node8" href="$classffnn_1_1layer_1_1_activation.html" title="Activation layer. " alt="" coords="821,142,1051,213"/>
+<area shape="rect" id="node9" href="$classffnn_1_1layer_1_1_fully_connected.html" title="A fully&#45;connected layer. " alt="" coords="787,237,1085,293"/>
+</map>

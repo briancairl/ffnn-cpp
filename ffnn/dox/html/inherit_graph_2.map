@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$structffnn_1_1distribution_1_1is__distribution.html" title="ffnn::distribution\l::is_distribution\&lt; Distribution\lType \&gt;" alt="" coords="6,4,194,60"/>
+<area shape="rect" id="node1" href="$classffnn_1_1distribution_1_1_normal.html" title="ffnn::distribution\l::Normal\&lt; ValueType \&gt;" alt="" coords="6,5,165,46"/>
+<area shape="rect" id="node2" href="$structffnn_1_1distribution_1_1_standard_normal.html" title="ffnn::distribution\l::StandardNormal\&lt; ValueType \&gt;" alt="" coords="213,5,424,46"/>
 </map>

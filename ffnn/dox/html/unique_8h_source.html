@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>FFNN: /home/briancairl/packages/src/ffnn-cpp/ffnn/include/ffnn/internal/traits/unique.h Source File</title>
+<title>FFNN: /home/briancairl/packages/src/ffnn-cpp/ffnn/include/ffnn/internal/unique.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -83,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_5926a80ed3446c810579ca6fe92ab4ca.html">include</a></li><li class="navelem"><a class="el" href="dir_18fff403c5eccb83d761ba51d6ac7b98.html">ffnn</a></li><li class="navelem"><a class="el" href="dir_4eadc565f6984684b9966e19a649c405.html">internal</a></li><li class="navelem"><a class="el" href="dir_c63ec65a8b1338bb36ab8522e8ef0dc6.html">traits</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_5926a80ed3446c810579ca6fe92ab4ca.html">include</a></li><li class="navelem"><a class="el" href="dir_18fff403c5eccb83d761ba51d6ac7b98.html">ffnn</a></li><li class="navelem"><a class="el" href="dir_4eadc565f6984684b9966e19a649c405.html">internal</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -92,8 +92,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <a href="unique_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef FFNN_INTERNAL_TRAITS_UNIQUE_H</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define FFNN_INTERNAL_TRAITS_UNIQUE_H</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef FFNN_INTERNAL_UNIQUE_H</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define FFNN_INTERNAL_UNIQUE_H</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// C++ Standard Library</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
@@ -104,74 +104,68 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;boost/uuid/uuid_io.hpp&gt;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">// FFNN (internal)</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="serializable_8h.html">ffnn/internal/traits/serializable.h</a>&gt;</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="internal_2signature_8h.html">ffnn/internal/signature.h</a>&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="serializable_8h.html">ffnn/internal/serializable.h</a>&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="signature_8h.html">ffnn/internal/signature.h</a>&gt;</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">namespace </span>ffnn</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">namespace </span>traits</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">namespace </span>internal</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classffnn_1_1traits_1_1_unique.html">   27</a></span>&#160;<span class="keyword">class </span><a class="code" href="classffnn_1_1traits_1_1_unique.html">Unique</a> :</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keyword">public</span> <a class="code" href="classffnn_1_1traits_1_1_serializable.html">Serializable</a></div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classffnn_1_1internal_1_1_unique.html">   27</a></span>&#160;<span class="keyword">class </span><a class="code" href="classffnn_1_1internal_1_1_unique.html">Unique</a> :</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keyword">public</span> <a class="code" href="classffnn_1_1internal_1_1_serializable.html">Serializable</a></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classffnn_1_1traits_1_1_unique.html#a216b6dfb9074ccaedacafe5a9e3b953a">   34</a></span>&#160;  <a class="code" href="classffnn_1_1traits_1_1_unique.html#a216b6dfb9074ccaedacafe5a9e3b953a">Unique</a>() </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classffnn_1_1internal_1_1_unique.html#ad4f80a296525cc5c6c74571ccab94842">   34</a></span>&#160;  <a class="code" href="classffnn_1_1internal_1_1_unique.html#ad4f80a296525cc5c6c74571ccab94842">Unique</a>() </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  {</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">// UUID generator</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">static</span> boost::uuids::basic_random_generator&lt;boost::mt19937&gt; id_gen_;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="comment">// Generate a new UUID</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="classffnn_1_1traits_1_1_unique.html#aef0d2ee90f910cc5143974d6051cc340">setID</a>(boost::uuids::to_string(id_gen_()));</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    id_ = boost::uuids::to_string(id_gen_());</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  }</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classffnn_1_1traits_1_1_unique.html#ab6971fdaf349b0a42a8c5627cf7b6f58">   47</a></span>&#160;  <span class="keyword">inline</span> <span class="keyword">const</span> std::string&amp; <a class="code" href="classffnn_1_1traits_1_1_unique.html#ab6971fdaf349b0a42a8c5627cf7b6f58">getID</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classffnn_1_1internal_1_1_unique.html#a5723da9af9ff0ff8043e55239fe10f7f">   47</a></span>&#160;  <span class="keyword">inline</span> <span class="keyword">const</span> std::string&amp; <a class="code" href="classffnn_1_1internal_1_1_unique.html#a5723da9af9ff0ff8043e55239fe10f7f">getID</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">  </span>{</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">return</span> id_;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  }</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classffnn_1_1traits_1_1_unique.html#aef0d2ee90f910cc5143974d6051cc340">   56</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classffnn_1_1traits_1_1_unique.html#aef0d2ee90f910cc5143974d6051cc340">setID</a>(<span class="keyword">const</span> std::string&amp; <span class="keywordtype">id</span>)</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    id_ = id;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <a class="code" href="classffnn_1_1internal_1_1_unique.html#ace4b1ad17d5dbcc4dcd555435753ab4a">FFNN_REGISTER_SERIALIZABLE</a>(<a class="code" href="classffnn_1_1internal_1_1_unique.html">Unique</a>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classffnn_1_1internal_1_1_unique.html#a21fd15cd137dd1cccd23a57fb45649f4">   55</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classffnn_1_1internal_1_1_unique.html#a21fd15cd137dd1cccd23a57fb45649f4">save</a>(<a class="code" href="classffnn_1_1internal_1_1_serializable.html#acf5baead716eb277337a4437e88a5743">OutputArchive</a>&amp; ar, <a class="code" href="classffnn_1_1internal_1_1_serializable.html#a32fe7d82b0caf9fe8b6fb7c312a26028">VersionType</a>)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">  </span>{</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    ffnn::io::signature::apply&lt;Unique&gt;(ar);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    ar &amp; id_;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  }</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <a class="code" href="classffnn_1_1traits_1_1_unique.html#ac148b363df35196340005f9195db26bd">FFNN_REGISTER_SERIALIZABLE</a>();</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classffnn_1_1traits_1_1_unique.html#ad8be6fcb9a7519603b2aab19b3c6d593">   64</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classffnn_1_1traits_1_1_unique.html#ad8be6fcb9a7519603b2aab19b3c6d593">save</a>(<a class="code" href="classffnn_1_1traits_1_1_serializable.html#a08d986df75d363fa79506d4f6045cb9f">OutputArchive</a>&amp; ar, <a class="code" href="classffnn_1_1traits_1_1_serializable.html#a08924b3b7d20cb3cb6eafe517d4f7b30">VersionType</a>)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    ffnn::io::signature::apply&lt;Unique&gt;(ar);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    ar &amp; id_;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="classffnn_1_1traits_1_1_unique.html#af1e937c2908ed2ff707d6a7d1b5b13d2">   70</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classffnn_1_1traits_1_1_unique.html#af1e937c2908ed2ff707d6a7d1b5b13d2">load</a>(<a class="code" href="classffnn_1_1traits_1_1_serializable.html#a6e626759259f8f370dd4303b4441a234">InputArchive</a>&amp; ar, <a class="code" href="classffnn_1_1traits_1_1_serializable.html#a08924b3b7d20cb3cb6eafe517d4f7b30">VersionType</a>)</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    ffnn::io::signature::check&lt;Unique&gt;(ar);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    ar &amp; id_;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  std::string id_;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;};</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}  <span class="comment">// namespace traits</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}  <span class="comment">// namespace ffnn</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#endif  // FFNN_INTERNAL_TRAITS_UNIQUE_H</span></div>
-<div class="ttc" id="classffnn_1_1traits_1_1_serializable_html_a08924b3b7d20cb3cb6eafe517d4f7b30"><div class="ttname"><a href="classffnn_1_1traits_1_1_serializable.html#a08924b3b7d20cb3cb6eafe517d4f7b30">ffnn::traits::Serializable::VersionType</a></div><div class="ttdeci">FFNN_SERIALIZATION_VERSION_TYPE VersionType</div><div class="ttdoc">Class-version type standardization. </div><div class="ttdef"><b>Definition:</b> serializable.h:35</div></div>
-<div class="ttc" id="classffnn_1_1traits_1_1_unique_html_a216b6dfb9074ccaedacafe5a9e3b953a"><div class="ttname"><a href="classffnn_1_1traits_1_1_unique.html#a216b6dfb9074ccaedacafe5a9e3b953a">ffnn::traits::Unique::Unique</a></div><div class="ttdeci">Unique()</div><div class="ttdoc">Default constructor. </div><div class="ttdef"><b>Definition:</b> unique.h:34</div></div>
-<div class="ttc" id="classffnn_1_1traits_1_1_serializable_html_a08d986df75d363fa79506d4f6045cb9f"><div class="ttname"><a href="classffnn_1_1traits_1_1_serializable.html#a08d986df75d363fa79506d4f6045cb9f">ffnn::traits::Serializable::OutputArchive</a></div><div class="ttdeci">FFNN_SERIALIZATION_OUTPUT_ARCHIVE_TYPE OutputArchive</div><div class="ttdoc">Output (save) archive type. </div><div class="ttdef"><b>Definition:</b> serializable.h:41</div></div>
-<div class="ttc" id="classffnn_1_1traits_1_1_serializable_html"><div class="ttname"><a href="classffnn_1_1traits_1_1_serializable.html">ffnn::traits::Serializable</a></div><div class="ttdoc">An object which can be saved and loaded. </div><div class="ttdef"><b>Definition:</b> serializable.h:31</div></div>
-<div class="ttc" id="internal_2signature_8h_html"><div class="ttname"><a href="internal_2signature_8h.html">signature.h</a></div></div>
-<div class="ttc" id="classffnn_1_1traits_1_1_unique_html_aef0d2ee90f910cc5143974d6051cc340"><div class="ttname"><a href="classffnn_1_1traits_1_1_unique.html#aef0d2ee90f910cc5143974d6051cc340">ffnn::traits::Unique::setID</a></div><div class="ttdeci">void setID(const std::string &amp;id)</div><div class="ttdoc">Sets an ID. </div><div class="ttdef"><b>Definition:</b> unique.h:56</div></div>
-<div class="ttc" id="classffnn_1_1traits_1_1_unique_html_ac148b363df35196340005f9195db26bd"><div class="ttname"><a href="classffnn_1_1traits_1_1_unique.html#ac148b363df35196340005f9195db26bd">ffnn::traits::Unique::FFNN_REGISTER_SERIALIZABLE</a></div><div class="ttdeci">FFNN_REGISTER_SERIALIZABLE()</div></div>
-<div class="ttc" id="classffnn_1_1traits_1_1_unique_html"><div class="ttname"><a href="classffnn_1_1traits_1_1_unique.html">ffnn::traits::Unique</a></div><div class="ttdoc">An object with a unique ID. </div><div class="ttdef"><b>Definition:</b> unique.h:27</div></div>
-<div class="ttc" id="classffnn_1_1traits_1_1_unique_html_ad8be6fcb9a7519603b2aab19b3c6d593"><div class="ttname"><a href="classffnn_1_1traits_1_1_unique.html#ad8be6fcb9a7519603b2aab19b3c6d593">ffnn::traits::Unique::save</a></div><div class="ttdeci">void save(OutputArchive &amp;ar, VersionType) const </div><div class="ttdef"><b>Definition:</b> unique.h:64</div></div>
-<div class="ttc" id="classffnn_1_1traits_1_1_unique_html_ab6971fdaf349b0a42a8c5627cf7b6f58"><div class="ttname"><a href="classffnn_1_1traits_1_1_unique.html#ab6971fdaf349b0a42a8c5627cf7b6f58">ffnn::traits::Unique::getID</a></div><div class="ttdeci">const std::string &amp; getID() const </div><div class="ttdoc">Returns an ID. </div><div class="ttdef"><b>Definition:</b> unique.h:47</div></div>
-<div class="ttc" id="classffnn_1_1traits_1_1_serializable_html_a6e626759259f8f370dd4303b4441a234"><div class="ttname"><a href="classffnn_1_1traits_1_1_serializable.html#a6e626759259f8f370dd4303b4441a234">ffnn::traits::Serializable::InputArchive</a></div><div class="ttdeci">FFNN_SERIALIZATION_INPUT_ARCHIVE_TYPE InputArchive</div><div class="ttdoc">Input (load) archive type. </div><div class="ttdef"><b>Definition:</b> serializable.h:38</div></div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classffnn_1_1internal_1_1_unique.html#a926ca4f63e3f6f0cf812af7f6ed2d88c">   61</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classffnn_1_1internal_1_1_unique.html#a926ca4f63e3f6f0cf812af7f6ed2d88c">load</a>(<a class="code" href="classffnn_1_1internal_1_1_serializable.html#aadc27d79d606f35a82dd88bad33fa6d2">InputArchive</a>&amp; ar, <a class="code" href="classffnn_1_1internal_1_1_serializable.html#a32fe7d82b0caf9fe8b6fb7c312a26028">VersionType</a>)</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    ffnn::io::signature::check&lt;Unique&gt;(ar);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    ar &amp; id_;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  std::string id_;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;};</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}  <span class="comment">// namespace internal</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}  <span class="comment">// namespace ffnn</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#endif  // FFNN_INTERNAL_UNIQUE_H</span></div>
+<div class="ttc" id="classffnn_1_1internal_1_1_unique_html_a926ca4f63e3f6f0cf812af7f6ed2d88c"><div class="ttname"><a href="classffnn_1_1internal_1_1_unique.html#a926ca4f63e3f6f0cf812af7f6ed2d88c">ffnn::internal::Unique::load</a></div><div class="ttdeci">void load(InputArchive &amp;ar, VersionType)</div><div class="ttdef"><b>Definition:</b> unique.h:61</div></div>
+<div class="ttc" id="classffnn_1_1internal_1_1_unique_html_a5723da9af9ff0ff8043e55239fe10f7f"><div class="ttname"><a href="classffnn_1_1internal_1_1_unique.html#a5723da9af9ff0ff8043e55239fe10f7f">ffnn::internal::Unique::getID</a></div><div class="ttdeci">const std::string &amp; getID() const </div><div class="ttdoc">Returns an ID. </div><div class="ttdef"><b>Definition:</b> unique.h:47</div></div>
+<div class="ttc" id="classffnn_1_1internal_1_1_serializable_html_a32fe7d82b0caf9fe8b6fb7c312a26028"><div class="ttname"><a href="classffnn_1_1internal_1_1_serializable.html#a32fe7d82b0caf9fe8b6fb7c312a26028">ffnn::internal::Serializable::VersionType</a></div><div class="ttdeci">FFNN_SERIALIZATION_VERSION_TYPE VersionType</div><div class="ttdoc">Class-version type standardization. </div><div class="ttdef"><b>Definition:</b> serializable.h:36</div></div>
+<div class="ttc" id="classffnn_1_1internal_1_1_unique_html_a21fd15cd137dd1cccd23a57fb45649f4"><div class="ttname"><a href="classffnn_1_1internal_1_1_unique.html#a21fd15cd137dd1cccd23a57fb45649f4">ffnn::internal::Unique::save</a></div><div class="ttdeci">void save(OutputArchive &amp;ar, VersionType) const </div><div class="ttdef"><b>Definition:</b> unique.h:55</div></div>
+<div class="ttc" id="classffnn_1_1internal_1_1_serializable_html_acf5baead716eb277337a4437e88a5743"><div class="ttname"><a href="classffnn_1_1internal_1_1_serializable.html#acf5baead716eb277337a4437e88a5743">ffnn::internal::Serializable::OutputArchive</a></div><div class="ttdeci">FFNN_SERIALIZATION_OUTPUT_ARCHIVE_TYPE OutputArchive</div><div class="ttdoc">Output (save) archive type. </div><div class="ttdef"><b>Definition:</b> serializable.h:42</div></div>
+<div class="ttc" id="signature_8h_html"><div class="ttname"><a href="signature_8h.html">signature.h</a></div></div>
+<div class="ttc" id="classffnn_1_1internal_1_1_unique_html"><div class="ttname"><a href="classffnn_1_1internal_1_1_unique.html">ffnn::internal::Unique</a></div><div class="ttdoc">An object with a unique ID. </div><div class="ttdef"><b>Definition:</b> unique.h:27</div></div>
+<div class="ttc" id="classffnn_1_1internal_1_1_unique_html_ace4b1ad17d5dbcc4dcd555435753ab4a"><div class="ttname"><a href="classffnn_1_1internal_1_1_unique.html#ace4b1ad17d5dbcc4dcd555435753ab4a">ffnn::internal::Unique::FFNN_REGISTER_SERIALIZABLE</a></div><div class="ttdeci">FFNN_REGISTER_SERIALIZABLE(Unique)</div></div>
+<div class="ttc" id="classffnn_1_1internal_1_1_serializable_html"><div class="ttname"><a href="classffnn_1_1internal_1_1_serializable.html">ffnn::internal::Serializable</a></div><div class="ttdoc">An object which can be saved and loaded. </div><div class="ttdef"><b>Definition:</b> serializable.h:32</div></div>
+<div class="ttc" id="classffnn_1_1internal_1_1_unique_html_ad4f80a296525cc5c6c74571ccab94842"><div class="ttname"><a href="classffnn_1_1internal_1_1_unique.html#ad4f80a296525cc5c6c74571ccab94842">ffnn::internal::Unique::Unique</a></div><div class="ttdeci">Unique()</div><div class="ttdoc">Default constructor. </div><div class="ttdef"><b>Definition:</b> unique.h:34</div></div>
+<div class="ttc" id="classffnn_1_1internal_1_1_serializable_html_aadc27d79d606f35a82dd88bad33fa6d2"><div class="ttname"><a href="classffnn_1_1internal_1_1_serializable.html#aadc27d79d606f35a82dd88bad33fa6d2">ffnn::internal::Serializable::InputArchive</a></div><div class="ttdeci">FFNN_SERIALIZATION_INPUT_ARCHIVE_TYPE InputArchive</div><div class="ttdoc">Input (load) archive type. </div><div class="ttdef"><b>Definition:</b> serializable.h:39</div></div>
 <div class="ttc" id="serializable_8h_html"><div class="ttname"><a href="serializable_8h.html">serializable.h</a></div></div>
-<div class="ttc" id="classffnn_1_1traits_1_1_unique_html_af1e937c2908ed2ff707d6a7d1b5b13d2"><div class="ttname"><a href="classffnn_1_1traits_1_1_unique.html#af1e937c2908ed2ff707d6a7d1b5b13d2">ffnn::traits::Unique::load</a></div><div class="ttdeci">void load(InputArchive &amp;ar, VersionType)</div><div class="ttdef"><b>Definition:</b> unique.h:70</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2017 11:34:21 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 31 2017 23:57:13 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

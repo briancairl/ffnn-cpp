@@ -1,0 +1,99 @@
+\hypertarget{classffnn_1_1internal_1_1_serializable}{\section{ffnn\-:\-:internal\-:\-:Serializable Class Reference}
+\label{classffnn_1_1internal_1_1_serializable}\index{ffnn\-::internal\-::\-Serializable@{ffnn\-::internal\-::\-Serializable}}
+}
+
+
+An object which can be saved and loaded.  
+
+
+
+
+{\ttfamily \#include \char`\"{}serializable.\-h\char`\"{}}
+
+
+
+Inheritance diagram for ffnn\-:\-:internal\-:\-:Serializable\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classffnn_1_1internal_1_1_serializable__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \\*
+\hyperlink{global_8h_a0678a9de3e627b6d8dbba2f2733b4bab}{F\-F\-N\-N\-\_\-\-S\-E\-R\-I\-A\-L\-I\-Z\-A\-T\-I\-O\-N\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-T\-Y\-P\-E} \hyperlink{classffnn_1_1internal_1_1_serializable_a32fe7d82b0caf9fe8b6fb7c312a26028}{Version\-Type}
+\begin{DoxyCompactList}\small\item\em Class-\/version type standardization. \end{DoxyCompactList}\item 
+typedef \\*
+\hyperlink{global_8h_aa6057cb3965fa4db202231a2817b960b}{F\-F\-N\-N\-\_\-\-S\-E\-R\-I\-A\-L\-I\-Z\-A\-T\-I\-O\-N\-\_\-\-I\-N\-P\-U\-T\-\_\-\-A\-R\-C\-H\-I\-V\-E\-\_\-\-T\-Y\-P\-E} \hyperlink{classffnn_1_1internal_1_1_serializable_aadc27d79d606f35a82dd88bad33fa6d2}{Input\-Archive}
+\begin{DoxyCompactList}\small\item\em Input (load) archive type. \end{DoxyCompactList}\item 
+typedef \\*
+\hyperlink{global_8h_a5c59f6dbef7cac034dd58fc9752c9ea6}{F\-F\-N\-N\-\_\-\-S\-E\-R\-I\-A\-L\-I\-Z\-A\-T\-I\-O\-N\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-A\-R\-C\-H\-I\-V\-E\-\_\-\-T\-Y\-P\-E} \hyperlink{classffnn_1_1internal_1_1_serializable_acf5baead716eb277337a4437e88a5743}{Output\-Archive}
+\begin{DoxyCompactList}\small\item\em Output (save) archive type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classffnn_1_1internal_1_1_serializable_a98b43aa17c4986e8a1b809b9d64796bb}{save} (\hyperlink{classffnn_1_1internal_1_1_serializable_acf5baead716eb277337a4437e88a5743}{Output\-Archive} \&ar, \hyperlink{classffnn_1_1internal_1_1_serializable_a32fe7d82b0caf9fe8b6fb7c312a26028}{Version\-Type}) const =0
+\item 
+virtual void \hyperlink{classffnn_1_1internal_1_1_serializable_aea103381005de4fda86d42fd6af25513}{load} (\hyperlink{classffnn_1_1internal_1_1_serializable_aadc27d79d606f35a82dd88bad33fa6d2}{Input\-Archive} \&ar, \hyperlink{classffnn_1_1internal_1_1_serializable_a32fe7d82b0caf9fe8b6fb7c312a26028}{Version\-Type})=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+An object which can be saved and loaded. 
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classffnn_1_1internal_1_1_serializable_aadc27d79d606f35a82dd88bad33fa6d2}{\index{ffnn\-::internal\-::\-Serializable@{ffnn\-::internal\-::\-Serializable}!Input\-Archive@{Input\-Archive}}
+\index{Input\-Archive@{Input\-Archive}!ffnn::internal::Serializable@{ffnn\-::internal\-::\-Serializable}}
+\subsubsection[{Input\-Archive}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf F\-F\-N\-N\-\_\-\-S\-E\-R\-I\-A\-L\-I\-Z\-A\-T\-I\-O\-N\-\_\-\-I\-N\-P\-U\-T\-\_\-\-A\-R\-C\-H\-I\-V\-E\-\_\-\-T\-Y\-P\-E} {\bf ffnn\-::internal\-::\-Serializable\-::\-Input\-Archive}}}\label{classffnn_1_1internal_1_1_serializable_aadc27d79d606f35a82dd88bad33fa6d2}
+
+
+Input (load) archive type. 
+
+\hypertarget{classffnn_1_1internal_1_1_serializable_acf5baead716eb277337a4437e88a5743}{\index{ffnn\-::internal\-::\-Serializable@{ffnn\-::internal\-::\-Serializable}!Output\-Archive@{Output\-Archive}}
+\index{Output\-Archive@{Output\-Archive}!ffnn::internal::Serializable@{ffnn\-::internal\-::\-Serializable}}
+\subsubsection[{Output\-Archive}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf F\-F\-N\-N\-\_\-\-S\-E\-R\-I\-A\-L\-I\-Z\-A\-T\-I\-O\-N\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-A\-R\-C\-H\-I\-V\-E\-\_\-\-T\-Y\-P\-E} {\bf ffnn\-::internal\-::\-Serializable\-::\-Output\-Archive}}}\label{classffnn_1_1internal_1_1_serializable_acf5baead716eb277337a4437e88a5743}
+
+
+Output (save) archive type. 
+
+\hypertarget{classffnn_1_1internal_1_1_serializable_a32fe7d82b0caf9fe8b6fb7c312a26028}{\index{ffnn\-::internal\-::\-Serializable@{ffnn\-::internal\-::\-Serializable}!Version\-Type@{Version\-Type}}
+\index{Version\-Type@{Version\-Type}!ffnn::internal::Serializable@{ffnn\-::internal\-::\-Serializable}}
+\subsubsection[{Version\-Type}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf F\-F\-N\-N\-\_\-\-S\-E\-R\-I\-A\-L\-I\-Z\-A\-T\-I\-O\-N\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-T\-Y\-P\-E} {\bf ffnn\-::internal\-::\-Serializable\-::\-Version\-Type}}}\label{classffnn_1_1internal_1_1_serializable_a32fe7d82b0caf9fe8b6fb7c312a26028}
+
+
+Class-\/version type standardization. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classffnn_1_1internal_1_1_serializable_aea103381005de4fda86d42fd6af25513}{\index{ffnn\-::internal\-::\-Serializable@{ffnn\-::internal\-::\-Serializable}!load@{load}}
+\index{load@{load}!ffnn::internal::Serializable@{ffnn\-::internal\-::\-Serializable}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ffnn\-::internal\-::\-Serializable\-::load (
+\begin{DoxyParamCaption}
+\item[{{\bf Input\-Archive} \&}]{ar, }
+\item[{{\bf Version\-Type}}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classffnn_1_1internal_1_1_serializable_aea103381005de4fda86d42fd6af25513}
+
+
+Implemented in \hyperlink{classffnn_1_1layer_1_1_layer_a23f5f3c958d888632010327471c7b012}{ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$}, \hyperlink{classffnn_1_1layer_1_1_fully_connected_a1ff2a601cdf315ce46a2812b4e6fe354}{ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}, \hyperlink{classffnn_1_1layer_1_1_hidden_a4ab88bd0c94d86b6d17f63e054cc907c}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, Layer\-Shape, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type $>$}, \hyperlink{classffnn_1_1layer_1_1_hidden_a4ab88bd0c94d86b6d17f63e054cc907c}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, \-\_\-\-Hidden\-Layer\-Shape $>$}, \hyperlink{classffnn_1_1layer_1_1_activation_abf041de6c530dfb271dd42689927eebe}{ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}, and \hyperlink{classffnn_1_1internal_1_1_unique_a926ca4f63e3f6f0cf812af7f6ed2d88c}{ffnn\-::internal\-::\-Unique}.
+
+\hypertarget{classffnn_1_1internal_1_1_serializable_a98b43aa17c4986e8a1b809b9d64796bb}{\index{ffnn\-::internal\-::\-Serializable@{ffnn\-::internal\-::\-Serializable}!save@{save}}
+\index{save@{save}!ffnn::internal::Serializable@{ffnn\-::internal\-::\-Serializable}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}virtual void ffnn\-::internal\-::\-Serializable\-::save (
+\begin{DoxyParamCaption}
+\item[{{\bf Output\-Archive} \&}]{ar, }
+\item[{{\bf Version\-Type}}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classffnn_1_1internal_1_1_serializable_a98b43aa17c4986e8a1b809b9d64796bb}
+
+
+Implemented in \hyperlink{classffnn_1_1layer_1_1_layer_ac265fc929a178b111337226dd1cb62b6}{ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$}, \hyperlink{classffnn_1_1layer_1_1_fully_connected_a7c79eb99c638b61f76ea34b725c0aeef}{ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}, \hyperlink{classffnn_1_1layer_1_1_hidden_a184844a0eadeb1aa27e29b24cbb0008c}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, Layer\-Shape, \-\_\-\-Input\-Block\-Type, \-\_\-\-Output\-Block\-Type $>$}, \hyperlink{classffnn_1_1layer_1_1_hidden_a184844a0eadeb1aa27e29b24cbb0008c}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, \-\_\-\-Hidden\-Layer\-Shape $>$}, \hyperlink{classffnn_1_1layer_1_1_activation_af4fa0c4e44033921fe6ada1dcd0c0560}{ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}, and \hyperlink{classffnn_1_1internal_1_1_unique_a21fd15cd137dd1cccd23a57fb45649f4}{ffnn\-::internal\-::\-Unique}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/internal/\hyperlink{serializable_8h}{serializable.\-h}\end{DoxyCompactItemize}

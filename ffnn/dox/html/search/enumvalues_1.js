@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rowembedding',['RowEmbedding',['../namespaceffnn_1_1layer.html#a254f16beba4fb335d935e9b43bb9e69aa91eb0d1f175a08e2b2991cae348c827d',1,'ffnn::layer']]]
+  ['rowembedding',['RowEmbedding',['../namespaceffnn_1_1layer_1_1convolution.html#ad420d4eb8edd7c254d1f0aaaad81017fa1c03b5145e31615496457aa687a180c2',1,'ffnn::layer::convolution']]]
 ];

@@ -1,0 +1,362 @@
+\hypertarget{structffnn_1_1layer_1_1convolution_1_1_filter}{\section{ffnn\-:\-:layer\-:\-:convolution\-:\-:Filter$<$ Value\-Type, Filter\-Traits $>$ Struct Template Reference}
+\label{structffnn_1_1layer_1_1convolution_1_1_filter}\index{ffnn\-::layer\-::convolution\-::\-Filter$<$ Value\-Type, Filter\-Traits $>$@{ffnn\-::layer\-::convolution\-::\-Filter$<$ Value\-Type, Filter\-Traits $>$}}
+}
+
+
+Sets all \hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter}{Filter} kernels and scalar bias unit to zero.  
+
+
+
+
+{\ttfamily \#include \char`\"{}filter.\-h\char`\"{}}
+
+
+
+Inheritance diagram for ffnn\-:\-:layer\-:\-:convolution\-:\-:Filter$<$ Value\-Type, Filter\-Traits $>$\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{structffnn_1_1layer_1_1convolution_1_1_filter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ffnn\-:\-:layer\-:\-:convolution\-:\-:Filter$<$ Value\-Type, Filter\-Traits $>$\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{structffnn_1_1layer_1_1convolution_1_1_filter__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Filter\-Traits\-::\-Kernel\-Type \hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter_a5366e7e916ee072b3a97bbbd1dc12b58}{Kernel\-Type}
+\begin{DoxyCompactList}\small\item\em \hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter}{Filter} kernel matrix standardization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$bool T = Filter\-Traits\-::has\-\_\-fixed\-\_\-kernel\-\_\-count$>$ }\\\hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter_af80132b0fc2f143b51c5a74b67bd8087}{Filter} (typename std\-::enable\-\_\-if$<$ T $>$\-::type $\ast$=nullptr)
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+{\footnotesize template$<$bool T = Filter\-Traits\-::has\-\_\-fixed\-\_\-kernel\-\_\-count$>$ }\\\hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter_aa30daabca2ad08e70bd2934d7b6a3ae1}{Filter} (\hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} filter\-\_\-count=Eigen\-::\-Dynamic, typename std\-::enable\-\_\-if$<$!T $>$\-::type $\ast$=nullptr)
+\item 
+{\footnotesize template$<$bool T = Filter\-Traits\-::has\-\_\-fixed\-\_\-kernel\-\_\-count$>$ }\\std\-::enable\-\_\-if$<$ T $>$\-::type \hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter_a09cfe9a12ffe20d705ef14081273473f}{set\-Zero} (\hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} kernel\-\_\-height, \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} kernel\-\_\-width, \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} kernel\-\_\-depth, \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} kernel\-\_\-count)
+\begin{DoxyCompactList}\small\item\em Sets all \hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter}{Filter} kernels and scalar bias unit to zero. \end{DoxyCompactList}\item 
+{\footnotesize template$<$bool T = Filter\-Traits\-::has\-\_\-fixed\-\_\-kernel\-\_\-count$>$ }\\std\-::enable\-\_\-if$<$!T $>$\-::type \hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter_a60d6321f7622476fd60e20cbb47f4214}{set\-Zero} (\hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} kernel\-\_\-height, \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} kernel\-\_\-width, \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} kernel\-\_\-depth, \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} kernel\-\_\-count)
+\item 
+void \hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter_a31ad2addc83b961ba3aa94484f3105c1}{operator$\ast$=} (Value\-Type scale)
+\begin{DoxyCompactList}\small\item\em Scales kernels and bias value. \end{DoxyCompactList}\item 
+void \hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter_a68631e15097cef37b64d617a4116366d}{operator-\/=} (const \hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter}{Filter} \&other)
+\begin{DoxyCompactList}\small\item\em In-\/place subtraction between two \hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter}{Filter} objects. \end{DoxyCompactList}\item 
+void \hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter_a652ad028a03fce5960f9667d72f12bc7}{operator+=} (const \hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter}{Filter} \&other)
+\begin{DoxyCompactList}\small\item\em In-\/place addition between two \hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter}{Filter} objects. \end{DoxyCompactList}\item 
+void \hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter_aa87862853be7ab7ce13f4815d430d639}{operator$\ast$=} (const \hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter}{Filter} \&other)
+\begin{DoxyCompactList}\small\item\em In-\/place coefficient-\/wise multiplication between two \hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter}{Filter} objects. \end{DoxyCompactList}\item 
+void \hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter_ae3a7b3c906c14cf08789fd341117d1b3}{operator/=} (const \hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter}{Filter} \&other)
+\begin{DoxyCompactList}\small\item\em In-\/place coefficient-\/wise division between two \hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter}{Filter} objects. \end{DoxyCompactList}\item 
+\hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter}{Filter} \& \hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter_af69a171a3fd2701e0f69ddd1530a0cdb}{array} ()
+\begin{DoxyCompactList}\small\item\em Returns reference {\ttfamily $\ast$this} \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Archive $>$ }\\void \hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter_a3576f3b3dcee20667295675b7daa7068}{save} (Archive \&ar, const unsigned int version) const 
+\begin{DoxyCompactList}\small\item\em Save serializer. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Archive , bool T = Filter\-Traits\-::has\-\_\-fixed\-\_\-kernel\-\_\-count$>$ }\\std\-::enable\-\_\-if$<$ T $>$\-::type \hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter_ad521dc58c7b147be2d893da898472282}{load} (Archive \&ar, const unsigned int version)
+\begin{DoxyCompactList}\small\item\em Load serializer. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Archive , bool T = Filter\-Traits\-::has\-\_\-fixed\-\_\-kernel\-\_\-count$>$ }\\std\-::enable\-\_\-if$<$!T $>$\-::type \hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter_a4da00a1c6cdb3eba549096167f77e2aa}{load} (Archive \&ar, const unsigned int version)
+\item 
+{\footnotesize template$<$class Archive $>$ }\\void \hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter_ad538563ee30fbb666b884469baebeee7}{serialize} (Archive \&ar, const unsigned int file\-\_\-version)
+\begin{DoxyCompactList}\small\item\em Serializer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Value\-Type \hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter_afa0084834dadf4ffdd2310593560423b}{bias}
+\begin{DoxyCompactList}\small\item\em Bias value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Value\-Type, typename Filter\-Traits = filter\-\_\-traits$<$\-Value\-Type$>$$>$struct ffnn\-::layer\-::convolution\-::\-Filter$<$ Value\-Type, Filter\-Traits $>$}
+
+Sets all \hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter}{Filter} kernels and scalar bias unit to zero. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Value\-Type} & scalar value type \\
+\hline
+{\em Filter\-Traits} & filter sizing and data-\/ordering information \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{structffnn_1_1layer_1_1convolution_1_1_filter_a5366e7e916ee072b3a97bbbd1dc12b58}{\index{ffnn\-::layer\-::convolution\-::\-Filter@{ffnn\-::layer\-::convolution\-::\-Filter}!Kernel\-Type@{Kernel\-Type}}
+\index{Kernel\-Type@{Kernel\-Type}!ffnn::layer::convolution::Filter@{ffnn\-::layer\-::convolution\-::\-Filter}}
+\subsubsection[{Kernel\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Filter\-Traits  = filter\-\_\-traits$<$\-Value\-Type$>$$>$ typedef Filter\-Traits\-::\-Kernel\-Type {\bf ffnn\-::layer\-::convolution\-::\-Filter}$<$ Value\-Type, Filter\-Traits $>$\-::{\bf Kernel\-Type}}}\label{structffnn_1_1layer_1_1convolution_1_1_filter_a5366e7e916ee072b3a97bbbd1dc12b58}
+
+
+\hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter}{Filter} kernel matrix standardization. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structffnn_1_1layer_1_1convolution_1_1_filter_af80132b0fc2f143b51c5a74b67bd8087}{\index{ffnn\-::layer\-::convolution\-::\-Filter@{ffnn\-::layer\-::convolution\-::\-Filter}!Filter@{Filter}}
+\index{Filter@{Filter}!ffnn::layer::convolution::Filter@{ffnn\-::layer\-::convolution\-::\-Filter}}
+\subsubsection[{Filter}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Filter\-Traits  = filter\-\_\-traits$<$\-Value\-Type$>$$>$ template$<$bool T = Filter\-Traits\-::has\-\_\-fixed\-\_\-kernel\-\_\-count$>$ {\bf ffnn\-::layer\-::convolution\-::\-Filter}$<$ Value\-Type, Filter\-Traits $>$\-::{\bf Filter} (
+\begin{DoxyParamCaption}
+\item[{typename std\-::enable\-\_\-if$<$ T $>$\-::type $\ast$}]{ = {\ttfamily nullptr}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structffnn_1_1layer_1_1convolution_1_1_filter_af80132b0fc2f143b51c5a74b67bd8087}
+
+
+Default constructor. 
+
+\hypertarget{structffnn_1_1layer_1_1convolution_1_1_filter_aa30daabca2ad08e70bd2934d7b6a3ae1}{\index{ffnn\-::layer\-::convolution\-::\-Filter@{ffnn\-::layer\-::convolution\-::\-Filter}!Filter@{Filter}}
+\index{Filter@{Filter}!ffnn::layer::convolution::Filter@{ffnn\-::layer\-::convolution\-::\-Filter}}
+\subsubsection[{Filter}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Filter\-Traits  = filter\-\_\-traits$<$\-Value\-Type$>$$>$ template$<$bool T = Filter\-Traits\-::has\-\_\-fixed\-\_\-kernel\-\_\-count$>$ {\bf ffnn\-::layer\-::convolution\-::\-Filter}$<$ Value\-Type, Filter\-Traits $>$\-::{\bf Filter} (
+\begin{DoxyParamCaption}
+\item[{{\bf size\-\_\-type}}]{filter\-\_\-count = {\ttfamily Eigen\-:\-:Dynamic}, }
+\item[{typename std\-::enable\-\_\-if$<$!T $>$\-::type $\ast$}]{ = {\ttfamily nullptr}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structffnn_1_1layer_1_1convolution_1_1_filter_aa30daabca2ad08e70bd2934d7b6a3ae1}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structffnn_1_1layer_1_1convolution_1_1_filter_af69a171a3fd2701e0f69ddd1530a0cdb}{\index{ffnn\-::layer\-::convolution\-::\-Filter@{ffnn\-::layer\-::convolution\-::\-Filter}!array@{array}}
+\index{array@{array}!ffnn::layer::convolution::Filter@{ffnn\-::layer\-::convolution\-::\-Filter}}
+\subsubsection[{array}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Filter\-Traits  = filter\-\_\-traits$<$\-Value\-Type$>$$>$ {\bf Filter}\& {\bf ffnn\-::layer\-::convolution\-::\-Filter}$<$ Value\-Type, Filter\-Traits $>$\-::array (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structffnn_1_1layer_1_1convolution_1_1_filter_af69a171a3fd2701e0f69ddd1530a0cdb}
+
+
+Returns reference {\ttfamily $\ast$this} 
+
+\begin{DoxyNote}{Note}
+Necessary to fufill {\ttfamily Parameter\-Type} concept 
+\end{DoxyNote}
+
+
+Referenced by ffnn\-::layer\-::convolution\-::\-Filter$<$ Value\-Type, Filter\-Traits $>$\-::operator$\ast$=(), and ffnn\-::layer\-::convolution\-::\-Filter$<$ Value\-Type, Filter\-Traits $>$\-::operator/=().
+
+\hypertarget{structffnn_1_1layer_1_1convolution_1_1_filter_ad521dc58c7b147be2d893da898472282}{\index{ffnn\-::layer\-::convolution\-::\-Filter@{ffnn\-::layer\-::convolution\-::\-Filter}!load@{load}}
+\index{load@{load}!ffnn::layer::convolution::Filter@{ffnn\-::layer\-::convolution\-::\-Filter}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Filter\-Traits  = filter\-\_\-traits$<$\-Value\-Type$>$$>$ template$<$class Archive , bool T = Filter\-Traits\-::has\-\_\-fixed\-\_\-kernel\-\_\-count$>$ std\-::enable\-\_\-if$<$T$>$\-::type {\bf ffnn\-::layer\-::convolution\-::\-Filter}$<$ Value\-Type, Filter\-Traits $>$\-::load (
+\begin{DoxyParamCaption}
+\item[{Archive \&}]{ar, }
+\item[{const unsigned int}]{version}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structffnn_1_1layer_1_1convolution_1_1_filter_ad521dc58c7b147be2d893da898472282}
+
+
+Load serializer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ar} & input archive \\
+\hline
+{\em version} & archive versioning information \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Statically sized version 
+\end{DoxyNote}
+\hypertarget{structffnn_1_1layer_1_1convolution_1_1_filter_a4da00a1c6cdb3eba549096167f77e2aa}{\index{ffnn\-::layer\-::convolution\-::\-Filter@{ffnn\-::layer\-::convolution\-::\-Filter}!load@{load}}
+\index{load@{load}!ffnn::layer::convolution::Filter@{ffnn\-::layer\-::convolution\-::\-Filter}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Filter\-Traits  = filter\-\_\-traits$<$\-Value\-Type$>$$>$ template$<$class Archive , bool T = Filter\-Traits\-::has\-\_\-fixed\-\_\-kernel\-\_\-count$>$ std\-::enable\-\_\-if$<$!T$>$\-::type {\bf ffnn\-::layer\-::convolution\-::\-Filter}$<$ Value\-Type, Filter\-Traits $>$\-::load (
+\begin{DoxyParamCaption}
+\item[{Archive \&}]{ar, }
+\item[{const unsigned int}]{version}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structffnn_1_1layer_1_1convolution_1_1_filter_a4da00a1c6cdb3eba549096167f77e2aa}
+\hypertarget{structffnn_1_1layer_1_1convolution_1_1_filter_a31ad2addc83b961ba3aa94484f3105c1}{\index{ffnn\-::layer\-::convolution\-::\-Filter@{ffnn\-::layer\-::convolution\-::\-Filter}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!ffnn::layer::convolution::Filter@{ffnn\-::layer\-::convolution\-::\-Filter}}
+\subsubsection[{operator$\ast$=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Filter\-Traits  = filter\-\_\-traits$<$\-Value\-Type$>$$>$ void {\bf ffnn\-::layer\-::convolution\-::\-Filter}$<$ Value\-Type, Filter\-Traits $>$\-::operator$\ast$= (
+\begin{DoxyParamCaption}
+\item[{Value\-Type}]{scale}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structffnn_1_1layer_1_1convolution_1_1_filter_a31ad2addc83b961ba3aa94484f3105c1}
+
+
+Scales kernels and bias value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scale} & scalar value \\
+\hline
+\end{DoxyParams}
+\hypertarget{structffnn_1_1layer_1_1convolution_1_1_filter_aa87862853be7ab7ce13f4815d430d639}{\index{ffnn\-::layer\-::convolution\-::\-Filter@{ffnn\-::layer\-::convolution\-::\-Filter}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!ffnn::layer::convolution::Filter@{ffnn\-::layer\-::convolution\-::\-Filter}}
+\subsubsection[{operator$\ast$=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Filter\-Traits  = filter\-\_\-traits$<$\-Value\-Type$>$$>$ void {\bf ffnn\-::layer\-::convolution\-::\-Filter}$<$ Value\-Type, Filter\-Traits $>$\-::operator$\ast$= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Filter}$<$ Value\-Type, Filter\-Traits $>$ \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structffnn_1_1layer_1_1convolution_1_1_filter_aa87862853be7ab7ce13f4815d430d639}
+
+
+In-\/place coefficient-\/wise multiplication between two \hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter}{Filter} objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter}{Filter} object \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{structffnn_1_1layer_1_1convolution_1_1_filter_aa87862853be7ab7ce13f4815d430d639_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{structffnn_1_1layer_1_1convolution_1_1_filter_a652ad028a03fce5960f9667d72f12bc7}{\index{ffnn\-::layer\-::convolution\-::\-Filter@{ffnn\-::layer\-::convolution\-::\-Filter}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!ffnn::layer::convolution::Filter@{ffnn\-::layer\-::convolution\-::\-Filter}}
+\subsubsection[{operator+=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Filter\-Traits  = filter\-\_\-traits$<$\-Value\-Type$>$$>$ void {\bf ffnn\-::layer\-::convolution\-::\-Filter}$<$ Value\-Type, Filter\-Traits $>$\-::operator+= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Filter}$<$ Value\-Type, Filter\-Traits $>$ \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structffnn_1_1layer_1_1convolution_1_1_filter_a652ad028a03fce5960f9667d72f12bc7}
+
+
+In-\/place addition between two \hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter}{Filter} objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter}{Filter} object \\
+\hline
+\end{DoxyParams}
+\hypertarget{structffnn_1_1layer_1_1convolution_1_1_filter_a68631e15097cef37b64d617a4116366d}{\index{ffnn\-::layer\-::convolution\-::\-Filter@{ffnn\-::layer\-::convolution\-::\-Filter}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!ffnn::layer::convolution::Filter@{ffnn\-::layer\-::convolution\-::\-Filter}}
+\subsubsection[{operator-\/=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Filter\-Traits  = filter\-\_\-traits$<$\-Value\-Type$>$$>$ void {\bf ffnn\-::layer\-::convolution\-::\-Filter}$<$ Value\-Type, Filter\-Traits $>$\-::operator-\/= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Filter}$<$ Value\-Type, Filter\-Traits $>$ \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structffnn_1_1layer_1_1convolution_1_1_filter_a68631e15097cef37b64d617a4116366d}
+
+
+In-\/place subtraction between two \hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter}{Filter} objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter}{Filter} object \\
+\hline
+\end{DoxyParams}
+\hypertarget{structffnn_1_1layer_1_1convolution_1_1_filter_ae3a7b3c906c14cf08789fd341117d1b3}{\index{ffnn\-::layer\-::convolution\-::\-Filter@{ffnn\-::layer\-::convolution\-::\-Filter}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!ffnn::layer::convolution::Filter@{ffnn\-::layer\-::convolution\-::\-Filter}}
+\subsubsection[{operator/=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Filter\-Traits  = filter\-\_\-traits$<$\-Value\-Type$>$$>$ void {\bf ffnn\-::layer\-::convolution\-::\-Filter}$<$ Value\-Type, Filter\-Traits $>$\-::operator/= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Filter}$<$ Value\-Type, Filter\-Traits $>$ \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structffnn_1_1layer_1_1convolution_1_1_filter_ae3a7b3c906c14cf08789fd341117d1b3}
+
+
+In-\/place coefficient-\/wise division between two \hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter}{Filter} objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter}{Filter} object \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{structffnn_1_1layer_1_1convolution_1_1_filter_ae3a7b3c906c14cf08789fd341117d1b3_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{structffnn_1_1layer_1_1convolution_1_1_filter_a3576f3b3dcee20667295675b7daa7068}{\index{ffnn\-::layer\-::convolution\-::\-Filter@{ffnn\-::layer\-::convolution\-::\-Filter}!save@{save}}
+\index{save@{save}!ffnn::layer::convolution::Filter@{ffnn\-::layer\-::convolution\-::\-Filter}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Filter\-Traits  = filter\-\_\-traits$<$\-Value\-Type$>$$>$ template$<$class Archive $>$ void {\bf ffnn\-::layer\-::convolution\-::\-Filter}$<$ Value\-Type, Filter\-Traits $>$\-::save (
+\begin{DoxyParamCaption}
+\item[{Archive \&}]{ar, }
+\item[{const unsigned int}]{version}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{structffnn_1_1layer_1_1convolution_1_1_filter_a3576f3b3dcee20667295675b7daa7068}
+
+
+Save serializer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ar} & output archive \\
+\hline
+{\em version} & archive versioning information \\
+\hline
+\end{DoxyParams}
+\hypertarget{structffnn_1_1layer_1_1convolution_1_1_filter_ad538563ee30fbb666b884469baebeee7}{\index{ffnn\-::layer\-::convolution\-::\-Filter@{ffnn\-::layer\-::convolution\-::\-Filter}!serialize@{serialize}}
+\index{serialize@{serialize}!ffnn::layer::convolution::Filter@{ffnn\-::layer\-::convolution\-::\-Filter}}
+\subsubsection[{serialize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Filter\-Traits  = filter\-\_\-traits$<$\-Value\-Type$>$$>$ template$<$class Archive $>$ void {\bf ffnn\-::layer\-::convolution\-::\-Filter}$<$ Value\-Type, Filter\-Traits $>$\-::serialize (
+\begin{DoxyParamCaption}
+\item[{Archive \&}]{ar, }
+\item[{const unsigned int}]{file\-\_\-version}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structffnn_1_1layer_1_1convolution_1_1_filter_ad538563ee30fbb666b884469baebeee7}
+
+
+Serializer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ar} & input/output archive \\
+\hline
+{\em version} & archive versioning information \\
+\hline
+\end{DoxyParams}
+\hypertarget{structffnn_1_1layer_1_1convolution_1_1_filter_a09cfe9a12ffe20d705ef14081273473f}{\index{ffnn\-::layer\-::convolution\-::\-Filter@{ffnn\-::layer\-::convolution\-::\-Filter}!set\-Zero@{set\-Zero}}
+\index{set\-Zero@{set\-Zero}!ffnn::layer::convolution::Filter@{ffnn\-::layer\-::convolution\-::\-Filter}}
+\subsubsection[{set\-Zero}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Filter\-Traits  = filter\-\_\-traits$<$\-Value\-Type$>$$>$ template$<$bool T = Filter\-Traits\-::has\-\_\-fixed\-\_\-kernel\-\_\-count$>$ std\-::enable\-\_\-if$<$T$>$\-::type {\bf ffnn\-::layer\-::convolution\-::\-Filter}$<$ Value\-Type, Filter\-Traits $>$\-::set\-Zero (
+\begin{DoxyParamCaption}
+\item[{{\bf size\-\_\-type}}]{kernel\-\_\-height, }
+\item[{{\bf size\-\_\-type}}]{kernel\-\_\-width, }
+\item[{{\bf size\-\_\-type}}]{kernel\-\_\-depth, }
+\item[{{\bf size\-\_\-type}}]{kernel\-\_\-count}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structffnn_1_1layer_1_1convolution_1_1_filter_a09cfe9a12ffe20d705ef14081273473f}
+
+
+Sets all \hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter}{Filter} kernels and scalar bias unit to zero. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em kernel\-\_\-height} & height of filter kernel \\
+\hline
+{\em kernel\-\_\-width} & width of filter kernel \\
+\hline
+{\em kernel\-\_\-depth} & depth of filter kernel \\
+\hline
+{\em kernel\-\_\-count} & number of kernels \\
+\hline
+\end{DoxyParams}
+\hypertarget{structffnn_1_1layer_1_1convolution_1_1_filter_a60d6321f7622476fd60e20cbb47f4214}{\index{ffnn\-::layer\-::convolution\-::\-Filter@{ffnn\-::layer\-::convolution\-::\-Filter}!set\-Zero@{set\-Zero}}
+\index{set\-Zero@{set\-Zero}!ffnn::layer::convolution::Filter@{ffnn\-::layer\-::convolution\-::\-Filter}}
+\subsubsection[{set\-Zero}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Filter\-Traits  = filter\-\_\-traits$<$\-Value\-Type$>$$>$ template$<$bool T = Filter\-Traits\-::has\-\_\-fixed\-\_\-kernel\-\_\-count$>$ std\-::enable\-\_\-if$<$!T$>$\-::type {\bf ffnn\-::layer\-::convolution\-::\-Filter}$<$ Value\-Type, Filter\-Traits $>$\-::set\-Zero (
+\begin{DoxyParamCaption}
+\item[{{\bf size\-\_\-type}}]{kernel\-\_\-height, }
+\item[{{\bf size\-\_\-type}}]{kernel\-\_\-width, }
+\item[{{\bf size\-\_\-type}}]{kernel\-\_\-depth, }
+\item[{{\bf size\-\_\-type}}]{kernel\-\_\-count}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structffnn_1_1layer_1_1convolution_1_1_filter_a60d6321f7622476fd60e20cbb47f4214}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structffnn_1_1layer_1_1convolution_1_1_filter_afa0084834dadf4ffdd2310593560423b}{\index{ffnn\-::layer\-::convolution\-::\-Filter@{ffnn\-::layer\-::convolution\-::\-Filter}!bias@{bias}}
+\index{bias@{bias}!ffnn::layer::convolution::Filter@{ffnn\-::layer\-::convolution\-::\-Filter}}
+\subsubsection[{bias}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Filter\-Traits  = filter\-\_\-traits$<$\-Value\-Type$>$$>$ Value\-Type {\bf ffnn\-::layer\-::convolution\-::\-Filter}$<$ Value\-Type, Filter\-Traits $>$\-::bias}}\label{structffnn_1_1layer_1_1convolution_1_1_filter_afa0084834dadf4ffdd2310593560423b}
+
+
+Bias value. 
+
+
+
+Referenced by ffnn\-::layer\-::convolution\-::\-Filter$<$ Value\-Type, Filter\-Traits $>$\-::load(), ffnn\-::layer\-::convolution\-::\-Filter$<$ Value\-Type, Filter\-Traits $>$\-::operator$\ast$=(), ffnn\-::layer\-::convolution\-::\-Filter$<$ Value\-Type, Filter\-Traits $>$\-::operator+=(), ffnn\-::layer\-::convolution\-::\-Filter$<$ Value\-Type, Filter\-Traits $>$\-::operator-\/=(), ffnn\-::layer\-::convolution\-::\-Filter$<$ Value\-Type, Filter\-Traits $>$\-::operator/=(), ffnn\-::layer\-::convolution\-::\-Filter$<$ Value\-Type, Filter\-Traits $>$\-::save(), and ffnn\-::layer\-::convolution\-::\-Filter$<$ Value\-Type, Filter\-Traits $>$\-::set\-Zero().
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/convolution/\hyperlink{filter_8h}{filter.\-h}\end{DoxyCompactItemize}

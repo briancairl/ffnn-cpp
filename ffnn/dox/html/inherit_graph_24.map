@@ -1,16 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classffnn_1_1traits_1_1_serializable.html" title="An object which can be saved and loaded. " alt="" coords="6,155,162,181"/>
-<area shape="rect" id="node2" href="$classffnn_1_1traits_1_1_unique.html" title="An object with a unique ID. " alt="" coords="211,155,341,181"/>
-<area shape="rect" id="node3" href="$classffnn_1_1layer_1_1internal_1_1_interface.html" title="Base object for all layer types. " alt="" coords="390,147,557,189"/>
-<area shape="rect" id="node4" href="$classffnn_1_1layer_1_1_convolution_volume.html" title="ffnn::layer::Convolution\lVolume\&lt; ValueType, HeightAtCompile\lTime, WidthAtCompileTime, DepthAtCompile\lTime, FilterCountAtCompileTime, Mode \&gt;" alt="" coords="611,53,898,123"/>
-<area shape="rect" id="node5" href="$classffnn_1_1layer_1_1_layer.html" title="Base object for all layer types. " alt="" coords="695,147,815,189"/>
-<area shape="rect" id="node14" href="$classffnn_1_1layer_1_1_receptive_volume.html" title="ffnn::layer::ReceptiveVolume\l\&lt; ValueType, HeightAtCompileTime,\l WidthAtCompileTime, DepthAtCompileTime,\l FilterCountAtCompileTime, EmbeddingMode \&gt;" alt="" coords="606,213,903,283"/>
-<area shape="rect" id="node6" href="$classffnn_1_1layer_1_1_hidden.html" title="A network hidden&#45;layer object. " alt="" coords="964,5,1175,75"/>
-<area shape="rect" id="node7" href="$classffnn_1_1layer_1_1_input.html" title="A layer which handles network inputs. " alt="" coords="975,100,1164,156"/>
-<area shape="rect" id="node8" href="$classffnn_1_1layer_1_1_output.html" title="A layer which handles network outputs. " alt="" coords="970,180,1169,236"/>
-<area shape="rect" id="node9" href="$classffnn_1_1layer_1_1_hidden.html" title="ffnn::layer::Hidden\l\&lt; ValueType, _HiddenLayerShape \&gt;" alt="" coords="953,259,1186,301"/>
-<area shape="rect" id="node10" href="$classffnn_1_1layer_1_1_activation.html" title="Activation layer. " alt="" coords="1294,85,1525,155"/>
-<area shape="rect" id="node11" href="$classffnn_1_1layer_1_1_convolution.html" title="A convolution layer. " alt="" coords="1235,179,1584,279"/>
-<area shape="rect" id="node12" href="$classffnn_1_1layer_1_1_fully_connected.html" title="A fully&#45;connected layer. " alt="" coords="1260,303,1559,359"/>
-<area shape="rect" id="node13" href="$classffnn_1_1layer_1_1_sparsely_connected.html" title="A fully&#45;connected layer. " alt="" coords="1260,383,1559,439"/>
+<area shape="rect" id="node1" href="$classffnn_1_1optimizer_1_1_optimizer.html" title="ffnn::optimizer::Optimizer\l\&lt; layer::FullyConnected\l\&lt; ValueType, InputsAtCompileTime,\l OutputsAtCompileTime \&gt; \&gt;" alt="" coords="5,5,240,75"/>
+<area shape="rect" id="node2" href="$classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_5f7b01db2ae4d39760d70ee323649a60.html" title="ffnn::optimizer::Gradient\lDescent\&lt; layer::FullyConnected\l\&lt; ValueType, InputsAtCompileTime,\l OutputsAtCompileTime \&gt; \&gt;" alt="" coords="288,5,523,75"/>
+<area shape="rect" id="node3" href="$classffnn_1_1optimizer_1_1_adam_3_01layer_1_1_fully_connected_3_01_value_type_00_01_inputs_at_co08ce471fd3ee7441a350cc42cfd35bcd.html" title="ffnn::optimizer::Adam\l\&lt; layer::FullyConnected\l\&lt; ValueType, InputsAtCompileTime,\l OutputsAtCompileTime \&gt; \&gt;" alt="" coords="571,5,805,75"/>
 </map>

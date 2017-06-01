@@ -1,0 +1,180 @@
+\hypertarget{structffnn_1_1layer_1_1_shape}{\section{ffnn\-:\-:layer\-:\-:Shape$<$ Size\-Type $>$ Struct Template Reference}
+\label{structffnn_1_1layer_1_1_shape}\index{ffnn\-::layer\-::\-Shape$<$ Size\-Type $>$@{ffnn\-::layer\-::\-Shape$<$ Size\-Type $>$}}
+}
+
+
+\hyperlink{structffnn_1_1layer_1_1_shape}{Shape} structure representing the dimensions of an object with volume.  
+
+
+
+
+{\ttfamily \#include \char`\"{}shape.\-h\char`\"{}}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structffnn_1_1layer_1_1_shape_a084eabd9eec94244907367aca6d39e4a}{Shape} ()
+\item 
+\hyperlink{structffnn_1_1layer_1_1_shape_a5beff127a2bb5b14e7d831471623fd48}{Shape} (Size\-Type \hyperlink{structffnn_1_1layer_1_1_shape_a96608d7bcef7733a1b1f4782827a0c78}{height}, Size\-Type \hyperlink{structffnn_1_1layer_1_1_shape_a860cbac53d9e20bdf8283298c6369cbc}{width}=1, Size\-Type \hyperlink{structffnn_1_1layer_1_1_shape_a37ec3deb8c9f2d6617e6f63799c0fcbf}{depth}=1)
+\item 
+Size\-Type \hyperlink{structffnn_1_1layer_1_1_shape_a6e8ffdbc3feeb20a1f246b3ec56e40ca}{size} () const 
+\item 
+bool \hyperlink{structffnn_1_1layer_1_1_shape_abef3f2121d2b9f132d02889cd3ceab41}{valid} () const 
+\item 
+\hyperlink{structffnn_1_1layer_1_1_shape_a10aa9362c85c14aa54e736e497b300ee}{operator Size\-Type} () const 
+\item 
+void \hyperlink{structffnn_1_1layer_1_1_shape_a649e708cf5a7b2ff9ce7bf855f9d7114}{operator=} (Size\-Type count)
+\item 
+void \hyperlink{structffnn_1_1layer_1_1_shape_a0835cec02738f5a6cc7b165ce4ec3dc0}{operator=} (const \hyperlink{structffnn_1_1layer_1_1_shape}{Shape} \&dim)
+\item 
+{\footnotesize template$<$class Archive $>$ }\\void \hyperlink{structffnn_1_1layer_1_1_shape_a53fc6b96338bf4f87d9b2736a40cb172}{serialize} (Archive \&ar, const unsigned int file\-\_\-version)
+\begin{DoxyCompactList}\small\item\em Serializer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Size\-Type \hyperlink{structffnn_1_1layer_1_1_shape_a96608d7bcef7733a1b1f4782827a0c78}{height}
+\item 
+Size\-Type \hyperlink{structffnn_1_1layer_1_1_shape_a860cbac53d9e20bdf8283298c6369cbc}{width}
+\item 
+Size\-Type \hyperlink{structffnn_1_1layer_1_1_shape_a37ec3deb8c9f2d6617e6f63799c0fcbf}{depth}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Size\-Type$>$struct ffnn\-::layer\-::\-Shape$<$ Size\-Type $>$}
+
+\hyperlink{structffnn_1_1layer_1_1_shape}{Shape} structure representing the dimensions of an object with volume. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structffnn_1_1layer_1_1_shape_a084eabd9eec94244907367aca6d39e4a}{\index{ffnn\-::layer\-::\-Shape@{ffnn\-::layer\-::\-Shape}!Shape@{Shape}}
+\index{Shape@{Shape}!ffnn::layer::Shape@{ffnn\-::layer\-::\-Shape}}
+\subsubsection[{Shape}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Size\-Type $>$ {\bf ffnn\-::layer\-::\-Shape}$<$ Size\-Type $>$\-::{\bf Shape} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structffnn_1_1layer_1_1_shape_a084eabd9eec94244907367aca6d39e4a}
+\hypertarget{structffnn_1_1layer_1_1_shape_a5beff127a2bb5b14e7d831471623fd48}{\index{ffnn\-::layer\-::\-Shape@{ffnn\-::layer\-::\-Shape}!Shape@{Shape}}
+\index{Shape@{Shape}!ffnn::layer::Shape@{ffnn\-::layer\-::\-Shape}}
+\subsubsection[{Shape}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Size\-Type $>$ {\bf ffnn\-::layer\-::\-Shape}$<$ Size\-Type $>$\-::{\bf Shape} (
+\begin{DoxyParamCaption}
+\item[{Size\-Type}]{height, }
+\item[{Size\-Type}]{width = {\ttfamily 1}, }
+\item[{Size\-Type}]{depth = {\ttfamily 1}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{structffnn_1_1layer_1_1_shape_a5beff127a2bb5b14e7d831471623fd48}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structffnn_1_1layer_1_1_shape_a10aa9362c85c14aa54e736e497b300ee}{\index{ffnn\-::layer\-::\-Shape@{ffnn\-::layer\-::\-Shape}!operator Size\-Type@{operator Size\-Type}}
+\index{operator Size\-Type@{operator Size\-Type}!ffnn::layer::Shape@{ffnn\-::layer\-::\-Shape}}
+\subsubsection[{operator Size\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Size\-Type $>$ {\bf ffnn\-::layer\-::\-Shape}$<$ Size\-Type $>$\-::operator Size\-Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{structffnn_1_1layer_1_1_shape_a10aa9362c85c14aa54e736e497b300ee}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structffnn_1_1layer_1_1_shape_a10aa9362c85c14aa54e736e497b300ee_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{structffnn_1_1layer_1_1_shape_a649e708cf5a7b2ff9ce7bf855f9d7114}{\index{ffnn\-::layer\-::\-Shape@{ffnn\-::layer\-::\-Shape}!operator=@{operator=}}
+\index{operator=@{operator=}!ffnn::layer::Shape@{ffnn\-::layer\-::\-Shape}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Size\-Type $>$ void {\bf ffnn\-::layer\-::\-Shape}$<$ Size\-Type $>$\-::operator= (
+\begin{DoxyParamCaption}
+\item[{Size\-Type}]{count}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structffnn_1_1layer_1_1_shape_a649e708cf5a7b2ff9ce7bf855f9d7114}
+\hypertarget{structffnn_1_1layer_1_1_shape_a0835cec02738f5a6cc7b165ce4ec3dc0}{\index{ffnn\-::layer\-::\-Shape@{ffnn\-::layer\-::\-Shape}!operator=@{operator=}}
+\index{operator=@{operator=}!ffnn::layer::Shape@{ffnn\-::layer\-::\-Shape}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Size\-Type $>$ void {\bf ffnn\-::layer\-::\-Shape}$<$ Size\-Type $>$\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Shape}$<$ Size\-Type $>$ \&}]{dim}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structffnn_1_1layer_1_1_shape_a0835cec02738f5a6cc7b165ce4ec3dc0}
+\hypertarget{structffnn_1_1layer_1_1_shape_a53fc6b96338bf4f87d9b2736a40cb172}{\index{ffnn\-::layer\-::\-Shape@{ffnn\-::layer\-::\-Shape}!serialize@{serialize}}
+\index{serialize@{serialize}!ffnn::layer::Shape@{ffnn\-::layer\-::\-Shape}}
+\subsubsection[{serialize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Size\-Type $>$ template$<$class Archive $>$ void {\bf ffnn\-::layer\-::\-Shape}$<$ Size\-Type $>$\-::serialize (
+\begin{DoxyParamCaption}
+\item[{Archive \&}]{ar, }
+\item[{const unsigned int}]{file\-\_\-version}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structffnn_1_1layer_1_1_shape_a53fc6b96338bf4f87d9b2736a40cb172}
+
+
+Serializer. 
+
+\hypertarget{structffnn_1_1layer_1_1_shape_a6e8ffdbc3feeb20a1f246b3ec56e40ca}{\index{ffnn\-::layer\-::\-Shape@{ffnn\-::layer\-::\-Shape}!size@{size}}
+\index{size@{size}!ffnn::layer::Shape@{ffnn\-::layer\-::\-Shape}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Size\-Type $>$ Size\-Type {\bf ffnn\-::layer\-::\-Shape}$<$ Size\-Type $>$\-::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{structffnn_1_1layer_1_1_shape_a6e8ffdbc3feeb20a1f246b3ec56e40ca}
+
+
+Referenced by ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$\-::evaluate\-Input\-Size(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::initialize(), ffnn\-::optimizer\-::\-Adam$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::initialize(), ffnn\-::layer\-::\-Shape$<$ Size\-Type $>$\-::operator Size\-Type(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::reset(), and ffnn\-::layer\-::\-Shape$<$ Size\-Type $>$\-::valid().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structffnn_1_1layer_1_1_shape_a6e8ffdbc3feeb20a1f246b3ec56e40ca_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{structffnn_1_1layer_1_1_shape_abef3f2121d2b9f132d02889cd3ceab41}{\index{ffnn\-::layer\-::\-Shape@{ffnn\-::layer\-::\-Shape}!valid@{valid}}
+\index{valid@{valid}!ffnn::layer::Shape@{ffnn\-::layer\-::\-Shape}}
+\subsubsection[{valid}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Size\-Type $>$ bool {\bf ffnn\-::layer\-::\-Shape}$<$ Size\-Type $>$\-::valid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{structffnn_1_1layer_1_1_shape_abef3f2121d2b9f132d02889cd3ceab41}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structffnn_1_1layer_1_1_shape_abef3f2121d2b9f132d02889cd3ceab41_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structffnn_1_1layer_1_1_shape_a37ec3deb8c9f2d6617e6f63799c0fcbf}{\index{ffnn\-::layer\-::\-Shape@{ffnn\-::layer\-::\-Shape}!depth@{depth}}
+\index{depth@{depth}!ffnn::layer::Shape@{ffnn\-::layer\-::\-Shape}}
+\subsubsection[{depth}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Size\-Type $>$ Size\-Type {\bf ffnn\-::layer\-::\-Shape}$<$ Size\-Type $>$\-::depth}}\label{structffnn_1_1layer_1_1_shape_a37ec3deb8c9f2d6617e6f63799c0fcbf}
+
+
+Referenced by ffnn\-::layer\-::\-Shape$<$ Size\-Type $>$\-::operator=(), ffnn\-::layer\-::\-Shape$<$ Size\-Type $>$\-::serialize(), and ffnn\-::layer\-::\-Shape$<$ Size\-Type $>$\-::size().
+
+\hypertarget{structffnn_1_1layer_1_1_shape_a96608d7bcef7733a1b1f4782827a0c78}{\index{ffnn\-::layer\-::\-Shape@{ffnn\-::layer\-::\-Shape}!height@{height}}
+\index{height@{height}!ffnn::layer::Shape@{ffnn\-::layer\-::\-Shape}}
+\subsubsection[{height}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Size\-Type $>$ Size\-Type {\bf ffnn\-::layer\-::\-Shape}$<$ Size\-Type $>$\-::height}}\label{structffnn_1_1layer_1_1_shape_a96608d7bcef7733a1b1f4782827a0c78}
+
+
+Referenced by ffnn\-::layer\-::\-Shape$<$ Size\-Type $>$\-::operator=(), ffnn\-::layer\-::\-Shape$<$ Size\-Type $>$\-::serialize(), and ffnn\-::layer\-::\-Shape$<$ Size\-Type $>$\-::size().
+
+\hypertarget{structffnn_1_1layer_1_1_shape_a860cbac53d9e20bdf8283298c6369cbc}{\index{ffnn\-::layer\-::\-Shape@{ffnn\-::layer\-::\-Shape}!width@{width}}
+\index{width@{width}!ffnn::layer::Shape@{ffnn\-::layer\-::\-Shape}}
+\subsubsection[{width}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Size\-Type $>$ Size\-Type {\bf ffnn\-::layer\-::\-Shape}$<$ Size\-Type $>$\-::width}}\label{structffnn_1_1layer_1_1_shape_a860cbac53d9e20bdf8283298c6369cbc}
+
+
+Referenced by ffnn\-::layer\-::\-Shape$<$ Size\-Type $>$\-::operator=(), ffnn\-::layer\-::\-Shape$<$ Size\-Type $>$\-::serialize(), and ffnn\-::layer\-::\-Shape$<$ Size\-Type $>$\-::size().
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/\hyperlink{shape_8h}{shape.\-h}\end{DoxyCompactItemize}

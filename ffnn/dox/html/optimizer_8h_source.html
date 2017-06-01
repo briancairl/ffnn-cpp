@@ -97,80 +97,81 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// C++ Standard Library</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// Boost</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;boost/make_shared.hpp&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;boost/shared_ptr.hpp&gt;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// FFNN</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="global_8h.html">ffnn/config/global.h</a>&gt;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="assert_8h.html">ffnn/assert.h</a>&gt;</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">namespace </span>ffnn</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">namespace </span>optimizer</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> LayerType&gt;</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classffnn_1_1optimizer_1_1_optimizer.html">   27</a></span>&#160;<span class="keyword">class </span><a class="code" href="classffnn_1_1optimizer_1_1_optimizer.html">Optimizer</a></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classffnn_1_1optimizer_1_1_optimizer.html#ac03e7181934bf0c12a97fc67a60484ab">   31</a></span>&#160;  <span class="keyword">typedef</span> boost::shared_ptr&lt;Optimizer&gt; <a class="code" href="classffnn_1_1optimizer_1_1_optimizer.html#ac03e7181934bf0c12a97fc67a60484ab">Ptr</a>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classffnn_1_1optimizer_1_1_optimizer.html#a5d62c55f6f830e993ffe801fb17a1c3a">   34</a></span>&#160;  <span class="keyword">typedef</span> boost::shared_ptr&lt;const Optimizer&gt; <a class="code" href="classffnn_1_1optimizer_1_1_optimizer.html#a5d62c55f6f830e993ffe801fb17a1c3a">ConstPtr</a>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classffnn_1_1optimizer_1_1_optimizer.html#a5daf7f0191df7c672247e0d5a25fbafa">   40</a></span>&#160;  <a class="code" href="classffnn_1_1optimizer_1_1_optimizer.html#a5daf7f0191df7c672247e0d5a25fbafa">Optimizer</a>(<span class="keyword">const</span> std::string&amp; <a class="code" href="classffnn_1_1optimizer_1_1_optimizer.html#a9c472d1e2ef75decdae1cf2db7582582">name</a>) :</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    name_(name)</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  {}</div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classffnn_1_1optimizer_1_1_optimizer.html#ad16c1cab142fcc9542da0ef98df75f47">   43</a></span>&#160;  <span class="keyword">virtual</span> <a class="code" href="classffnn_1_1optimizer_1_1_optimizer.html#ad16c1cab142fcc9542da0ef98df75f47">~Optimizer</a>() {}</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classffnn_1_1optimizer_1_1_optimizer.html#a4302b66ba9b013ae4833eca235ff306a">initialize</a>(LayerType&amp; layer) = 0;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classffnn_1_1optimizer_1_1_optimizer.html#ade04e7582eb7b833713a9bd33e0e8346">reset</a>(LayerType&amp; layer) = 0;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classffnn_1_1optimizer_1_1_optimizer.html#a80505cfdeba0a3c8d1db19a2821613f2">forward</a>(LayerType&amp; layer) = 0;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classffnn_1_1optimizer_1_1_optimizer.html#ab1f9b1cae01f93f53ecf7119bedb6369">backward</a>(LayerType&amp; layer) = 0;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classffnn_1_1optimizer_1_1_optimizer.html#a7c88c2794446e03ccd41628bb25d7a07">update</a>(LayerType&amp; layer) = 0;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classffnn_1_1optimizer_1_1_optimizer.html#a9c472d1e2ef75decdae1cf2db7582582">   84</a></span>&#160;  <span class="keyword">inline</span> <span class="keyword">const</span> std::string&amp; <a class="code" href="classffnn_1_1optimizer_1_1_optimizer.html#a9c472d1e2ef75decdae1cf2db7582582">name</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">return</span> name_;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
-<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="classffnn_1_1optimizer_1_1_optimizer.html#ab9aa028897eed9617b6439e1ea56a1ee">   92</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classffnn_1_1optimizer_1_1_optimizer.html#ab9aa028897eed9617b6439e1ea56a1ee">setName</a>(<span class="keyword">const</span> std::string&amp; <a class="code" href="classffnn_1_1optimizer_1_1_optimizer.html#a9c472d1e2ef75decdae1cf2db7582582">name</a>)</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  {</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    name_ = <a class="code" href="classffnn_1_1optimizer_1_1_optimizer.html#a9c472d1e2ef75decdae1cf2db7582582">name</a>;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  }</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  std::string name_;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;};</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
-<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="optimizer_8h.html#aee9e218ffa031741b9f3f53cc580a09f">  108</a></span>&#160;<span class="preprocessor">#define FFNN_REGISTER_OPTIMIZER(layer, opt)\</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="preprocessor">  friend class ::ffnn::optimizer::opt&lt;layer&gt;;</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;}  <span class="comment">// namespace optimizer</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}  <span class="comment">// namespace ffnn</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="preprocessor">#endif  // FFNN_LAYER_OPTIMIZATION_OPTIMIZER_H</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;type_traits&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">// Boost</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;boost/make_shared.hpp&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;boost/shared_ptr.hpp&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">// FFNN</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="global_8h.html">ffnn/config/global.h</a>&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="assert_8h.html">ffnn/assert.h</a>&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">namespace </span>ffnn</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">namespace </span>optimizer</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> LayerType&gt;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classffnn_1_1optimizer_1_1_optimizer.html">   28</a></span>&#160;<span class="keyword">class </span><a class="code" href="classffnn_1_1optimizer_1_1_optimizer.html">Optimizer</a></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classffnn_1_1optimizer_1_1_optimizer.html#ac03e7181934bf0c12a97fc67a60484ab">   32</a></span>&#160;  <span class="keyword">typedef</span> boost::shared_ptr&lt;Optimizer&gt; <a class="code" href="classffnn_1_1optimizer_1_1_optimizer.html#ac03e7181934bf0c12a97fc67a60484ab">Ptr</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classffnn_1_1optimizer_1_1_optimizer.html#a5d62c55f6f830e993ffe801fb17a1c3a">   35</a></span>&#160;  <span class="keyword">typedef</span> boost::shared_ptr&lt;const Optimizer&gt; <a class="code" href="classffnn_1_1optimizer_1_1_optimizer.html#a5d62c55f6f830e993ffe801fb17a1c3a">ConstPtr</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classffnn_1_1optimizer_1_1_optimizer.html#a5daf7f0191df7c672247e0d5a25fbafa">   41</a></span>&#160;  <a class="code" href="classffnn_1_1optimizer_1_1_optimizer.html#a5daf7f0191df7c672247e0d5a25fbafa">Optimizer</a>(<span class="keyword">const</span> std::string&amp; <a class="code" href="classffnn_1_1optimizer_1_1_optimizer.html#a9c472d1e2ef75decdae1cf2db7582582">name</a>) :</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    name_(name)</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  {}</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classffnn_1_1optimizer_1_1_optimizer.html#ad16c1cab142fcc9542da0ef98df75f47">   44</a></span>&#160;  <span class="keyword">virtual</span> <a class="code" href="classffnn_1_1optimizer_1_1_optimizer.html#ad16c1cab142fcc9542da0ef98df75f47">~Optimizer</a>() {}</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classffnn_1_1optimizer_1_1_optimizer.html#a4302b66ba9b013ae4833eca235ff306a">initialize</a>(LayerType&amp; layer) = 0;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classffnn_1_1optimizer_1_1_optimizer.html#ade04e7582eb7b833713a9bd33e0e8346">reset</a>(LayerType&amp; layer) = 0;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classffnn_1_1optimizer_1_1_optimizer.html#a80505cfdeba0a3c8d1db19a2821613f2">forward</a>(LayerType&amp; layer) = 0;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classffnn_1_1optimizer_1_1_optimizer.html#ab1f9b1cae01f93f53ecf7119bedb6369">backward</a>(LayerType&amp; layer) = 0;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classffnn_1_1optimizer_1_1_optimizer.html#a7c88c2794446e03ccd41628bb25d7a07">update</a>(LayerType&amp; layer) = 0;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="classffnn_1_1optimizer_1_1_optimizer.html#a9c472d1e2ef75decdae1cf2db7582582">   85</a></span>&#160;  <span class="keyword">inline</span> <span class="keyword">const</span> std::string&amp; <a class="code" href="classffnn_1_1optimizer_1_1_optimizer.html#a9c472d1e2ef75decdae1cf2db7582582">name</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">  </span>{</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">return</span> name_;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="classffnn_1_1optimizer_1_1_optimizer.html#ab9aa028897eed9617b6439e1ea56a1ee">   93</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classffnn_1_1optimizer_1_1_optimizer.html#ab9aa028897eed9617b6439e1ea56a1ee">setName</a>(<span class="keyword">const</span> std::string&amp; <a class="code" href="classffnn_1_1optimizer_1_1_optimizer.html#a9c472d1e2ef75decdae1cf2db7582582">name</a>)</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    name_ = <a class="code" href="classffnn_1_1optimizer_1_1_optimizer.html#a9c472d1e2ef75decdae1cf2db7582582">name</a>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  std::string name_;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;};</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="optimizer_8h.html#aee9e218ffa031741b9f3f53cc580a09f">  109</a></span>&#160;<span class="preprocessor">#define FFNN_REGISTER_OPTIMIZER(layer, opt)\</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor">  friend class ::ffnn::optimizer::opt&lt;layer&gt;;</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}  <span class="comment">// namespace optimizer</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;}  <span class="comment">// namespace ffnn</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="preprocessor">#endif  // FFNN_LAYER_OPTIMIZATION_OPTIMIZER_H</span></div>
 <div class="ttc" id="classffnn_1_1optimizer_1_1_optimizer_html_ab1f9b1cae01f93f53ecf7119bedb6369"><div class="ttname"><a href="classffnn_1_1optimizer_1_1_optimizer.html#ab1f9b1cae01f93f53ecf7119bedb6369">ffnn::optimizer::Optimizer::backward</a></div><div class="ttdeci">virtual bool backward(LayerType &amp;layer)=0</div><div class="ttdoc">Computes one optimizer update step. </div></div>
 <div class="ttc" id="classffnn_1_1optimizer_1_1_optimizer_html_a7c88c2794446e03ccd41628bb25d7a07"><div class="ttname"><a href="classffnn_1_1optimizer_1_1_optimizer.html#a7c88c2794446e03ccd41628bb25d7a07">ffnn::optimizer::Optimizer::update</a></div><div class="ttdeci">virtual bool update(LayerType &amp;layer)=0</div><div class="ttdoc">Applies optimizer update. </div></div>
 <div class="ttc" id="global_8h_html"><div class="ttname"><a href="global_8h.html">global.h</a></div></div>
 <div class="ttc" id="classffnn_1_1optimizer_1_1_optimizer_html_a4302b66ba9b013ae4833eca235ff306a"><div class="ttname"><a href="classffnn_1_1optimizer_1_1_optimizer.html#a4302b66ba9b013ae4833eca235ff306a">ffnn::optimizer::Optimizer::initialize</a></div><div class="ttdeci">virtual void initialize(LayerType &amp;layer)=0</div><div class="ttdoc">Initializes the Optimizer. </div></div>
-<div class="ttc" id="classffnn_1_1optimizer_1_1_optimizer_html_ab9aa028897eed9617b6439e1ea56a1ee"><div class="ttname"><a href="classffnn_1_1optimizer_1_1_optimizer.html#ab9aa028897eed9617b6439e1ea56a1ee">ffnn::optimizer::Optimizer::setName</a></div><div class="ttdeci">void setName(const std::string &amp;name)</div><div class="ttdoc">Sets name of the optimizer. </div><div class="ttdef"><b>Definition:</b> optimizer.h:92</div></div>
-<div class="ttc" id="classffnn_1_1optimizer_1_1_optimizer_html_a5daf7f0191df7c672247e0d5a25fbafa"><div class="ttname"><a href="classffnn_1_1optimizer_1_1_optimizer.html#a5daf7f0191df7c672247e0d5a25fbafa">ffnn::optimizer::Optimizer::Optimizer</a></div><div class="ttdeci">Optimizer(const std::string &amp;name)</div><div class="ttdoc">Naming constructor. </div><div class="ttdef"><b>Definition:</b> optimizer.h:40</div></div>
+<div class="ttc" id="classffnn_1_1optimizer_1_1_optimizer_html_ab9aa028897eed9617b6439e1ea56a1ee"><div class="ttname"><a href="classffnn_1_1optimizer_1_1_optimizer.html#ab9aa028897eed9617b6439e1ea56a1ee">ffnn::optimizer::Optimizer::setName</a></div><div class="ttdeci">void setName(const std::string &amp;name)</div><div class="ttdoc">Sets name of the optimizer. </div><div class="ttdef"><b>Definition:</b> optimizer.h:93</div></div>
+<div class="ttc" id="classffnn_1_1optimizer_1_1_optimizer_html_a5daf7f0191df7c672247e0d5a25fbafa"><div class="ttname"><a href="classffnn_1_1optimizer_1_1_optimizer.html#a5daf7f0191df7c672247e0d5a25fbafa">ffnn::optimizer::Optimizer::Optimizer</a></div><div class="ttdeci">Optimizer(const std::string &amp;name)</div><div class="ttdoc">Naming constructor. </div><div class="ttdef"><b>Definition:</b> optimizer.h:41</div></div>
 <div class="ttc" id="assert_8h_html"><div class="ttname"><a href="assert_8h.html">assert.h</a></div></div>
-<div class="ttc" id="classffnn_1_1optimizer_1_1_optimizer_html_ac03e7181934bf0c12a97fc67a60484ab"><div class="ttname"><a href="classffnn_1_1optimizer_1_1_optimizer.html#ac03e7181934bf0c12a97fc67a60484ab">ffnn::optimizer::Optimizer::Ptr</a></div><div class="ttdeci">boost::shared_ptr&lt; Optimizer &gt; Ptr</div><div class="ttdoc">Shared resource standardization. </div><div class="ttdef"><b>Definition:</b> optimizer.h:31</div></div>
-<div class="ttc" id="classffnn_1_1optimizer_1_1_optimizer_html_a5d62c55f6f830e993ffe801fb17a1c3a"><div class="ttname"><a href="classffnn_1_1optimizer_1_1_optimizer.html#a5d62c55f6f830e993ffe801fb17a1c3a">ffnn::optimizer::Optimizer::ConstPtr</a></div><div class="ttdeci">boost::shared_ptr&lt; const Optimizer &gt; ConstPtr</div><div class="ttdoc">Constant shared resource standardization. </div><div class="ttdef"><b>Definition:</b> optimizer.h:34</div></div>
-<div class="ttc" id="classffnn_1_1optimizer_1_1_optimizer_html_a9c472d1e2ef75decdae1cf2db7582582"><div class="ttname"><a href="classffnn_1_1optimizer_1_1_optimizer.html#a9c472d1e2ef75decdae1cf2db7582582">ffnn::optimizer::Optimizer::name</a></div><div class="ttdeci">const std::string &amp; name() const </div><div class="ttdoc">Exposes name of the optimizer. </div><div class="ttdef"><b>Definition:</b> optimizer.h:84</div></div>
+<div class="ttc" id="classffnn_1_1optimizer_1_1_optimizer_html_ac03e7181934bf0c12a97fc67a60484ab"><div class="ttname"><a href="classffnn_1_1optimizer_1_1_optimizer.html#ac03e7181934bf0c12a97fc67a60484ab">ffnn::optimizer::Optimizer::Ptr</a></div><div class="ttdeci">boost::shared_ptr&lt; Optimizer &gt; Ptr</div><div class="ttdoc">Shared resource standardization. </div><div class="ttdef"><b>Definition:</b> optimizer.h:32</div></div>
+<div class="ttc" id="classffnn_1_1optimizer_1_1_optimizer_html_a5d62c55f6f830e993ffe801fb17a1c3a"><div class="ttname"><a href="classffnn_1_1optimizer_1_1_optimizer.html#a5d62c55f6f830e993ffe801fb17a1c3a">ffnn::optimizer::Optimizer::ConstPtr</a></div><div class="ttdeci">boost::shared_ptr&lt; const Optimizer &gt; ConstPtr</div><div class="ttdoc">Constant shared resource standardization. </div><div class="ttdef"><b>Definition:</b> optimizer.h:35</div></div>
+<div class="ttc" id="classffnn_1_1optimizer_1_1_optimizer_html_a9c472d1e2ef75decdae1cf2db7582582"><div class="ttname"><a href="classffnn_1_1optimizer_1_1_optimizer.html#a9c472d1e2ef75decdae1cf2db7582582">ffnn::optimizer::Optimizer::name</a></div><div class="ttdeci">const std::string &amp; name() const </div><div class="ttdoc">Exposes name of the optimizer. </div><div class="ttdef"><b>Definition:</b> optimizer.h:85</div></div>
 <div class="ttc" id="classffnn_1_1optimizer_1_1_optimizer_html_ade04e7582eb7b833713a9bd33e0e8346"><div class="ttname"><a href="classffnn_1_1optimizer_1_1_optimizer.html#ade04e7582eb7b833713a9bd33e0e8346">ffnn::optimizer::Optimizer::reset</a></div><div class="ttdeci">virtual void reset(LayerType &amp;layer)=0</div><div class="ttdoc">Resetrs persistent Optimizer states. </div></div>
 <div class="ttc" id="classffnn_1_1optimizer_1_1_optimizer_html_a80505cfdeba0a3c8d1db19a2821613f2"><div class="ttname"><a href="classffnn_1_1optimizer_1_1_optimizer.html#a80505cfdeba0a3c8d1db19a2821613f2">ffnn::optimizer::Optimizer::forward</a></div><div class="ttdeci">virtual bool forward(LayerType &amp;layer)=0</div><div class="ttdoc">Computes one optimizer update step. </div></div>
-<div class="ttc" id="classffnn_1_1optimizer_1_1_optimizer_html_ad16c1cab142fcc9542da0ef98df75f47"><div class="ttname"><a href="classffnn_1_1optimizer_1_1_optimizer.html#ad16c1cab142fcc9542da0ef98df75f47">ffnn::optimizer::Optimizer::~Optimizer</a></div><div class="ttdeci">virtual ~Optimizer()</div><div class="ttdef"><b>Definition:</b> optimizer.h:43</div></div>
-<div class="ttc" id="classffnn_1_1optimizer_1_1_optimizer_html"><div class="ttname"><a href="classffnn_1_1optimizer_1_1_optimizer.html">ffnn::optimizer::Optimizer</a></div><div class="ttdoc">A layer-wise optimizer visitor. </div><div class="ttdef"><b>Definition:</b> optimizer.h:27</div></div>
+<div class="ttc" id="classffnn_1_1optimizer_1_1_optimizer_html_ad16c1cab142fcc9542da0ef98df75f47"><div class="ttname"><a href="classffnn_1_1optimizer_1_1_optimizer.html#ad16c1cab142fcc9542da0ef98df75f47">ffnn::optimizer::Optimizer::~Optimizer</a></div><div class="ttdeci">virtual ~Optimizer()</div><div class="ttdef"><b>Definition:</b> optimizer.h:44</div></div>
+<div class="ttc" id="classffnn_1_1optimizer_1_1_optimizer_html"><div class="ttname"><a href="classffnn_1_1optimizer_1_1_optimizer.html">ffnn::optimizer::Optimizer</a></div><div class="ttdoc">A layer-wise optimizer visitor. </div><div class="ttdef"><b>Definition:</b> optimizer.h:28</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 11 2017 11:34:22 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed May 31 2017 23:57:13 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

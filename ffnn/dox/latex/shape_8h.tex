@@ -1,9 +1,7 @@
-\hypertarget{shape_8h}{\section{/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/internal/shape.h File Reference}
-\label{shape_8h}\index{/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/internal/shape.\-h@{/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/internal/shape.\-h}}
+\hypertarget{shape_8h}{\section{/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/shape.h File Reference}
+\label{shape_8h}\index{/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/shape.\-h@{/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/shape.\-h}}
 }
 {\ttfamily \#include $<$type\-\_\-traits$>$}\\*
-{\ttfamily \#include $<$ffnn/internal/traits/serializable.\-h$>$}\\*
-{\ttfamily \#include $<$ffnn/internal/signature.\-h$>$}\\*
 {\ttfamily \#include $<$ffnn/config/global.\-h$>$}\\*
 Include dependency graph for shape.\-h\-:\nopagebreak
 \begin{figure}[H]
@@ -12,8 +10,7 @@ Include dependency graph for shape.\-h\-:\nopagebreak
 \includegraphics[width=350pt]{shape_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\-:
-\nopagebreak
+This graph shows which files directly or indirectly include this file\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -23,31 +20,29 @@ This graph shows which files directly or indirectly include this file\-:
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-struct \hyperlink{structffnn_1_1layer_1_1internal_1_1is__alignable__128}{ffnn\-::layer\-::internal\-::is\-\_\-alignable\-\_\-128$<$ Block\-Type $>$}
-\item 
-struct \hyperlink{structffnn_1_1layer_1_1internal_1_1_shape}{ffnn\-::layer\-::internal\-::\-Shape$<$ Size\-Type $>$}
-\end{DoxyCompactItemize}
+struct \hyperlink{structffnn_1_1layer_1_1_shape_at_compile_time}{ffnn\-::layer\-::\-Shape\-At\-Compile\-Time$<$ Size\-Type, \-\_\-\-Height\-At\-Compile\-Time, \-\_\-\-Width\-At\-Compile\-Time, \-\_\-\-Depth\-At\-Compile\-Time $>$}
+\begin{DoxyCompactList}\small\item\em Compile-\/time \hyperlink{structffnn_1_1layer_1_1_shape}{Shape} structure representing the dimensions of an object with volume. \end{DoxyCompactList}\item 
+struct \hyperlink{structffnn_1_1layer_1_1_shape}{ffnn\-::layer\-::\-Shape$<$ Size\-Type $>$}
+\begin{DoxyCompactList}\small\item\em \hyperlink{structffnn_1_1layer_1_1_shape}{Shape} structure representing the dimensions of an object with volume. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{namespaceffnn}{ffnn}
 \item 
 \hyperlink{namespaceffnn_1_1layer}{ffnn\-::layer}
-\item 
-\hyperlink{namespaceffnn_1_1layer_1_1internal}{ffnn\-::layer\-::internal}
 \end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename Size\-Type $>$ }\\constexpr bool \hyperlink{namespaceffnn_1_1layer_1_1internal_a80747f67832029051c2f96d3a1586e98}{ffnn\-::layer\-::internal\-::is\-\_\-dynamic} (Size\-Type n)
-\item 
-{\footnotesize template$<$typename Size\-Type $>$ }\\constexpr bool \hyperlink{namespaceffnn_1_1layer_1_1internal_af66c362036e43d1d913b6c43d90f6c3e}{ffnn\-::layer\-::internal\-::is\-\_\-dynamic} (Size\-Type n, Size\-Type m)
-\item 
-{\footnotesize template$<$typename Size\-Type $>$ }\\constexpr bool \hyperlink{namespaceffnn_1_1layer_1_1internal_ab770642661e0d57c0113788a5e127f57}{ffnn\-::layer\-::internal\-::is\-\_\-dynamic} (Size\-Type n, Size\-Type m, Size\-Type l)
-\item 
-{\footnotesize template$<$typename Size\-Type $>$ }\\constexpr Size\-Type \hyperlink{namespaceffnn_1_1layer_1_1internal_ab5b2ac985b32bc289c8748933e2ba113}{ffnn\-::layer\-::internal\-::multiply\-\_\-if\-\_\-not\-\_\-dynamic\-\_\-sizes} (Size\-Type n, Size\-Type m)
-\item 
-{\footnotesize template$<$typename Size\-Type $>$ }\\constexpr Size\-Type \hyperlink{namespaceffnn_1_1layer_1_1internal_a93d6cc4da6e3aa83fda7f6beb6eb07f5}{ffnn\-::layer\-::internal\-::multiply\-\_\-if\-\_\-not\-\_\-dynamic\-\_\-sizes} (Size\-Type n, Size\-Type m, Size\-Type l)
-\item 
-{\footnotesize template$<$typename Size\-Type $>$ }\\std\-::ostream \& \hyperlink{namespaceffnn_1_1layer_1_1internal_a60e6be53b5701e3389204e5b1aaaf9ae}{ffnn\-::layer\-::internal\-::operator$<$$<$} (std\-::ostream \&os, const Shape$<$ Size\-Type $>$ \&dim)
+{\footnotesize template$<$typename Size\-Type $>$ }\\constexpr bool \hyperlink{namespaceffnn_1_1layer_a83ba223c7b7eb8e3d926b98b266f24c8}{ffnn\-::layer\-::is\-\_\-dynamic} (Size\-Type n)
+\begin{DoxyCompactList}\small\item\em Checks if size represents a dynamic size. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Size\-Type $>$ }\\constexpr bool \hyperlink{namespaceffnn_1_1layer_a9369bd9ca711c303dd6709fbb50ef169}{ffnn\-::layer\-::is\-\_\-dynamic} (Size\-Type n, Size\-Type m)
+\begin{DoxyCompactList}\small\item\em Checks if a pair of sizes is dynamic. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Size\-Type $>$ }\\constexpr bool \hyperlink{namespaceffnn_1_1layer_a6a3ca00311f112957ed5ca16b5b3acdd}{ffnn\-::layer\-::is\-\_\-dynamic} (Size\-Type n, Size\-Type m, Size\-Type l)
+\begin{DoxyCompactList}\small\item\em Checks if a triplet of sizes is dynamic. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Size\-Type $>$ }\\constexpr Size\-Type \hyperlink{namespaceffnn_1_1layer_a311eb389a31756b22de7d4ca5b64b575}{ffnn\-::layer\-::multiply\-\_\-if\-\_\-not\-\_\-dynamic\-\_\-sizes} (Size\-Type n, Size\-Type m)
+\begin{DoxyCompactList}\small\item\em Multiplies a pair of sizes if all sizes are static. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Size\-Type $>$ }\\constexpr Size\-Type \hyperlink{namespaceffnn_1_1layer_ad4cdb22bcffa10bf7bdc376f1a351c41}{ffnn\-::layer\-::multiply\-\_\-if\-\_\-not\-\_\-dynamic\-\_\-sizes} (Size\-Type n, Size\-Type m, Size\-Type l)
+\begin{DoxyCompactList}\small\item\em Multiplies a triplet of sizes if all sizes are static. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Size\-Type $>$ }\\std\-::ostream \& \hyperlink{namespaceffnn_1_1layer_a5604719421dd11309bad1f25126f5bd7}{ffnn\-::layer\-::operator$<$$<$} (std\-::ostream \&os, const Shape$<$ Size\-Type $>$ \&dim)
 \end{DoxyCompactItemize}
