@@ -32,15 +32,15 @@ namespace layer
  * @param KernelsAtCompileTime  number of kernels this filter will have
  */
 template<typename ValueType,
-          size_type HeightAtCompileTime = Eigen::Dynamic,
-          size_type WidthAtCompileTime = Eigen::Dynamic,
-          size_type DepthAtCompileTime = Eigen::Dynamic,
-          size_type KernelHeightAtCompileTime = Eigen::Dynamic,
-          size_type KernelWidthAtCompileTime = Eigen::Dynamic,
-          size_type KernelCountAtCompileTime = Eigen::Dynamic,
-          size_type RowStrideAtCompileTime =  1,
-          size_type ColStrideAtCompileTime = -1,
-          EmbeddingMode Mode = ColEmbedding>
+         size_type HeightAtCompileTime = Eigen::Dynamic,
+         size_type WidthAtCompileTime = Eigen::Dynamic,
+         size_type DepthAtCompileTime = Eigen::Dynamic,
+         size_type KernelHeightAtCompileTime = Eigen::Dynamic,
+         size_type KernelWidthAtCompileTime = Eigen::Dynamic,
+         size_type KernelCountAtCompileTime = Eigen::Dynamic,
+         size_type RowStrideAtCompileTime =  1,
+         size_type ColStrideAtCompileTime = -1,
+         EmbeddingMode Mode = ColEmbedding>
 struct convolution_layer_traits
 {
   /// Data embedding mode
@@ -183,7 +183,7 @@ public:
 
     /**
      * @brief Sets layer parameter initialization distribution
-     * @param distribution  layer distributionribution resource
+     * @param distribution  value distribution resource
      * @return *this
      */
     inline Configuration& setParameterDistribution(const typename DistributionType::Ptr& distribution)
@@ -242,7 +242,7 @@ public:
     Configuration& resolve()
     {
       // Set depth-embedded input shape
-      embedded_input_shape_ = embed_shape_transform<Mode>(input_shape_);
+      embedded_input_shape_ = convolution::embed_shape_transform<Mode>(input_shape_);
 
       // Setup output shape before depth embdedding
       output_shape_.height = convolution::output_dimension(input_shape_.height, filter_shape_.height, row_stride_);
@@ -250,13 +250,13 @@ public:
       output_shape_.depth  = filter_shape_.depth;
 
       // Set depth-embedded output shape
-      embedded_output_shape_ = embed_shape_transform<Mode>(output_shape_);
+      embedded_output_shape_ = convolution::embed_shape_transform<Mode>(output_shape_);
 
       // Set stride shape
       stride_shape_.height = row_stride_;
       stride_shape_.width  = col_stride_;
       stride_shape_.depth  = input_shape_.depth;
-      stride_shape_ = embed_shape_transform<Mode>(stride_shape_);
+      stride_shape_ = convolution::embed_shape_transform<Mode>(stride_shape_);
       return *this;
     }
 
