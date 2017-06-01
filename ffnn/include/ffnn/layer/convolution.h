@@ -132,7 +132,7 @@ public:
   using SelfType = Convolution<ValueType, LayerTraits>;
 
   /// Base type alias
-  using BaseType = LayerTraits::HiddenLayerType;
+  using BaseType = typename LayerTraits::HiddenLayerType;
 
   /// Dimension type standardization
   typedef typename LayerTraits::HiddenLayerType::ShapeType ShapeType;
