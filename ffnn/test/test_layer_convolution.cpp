@@ -13,12 +13,41 @@
 #include <ffnn/logging.h>
 #include <ffnn/layer/convolution.h>
 
-TEST(TestLayerConvolution, DefaultDynamic)
+TEST(TestLayerConvolution, Dynamic_SizingWithConfigStruct)
 {
-  typedef ffnn::layer::Convolution<float> ConvLayer;
-  ConvLayer layer;
+  using Conv = ffnn::layer::Convolution<float>;
+  using Config = Conv::Configuration;
+
+  Conv layer(Config()
+             .setInputShape(64, 64, 3)
+             .setFilterShape(4, 4, 5)
+             .setStride(3, 3));
+
+  // Check ColEmbedding input sizing
+  EXPECT_EQ(layer.getInputShape().height, 64 * 3);
+  EXPECT_EQ(layer.getInputShape().width,  64);
+
+  // Check ColEmbedding output sizing
+  EXPECT_EQ(layer.getOutputShape().height, 21 * 5);
+  EXPECT_EQ(layer.getOutputShape().width,  21);
 }
 
+TEST(TestLayerConvolution, Static_FilterSizing)
+{
+  using Options = ffnn::layer::convolution::options<4, 4, 2, 4, 4, 5, 3, 3>;
+  using Conv = ffnn::layer::Convolution<float, Options>;
+  using Config = Conv::Configuration;
+
+  Conv layer(Config().setInputShape(4, 4, 2));
+
+  // Check ColEmbedding input sizing
+  EXPECT_EQ(layer.getInputShape().height, 4 * 2);
+  EXPECT_EQ(layer.getInputShape().width,  4);
+
+  // Check ColEmbedding output sizing
+  EXPECT_EQ(layer.getOutputShape().height, 1 * 5);
+  EXPECT_EQ(layer.getOutputShape().width,  1);
+}
 
 // Run tests
 int main(int argc, char** argv)

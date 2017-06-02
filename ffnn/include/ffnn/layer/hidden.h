@@ -9,64 +9,121 @@
 #include <vector>
 #include <type_traits>
 
-// FFNN (internal)
-#include <ffnn/internal/serializable.h>
-
 // FFNN
 #include <ffnn/config/global.h>
 #include <ffnn/assert.h>
 #include <ffnn/layer/layer.h>
+#include <ffnn/internal/serializable.h>
+#include <ffnn/internal/traits.h>
 
 namespace ffnn
 {
 namespace layer
 {
-template<FFNN_SIZE_TYPE InputHeightAtCompileTime  = Eigen::Dynamic,
-         FFNN_SIZE_TYPE InputWidthAtCompileTime   = Eigen::Dynamic,
-         FFNN_SIZE_TYPE OutputHeightAtCompileTime = Eigen::Dynamic,
-         FFNN_SIZE_TYPE OutputWidthAtCompileTime  = Eigen::Dynamic>
-struct hidden_layer_traits
+namespace hidden
 {
-  constexpr static FFNN_SIZE_TYPE input_height  = InputHeightAtCompileTime;
-  constexpr static FFNN_SIZE_TYPE input_width   = InputWidthAtCompileTime;
-  constexpr static FFNN_SIZE_TYPE output_height = OutputHeightAtCompileTime;
-  constexpr static FFNN_SIZE_TYPE output_width  = OutputWidthAtCompileTime;
+/**
+ * @brief Describes compile-time options used to set up a Convolution object
+ */
+template<size_type InputHeightAtCompileTime  = Eigen::Dynamic,
+         size_type InputWidthAtCompileTime   = Eigen::Dynamic,
+         size_type OutputHeightAtCompileTime = Eigen::Dynamic,
+         size_type OutputWidthAtCompileTime  = Eigen::Dynamic,
+         int InputDataOrdering  = Eigen::ColMajor,
+         int OutputDataOrdering = Eigen::ColMajor>
+struct options
+{
+  /// Input field height
+  constexpr static size_type input_height  = InputHeightAtCompileTime;
+
+  /// Input field width
+  constexpr static size_type input_width = InputWidthAtCompileTime;
+
+  /// Input data ordering
+  constexpr static int input_data_ordering = InputDataOrdering;
+
+  /// Output field height
+  constexpr static size_type output_height = OutputHeightAtCompileTime;
+
+  /// Output field width
+  constexpr static size_type output_width = OutputWidthAtCompileTime;
+
+  /// Output data ordering
+  constexpr static int output_data_ordering = OutputDataOrdering;
 };
+
+/**
+ * @brief Describes types based on compile-time options
+ */
+template<typename ValueType,
+         typename Options>
+struct extrinsics
+{
+  /// Input block type standardization
+  typedef Eigen::Matrix<
+    ValueType,
+    Options::input_height,
+    Options::input_width,
+    Options::input_data_ordering
+  > InputBlockType;
+
+  /// Output block type standardization
+  typedef Eigen::Matrix<
+    ValueType,
+    Options::output_height,
+    Options::output_width,
+    Options::output_data_ordering
+  > OutputBlockType;
+
+  /// Input block-mapping type standardization
+  typedef typename std::conditional<
+    std::is_floating_point<ValueType>::value,
+    Eigen::Map<InputBlockType, 16>,
+    Eigen::Map<InputBlockType>
+  >::type InputMappingType;
+
+  /// Output block-mapping type standardization
+  typedef typename std::conditional<
+    std::is_floating_point<ValueType>::value,
+    Eigen::Map<OutputBlockType, 16>,
+    Eigen::Map<OutputBlockType>
+  >::type OutputMappingType;
+
+  ///Layer (base type) standardization
+  typedef Layer<ValueType> LayerType;
+};
+}  // namespace hidden
 
 /**
  * @brief A network hidden-layer object
  */
 template<typename ValueType,
-         typename LayerShape = hidden_layer_traits<>,
-         typename _InputBlockType  = Eigen::Matrix<ValueType, LayerShape::input_height,  LayerShape::input_width,  Eigen::ColMajor>,
-         typename _OutputBlockType = Eigen::Matrix<ValueType, LayerShape::output_height, LayerShape::output_width, Eigen::ColMajor>>
+         typename Options = hidden::options<>,
+         typename Extrinsics = hidden::extrinsics<ValueType, Options>>
 class Hidden :
-  public Layer<ValueType>
+  public Extrinsics::LayerType
 {
 public:
+  /// Self type alias
+  using SelfType = Hidden<ValueType, Options>;
+
   /// Base type alias
-  using Base = Layer<ValueType>;
-
-  /// Size type standardization
-  typedef typename Base::SizeType SizeType;
-
-  /// Offset type standardization
-  typedef typename Base::OffsetType OffsetType;
+  using BaseType = Layer<ValueType>;
 
   /// Dimension type standardization
-  typedef typename Base::ShapeType ShapeType;
+  typedef typename BaseType::ShapeType ShapeType;
 
   /// Input block type standardization
-  typedef _InputBlockType InputBlockType;
+  typedef typename Extrinsics::InputBlockType InputBlockType;
 
   /// Output block type standardization
-  typedef _OutputBlockType OutputBlockType;
+  typedef typename Extrinsics::OutputBlockType OutputBlockType;
 
-  /// Input block-mapping type standardization
-  typedef Eigen::Map<InputBlockType, 16> InputMappingType;
+  /// Input mapping type standardization
+  typedef typename Extrinsics::InputMappingType InputMappingType;
 
-  /// Output block-mapping type standardization
-  typedef Eigen::Map<OutputBlockType, 16> OutputMappingType;
+  /// Output mapping type standardization
+  typedef typename Extrinsics::OutputMappingType OutputMappingType;
 
   /**
    * @brief Setup constructor
@@ -76,8 +133,8 @@ public:
    * @param output_width  width of the output surface
    */
   explicit
-  Hidden(const ShapeType& input_shape  = ShapeType(LayerShape::input_height,  LayerShape::input_width),
-         const ShapeType& output_shape = ShapeType(LayerShape::output_height, LayerShape::output_width));
+  Hidden(const ShapeType& input_shape  = ShapeType(Options::input_height,  Options::input_width),
+         const ShapeType& output_shape = ShapeType(Options::output_height, Options::output_width));
   virtual ~Hidden();
 
   /**
@@ -133,7 +190,7 @@ protected:
    * @param offset  offset index of a memory location in the input buffer of the next layer
    * @retval <code>offset + output_shape_.size()</code>
    */
-  virtual OffsetType connectToForwardLayer(const Layer<ValueType>& next, OffsetType offset);
+  virtual offset_type connectToForwardLayer(const Layer<ValueType>& next, offset_type offset);
 };
 }  // namespace layer
 }  // namespace ffnn

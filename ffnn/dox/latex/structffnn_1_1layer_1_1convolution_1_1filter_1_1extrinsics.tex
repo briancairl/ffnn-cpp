@@ -1,0 +1,61 @@
+\hypertarget{structffnn_1_1layer_1_1convolution_1_1filter_1_1extrinsics}{\section{ffnn\-:\-:layer\-:\-:convolution\-:\-:filter\-:\-:extrinsics$<$ Value\-Type, Options $>$ Struct Template Reference}
+\label{structffnn_1_1layer_1_1convolution_1_1filter_1_1extrinsics}\index{ffnn\-::layer\-::convolution\-::filter\-::extrinsics$<$ Value\-Type, Options $>$@{ffnn\-::layer\-::convolution\-::filter\-::extrinsics$<$ Value\-Type, Options $>$}}
+}
+
+
+Describes types based on compile-\/time options.  
+
+
+
+
+{\ttfamily \#include \char`\"{}filter.\-h\char`\"{}}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Eigen\-::\-Matrix\\*
+$<$ Value\-Type, \\*
+Options\-::embedded\-\_\-kernel\-\_\-height, \\*
+Options\-::embedded\-\_\-kernel\-\_\-width, \\*
+\hyperlink{namespaceffnn_1_1layer_1_1convolution_a88d0a4ec4a7dbc89c35ce95d859a78cf}{embed\-\_\-data\-\_\-order}\\*
+$<$ Options\-::embedding\-\_\-mode $>$) $>$ \hyperlink{structffnn_1_1layer_1_1convolution_1_1filter_1_1extrinsics_a0b687a9387270004cdaa00c19bef26da}{Kernel\-Type}
+\begin{DoxyCompactList}\small\item\em Kernel type standardization. \end{DoxyCompactList}\item 
+typedef std\-::conditional\\*
+$<$ Options\-::has\-\_\-fixed\-\_\-kernel\-\_\-count, \\*
+std\-::array$<$ \hyperlink{structffnn_1_1layer_1_1convolution_1_1filter_1_1extrinsics_a0b687a9387270004cdaa00c19bef26da}{Kernel\-Type}, \\*
+Options\-::kernel\-\_\-count $>$\\*
+, typename std\-::conditional\\*
+$<$ \hyperlink{structffnn_1_1internal_1_1traits_1_1is__alignable__128}{internal\-::traits\-::is\-\_\-alignable\-\_\-128}\\*
+$<$ \hyperlink{structffnn_1_1layer_1_1convolution_1_1filter_1_1extrinsics_a0b687a9387270004cdaa00c19bef26da}{Kernel\-Type} $>$\-::value, \\*
+std\-::vector$<$ \hyperlink{structffnn_1_1layer_1_1convolution_1_1filter_1_1extrinsics_a0b687a9387270004cdaa00c19bef26da}{Kernel\-Type}, \\*
+Eigen\-::aligned\-\_\-allocator\\*
+$<$ \hyperlink{structffnn_1_1layer_1_1convolution_1_1filter_1_1extrinsics_a0b687a9387270004cdaa00c19bef26da}{Kernel\-Type} $>$ $>$, std\-::vector\\*
+$<$ \hyperlink{structffnn_1_1layer_1_1convolution_1_1filter_1_1extrinsics_a0b687a9387270004cdaa00c19bef26da}{Kernel\-Type} $>$ $>$\-::type $>$\-::type \hyperlink{structffnn_1_1layer_1_1convolution_1_1filter_1_1extrinsics_aa033ddfd5dc48de1253f1071211990e3}{Filter\-Base\-Type}
+\begin{DoxyCompactList}\small\item\em Base type standardization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Value\-Type, typename Options$>$struct ffnn\-::layer\-::convolution\-::filter\-::extrinsics$<$ Value\-Type, Options $>$}
+
+Describes types based on compile-\/time options. 
+
+\subsection{Member Typedef Documentation}
+\hypertarget{structffnn_1_1layer_1_1convolution_1_1filter_1_1extrinsics_aa033ddfd5dc48de1253f1071211990e3}{\index{ffnn\-::layer\-::convolution\-::filter\-::extrinsics@{ffnn\-::layer\-::convolution\-::filter\-::extrinsics}!Filter\-Base\-Type@{Filter\-Base\-Type}}
+\index{Filter\-Base\-Type@{Filter\-Base\-Type}!ffnn::layer::convolution::filter::extrinsics@{ffnn\-::layer\-::convolution\-::filter\-::extrinsics}}
+\subsubsection[{Filter\-Base\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options $>$ typedef std\-::conditional$<$ Options\-::has\-\_\-fixed\-\_\-kernel\-\_\-count, std\-::array$<${\bf Kernel\-Type}, Options\-::kernel\-\_\-count$>$, typename std\-::conditional$<$ {\bf internal\-::traits\-::is\-\_\-alignable\-\_\-128}$<${\bf Kernel\-Type}$>$\-::value, std\-::vector$<${\bf Kernel\-Type}, Eigen\-::aligned\-\_\-allocator$<${\bf Kernel\-Type}$>$ $>$, std\-::vector$<${\bf Kernel\-Type}$>$ $>$\-::type $>$\-::type {\bf ffnn\-::layer\-::convolution\-::filter\-::extrinsics}$<$ Value\-Type, Options $>$\-::{\bf Filter\-Base\-Type}}}\label{structffnn_1_1layer_1_1convolution_1_1filter_1_1extrinsics_aa033ddfd5dc48de1253f1071211990e3}
+
+
+Base type standardization. 
+
+\hypertarget{structffnn_1_1layer_1_1convolution_1_1filter_1_1extrinsics_a0b687a9387270004cdaa00c19bef26da}{\index{ffnn\-::layer\-::convolution\-::filter\-::extrinsics@{ffnn\-::layer\-::convolution\-::filter\-::extrinsics}!Kernel\-Type@{Kernel\-Type}}
+\index{Kernel\-Type@{Kernel\-Type}!ffnn::layer::convolution::filter::extrinsics@{ffnn\-::layer\-::convolution\-::filter\-::extrinsics}}
+\subsubsection[{Kernel\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options $>$ typedef Eigen\-::\-Matrix$<$ Value\-Type, Options\-::embedded\-\_\-kernel\-\_\-height, Options\-::embedded\-\_\-kernel\-\_\-width, {\bf embed\-\_\-data\-\_\-order}$<$Options\-::embedding\-\_\-mode$>$) $>$ {\bf ffnn\-::layer\-::convolution\-::filter\-::extrinsics}$<$ Value\-Type, Options $>$\-::{\bf Kernel\-Type}}}\label{structffnn_1_1layer_1_1convolution_1_1filter_1_1extrinsics_a0b687a9387270004cdaa00c19bef26da}
+
+
+Kernel type standardization. 
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/convolution/\hyperlink{filter_8h}{filter.\-h}\end{DoxyCompactItemize}

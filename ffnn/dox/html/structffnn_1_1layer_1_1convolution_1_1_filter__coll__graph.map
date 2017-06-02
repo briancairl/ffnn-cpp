@@ -1,2 +1,2 @@
-<map id="ffnn::layer::convolution::Filter&lt; ValueType, FilterTraits &gt;" name="ffnn::layer::convolution::Filter&lt; ValueType, FilterTraits &gt;">
+<map id="ffnn::layer::convolution::Filter&lt; ValueType, Options, Extrinsics &gt;" name="ffnn::layer::convolution::Filter&lt; ValueType, Options, Extrinsics &gt;">
 </map>

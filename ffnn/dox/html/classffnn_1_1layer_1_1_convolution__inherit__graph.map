@@ -1,2 +1,2 @@
-<map id="ffnn::layer::Convolution&lt; ValueType, LayerTraits &gt;" name="ffnn::layer::Convolution&lt; ValueType, LayerTraits &gt;">
+<map id="ffnn::layer::Convolution&lt; ValueType, Options, Extrinsics &gt;" name="ffnn::layer::Convolution&lt; ValueType, Options, Extrinsics &gt;">
 </map>

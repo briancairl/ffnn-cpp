@@ -2,6 +2,16 @@
 #   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DFFNN_NO_LOGGING -DFFNN_SUPRESS_ERROR_LOGGING")
 # endif()
 
+catkin_add_gtest(test_distribution
+  test_distribution.cpp
+)
+target_link_libraries(test_distribution
+  ${Boost_LIBRARIES}
+  ${catkin_LIBRARIES}
+  ${EIGEN_LIBRARIES}
+  ${GTEST_LIBRARIES}
+)
+
 catkin_add_gtest(test_layer_hidden
   test_layer_hidden.cpp
 )

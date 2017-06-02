@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['neuron',['Neuron',['../classffnn_1_1neuron_1_1_neuron.html',1,'ffnn::neuron']]],
-  ['none',['None',['../classffnn_1_1optimizer_1_1_none.html',1,'ffnn::optimizer']]],
-  ['normal',['Normal',['../classffnn_1_1distribution_1_1_normal.html',1,'ffnn::distribution']]],
-  ['normal_3c_20valuetype_20_3e',['Normal&lt; ValueType &gt;',['../classffnn_1_1distribution_1_1_normal.html',1,'ffnn::distribution']]]
+  ['layer',['Layer',['../classffnn_1_1layer_1_1_layer.html',1,'ffnn::layer']]],
+  ['leakyrectifiedlinear',['LeakyRectifiedLinear',['../classffnn_1_1neuron_1_1_leaky_rectified_linear.html',1,'ffnn::neuron']]],
+  ['lecunsigmoid',['LeCunSigmoid',['../classffnn_1_1neuron_1_1_le_cun_sigmoid.html',1,'ffnn::neuron']]],
+  ['linear',['Linear',['../classffnn_1_1neuron_1_1_linear.html',1,'ffnn::neuron']]]
 ];

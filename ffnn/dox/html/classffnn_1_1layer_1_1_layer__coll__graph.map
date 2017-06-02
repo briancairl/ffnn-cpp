@@ -1,4 +1,5 @@
 <map id="ffnn::layer::Layer&lt; ValueType &gt;" name="ffnn::layer::Layer&lt; ValueType &gt;">
-<area shape="rect" id="node2" href="$classffnn_1_1internal_1_1_unique.html" title="An object with a unique ID. " alt="" coords="18,80,160,107"/>
+<area shape="rect" id="node2" href="$classffnn_1_1internal_1_1_unique.html" title="An object with a unique ID. " alt="" coords="18,91,160,117"/>
 <area shape="rect" id="node3" href="$classffnn_1_1internal_1_1_serializable.html" title="An object which can be saved and loaded. " alt="" coords="5,5,173,32"/>
+<area shape="rect" id="node4" href="$structffnn_1_1layer_1_1_shape.html" title="ffnn::layer::Shape\l\&lt; size_type \&gt;" alt="" coords="185,83,311,125"/>
 </map>

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>FFNN: ffnn::layer::Convolution&lt; ValueType, LayerTraits &gt; Class Template Reference</title>
+<title>FFNN: ffnn::layer::Convolution&lt; ValueType, Options, Extrinsics &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -96,7 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="classffnn_1_1layer_1_1_convolution-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ffnn::layer::Convolution&lt; ValueType, LayerTraits &gt; Class Template Reference</div>  </div>
+<div class="title">ffnn::layer::Convolution&lt; ValueType, Options, Extrinsics &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -105,14 +105,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p><code>#include &quot;<a class="el" href="convolution_8h_source.html">convolution.h</a>&quot;</code></p>
 <div class="dynheader">
-Inheritance diagram for ffnn::layer::Convolution&lt; ValueType, LayerTraits &gt;:</div>
+Inheritance diagram for ffnn::layer::Convolution&lt; ValueType, Options, Extrinsics &gt;:</div>
 <div class="dyncontent">
-<div class="center"><img src="classffnn_1_1layer_1_1_convolution__inherit__graph.png" border="0" usemap="#ffnn_1_1layer_1_1_convolution_3_01_value_type_00_01_layer_traits_01_4_inherit__map" alt="Inheritance graph"/></div>
+<div class="center"><img src="classffnn_1_1layer_1_1_convolution__inherit__graph.png" border="0" usemap="#ffnn_1_1layer_1_1_convolution_3_01_value_type_00_01_options_00_01_extrinsics_01_4_inherit__map" alt="Inheritance graph"/></div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
-Collaboration diagram for ffnn::layer::Convolution&lt; ValueType, LayerTraits &gt;:</div>
+Collaboration diagram for ffnn::layer::Convolution&lt; ValueType, Options, Extrinsics &gt;:</div>
 <div class="dyncontent">
-<div class="center"><img src="classffnn_1_1layer_1_1_convolution__coll__graph.png" border="0" usemap="#ffnn_1_1layer_1_1_convolution_3_01_value_type_00_01_layer_traits_01_4_coll__map" alt="Collaboration graph"/></div>
+<div class="center"><img src="classffnn_1_1layer_1_1_convolution__coll__graph.png" border="0" usemap="#ffnn_1_1layer_1_1_convolution_3_01_value_type_00_01_options_00_01_extrinsics_01_4_coll__map" alt="Collaboration graph"/></div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
@@ -123,84 +123,77 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:acbe0dcc4d5e3c8e65b4cd2677beca126"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution.html#acbe0dcc4d5e3c8e65b4cd2677beca126">SelfType</a> = <a class="el" href="classffnn_1_1layer_1_1_convolution.html">Convolution</a>&lt; ValueType, LayerTraits &gt;</td></tr>
-<tr class="memdesc:acbe0dcc4d5e3c8e65b4cd2677beca126"><td class="mdescLeft">&#160;</td><td class="mdescRight">Self type alias.  <a href="#acbe0dcc4d5e3c8e65b4cd2677beca126">More...</a><br/></td></tr>
-<tr class="separator:acbe0dcc4d5e3c8e65b4cd2677beca126"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a473d9761dae92a5c7d3fa746647f2198"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution.html#a473d9761dae92a5c7d3fa746647f2198">BaseType</a> = LayerTraits::HiddenLayerType</td></tr>
-<tr class="memdesc:a473d9761dae92a5c7d3fa746647f2198"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base type alias.  <a href="#a473d9761dae92a5c7d3fa746647f2198">More...</a><br/></td></tr>
-<tr class="separator:a473d9761dae92a5c7d3fa746647f2198"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a70e1c8cd31ce4b5eef308c4b036d8393"><td class="memItemLeft" align="right" valign="top">typedef <br class="typebreak"/>
-LayerTraits::HiddenLayerType::ShapeType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution.html#a70e1c8cd31ce4b5eef308c4b036d8393">ShapeType</a></td></tr>
-<tr class="memdesc:a70e1c8cd31ce4b5eef308c4b036d8393"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dimension type standardization.  <a href="#a70e1c8cd31ce4b5eef308c4b036d8393">More...</a><br/></td></tr>
-<tr class="separator:a70e1c8cd31ce4b5eef308c4b036d8393"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a747e95b6530d029de9ddcfd92cb0317a"><td class="memItemLeft" align="right" valign="top">typedef filter_traits<br class="typebreak"/>
-&lt; ValueType, typename <br class="typebreak"/>
-LayerTraits::FilterTraits &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution.html#a747e95b6530d029de9ddcfd92cb0317a">FilterTraits</a></td></tr>
-<tr class="memdesc:a747e95b6530d029de9ddcfd92cb0317a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filter traits standardization.  <a href="#a747e95b6530d029de9ddcfd92cb0317a">More...</a><br/></td></tr>
-<tr class="separator:a747e95b6530d029de9ddcfd92cb0317a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a992ae89b4a496563a3a7578d522a8f04"><td class="memItemLeft" align="right" valign="top">typedef Filter&lt; ValueType, <br class="typebreak"/>
-<a class="el" href="classffnn_1_1layer_1_1_convolution.html#a747e95b6530d029de9ddcfd92cb0317a">FilterTraits</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution.html#a992ae89b4a496563a3a7578d522a8f04">FilterType</a></td></tr>
-<tr class="memdesc:a992ae89b4a496563a3a7578d522a8f04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receptive-volume type standardization.  <a href="#a992ae89b4a496563a3a7578d522a8f04">More...</a><br/></td></tr>
-<tr class="separator:a992ae89b4a496563a3a7578d522a8f04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80b64b079d5e7d5a69779574989e8cce"><td class="memItemLeft" align="right" valign="top">typedef boost::multi_array<br class="typebreak"/>
-&lt; ValueType *, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution.html#a80b64b079d5e7d5a69779574989e8cce">ForwardValueMapType</a></td></tr>
-<tr class="memdesc:a80b64b079d5e7d5a69779574989e8cce"><td class="mdescLeft">&#160;</td><td class="mdescRight">2D-value mapping standardization  <a href="#a80b64b079d5e7d5a69779574989e8cce">More...</a><br/></td></tr>
-<tr class="separator:a80b64b079d5e7d5a69779574989e8cce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a56d7e87a813fbd9954d283c0f7a32f9d"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classffnn_1_1optimizer_1_1_optimizer.html">optimizer::Optimizer</a><br class="typebreak"/>
-&lt; <a class="el" href="classffnn_1_1layer_1_1_convolution.html#acbe0dcc4d5e3c8e65b4cd2677beca126">SelfType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution.html#a56d7e87a813fbd9954d283c0f7a32f9d">OptimizerType</a></td></tr>
-<tr class="memdesc:a56d7e87a813fbd9954d283c0f7a32f9d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classffnn_1_1layer_1_1_layer.html" title="Base object for all layer types. ">Layer</a> optimization type standardization.  <a href="#a56d7e87a813fbd9954d283c0f7a32f9d">More...</a><br/></td></tr>
-<tr class="separator:a56d7e87a813fbd9954d283c0f7a32f9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63016232e871a6869432158dda2ff8dc"><td class="memItemLeft" align="right" valign="top">typedef <br class="typebreak"/>
+<tr class="memitem:ac3985357df433360d75f39353faae600"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution.html#ac3985357df433360d75f39353faae600">SelfType</a> = <a class="el" href="classffnn_1_1layer_1_1_convolution.html">Convolution</a>&lt; ValueType, Options, Extrinsics &gt;</td></tr>
+<tr class="memdesc:ac3985357df433360d75f39353faae600"><td class="mdescLeft">&#160;</td><td class="mdescRight">Self type alias.  <a href="#ac3985357df433360d75f39353faae600">More...</a><br/></td></tr>
+<tr class="separator:ac3985357df433360d75f39353faae600"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30a3026202f29a601e539c80824fcf1f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution.html#a30a3026202f29a601e539c80824fcf1f">BaseType</a> = typename Extrinsics::HiddenLayerType</td></tr>
+<tr class="memdesc:a30a3026202f29a601e539c80824fcf1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base type alias.  <a href="#a30a3026202f29a601e539c80824fcf1f">More...</a><br/></td></tr>
+<tr class="separator:a30a3026202f29a601e539c80824fcf1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab76070ee3cc7b42325f46bc3bc86bf5f"><td class="memItemLeft" align="right" valign="top">typedef BaseType::ShapeType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution.html#ab76070ee3cc7b42325f46bc3bc86bf5f">ShapeType</a></td></tr>
+<tr class="memdesc:ab76070ee3cc7b42325f46bc3bc86bf5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dimension type standardization.  <a href="#ab76070ee3cc7b42325f46bc3bc86bf5f">More...</a><br/></td></tr>
+<tr class="separator:ab76070ee3cc7b42325f46bc3bc86bf5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad66f693126a5a4b3cc7398f3be7c22a7"><td class="memItemLeft" align="right" valign="top">typedef Extrinsics::FilterType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution.html#ad66f693126a5a4b3cc7398f3be7c22a7">ParametersType</a></td></tr>
+<tr class="memdesc:ad66f693126a5a4b3cc7398f3be7c22a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filter parameters type standardization.  <a href="#ad66f693126a5a4b3cc7398f3be7c22a7">More...</a><br/></td></tr>
+<tr class="separator:ad66f693126a5a4b3cc7398f3be7c22a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5042d4aa0d40a1f1b719340eb5e62edc"><td class="memItemLeft" align="right" valign="top">typedef Extrinsics::ForwardMapType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution.html#a5042d4aa0d40a1f1b719340eb5e62edc">ForwardMapType</a></td></tr>
+<tr class="memdesc:a5042d4aa0d40a1f1b719340eb5e62edc"><td class="mdescLeft">&#160;</td><td class="mdescRight">2D-value mapping standardization  <a href="#a5042d4aa0d40a1f1b719340eb5e62edc">More...</a><br/></td></tr>
+<tr class="separator:a5042d4aa0d40a1f1b719340eb5e62edc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2daee819da77dc38cb3861397a02903c"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classffnn_1_1optimizer_1_1_optimizer.html">optimizer::Optimizer</a><br class="typebreak"/>
+&lt; <a class="el" href="classffnn_1_1layer_1_1_convolution.html#ac3985357df433360d75f39353faae600">SelfType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution.html#a2daee819da77dc38cb3861397a02903c">OptimizerType</a></td></tr>
+<tr class="memdesc:a2daee819da77dc38cb3861397a02903c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classffnn_1_1layer_1_1_layer.html" title="Base object for all layer types. ">Layer</a> optimization type standardization.  <a href="#a2daee819da77dc38cb3861397a02903c">More...</a><br/></td></tr>
+<tr class="separator:a2daee819da77dc38cb3861397a02903c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c7844d7a6397adba38599846f7ba75c"><td class="memItemLeft" align="right" valign="top">typedef <br class="typebreak"/>
 <a class="el" href="classffnn_1_1distribution_1_1_distribution.html">distribution::Distribution</a><br class="typebreak"/>
-&lt; ValueType &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution.html#a63016232e871a6869432158dda2ff8dc">DistributionType</a></td></tr>
-<tr class="memdesc:a63016232e871a6869432158dda2ff8dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dsitribution standardization.  <a href="#a63016232e871a6869432158dda2ff8dc">More...</a><br/></td></tr>
-<tr class="separator:a63016232e871a6869432158dda2ff8dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+&lt; ValueType &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution.html#a9c7844d7a6397adba38599846f7ba75c">DistributionType</a></td></tr>
+<tr class="memdesc:a9c7844d7a6397adba38599846f7ba75c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dsitribution standardization.  <a href="#a9c7844d7a6397adba38599846f7ba75c">More...</a><br/></td></tr>
+<tr class="separator:a9c7844d7a6397adba38599846f7ba75c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af6a4efb533e86d240af67a976f9226de"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution.html#af6a4efb533e86d240af67a976f9226de">Convolution</a> (const <a class="el" href="classffnn_1_1layer_1_1_convolution_1_1_configuration.html">Configuration</a> &amp;config=<a class="el" href="classffnn_1_1layer_1_1_convolution_1_1_configuration.html">Configuration</a>())</td></tr>
-<tr class="memdesc:af6a4efb533e86d240af67a976f9226de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup constructor.  <a href="#af6a4efb533e86d240af67a976f9226de">More...</a><br/></td></tr>
-<tr class="separator:af6a4efb533e86d240af67a976f9226de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12fa384c801699f967ecffcb66ce9c4c"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution.html#a12fa384c801699f967ecffcb66ce9c4c">~Convolution</a> ()</td></tr>
-<tr class="separator:a12fa384c801699f967ecffcb66ce9c4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39ad1c05a0eac019e7c5c09a717dedca"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution.html#a39ad1c05a0eac019e7c5c09a717dedca">initialize</a> ()</td></tr>
-<tr class="memdesc:a39ad1c05a0eac019e7c5c09a717dedca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the layer.  <a href="#a39ad1c05a0eac019e7c5c09a717dedca">More...</a><br/></td></tr>
-<tr class="separator:a39ad1c05a0eac019e7c5c09a717dedca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86d3151b859c361501f83da01f53b3b9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution.html#a86d3151b859c361501f83da01f53b3b9">forward</a> ()</td></tr>
-<tr class="memdesc:a86d3151b859c361501f83da01f53b3b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs forward value propagation.  <a href="#a86d3151b859c361501f83da01f53b3b9">More...</a><br/></td></tr>
-<tr class="separator:a86d3151b859c361501f83da01f53b3b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a624f3e53008a42dd242f550d8c4ee914"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution.html#a624f3e53008a42dd242f550d8c4ee914">backward</a> ()</td></tr>
-<tr class="memdesc:a624f3e53008a42dd242f550d8c4ee914"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs backward error propagation.  <a href="#a624f3e53008a42dd242f550d8c4ee914">More...</a><br/></td></tr>
-<tr class="separator:a624f3e53008a42dd242f550d8c4ee914"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d75dbeeff74a61dd8bb54accf56d5d9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution.html#a2d75dbeeff74a61dd8bb54accf56d5d9">update</a> ()</td></tr>
-<tr class="memdesc:a2d75dbeeff74a61dd8bb54accf56d5d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies accumulated layer weight updates computed during optimization.  <a href="#a2d75dbeeff74a61dd8bb54accf56d5d9">More...</a><br/></td></tr>
-<tr class="separator:a2d75dbeeff74a61dd8bb54accf56d5d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae558267ef378751f9b084f0eb4b61a12"><td class="memItemLeft" align="right" valign="top">const ParametersType &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution.html#ae558267ef378751f9b084f0eb4b61a12">getParameters</a> () const </td></tr>
-<tr class="separator:ae558267ef378751f9b084f0eb4b61a12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accbc6ed0e52e16e2f8d2a029d68011b5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution.html#accbc6ed0e52e16e2f8d2a029d68011b5">Convolution</a> (const <a class="el" href="classffnn_1_1layer_1_1_convolution_1_1_configuration.html">Configuration</a> &amp;config=<a class="el" href="classffnn_1_1layer_1_1_convolution_1_1_configuration.html">Configuration</a>())</td></tr>
+<tr class="memdesc:accbc6ed0e52e16e2f8d2a029d68011b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup constructor.  <a href="#accbc6ed0e52e16e2f8d2a029d68011b5">More...</a><br/></td></tr>
+<tr class="separator:accbc6ed0e52e16e2f8d2a029d68011b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82301134ee4b438304163fc62d3e800f"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution.html#a82301134ee4b438304163fc62d3e800f">~Convolution</a> ()</td></tr>
+<tr class="separator:a82301134ee4b438304163fc62d3e800f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3f6d731184032f58b05651d63e22d14"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution.html#ab3f6d731184032f58b05651d63e22d14">initialize</a> ()</td></tr>
+<tr class="memdesc:ab3f6d731184032f58b05651d63e22d14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the layer.  <a href="#ab3f6d731184032f58b05651d63e22d14">More...</a><br/></td></tr>
+<tr class="separator:ab3f6d731184032f58b05651d63e22d14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f6bf2bfc15a8020b11dabff0d03eac2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution.html#a5f6bf2bfc15a8020b11dabff0d03eac2">forward</a> ()</td></tr>
+<tr class="memdesc:a5f6bf2bfc15a8020b11dabff0d03eac2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs forward value propagation.  <a href="#a5f6bf2bfc15a8020b11dabff0d03eac2">More...</a><br/></td></tr>
+<tr class="separator:a5f6bf2bfc15a8020b11dabff0d03eac2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a094e10487239ea4eb043347211180f00"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution.html#a094e10487239ea4eb043347211180f00">backward</a> ()</td></tr>
+<tr class="memdesc:a094e10487239ea4eb043347211180f00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs backward error propagation.  <a href="#a094e10487239ea4eb043347211180f00">More...</a><br/></td></tr>
+<tr class="separator:a094e10487239ea4eb043347211180f00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66975d31de2fc164cbc9ae284f0d67f7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution.html#a66975d31de2fc164cbc9ae284f0d67f7">update</a> ()</td></tr>
+<tr class="memdesc:a66975d31de2fc164cbc9ae284f0d67f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies accumulated layer weight updates computed during optimization.  <a href="#a66975d31de2fc164cbc9ae284f0d67f7">More...</a><br/></td></tr>
+<tr class="separator:a66975d31de2fc164cbc9ae284f0d67f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c7ea1047ee3f09deadf87ad267284ab"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classffnn_1_1layer_1_1_convolution.html#ad66f693126a5a4b3cc7398f3be7c22a7">ParametersType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution.html#a8c7ea1047ee3f09deadf87ad267284ab">getParameters</a> () const </td></tr>
+<tr class="memdesc:a8c7ea1047ee3f09deadf87ad267284ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exposes layer parameters.  <a href="#a8c7ea1047ee3f09deadf87ad267284ab">More...</a><br/></td></tr>
+<tr class="separator:a8c7ea1047ee3f09deadf87ad267284ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a14f7de8a42bb068019f6bdab62e6d332"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution.html#a14f7de8a42bb068019f6bdab62e6d332">save</a> (OutputArchive &amp;ar, VersionType version) const </td></tr>
-<tr class="memdesc:a14f7de8a42bb068019f6bdab62e6d332"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save serializer.  <a href="#a14f7de8a42bb068019f6bdab62e6d332">More...</a><br/></td></tr>
-<tr class="separator:a14f7de8a42bb068019f6bdab62e6d332"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7281b7f4edcc219e5e1bf6ee31e22cfd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution.html#a7281b7f4edcc219e5e1bf6ee31e22cfd">load</a> (InputArchive &amp;ar, VersionType version)</td></tr>
-<tr class="memdesc:a7281b7f4edcc219e5e1bf6ee31e22cfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load serializer.  <a href="#a7281b7f4edcc219e5e1bf6ee31e22cfd">More...</a><br/></td></tr>
-<tr class="separator:a7281b7f4edcc219e5e1bf6ee31e22cfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06e3973928e3b0f7ef8b0c7aabcf93c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution.html#a06e3973928e3b0f7ef8b0c7aabcf93c8">save</a> (OutputArchive &amp;ar, VersionType version) const </td></tr>
+<tr class="memdesc:a06e3973928e3b0f7ef8b0c7aabcf93c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save serializer.  <a href="#a06e3973928e3b0f7ef8b0c7aabcf93c8">More...</a><br/></td></tr>
+<tr class="separator:a06e3973928e3b0f7ef8b0c7aabcf93c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af002187ef6ca18c4071d88c9fb1bb002"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_convolution.html#af002187ef6ca18c4071d88c9fb1bb002">load</a> (InputArchive &amp;ar, VersionType version)</td></tr>
+<tr class="memdesc:af002187ef6ca18c4071d88c9fb1bb002"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load serializer.  <a href="#af002187ef6ca18c4071d88c9fb1bb002">More...</a><br/></td></tr>
+<tr class="separator:af002187ef6ca18c4071d88c9fb1bb002"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;typename ValueType, typename LayerTraits = convolution_layer_traits&lt;ValueType&gt;&gt;<br/>
-class ffnn::layer::Convolution&lt; ValueType, LayerTraits &gt;</h3>
+<div class="textblock"><h3>template&lt;typename ValueType, typename Options = typename convolution::options&lt;&gt;, typename Extrinsics = typename convolution::extrinsics&lt;ValueType, Options&gt;&gt;<br/>
+class ffnn::layer::Convolution&lt; ValueType, Options, Extrinsics &gt;</h3>
 
 <p>A convolution layer. </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a class="anchor" id="a473d9761dae92a5c7d3fa746647f2198"></a>
+<a class="anchor" id="a30a3026202f29a601e539c80824fcf1f"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType, typename LayerTraits = convolution_layer_traits&lt;ValueType&gt;&gt; </div>
+template&lt;typename ValueType , typename Options  = typename convolution::options&lt;&gt;, typename Extrinsics  = typename convolution::extrinsics&lt;ValueType, Options&gt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classffnn_1_1layer_1_1_convolution.html">ffnn::layer::Convolution</a>&lt; ValueType, LayerTraits &gt;::<a class="el" href="classffnn_1_1layer_1_1_convolution.html#a473d9761dae92a5c7d3fa746647f2198">BaseType</a> =  LayerTraits::HiddenLayerType</td>
+          <td class="memname">using <a class="el" href="classffnn_1_1layer_1_1_convolution.html">ffnn::layer::Convolution</a>&lt; ValueType, Options, Extrinsics &gt;::<a class="el" href="classffnn_1_1layer_1_1_convolution.html#a30a3026202f29a601e539c80824fcf1f">BaseType</a> =  typename Extrinsics::HiddenLayerType</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -209,14 +202,14 @@ template&lt;typename ValueType, typename LayerTraits = convolution_layer_traits&
 
 </div>
 </div>
-<a class="anchor" id="a63016232e871a6869432158dda2ff8dc"></a>
+<a class="anchor" id="a9c7844d7a6397adba38599846f7ba75c"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType, typename LayerTraits = convolution_layer_traits&lt;ValueType&gt;&gt; </div>
+template&lt;typename ValueType , typename Options  = typename convolution::options&lt;&gt;, typename Extrinsics  = typename convolution::extrinsics&lt;ValueType, Options&gt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">typedef <a class="el" href="classffnn_1_1distribution_1_1_distribution.html">distribution::Distribution</a>&lt;ValueType&gt; <a class="el" href="classffnn_1_1layer_1_1_convolution.html">ffnn::layer::Convolution</a>&lt; ValueType, LayerTraits &gt;::<a class="el" href="classffnn_1_1layer_1_1_convolution.html#a63016232e871a6869432158dda2ff8dc">DistributionType</a></td>
+          <td class="memname">typedef <a class="el" href="classffnn_1_1distribution_1_1_distribution.html">distribution::Distribution</a>&lt;ValueType&gt; <a class="el" href="classffnn_1_1layer_1_1_convolution.html">ffnn::layer::Convolution</a>&lt; ValueType, Options, Extrinsics &gt;::<a class="el" href="classffnn_1_1layer_1_1_convolution.html#a9c7844d7a6397adba38599846f7ba75c">DistributionType</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -225,46 +218,14 @@ template&lt;typename ValueType, typename LayerTraits = convolution_layer_traits&
 
 </div>
 </div>
-<a class="anchor" id="a747e95b6530d029de9ddcfd92cb0317a"></a>
+<a class="anchor" id="a5042d4aa0d40a1f1b719340eb5e62edc"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType, typename LayerTraits = convolution_layer_traits&lt;ValueType&gt;&gt; </div>
+template&lt;typename ValueType , typename Options  = typename convolution::options&lt;&gt;, typename Extrinsics  = typename convolution::extrinsics&lt;ValueType, Options&gt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">typedef filter_traits&lt;ValueType, typename LayerTraits::FilterTraits&gt; <a class="el" href="classffnn_1_1layer_1_1_convolution.html">ffnn::layer::Convolution</a>&lt; ValueType, LayerTraits &gt;::<a class="el" href="classffnn_1_1layer_1_1_convolution.html#a747e95b6530d029de9ddcfd92cb0317a">FilterTraits</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Filter traits standardization. </p>
-
-</div>
-</div>
-<a class="anchor" id="a992ae89b4a496563a3a7578d522a8f04"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename ValueType, typename LayerTraits = convolution_layer_traits&lt;ValueType&gt;&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef Filter&lt;ValueType, <a class="el" href="classffnn_1_1layer_1_1_convolution.html#a747e95b6530d029de9ddcfd92cb0317a">FilterTraits</a>&gt; <a class="el" href="classffnn_1_1layer_1_1_convolution.html">ffnn::layer::Convolution</a>&lt; ValueType, LayerTraits &gt;::<a class="el" href="classffnn_1_1layer_1_1_convolution.html#a992ae89b4a496563a3a7578d522a8f04">FilterType</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Receptive-volume type standardization. </p>
-
-</div>
-</div>
-<a class="anchor" id="a80b64b079d5e7d5a69779574989e8cce"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename ValueType, typename LayerTraits = convolution_layer_traits&lt;ValueType&gt;&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef boost::multi_array&lt;ValueType*, 2&gt; <a class="el" href="classffnn_1_1layer_1_1_convolution.html">ffnn::layer::Convolution</a>&lt; ValueType, LayerTraits &gt;::<a class="el" href="classffnn_1_1layer_1_1_convolution.html#a80b64b079d5e7d5a69779574989e8cce">ForwardValueMapType</a></td>
+          <td class="memname">typedef Extrinsics::ForwardMapType <a class="el" href="classffnn_1_1layer_1_1_convolution.html">ffnn::layer::Convolution</a>&lt; ValueType, Options, Extrinsics &gt;::<a class="el" href="classffnn_1_1layer_1_1_convolution.html#a5042d4aa0d40a1f1b719340eb5e62edc">ForwardMapType</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -273,14 +234,14 @@ template&lt;typename ValueType, typename LayerTraits = convolution_layer_traits&
 
 </div>
 </div>
-<a class="anchor" id="a56d7e87a813fbd9954d283c0f7a32f9d"></a>
+<a class="anchor" id="a2daee819da77dc38cb3861397a02903c"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType, typename LayerTraits = convolution_layer_traits&lt;ValueType&gt;&gt; </div>
+template&lt;typename ValueType , typename Options  = typename convolution::options&lt;&gt;, typename Extrinsics  = typename convolution::extrinsics&lt;ValueType, Options&gt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">typedef <a class="el" href="classffnn_1_1optimizer_1_1_optimizer.html">optimizer::Optimizer</a>&lt;<a class="el" href="classffnn_1_1layer_1_1_convolution.html#acbe0dcc4d5e3c8e65b4cd2677beca126">SelfType</a>&gt; <a class="el" href="classffnn_1_1layer_1_1_convolution.html">ffnn::layer::Convolution</a>&lt; ValueType, LayerTraits &gt;::<a class="el" href="classffnn_1_1layer_1_1_convolution.html#a56d7e87a813fbd9954d283c0f7a32f9d">OptimizerType</a></td>
+          <td class="memname">typedef <a class="el" href="classffnn_1_1optimizer_1_1_optimizer.html">optimizer::Optimizer</a>&lt;<a class="el" href="classffnn_1_1layer_1_1_convolution.html#ac3985357df433360d75f39353faae600">SelfType</a>&gt; <a class="el" href="classffnn_1_1layer_1_1_convolution.html">ffnn::layer::Convolution</a>&lt; ValueType, Options, Extrinsics &gt;::<a class="el" href="classffnn_1_1layer_1_1_convolution.html#a2daee819da77dc38cb3861397a02903c">OptimizerType</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -289,14 +250,30 @@ template&lt;typename ValueType, typename LayerTraits = convolution_layer_traits&
 
 </div>
 </div>
-<a class="anchor" id="acbe0dcc4d5e3c8e65b4cd2677beca126"></a>
+<a class="anchor" id="ad66f693126a5a4b3cc7398f3be7c22a7"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType, typename LayerTraits = convolution_layer_traits&lt;ValueType&gt;&gt; </div>
+template&lt;typename ValueType , typename Options  = typename convolution::options&lt;&gt;, typename Extrinsics  = typename convolution::extrinsics&lt;ValueType, Options&gt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classffnn_1_1layer_1_1_convolution.html">ffnn::layer::Convolution</a>&lt; ValueType, LayerTraits &gt;::<a class="el" href="classffnn_1_1layer_1_1_convolution.html#acbe0dcc4d5e3c8e65b4cd2677beca126">SelfType</a> =  <a class="el" href="classffnn_1_1layer_1_1_convolution.html">Convolution</a>&lt;ValueType, LayerTraits&gt;</td>
+          <td class="memname">typedef Extrinsics::FilterType <a class="el" href="classffnn_1_1layer_1_1_convolution.html">ffnn::layer::Convolution</a>&lt; ValueType, Options, Extrinsics &gt;::<a class="el" href="classffnn_1_1layer_1_1_convolution.html#ad66f693126a5a4b3cc7398f3be7c22a7">ParametersType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Filter parameters type standardization. </p>
+
+</div>
+</div>
+<a class="anchor" id="ac3985357df433360d75f39353faae600"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ValueType , typename Options  = typename convolution::options&lt;&gt;, typename Extrinsics  = typename convolution::extrinsics&lt;ValueType, Options&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classffnn_1_1layer_1_1_convolution.html">ffnn::layer::Convolution</a>&lt; ValueType, Options, Extrinsics &gt;::<a class="el" href="classffnn_1_1layer_1_1_convolution.html#ac3985357df433360d75f39353faae600">SelfType</a> =  <a class="el" href="classffnn_1_1layer_1_1_convolution.html">Convolution</a>&lt;ValueType, Options, Extrinsics&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -305,14 +282,14 @@ template&lt;typename ValueType, typename LayerTraits = convolution_layer_traits&
 
 </div>
 </div>
-<a class="anchor" id="a70e1c8cd31ce4b5eef308c4b036d8393"></a>
+<a class="anchor" id="ab76070ee3cc7b42325f46bc3bc86bf5f"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType, typename LayerTraits = convolution_layer_traits&lt;ValueType&gt;&gt; </div>
+template&lt;typename ValueType , typename Options  = typename convolution::options&lt;&gt;, typename Extrinsics  = typename convolution::extrinsics&lt;ValueType, Options&gt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">typedef LayerTraits::HiddenLayerType::ShapeType <a class="el" href="classffnn_1_1layer_1_1_convolution.html">ffnn::layer::Convolution</a>&lt; ValueType, LayerTraits &gt;::<a class="el" href="classffnn_1_1layer_1_1_convolution.html#a70e1c8cd31ce4b5eef308c4b036d8393">ShapeType</a></td>
+          <td class="memname">typedef BaseType::ShapeType <a class="el" href="classffnn_1_1layer_1_1_convolution.html">ffnn::layer::Convolution</a>&lt; ValueType, Options, Extrinsics &gt;::<a class="el" href="classffnn_1_1layer_1_1_convolution.html#ab76070ee3cc7b42325f46bc3bc86bf5f">ShapeType</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -322,17 +299,17 @@ template&lt;typename ValueType, typename LayerTraits = convolution_layer_traits&
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="af6a4efb533e86d240af67a976f9226de"></a>
+<a class="anchor" id="accbc6ed0e52e16e2f8d2a029d68011b5"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType , size_type HeightAtCompileTime, size_type WidthAtCompileTime, size_type DepthAtCompileTime, size_type FilterHeightAtCompileTime, size_type FilterWidthAtCompileTime, size_type FilterDepthAtCompileTime, size_type StrideAtCompileTime, EmbeddingMode Mode, typename _HiddenLayerShape &gt; </div>
+template&lt;typename ValueType , typename Options , typename Extrinsics &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classffnn_1_1layer_1_1_convolution.html">ffnn::layer::Convolution</a>&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterHeightAtCompileTime, FilterWidthAtCompileTime, FilterDepthAtCompileTime, StrideAtCompileTime, Mode, _HiddenLayerShape &gt;::<a class="el" href="classffnn_1_1layer_1_1_convolution.html">Convolution</a> </td>
+          <td class="memname"><a class="el" href="classffnn_1_1layer_1_1_convolution.html">ffnn::layer::Convolution</a>&lt; ValueType, Options, Extrinsics &gt;::<a class="el" href="classffnn_1_1layer_1_1_convolution.html">Convolution</a> </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classffnn_1_1layer_1_1_convolution_1_1_configuration.html">Configuration</a> &amp;&#160;</td>
           <td class="paramname"><em>config</em> = <code><a class="el" href="classffnn_1_1layer_1_1_convolution_1_1_configuration.html">Configuration</a>()</code></td><td>)</td>
@@ -350,17 +327,17 @@ template&lt;typename ValueType , size_type HeightAtCompileTime, size_type WidthA
 
 </div>
 </div>
-<a class="anchor" id="a12fa384c801699f967ecffcb66ce9c4c"></a>
+<a class="anchor" id="a82301134ee4b438304163fc62d3e800f"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType , size_type HeightAtCompileTime, size_type WidthAtCompileTime, size_type DepthAtCompileTime, size_type FilterHeightAtCompileTime, size_type FilterWidthAtCompileTime, size_type FilterDepthAtCompileTime, size_type StrideAtCompileTime, EmbeddingMode Mode, typename _HiddenLayerShape &gt; </div>
+template&lt;typename ValueType , typename Options , typename Extrinsics &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classffnn_1_1layer_1_1_convolution.html">ffnn::layer::Convolution</a>&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterHeightAtCompileTime, FilterWidthAtCompileTime, FilterDepthAtCompileTime, StrideAtCompileTime, Mode, _HiddenLayerShape &gt;::~<a class="el" href="classffnn_1_1layer_1_1_convolution.html">Convolution</a> </td>
+          <td class="memname"><a class="el" href="classffnn_1_1layer_1_1_convolution.html">ffnn::layer::Convolution</a>&lt; ValueType, Options, Extrinsics &gt;::~<a class="el" href="classffnn_1_1layer_1_1_convolution.html">Convolution</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -376,14 +353,14 @@ template&lt;typename ValueType , size_type HeightAtCompileTime, size_type WidthA
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a624f3e53008a42dd242f550d8c4ee914"></a>
+<a class="anchor" id="a094e10487239ea4eb043347211180f00"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType , size_type HeightAtCompileTime, size_type WidthAtCompileTime, size_type DepthAtCompileTime, size_type FilterHeightAtCompileTime, size_type FilterWidthAtCompileTime, size_type FilterDepthAtCompileTime, size_type StrideAtCompileTime, EmbeddingMode Mode, typename _HiddenLayerShape &gt; </div>
+template&lt;typename ValueType , typename Options , typename Extrinsics &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classffnn_1_1layer_1_1_convolution.html">ffnn::layer::Convolution</a>&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterHeightAtCompileTime, FilterWidthAtCompileTime, FilterDepthAtCompileTime, StrideAtCompileTime, Mode, _HiddenLayerShape &gt;::backward </td>
+          <td class="memname">bool <a class="el" href="classffnn_1_1layer_1_1_convolution.html">ffnn::layer::Convolution</a>&lt; ValueType, Options, Extrinsics &gt;::backward </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -406,14 +383,14 @@ Will throw if an optimizer has not been associated with this layer </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a86d3151b859c361501f83da01f53b3b9"></a>
+<a class="anchor" id="a5f6bf2bfc15a8020b11dabff0d03eac2"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType , size_type HeightAtCompileTime, size_type WidthAtCompileTime, size_type DepthAtCompileTime, size_type FilterHeightAtCompileTime, size_type FilterWidthAtCompileTime, size_type FilterDepthAtCompileTime, size_type StrideAtCompileTime, EmbeddingMode Mode, typename _HiddenLayerShape &gt; </div>
+template&lt;typename ValueType , typename Options , typename Extrinsics &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classffnn_1_1layer_1_1_convolution.html">ffnn::layer::Convolution</a>&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterHeightAtCompileTime, FilterWidthAtCompileTime, FilterDepthAtCompileTime, StrideAtCompileTime, Mode, _HiddenLayerShape &gt;::forward </td>
+          <td class="memname">bool <a class="el" href="classffnn_1_1layer_1_1_convolution.html">ffnn::layer::Convolution</a>&lt; ValueType, Options, Extrinsics &gt;::forward </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -432,17 +409,17 @@ template&lt;typename ValueType , size_type HeightAtCompileTime, size_type WidthA
 
 </div>
 </div>
-<a class="anchor" id="ae558267ef378751f9b084f0eb4b61a12"></a>
+<a class="anchor" id="a8c7ea1047ee3f09deadf87ad267284ab"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType, typename LayerTraits = convolution_layer_traits&lt;ValueType&gt;&gt; </div>
+template&lt;typename ValueType , typename Options  = typename convolution::options&lt;&gt;, typename Extrinsics  = typename convolution::extrinsics&lt;ValueType, Options&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const ParametersType&amp; <a class="el" href="classffnn_1_1layer_1_1_convolution.html">ffnn::layer::Convolution</a>&lt; ValueType, LayerTraits &gt;::getParameters </td>
+          <td class="memname">const <a class="el" href="classffnn_1_1layer_1_1_convolution.html#ad66f693126a5a4b3cc7398f3be7c22a7">ParametersType</a>&amp; <a class="el" href="classffnn_1_1layer_1_1_convolution.html">ffnn::layer::Convolution</a>&lt; ValueType, Options, Extrinsics &gt;::getParameters </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -455,16 +432,19 @@ template&lt;typename ValueType, typename LayerTraits = convolution_layer_traits&
 </table>
 </div><div class="memdoc">
 
+<p>Exposes layer parameters. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classffnn_1_1layer_1_1_convolution.html" title="A convolution layer. ">Convolution</a> filter parameters </dd></dl>
+
 </div>
 </div>
-<a class="anchor" id="a39ad1c05a0eac019e7c5c09a717dedca"></a>
+<a class="anchor" id="ab3f6d731184032f58b05651d63e22d14"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType , size_type HeightAtCompileTime, size_type WidthAtCompileTime, size_type DepthAtCompileTime, size_type FilterHeightAtCompileTime, size_type FilterWidthAtCompileTime, size_type FilterDepthAtCompileTime, size_type StrideAtCompileTime, EmbeddingMode Mode, typename _HiddenLayerShape &gt; </div>
+template&lt;typename ValueType , typename Options , typename Extrinsics &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classffnn_1_1layer_1_1_convolution.html">ffnn::layer::Convolution</a>&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterHeightAtCompileTime, FilterWidthAtCompileTime, FilterDepthAtCompileTime, StrideAtCompileTime, Mode, _HiddenLayerShape &gt;::initialize </td>
+          <td class="memname">bool <a class="el" href="classffnn_1_1layer_1_1_convolution.html">ffnn::layer::Convolution</a>&lt; ValueType, Options, Extrinsics &gt;::initialize </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -484,17 +464,17 @@ template&lt;typename ValueType , size_type HeightAtCompileTime, size_type WidthA
 
 </div>
 </div>
-<a class="anchor" id="a7281b7f4edcc219e5e1bf6ee31e22cfd"></a>
+<a class="anchor" id="af002187ef6ca18c4071d88c9fb1bb002"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType, typename LayerTraits = convolution_layer_traits&lt;ValueType&gt;&gt; </div>
+template&lt;typename ValueType , typename Options , typename Extrinsics &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classffnn_1_1layer_1_1_convolution.html">ffnn::layer::Convolution</a>&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterHeightAtCompileTime, FilterWidthAtCompileTime, FilterDepthAtCompileTime, StrideAtCompileTime, Mode, _HiddenLayerShape &gt;::load </td>
+          <td class="memname">void <a class="el" href="classffnn_1_1layer_1_1_convolution.html">ffnn::layer::Convolution</a>&lt; ValueType, Options, Extrinsics &gt;::load </td>
           <td>(</td>
           <td class="paramtype">InputArchive &amp;&#160;</td>
           <td class="paramname"><em>ar</em>, </td>
@@ -523,25 +503,25 @@ template&lt;typename ValueType, typename LayerTraits = convolution_layer_traits&
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classffnn_1_1layer_1_1_convolution_a7281b7f4edcc219e5e1bf6ee31e22cfd_cgraph.png" border="0" usemap="#classffnn_1_1layer_1_1_convolution_a7281b7f4edcc219e5e1bf6ee31e22cfd_cgraph" alt=""/></div>
-<map name="classffnn_1_1layer_1_1_convolution_a7281b7f4edcc219e5e1bf6ee31e22cfd_cgraph" id="classffnn_1_1layer_1_1_convolution_a7281b7f4edcc219e5e1bf6ee31e22cfd_cgraph">
+<div class="center"><img src="classffnn_1_1layer_1_1_convolution_af002187ef6ca18c4071d88c9fb1bb002_cgraph.png" border="0" usemap="#classffnn_1_1layer_1_1_convolution_af002187ef6ca18c4071d88c9fb1bb002_cgraph" alt=""/></div>
+<map name="classffnn_1_1layer_1_1_convolution_af002187ef6ca18c4071d88c9fb1bb002_cgraph" id="classffnn_1_1layer_1_1_convolution_af002187ef6ca18c4071d88c9fb1bb002_cgraph">
 <area shape="rect" id="node2" href="dense__base__addons_8h.html#a68dbd347886624cd725b8a26e5242ee2" title="load" alt="" coords="211,12,258,39"/></map>
 </div>
 </p>
 
 </div>
 </div>
-<a class="anchor" id="a14f7de8a42bb068019f6bdab62e6d332"></a>
+<a class="anchor" id="a06e3973928e3b0f7ef8b0c7aabcf93c8"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType, typename LayerTraits = convolution_layer_traits&lt;ValueType&gt;&gt; </div>
+template&lt;typename ValueType , typename Options , typename Extrinsics &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classffnn_1_1layer_1_1_convolution.html">ffnn::layer::Convolution</a>&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterHeightAtCompileTime, FilterWidthAtCompileTime, FilterDepthAtCompileTime, StrideAtCompileTime, Mode, _HiddenLayerShape &gt;::save </td>
+          <td class="memname">void <a class="el" href="classffnn_1_1layer_1_1_convolution.html">ffnn::layer::Convolution</a>&lt; ValueType, Options, Extrinsics &gt;::save </td>
           <td>(</td>
           <td class="paramtype">OutputArchive &amp;&#160;</td>
           <td class="paramname"><em>ar</em>, </td>
@@ -570,22 +550,22 @@ template&lt;typename ValueType, typename LayerTraits = convolution_layer_traits&
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classffnn_1_1layer_1_1_convolution_a14f7de8a42bb068019f6bdab62e6d332_cgraph.png" border="0" usemap="#classffnn_1_1layer_1_1_convolution_a14f7de8a42bb068019f6bdab62e6d332_cgraph" alt=""/></div>
-<map name="classffnn_1_1layer_1_1_convolution_a14f7de8a42bb068019f6bdab62e6d332_cgraph" id="classffnn_1_1layer_1_1_convolution_a14f7de8a42bb068019f6bdab62e6d332_cgraph">
+<div class="center"><img src="classffnn_1_1layer_1_1_convolution_a06e3973928e3b0f7ef8b0c7aabcf93c8_cgraph.png" border="0" usemap="#classffnn_1_1layer_1_1_convolution_a06e3973928e3b0f7ef8b0c7aabcf93c8_cgraph" alt=""/></div>
+<map name="classffnn_1_1layer_1_1_convolution_a06e3973928e3b0f7ef8b0c7aabcf93c8_cgraph" id="classffnn_1_1layer_1_1_convolution_a06e3973928e3b0f7ef8b0c7aabcf93c8_cgraph">
 <area shape="rect" id="node2" href="dense__base__addons_8h.html#ab948859788aa671e575e410654e07f16" title="save" alt="" coords="211,12,261,39"/></map>
 </div>
 </p>
 
 </div>
 </div>
-<a class="anchor" id="a2d75dbeeff74a61dd8bb54accf56d5d9"></a>
+<a class="anchor" id="a66975d31de2fc164cbc9ae284f0d67f7"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType , size_type HeightAtCompileTime, size_type WidthAtCompileTime, size_type DepthAtCompileTime, size_type FilterHeightAtCompileTime, size_type FilterWidthAtCompileTime, size_type FilterDepthAtCompileTime, size_type StrideAtCompileTime, EmbeddingMode Mode, typename _HiddenLayerShape &gt; </div>
+template&lt;typename ValueType , typename Options , typename Extrinsics &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classffnn_1_1layer_1_1_convolution.html">ffnn::layer::Convolution</a>&lt; ValueType, HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, FilterHeightAtCompileTime, FilterWidthAtCompileTime, FilterDepthAtCompileTime, StrideAtCompileTime, Mode, _HiddenLayerShape &gt;::update </td>
+          <td class="memname">bool <a class="el" href="classffnn_1_1layer_1_1_convolution.html">ffnn::layer::Convolution</a>&lt; ValueType, Options, Extrinsics &gt;::update </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -613,7 +593,7 @@ template&lt;typename ValueType , size_type HeightAtCompileTime, size_type WidthA
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed May 31 2017 23:57:13 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 2 2017 00:25:19 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

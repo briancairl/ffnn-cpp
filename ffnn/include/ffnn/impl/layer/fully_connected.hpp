@@ -185,7 +185,7 @@ template<typename ValueType,
 void FullyConnected<TARGS>::save(typename FullyConnected<TARGS>::OutputArchive& ar,
                                  typename FullyConnected<TARGS>::VersionType version) const
 {
-  ffnn::io::signature::apply<FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape>>(ar);
+  ffnn::internal::signature::apply<FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape>>(ar);
   Base::save(ar, version);
 
   // Save weight/bias matrix
@@ -202,7 +202,7 @@ template<typename ValueType,
 void FullyConnected<TARGS>::load(typename FullyConnected<TARGS>::InputArchive& ar,
                                  typename FullyConnected<TARGS>::VersionType version)
 {
-  ffnn::io::signature::check<FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape>>(ar);
+  ffnn::internal::signature::check<FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape>>(ar);
   Base::load(ar, version);
 
   // Save weight/bias matrix

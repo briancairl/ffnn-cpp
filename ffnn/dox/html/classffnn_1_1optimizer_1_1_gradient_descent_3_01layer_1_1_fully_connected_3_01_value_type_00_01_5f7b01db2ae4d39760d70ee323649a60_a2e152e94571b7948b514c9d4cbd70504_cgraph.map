@@ -1,6 +1,4 @@
 <map id="ffnn::optimizer::GradientDescent&lt; layer::FullyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt; &gt;::initialize" name="ffnn::optimizer::GradientDescent&lt; layer::FullyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt; &gt;::initialize">
 <area shape="rect" id="node2" href="$classffnn_1_1layer_1_1_layer.html#a2166b32e32c3f4e979ed7454ddb5817f" title="Returns true if layer has been initialized. " alt="" coords="299,5,419,46"/>
 <area shape="rect" id="node3" href="$structffnn_1_1layer_1_1_shape.html#a6e8ffdbc3feeb20a1f246b3ec56e40ca" title="ffnn::layer::Shape\l::size" alt="" coords="296,70,421,111"/>
-<area shape="rect" id="node4" href="$namespaceffnn_1_1layer.html#a311eb389a31756b22de7d4ca5b64b575" title="Multiplies a pair of sizes if all sizes are static. " alt="" coords="469,70,624,111"/>
-<area shape="rect" id="node5" href="$namespaceffnn_1_1layer.html#a83ba223c7b7eb8e3d926b98b266f24c8" title="Checks if size represents a dynamic size. " alt="" coords="672,77,827,104"/>
 </map>

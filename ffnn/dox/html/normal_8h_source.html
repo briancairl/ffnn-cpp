@@ -104,72 +104,79 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;boost/random/normal_distribution.hpp&gt;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;boost/math/special_functions/erf.hpp&gt;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace </span>ffnn</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">namespace </span>distribution</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType&gt;</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="structffnn_1_1distribution_1_1_standard_normal_parameters.html">   23</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structffnn_1_1distribution_1_1_standard_normal_parameters.html">StandardNormalParameters</a></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">// FFNN</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="assert_8h.html">ffnn/assert.h</a>&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="assert_8h.html">ffnn/assert.h</a>&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">namespace </span>ffnn</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">namespace </span>distribution</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="structffnn_1_1distribution_1_1_standard_normal_parameters.html#a94d8bae101a2203451f19d19cf4f5ba0">   25</a></span>&#160;  constexpr <span class="keyword">static</span> <span class="keyword">const</span> ValueType <a class="code" href="structffnn_1_1distribution_1_1_standard_normal_parameters.html#a94d8bae101a2203451f19d19cf4f5ba0">mean</a>  = 0.0;</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="structffnn_1_1distribution_1_1_standard_normal_parameters.html#a67fa6f41f870e9cb7ac71df8ddbe8155">   26</a></span>&#160;  constexpr <span class="keyword">static</span> <span class="keyword">const</span> ValueType <a class="code" href="structffnn_1_1distribution_1_1_standard_normal_parameters.html#a67fa6f41f870e9cb7ac71df8ddbe8155">scale</a> = 1.0;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;};</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;         <span class="keyword">typename</span> DefaultParameters = <a class="code" href="structffnn_1_1distribution_1_1_standard_normal_parameters.html">StandardNormalParameters&lt;ValueType&gt;</a>&gt;</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classffnn_1_1distribution_1_1_normal.html">   31</a></span>&#160;<span class="keyword">class </span><a class="code" href="classffnn_1_1distribution_1_1_normal.html">Normal</a></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classffnn_1_1distribution_1_1_normal.html#a30ff73a118402782feff21954e71b3a5">   35</a></span>&#160;  <span class="keyword">typedef</span> boost::normal_distribution&lt;ValueType&gt; <a class="code" href="classffnn_1_1distribution_1_1_normal.html#a30ff73a118402782feff21954e71b3a5">DistributionType</a>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classffnn_1_1distribution_1_1_normal.html#a7e672cbc0b3958c045c9518d5a0a2850">   38</a></span>&#160;  <span class="keyword">typedef</span> boost::variate_generator&lt;boost::mt19937&amp;, DistributionType&gt; <a class="code" href="classffnn_1_1distribution_1_1_normal.html#a7e672cbc0b3958c045c9518d5a0a2850">GeneratorType</a>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classffnn_1_1distribution_1_1_normal.html#ae5838a524f4cbb4723c7b847da48748e">   40</a></span>&#160;  <a class="code" href="classffnn_1_1distribution_1_1_normal.html#ae5838a524f4cbb4723c7b847da48748e">Normal</a>(ValueType mean  = DefaultParameters::mean,</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;         ValueType scale = DefaultParameters::scale) : </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    distribution_(mean, scale)</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="assert_8h.html#a0dd452510e5d75d0f71f52ed14143c40">FFNN_ASSERT_MSG</a>(scale &gt; 0, <span class="stringliteral">&quot;Scale (variance) should be positive&quot;</span>);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  }</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classffnn_1_1distribution_1_1_normal.html#abaaeca05e27923d319a452b78dda379b">   50</a></span>&#160;  ValueType <a class="code" href="classffnn_1_1distribution_1_1_normal.html#abaaeca05e27923d319a452b78dda379b">generate</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">static</span> boost::mt19937 rng;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">static</span> <a class="code" href="classffnn_1_1distribution_1_1_normal.html#a7e672cbc0b3958c045c9518d5a0a2850">GeneratorType</a> gen(rng, distribution_);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">return</span> gen();</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  }</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classffnn_1_1distribution_1_1_normal.html#aff824a6924a11a83c0ac419190e9b971">   62</a></span>&#160;  ValueType <a class="code" href="classffnn_1_1distribution_1_1_normal.html#aff824a6924a11a83c0ac419190e9b971">cdf</a>(<span class="keyword">const</span> ValueType&amp; value)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">  </span>{</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">const</span> ValueType x((value - distribution_.mean()) / distribution_.sigma());</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">return</span> boost::math::erfc(-M_SQRT1_2 * x) / 2.0;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <a class="code" href="classffnn_1_1distribution_1_1_normal.html#a30ff73a118402782feff21954e71b3a5">DistributionType</a> distribution_;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;};</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType&gt;</div>
-<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="structffnn_1_1distribution_1_1_standard_normal.html">   73</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structffnn_1_1distribution_1_1_standard_normal.html">StandardNormal</a> : <a class="code" href="classffnn_1_1distribution_1_1_normal.html">Normal</a>&lt;ValueType&gt; {};</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}  <span class="comment">// namespace distribution</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}  <span class="comment">// namespace ffnn</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#endif  // FFNN_DISTRIBUTION_NORMAL_H</span></div>
-<div class="ttc" id="structffnn_1_1distribution_1_1_standard_normal_html"><div class="ttname"><a href="structffnn_1_1distribution_1_1_standard_normal.html">ffnn::distribution::StandardNormal</a></div><div class="ttdef"><b>Definition:</b> normal.h:73</div></div>
-<div class="ttc" id="classffnn_1_1distribution_1_1_normal_html_a30ff73a118402782feff21954e71b3a5"><div class="ttname"><a href="classffnn_1_1distribution_1_1_normal.html#a30ff73a118402782feff21954e71b3a5">ffnn::distribution::Normal::DistributionType</a></div><div class="ttdeci">boost::normal_distribution&lt; ValueType &gt; DistributionType</div><div class="ttdoc">Distribution type standardization. </div><div class="ttdef"><b>Definition:</b> normal.h:35</div></div>
-<div class="ttc" id="classffnn_1_1distribution_1_1_normal_html_aff824a6924a11a83c0ac419190e9b971"><div class="ttname"><a href="classffnn_1_1distribution_1_1_normal.html#aff824a6924a11a83c0ac419190e9b971">ffnn::distribution::Normal::cdf</a></div><div class="ttdeci">ValueType cdf(const ValueType &amp;value) const </div><div class="ttdoc">Computes CDF of distribution at specified point. </div><div class="ttdef"><b>Definition:</b> normal.h:62</div></div>
-<div class="ttc" id="structffnn_1_1distribution_1_1_standard_normal_parameters_html_a67fa6f41f870e9cb7ac71df8ddbe8155"><div class="ttname"><a href="structffnn_1_1distribution_1_1_standard_normal_parameters.html#a67fa6f41f870e9cb7ac71df8ddbe8155">ffnn::distribution::StandardNormalParameters::scale</a></div><div class="ttdeci">static constexpr const ValueType scale</div><div class="ttdef"><b>Definition:</b> normal.h:26</div></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType&gt;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="structffnn_1_1distribution_1_1standard__normal.html">   27</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structffnn_1_1distribution_1_1standard__normal.html">standard_normal</a></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="structffnn_1_1distribution_1_1standard__normal.html#a3bc379b843223a295fa325afda95247f">   29</a></span>&#160;  constexpr <span class="keyword">static</span> <span class="keyword">const</span> ValueType <a class="code" href="structffnn_1_1distribution_1_1standard__normal.html#a3bc379b843223a295fa325afda95247f">mean</a>  = 0.0;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="structffnn_1_1distribution_1_1standard__normal.html#a9df4d739f23c173e38d278f0a740c4c8">   30</a></span>&#160;  constexpr <span class="keyword">static</span> <span class="keyword">const</span> ValueType <a class="code" href="structffnn_1_1distribution_1_1standard__normal.html#a9df4d739f23c173e38d278f0a740c4c8">scale</a> = 1.0;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;};</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;         <span class="keyword">typename</span> Options = <a class="code" href="structffnn_1_1distribution_1_1standard__normal.html">standard_normal&lt;ValueType&gt;</a>&gt;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classffnn_1_1distribution_1_1_normal.html">   35</a></span>&#160;<span class="keyword">class </span><a class="code" href="classffnn_1_1distribution_1_1_normal.html">Normal</a> :</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keyword">public</span> <a class="code" href="classffnn_1_1distribution_1_1_distribution.html">Distribution</a>&lt;ValueType&gt;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classffnn_1_1distribution_1_1_normal.html#adde295df2a62b40cbfb9ea9728a72994">   40</a></span>&#160;  <span class="keyword">typedef</span> boost::normal_distribution&lt;ValueType&gt; <a class="code" href="classffnn_1_1distribution_1_1_normal.html#adde295df2a62b40cbfb9ea9728a72994">DistributionType</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classffnn_1_1distribution_1_1_normal.html#a6d8c98f74c7c9fa77fa9caab1061e9b1">   43</a></span>&#160;  <span class="keyword">typedef</span> boost::variate_generator&lt;boost::mt19937&amp;, DistributionType&gt; <a class="code" href="classffnn_1_1distribution_1_1_normal.html#a6d8c98f74c7c9fa77fa9caab1061e9b1">GeneratorType</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classffnn_1_1distribution_1_1_normal.html#a23bc8842e5f532cab3fe40a324a2f600">   45</a></span>&#160;  <a class="code" href="classffnn_1_1distribution_1_1_normal.html#a23bc8842e5f532cab3fe40a324a2f600">Normal</a>(ValueType mean  = Options::mean,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;         ValueType scale = Options::scale) : </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    distribution_(mean, scale)</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="assert_8h.html#a0dd452510e5d75d0f71f52ed14143c40">FFNN_ASSERT_MSG</a>(scale &gt; 0, <span class="stringliteral">&quot;Scale (variance) should be positive&quot;</span>);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classffnn_1_1distribution_1_1_normal.html#ad90aceffa91e82ea29e4928f1aeb1bbe">   55</a></span>&#160;  ValueType <a class="code" href="classffnn_1_1distribution_1_1_normal.html#ad90aceffa91e82ea29e4928f1aeb1bbe">generate</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">  </span>{</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">static</span> boost::mt19937 rng;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">static</span> <a class="code" href="classffnn_1_1distribution_1_1_normal.html#a6d8c98f74c7c9fa77fa9caab1061e9b1">GeneratorType</a> gen(rng, distribution_);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">return</span> gen();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="classffnn_1_1distribution_1_1_normal.html#a416036c5e764a324d354eea47db90115">   67</a></span>&#160;  ValueType <a class="code" href="classffnn_1_1distribution_1_1_normal.html#a416036c5e764a324d354eea47db90115">cdf</a>(<span class="keyword">const</span> ValueType&amp; value)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">  </span>{</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">const</span> ValueType x((value - distribution_.mean()) / distribution_.sigma());</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">return</span> boost::math::erfc(-M_SQRT1_2 * x) / 2.0;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <a class="code" href="classffnn_1_1distribution_1_1_normal.html#adde295df2a62b40cbfb9ea9728a72994">DistributionType</a> distribution_;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;};</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType&gt;</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="structffnn_1_1distribution_1_1_standard_normal.html">   78</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structffnn_1_1distribution_1_1_standard_normal.html">StandardNormal</a> : <a class="code" href="classffnn_1_1distribution_1_1_normal.html">Normal</a>&lt;ValueType&gt; {};</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}  <span class="comment">// namespace distribution</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}  <span class="comment">// namespace ffnn</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#endif  // FFNN_DISTRIBUTION_NORMAL_H</span></div>
+<div class="ttc" id="structffnn_1_1distribution_1_1_standard_normal_html"><div class="ttname"><a href="structffnn_1_1distribution_1_1_standard_normal.html">ffnn::distribution::StandardNormal</a></div><div class="ttdef"><b>Definition:</b> normal.h:78</div></div>
+<div class="ttc" id="classffnn_1_1distribution_1_1_normal_html_a416036c5e764a324d354eea47db90115"><div class="ttname"><a href="classffnn_1_1distribution_1_1_normal.html#a416036c5e764a324d354eea47db90115">ffnn::distribution::Normal::cdf</a></div><div class="ttdeci">ValueType cdf(const ValueType &amp;value) const </div><div class="ttdoc">Computes CDF of distribution at specified point. </div><div class="ttdef"><b>Definition:</b> normal.h:67</div></div>
+<div class="ttc" id="structffnn_1_1distribution_1_1standard__normal_html_a3bc379b843223a295fa325afda95247f"><div class="ttname"><a href="structffnn_1_1distribution_1_1standard__normal.html#a3bc379b843223a295fa325afda95247f">ffnn::distribution::standard_normal::mean</a></div><div class="ttdeci">static constexpr const ValueType mean</div><div class="ttdef"><b>Definition:</b> normal.h:29</div></div>
 <div class="ttc" id="assert_8h_html_a0dd452510e5d75d0f71f52ed14143c40"><div class="ttname"><a href="assert_8h.html#a0dd452510e5d75d0f71f52ed14143c40">FFNN_ASSERT_MSG</a></div><div class="ttdeci">#define FFNN_ASSERT_MSG(cond, msg)</div><div class="ttdef"><b>Definition:</b> assert.h:35</div></div>
-<div class="ttc" id="classffnn_1_1distribution_1_1_normal_html_a7e672cbc0b3958c045c9518d5a0a2850"><div class="ttname"><a href="classffnn_1_1distribution_1_1_normal.html#a7e672cbc0b3958c045c9518d5a0a2850">ffnn::distribution::Normal::GeneratorType</a></div><div class="ttdeci">boost::variate_generator&lt; boost::mt19937 &amp;, DistributionType &gt; GeneratorType</div><div class="ttdoc">Variate generator type standardization. </div><div class="ttdef"><b>Definition:</b> normal.h:38</div></div>
-<div class="ttc" id="structffnn_1_1distribution_1_1_standard_normal_parameters_html_a94d8bae101a2203451f19d19cf4f5ba0"><div class="ttname"><a href="structffnn_1_1distribution_1_1_standard_normal_parameters.html#a94d8bae101a2203451f19d19cf4f5ba0">ffnn::distribution::StandardNormalParameters::mean</a></div><div class="ttdeci">static constexpr const ValueType mean</div><div class="ttdef"><b>Definition:</b> normal.h:25</div></div>
-<div class="ttc" id="classffnn_1_1distribution_1_1_normal_html_ae5838a524f4cbb4723c7b847da48748e"><div class="ttname"><a href="classffnn_1_1distribution_1_1_normal.html#ae5838a524f4cbb4723c7b847da48748e">ffnn::distribution::Normal::Normal</a></div><div class="ttdeci">Normal(ValueType mean=DefaultParameters::mean, ValueType scale=DefaultParameters::scale)</div><div class="ttdef"><b>Definition:</b> normal.h:40</div></div>
-<div class="ttc" id="classffnn_1_1distribution_1_1_normal_html_abaaeca05e27923d319a452b78dda379b"><div class="ttname"><a href="classffnn_1_1distribution_1_1_normal.html#abaaeca05e27923d319a452b78dda379b">ffnn::distribution::Normal::generate</a></div><div class="ttdeci">ValueType generate() const </div><div class="ttdoc">Generates a random value according to given distribution. </div><div class="ttdef"><b>Definition:</b> normal.h:50</div></div>
-<div class="ttc" id="structffnn_1_1distribution_1_1_standard_normal_parameters_html"><div class="ttname"><a href="structffnn_1_1distribution_1_1_standard_normal_parameters.html">ffnn::distribution::StandardNormalParameters</a></div><div class="ttdef"><b>Definition:</b> normal.h:23</div></div>
-<div class="ttc" id="classffnn_1_1distribution_1_1_normal_html"><div class="ttname"><a href="classffnn_1_1distribution_1_1_normal.html">ffnn::distribution::Normal</a></div><div class="ttdef"><b>Definition:</b> normal.h:31</div></div>
+<div class="ttc" id="assert_8h_html"><div class="ttname"><a href="assert_8h.html">assert.h</a></div></div>
+<div class="ttc" id="classffnn_1_1distribution_1_1_normal_html_a6d8c98f74c7c9fa77fa9caab1061e9b1"><div class="ttname"><a href="classffnn_1_1distribution_1_1_normal.html#a6d8c98f74c7c9fa77fa9caab1061e9b1">ffnn::distribution::Normal::GeneratorType</a></div><div class="ttdeci">boost::variate_generator&lt; boost::mt19937 &amp;, DistributionType &gt; GeneratorType</div><div class="ttdoc">Variate generator type standardization. </div><div class="ttdef"><b>Definition:</b> normal.h:43</div></div>
+<div class="ttc" id="structffnn_1_1distribution_1_1standard__normal_html_a9df4d739f23c173e38d278f0a740c4c8"><div class="ttname"><a href="structffnn_1_1distribution_1_1standard__normal.html#a9df4d739f23c173e38d278f0a740c4c8">ffnn::distribution::standard_normal::scale</a></div><div class="ttdeci">static constexpr const ValueType scale</div><div class="ttdef"><b>Definition:</b> normal.h:30</div></div>
+<div class="ttc" id="classffnn_1_1distribution_1_1_normal_html_adde295df2a62b40cbfb9ea9728a72994"><div class="ttname"><a href="classffnn_1_1distribution_1_1_normal.html#adde295df2a62b40cbfb9ea9728a72994">ffnn::distribution::Normal::DistributionType</a></div><div class="ttdeci">boost::normal_distribution&lt; ValueType &gt; DistributionType</div><div class="ttdoc">Distribution type standardization. </div><div class="ttdef"><b>Definition:</b> normal.h:40</div></div>
+<div class="ttc" id="structffnn_1_1distribution_1_1standard__normal_html"><div class="ttname"><a href="structffnn_1_1distribution_1_1standard__normal.html">ffnn::distribution::standard_normal</a></div><div class="ttdef"><b>Definition:</b> normal.h:27</div></div>
+<div class="ttc" id="classffnn_1_1distribution_1_1_normal_html_ad90aceffa91e82ea29e4928f1aeb1bbe"><div class="ttname"><a href="classffnn_1_1distribution_1_1_normal.html#ad90aceffa91e82ea29e4928f1aeb1bbe">ffnn::distribution::Normal::generate</a></div><div class="ttdeci">ValueType generate() const </div><div class="ttdoc">Generates a random value according to given distribution. </div><div class="ttdef"><b>Definition:</b> normal.h:55</div></div>
+<div class="ttc" id="classffnn_1_1distribution_1_1_distribution_html"><div class="ttname"><a href="classffnn_1_1distribution_1_1_distribution.html">ffnn::distribution::Distribution</a></div><div class="ttdef"><b>Definition:</b> distribution.h:24</div></div>
+<div class="ttc" id="classffnn_1_1distribution_1_1_normal_html_a23bc8842e5f532cab3fe40a324a2f600"><div class="ttname"><a href="classffnn_1_1distribution_1_1_normal.html#a23bc8842e5f532cab3fe40a324a2f600">ffnn::distribution::Normal::Normal</a></div><div class="ttdeci">Normal(ValueType mean=Options::mean, ValueType scale=Options::scale)</div><div class="ttdef"><b>Definition:</b> normal.h:45</div></div>
+<div class="ttc" id="classffnn_1_1distribution_1_1_normal_html"><div class="ttname"><a href="classffnn_1_1distribution_1_1_normal.html">ffnn::distribution::Normal</a></div><div class="ttdef"><b>Definition:</b> normal.h:35</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed May 31 2017 23:57:13 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 2 2017 00:25:18 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

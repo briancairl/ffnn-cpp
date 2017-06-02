@@ -1,0 +1,91 @@
+\hypertarget{structffnn_1_1layer_1_1hidden_1_1extrinsics}{\section{ffnn\-:\-:layer\-:\-:hidden\-:\-:extrinsics$<$ Value\-Type, Options $>$ Struct Template Reference}
+\label{structffnn_1_1layer_1_1hidden_1_1extrinsics}\index{ffnn\-::layer\-::hidden\-::extrinsics$<$ Value\-Type, Options $>$@{ffnn\-::layer\-::hidden\-::extrinsics$<$ Value\-Type, Options $>$}}
+}
+
+
+Describes types based on compile-\/time options.  
+
+
+
+
+{\ttfamily \#include \char`\"{}hidden.\-h\char`\"{}}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Eigen\-::\-Matrix\\*
+$<$ Value\-Type, \\*
+Options\-::input\-\_\-height, \\*
+Options\-::input\-\_\-width, \\*
+Options\-::input\-\_\-data\-\_\-ordering $>$ \hyperlink{structffnn_1_1layer_1_1hidden_1_1extrinsics_af5299a48a27726ba0d407ecb28890092}{Input\-Block\-Type}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classffnn_1_1layer_1_1_input}{Input} block type standardization. \end{DoxyCompactList}\item 
+typedef Eigen\-::\-Matrix\\*
+$<$ Value\-Type, \\*
+Options\-::output\-\_\-height, \\*
+Options\-::output\-\_\-width, \\*
+Options\-::output\-\_\-data\-\_\-ordering $>$ \hyperlink{structffnn_1_1layer_1_1hidden_1_1extrinsics_ac5ca721e2e5843ddcf90351b59c4e56e}{Output\-Block\-Type}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classffnn_1_1layer_1_1_output}{Output} block type standardization. \end{DoxyCompactList}\item 
+typedef std\-::conditional\\*
+$<$ std\-::is\-\_\-floating\-\_\-point\\*
+$<$ Value\-Type $>$\-::value, \\*
+Eigen\-::\-Map$<$ \hyperlink{structffnn_1_1layer_1_1hidden_1_1extrinsics_af5299a48a27726ba0d407ecb28890092}{Input\-Block\-Type}, 16 $>$\\*
+, Eigen\-::\-Map$<$ \hyperlink{structffnn_1_1layer_1_1hidden_1_1extrinsics_af5299a48a27726ba0d407ecb28890092}{Input\-Block\-Type} $>$\\*
+ $>$\-::type \hyperlink{structffnn_1_1layer_1_1hidden_1_1extrinsics_a62256f740b1aaf253c9992d15cda7eab}{Input\-Mapping\-Type}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classffnn_1_1layer_1_1_input}{Input} block-\/mapping type standardization. \end{DoxyCompactList}\item 
+typedef std\-::conditional\\*
+$<$ std\-::is\-\_\-floating\-\_\-point\\*
+$<$ Value\-Type $>$\-::value, \\*
+Eigen\-::\-Map$<$ \hyperlink{structffnn_1_1layer_1_1hidden_1_1extrinsics_ac5ca721e2e5843ddcf90351b59c4e56e}{Output\-Block\-Type}, 16 $>$\\*
+, Eigen\-::\-Map$<$ \hyperlink{structffnn_1_1layer_1_1hidden_1_1extrinsics_ac5ca721e2e5843ddcf90351b59c4e56e}{Output\-Block\-Type} $>$\\*
+ $>$\-::type \hyperlink{structffnn_1_1layer_1_1hidden_1_1extrinsics_a886b2e28314f8641f14407a84af8132c}{Output\-Mapping\-Type}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classffnn_1_1layer_1_1_output}{Output} block-\/mapping type standardization. \end{DoxyCompactList}\item 
+typedef \hyperlink{classffnn_1_1layer_1_1_layer}{Layer}$<$ Value\-Type $>$ \hyperlink{structffnn_1_1layer_1_1hidden_1_1extrinsics_a06f383c22ed682751b9a4cb8855da9eb}{Layer\-Type}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classffnn_1_1layer_1_1_layer}{Layer} (base type) standardization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Value\-Type, typename Options$>$struct ffnn\-::layer\-::hidden\-::extrinsics$<$ Value\-Type, Options $>$}
+
+Describes types based on compile-\/time options. 
+
+\subsection{Member Typedef Documentation}
+\hypertarget{structffnn_1_1layer_1_1hidden_1_1extrinsics_af5299a48a27726ba0d407ecb28890092}{\index{ffnn\-::layer\-::hidden\-::extrinsics@{ffnn\-::layer\-::hidden\-::extrinsics}!Input\-Block\-Type@{Input\-Block\-Type}}
+\index{Input\-Block\-Type@{Input\-Block\-Type}!ffnn::layer::hidden::extrinsics@{ffnn\-::layer\-::hidden\-::extrinsics}}
+\subsubsection[{Input\-Block\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Options$>$ typedef Eigen\-::\-Matrix$<$ Value\-Type, Options\-::input\-\_\-height, Options\-::input\-\_\-width, Options\-::input\-\_\-data\-\_\-ordering $>$ {\bf ffnn\-::layer\-::hidden\-::extrinsics}$<$ Value\-Type, Options $>$\-::{\bf Input\-Block\-Type}}}\label{structffnn_1_1layer_1_1hidden_1_1extrinsics_af5299a48a27726ba0d407ecb28890092}
+
+
+\hyperlink{classffnn_1_1layer_1_1_input}{Input} block type standardization. 
+
+\hypertarget{structffnn_1_1layer_1_1hidden_1_1extrinsics_a62256f740b1aaf253c9992d15cda7eab}{\index{ffnn\-::layer\-::hidden\-::extrinsics@{ffnn\-::layer\-::hidden\-::extrinsics}!Input\-Mapping\-Type@{Input\-Mapping\-Type}}
+\index{Input\-Mapping\-Type@{Input\-Mapping\-Type}!ffnn::layer::hidden::extrinsics@{ffnn\-::layer\-::hidden\-::extrinsics}}
+\subsubsection[{Input\-Mapping\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Options$>$ typedef std\-::conditional$<$ std\-::is\-\_\-floating\-\_\-point$<$Value\-Type$>$\-::value, Eigen\-::\-Map$<${\bf Input\-Block\-Type}, 16$>$, Eigen\-::\-Map$<${\bf Input\-Block\-Type}$>$ $>$\-::type {\bf ffnn\-::layer\-::hidden\-::extrinsics}$<$ Value\-Type, Options $>$\-::{\bf Input\-Mapping\-Type}}}\label{structffnn_1_1layer_1_1hidden_1_1extrinsics_a62256f740b1aaf253c9992d15cda7eab}
+
+
+\hyperlink{classffnn_1_1layer_1_1_input}{Input} block-\/mapping type standardization. 
+
+\hypertarget{structffnn_1_1layer_1_1hidden_1_1extrinsics_a06f383c22ed682751b9a4cb8855da9eb}{\index{ffnn\-::layer\-::hidden\-::extrinsics@{ffnn\-::layer\-::hidden\-::extrinsics}!Layer\-Type@{Layer\-Type}}
+\index{Layer\-Type@{Layer\-Type}!ffnn::layer::hidden::extrinsics@{ffnn\-::layer\-::hidden\-::extrinsics}}
+\subsubsection[{Layer\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Options$>$ typedef {\bf Layer}$<$Value\-Type$>$ {\bf ffnn\-::layer\-::hidden\-::extrinsics}$<$ Value\-Type, Options $>$\-::{\bf Layer\-Type}}}\label{structffnn_1_1layer_1_1hidden_1_1extrinsics_a06f383c22ed682751b9a4cb8855da9eb}
+
+
+\hyperlink{classffnn_1_1layer_1_1_layer}{Layer} (base type) standardization. 
+
+\hypertarget{structffnn_1_1layer_1_1hidden_1_1extrinsics_ac5ca721e2e5843ddcf90351b59c4e56e}{\index{ffnn\-::layer\-::hidden\-::extrinsics@{ffnn\-::layer\-::hidden\-::extrinsics}!Output\-Block\-Type@{Output\-Block\-Type}}
+\index{Output\-Block\-Type@{Output\-Block\-Type}!ffnn::layer::hidden::extrinsics@{ffnn\-::layer\-::hidden\-::extrinsics}}
+\subsubsection[{Output\-Block\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Options$>$ typedef Eigen\-::\-Matrix$<$ Value\-Type, Options\-::output\-\_\-height, Options\-::output\-\_\-width, Options\-::output\-\_\-data\-\_\-ordering $>$ {\bf ffnn\-::layer\-::hidden\-::extrinsics}$<$ Value\-Type, Options $>$\-::{\bf Output\-Block\-Type}}}\label{structffnn_1_1layer_1_1hidden_1_1extrinsics_ac5ca721e2e5843ddcf90351b59c4e56e}
+
+
+\hyperlink{classffnn_1_1layer_1_1_output}{Output} block type standardization. 
+
+\hypertarget{structffnn_1_1layer_1_1hidden_1_1extrinsics_a886b2e28314f8641f14407a84af8132c}{\index{ffnn\-::layer\-::hidden\-::extrinsics@{ffnn\-::layer\-::hidden\-::extrinsics}!Output\-Mapping\-Type@{Output\-Mapping\-Type}}
+\index{Output\-Mapping\-Type@{Output\-Mapping\-Type}!ffnn::layer::hidden::extrinsics@{ffnn\-::layer\-::hidden\-::extrinsics}}
+\subsubsection[{Output\-Mapping\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Options$>$ typedef std\-::conditional$<$ std\-::is\-\_\-floating\-\_\-point$<$Value\-Type$>$\-::value, Eigen\-::\-Map$<${\bf Output\-Block\-Type}, 16$>$, Eigen\-::\-Map$<${\bf Output\-Block\-Type}$>$ $>$\-::type {\bf ffnn\-::layer\-::hidden\-::extrinsics}$<$ Value\-Type, Options $>$\-::{\bf Output\-Mapping\-Type}}}\label{structffnn_1_1layer_1_1hidden_1_1extrinsics_a886b2e28314f8641f14407a84af8132c}
+
+
+\hyperlink{classffnn_1_1layer_1_1_output}{Output} block-\/mapping type standardization. 
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/\hyperlink{hidden_8h}{hidden.\-h}\end{DoxyCompactItemize}

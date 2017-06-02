@@ -32,6 +32,17 @@ constexpr SizeType embed_dimension(SizeType n, SizeType m)
 }
 
 /**
+ * @brief Selects data ordering based on embedding mode
+ * @retval <code>Eigen::ColMajor</code> if <code>EmbeddingMode == ColEmbedding</code>
+ * @retval <code>Eigen::RowMajor</code> if <code>EmbeddingMode == RowEmbedding</code>
+ */
+template<EmbeddingMode mode>
+constexpr int embed_data_order()
+{
+  return (mode == ColEmbedding) ? Eigen::ColMajor : Eigen::RowMajor;
+}
+
+/**
  * @brief Transforms shape dimensions to a depth-embedded representation
  * @param shape  original shape repsentation
  * @return depth-embedded version of shape

@@ -1,9 +1,11 @@
 <map id="/home/briancairl/packages/src/ffnn&#45;cpp/ffnn/include/ffnn/layer/layer.h" name="/home/briancairl/packages/src/ffnn&#45;cpp/ffnn/include/ffnn/layer/layer.h">
-<area shape="rect" id="node4" href="$global_8h.html" title="ffnn/config/global.h" alt="" coords="975,259,1107,285"/>
-<area shape="rect" id="node17" href="$serializable_8h.html" title="ffnn/internal/serializable.h" alt="" coords="1079,184,1249,211"/>
-<area shape="rect" id="node18" href="$unique_8h.html" title="ffnn/internal/unique.h" alt="" coords="1403,109,1545,136"/>
-<area shape="rect" id="node27" href="$shape_8h.html" title="ffnn/layer/shape.h" alt="" coords="877,184,1003,211"/>
-<area shape="rect" id="node6" href="$logging_8h.html" title="ffnn/logging.h" alt="" coords="1443,341,1543,368"/>
-<area shape="rect" id="node13" href="$sparse__triplet__serialization_8h.html" title="ffnn/internal/eigen\l/sparse_triplet_serialization.h" alt="" coords="783,334,973,375"/>
-<area shape="rect" id="node23" href="$signature_8h.html" title="ffnn/internal/signature.h" alt="" coords="1677,184,1835,211"/>
+<area shape="rect" id="node4" href="$global_8h.html" title="ffnn/config/global.h" alt="" coords="931,275,1063,301"/>
+<area shape="rect" id="node17" href="$serializable_8h.html" title="ffnn/internal/serializable.h" alt="" coords="279,192,449,219"/>
+<area shape="rect" id="node18" href="$unique_8h.html" title="ffnn/internal/unique.h" alt="" coords="549,109,691,136"/>
+<area shape="rect" id="node27" href="$shape_8h.html" title="ffnn/layer/shape.h" alt="" coords="127,192,253,219"/>
+<area shape="rect" id="node28" href="$layer_8hpp.html" title="ffnn/impl/layer/layer.hpp" alt="" coords="1315,109,1476,136"/>
+<area shape="rect" id="node6" href="$logging_8h.html" title="ffnn/logging.h" alt="" coords="1711,357,1811,384"/>
+<area shape="rect" id="node13" href="$sparse__triplet__serialization_8h.html" title="ffnn/internal/eigen\l/sparse_triplet_serialization.h" alt="" coords="1386,350,1576,391"/>
+<area shape="rect" id="node23" href="$signature_8h.html" title="ffnn/internal/signature.h" alt="" coords="1166,192,1324,219"/>
+<area shape="rect" id="node30" href="$assert_8h.html" title="ffnn/assert.h" alt="" coords="1349,192,1443,219"/>
 </map>

@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['layer',['Layer',['../classffnn_1_1layer_1_1_layer.html',1,'ffnn::layer']]],
-  ['leakyrectifiedlinear',['LeakyRectifiedLinear',['../classffnn_1_1neuron_1_1_leaky_rectified_linear.html',1,'ffnn::neuron']]],
-  ['lecunsigmoid',['LeCunSigmoid',['../classffnn_1_1neuron_1_1_le_cun_sigmoid.html',1,'ffnn::neuron']]],
-  ['linear',['Linear',['../classffnn_1_1neuron_1_1_linear.html',1,'ffnn::neuron']]]
+  ['input',['Input',['../classffnn_1_1layer_1_1_input.html',1,'ffnn::layer']]],
+  ['is_5falignable_5f128',['is_alignable_128',['../structffnn_1_1internal_1_1traits_1_1is__alignable__128.html',1,'ffnn::internal::traits']]],
+  ['is_5fneuron',['is_neuron',['../structffnn_1_1neuron_1_1is__neuron.html',1,'ffnn::neuron']]]
 ];

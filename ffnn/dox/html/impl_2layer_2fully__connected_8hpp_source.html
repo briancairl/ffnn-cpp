@@ -275,7 +275,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00185"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_fully_connected.html#a7c79eb99c638b61f76ea34b725c0aeef">  185</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classffnn_1_1layer_1_1_fully_connected.html#a7c79eb99c638b61f76ea34b725c0aeef">FullyConnected&lt;TARGS&gt;::save</a>(<span class="keyword">typename</span> <a class="code" href="classffnn_1_1internal_1_1_serializable.html#acf5baead716eb277337a4437e88a5743">FullyConnected&lt;TARGS&gt;::OutputArchive</a>&amp; ar,</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                                 <span class="keyword">typename</span> <a class="code" href="classffnn_1_1internal_1_1_serializable.html#a32fe7d82b0caf9fe8b6fb7c312a26028">FullyConnected&lt;TARGS&gt;::VersionType</a> version)<span class="keyword"> const</span></div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  ffnn::io::signature::apply&lt;FullyConnected&lt;ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape&gt;&gt;(ar);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  ffnn::internal::signature::apply&lt;FullyConnected&lt;ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape&gt;&gt;(ar);</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  <a class="code" href="dense__base__addons_8h.html#ab948859788aa671e575e410654e07f16">Base::save</a>(ar, version);</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  <span class="comment">// Save weight/bias matrix</span></div>
@@ -292,7 +292,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00202"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_fully_connected.html#a1ff2a601cdf315ce46a2812b4e6fe354">  202</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classffnn_1_1layer_1_1_fully_connected.html#a1ff2a601cdf315ce46a2812b4e6fe354">FullyConnected&lt;TARGS&gt;::load</a>(<span class="keyword">typename</span> <a class="code" href="classffnn_1_1internal_1_1_serializable.html#aadc27d79d606f35a82dd88bad33fa6d2">FullyConnected&lt;TARGS&gt;::InputArchive</a>&amp; ar,</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                                 <span class="keyword">typename</span> <a class="code" href="classffnn_1_1internal_1_1_serializable.html#a32fe7d82b0caf9fe8b6fb7c312a26028">FullyConnected&lt;TARGS&gt;::VersionType</a> version)</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;{</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;  ffnn::io::signature::check&lt;FullyConnected&lt;ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape&gt;&gt;(ar);</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;  ffnn::internal::signature::check&lt;FullyConnected&lt;ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape&gt;&gt;(ar);</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;  <a class="code" href="dense__base__addons_8h.html#a68dbd347886624cd725b8a26e5242ee2">Base::load</a>(ar, version);</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;  <span class="comment">// Save weight/bias matrix</span></div>
@@ -338,7 +338,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed May 31 2017 23:57:13 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 2 2017 00:25:18 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

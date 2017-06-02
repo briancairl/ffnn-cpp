@@ -51,10 +51,13 @@ bool connect(const typename LayerType::Ptr& from, const typename LayerType::Ptr&
 
 template<typename ValueType>
 Layer<ValueType>::Layer(const ShapeType& input_shape, const ShapeType& output_shape) :
-  Layer<ValueType>::Base(input_shape, output_shape)
+  input_shape_(input_shape),
+  output_shape_(output_shape)
 {
-  FFNN_INTERNAL_DEBUG_NAMED("layer::Layer", input_shape);
-  FFNN_INTERNAL_DEBUG_NAMED("layer::Layer", output_shape);
+  FFNN_ASSERT_MSG(input_shape_.valid(), "Input shape is invalid.");
+  FFNN_ASSERT_MSG(output_shape_.valid(), "Output shape is invalid.");
+
+  FFNN_INTERNAL_DEBUG_NAMED("layer::Layer", "[" << input_shape_ << " | " << output_shape_ << "]");
 }
 
 template<typename ValueType>
@@ -67,25 +70,25 @@ template<typename ValueType>
 bool Layer<ValueType>::initialize()
 {
   // Abort if layer is already initialized
-  if (Base::setupRequired() && Base::isInitialized())
+  if (setupRequired() && isInitialized())
   {
-    FFNN_WARN_NAMED("layer::Layer", "<" << Base::getID() << "> already initialized.");
+    FFNN_WARN_NAMED("layer::Layer", "<" << BaseType::getID() << "> already initialized.");
     return false;
   }
 
   // Allocate input/error buffers
-  if (Base::getInputShape().size() > 0 && input_buffer_.empty() && backward_error_buffer_.empty())
+  if (getInputShape().size() > 0 && input_buffer_.empty() && backward_error_buffer_.empty())
   {
     // Allocate input buffer
-    input_buffer_.resize(Base::getInputShape().size(), 0);
+    input_buffer_.resize(getInputShape().size(), 0);
 
     // Allocate backward error buffer
-    backward_error_buffer_.resize(Base::getInputShape().size(), 0);
+    backward_error_buffer_.resize(getInputShape().size(), 0);
   }
 
   // Set initialization flag
-  Base::initialized_ = true;
-  return Base::isInitialized();
+  initialized_ = true;
+  return isInitialized();
 }
 
 template<typename ValueType>
@@ -109,10 +112,10 @@ size_type Layer<ValueType>::evaluateInputSize() const
 }
 
 template<typename ValueType>
-typename Layer<ValueType>::OffsetType Layer<ValueType>::connectInputLayers()
+offset_type Layer<ValueType>::connectInputLayers()
 {
   // Resolve previous layer output buffers
-  OffsetType offset(0);
+  offset_type offset(0);
   for (const auto& connection : prev_)
   {
     if (!static_cast<bool>(connection.second))
@@ -132,8 +135,8 @@ template<typename ValueType>
 void Layer<ValueType>::save(typename Layer<ValueType>::OutputArchive& ar,
                             typename Layer<ValueType>::VersionType version) const
 {
-  ffnn::internal::signature::apply<Self>(ar);
-  Base::save(ar, version);
+  ffnn::internal::signature::apply<SelfType>(ar);
+  BaseType::save(ar, version);
 
   // Save flags
   ar & initialized_;
@@ -157,8 +160,8 @@ template<typename ValueType>
 void Layer<ValueType>::load(typename Layer<ValueType>::InputArchive& ar,
                             typename Layer<ValueType>::VersionType version)
 {
-  ffnn::internal::signature::check<Self>(ar);
-  Base::load(ar, version);
+  ffnn::internal::signature::check<SelfType>(ar);
+  BaseType::load(ar, version);
 
   // Load flags
   ar & initialized_;
@@ -177,7 +180,7 @@ void Layer<ValueType>::load(typename Layer<ValueType>::InputArchive& ar,
     ar & id;
 
     // Create connection with empty layer data (promise)
-    prev_.emplace(id, typename Self::Ptr());
+    prev_.emplace(id, typename SelfType::Ptr());
   }
 
   setup_required_ = false;

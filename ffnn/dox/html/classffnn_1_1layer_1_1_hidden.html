@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>FFNN: ffnn::layer::Hidden&lt; ValueType, LayerShape, _InputBlockType, _OutputBlockType &gt; Class Template Reference</title>
+<title>FFNN: ffnn::layer::Hidden&lt; ValueType, Options, Extrinsics &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -96,7 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classffnn_1_1layer_1_1_hidden-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ffnn::layer::Hidden&lt; ValueType, LayerShape, _InputBlockType, _OutputBlockType &gt; Class Template Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+<div class="title">ffnn::layer::Hidden&lt; ValueType, Options, Extrinsics &gt; Class Template Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -105,231 +105,103 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p><code>#include &quot;<a class="el" href="hidden_8h_source.html">hidden.h</a>&quot;</code></p>
 <div class="dynheader">
-Inheritance diagram for ffnn::layer::Hidden&lt; ValueType, LayerShape, _InputBlockType, _OutputBlockType &gt;:</div>
+Inheritance diagram for ffnn::layer::Hidden&lt; ValueType, Options, Extrinsics &gt;:</div>
 <div class="dyncontent">
-<div class="center"><img src="classffnn_1_1layer_1_1_hidden__inherit__graph.png" border="0" usemap="#ffnn_1_1layer_1_1_hidden_3_01_value_type_00_01_layer_shape_00_01___input_block_type_00_01___output_block_type_01_4_inherit__map" alt="Inheritance graph"/></div>
-<map name="ffnn_1_1layer_1_1_hidden_3_01_value_type_00_01_layer_shape_00_01___input_block_type_00_01___output_block_type_01_4_inherit__map" id="ffnn_1_1layer_1_1_hidden_3_01_value_type_00_01_layer_shape_00_01___input_block_type_00_01___output_block_type_01_4_inherit__map">
-<area shape="rect" id="node2" href="classffnn_1_1layer_1_1_layer.html" title="Base object for all layer types. " alt="" coords="49,155,169,197"/><area shape="rect" id="node3" href="classffnn_1_1internal_1_1_unique.html" title="An object with a unique ID. " alt="" coords="38,80,180,107"/><area shape="rect" id="node4" href="classffnn_1_1internal_1_1_serializable.html" title="An object which can be saved and loaded. " alt="" coords="25,5,193,32"/></map>
+<div class="center"><img src="classffnn_1_1layer_1_1_hidden__inherit__graph.png" border="0" usemap="#ffnn_1_1layer_1_1_hidden_3_01_value_type_00_01_options_00_01_extrinsics_01_4_inherit__map" alt="Inheritance graph"/></div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
-Collaboration diagram for ffnn::layer::Hidden&lt; ValueType, LayerShape, _InputBlockType, _OutputBlockType &gt;:</div>
+Collaboration diagram for ffnn::layer::Hidden&lt; ValueType, Options, Extrinsics &gt;:</div>
 <div class="dyncontent">
-<div class="center"><img src="classffnn_1_1layer_1_1_hidden__coll__graph.png" border="0" usemap="#ffnn_1_1layer_1_1_hidden_3_01_value_type_00_01_layer_shape_00_01___input_block_type_00_01___output_block_type_01_4_coll__map" alt="Collaboration graph"/></div>
-<map name="ffnn_1_1layer_1_1_hidden_3_01_value_type_00_01_layer_shape_00_01___input_block_type_00_01___output_block_type_01_4_coll__map" id="ffnn_1_1layer_1_1_hidden_3_01_value_type_00_01_layer_shape_00_01___input_block_type_00_01___output_block_type_01_4_coll__map">
-<area shape="rect" id="node2" href="classffnn_1_1layer_1_1_layer.html" title="Base object for all layer types. " alt="" coords="49,155,169,197"/><area shape="rect" id="node3" href="classffnn_1_1internal_1_1_unique.html" title="An object with a unique ID. " alt="" coords="38,80,180,107"/><area shape="rect" id="node4" href="classffnn_1_1internal_1_1_serializable.html" title="An object which can be saved and loaded. " alt="" coords="25,5,193,32"/></map>
+<div class="center"><img src="classffnn_1_1layer_1_1_hidden__coll__graph.png" border="0" usemap="#ffnn_1_1layer_1_1_hidden_3_01_value_type_00_01_options_00_01_extrinsics_01_4_coll__map" alt="Collaboration graph"/></div>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a2ff8a0b925b2b929b05e7889dda361e4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#a2ff8a0b925b2b929b05e7889dda361e4">Base</a> = <a class="el" href="classffnn_1_1layer_1_1_layer.html">Layer</a>&lt; ValueType &gt;</td></tr>
-<tr class="memdesc:a2ff8a0b925b2b929b05e7889dda361e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base type alias.  <a href="#a2ff8a0b925b2b929b05e7889dda361e4">More...</a><br/></td></tr>
-<tr class="separator:a2ff8a0b925b2b929b05e7889dda361e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac148012cb544a39841675601090cd4c8"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classffnn_1_1layer_1_1_layer.html#a4c4c9782d2aed41c2a5000ec5da5601a">Base::SizeType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#ac148012cb544a39841675601090cd4c8">SizeType</a></td></tr>
-<tr class="memdesc:ac148012cb544a39841675601090cd4c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size type standardization.  <a href="#ac148012cb544a39841675601090cd4c8">More...</a><br/></td></tr>
-<tr class="separator:ac148012cb544a39841675601090cd4c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2409b970adafb0ebc9b2eec62c4aac4"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classffnn_1_1layer_1_1_layer.html#a2130560f43788898079b7c5c01fb94c8">Base::OffsetType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#ae2409b970adafb0ebc9b2eec62c4aac4">OffsetType</a></td></tr>
-<tr class="memdesc:ae2409b970adafb0ebc9b2eec62c4aac4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset type standardization.  <a href="#ae2409b970adafb0ebc9b2eec62c4aac4">More...</a><br/></td></tr>
-<tr class="separator:ae2409b970adafb0ebc9b2eec62c4aac4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abdfcf81b3846fae3b19a207424695df0"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classffnn_1_1layer_1_1_layer.html#ab80478345a2579402ae086a2f7de1ca2">Base::ShapeType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#abdfcf81b3846fae3b19a207424695df0">ShapeType</a></td></tr>
-<tr class="memdesc:abdfcf81b3846fae3b19a207424695df0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dimension type standardization.  <a href="#abdfcf81b3846fae3b19a207424695df0">More...</a><br/></td></tr>
-<tr class="separator:abdfcf81b3846fae3b19a207424695df0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae401b1af7763caf09a0dffcaf4f2d5e9"><td class="memItemLeft" align="right" valign="top">typedef _InputBlockType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#ae401b1af7763caf09a0dffcaf4f2d5e9">InputBlockType</a></td></tr>
-<tr class="memdesc:ae401b1af7763caf09a0dffcaf4f2d5e9"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classffnn_1_1layer_1_1_input.html" title="A layer which handles network inputs. ">Input</a> block type standardization.  <a href="#ae401b1af7763caf09a0dffcaf4f2d5e9">More...</a><br/></td></tr>
-<tr class="separator:ae401b1af7763caf09a0dffcaf4f2d5e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b9e276188ef490ea5301f553225c735"><td class="memItemLeft" align="right" valign="top">typedef _OutputBlockType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#a9b9e276188ef490ea5301f553225c735">OutputBlockType</a></td></tr>
-<tr class="memdesc:a9b9e276188ef490ea5301f553225c735"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classffnn_1_1layer_1_1_output.html" title="A layer which handles network outputs. ">Output</a> block type standardization.  <a href="#a9b9e276188ef490ea5301f553225c735">More...</a><br/></td></tr>
-<tr class="separator:a9b9e276188ef490ea5301f553225c735"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9297d5b8ac45dc288ee1b91f15bb4047"><td class="memItemLeft" align="right" valign="top">typedef Eigen::Map<br class="typebreak"/>
-&lt; <a class="el" href="classffnn_1_1layer_1_1_hidden.html#ae401b1af7763caf09a0dffcaf4f2d5e9">InputBlockType</a>, 16 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#a9297d5b8ac45dc288ee1b91f15bb4047">InputMappingType</a></td></tr>
-<tr class="memdesc:a9297d5b8ac45dc288ee1b91f15bb4047"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classffnn_1_1layer_1_1_input.html" title="A layer which handles network inputs. ">Input</a> block-mapping type standardization.  <a href="#a9297d5b8ac45dc288ee1b91f15bb4047">More...</a><br/></td></tr>
-<tr class="separator:a9297d5b8ac45dc288ee1b91f15bb4047"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a619ae9b0890cb86b66ac2b591b5a5610"><td class="memItemLeft" align="right" valign="top">typedef Eigen::Map<br class="typebreak"/>
-&lt; <a class="el" href="classffnn_1_1layer_1_1_hidden.html#a9b9e276188ef490ea5301f553225c735">OutputBlockType</a>, 16 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#a619ae9b0890cb86b66ac2b591b5a5610">OutputMappingType</a></td></tr>
-<tr class="memdesc:a619ae9b0890cb86b66ac2b591b5a5610"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classffnn_1_1layer_1_1_output.html" title="A layer which handles network outputs. ">Output</a> block-mapping type standardization.  <a href="#a619ae9b0890cb86b66ac2b591b5a5610">More...</a><br/></td></tr>
-<tr class="separator:a619ae9b0890cb86b66ac2b591b5a5610"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_types_classffnn_1_1layer_1_1_layer"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classffnn_1_1layer_1_1_layer')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classffnn_1_1layer_1_1_layer.html">ffnn::layer::Layer&lt; ValueType &gt;</a></td></tr>
-<tr class="memitem:a6c68e887931a3450aaba7a32cfe1f130 inherit pub_types_classffnn_1_1layer_1_1_layer"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_layer.html#a6c68e887931a3450aaba7a32cfe1f130">Base</a> = <a class="el" href="classffnn_1_1internal_1_1_unique.html">internal::Unique</a></td></tr>
-<tr class="memdesc:a6c68e887931a3450aaba7a32cfe1f130 inherit pub_types_classffnn_1_1layer_1_1_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base type alias.  <a href="#a6c68e887931a3450aaba7a32cfe1f130">More...</a><br/></td></tr>
-<tr class="separator:a6c68e887931a3450aaba7a32cfe1f130 inherit pub_types_classffnn_1_1layer_1_1_layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d461b24632a849b2c26a5051a9cdbeb inherit pub_types_classffnn_1_1layer_1_1_layer"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_layer.html#a1d461b24632a849b2c26a5051a9cdbeb">Self</a> = <a class="el" href="classffnn_1_1layer_1_1_layer.html">Layer</a>&lt; ValueType &gt;</td></tr>
-<tr class="memdesc:a1d461b24632a849b2c26a5051a9cdbeb inherit pub_types_classffnn_1_1layer_1_1_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Self type alias.  <a href="#a1d461b24632a849b2c26a5051a9cdbeb">More...</a><br/></td></tr>
-<tr class="separator:a1d461b24632a849b2c26a5051a9cdbeb inherit pub_types_classffnn_1_1layer_1_1_layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac336e7cc01ccf0117c5a4a2baf98add4 inherit pub_types_classffnn_1_1layer_1_1_layer"><td class="memItemLeft" align="right" valign="top">typedef boost::shared_ptr&lt; <a class="el" href="classffnn_1_1layer_1_1_layer.html#a1d461b24632a849b2c26a5051a9cdbeb">Self</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_layer.html#ac336e7cc01ccf0117c5a4a2baf98add4">Ptr</a></td></tr>
-<tr class="memdesc:ac336e7cc01ccf0117c5a4a2baf98add4 inherit pub_types_classffnn_1_1layer_1_1_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shared resource standardization.  <a href="#ac336e7cc01ccf0117c5a4a2baf98add4">More...</a><br/></td></tr>
-<tr class="separator:ac336e7cc01ccf0117c5a4a2baf98add4 inherit pub_types_classffnn_1_1layer_1_1_layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7c9ea196243e78b9c1e4a3a1a17988b inherit pub_types_classffnn_1_1layer_1_1_layer"><td class="memItemLeft" align="right" valign="top">typedef boost::shared_ptr<br class="typebreak"/>
-&lt; const <a class="el" href="classffnn_1_1layer_1_1_layer.html#a1d461b24632a849b2c26a5051a9cdbeb">Self</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_layer.html#ad7c9ea196243e78b9c1e4a3a1a17988b">ConstPtr</a></td></tr>
-<tr class="memdesc:ad7c9ea196243e78b9c1e4a3a1a17988b inherit pub_types_classffnn_1_1layer_1_1_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constant shared resource standardization.  <a href="#ad7c9ea196243e78b9c1e4a3a1a17988b">More...</a><br/></td></tr>
-<tr class="separator:ad7c9ea196243e78b9c1e4a3a1a17988b inherit pub_types_classffnn_1_1layer_1_1_layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d482813f86f1ec69554b4592c478c32 inherit pub_types_classffnn_1_1layer_1_1_layer"><td class="memItemLeft" align="right" valign="top">typedef ValueType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_layer.html#a3d482813f86f1ec69554b4592c478c32">ScalarType</a></td></tr>
-<tr class="memdesc:a3d482813f86f1ec69554b4592c478c32 inherit pub_types_classffnn_1_1layer_1_1_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scalar type standardization.  <a href="#a3d482813f86f1ec69554b4592c478c32">More...</a><br/></td></tr>
-<tr class="separator:a3d482813f86f1ec69554b4592c478c32 inherit pub_types_classffnn_1_1layer_1_1_layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c4c9782d2aed41c2a5000ec5da5601a inherit pub_types_classffnn_1_1layer_1_1_layer"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="namespaceffnn.html#a63b90a2fd70eb76684eac482a51633e5">ffnn::size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_layer.html#a4c4c9782d2aed41c2a5000ec5da5601a">SizeType</a></td></tr>
-<tr class="memdesc:a4c4c9782d2aed41c2a5000ec5da5601a inherit pub_types_classffnn_1_1layer_1_1_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size type standardization.  <a href="#a4c4c9782d2aed41c2a5000ec5da5601a">More...</a><br/></td></tr>
-<tr class="separator:a4c4c9782d2aed41c2a5000ec5da5601a inherit pub_types_classffnn_1_1layer_1_1_layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2130560f43788898079b7c5c01fb94c8 inherit pub_types_classffnn_1_1layer_1_1_layer"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="namespaceffnn.html#add5752d74b38c6e9b200f3d696fc3ec8">ffnn::offset_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_layer.html#a2130560f43788898079b7c5c01fb94c8">OffsetType</a></td></tr>
-<tr class="memdesc:a2130560f43788898079b7c5c01fb94c8 inherit pub_types_classffnn_1_1layer_1_1_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset type standardization.  <a href="#a2130560f43788898079b7c5c01fb94c8">More...</a><br/></td></tr>
-<tr class="separator:a2130560f43788898079b7c5c01fb94c8 inherit pub_types_classffnn_1_1layer_1_1_layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab80478345a2579402ae086a2f7de1ca2 inherit pub_types_classffnn_1_1layer_1_1_layer"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structffnn_1_1layer_1_1_shape.html">Shape</a>&lt; <a class="el" href="classffnn_1_1layer_1_1_layer.html#a4c4c9782d2aed41c2a5000ec5da5601a">SizeType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_layer.html#ab80478345a2579402ae086a2f7de1ca2">ShapeType</a></td></tr>
-<tr class="memdesc:ab80478345a2579402ae086a2f7de1ca2 inherit pub_types_classffnn_1_1layer_1_1_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dimension type standardization.  <a href="#ab80478345a2579402ae086a2f7de1ca2">More...</a><br/></td></tr>
-<tr class="separator:ab80478345a2579402ae086a2f7de1ca2 inherit pub_types_classffnn_1_1layer_1_1_layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9cab24dbd0cbed2febed5b635f81722 inherit pub_types_classffnn_1_1layer_1_1_layer"><td class="memItemLeft" align="right" valign="top">typedef std::conditional<br class="typebreak"/>
-&lt; std::is_floating_point<br class="typebreak"/>
-&lt; ValueType &gt;::value, <br class="typebreak"/>
-std::vector&lt; ValueType, <br class="typebreak"/>
-Eigen::aligned_allocator<br class="typebreak"/>
-&lt; ValueType &gt; &gt;, std::vector<br class="typebreak"/>
-&lt; ValueType &gt;, &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_layer.html#ad9cab24dbd0cbed2febed5b635f81722">BufferType</a></td></tr>
-<tr class="memdesc:ad9cab24dbd0cbed2febed5b635f81722 inherit pub_types_classffnn_1_1layer_1_1_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Buffer type standardization.  <a href="#ad9cab24dbd0cbed2febed5b635f81722">More...</a><br/></td></tr>
-<tr class="separator:ad9cab24dbd0cbed2febed5b635f81722 inherit pub_types_classffnn_1_1layer_1_1_layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_types_classffnn_1_1internal_1_1_serializable"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classffnn_1_1internal_1_1_serializable')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classffnn_1_1internal_1_1_serializable.html">ffnn::internal::Serializable</a></td></tr>
-<tr class="memitem:a32fe7d82b0caf9fe8b6fb7c312a26028 inherit pub_types_classffnn_1_1internal_1_1_serializable"><td class="memItemLeft" align="right" valign="top">typedef <br class="typebreak"/>
-<a class="el" href="global_8h.html#a0678a9de3e627b6d8dbba2f2733b4bab">FFNN_SERIALIZATION_VERSION_TYPE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1internal_1_1_serializable.html#a32fe7d82b0caf9fe8b6fb7c312a26028">VersionType</a></td></tr>
-<tr class="memdesc:a32fe7d82b0caf9fe8b6fb7c312a26028 inherit pub_types_classffnn_1_1internal_1_1_serializable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class-version type standardization.  <a href="#a32fe7d82b0caf9fe8b6fb7c312a26028">More...</a><br/></td></tr>
-<tr class="separator:a32fe7d82b0caf9fe8b6fb7c312a26028 inherit pub_types_classffnn_1_1internal_1_1_serializable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aadc27d79d606f35a82dd88bad33fa6d2 inherit pub_types_classffnn_1_1internal_1_1_serializable"><td class="memItemLeft" align="right" valign="top">typedef <br class="typebreak"/>
-<a class="el" href="global_8h.html#aa6057cb3965fa4db202231a2817b960b">FFNN_SERIALIZATION_INPUT_ARCHIVE_TYPE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1internal_1_1_serializable.html#aadc27d79d606f35a82dd88bad33fa6d2">InputArchive</a></td></tr>
-<tr class="memdesc:aadc27d79d606f35a82dd88bad33fa6d2 inherit pub_types_classffnn_1_1internal_1_1_serializable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input (load) archive type.  <a href="#aadc27d79d606f35a82dd88bad33fa6d2">More...</a><br/></td></tr>
-<tr class="separator:aadc27d79d606f35a82dd88bad33fa6d2 inherit pub_types_classffnn_1_1internal_1_1_serializable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf5baead716eb277337a4437e88a5743 inherit pub_types_classffnn_1_1internal_1_1_serializable"><td class="memItemLeft" align="right" valign="top">typedef <br class="typebreak"/>
-<a class="el" href="global_8h.html#a5c59f6dbef7cac034dd58fc9752c9ea6">FFNN_SERIALIZATION_OUTPUT_ARCHIVE_TYPE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1internal_1_1_serializable.html#acf5baead716eb277337a4437e88a5743">OutputArchive</a></td></tr>
-<tr class="memdesc:acf5baead716eb277337a4437e88a5743 inherit pub_types_classffnn_1_1internal_1_1_serializable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output (save) archive type.  <a href="#acf5baead716eb277337a4437e88a5743">More...</a><br/></td></tr>
-<tr class="separator:acf5baead716eb277337a4437e88a5743 inherit pub_types_classffnn_1_1internal_1_1_serializable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48f525146f2e73caf51aa404f38cdb75"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#a48f525146f2e73caf51aa404f38cdb75">SelfType</a> = <a class="el" href="classffnn_1_1layer_1_1_hidden.html">Hidden</a>&lt; ValueType, Options &gt;</td></tr>
+<tr class="memdesc:a48f525146f2e73caf51aa404f38cdb75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Self type alias.  <a href="#a48f525146f2e73caf51aa404f38cdb75">More...</a><br/></td></tr>
+<tr class="separator:a48f525146f2e73caf51aa404f38cdb75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6369d3e45b700c257076cd955d50f9c3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#a6369d3e45b700c257076cd955d50f9c3">BaseType</a> = <a class="el" href="classffnn_1_1layer_1_1_layer.html">Layer</a>&lt; ValueType &gt;</td></tr>
+<tr class="memdesc:a6369d3e45b700c257076cd955d50f9c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base type alias.  <a href="#a6369d3e45b700c257076cd955d50f9c3">More...</a><br/></td></tr>
+<tr class="separator:a6369d3e45b700c257076cd955d50f9c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a567e902299b3355501393cf6c7b27c38"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classffnn_1_1layer_1_1_layer.html#ae2f2d0063ab4b2c2a3a6ebf81f4ec32f">BaseType::ShapeType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#a567e902299b3355501393cf6c7b27c38">ShapeType</a></td></tr>
+<tr class="memdesc:a567e902299b3355501393cf6c7b27c38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dimension type standardization.  <a href="#a567e902299b3355501393cf6c7b27c38">More...</a><br/></td></tr>
+<tr class="separator:a567e902299b3355501393cf6c7b27c38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd5a3b5c55984948f903fe88759efaf4"><td class="memItemLeft" align="right" valign="top">typedef Extrinsics::InputBlockType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#abd5a3b5c55984948f903fe88759efaf4">InputBlockType</a></td></tr>
+<tr class="memdesc:abd5a3b5c55984948f903fe88759efaf4"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classffnn_1_1layer_1_1_input.html" title="A layer which handles network inputs. ">Input</a> block type standardization.  <a href="#abd5a3b5c55984948f903fe88759efaf4">More...</a><br/></td></tr>
+<tr class="separator:abd5a3b5c55984948f903fe88759efaf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fd326932b57e1d86d86bdb168822727"><td class="memItemLeft" align="right" valign="top">typedef Extrinsics::OutputBlockType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#a9fd326932b57e1d86d86bdb168822727">OutputBlockType</a></td></tr>
+<tr class="memdesc:a9fd326932b57e1d86d86bdb168822727"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classffnn_1_1layer_1_1_output.html" title="A layer which handles network outputs. ">Output</a> block type standardization.  <a href="#a9fd326932b57e1d86d86bdb168822727">More...</a><br/></td></tr>
+<tr class="separator:a9fd326932b57e1d86d86bdb168822727"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac518f2e2be1250c1af7b2f8574cadc8d"><td class="memItemLeft" align="right" valign="top">typedef <br class="typebreak"/>
+Extrinsics::InputMappingType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#ac518f2e2be1250c1af7b2f8574cadc8d">InputMappingType</a></td></tr>
+<tr class="memdesc:ac518f2e2be1250c1af7b2f8574cadc8d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classffnn_1_1layer_1_1_input.html" title="A layer which handles network inputs. ">Input</a> mapping type standardization.  <a href="#ac518f2e2be1250c1af7b2f8574cadc8d">More...</a><br/></td></tr>
+<tr class="separator:ac518f2e2be1250c1af7b2f8574cadc8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d882e035c7cd80ccd9b58fbe832591e"><td class="memItemLeft" align="right" valign="top">typedef <br class="typebreak"/>
+Extrinsics::OutputMappingType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#a9d882e035c7cd80ccd9b58fbe832591e">OutputMappingType</a></td></tr>
+<tr class="memdesc:a9d882e035c7cd80ccd9b58fbe832591e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classffnn_1_1layer_1_1_output.html" title="A layer which handles network outputs. ">Output</a> mapping type standardization.  <a href="#a9d882e035c7cd80ccd9b58fbe832591e">More...</a><br/></td></tr>
+<tr class="separator:a9d882e035c7cd80ccd9b58fbe832591e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3caeb739cac8995496db207e32900fca"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#a3caeb739cac8995496db207e32900fca">Hidden</a> (const <a class="el" href="classffnn_1_1layer_1_1_hidden.html#abdfcf81b3846fae3b19a207424695df0">ShapeType</a> &amp;input_shape=<a class="el" href="classffnn_1_1layer_1_1_hidden.html#abdfcf81b3846fae3b19a207424695df0">ShapeType</a>(LayerShape::input_height, LayerShape::input_width), const <a class="el" href="classffnn_1_1layer_1_1_hidden.html#abdfcf81b3846fae3b19a207424695df0">ShapeType</a> &amp;output_shape=<a class="el" href="classffnn_1_1layer_1_1_hidden.html#abdfcf81b3846fae3b19a207424695df0">ShapeType</a>(LayerShape::output_height, LayerShape::output_width))</td></tr>
-<tr class="memdesc:a3caeb739cac8995496db207e32900fca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup constructor.  <a href="#a3caeb739cac8995496db207e32900fca">More...</a><br/></td></tr>
-<tr class="separator:a3caeb739cac8995496db207e32900fca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae4d85d69e2da92c3b70992e0c3ced4d1"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#ae4d85d69e2da92c3b70992e0c3ced4d1">~Hidden</a> ()</td></tr>
-<tr class="separator:ae4d85d69e2da92c3b70992e0c3ced4d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb70b4a8f5ac4979689f86cab73f48b1"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#adb70b4a8f5ac4979689f86cab73f48b1">initialize</a> ()</td></tr>
-<tr class="memdesc:adb70b4a8f5ac4979689f86cab73f48b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the layer.  <a href="#adb70b4a8f5ac4979689f86cab73f48b1">More...</a><br/></td></tr>
-<tr class="separator:adb70b4a8f5ac4979689f86cab73f48b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a600b86d72826e8be3eafa53e040e9cbe"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#a600b86d72826e8be3eafa53e040e9cbe">forward</a> ()=0</td></tr>
-<tr class="memdesc:a600b86d72826e8be3eafa53e040e9cbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forward value propagation.  <a href="#a600b86d72826e8be3eafa53e040e9cbe">More...</a><br/></td></tr>
-<tr class="separator:a600b86d72826e8be3eafa53e040e9cbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac0ee89390b02ff4731678883dd402dd"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#aac0ee89390b02ff4731678883dd402dd">backward</a> ()=0</td></tr>
-<tr class="memdesc:aac0ee89390b02ff4731678883dd402dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Backward value propagation.  <a href="#aac0ee89390b02ff4731678883dd402dd">More...</a><br/></td></tr>
-<tr class="separator:aac0ee89390b02ff4731678883dd402dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae038d2a1e64fcbbde6166df7d0573ef8"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#ae038d2a1e64fcbbde6166df7d0573ef8">update</a> ()=0</td></tr>
-<tr class="memdesc:ae038d2a1e64fcbbde6166df7d0573ef8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies layer weight updates.  <a href="#ae038d2a1e64fcbbde6166df7d0573ef8">More...</a><br/></td></tr>
-<tr class="separator:ae038d2a1e64fcbbde6166df7d0573ef8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_classffnn_1_1layer_1_1_layer"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classffnn_1_1layer_1_1_layer')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classffnn_1_1layer_1_1_layer.html">ffnn::layer::Layer&lt; ValueType &gt;</a></td></tr>
-<tr class="memitem:a0c766a6f5770ea0ae8a7e660523eb413 inherit pub_methods_classffnn_1_1layer_1_1_layer"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_layer.html#a0c766a6f5770ea0ae8a7e660523eb413">Layer</a> (const <a class="el" href="classffnn_1_1layer_1_1_layer.html#ab80478345a2579402ae086a2f7de1ca2">ShapeType</a> &amp;input_shape, const <a class="el" href="classffnn_1_1layer_1_1_layer.html#ab80478345a2579402ae086a2f7de1ca2">ShapeType</a> &amp;output_shape)</td></tr>
-<tr class="memdesc:a0c766a6f5770ea0ae8a7e660523eb413 inherit pub_methods_classffnn_1_1layer_1_1_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup constructor.  <a href="#a0c766a6f5770ea0ae8a7e660523eb413">More...</a><br/></td></tr>
-<tr class="separator:a0c766a6f5770ea0ae8a7e660523eb413 inherit pub_methods_classffnn_1_1layer_1_1_layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa466bcb2ac40d059e9b6e40be157d1b4 inherit pub_methods_classffnn_1_1layer_1_1_layer"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_layer.html#aa466bcb2ac40d059e9b6e40be157d1b4">~Layer</a> ()</td></tr>
-<tr class="separator:aa466bcb2ac40d059e9b6e40be157d1b4 inherit pub_methods_classffnn_1_1layer_1_1_layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8049c939bc452bd5453227d1ce1a35f3 inherit pub_methods_classffnn_1_1layer_1_1_layer"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classffnn_1_1layer_1_1_layer.html#ad9cab24dbd0cbed2febed5b635f81722">BufferType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_layer.html#a8049c939bc452bd5453227d1ce1a35f3">getInputBuffer</a> () const </td></tr>
-<tr class="memdesc:a8049c939bc452bd5453227d1ce1a35f3 inherit pub_methods_classffnn_1_1layer_1_1_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exposes const reference to raw data input buffer.  <a href="#a8049c939bc452bd5453227d1ce1a35f3">More...</a><br/></td></tr>
-<tr class="separator:a8049c939bc452bd5453227d1ce1a35f3 inherit pub_methods_classffnn_1_1layer_1_1_layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0caad62750e9610e607fb18d87df63b8 inherit pub_methods_classffnn_1_1layer_1_1_layer"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classffnn_1_1layer_1_1_layer.html#ad9cab24dbd0cbed2febed5b635f81722">BufferType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_layer.html#a0caad62750e9610e607fb18d87df63b8">getBackwardErrorBuffer</a> () const </td></tr>
-<tr class="memdesc:a0caad62750e9610e607fb18d87df63b8 inherit pub_methods_classffnn_1_1layer_1_1_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exposes const reference to raw data backward-error buffer.  <a href="#a0caad62750e9610e607fb18d87df63b8">More...</a><br/></td></tr>
-<tr class="separator:a0caad62750e9610e607fb18d87df63b8 inherit pub_methods_classffnn_1_1layer_1_1_layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f69fc9185b2d496fea7be9a5d9adb62 inherit pub_methods_classffnn_1_1layer_1_1_layer"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classffnn_1_1layer_1_1_layer.html#ab80478345a2579402ae086a2f7de1ca2">ShapeType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_layer.html#a0f69fc9185b2d496fea7be9a5d9adb62">getInputShape</a> () const </td></tr>
-<tr class="memdesc:a0f69fc9185b2d496fea7be9a5d9adb62 inherit pub_methods_classffnn_1_1layer_1_1_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the Interface input dimension oject.  <a href="#a0f69fc9185b2d496fea7be9a5d9adb62">More...</a><br/></td></tr>
-<tr class="separator:a0f69fc9185b2d496fea7be9a5d9adb62 inherit pub_methods_classffnn_1_1layer_1_1_layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b6713211f1a5e702ce9ce8cd72e4854 inherit pub_methods_classffnn_1_1layer_1_1_layer"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classffnn_1_1layer_1_1_layer.html#ab80478345a2579402ae086a2f7de1ca2">ShapeType</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_layer.html#a2b6713211f1a5e702ce9ce8cd72e4854">getOutputShape</a> () const </td></tr>
-<tr class="memdesc:a2b6713211f1a5e702ce9ce8cd72e4854 inherit pub_methods_classffnn_1_1layer_1_1_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the Interface output dimension oject.  <a href="#a2b6713211f1a5e702ce9ce8cd72e4854">More...</a><br/></td></tr>
-<tr class="separator:a2b6713211f1a5e702ce9ce8cd72e4854 inherit pub_methods_classffnn_1_1layer_1_1_layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afdc489e04b2b1e716940f598ac474e4c inherit pub_methods_classffnn_1_1layer_1_1_layer"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classffnn_1_1layer_1_1_layer.html#a4c4c9782d2aed41c2a5000ec5da5601a">SizeType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_layer.html#afdc489e04b2b1e716940f598ac474e4c">evaluateInputSize</a> () const </td></tr>
-<tr class="memdesc:afdc489e04b2b1e716940f598ac474e4c inherit pub_methods_classffnn_1_1layer_1_1_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the total number counted (evaluated) inputs.  <a href="#afdc489e04b2b1e716940f598ac474e4c">More...</a><br/></td></tr>
-<tr class="separator:afdc489e04b2b1e716940f598ac474e4c inherit pub_methods_classffnn_1_1layer_1_1_layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2166b32e32c3f4e979ed7454ddb5817f inherit pub_methods_classffnn_1_1layer_1_1_layer"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_layer.html#a2166b32e32c3f4e979ed7454ddb5817f">isInitialized</a> () const </td></tr>
-<tr class="memdesc:a2166b32e32c3f4e979ed7454ddb5817f inherit pub_methods_classffnn_1_1layer_1_1_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if layer has been initialized.  <a href="#a2166b32e32c3f4e979ed7454ddb5817f">More...</a><br/></td></tr>
-<tr class="separator:a2166b32e32c3f4e979ed7454ddb5817f inherit pub_methods_classffnn_1_1layer_1_1_layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ed6596711548678da8ef9ed9e59b06c inherit pub_methods_classffnn_1_1layer_1_1_layer"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_layer.html#a2ed6596711548678da8ef9ed9e59b06c">setupRequired</a> () const </td></tr>
-<tr class="memdesc:a2ed6596711548678da8ef9ed9e59b06c inherit pub_methods_classffnn_1_1layer_1_1_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if portions of the interface must be setup.  <a href="#a2ed6596711548678da8ef9ed9e59b06c">More...</a><br/></td></tr>
-<tr class="separator:a2ed6596711548678da8ef9ed9e59b06c inherit pub_methods_classffnn_1_1layer_1_1_layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_classffnn_1_1internal_1_1_unique"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classffnn_1_1internal_1_1_unique')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classffnn_1_1internal_1_1_unique.html">ffnn::internal::Unique</a></td></tr>
-<tr class="memitem:ad4f80a296525cc5c6c74571ccab94842 inherit pub_methods_classffnn_1_1internal_1_1_unique"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1internal_1_1_unique.html#ad4f80a296525cc5c6c74571ccab94842">Unique</a> ()</td></tr>
-<tr class="memdesc:ad4f80a296525cc5c6c74571ccab94842 inherit pub_methods_classffnn_1_1internal_1_1_unique"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <a href="#ad4f80a296525cc5c6c74571ccab94842">More...</a><br/></td></tr>
-<tr class="separator:ad4f80a296525cc5c6c74571ccab94842 inherit pub_methods_classffnn_1_1internal_1_1_unique"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5723da9af9ff0ff8043e55239fe10f7f inherit pub_methods_classffnn_1_1internal_1_1_unique"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1internal_1_1_unique.html#a5723da9af9ff0ff8043e55239fe10f7f">getID</a> () const </td></tr>
-<tr class="memdesc:a5723da9af9ff0ff8043e55239fe10f7f inherit pub_methods_classffnn_1_1internal_1_1_unique"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an ID.  <a href="#a5723da9af9ff0ff8043e55239fe10f7f">More...</a><br/></td></tr>
-<tr class="separator:a5723da9af9ff0ff8043e55239fe10f7f inherit pub_methods_classffnn_1_1internal_1_1_unique"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae87f0ac803b0f889823deeb80c3124c5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#ae87f0ac803b0f889823deeb80c3124c5">Hidden</a> (const <a class="el" href="classffnn_1_1layer_1_1_hidden.html#a567e902299b3355501393cf6c7b27c38">ShapeType</a> &amp;input_shape=<a class="el" href="classffnn_1_1layer_1_1_hidden.html#a567e902299b3355501393cf6c7b27c38">ShapeType</a>(Options::input_height, Options::input_width), const <a class="el" href="classffnn_1_1layer_1_1_hidden.html#a567e902299b3355501393cf6c7b27c38">ShapeType</a> &amp;output_shape=<a class="el" href="classffnn_1_1layer_1_1_hidden.html#a567e902299b3355501393cf6c7b27c38">ShapeType</a>(Options::output_height, Options::output_width))</td></tr>
+<tr class="memdesc:ae87f0ac803b0f889823deeb80c3124c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup constructor.  <a href="#ae87f0ac803b0f889823deeb80c3124c5">More...</a><br/></td></tr>
+<tr class="separator:ae87f0ac803b0f889823deeb80c3124c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4453b6032e969b3cc31eb7f083d2359"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#aa4453b6032e969b3cc31eb7f083d2359">~Hidden</a> ()</td></tr>
+<tr class="separator:aa4453b6032e969b3cc31eb7f083d2359"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50b9141e7d96fb7c6a1a6418fb204d92"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#a50b9141e7d96fb7c6a1a6418fb204d92">initialize</a> ()</td></tr>
+<tr class="memdesc:a50b9141e7d96fb7c6a1a6418fb204d92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the layer.  <a href="#a50b9141e7d96fb7c6a1a6418fb204d92">More...</a><br/></td></tr>
+<tr class="separator:a50b9141e7d96fb7c6a1a6418fb204d92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba6a84a760d66acec2e6e67c29a67f5b"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#aba6a84a760d66acec2e6e67c29a67f5b">forward</a> ()=0</td></tr>
+<tr class="memdesc:aba6a84a760d66acec2e6e67c29a67f5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forward value propagation.  <a href="#aba6a84a760d66acec2e6e67c29a67f5b">More...</a><br/></td></tr>
+<tr class="separator:aba6a84a760d66acec2e6e67c29a67f5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac26b0c21f2d47b06b6ecba0211bb696e"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#ac26b0c21f2d47b06b6ecba0211bb696e">backward</a> ()=0</td></tr>
+<tr class="memdesc:ac26b0c21f2d47b06b6ecba0211bb696e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Backward value propagation.  <a href="#ac26b0c21f2d47b06b6ecba0211bb696e">More...</a><br/></td></tr>
+<tr class="separator:ac26b0c21f2d47b06b6ecba0211bb696e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac95dceacf1a0ea65674fb269a48730fb"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#ac95dceacf1a0ea65674fb269a48730fb">update</a> ()=0</td></tr>
+<tr class="memdesc:ac95dceacf1a0ea65674fb269a48730fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies layer weight updates.  <a href="#ac95dceacf1a0ea65674fb269a48730fb">More...</a><br/></td></tr>
+<tr class="separator:ac95dceacf1a0ea65674fb269a48730fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a184844a0eadeb1aa27e29b24cbb0008c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#a184844a0eadeb1aa27e29b24cbb0008c">save</a> (<a class="el" href="classffnn_1_1internal_1_1_serializable.html#acf5baead716eb277337a4437e88a5743">OutputArchive</a> &amp;ar, <a class="el" href="classffnn_1_1internal_1_1_serializable.html#a32fe7d82b0caf9fe8b6fb7c312a26028">VersionType</a> version) const </td></tr>
-<tr class="memdesc:a184844a0eadeb1aa27e29b24cbb0008c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save serializer.  <a href="#a184844a0eadeb1aa27e29b24cbb0008c">More...</a><br/></td></tr>
-<tr class="separator:a184844a0eadeb1aa27e29b24cbb0008c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ab88bd0c94d86b6d17f63e054cc907c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#a4ab88bd0c94d86b6d17f63e054cc907c">load</a> (<a class="el" href="classffnn_1_1internal_1_1_serializable.html#aadc27d79d606f35a82dd88bad33fa6d2">InputArchive</a> &amp;ar, <a class="el" href="classffnn_1_1internal_1_1_serializable.html#a32fe7d82b0caf9fe8b6fb7c312a26028">VersionType</a> version)</td></tr>
-<tr class="memdesc:a4ab88bd0c94d86b6d17f63e054cc907c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load serializer.  <a href="#a4ab88bd0c94d86b6d17f63e054cc907c">More...</a><br/></td></tr>
-<tr class="separator:a4ab88bd0c94d86b6d17f63e054cc907c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f56d6a53aacd8c84477dbe73d250101"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classffnn_1_1layer_1_1_hidden.html#ae2409b970adafb0ebc9b2eec62c4aac4">OffsetType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#a0f56d6a53aacd8c84477dbe73d250101">connectToForwardLayer</a> (const <a class="el" href="classffnn_1_1layer_1_1_layer.html">Layer</a>&lt; ValueType &gt; &amp;next, <a class="el" href="classffnn_1_1layer_1_1_hidden.html#ae2409b970adafb0ebc9b2eec62c4aac4">OffsetType</a> offset)</td></tr>
-<tr class="memdesc:a0f56d6a53aacd8c84477dbe73d250101"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps outputs of this layer to inputs of the next.  <a href="#a0f56d6a53aacd8c84477dbe73d250101">More...</a><br/></td></tr>
-<tr class="separator:a0f56d6a53aacd8c84477dbe73d250101"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_methods_classffnn_1_1layer_1_1_layer"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classffnn_1_1layer_1_1_layer')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classffnn_1_1layer_1_1_layer.html">ffnn::layer::Layer&lt; ValueType &gt;</a></td></tr>
-<tr class="memitem:ac265fc929a178b111337226dd1cb62b6 inherit pro_methods_classffnn_1_1layer_1_1_layer"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_layer.html#ac265fc929a178b111337226dd1cb62b6">save</a> (<a class="el" href="classffnn_1_1internal_1_1_serializable.html#acf5baead716eb277337a4437e88a5743">OutputArchive</a> &amp;ar, <a class="el" href="classffnn_1_1internal_1_1_serializable.html#a32fe7d82b0caf9fe8b6fb7c312a26028">VersionType</a> version) const </td></tr>
-<tr class="memdesc:ac265fc929a178b111337226dd1cb62b6 inherit pro_methods_classffnn_1_1layer_1_1_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save serializer.  <a href="#ac265fc929a178b111337226dd1cb62b6">More...</a><br/></td></tr>
-<tr class="separator:ac265fc929a178b111337226dd1cb62b6 inherit pro_methods_classffnn_1_1layer_1_1_layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23f5f3c958d888632010327471c7b012 inherit pro_methods_classffnn_1_1layer_1_1_layer"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_layer.html#a23f5f3c958d888632010327471c7b012">load</a> (<a class="el" href="classffnn_1_1internal_1_1_serializable.html#aadc27d79d606f35a82dd88bad33fa6d2">InputArchive</a> &amp;ar, <a class="el" href="classffnn_1_1internal_1_1_serializable.html#a32fe7d82b0caf9fe8b6fb7c312a26028">VersionType</a> version)</td></tr>
-<tr class="memdesc:a23f5f3c958d888632010327471c7b012 inherit pro_methods_classffnn_1_1layer_1_1_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load serializer.  <a href="#a23f5f3c958d888632010327471c7b012">More...</a><br/></td></tr>
-<tr class="separator:a23f5f3c958d888632010327471c7b012 inherit pro_methods_classffnn_1_1layer_1_1_layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc4ec2b6a43788f58dcd18a26a9e30de inherit pro_methods_classffnn_1_1layer_1_1_layer"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classffnn_1_1layer_1_1_layer.html#a4c4c9782d2aed41c2a5000ec5da5601a">SizeType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_layer.html#afc4ec2b6a43788f58dcd18a26a9e30de">evaluateInputSize</a> () const </td></tr>
-<tr class="memdesc:afc4ec2b6a43788f58dcd18a26a9e30de inherit pro_methods_classffnn_1_1layer_1_1_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Counts the number of inputs from outputs of previous layers.  <a href="#afc4ec2b6a43788f58dcd18a26a9e30de">More...</a><br/></td></tr>
-<tr class="separator:afc4ec2b6a43788f58dcd18a26a9e30de inherit pro_methods_classffnn_1_1layer_1_1_layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d692bce889ddc693e5bac8dda5d4cd2 inherit pro_methods_classffnn_1_1layer_1_1_layer"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classffnn_1_1layer_1_1_layer.html#a2130560f43788898079b7c5c01fb94c8">OffsetType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_layer.html#a9d692bce889ddc693e5bac8dda5d4cd2">connectInputLayers</a> ()</td></tr>
-<tr class="memdesc:a9d692bce889ddc693e5bac8dda5d4cd2 inherit pro_methods_classffnn_1_1layer_1_1_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connects all previous layer to <a class="el" href="classffnn_1_1layer_1_1_layer.html" title="Base object for all layer types. ">Layer</a> input.  <a href="#a9d692bce889ddc693e5bac8dda5d4cd2">More...</a><br/></td></tr>
-<tr class="separator:a9d692bce889ddc693e5bac8dda5d4cd2 inherit pro_methods_classffnn_1_1layer_1_1_layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_methods_classffnn_1_1internal_1_1_unique"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classffnn_1_1internal_1_1_unique')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classffnn_1_1internal_1_1_unique.html">ffnn::internal::Unique</a></td></tr>
-<tr class="memitem:ace4b1ad17d5dbcc4dcd555435753ab4a inherit pro_methods_classffnn_1_1internal_1_1_unique"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1internal_1_1_unique.html#ace4b1ad17d5dbcc4dcd555435753ab4a">FFNN_REGISTER_SERIALIZABLE</a> (<a class="el" href="classffnn_1_1internal_1_1_unique.html">Unique</a>)</td></tr>
-<tr class="separator:ace4b1ad17d5dbcc4dcd555435753ab4a inherit pro_methods_classffnn_1_1internal_1_1_unique"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ef2b7dc49a809498125190628e672cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#a1ef2b7dc49a809498125190628e672cf">save</a> (OutputArchive &amp;ar, VersionType version) const </td></tr>
+<tr class="memdesc:a1ef2b7dc49a809498125190628e672cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save serializer.  <a href="#a1ef2b7dc49a809498125190628e672cf">More...</a><br/></td></tr>
+<tr class="separator:a1ef2b7dc49a809498125190628e672cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94cba25f361e7077a3b7eb863d7d2f02"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#a94cba25f361e7077a3b7eb863d7d2f02">load</a> (InputArchive &amp;ar, VersionType version)</td></tr>
+<tr class="memdesc:a94cba25f361e7077a3b7eb863d7d2f02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load serializer.  <a href="#a94cba25f361e7077a3b7eb863d7d2f02">More...</a><br/></td></tr>
+<tr class="separator:a94cba25f361e7077a3b7eb863d7d2f02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a850146834d054166b69309d093c650dd"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceffnn.html#add5752d74b38c6e9b200f3d696fc3ec8">offset_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#a850146834d054166b69309d093c650dd">connectToForwardLayer</a> (const <a class="el" href="classffnn_1_1layer_1_1_layer.html">Layer</a>&lt; ValueType &gt; &amp;next, <a class="el" href="namespaceffnn.html#add5752d74b38c6e9b200f3d696fc3ec8">offset_type</a> offset)</td></tr>
+<tr class="memdesc:a850146834d054166b69309d093c650dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps outputs of this layer to inputs of the next.  <a href="#a850146834d054166b69309d093c650dd">More...</a><br/></td></tr>
+<tr class="separator:a850146834d054166b69309d093c650dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a1177e86b75ad7ba87aa4e855defa5851"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#a9297d5b8ac45dc288ee1b91f15bb4047">InputMappingType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#a1177e86b75ad7ba87aa4e855defa5851">input_</a></td></tr>
-<tr class="memdesc:a1177e86b75ad7ba87aa4e855defa5851"><td class="mdescLeft">&#160;</td><td class="mdescRight">Memory-mapped input vector.  <a href="#a1177e86b75ad7ba87aa4e855defa5851">More...</a><br/></td></tr>
-<tr class="separator:a1177e86b75ad7ba87aa4e855defa5851"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf9818c784dccc1860fe8384264cc4be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#a619ae9b0890cb86b66ac2b591b5a5610">OutputMappingType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#adf9818c784dccc1860fe8384264cc4be">output_</a></td></tr>
-<tr class="memdesc:adf9818c784dccc1860fe8384264cc4be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Memory-mapped output vector.  <a href="#adf9818c784dccc1860fe8384264cc4be">More...</a><br/></td></tr>
-<tr class="separator:adf9818c784dccc1860fe8384264cc4be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94312439d5029c9c779ff778f18f95a8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#a9297d5b8ac45dc288ee1b91f15bb4047">InputMappingType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#a94312439d5029c9c779ff778f18f95a8">backward_error_</a></td></tr>
-<tr class="memdesc:a94312439d5029c9c779ff778f18f95a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Backward error vector.  <a href="#a94312439d5029c9c779ff778f18f95a8">More...</a><br/></td></tr>
-<tr class="separator:a94312439d5029c9c779ff778f18f95a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1f439bdd3645a5ee444455d822b5143"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#a619ae9b0890cb86b66ac2b591b5a5610">OutputMappingType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#af1f439bdd3645a5ee444455d822b5143">forward_error_</a></td></tr>
-<tr class="memdesc:af1f439bdd3645a5ee444455d822b5143"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output-target error vector.  <a href="#af1f439bdd3645a5ee444455d822b5143">More...</a><br/></td></tr>
-<tr class="separator:af1f439bdd3645a5ee444455d822b5143"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_attribs_classffnn_1_1layer_1_1_layer"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classffnn_1_1layer_1_1_layer')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classffnn_1_1layer_1_1_layer.html">ffnn::layer::Layer&lt; ValueType &gt;</a></td></tr>
-<tr class="memitem:abe139156722efe30288b00becbd52cb9 inherit pro_attribs_classffnn_1_1layer_1_1_layer"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, <br class="typebreak"/>
-typename <a class="el" href="classffnn_1_1layer_1_1_layer.html#ac336e7cc01ccf0117c5a4a2baf98add4">Self::Ptr</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_layer.html#abe139156722efe30288b00becbd52cb9">prev_</a></td></tr>
-<tr class="memdesc:abe139156722efe30288b00becbd52cb9 inherit pro_attribs_classffnn_1_1layer_1_1_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointers to previous layers.  <a href="#abe139156722efe30288b00becbd52cb9">More...</a><br/></td></tr>
-<tr class="separator:abe139156722efe30288b00becbd52cb9 inherit pro_attribs_classffnn_1_1layer_1_1_layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4b5ac0708d6ada04d62df4fad377f1a inherit pro_attribs_classffnn_1_1layer_1_1_layer"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classffnn_1_1layer_1_1_layer.html#ad9cab24dbd0cbed2febed5b635f81722">BufferType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_layer.html#ad4b5ac0708d6ada04d62df4fad377f1a">input_buffer_</a></td></tr>
-<tr class="memdesc:ad4b5ac0708d6ada04d62df4fad377f1a inherit pro_attribs_classffnn_1_1layer_1_1_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw input value buffer.  <a href="#ad4b5ac0708d6ada04d62df4fad377f1a">More...</a><br/></td></tr>
-<tr class="separator:ad4b5ac0708d6ada04d62df4fad377f1a inherit pro_attribs_classffnn_1_1layer_1_1_layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79d676e9b8bd04d1a438266206d4b321 inherit pro_attribs_classffnn_1_1layer_1_1_layer"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classffnn_1_1layer_1_1_layer.html#ad9cab24dbd0cbed2febed5b635f81722">BufferType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_layer.html#a79d676e9b8bd04d1a438266206d4b321">backward_error_buffer_</a></td></tr>
-<tr class="memdesc:a79d676e9b8bd04d1a438266206d4b321 inherit pro_attribs_classffnn_1_1layer_1_1_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw backward error value buffer.  <a href="#a79d676e9b8bd04d1a438266206d4b321">More...</a><br/></td></tr>
-<tr class="separator:a79d676e9b8bd04d1a438266206d4b321 inherit pro_attribs_classffnn_1_1layer_1_1_layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07cc49b6890743a8045e3adc7c07aca5 inherit pro_attribs_classffnn_1_1layer_1_1_layer"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classffnn_1_1layer_1_1_layer.html#ab80478345a2579402ae086a2f7de1ca2">ShapeType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_layer.html#a07cc49b6890743a8045e3adc7c07aca5">input_shape_</a></td></tr>
-<tr class="memdesc:a07cc49b6890743a8045e3adc7c07aca5 inherit pro_attribs_classffnn_1_1layer_1_1_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total number of input connections.  <a href="#a07cc49b6890743a8045e3adc7c07aca5">More...</a><br/></td></tr>
-<tr class="separator:a07cc49b6890743a8045e3adc7c07aca5 inherit pro_attribs_classffnn_1_1layer_1_1_layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a453330bda96277cd7b794bfab4804c47 inherit pro_attribs_classffnn_1_1layer_1_1_layer"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classffnn_1_1layer_1_1_layer.html#ab80478345a2579402ae086a2f7de1ca2">ShapeType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_layer.html#a453330bda96277cd7b794bfab4804c47">output_shape_</a></td></tr>
-<tr class="memdesc:a453330bda96277cd7b794bfab4804c47 inherit pro_attribs_classffnn_1_1layer_1_1_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total number of output connections.  <a href="#a453330bda96277cd7b794bfab4804c47">More...</a><br/></td></tr>
-<tr class="separator:a453330bda96277cd7b794bfab4804c47 inherit pro_attribs_classffnn_1_1layer_1_1_layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e353c2498ffed566076b3a7fd187e7b inherit pro_attribs_classffnn_1_1layer_1_1_layer"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_layer.html#a4e353c2498ffed566076b3a7fd187e7b">initialized_</a></td></tr>
-<tr class="memdesc:a4e353c2498ffed566076b3a7fd187e7b inherit pro_attribs_classffnn_1_1layer_1_1_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flags which indicated that layer has been initialized.  <a href="#a4e353c2498ffed566076b3a7fd187e7b">More...</a><br/></td></tr>
-<tr class="separator:a4e353c2498ffed566076b3a7fd187e7b inherit pro_attribs_classffnn_1_1layer_1_1_layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a366d73e2b1ead280a6956c85ea56cb inherit pro_attribs_classffnn_1_1layer_1_1_layer"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_layer.html#a1a366d73e2b1ead280a6956c85ea56cb">setup_required_</a></td></tr>
-<tr class="memdesc:a1a366d73e2b1ead280a6956c85ea56cb inherit pro_attribs_classffnn_1_1layer_1_1_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flags which indicates that layer should be initialized normally.  <a href="#a1a366d73e2b1ead280a6956c85ea56cb">More...</a><br/></td></tr>
-<tr class="separator:a1a366d73e2b1ead280a6956c85ea56cb inherit pro_attribs_classffnn_1_1layer_1_1_layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe2644f671f711cf0ca1357621dfc3a6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#ac518f2e2be1250c1af7b2f8574cadc8d">InputMappingType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#afe2644f671f711cf0ca1357621dfc3a6">input_</a></td></tr>
+<tr class="memdesc:afe2644f671f711cf0ca1357621dfc3a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Memory-mapped input vector.  <a href="#afe2644f671f711cf0ca1357621dfc3a6">More...</a><br/></td></tr>
+<tr class="separator:afe2644f671f711cf0ca1357621dfc3a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a118c5ecea99dc243573c981f26d53fc6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#a9d882e035c7cd80ccd9b58fbe832591e">OutputMappingType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#a118c5ecea99dc243573c981f26d53fc6">output_</a></td></tr>
+<tr class="memdesc:a118c5ecea99dc243573c981f26d53fc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Memory-mapped output vector.  <a href="#a118c5ecea99dc243573c981f26d53fc6">More...</a><br/></td></tr>
+<tr class="separator:a118c5ecea99dc243573c981f26d53fc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4d0ae165b9c65ba0c156643962c866b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#ac518f2e2be1250c1af7b2f8574cadc8d">InputMappingType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#ac4d0ae165b9c65ba0c156643962c866b">backward_error_</a></td></tr>
+<tr class="memdesc:ac4d0ae165b9c65ba0c156643962c866b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Backward error vector.  <a href="#ac4d0ae165b9c65ba0c156643962c866b">More...</a><br/></td></tr>
+<tr class="separator:ac4d0ae165b9c65ba0c156643962c866b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1abba7440bdde56f49673de2acf58b30"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#a9d882e035c7cd80ccd9b58fbe832591e">OutputMappingType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#a1abba7440bdde56f49673de2acf58b30">forward_error_</a></td></tr>
+<tr class="memdesc:a1abba7440bdde56f49673de2acf58b30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output-target error vector.  <a href="#a1abba7440bdde56f49673de2acf58b30">More...</a><br/></td></tr>
+<tr class="separator:a1abba7440bdde56f49673de2acf58b30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;typename ValueType, typename LayerShape = hidden_layer_traits&lt;&gt;, typename _InputBlockType = Eigen::Matrix&lt;ValueType, LayerShape::input_height,  LayerShape::input_width,  Eigen::ColMajor&gt;, typename _OutputBlockType = Eigen::Matrix&lt;ValueType, LayerShape::output_height, LayerShape::output_width, Eigen::ColMajor&gt;&gt;<br/>
-class ffnn::layer::Hidden&lt; ValueType, LayerShape, _InputBlockType, _OutputBlockType &gt;</h3>
+<div class="textblock"><h3>template&lt;typename ValueType, typename Options = hidden::options&lt;&gt;, typename Extrinsics = hidden::extrinsics&lt;ValueType, Options&gt;&gt;<br/>
+class ffnn::layer::Hidden&lt; ValueType, Options, Extrinsics &gt;</h3>
 
 <p>A network hidden-layer object. </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a class="anchor" id="a2ff8a0b925b2b929b05e7889dda361e4"></a>
+<a class="anchor" id="a6369d3e45b700c257076cd955d50f9c3"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType, typename LayerShape = hidden_layer_traits&lt;&gt;, typename _InputBlockType = Eigen::Matrix&lt;ValueType, LayerShape::input_height,  LayerShape::input_width,  Eigen::ColMajor&gt;, typename _OutputBlockType = Eigen::Matrix&lt;ValueType, LayerShape::output_height, LayerShape::output_width, Eigen::ColMajor&gt;&gt; </div>
+template&lt;typename ValueType, typename Options = hidden::options&lt;&gt;, typename Extrinsics = hidden::extrinsics&lt;ValueType, Options&gt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classffnn_1_1layer_1_1_hidden.html">ffnn::layer::Hidden</a>&lt; ValueType, LayerShape, _InputBlockType, _OutputBlockType &gt;::<a class="el" href="classffnn_1_1layer_1_1_hidden.html#a2ff8a0b925b2b929b05e7889dda361e4">Base</a> =  <a class="el" href="classffnn_1_1layer_1_1_layer.html">Layer</a>&lt;ValueType&gt;</td>
+          <td class="memname">using <a class="el" href="classffnn_1_1layer_1_1_hidden.html">ffnn::layer::Hidden</a>&lt; ValueType, Options, Extrinsics &gt;::<a class="el" href="classffnn_1_1layer_1_1_hidden.html#a6369d3e45b700c257076cd955d50f9c3">BaseType</a> =  <a class="el" href="classffnn_1_1layer_1_1_layer.html">Layer</a>&lt;ValueType&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -338,14 +210,14 @@ template&lt;typename ValueType, typename LayerShape = hidden_layer_traits&lt;&gt
 
 </div>
 </div>
-<a class="anchor" id="ae401b1af7763caf09a0dffcaf4f2d5e9"></a>
+<a class="anchor" id="abd5a3b5c55984948f903fe88759efaf4"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType, typename LayerShape = hidden_layer_traits&lt;&gt;, typename _InputBlockType = Eigen::Matrix&lt;ValueType, LayerShape::input_height,  LayerShape::input_width,  Eigen::ColMajor&gt;, typename _OutputBlockType = Eigen::Matrix&lt;ValueType, LayerShape::output_height, LayerShape::output_width, Eigen::ColMajor&gt;&gt; </div>
+template&lt;typename ValueType, typename Options = hidden::options&lt;&gt;, typename Extrinsics = hidden::extrinsics&lt;ValueType, Options&gt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">typedef _InputBlockType <a class="el" href="classffnn_1_1layer_1_1_hidden.html">ffnn::layer::Hidden</a>&lt; ValueType, LayerShape, _InputBlockType, _OutputBlockType &gt;::<a class="el" href="classffnn_1_1layer_1_1_hidden.html#ae401b1af7763caf09a0dffcaf4f2d5e9">InputBlockType</a></td>
+          <td class="memname">typedef Extrinsics::InputBlockType <a class="el" href="classffnn_1_1layer_1_1_hidden.html">ffnn::layer::Hidden</a>&lt; ValueType, Options, Extrinsics &gt;::<a class="el" href="classffnn_1_1layer_1_1_hidden.html#abd5a3b5c55984948f903fe88759efaf4">InputBlockType</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -354,46 +226,30 @@ template&lt;typename ValueType, typename LayerShape = hidden_layer_traits&lt;&gt
 
 </div>
 </div>
-<a class="anchor" id="a9297d5b8ac45dc288ee1b91f15bb4047"></a>
+<a class="anchor" id="ac518f2e2be1250c1af7b2f8574cadc8d"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType, typename LayerShape = hidden_layer_traits&lt;&gt;, typename _InputBlockType = Eigen::Matrix&lt;ValueType, LayerShape::input_height,  LayerShape::input_width,  Eigen::ColMajor&gt;, typename _OutputBlockType = Eigen::Matrix&lt;ValueType, LayerShape::output_height, LayerShape::output_width, Eigen::ColMajor&gt;&gt; </div>
+template&lt;typename ValueType, typename Options = hidden::options&lt;&gt;, typename Extrinsics = hidden::extrinsics&lt;ValueType, Options&gt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">typedef Eigen::Map&lt;<a class="el" href="classffnn_1_1layer_1_1_hidden.html#ae401b1af7763caf09a0dffcaf4f2d5e9">InputBlockType</a>, 16&gt; <a class="el" href="classffnn_1_1layer_1_1_hidden.html">ffnn::layer::Hidden</a>&lt; ValueType, LayerShape, _InputBlockType, _OutputBlockType &gt;::<a class="el" href="classffnn_1_1layer_1_1_hidden.html#a9297d5b8ac45dc288ee1b91f15bb4047">InputMappingType</a></td>
+          <td class="memname">typedef Extrinsics::InputMappingType <a class="el" href="classffnn_1_1layer_1_1_hidden.html">ffnn::layer::Hidden</a>&lt; ValueType, Options, Extrinsics &gt;::<a class="el" href="classffnn_1_1layer_1_1_hidden.html#ac518f2e2be1250c1af7b2f8574cadc8d">InputMappingType</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="classffnn_1_1layer_1_1_input.html" title="A layer which handles network inputs. ">Input</a> block-mapping type standardization. </p>
+<p><a class="el" href="classffnn_1_1layer_1_1_input.html" title="A layer which handles network inputs. ">Input</a> mapping type standardization. </p>
 
 </div>
 </div>
-<a class="anchor" id="ae2409b970adafb0ebc9b2eec62c4aac4"></a>
+<a class="anchor" id="a9fd326932b57e1d86d86bdb168822727"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType, typename LayerShape = hidden_layer_traits&lt;&gt;, typename _InputBlockType = Eigen::Matrix&lt;ValueType, LayerShape::input_height,  LayerShape::input_width,  Eigen::ColMajor&gt;, typename _OutputBlockType = Eigen::Matrix&lt;ValueType, LayerShape::output_height, LayerShape::output_width, Eigen::ColMajor&gt;&gt; </div>
+template&lt;typename ValueType, typename Options = hidden::options&lt;&gt;, typename Extrinsics = hidden::extrinsics&lt;ValueType, Options&gt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">typedef <a class="el" href="classffnn_1_1layer_1_1_layer.html#a2130560f43788898079b7c5c01fb94c8">Base::OffsetType</a> <a class="el" href="classffnn_1_1layer_1_1_hidden.html">ffnn::layer::Hidden</a>&lt; ValueType, LayerShape, _InputBlockType, _OutputBlockType &gt;::<a class="el" href="classffnn_1_1layer_1_1_hidden.html#ae2409b970adafb0ebc9b2eec62c4aac4">OffsetType</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Offset type standardization. </p>
-
-</div>
-</div>
-<a class="anchor" id="a9b9e276188ef490ea5301f553225c735"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename ValueType, typename LayerShape = hidden_layer_traits&lt;&gt;, typename _InputBlockType = Eigen::Matrix&lt;ValueType, LayerShape::input_height,  LayerShape::input_width,  Eigen::ColMajor&gt;, typename _OutputBlockType = Eigen::Matrix&lt;ValueType, LayerShape::output_height, LayerShape::output_width, Eigen::ColMajor&gt;&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef _OutputBlockType <a class="el" href="classffnn_1_1layer_1_1_hidden.html">ffnn::layer::Hidden</a>&lt; ValueType, LayerShape, _InputBlockType, _OutputBlockType &gt;::<a class="el" href="classffnn_1_1layer_1_1_hidden.html#a9b9e276188ef490ea5301f553225c735">OutputBlockType</a></td>
+          <td class="memname">typedef Extrinsics::OutputBlockType <a class="el" href="classffnn_1_1layer_1_1_hidden.html">ffnn::layer::Hidden</a>&lt; ValueType, Options, Extrinsics &gt;::<a class="el" href="classffnn_1_1layer_1_1_hidden.html#a9fd326932b57e1d86d86bdb168822727">OutputBlockType</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -402,30 +258,46 @@ template&lt;typename ValueType, typename LayerShape = hidden_layer_traits&lt;&gt
 
 </div>
 </div>
-<a class="anchor" id="a619ae9b0890cb86b66ac2b591b5a5610"></a>
+<a class="anchor" id="a9d882e035c7cd80ccd9b58fbe832591e"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType, typename LayerShape = hidden_layer_traits&lt;&gt;, typename _InputBlockType = Eigen::Matrix&lt;ValueType, LayerShape::input_height,  LayerShape::input_width,  Eigen::ColMajor&gt;, typename _OutputBlockType = Eigen::Matrix&lt;ValueType, LayerShape::output_height, LayerShape::output_width, Eigen::ColMajor&gt;&gt; </div>
+template&lt;typename ValueType, typename Options = hidden::options&lt;&gt;, typename Extrinsics = hidden::extrinsics&lt;ValueType, Options&gt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">typedef Eigen::Map&lt;<a class="el" href="classffnn_1_1layer_1_1_hidden.html#a9b9e276188ef490ea5301f553225c735">OutputBlockType</a>, 16&gt; <a class="el" href="classffnn_1_1layer_1_1_hidden.html">ffnn::layer::Hidden</a>&lt; ValueType, LayerShape, _InputBlockType, _OutputBlockType &gt;::<a class="el" href="classffnn_1_1layer_1_1_hidden.html#a619ae9b0890cb86b66ac2b591b5a5610">OutputMappingType</a></td>
+          <td class="memname">typedef Extrinsics::OutputMappingType <a class="el" href="classffnn_1_1layer_1_1_hidden.html">ffnn::layer::Hidden</a>&lt; ValueType, Options, Extrinsics &gt;::<a class="el" href="classffnn_1_1layer_1_1_hidden.html#a9d882e035c7cd80ccd9b58fbe832591e">OutputMappingType</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="classffnn_1_1layer_1_1_output.html" title="A layer which handles network outputs. ">Output</a> block-mapping type standardization. </p>
+<p><a class="el" href="classffnn_1_1layer_1_1_output.html" title="A layer which handles network outputs. ">Output</a> mapping type standardization. </p>
 
 </div>
 </div>
-<a class="anchor" id="abdfcf81b3846fae3b19a207424695df0"></a>
+<a class="anchor" id="a48f525146f2e73caf51aa404f38cdb75"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType, typename LayerShape = hidden_layer_traits&lt;&gt;, typename _InputBlockType = Eigen::Matrix&lt;ValueType, LayerShape::input_height,  LayerShape::input_width,  Eigen::ColMajor&gt;, typename _OutputBlockType = Eigen::Matrix&lt;ValueType, LayerShape::output_height, LayerShape::output_width, Eigen::ColMajor&gt;&gt; </div>
+template&lt;typename ValueType, typename Options = hidden::options&lt;&gt;, typename Extrinsics = hidden::extrinsics&lt;ValueType, Options&gt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">typedef <a class="el" href="classffnn_1_1layer_1_1_layer.html#ab80478345a2579402ae086a2f7de1ca2">Base::ShapeType</a> <a class="el" href="classffnn_1_1layer_1_1_hidden.html">ffnn::layer::Hidden</a>&lt; ValueType, LayerShape, _InputBlockType, _OutputBlockType &gt;::<a class="el" href="classffnn_1_1layer_1_1_hidden.html#abdfcf81b3846fae3b19a207424695df0">ShapeType</a></td>
+          <td class="memname">using <a class="el" href="classffnn_1_1layer_1_1_hidden.html">ffnn::layer::Hidden</a>&lt; ValueType, Options, Extrinsics &gt;::<a class="el" href="classffnn_1_1layer_1_1_hidden.html#a48f525146f2e73caf51aa404f38cdb75">SelfType</a> =  <a class="el" href="classffnn_1_1layer_1_1_hidden.html">Hidden</a>&lt;ValueType, Options&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Self type alias. </p>
+
+</div>
+</div>
+<a class="anchor" id="a567e902299b3355501393cf6c7b27c38"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ValueType, typename Options = hidden::options&lt;&gt;, typename Extrinsics = hidden::extrinsics&lt;ValueType, Options&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classffnn_1_1layer_1_1_layer.html#ae2f2d0063ab4b2c2a3a6ebf81f4ec32f">BaseType::ShapeType</a> <a class="el" href="classffnn_1_1layer_1_1_hidden.html">ffnn::layer::Hidden</a>&lt; ValueType, Options, Extrinsics &gt;::<a class="el" href="classffnn_1_1layer_1_1_hidden.html#a567e902299b3355501393cf6c7b27c38">ShapeType</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -434,43 +306,27 @@ template&lt;typename ValueType, typename LayerShape = hidden_layer_traits&lt;&gt
 
 </div>
 </div>
-<a class="anchor" id="ac148012cb544a39841675601090cd4c8"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename ValueType, typename LayerShape = hidden_layer_traits&lt;&gt;, typename _InputBlockType = Eigen::Matrix&lt;ValueType, LayerShape::input_height,  LayerShape::input_width,  Eigen::ColMajor&gt;, typename _OutputBlockType = Eigen::Matrix&lt;ValueType, LayerShape::output_height, LayerShape::output_width, Eigen::ColMajor&gt;&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef <a class="el" href="classffnn_1_1layer_1_1_layer.html#a4c4c9782d2aed41c2a5000ec5da5601a">Base::SizeType</a> <a class="el" href="classffnn_1_1layer_1_1_hidden.html">ffnn::layer::Hidden</a>&lt; ValueType, LayerShape, _InputBlockType, _OutputBlockType &gt;::<a class="el" href="classffnn_1_1layer_1_1_hidden.html#ac148012cb544a39841675601090cd4c8">SizeType</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Size type standardization. </p>
-
-</div>
-</div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a3caeb739cac8995496db207e32900fca"></a>
+<a class="anchor" id="ae87f0ac803b0f889823deeb80c3124c5"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType , typename LayerShape , typename _InputBlockType , typename _OutputBlockType &gt; </div>
+template&lt;typename ValueType , typename Options , typename Extrinsics &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classffnn_1_1layer_1_1_hidden.html">ffnn::layer::Hidden</a>&lt; ValueType, LayerShape, _InputBlockType, _OutputBlockType &gt;::<a class="el" href="classffnn_1_1layer_1_1_hidden.html">Hidden</a> </td>
+          <td class="memname"><a class="el" href="classffnn_1_1layer_1_1_hidden.html">ffnn::layer::Hidden</a>&lt; ValueType, Options, Extrinsics &gt;::<a class="el" href="classffnn_1_1layer_1_1_hidden.html">Hidden</a> </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classffnn_1_1layer_1_1_hidden.html#abdfcf81b3846fae3b19a207424695df0">ShapeType</a> &amp;&#160;</td>
-          <td class="paramname"><em>input_shape</em> = <code><a class="el" href="classffnn_1_1layer_1_1_hidden.html#abdfcf81b3846fae3b19a207424695df0">ShapeType</a>(LayerShape::input_height,&#160;&#160;LayerShape::input_width)</code>, </td>
+          <td class="paramtype">const <a class="el" href="classffnn_1_1layer_1_1_hidden.html#a567e902299b3355501393cf6c7b27c38">ShapeType</a> &amp;&#160;</td>
+          <td class="paramname"><em>input_shape</em> = <code><a class="el" href="classffnn_1_1layer_1_1_hidden.html#a567e902299b3355501393cf6c7b27c38">ShapeType</a>(Options::input_height,&#160;&#160;Options::input_width)</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classffnn_1_1layer_1_1_hidden.html#abdfcf81b3846fae3b19a207424695df0">ShapeType</a> &amp;&#160;</td>
-          <td class="paramname"><em>output_shape</em> = <code><a class="el" href="classffnn_1_1layer_1_1_hidden.html#abdfcf81b3846fae3b19a207424695df0">ShapeType</a>(LayerShape::output_height,&#160;LayerShape::output_width)</code>&#160;</td>
+          <td class="paramtype">const <a class="el" href="classffnn_1_1layer_1_1_hidden.html#a567e902299b3355501393cf6c7b27c38">ShapeType</a> &amp;&#160;</td>
+          <td class="paramname"><em>output_shape</em> = <code><a class="el" href="classffnn_1_1layer_1_1_hidden.html#a567e902299b3355501393cf6c7b27c38">ShapeType</a>(Options::output_height,&#160;Options::output_width)</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -498,17 +354,17 @@ template&lt;typename ValueType , typename LayerShape , typename _InputBlockType 
 
 </div>
 </div>
-<a class="anchor" id="ae4d85d69e2da92c3b70992e0c3ced4d1"></a>
+<a class="anchor" id="aa4453b6032e969b3cc31eb7f083d2359"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType , typename LayerShape , typename _InputBlockType , typename _OutputBlockType &gt; </div>
+template&lt;typename ValueType , typename Options , typename Extrinsics &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classffnn_1_1layer_1_1_hidden.html">ffnn::layer::Hidden</a>&lt; ValueType, LayerShape, _InputBlockType, _OutputBlockType &gt;::~<a class="el" href="classffnn_1_1layer_1_1_hidden.html">Hidden</a> </td>
+          <td class="memname"><a class="el" href="classffnn_1_1layer_1_1_hidden.html">ffnn::layer::Hidden</a>&lt; ValueType, Options, Extrinsics &gt;::~<a class="el" href="classffnn_1_1layer_1_1_hidden.html">Hidden</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -524,17 +380,17 @@ template&lt;typename ValueType , typename LayerShape , typename _InputBlockType 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="aac0ee89390b02ff4731678883dd402dd"></a>
+<a class="anchor" id="ac26b0c21f2d47b06b6ecba0211bb696e"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType, typename LayerShape = hidden_layer_traits&lt;&gt;, typename _InputBlockType = Eigen::Matrix&lt;ValueType, LayerShape::input_height,  LayerShape::input_width,  Eigen::ColMajor&gt;, typename _OutputBlockType = Eigen::Matrix&lt;ValueType, LayerShape::output_height, LayerShape::output_width, Eigen::ColMajor&gt;&gt; </div>
+template&lt;typename ValueType, typename Options = hidden::options&lt;&gt;, typename Extrinsics = hidden::extrinsics&lt;ValueType, Options&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual bool <a class="el" href="classffnn_1_1layer_1_1_hidden.html">ffnn::layer::Hidden</a>&lt; ValueType, LayerShape, _InputBlockType, _OutputBlockType &gt;::backward </td>
+          <td class="memname">virtual bool <a class="el" href="classffnn_1_1layer_1_1_hidden.html">ffnn::layer::Hidden</a>&lt; ValueType, Options, Extrinsics &gt;::backward </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -556,23 +412,21 @@ template&lt;typename ValueType, typename LayerShape = hidden_layer_traits&lt;&gt
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="classffnn_1_1layer_1_1_layer.html#ac0762afdbcb7e41fb3197dec5ae67858">ffnn::layer::Layer&lt; ValueType &gt;</a>.</p>
-
 <p>Implemented in <a class="el" href="classffnn_1_1layer_1_1_fully_connected.html#ab4a63eb87bd3f2288258b341fcfd165f">ffnn::layer::FullyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape &gt;</a>, and <a class="el" href="classffnn_1_1layer_1_1_activation.html#aa5166a595cb135c7ad62569361de101b">ffnn::layer::Activation&lt; ValueType, NeuronType, SizeAtCompileTime, _HiddenLayerShape &gt;</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a0f56d6a53aacd8c84477dbe73d250101"></a>
+<a class="anchor" id="a850146834d054166b69309d093c650dd"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType, typename LayerShape , typename _InputBlockType , typename _OutputBlockType &gt; </div>
+template&lt;typename ValueType, typename Options , typename Extrinsics &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classffnn_1_1layer_1_1_hidden.html">Hidden</a>&lt; <a class="el" href="local__convolution_8hpp.html#a005b9b79411aa786124330e813a99057">TARGS</a> &gt;::<a class="el" href="classffnn_1_1layer_1_1_hidden.html#ae2409b970adafb0ebc9b2eec62c4aac4">OffsetType</a> <a class="el" href="classffnn_1_1layer_1_1_hidden.html">ffnn::layer::Hidden</a>&lt; ValueType, LayerShape, _InputBlockType, _OutputBlockType &gt;::connectToForwardLayer </td>
+          <td class="memname"><a class="el" href="namespaceffnn.html#add5752d74b38c6e9b200f3d696fc3ec8">offset_type</a> <a class="el" href="classffnn_1_1layer_1_1_hidden.html">ffnn::layer::Hidden</a>&lt; ValueType, Options, Extrinsics &gt;::connectToForwardLayer </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classffnn_1_1layer_1_1_layer.html">Layer</a>&lt; ValueType &gt; &amp;&#160;</td>
           <td class="paramname"><em>next</em>, </td>
@@ -580,7 +434,7 @@ template&lt;typename ValueType, typename LayerShape , typename _InputBlockType ,
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#ae2409b970adafb0ebc9b2eec62c4aac4">OffsetType</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="namespaceffnn.html#add5752d74b38c6e9b200f3d696fc3ec8">offset_type</a>&#160;</td>
           <td class="paramname"><em>offset</em>&#160;</td>
         </tr>
         <tr>
@@ -611,30 +465,28 @@ template&lt;typename ValueType, typename LayerShape , typename _InputBlockType ,
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="classffnn_1_1layer_1_1_layer.html#a42b960e503830c5ab13905f3e7faa939">ffnn::layer::Layer&lt; ValueType &gt;</a>.</p>
-
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classffnn_1_1layer_1_1_hidden_a0f56d6a53aacd8c84477dbe73d250101_cgraph.png" border="0" usemap="#classffnn_1_1layer_1_1_hidden_a0f56d6a53aacd8c84477dbe73d250101_cgraph" alt=""/></div>
-<map name="classffnn_1_1layer_1_1_hidden_a0f56d6a53aacd8c84477dbe73d250101_cgraph" id="classffnn_1_1layer_1_1_hidden_a0f56d6a53aacd8c84477dbe73d250101_cgraph">
+<div class="center"><img src="classffnn_1_1layer_1_1_hidden_a850146834d054166b69309d093c650dd_cgraph.png" border="0" usemap="#classffnn_1_1layer_1_1_hidden_a850146834d054166b69309d093c650dd_cgraph" alt=""/></div>
+<map name="classffnn_1_1layer_1_1_hidden_a850146834d054166b69309d093c650dd_cgraph" id="classffnn_1_1layer_1_1_hidden_a850146834d054166b69309d093c650dd_cgraph">
 <area shape="rect" id="node2" href="classffnn_1_1layer_1_1_layer.html#a8049c939bc452bd5453227d1ce1a35f3" title="Exposes const reference to raw data input buffer. " alt="" coords="249,5,369,46"/><area shape="rect" id="node3" href="classffnn_1_1layer_1_1_layer.html#a0caad62750e9610e607fb18d87df63b8" title="Exposes const reference to raw data backward&#45;error buffer. " alt="" coords="225,70,394,111"/></map>
 </div>
 </p>
 
 </div>
 </div>
-<a class="anchor" id="a600b86d72826e8be3eafa53e040e9cbe"></a>
+<a class="anchor" id="aba6a84a760d66acec2e6e67c29a67f5b"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType, typename LayerShape = hidden_layer_traits&lt;&gt;, typename _InputBlockType = Eigen::Matrix&lt;ValueType, LayerShape::input_height,  LayerShape::input_width,  Eigen::ColMajor&gt;, typename _OutputBlockType = Eigen::Matrix&lt;ValueType, LayerShape::output_height, LayerShape::output_width, Eigen::ColMajor&gt;&gt; </div>
+template&lt;typename ValueType, typename Options = hidden::options&lt;&gt;, typename Extrinsics = hidden::extrinsics&lt;ValueType, Options&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual bool <a class="el" href="classffnn_1_1layer_1_1_hidden.html">ffnn::layer::Hidden</a>&lt; ValueType, LayerShape, _InputBlockType, _OutputBlockType &gt;::forward </td>
+          <td class="memname">virtual bool <a class="el" href="classffnn_1_1layer_1_1_hidden.html">ffnn::layer::Hidden</a>&lt; ValueType, Options, Extrinsics &gt;::forward </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -656,23 +508,21 @@ template&lt;typename ValueType, typename LayerShape = hidden_layer_traits&lt;&gt
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="classffnn_1_1layer_1_1_layer.html#aa47aae451c4a9ee4daef90b60ac291a1">ffnn::layer::Layer&lt; ValueType &gt;</a>.</p>
-
 <p>Implemented in <a class="el" href="classffnn_1_1layer_1_1_fully_connected.html#a350e7910bd416f67d30113425ea74f59">ffnn::layer::FullyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape &gt;</a>, and <a class="el" href="classffnn_1_1layer_1_1_activation.html#a8435ed1feadfcfc2343dd65a1542fe23">ffnn::layer::Activation&lt; ValueType, NeuronType, SizeAtCompileTime, _HiddenLayerShape &gt;</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="adb70b4a8f5ac4979689f86cab73f48b1"></a>
+<a class="anchor" id="a50b9141e7d96fb7c6a1a6418fb204d92"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType , typename LayerShape , typename _InputBlockType , typename _OutputBlockType &gt; </div>
+template&lt;typename ValueType , typename Options , typename Extrinsics &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classffnn_1_1layer_1_1_hidden.html">ffnn::layer::Hidden</a>&lt; ValueType, LayerShape, _InputBlockType, _OutputBlockType &gt;::initialize </td>
+          <td class="memname">bool <a class="el" href="classffnn_1_1layer_1_1_hidden.html">ffnn::layer::Hidden</a>&lt; ValueType, Options, Extrinsics &gt;::initialize </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -687,31 +537,29 @@ template&lt;typename ValueType , typename LayerShape , typename _InputBlockType 
 
 <p>Initialize the layer. </p>
 
-<p>Reimplemented from <a class="el" href="classffnn_1_1layer_1_1_layer.html#ae8a7daa81382a7965b8ab8861da7e522">ffnn::layer::Layer&lt; ValueType &gt;</a>.</p>
-
 <p>Reimplemented in <a class="el" href="classffnn_1_1layer_1_1_fully_connected.html#a55089e2810d6848950da5ca33000da8a">ffnn::layer::FullyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape &gt;</a>, and <a class="el" href="classffnn_1_1layer_1_1_activation.html#a10a733b3fc1378fd8d1f33d231ee3e83">ffnn::layer::Activation&lt; ValueType, NeuronType, SizeAtCompileTime, _HiddenLayerShape &gt;</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a4ab88bd0c94d86b6d17f63e054cc907c"></a>
+<a class="anchor" id="a94cba25f361e7077a3b7eb863d7d2f02"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType, typename LayerShape = hidden_layer_traits&lt;&gt;, typename _InputBlockType = Eigen::Matrix&lt;ValueType, LayerShape::input_height,  LayerShape::input_width,  Eigen::ColMajor&gt;, typename _OutputBlockType = Eigen::Matrix&lt;ValueType, LayerShape::output_height, LayerShape::output_width, Eigen::ColMajor&gt;&gt; </div>
+template&lt;typename ValueType, typename Options = hidden::options&lt;&gt;, typename Extrinsics = hidden::extrinsics&lt;ValueType, Options&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classffnn_1_1layer_1_1_hidden.html">ffnn::layer::Hidden</a>&lt; ValueType, LayerShape, _InputBlockType, _OutputBlockType &gt;::load </td>
+          <td class="memname">void <a class="el" href="classffnn_1_1layer_1_1_hidden.html">ffnn::layer::Hidden</a>&lt; ValueType, Options, Extrinsics &gt;::load </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classffnn_1_1internal_1_1_serializable.html#aadc27d79d606f35a82dd88bad33fa6d2">InputArchive</a> &amp;&#160;</td>
+          <td class="paramtype">InputArchive &amp;&#160;</td>
           <td class="paramname"><em>ar</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classffnn_1_1internal_1_1_serializable.html#a32fe7d82b0caf9fe8b6fb7c312a26028">VersionType</a>&#160;</td>
+          <td class="paramtype">VersionType&#160;</td>
           <td class="paramname"><em>version</em>&#160;</td>
         </tr>
         <tr>
@@ -722,45 +570,43 @@ template&lt;typename ValueType, typename LayerShape = hidden_layer_traits&lt;&gt
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Load serializer. </p>
 
-<p>Reimplemented from <a class="el" href="classffnn_1_1internal_1_1_unique.html#a926ca4f63e3f6f0cf812af7f6ed2d88c">ffnn::internal::Unique</a>.</p>
-
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classffnn_1_1layer_1_1_hidden_a4ab88bd0c94d86b6d17f63e054cc907c_cgraph.png" border="0" usemap="#classffnn_1_1layer_1_1_hidden_a4ab88bd0c94d86b6d17f63e054cc907c_cgraph" alt=""/></div>
-<map name="classffnn_1_1layer_1_1_hidden_a4ab88bd0c94d86b6d17f63e054cc907c_cgraph" id="classffnn_1_1layer_1_1_hidden_a4ab88bd0c94d86b6d17f63e054cc907c_cgraph">
+<div class="center"><img src="classffnn_1_1layer_1_1_hidden_a94cba25f361e7077a3b7eb863d7d2f02_cgraph.png" border="0" usemap="#classffnn_1_1layer_1_1_hidden_a94cba25f361e7077a3b7eb863d7d2f02_cgraph" alt=""/></div>
+<map name="classffnn_1_1layer_1_1_hidden_a94cba25f361e7077a3b7eb863d7d2f02_cgraph" id="classffnn_1_1layer_1_1_hidden_a94cba25f361e7077a3b7eb863d7d2f02_cgraph">
 <area shape="rect" id="node2" href="dense__base__addons_8h.html#a68dbd347886624cd725b8a26e5242ee2" title="load" alt="" coords="185,12,231,39"/></map>
 </div>
 </p>
 
 </div>
 </div>
-<a class="anchor" id="a184844a0eadeb1aa27e29b24cbb0008c"></a>
+<a class="anchor" id="a1ef2b7dc49a809498125190628e672cf"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType, typename LayerShape = hidden_layer_traits&lt;&gt;, typename _InputBlockType = Eigen::Matrix&lt;ValueType, LayerShape::input_height,  LayerShape::input_width,  Eigen::ColMajor&gt;, typename _OutputBlockType = Eigen::Matrix&lt;ValueType, LayerShape::output_height, LayerShape::output_width, Eigen::ColMajor&gt;&gt; </div>
+template&lt;typename ValueType, typename Options = hidden::options&lt;&gt;, typename Extrinsics = hidden::extrinsics&lt;ValueType, Options&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classffnn_1_1layer_1_1_hidden.html">ffnn::layer::Hidden</a>&lt; ValueType, LayerShape, _InputBlockType, _OutputBlockType &gt;::save </td>
+          <td class="memname">void <a class="el" href="classffnn_1_1layer_1_1_hidden.html">ffnn::layer::Hidden</a>&lt; ValueType, Options, Extrinsics &gt;::save </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classffnn_1_1internal_1_1_serializable.html#acf5baead716eb277337a4437e88a5743">OutputArchive</a> &amp;&#160;</td>
+          <td class="paramtype">OutputArchive &amp;&#160;</td>
           <td class="paramname"><em>ar</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classffnn_1_1internal_1_1_serializable.html#a32fe7d82b0caf9fe8b6fb7c312a26028">VersionType</a>&#160;</td>
+          <td class="paramtype">VersionType&#160;</td>
           <td class="paramname"><em>version</em>&#160;</td>
         </tr>
         <tr>
@@ -771,37 +617,35 @@ template&lt;typename ValueType, typename LayerShape = hidden_layer_traits&lt;&gt
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Save serializer. </p>
 
-<p>Reimplemented from <a class="el" href="classffnn_1_1internal_1_1_unique.html#a21fd15cd137dd1cccd23a57fb45649f4">ffnn::internal::Unique</a>.</p>
-
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classffnn_1_1layer_1_1_hidden_a184844a0eadeb1aa27e29b24cbb0008c_cgraph.png" border="0" usemap="#classffnn_1_1layer_1_1_hidden_a184844a0eadeb1aa27e29b24cbb0008c_cgraph" alt=""/></div>
-<map name="classffnn_1_1layer_1_1_hidden_a184844a0eadeb1aa27e29b24cbb0008c_cgraph" id="classffnn_1_1layer_1_1_hidden_a184844a0eadeb1aa27e29b24cbb0008c_cgraph">
+<div class="center"><img src="classffnn_1_1layer_1_1_hidden_a1ef2b7dc49a809498125190628e672cf_cgraph.png" border="0" usemap="#classffnn_1_1layer_1_1_hidden_a1ef2b7dc49a809498125190628e672cf_cgraph" alt=""/></div>
+<map name="classffnn_1_1layer_1_1_hidden_a1ef2b7dc49a809498125190628e672cf_cgraph" id="classffnn_1_1layer_1_1_hidden_a1ef2b7dc49a809498125190628e672cf_cgraph">
 <area shape="rect" id="node2" href="dense__base__addons_8h.html#ab948859788aa671e575e410654e07f16" title="save" alt="" coords="184,12,235,39"/></map>
 </div>
 </p>
 
 </div>
 </div>
-<a class="anchor" id="ae038d2a1e64fcbbde6166df7d0573ef8"></a>
+<a class="anchor" id="ac95dceacf1a0ea65674fb269a48730fb"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType, typename LayerShape = hidden_layer_traits&lt;&gt;, typename _InputBlockType = Eigen::Matrix&lt;ValueType, LayerShape::input_height,  LayerShape::input_width,  Eigen::ColMajor&gt;, typename _OutputBlockType = Eigen::Matrix&lt;ValueType, LayerShape::output_height, LayerShape::output_width, Eigen::ColMajor&gt;&gt; </div>
+template&lt;typename ValueType, typename Options = hidden::options&lt;&gt;, typename Extrinsics = hidden::extrinsics&lt;ValueType, Options&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual bool <a class="el" href="classffnn_1_1layer_1_1_hidden.html">ffnn::layer::Hidden</a>&lt; ValueType, LayerShape, _InputBlockType, _OutputBlockType &gt;::update </td>
+          <td class="memname">virtual bool <a class="el" href="classffnn_1_1layer_1_1_hidden.html">ffnn::layer::Hidden</a>&lt; ValueType, Options, Extrinsics &gt;::update </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -823,24 +667,22 @@ template&lt;typename ValueType, typename LayerShape = hidden_layer_traits&lt;&gt
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="classffnn_1_1layer_1_1_layer.html#af1bce67477e4890a86aeb96ed1c781d6">ffnn::layer::Layer&lt; ValueType &gt;</a>.</p>
-
 <p>Implemented in <a class="el" href="classffnn_1_1layer_1_1_fully_connected.html#a7dd4dbe010c3d290c131b21b35f6301e">ffnn::layer::FullyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape &gt;</a>, and <a class="el" href="classffnn_1_1layer_1_1_activation.html#a24a044458729f72466af06153851f5b2">ffnn::layer::Activation&lt; ValueType, NeuronType, SizeAtCompileTime, _HiddenLayerShape &gt;</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a94312439d5029c9c779ff778f18f95a8"></a>
+<a class="anchor" id="ac4d0ae165b9c65ba0c156643962c866b"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType, typename LayerShape = hidden_layer_traits&lt;&gt;, typename _InputBlockType = Eigen::Matrix&lt;ValueType, LayerShape::input_height,  LayerShape::input_width,  Eigen::ColMajor&gt;, typename _OutputBlockType = Eigen::Matrix&lt;ValueType, LayerShape::output_height, LayerShape::output_width, Eigen::ColMajor&gt;&gt; </div>
+template&lt;typename ValueType, typename Options = hidden::options&lt;&gt;, typename Extrinsics = hidden::extrinsics&lt;ValueType, Options&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#a9297d5b8ac45dc288ee1b91f15bb4047">InputMappingType</a> <a class="el" href="classffnn_1_1layer_1_1_hidden.html">ffnn::layer::Hidden</a>&lt; ValueType, LayerShape, _InputBlockType, _OutputBlockType &gt;::backward_error_</td>
+          <td class="memname"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#ac518f2e2be1250c1af7b2f8574cadc8d">InputMappingType</a> <a class="el" href="classffnn_1_1layer_1_1_hidden.html">ffnn::layer::Hidden</a>&lt; ValueType, Options, Extrinsics &gt;::backward_error_</td>
         </tr>
       </table>
   </td>
@@ -854,17 +696,17 @@ template&lt;typename ValueType, typename LayerShape = hidden_layer_traits&lt;&gt
 
 </div>
 </div>
-<a class="anchor" id="af1f439bdd3645a5ee444455d822b5143"></a>
+<a class="anchor" id="a1abba7440bdde56f49673de2acf58b30"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType, typename LayerShape = hidden_layer_traits&lt;&gt;, typename _InputBlockType = Eigen::Matrix&lt;ValueType, LayerShape::input_height,  LayerShape::input_width,  Eigen::ColMajor&gt;, typename _OutputBlockType = Eigen::Matrix&lt;ValueType, LayerShape::output_height, LayerShape::output_width, Eigen::ColMajor&gt;&gt; </div>
+template&lt;typename ValueType, typename Options = hidden::options&lt;&gt;, typename Extrinsics = hidden::extrinsics&lt;ValueType, Options&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#a619ae9b0890cb86b66ac2b591b5a5610">OutputMappingType</a> <a class="el" href="classffnn_1_1layer_1_1_hidden.html">ffnn::layer::Hidden</a>&lt; ValueType, LayerShape, _InputBlockType, _OutputBlockType &gt;::forward_error_</td>
+          <td class="memname"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#a9d882e035c7cd80ccd9b58fbe832591e">OutputMappingType</a> <a class="el" href="classffnn_1_1layer_1_1_hidden.html">ffnn::layer::Hidden</a>&lt; ValueType, Options, Extrinsics &gt;::forward_error_</td>
         </tr>
       </table>
   </td>
@@ -880,17 +722,17 @@ template&lt;typename ValueType, typename LayerShape = hidden_layer_traits&lt;&gt
 
 </div>
 </div>
-<a class="anchor" id="a1177e86b75ad7ba87aa4e855defa5851"></a>
+<a class="anchor" id="afe2644f671f711cf0ca1357621dfc3a6"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType, typename LayerShape = hidden_layer_traits&lt;&gt;, typename _InputBlockType = Eigen::Matrix&lt;ValueType, LayerShape::input_height,  LayerShape::input_width,  Eigen::ColMajor&gt;, typename _OutputBlockType = Eigen::Matrix&lt;ValueType, LayerShape::output_height, LayerShape::output_width, Eigen::ColMajor&gt;&gt; </div>
+template&lt;typename ValueType, typename Options = hidden::options&lt;&gt;, typename Extrinsics = hidden::extrinsics&lt;ValueType, Options&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#a9297d5b8ac45dc288ee1b91f15bb4047">InputMappingType</a> <a class="el" href="classffnn_1_1layer_1_1_hidden.html">ffnn::layer::Hidden</a>&lt; ValueType, LayerShape, _InputBlockType, _OutputBlockType &gt;::input_</td>
+          <td class="memname"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#ac518f2e2be1250c1af7b2f8574cadc8d">InputMappingType</a> <a class="el" href="classffnn_1_1layer_1_1_hidden.html">ffnn::layer::Hidden</a>&lt; ValueType, Options, Extrinsics &gt;::input_</td>
         </tr>
       </table>
   </td>
@@ -906,17 +748,17 @@ template&lt;typename ValueType, typename LayerShape = hidden_layer_traits&lt;&gt
 
 </div>
 </div>
-<a class="anchor" id="adf9818c784dccc1860fe8384264cc4be"></a>
+<a class="anchor" id="a118c5ecea99dc243573c981f26d53fc6"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType, typename LayerShape = hidden_layer_traits&lt;&gt;, typename _InputBlockType = Eigen::Matrix&lt;ValueType, LayerShape::input_height,  LayerShape::input_width,  Eigen::ColMajor&gt;, typename _OutputBlockType = Eigen::Matrix&lt;ValueType, LayerShape::output_height, LayerShape::output_width, Eigen::ColMajor&gt;&gt; </div>
+template&lt;typename ValueType, typename Options = hidden::options&lt;&gt;, typename Extrinsics = hidden::extrinsics&lt;ValueType, Options&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#a619ae9b0890cb86b66ac2b591b5a5610">OutputMappingType</a> <a class="el" href="classffnn_1_1layer_1_1_hidden.html">ffnn::layer::Hidden</a>&lt; ValueType, LayerShape, _InputBlockType, _OutputBlockType &gt;::output_</td>
+          <td class="memname"><a class="el" href="classffnn_1_1layer_1_1_hidden.html#a9d882e035c7cd80ccd9b58fbe832591e">OutputMappingType</a> <a class="el" href="classffnn_1_1layer_1_1_hidden.html">ffnn::layer::Hidden</a>&lt; ValueType, Options, Extrinsics &gt;::output_</td>
         </tr>
       </table>
   </td>
@@ -937,7 +779,7 @@ template&lt;typename ValueType, typename LayerShape = hidden_layer_traits&lt;&gt
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed May 31 2017 23:57:13 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 2 2017 00:25:19 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

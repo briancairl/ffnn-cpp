@@ -32,16 +32,16 @@ friend bool connect(const typename LayerType::Ptr& from,
                     const typename LayerType::Ptr& to);
 public:
   /// Base type alias
-  using Base = internal::Unique;
+  using BaseType = internal::Unique;
 
   /// Self type alias
-  using Self = Layer<ValueType>;
+  using SelfType = Layer<ValueType>;
 
   /// Shared resource standardization
-  typedef boost::shared_ptr<Self> Ptr;
+  typedef boost::shared_ptr<SelfType> Ptr;
 
   /// Constant shared resource standardization
-  typedef boost::shared_ptr<const Self> ConstPtr;
+  typedef boost::shared_ptr<const SelfType> ConstPtr;
 
   /// Scalar type standardization
   typedef ValueType ScalarType;
@@ -50,10 +50,10 @@ public:
   typedef Shape<size_type> ShapeType;
 
   /// Buffer type standardization
-  typedef std::conditional<
+  typedef typename std::conditional<
     std::is_floating_point<ValueType>::value,
     std::vector<ValueType, Eigen::aligned_allocator<ValueType>>,
-    std::vector<ValueType>,
+    std::vector<ValueType>
   >::type BufferType;
 
   /**
@@ -96,7 +96,17 @@ public:
    * @param offset  offset index of a memory location in the input buffer of the next layer
    * @retval <code>offset + output_shape_.size()</code>
    */
-  virtual offset_type connectToForwardLayer(const Self& next, offset_type offset) = 0;
+  virtual offset_type connectToForwardLayer(const SelfType& next, offset_type offset) = 0;
+
+  /**
+   * @brief Returns true if layer has been initialized
+   * @retval true  if layer is initialized
+   * @retval false  otherwise
+   */
+  virtual bool isInitialized() const
+  {
+    return initialized_;
+  }
 
   /**
    * @brief Exposes const reference to raw data input buffer
@@ -131,29 +141,11 @@ public:
   }
 
   /**
-   * @brief Returns the total number counted (evaluated) inputs
-   */
-  virtual size_type evaluateInputSize() const
-  {
-    return input_shape_.size();
-  }
-
-  /**
-   * @brief Returns true if layer has been initialized
-   * @retval true  if layer is initialized
-   * @retval false  otherwise
-   */
-  virtual bool isInitialized() const
-  {
-    return initialized_;
-  }
-
-  /**
    * @brief Returns true if portions of the interface must be setup
    * @retval true  if reinitialization allowed
    * @retval false  otherwise
    */
-  bool setupRequired() const
+  inline bool setupRequired() const
   {
     return setup_required_;
   }
@@ -181,7 +173,7 @@ protected:
   offset_type connectInputLayers();
 
   /// Pointers to previous layers
-  std::map<std::string, typename Self::Ptr> prev_;
+  std::map<std::string, typename SelfType::Ptr> prev_;
 
   /// Raw input value buffer
   BufferType input_buffer_;

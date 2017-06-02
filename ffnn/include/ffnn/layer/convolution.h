@@ -9,6 +9,7 @@
 #include "boost/multi_array.hpp"
 
 // FFNN
+#include <ffnn/assert.h>
 #include <ffnn/config/global.h>
 #include <ffnn/distribution/distribution.h>
 #include <ffnn/distribution/normal.h>
@@ -23,16 +24,12 @@ namespace ffnn
 {
 namespace layer
 {
+namespace convolution
+{
 /**
- * @brief Describes compile-time traits used to set up a Convolution object
- * @param ValueType scalar value type
- * @param HeightAtCompileTime  height of the filter kernel
- * @param WidthAtCompileTime  width of the filter kernel
- * @param DepthAtCompileTime  depth of the filter kernel
- * @param KernelsAtCompileTime  number of kernels this filter will have
+ * @brief Describes compile-time options used to set up a Convolution object
  */
-template<typename ValueType,
-         size_type HeightAtCompileTime = Eigen::Dynamic,
+template<size_type HeightAtCompileTime = Eigen::Dynamic,
          size_type WidthAtCompileTime = Eigen::Dynamic,
          size_type DepthAtCompileTime = Eigen::Dynamic,
          size_type KernelHeightAtCompileTime = Eigen::Dynamic,
@@ -41,7 +38,7 @@ template<typename ValueType,
          size_type RowStrideAtCompileTime =  1,
          size_type ColStrideAtCompileTime = -1,
          EmbeddingMode Mode = ColEmbedding>
-struct convolution_layer_traits
+struct options
 {
   /// Data embedding mode
   constexpr static EmbeddingMode embedding_mode = Mode;
@@ -50,16 +47,16 @@ struct convolution_layer_traits
   constexpr static size_type kernel_height = KernelHeightAtCompileTime;
 
   /// Kernel kernel width
-  constexpr static size_type kernel_width  = KernelWidthAtCompileTime;
+  constexpr static size_type kernel_width = KernelWidthAtCompileTime;
 
   /// Number of filter kernels
-  constexpr static size_type kernel_count  = KernelCountAtCompileTime;
+  constexpr static size_type kernel_count = KernelCountAtCompileTime;
 
   /// Filter stride along input rows
-  constexpr static size_type row_stride  = RowStrideAtCompileTime;
+  constexpr static size_type row_stride = RowStrideAtCompileTime;
 
   /// Filter stride along input cols
-  constexpr static size_type col_stride  = ColStrideAtCompileTime;
+  constexpr static size_type col_stride = ColStrideAtCompileTime;
 
   /// Input volume height
   constexpr static size_type input_height = HeightAtCompileTime;
@@ -72,76 +69,94 @@ struct convolution_layer_traits
 
   /// Output volume height
   constexpr static size_type output_height =
-    convolution::output_dimension(HeightAtCompileTime, kernel_height, row_stride);
+    output_dimension(HeightAtCompileTime, kernel_height, row_stride);
 
   /// Output volume width
   constexpr static size_type output_width =
-    convolution::output_dimension(WidthAtCompileTime,  kernel_height, col_stride);
+    output_dimension(WidthAtCompileTime,  kernel_height, col_stride);
 
   /// Output volume depth
   constexpr static size_type output_depth = KernelCountAtCompileTime;
 
   /// Depth-embedded input height
   constexpr static size_type embedded_input_height =
-    convolution::embed_dimension<Mode, ColEmbedding>(input_height, input_depth);
+    embed_dimension<Mode, ColEmbedding>(input_height, input_depth);
 
   /// Depth-embedded input width
   constexpr static size_type embedded_input_width =
-    convolution::embed_dimension<Mode, RowEmbedding>(input_width,  input_depth);
+    embed_dimension<Mode, RowEmbedding>(input_width,  input_depth);
 
   /// Depth-embedded output height
   constexpr static size_type embedded_output_height =
-    convolution::embed_dimension<Mode, ColEmbedding>(output_height, output_depth);
+    embed_dimension<Mode, ColEmbedding>(output_height, output_depth);
 
   /// Depth-embedded output width
   constexpr static size_type embedded_output_width =
-    convolution::embed_dimension<Mode, RowEmbedding>(output_width,  output_depth);
+    embed_dimension<Mode, RowEmbedding>(output_width,  output_depth);
+};
+
+/**
+ * @brief Describes types based on compile-time options
+ */
+template<typename ValueType,
+         typename Options>
+struct extrinsics
+{
+  /// 2D-value mapping standardization
+  typedef boost::multi_array<ValueType*, 2> ForwardMapType;
 
   /// Filter traits type standardization
-  typedef filter_traits<
-    ValueType,
-    kernel_height,
-    kernel_height,
-    input_depth,
-    kernel_count,
-    embedding_mode
-  > FilterTraits;
+  typedef typename filter::options<
+    Options::kernel_height,
+    Options::kernel_width,
+    Options::input_depth,
+    Options::kernel_count,
+    Options::embedding_mode
+  > FilterOptions;
+
+  /// Filter tyoe standardization
+  typedef Filter<ValueType, FilterOptions> FilterType;
 
   /// Compile-time Hidden layer traits
-  typedef hidden_layer_traits<
-    embedded_input_height,
-    embedded_input_width,
-    embedded_output_height,
-    embedded_output_width
-  > HiddenLayerTraits
+  typedef typename hidden::options<
+    Options::embedded_input_height,
+    Options::embedded_input_width,
+    Options::embedded_output_height,
+    Options::embedded_output_width,
+    embed_data_order<Options::embedding_mode>(),
+    embed_data_order<Options::embedding_mode>()
+  > HiddenLayerOptions;
 
   /// Hidden layer (base type) standardization
-  typedef Hidden<ValueType, HiddenLayerTraits> HiddenLayerType;
+  typedef Hidden<ValueType, HiddenLayerOptions> HiddenLayerType;
 };
+}  // namespace convolution
 
 /**
  * @brief A convolution layer
  */
 template <typename ValueType,
-          typename LayerTraits = convolution_layer_traits<ValueType>>
+          typename Options    = typename convolution::options<>,
+          typename Extrinsics = typename convolution::extrinsics<ValueType, Options>>
 class Convolution :
-  public LayerTraits::HiddenLayerType
+  public Extrinsics::HiddenLayerType
 {
+  FFNN_ASSERT_NO_MOD_LAYER_EXTRINSICS(convolution);
 public:
   /// Self type alias
-  using SelfType = Convolution<ValueType, LayerTraits>;
+  using SelfType = Convolution<ValueType, Options, Extrinsics>;
 
   /// Base type alias
-  using BaseType = typename LayerTraits::HiddenLayerType;
+  using BaseType = typename Extrinsics::HiddenLayerType;
 
   /// Dimension type standardization
-  typedef typename LayerTraits::HiddenLayerType::ShapeType ShapeType;
+  typedef typename BaseType::ShapeType ShapeType;
 
   /// Filter parameters type standardization
-  typedef Filter<ValueType, typename LayerTraits::FilterTraits> ParametersType;
+  typedef typename Extrinsics::FilterType ParametersType;
 
   /// 2D-value mapping standardization
-  typedef boost::multi_array<ValueType*, 2> ForwardValueMapType;
+  typedef typename Extrinsics::ForwardMapType ForwardMapType;
 
   /// Layer optimization type standardization
   typedef optimizer::Optimizer<SelfType> OptimizerType;
@@ -159,11 +174,11 @@ public:
      * @brief Default constructor
      */
     Configuration() :
-      input_shape_(LayerTraits::input_height, LayerTraits::input_width, LayerTraits::input_depth),
-      filter_shape_(LayerTraits::kernel_height, LayerTraits::kernel_width, LayerTraits::kernel_count),
-      row_stride_(LayerTraits::row_stride),
-      col_stride_(LayerTraits::col_stride),
-      parameter_distribution_(boost::make_shared<typename distribution::StandardNormal<ValueType>>())
+      input_shape_(Options::input_height, Options::input_width, Options::input_depth),
+      filter_shape_(Options::kernel_height, Options::kernel_width, Options::kernel_count),
+      row_stride_(Options::row_stride),
+      col_stride_(Options::col_stride),
+      parameter_distribution_(boost::make_shared<typename distribution::StandardNormal<ValueType>>()),
       optimizer_(boost::make_shared<typename optimizer::None<SelfType>>())
     {
       /// Try to resolve from template arguments
@@ -194,27 +209,30 @@ public:
 
     /**
      * @brief Sets layer input shape
-     * @param input_shape   shape of the layer input
+     * @param height  height of the input volume
+     * @param width   width of the input volume
+     * @param depth   depth of the input volume
      * @return *this
      */
-    inline Configuration& setInputShape(const ShapeType& input_shape)
+    inline Configuration& setInputShape(size_type height, size_type width, size_type depth)
     {
-      input_shape_ = input_shape;
+      input_shape_ = ShapeType(height, width, depth);
       return resolve();
     }
 
     /**
      * @brief Sets layer filter shape options
-     * @param filter_shape  shape of the receptive field
-     * \n
-     *                      <b>Note: </b>
-     *                      The shape specified here is <code>(H, W, N-Kernels)</code>. Each kernel actually has the
-     *                      dimensions <code>(H, W, D)</code>, where <code>(D)</code> is the depth of the layer input
+     * @param height  height of the filter kernel
+     * @param width   width of the filter kernel
+     * @param depth   number of kernels
      * @return *this
+     *
+     * @note   The shape specified here is <code>(H, W, N-Kernels)</code>. Each kernel actually has the
+     *         dimensions <code>(H, W, D)</code>, where <code>(D)</code> is the depth of the input volume
      */
-    inline Configuration& setFilterShape(const ShapeType& filter_shape)
+    inline Configuration& setFilterShape(size_type height, size_type width, size_type depth)
     {
-      filter_shape_ = filter_shape;
+      filter_shape_ = ShapeType(height, width, depth);
       return resolve();
     }
 
@@ -241,22 +259,26 @@ public:
      */
     Configuration& resolve()
     {
-      // Set depth-embedded input shape
-      embedded_input_shape_ = convolution::embed_shape_transform<Mode>(input_shape_);
-
-      // Setup output shape before depth embdedding
-      output_shape_.height = convolution::output_dimension(input_shape_.height, filter_shape_.height, row_stride_);
-      output_shape_.width  = convolution::output_dimension(input_shape_.width,  filter_shape_.width,  col_stride_);
-      output_shape_.depth  = filter_shape_.depth;
-
-      // Set depth-embedded output shape
-      embedded_output_shape_ = convolution::embed_shape_transform<Mode>(output_shape_);
+      using convolution::embed_shape_transform;
+      using convolution::output_dimension;
 
       // Set stride shape
       stride_shape_.height = row_stride_;
-      stride_shape_.width  = col_stride_;
-      stride_shape_.depth  = input_shape_.depth;
-      stride_shape_ = convolution::embed_shape_transform<Mode>(stride_shape_);
+      stride_shape_.width = col_stride_;
+      stride_shape_.depth = input_shape_.depth;
+      stride_shape_ = embed_shape_transform<Options::embedding_mode>(stride_shape_);
+
+      // Setup output shape before depth embdedding
+      output_shape_.height = output_dimension(input_shape_.height, filter_shape_.height, row_stride_);
+      output_shape_.width = output_dimension(input_shape_.width,  filter_shape_.width,  col_stride_);
+      output_shape_.depth = filter_shape_.depth;
+
+      // Set depth-embedded input shape
+      embedded_input_shape_ = embed_shape_transform<Options::embedding_mode>(input_shape_);
+
+      // Set depth-embedded output shape
+      embedded_output_shape_ = embed_shape_transform<Options::embedding_mode>(output_shape_);
+
       return *this;
     }
 
@@ -266,23 +288,23 @@ public:
     /// Shape of layer output
     ShapeType output_shape_;
 
+    /// Embdedded shape of layer input
+    ShapeType embedded_input_shape_;
+
+    /// Embdedded shape of layer output
+    ShapeType embedded_output_shape_;
+
+    /// Shape of receptive fields
+    ShapeType filter_shape_;
+
     /// Filter stride along input rows
     size_type row_stride_;
 
     /// Filter stride along input cols
     size_type col_stride_;
 
-    /// Shape of receptive fields
-    ShapeType filter_shape_;
-
     /// Stride between receptive fields; considers data-embedding
     ShapeType stride_shape_;
-
-    /// Embdedded shape of layer input
-    ShapeType embedded_input_shape_;
-
-    /// Embdedded shape of layer output
-    ShapeType embedded_output_shape_;
 
     /**
      * @brief Distribution used to initializer layer coefficients
@@ -390,10 +412,10 @@ private:
   ParametersType parameters_;
 
   /// Forward error mapping grid
-  ForwardValueMapType forward_error_mappings_;
+  ForwardMapType forward_error_mappings_;
 
   /// Output value mapping grid
-  ForwardValueMapType output_mappings_;
+  ForwardMapType output_mappings_;
 
   /**
    * @brief Maps outputs of this layer to inputs of the next

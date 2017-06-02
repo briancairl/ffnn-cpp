@@ -23,68 +23,88 @@ namespace layer
 {
 namespace convolution
 {
+namespace filter
+{
 /**
- * @brief Describes compile-time traits used to set up a Filter object
- * @param ValueType scalar value type
+ * @brief Describes compile-time options and extrinsic parameters used to set up a Filter object
  * @param HeightAtCompileTime  height of the filter kernel
  * @param WidthAtCompileTime  width of the filter kernel
  * @param DepthAtCompileTime  depth of the filter kernel
- * @param KernelsAtCompileTime  number of kernels this filter will have
+ * @param KernelCountAtCompileTime  number of kernels this filter will have
  */
-template<typename ValueType,
-         size_type HeightAtCompileTime = Eigen::Dynamic,
+template<size_type HeightAtCompileTime = Eigen::Dynamic,
          size_type WidthAtCompileTime  = Eigen::Dynamic,
          size_type DepthAtCompileTime  = Eigen::Dynamic,
-         size_type KernelsAtCompileTime = Eigen::Dynamic,
+         size_type KernelCountAtCompileTime = Eigen::Dynamic,
          EmbeddingMode Mode = ColEmbedding>
-struct filter_traits
+struct options
 {
   /// Data embedding mode
   constexpr static EmbeddingMode embedding_mode = Mode;
 
-  /// Depth embedded kernel height at compile-time
-  constexpr static size_type kernel_height = embed_dimension<Mode, ColEmbedding>(HeightAtCompileTime, DepthAtCompileTime);
+  /// Kernel height at compile-time
+  constexpr static size_type kernel_height = HeightAtCompileTime;
 
-  /// Depth embedded kernel width at compile-time
-  constexpr static size_type kernel_width  = embed_dimension<Mode, RowEmbedding>(WidthAtCompileTime,  DepthAtCompileTime);
+  /// Kernel width at compile-time
+  constexpr static size_type kernel_width = WidthAtCompileTime;
+
+  /// Kernel depth at compile-time
+  constexpr static size_type kernel_depth = DepthAtCompileTime;
 
   /// Number of filter kernels at compile-time
-  constexpr static size_type kernel_count  = KernelsAtCompileTime;
+  constexpr static size_type kernel_count = KernelCountAtCompileTime;
 
-  /// Data ordering at compile time
-  /// @note Base on embedding_mode
-  constexpr static size_type data_ordering = (Mode == ColEmbedding) ? Eigen::ColMajor : Eigen::RowMajor;
+  /// Depth embedded kernel height at compile-time
+  constexpr static size_type embedded_kernel_height = embed_dimension<embedding_mode, ColEmbedding>(kernel_height, kernel_depth);
+
+  /// Depth embedded kernel width at compile-time
+  constexpr static size_type embedded_kernel_width = embed_dimension<embedding_mode, RowEmbedding>(kernel_width, kernel_depth);
 
   /// <code>true</code> if number of kernels in the filter is determined at compile-time and is fixed
-  constexpr static bool has_fixed_kernel_count  = (KernelsAtCompileTime > 0);
+  constexpr static bool has_fixed_kernel_count = (KernelCountAtCompileTime > 0);
+};
 
+/**
+ * @brief Describes types based on compile-time options
+ */
+template<typename ValueType,
+         typename Options>
+struct extrinsics
+{
   /// Kernel type standardization
-  typedef Eigen::Matrix<ValueType, kernel_height, kernel_width, data_ordering> KernelType;
+  typedef Eigen::Matrix<
+    ValueType,
+    Options::embedded_kernel_height,
+    Options::embedded_kernel_width,
+    embed_data_order<Options::embedding_mode>()
+  > KernelType;
 
   /// Base type standardization
   typedef typename std::conditional<
-    has_fixed_kernel_count,
-    std::array<KernelType, KernelsAtCompileTime>,
+    Options::has_fixed_kernel_count,
+    std::array<KernelType, Options::kernel_count>,
     typename std::conditional<
       internal::traits::is_alignable_128<KernelType>::value,
       std::vector<KernelType, Eigen::aligned_allocator<KernelType>>,
       std::vector<KernelType>
     >::type
-  >::type BaseType;
+  >::type FilterBaseType;
 };
+}  // namespace filter
 
 /**
- * @brief Sets all Filter kernels and scalar bias unit to zero
+ * @brief Filter parameters to be use with a Convolution layer
  * @param ValueType scalar value type
- * @param FilterTraits  filter sizing and data-ordering information
+ * @param Options  filter sizing and data-ordering information
  */
 template<typename ValueType,
-         typename FilterTraits = filter_traits<ValueType>>
+         typename Options    = typename filter::options<>,
+         typename Extrinsics = typename filter::extrinsics<ValueType, Options>>
 struct Filter :
-  public FilterTraits::BaseType
+  public Extrinsics::FilterBaseType
 {
   /// Filter kernel matrix standardization
-  typedef typename FilterTraits::KernelType KernelType;
+  typedef typename Extrinsics::KernelType KernelType;
 
   /// Bias value
   ValueType bias;
@@ -92,14 +112,14 @@ struct Filter :
   /**
    * @brief Default constructor
    */
-  template<bool T = FilterTraits::has_fixed_kernel_count>
+  template<bool T = Options::has_fixed_kernel_count>
   Filter(typename std::enable_if<T>::type* = nullptr) :
-    bias(0.0)
+    bias(0)
   {}
-  template<bool T = FilterTraits::has_fixed_kernel_count>
+  template<bool T = Options::has_fixed_kernel_count>
   Filter(size_type filter_count = Eigen::Dynamic,
          typename std::enable_if<!T>::type* = nullptr) :
-    bias(0.0)
+    bias(0)
   {
     if (filter_count > 0)
     {
@@ -114,35 +134,43 @@ struct Filter :
    * @param kernel_depth  depth of filter kernel
    * @param kernel_count  number of kernels
    */
-  template<bool T = FilterTraits::has_fixed_kernel_count>
+  template<bool T = Options::has_fixed_kernel_count>
   typename std::enable_if<T>::type
-    setZero(size_type kernel_height,
-            size_type kernel_width,
-            size_type kernel_depth,
-            size_type kernel_count)
+    setZero(size_type kernel_height = Options::kernel_height,
+            size_type kernel_width  = Options::kernel_width,
+            size_type kernel_depth  = Options::kernel_depth,
+            size_type kernel_count  = Options::kernel_count)
   {
-    FFNN_ASSERT_MSG(kernel_count == FilterTraits::kernel_count, "kernel_count is fixed");
-    const auto he = embed_dimension<FilterTraits::embedding_mode, ColEmbedding>(kernel_height, kernel_depth);
-    const auto we = embed_dimension<FilterTraits::embedding_mode, RowEmbedding>(kernel_width,  kernel_depth);
+    FFNN_ASSERT_MSG(kernel_height > 0, "kernel_height must be positive");
+    FFNN_ASSERT_MSG(kernel_width > 0,  "kernel_height must be positive");
+    FFNN_ASSERT_MSG(kernel_depth > 0,  "kernel_height must be positive");
+    FFNN_ASSERT_MSG(kernel_count > 0,  "kernel_count must be positive");
+    FFNN_ASSERT_MSG(kernel_count == Options::kernel_count,  "kernel_count is fixed");
+    const auto h = embed_dimension<Options::embedding_mode, ColEmbedding>(kernel_height, kernel_depth);
+    const auto w = embed_dimension<Options::embedding_mode, RowEmbedding>(kernel_width,  kernel_depth);
     for (auto& kernel : *this)
     {
-      kernel.setZero(he, we);
+      kernel.setZero(h, w);
     }
     bias = 0;
   }
-  template<bool T = FilterTraits::has_fixed_kernel_count>
+  template<bool T = Options::has_fixed_kernel_count>
   typename std::enable_if<!T>::type
-    setZero(size_type kernel_height,
-            size_type kernel_width,
-            size_type kernel_depth,
-            size_type kernel_count)
+    setZero(size_type kernel_height = Options::kernel_height,
+            size_type kernel_width  = Options::kernel_width,
+            size_type kernel_depth  = Options::kernel_depth,
+            size_type kernel_count  = Options::kernel_count)
   {
+    FFNN_ASSERT_MSG(kernel_height > 0, "kernel_height must be positive");
+    FFNN_ASSERT_MSG(kernel_width > 0,  "kernel_height must be positive");
+    FFNN_ASSERT_MSG(kernel_depth > 0,  "kernel_height must be positive");
+    FFNN_ASSERT_MSG(kernel_count > 0,  "kernel_count must be positive");
     this->resize(kernel_count);
-    const auto he = embed_dimension<FilterTraits::embedding_mode, ColEmbedding>(kernel_height, kernel_depth);
-    const auto we = embed_dimension<FilterTraits::embedding_mode, RowEmbedding>(kernel_width,  kernel_depth);
+    const auto h = embed_dimension<Options::embedding_mode, ColEmbedding>(kernel_height, kernel_depth);
+    const auto w = embed_dimension<Options::embedding_mode, RowEmbedding>(kernel_width,  kernel_depth);
     for (auto& kernel : *this)
     {
-      kernel.setZero(he, we);
+      kernel.setZero(h, w);
     }
     bias = 0;
   }
@@ -150,70 +178,80 @@ struct Filter :
   /**
    * @brief Scales kernels and bias value
    * @param scale  scalar value
+   * @return *this
    */
-  void operator*=(ValueType scale)
+  Filter& operator*=(ValueType scale)
   {
     for (auto& kernel : *this)
     {
-      this->kernel *= scale;
+      kernel *= scale;
     }
     this->bias *= scale;
+    return *this;
   }
 
   /**
    * @brief In-place subtraction between two Filter objects
    * @param other  Filter object
+   * @return *this
    */
-  void operator-=(const Filter& other)
+  Filter& operator-=(const Filter& other)
   {
     FFNN_ASSERT_MSG(this->size() == other.size(), "Filter sizes inconsistent");
     for (size_t idx = 0UL; idx < this->size(); idx++)
     {
-      (*this)[idx].kernel -= other[idx].kernel;
+      (*this)[idx] -= other[idx];
     }
     this->bias -= other.bias;
+    return *this;
   }
 
   /**
    * @brief In-place addition between two Filter objects
    * @param other  Filter object
+   * @return *this
    */
-  void operator+=(const Filter& other)
+  Filter& operator+=(const Filter& other)
   {
     FFNN_ASSERT_MSG(this->size() == other.size(), "Filter sizes inconsistent");
     for (size_t idx = 0UL; idx < this->size(); idx++)
     {
-      (*this)[idx].kernel += other[idx].kernel;
+      (*this)[idx] += other[idx];
     }
     this->bias += other.bias;
+    return *this;
   }
 
   /**
    * @brief In-place coefficient-wise multiplication between two Filter objects
    * @param other  Filter object
+   * @return *this
    */
-  void operator*=(const Filter& other)
+  Filter& operator*=(const Filter& other)
   {
     FFNN_ASSERT_MSG(this->size() == other.size(), "Filter sizes inconsistent");
     for (size_t idx = 0UL; idx < this->size(); idx++)
     {
-      (*this)[idx].kernel.array() /= other[idx].kernel.array();
+      (*this)[idx].array() *= other[idx].array();
     }
-    this->bias /= other.bias;
+    this->bias *= other.bias;
+    return *this;
   }
 
   /**
    * @brief In-place coefficient-wise division between two Filter objects
    * @param other  Filter object
+   * @return *this
    */
-  void operator/=(const Filter& other)
+  Filter& operator/=(const Filter& other)
   {
     FFNN_ASSERT_MSG(this->size() == other.size(), "Filter sizes inconsistent");
     for (size_t idx = 0UL; idx < this->size(); idx++)
     {
-      (*this)[idx].kernel.array() /= other[idx].kernel.array();
+      (*this)[idx].array() /= other[idx].array();
     }
     this->bias /= other.bias;
+    return *this;
   }
 
   /**
@@ -246,7 +284,7 @@ struct Filter :
    * @param version  archive versioning information
    * @note Statically sized version
    */
-  template<class Archive, bool T = FilterTraits::has_fixed_kernel_count>
+  template<class Archive, bool T = Options::has_fixed_kernel_count>
   typename std::enable_if<T>::type
     load(Archive & ar, const unsigned int version)
   {
@@ -259,7 +297,7 @@ struct Filter :
       ar & (*this)[idx];
     }
   }
-  template<class Archive, bool T = FilterTraits::has_fixed_kernel_count>
+  template<class Archive, bool T = Options::has_fixed_kernel_count>
   typename std::enable_if<!T>::type
     load(Archive & ar, const unsigned int version)
   {

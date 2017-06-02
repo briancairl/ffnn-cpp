@@ -1,14 +1,14 @@
 var searchData=
 [
-  ['generate',['generate',['../classffnn_1_1distribution_1_1_distribution.html#a150f344a8fe585fdebd462a4a07ec0ed',1,'ffnn::distribution::Distribution::generate()'],['../classffnn_1_1distribution_1_1_normal.html#abaaeca05e27923d319a452b78dda379b',1,'ffnn::distribution::Normal::generate()']]],
-  ['generatortype',['GeneratorType',['../classffnn_1_1distribution_1_1_normal.html#a7e672cbc0b3958c045c9518d5a0a2850',1,'ffnn::distribution::Normal']]],
+  ['generate',['generate',['../classffnn_1_1distribution_1_1_distribution.html#a150f344a8fe585fdebd462a4a07ec0ed',1,'ffnn::distribution::Distribution::generate()'],['../classffnn_1_1distribution_1_1_normal.html#ad90aceffa91e82ea29e4928f1aeb1bbe',1,'ffnn::distribution::Normal::generate()']]],
+  ['generatortype',['GeneratorType',['../classffnn_1_1distribution_1_1_normal.html#a6d8c98f74c7c9fa77fa9caab1061e9b1',1,'ffnn::distribution::Normal']]],
   ['getbackwarderrorbuffer',['getBackwardErrorBuffer',['../classffnn_1_1layer_1_1_layer.html#a0caad62750e9610e607fb18d87df63b8',1,'ffnn::layer::Layer']]],
   ['getbiases',['getBiases',['../classffnn_1_1layer_1_1_fully_connected.html#af7492d5d678fd45466d7768ab187a41e',1,'ffnn::layer::FullyConnected']]],
   ['getid',['getID',['../classffnn_1_1internal_1_1_unique.html#a5723da9af9ff0ff8043e55239fe10f7f',1,'ffnn::internal::Unique']]],
   ['getinputbuffer',['getInputBuffer',['../classffnn_1_1layer_1_1_layer.html#a8049c939bc452bd5453227d1ce1a35f3',1,'ffnn::layer::Layer']]],
   ['getinputshape',['getInputShape',['../classffnn_1_1layer_1_1_layer.html#a0f69fc9185b2d496fea7be9a5d9adb62',1,'ffnn::layer::Layer']]],
   ['getoutputshape',['getOutputShape',['../classffnn_1_1layer_1_1_layer.html#a2b6713211f1a5e702ce9ce8cd72e4854',1,'ffnn::layer::Layer']]],
-  ['getparameters',['getParameters',['../classffnn_1_1layer_1_1_convolution.html#ae558267ef378751f9b084f0eb4b61a12',1,'ffnn::layer::Convolution']]],
+  ['getparameters',['getParameters',['../classffnn_1_1layer_1_1_convolution.html#a8c7ea1047ee3f09deadf87ad267284ab',1,'ffnn::layer::Convolution']]],
   ['getweights',['getWeights',['../classffnn_1_1layer_1_1_fully_connected.html#a96e00e6f6fec19f22a8830e5342bc7ef',1,'ffnn::layer::FullyConnected']]],
   ['global_2eh',['global.h',['../global_8h.html',1,'']]],
   ['gradient_5f',['gradient_',['../classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4.html#a2e5183618894852cb53de619372d6ad1',1,'ffnn::optimizer::GradientDescent&lt; layer::Convolution&lt; TARGS &gt; &gt;::gradient_()'],['../classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4.html#aca3bb81659bef8b65fb7bf64713bff5e',1,'ffnn::optimizer::GradientDescent&lt; layer::LocalConvolution&lt; TARGS &gt; &gt;::gradient_()']]],

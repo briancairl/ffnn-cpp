@@ -88,7 +88,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">ffnn::distribution Namespace Reference</div>  </div>
 </div><!--header-->
@@ -98,17 +99,62 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1distribution_1_1_distribution.html">Distribution</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structffnn_1_1distribution_1_1_standard_normal_parameters.html">StandardNormalParameters</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structffnn_1_1distribution_1_1standard__normal.html">standard_normal</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1distribution_1_1_normal.html">Normal</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structffnn_1_1distribution_1_1_standard_normal.html">StandardNormal</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:aacaa8d87a0c4ec48fb1251623532dac7"><td class="memTemplParams" colspan="2">template&lt;typename M , typename DistributionType &gt; </td></tr>
+<tr class="memitem:aacaa8d87a0c4ec48fb1251623532dac7"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceffnn_1_1distribution.html#aacaa8d87a0c4ec48fb1251623532dac7">setRandom</a> (Eigen::MatrixBase&lt; M &gt; &amp;x, const DistributionType &amp;dist)</td></tr>
+<tr class="memdesc:aacaa8d87a0c4ec48fb1251623532dac7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets random coefficients according to particular distribution.  <a href="#aacaa8d87a0c4ec48fb1251623532dac7">More...</a><br/></td></tr>
+<tr class="separator:aacaa8d87a0c4ec48fb1251623532dac7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="aacaa8d87a0c4ec48fb1251623532dac7"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename M , typename DistributionType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void ffnn::distribution::setRandom </td>
+          <td>(</td>
+          <td class="paramtype">Eigen::MatrixBase&lt; M &gt; &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const DistributionType &amp;&#160;</td>
+          <td class="paramname"><em>dist</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets random coefficients according to particular distribution. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">x</td><td>matrix whose values to randomize </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">d</td><td>distribution </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed May 31 2017 23:57:13 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 2 2017 00:25:19 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

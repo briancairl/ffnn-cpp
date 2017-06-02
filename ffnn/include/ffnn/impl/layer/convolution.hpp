@@ -19,22 +19,27 @@ namespace ffnn
 namespace layer
 {
 template <typename ValueType,
-          typename LayerTraits>
-Convolution<ValueType, LayerTraits>::
+          typename Options,
+          typename Extrinsics>
+Convolution<ValueType, Options, Extrinsics>::
 Convolution(const Configuration& config) :
-  Base(config.embedded_input_shape_, config.embedded_output_shape_)
-{}
+  BaseType(config.embedded_input_shape_, config.embedded_output_shape_)
+{
+  FFNN_INTERNAL_DEBUG_NAMED("layer::Convolution", "[" << config.input_shape_ << " | " << config.output_shape_ << "]");
+}
 
 template <typename ValueType,
-          typename LayerTraits>
-Convolution<ValueType, LayerTraits>::~Convolution()
+          typename Options,
+          typename Extrinsics>
+Convolution<ValueType, Options, Extrinsics>::~Convolution()
 {
   FFNN_INTERNAL_DEBUG_NAMED("layer::Convolution", "Destroying [layer::Convolution] object <" << this->getID() << ">");
 }
 
 template <typename ValueType,
-          typename LayerTraits>
-bool Convolution<ValueType, LayerTraits>::initialize()
+          typename Options,
+          typename Extrinsics>
+bool Convolution<ValueType, Options, Extrinsics>::initialize()
 {
   if (BaseType::isInitialized())
   {
@@ -65,7 +70,7 @@ bool Convolution<ValueType, LayerTraits>::initialize()
                    ", out=" <<
                    config_.output_shape_ <<
                    ") (depth_embedding=" <<
-                   (Mode == ColEmbedding ? "Col" : "Row") <<
+                   (Options::embedding_mode == convolution::ColEmbedding ? "Col" : "Row") <<
                    ", nfilters=" <<
                    config_.output_shape_.depth <<
                    ", stride=" <<
@@ -77,8 +82,9 @@ bool Convolution<ValueType, LayerTraits>::initialize()
 }
 
 template <typename ValueType,
-          typename LayerTraits>
-bool Convolution<ValueType, LayerTraits>::forward()
+          typename Options,
+          typename Extrinsics>
+bool Convolution<ValueType, Options, Extrinsics>::forward()
 {
   // Run forward optimized iteration
   if (!config_.optimizer_->forward(*this))
@@ -97,8 +103,8 @@ bool Convolution<ValueType, LayerTraits>::forward()
       offset_type kdx = 0;
       for (const auto& kernel : parameters_)
       {
-        output_mappings_[idx][jdx][kdx++] = 
-          kernel.cwiseProduct(BaseType::input_.block(hdx, wdx, _is.height, _is.width)) +
+        output_mappings_[idx][jdx][kdx++] =
+          kernel.cwiseProduct(BaseType::input_.block(hdx, wdx, _is.height, _is.width)).sum() +
           parameters_.bias;
       }
     }
@@ -107,10 +113,11 @@ bool Convolution<ValueType, LayerTraits>::forward()
 }
 
 template <typename ValueType,
-          typename LayerTraits>
-bool Convolution<ValueType, LayerTraits>::backward()
+          typename Options,
+          typename Extrinsics>
+bool Convolution<ValueType, Options, Extrinsics>::backward()
 {
-  FFNN_ASSERT_MSG(config_.optimizer_, "No optimization resource set.");
+  FFNN_ASSERT_MSG(config_.optimizer_, "Optimization resource not set.");
 
   // Reset backward error values
   BaseType::backward_error_.setZero();
@@ -138,35 +145,40 @@ bool Convolution<ValueType, LayerTraits>::backward()
 }
 
 template <typename ValueType,
-          typename LayerTraits>
-bool Convolution<ValueType, LayerTraits>::update()
+          typename Options,
+          typename Extrinsics>
+bool Convolution<ValueType, Options, Extrinsics>::update()
 {
-  FFNN_ASSERT_MSG(config_.optimizer_, "No optimization resource set.");
+  FFNN_ASSERT_MSG(config_.optimizer_, "Optimization resource not set.");
   return config_.optimizer_->update(*this);
 }
 
 template <typename ValueType,
-          typename LayerTraits>
-void Convolution<ValueType, LayerTraits>::reset()
+          typename Options,
+          typename Extrinsics>
+void Convolution<ValueType, Options, Extrinsics>::reset()
 {
-  // Create receptive field
+  // Setup filter sizing
   const auto& _is = config_.input_shape_;
   const auto& _os = config_.output_shape_;
   const auto& _fs = config_.filter_shape_;
-  parameters_.setZeros(_fs.height, _fs.width, _is.depth, _os.depth);
+  parameters_.setZero(_fs.height, _fs.width, _is.depth, _os.depth);
+
+  // Initialize filter weights
+  FFNN_ASSERT_MSG(config_.parameter_distribution_, "Parameter distribution resource not set.");
+  for (auto& kernel : parameters_)
+  {
+    distribution::setRandom(kernel, *config_.parameter_distribution_);
+  }
+
+  // Initialize filter bias
+  parameters_.bias = config_.parameter_distribution_->generate();
 }
 
 template <typename ValueType,
-          typename LayerTraits>
-void Convolution<ValueType, LayerTraits>::setOptimizer(typename Optimizer::Ptr opt)
-{
-  FFNN_ASSERT_MSG(opt, "Input optimizer object is an empty resource.");
-  config_.optimizer_ = opt;
-}
-
-template <typename ValueType,
-          typename LayerTraits>
-offset_type Convolution<ValueType, LayerTraits>::connectToForwardLayer(const Layer<ValueType>& next, offset_type offset)
+          typename Options,
+          typename Extrinsics>
+offset_type Convolution<ValueType, Options, Extrinsics>::connectToForwardLayer(const Layer<ValueType>& next, offset_type offset)
 {
   // Connect outputs
   const offset_type data_offset = BaseType::connectToForwardLayer(next, offset);
@@ -184,7 +196,7 @@ offset_type Convolution<ValueType, LayerTraits>::connectToForwardLayer(const Lay
     for (size_type jdx = 0; jdx < _os.width; jdx++)
     {
       // Pointer offset
-      const offset_type kdx = (LayerTraits::embedding_mode == ColEmbedding) ?
+      const offset_type kdx = (Options::embedding_mode == convolution::ColEmbedding) ?
                               jdx * BaseType::output_shape_.height + idx * _os.depth :
                               idx * BaseType::output_shape_.width  + jdx * _os.depth;
 
@@ -199,10 +211,11 @@ offset_type Convolution<ValueType, LayerTraits>::connectToForwardLayer(const Lay
 }
 
 template <typename ValueType,
-          typename LayerTraits>
-void Convolution<ValueType, LayerTraits>::save(OutputArchive& ar, VersionType version) const
+          typename Options,
+          typename Extrinsics>
+void Convolution<ValueType, Options, Extrinsics>::save(OutputArchive& ar, VersionType version) const
 {
-  ffnn::io::signature::apply<SelfType>(ar);
+  ffnn::internal::signature::apply<SelfType>(ar);
   BaseType::save(ar, version);
 
   // Save volumes
@@ -212,10 +225,11 @@ void Convolution<ValueType, LayerTraits>::save(OutputArchive& ar, VersionType ve
 }
 
 template <typename ValueType,
-          typename LayerTraits>
-void Convolution<ValueType, LayerTraits>::load(InputArchive& ar, VersionType version)
+          typename Options,
+          typename Extrinsics>
+void Convolution<ValueType, Options, Extrinsics>::load(InputArchive& ar, VersionType version)
 {
-  ffnn::io::signature::check<SelfType>(ar);
+  ffnn::internal::signature::check<SelfType>(ar);
   BaseType::load(ar, version);
 
   // Load volumes

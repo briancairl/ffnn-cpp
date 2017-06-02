@@ -96,17 +96,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><code>#include &lt;vector&gt;</code><br/>
 <code>#include &lt;type_traits&gt;</code><br/>
-<code>#include &lt;<a class="el" href="serializable_8h_source.html">ffnn/internal/serializable.h</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="global_8h_source.html">ffnn/config/global.h</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="assert_8h_source.html">ffnn/assert.h</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="layer_8h_source.html">ffnn/layer/layer.h</a>&gt;</code><br/>
-<code>#include &lt;ffnn/layer/impl/hidden.hpp&gt;</code><br/>
+<code>#include &lt;<a class="el" href="serializable_8h_source.html">ffnn/internal/serializable.h</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="traits_8h_source.html">ffnn/internal/traits.h</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="hidden_8hpp_source.html">ffnn/impl/layer/hidden.hpp</a>&gt;</code><br/>
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for hidden.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="hidden_8h__incl.png" border="0" usemap="#_2home_2briancairl_2packages_2src_2ffnn-cpp_2ffnn_2include_2ffnn_2layer_2hidden_8h" alt=""/></div>
 <map name="_2home_2briancairl_2packages_2src_2ffnn-cpp_2ffnn_2include_2ffnn_2layer_2hidden_8h" id="_2home_2briancairl_2packages_2src_2ffnn-cpp_2ffnn_2include_2ffnn_2layer_2hidden_8h">
-<area shape="rect" id="node4" href="serializable_8h.html" title="ffnn/internal/serializable.h" alt="" coords="1091,259,1261,285"/><area shape="rect" id="node6" href="global_8h.html" title="ffnn/config/global.h" alt="" coords="710,333,841,360"/><area shape="rect" id="node18" href="assert_8h.html" title="ffnn/assert.h" alt="" coords="643,259,737,285"/><area shape="rect" id="node20" href="layer_8h.html" title="ffnn/layer/layer.h" alt="" coords="947,109,1065,136"/><area shape="rect" id="node8" href="logging_8h.html" title="ffnn/logging.h" alt="" coords="5,416,104,443"/><area shape="rect" id="node14" href="sparse__triplet__serialization_8h.html" title="ffnn/internal/eigen\l/sparse_triplet_serialization.h" alt="" coords="279,409,469,450"/><area shape="rect" id="node22" href="unique_8h.html" title="ffnn/internal/unique.h" alt="" coords="1361,184,1503,211"/><area shape="rect" id="node30" href="shape_8h.html" title="ffnn/layer/shape.h" alt="" coords="814,259,940,285"/><area shape="rect" id="node27" href="signature_8h.html" title="ffnn/internal/signature.h" alt="" coords="1978,259,2136,285"/></map>
+<area shape="rect" id="node4" href="global_8h.html" title="ffnn/config/global.h" alt="" coords="633,349,764,376"/><area shape="rect" id="node17" href="assert_8h.html" title="ffnn/assert.h" alt="" coords="97,267,191,293"/><area shape="rect" id="node19" href="layer_8h.html" title="ffnn/layer/layer.h" alt="" coords="961,109,1079,136"/><area shape="rect" id="node21" href="serializable_8h.html" title="ffnn/internal/serializable.h" alt="" coords="1496,267,1667,293"/><area shape="rect" id="node33" href="traits_8h.html" title="ffnn/internal/traits.h" alt="" coords="1633,109,1767,136"/><area shape="rect" id="node34" href="hidden_8hpp.html" title="ffnn/impl/layer/hidden.hpp" alt="" coords="93,184,264,211"/><area shape="rect" id="node6" href="logging_8h.html" title="ffnn/logging.h" alt="" coords="5,432,104,459"/><area shape="rect" id="node13" href="sparse__triplet__serialization_8h.html" title="ffnn/internal/eigen\l/sparse_triplet_serialization.h" alt="" coords="129,425,319,466"/><area shape="rect" id="node22" href="unique_8h.html" title="ffnn/internal/unique.h" alt="" coords="894,184,1036,211"/><area shape="rect" id="node30" href="shape_8h.html" title="ffnn/layer/shape.h" alt="" coords="1345,267,1471,293"/><area shape="rect" id="node31" href="layer_8hpp.html" title="ffnn/impl/layer/layer.hpp" alt="" coords="374,184,535,211"/><area shape="rect" id="node27" href="signature_8h.html" title="ffnn/internal/signature.h" alt="" coords="215,267,373,293"/></map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
@@ -120,9 +121,13 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structffnn_1_1layer_1_1hidden__layer__traits.html">ffnn::layer::hidden_layer_traits&lt; InputHeightAtCompileTime, InputWidthAtCompileTime, OutputHeightAtCompileTime, OutputWidthAtCompileTime &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structffnn_1_1layer_1_1hidden_1_1options.html">ffnn::layer::hidden::options&lt; InputHeightAtCompileTime, InputWidthAtCompileTime, OutputHeightAtCompileTime, OutputWidthAtCompileTime, InputDataOrdering, OutputDataOrdering &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Describes compile-time options used to set up a <a class="el" href="classffnn_1_1layer_1_1_convolution.html" title="A convolution layer. ">Convolution</a> object.  <a href="structffnn_1_1layer_1_1hidden_1_1options.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html">ffnn::layer::Hidden&lt; ValueType, LayerShape, _InputBlockType, _OutputBlockType &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structffnn_1_1layer_1_1hidden_1_1extrinsics.html">ffnn::layer::hidden::extrinsics&lt; ValueType, Options &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Describes types based on compile-time options.  <a href="structffnn_1_1layer_1_1hidden_1_1extrinsics.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_hidden.html">ffnn::layer::Hidden&lt; ValueType, Options, Extrinsics &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A network hidden-layer object.  <a href="classffnn_1_1layer_1_1_hidden.html#details">More...</a><br/></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -132,11 +137,13 @@ Namespaces</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespaceffnn_1_1layer"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceffnn_1_1layer.html">ffnn::layer</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceffnn_1_1layer_1_1hidden"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceffnn_1_1layer_1_1hidden.html">ffnn::layer::hidden</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed May 31 2017 23:57:13 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 2 2017 00:25:18 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

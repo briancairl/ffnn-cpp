@@ -1,0 +1,4 @@
+<map id="ffnn::layer::Hidden::connectToForwardLayer" name="ffnn::layer::Hidden::connectToForwardLayer">
+<area shape="rect" id="node2" href="$classffnn_1_1layer_1_1_layer.html#a8049c939bc452bd5453227d1ce1a35f3" title="Exposes const reference to raw data input buffer. " alt="" coords="249,5,369,46"/>
+<area shape="rect" id="node3" href="$classffnn_1_1layer_1_1_layer.html#a0caad62750e9610e607fb18d87df63b8" title="Exposes const reference to raw data backward&#45;error buffer. " alt="" coords="225,70,394,111"/>
+</map>

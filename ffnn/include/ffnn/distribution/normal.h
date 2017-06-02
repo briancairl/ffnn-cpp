@@ -14,21 +14,26 @@
 #include <boost/random/normal_distribution.hpp>
 #include <boost/math/special_functions/erf.hpp>
 
+// FFNN
+#include <ffnn/assert.h>
+#include <ffnn/assert.h>
+
 namespace ffnn
 {
 namespace distribution
 {
 
 template<typename ValueType>
-struct StandardNormalParameters
+struct standard_normal
 {
   constexpr static const ValueType mean  = 0.0;
   constexpr static const ValueType scale = 1.0;
 };
 
 template<typename ValueType,
-         typename DefaultParameters = StandardNormalParameters<ValueType>>
-class Normal
+         typename Options = standard_normal<ValueType>>
+class Normal :
+  public Distribution<ValueType>
 {
 public:
   /// Distribution type standardization
@@ -37,8 +42,8 @@ public:
   /// Variate generator type standardization
   typedef boost::variate_generator<boost::mt19937&, DistributionType> GeneratorType;
 
-  Normal(ValueType mean  = DefaultParameters::mean,
-         ValueType scale = DefaultParameters::scale) : 
+  Normal(ValueType mean  = Options::mean,
+         ValueType scale = Options::scale) : 
     distribution_(mean, scale)
   {
     FFNN_ASSERT_MSG(scale > 0, "Scale (variance) should be positive");

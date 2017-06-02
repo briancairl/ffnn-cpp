@@ -82,23 +82,6 @@ constexpr SizeType multiply_if_not_dynamic_sizes(SizeType n, SizeType m, SizeTyp
 }
 
 /**
- * @brief Compile-time Shape structure representing the dimensions of an object with volume
- */
-template<typename SizeType,
-         SizeType _HeightAtCompileTime = Eigen::Dynamic,
-         SizeType _WidthAtCompileTime  = Eigen::Dynamic,
-         SizeType _DepthAtCompileTime  = Eigen::Dynamic>
-struct ShapeAtCompileTime
-{
-  static_assert(std::is_integral<SizeType>::value, "SizeType must be an integer type.");
-  static_assert(std::is_signed<SizeType>::value, "SizeType must be a signed type.");
-
-  constexpr static SizeType HeightAtCompileTime = _HeightAtCompileTime;
-  constexpr static SizeType WidthAtCompileTime  = _WidthAtCompileTime;
-  constexpr static SizeType DepthAtCompileTime  = _DepthAtCompileTime;
-};
-
-/**
  * @brief Shape structure representing the dimensions of an object with volume
  */
 template<typename SizeType>

@@ -1,16 +1,18 @@
 <map id="/home/briancairl/packages/src/ffnn&#45;cpp/ffnn/include/ffnn/layer/fully_connected.h" name="/home/briancairl/packages/src/ffnn&#45;cpp/ffnn/include/ffnn/layer/fully_connected.h">
-<area shape="rect" id="node5" href="$traits_8h.html" title="ffnn/internal/traits.h" alt="" coords="43,200,177,227"/>
-<area shape="rect" id="node6" href="$hidden_8h.html" title="ffnn/layer/hidden.h" alt="" coords="619,117,748,144"/>
-<area shape="rect" id="node36" href="$neuron_8h.html" title="ffnn/neuron/neuron.h" alt="" coords="203,200,343,227"/>
-<area shape="rect" id="node37" href="$optimizer_8h.html" title="ffnn/optimizer/optimizer.h" alt="" coords="1738,275,1907,301"/>
-<area shape="rect" id="node40" href="$fwd_8h.html" title="ffnn/optimizer/fwd.h" alt="" coords="1861,117,1997,144"/>
-<area shape="rect" id="node7" href="$serializable_8h.html" title="ffnn/internal/serializable.h" alt="" coords="412,349,583,376"/>
-<area shape="rect" id="node9" href="$global_8h.html" title="ffnn/config/global.h" alt="" coords="1510,424,1641,451"/>
-<area shape="rect" id="node21" href="$assert_8h.html" title="ffnn/assert.h" alt="" coords="2142,349,2236,376"/>
-<area shape="rect" id="node23" href="$layer_8h.html" title="ffnn/layer/layer.h" alt="" coords="961,200,1079,227"/>
-<area shape="rect" id="node11" href="$logging_8h.html" title="ffnn/logging.h" alt="" coords="2139,507,2239,533"/>
-<area shape="rect" id="node17" href="$sparse__triplet__serialization_8h.html" title="ffnn/internal/eigen\l/sparse_triplet_serialization.h" alt="" coords="1479,499,1669,541"/>
-<area shape="rect" id="node25" href="$unique_8h.html" title="ffnn/internal/unique.h" alt="" coords="889,275,1031,301"/>
-<area shape="rect" id="node33" href="$shape_8h.html" title="ffnn/layer/shape.h" alt="" coords="1170,349,1296,376"/>
-<area shape="rect" id="node30" href="$signature_8h.html" title="ffnn/internal/signature.h" alt="" coords="1373,349,1531,376"/>
+<area shape="rect" id="node5" href="$traits_8h.html" title="ffnn/internal/traits.h" alt="" coords="2044,200,2178,227"/>
+<area shape="rect" id="node6" href="$hidden_8h.html" title="ffnn/layer/hidden.h" alt="" coords="1256,117,1385,144"/>
+<area shape="rect" id="node37" href="$neuron_8h.html" title="ffnn/neuron/neuron.h" alt="" coords="2254,200,2394,227"/>
+<area shape="rect" id="node38" href="$optimizer_8h.html" title="ffnn/optimizer/optimizer.h" alt="" coords="1727,275,1895,301"/>
+<area shape="rect" id="node41" href="$fwd_8h.html" title="ffnn/optimizer/fwd.h" alt="" coords="2305,117,2442,144"/>
+<area shape="rect" id="node7" href="$global_8h.html" title="ffnn/config/global.h" alt="" coords="1240,440,1371,467"/>
+<area shape="rect" id="node20" href="$assert_8h.html" title="ffnn/assert.h" alt="" coords="83,357,177,384"/>
+<area shape="rect" id="node22" href="$layer_8h.html" title="ffnn/layer/layer.h" alt="" coords="1144,200,1262,227"/>
+<area shape="rect" id="node24" href="$serializable_8h.html" title="ffnn/internal/serializable.h" alt="" coords="1098,357,1269,384"/>
+<area shape="rect" id="node36" href="$hidden_8hpp.html" title="ffnn/impl/layer/hidden.hpp" alt="" coords="171,275,342,301"/>
+<area shape="rect" id="node9" href="$logging_8h.html" title="ffnn/logging.h" alt="" coords="56,523,155,549"/>
+<area shape="rect" id="node16" href="$sparse__triplet__serialization_8h.html" title="ffnn/internal/eigen\l/sparse_triplet_serialization.h" alt="" coords="651,515,841,557"/>
+<area shape="rect" id="node25" href="$unique_8h.html" title="ffnn/internal/unique.h" alt="" coords="961,275,1103,301"/>
+<area shape="rect" id="node33" href="$shape_8h.html" title="ffnn/layer/shape.h" alt="" coords="1473,357,1599,384"/>
+<area shape="rect" id="node34" href="$layer_8hpp.html" title="ffnn/impl/layer/layer.hpp" alt="" coords="367,275,527,301"/>
+<area shape="rect" id="node30" href="$signature_8h.html" title="ffnn/internal/signature.h" alt="" coords="201,357,359,384"/>
 </map>

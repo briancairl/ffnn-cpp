@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['optimizer',['Optimizer',['../classffnn_1_1optimizer_1_1_optimizer.html',1,'ffnn::optimizer']]],
-  ['optimizer_3c_20layer_3a_3aconvolution_3c_20targs_20_3e_20_3e',['Optimizer&lt; layer::Convolution&lt; TARGS &gt; &gt;',['../classffnn_1_1optimizer_1_1_optimizer.html',1,'ffnn::optimizer']]],
-  ['optimizer_3c_20layer_3a_3afullyconnected_3c_20valuetype_2c_20inputsatcompiletime_2c_20outputsatcompiletime_20_3e_20_3e',['Optimizer&lt; layer::FullyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt; &gt;',['../classffnn_1_1optimizer_1_1_optimizer.html',1,'ffnn::optimizer']]],
-  ['optimizer_3c_20layer_3a_3alocalconvolution_3c_20targs_20_3e_20_3e',['Optimizer&lt; layer::LocalConvolution&lt; TARGS &gt; &gt;',['../classffnn_1_1optimizer_1_1_optimizer.html',1,'ffnn::optimizer']]],
-  ['optimizer_3c_20layer_3a_3asparselyconnected_3c_20valuetype_2c_20inputsatcompiletime_2c_20outputsatcompiletime_20_3e_20_3e',['Optimizer&lt; layer::SparselyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt; &gt;',['../classffnn_1_1optimizer_1_1_optimizer.html',1,'ffnn::optimizer']]],
-  ['output',['Output',['../classffnn_1_1layer_1_1_output.html',1,'ffnn::layer']]]
+  ['neuron',['Neuron',['../classffnn_1_1neuron_1_1_neuron.html',1,'ffnn::neuron']]],
+  ['none',['None',['../classffnn_1_1optimizer_1_1_none.html',1,'ffnn::optimizer']]],
+  ['normal',['Normal',['../classffnn_1_1distribution_1_1_normal.html',1,'ffnn::distribution']]],
+  ['normal_3c_20valuetype_20_3e',['Normal&lt; ValueType &gt;',['../classffnn_1_1distribution_1_1_normal.html',1,'ffnn::distribution']]]
 ];

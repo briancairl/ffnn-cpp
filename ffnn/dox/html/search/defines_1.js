@@ -2,6 +2,7 @@ var searchData=
 [
   ['ffnn_5fassert',['FFNN_ASSERT',['../assert_8h.html#acebc1a2cbd18085c2c24e2fe4311451b',1,'assert.h']]],
   ['ffnn_5fassert_5fmsg',['FFNN_ASSERT_MSG',['../assert_8h.html#a0dd452510e5d75d0f71f52ed14143c40',1,'assert.h']]],
+  ['ffnn_5fassert_5fno_5fmod_5flayer_5fextrinsics',['FFNN_ASSERT_NO_MOD_LAYER_EXTRINSICS',['../assert_8h.html#a4bcf259d8e662fe1b9b9d9c603f49d90',1,'assert.h']]],
   ['ffnn_5fdebug',['FFNN_DEBUG',['../logging_8h.html#ab12173b0787af69f3f1a39acd2bee8f1',1,'logging.h']]],
   ['ffnn_5fdebug_5fnamed',['FFNN_DEBUG_NAMED',['../logging_8h.html#ad17a22e477672ae24ca9afe0abf1b46f',1,'logging.h']]],
   ['ffnn_5ferror',['FFNN_ERROR',['../logging_8h.html#a1d6c56368e50cf741e990d8ea95b3cf4',1,'logging.h']]],

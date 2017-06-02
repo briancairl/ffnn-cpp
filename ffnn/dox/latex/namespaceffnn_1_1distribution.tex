@@ -6,9 +6,36 @@
 \item 
 class \hyperlink{classffnn_1_1distribution_1_1_distribution}{Distribution}
 \item 
-struct \hyperlink{structffnn_1_1distribution_1_1_standard_normal_parameters}{Standard\-Normal\-Parameters}
+struct \hyperlink{structffnn_1_1distribution_1_1standard__normal}{standard\-\_\-normal}
 \item 
 class \hyperlink{classffnn_1_1distribution_1_1_normal}{Normal}
 \item 
 struct \hyperlink{structffnn_1_1distribution_1_1_standard_normal}{Standard\-Normal}
 \end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename M , typename Distribution\-Type $>$ }\\void \hyperlink{namespaceffnn_1_1distribution_aacaa8d87a0c4ec48fb1251623532dac7}{set\-Random} (Eigen\-::\-Matrix\-Base$<$ M $>$ \&x, const Distribution\-Type \&dist)
+\begin{DoxyCompactList}\small\item\em Sets random coefficients according to particular distribution. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{namespaceffnn_1_1distribution_aacaa8d87a0c4ec48fb1251623532dac7}{\index{ffnn\-::distribution@{ffnn\-::distribution}!set\-Random@{set\-Random}}
+\index{set\-Random@{set\-Random}!ffnn::distribution@{ffnn\-::distribution}}
+\subsubsection[{set\-Random}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename M , typename Distribution\-Type $>$ void ffnn\-::distribution\-::set\-Random (
+\begin{DoxyParamCaption}
+\item[{Eigen\-::\-Matrix\-Base$<$ M $>$ \&}]{x, }
+\item[{const Distribution\-Type \&}]{dist}
+\end{DoxyParamCaption}
+)}}\label{namespaceffnn_1_1distribution_aacaa8d87a0c4ec48fb1251623532dac7}
+
+
+Sets random coefficients according to particular distribution. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em x} & matrix whose values to randomize \\
+\hline
+ & {\em d} & distribution \\
+\hline
+\end{DoxyParams}

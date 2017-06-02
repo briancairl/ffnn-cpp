@@ -1,5 +1,5 @@
-\hypertarget{classffnn_1_1layer_1_1_convolution}{\section{ffnn\-:\-:layer\-:\-:Convolution$<$ Value\-Type, Layer\-Traits $>$ Class Template Reference}
-\label{classffnn_1_1layer_1_1_convolution}\index{ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Layer\-Traits $>$@{ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Layer\-Traits $>$}}
+\hypertarget{classffnn_1_1layer_1_1_convolution}{\section{ffnn\-:\-:layer\-:\-:Convolution$<$ Value\-Type, Options, Extrinsics $>$ Class Template Reference}
+\label{classffnn_1_1layer_1_1_convolution}\index{ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Options, Extrinsics $>$@{ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Options, Extrinsics $>$}}
 }
 
 
@@ -12,20 +12,20 @@ A convolution layer.
 
 
 
-Inheritance diagram for ffnn\-:\-:layer\-:\-:Convolution$<$ Value\-Type, Layer\-Traits $>$\-:\nopagebreak
+Inheritance diagram for ffnn\-:\-:layer\-:\-:Convolution$<$ Value\-Type, Options, Extrinsics $>$\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=228pt]{classffnn_1_1layer_1_1_convolution__inherit__graph}
+\includegraphics[width=250pt]{classffnn_1_1layer_1_1_convolution__inherit__graph}
 \end{center}
 \end{figure}
 
 
-Collaboration diagram for ffnn\-:\-:layer\-:\-:Convolution$<$ Value\-Type, Layer\-Traits $>$\-:\nopagebreak
+Collaboration diagram for ffnn\-:\-:layer\-:\-:Convolution$<$ Value\-Type, Options, Extrinsics $>$\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=228pt]{classffnn_1_1layer_1_1_convolution__coll__graph}
+\includegraphics[width=250pt]{classffnn_1_1layer_1_1_convolution__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Classes}
@@ -36,114 +36,100 @@ class \hyperlink{classffnn_1_1layer_1_1_convolution_1_1_configuration}{Configura
 \subsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-using \hyperlink{classffnn_1_1layer_1_1_convolution_acbe0dcc4d5e3c8e65b4cd2677beca126}{Self\-Type} = \hyperlink{classffnn_1_1layer_1_1_convolution}{Convolution}$<$ Value\-Type, Layer\-Traits $>$
+using \hyperlink{classffnn_1_1layer_1_1_convolution_ac3985357df433360d75f39353faae600}{Self\-Type} = \hyperlink{classffnn_1_1layer_1_1_convolution}{Convolution}$<$ Value\-Type, Options, Extrinsics $>$
 \begin{DoxyCompactList}\small\item\em Self type alias. \end{DoxyCompactList}\item 
-using \hyperlink{classffnn_1_1layer_1_1_convolution_a473d9761dae92a5c7d3fa746647f2198}{Base\-Type} = Layer\-Traits\-::\-Hidden\-Layer\-Type
+using \hyperlink{classffnn_1_1layer_1_1_convolution_a30a3026202f29a601e539c80824fcf1f}{Base\-Type} = typename Extrinsics\-::\-Hidden\-Layer\-Type
 \begin{DoxyCompactList}\small\item\em Base type alias. \end{DoxyCompactList}\item 
-typedef \\*
-Layer\-Traits\-::\-Hidden\-Layer\-Type\-::\-Shape\-Type \hyperlink{classffnn_1_1layer_1_1_convolution_a70e1c8cd31ce4b5eef308c4b036d8393}{Shape\-Type}
+typedef Base\-Type\-::\-Shape\-Type \hyperlink{classffnn_1_1layer_1_1_convolution_ab76070ee3cc7b42325f46bc3bc86bf5f}{Shape\-Type}
 \begin{DoxyCompactList}\small\item\em Dimension type standardization. \end{DoxyCompactList}\item 
-typedef filter\-\_\-traits\\*
-$<$ Value\-Type, typename \\*
-Layer\-Traits\-::\-Filter\-Traits $>$ \hyperlink{classffnn_1_1layer_1_1_convolution_a747e95b6530d029de9ddcfd92cb0317a}{Filter\-Traits}
-\begin{DoxyCompactList}\small\item\em Filter traits standardization. \end{DoxyCompactList}\item 
-typedef Filter$<$ Value\-Type, \\*
-\hyperlink{classffnn_1_1layer_1_1_convolution_a747e95b6530d029de9ddcfd92cb0317a}{Filter\-Traits} $>$ \hyperlink{classffnn_1_1layer_1_1_convolution_a992ae89b4a496563a3a7578d522a8f04}{Filter\-Type}
-\begin{DoxyCompactList}\small\item\em Receptive-\/volume type standardization. \end{DoxyCompactList}\item 
-typedef boost\-::multi\-\_\-array\\*
-$<$ Value\-Type $\ast$, 2 $>$ \hyperlink{classffnn_1_1layer_1_1_convolution_a80b64b079d5e7d5a69779574989e8cce}{Forward\-Value\-Map\-Type}
+typedef Extrinsics\-::\-Filter\-Type \hyperlink{classffnn_1_1layer_1_1_convolution_ad66f693126a5a4b3cc7398f3be7c22a7}{Parameters\-Type}
+\begin{DoxyCompactList}\small\item\em Filter parameters type standardization. \end{DoxyCompactList}\item 
+typedef Extrinsics\-::\-Forward\-Map\-Type \hyperlink{classffnn_1_1layer_1_1_convolution_a5042d4aa0d40a1f1b719340eb5e62edc}{Forward\-Map\-Type}
 \begin{DoxyCompactList}\small\item\em 2\-D-\/value mapping standardization \end{DoxyCompactList}\item 
 typedef \hyperlink{classffnn_1_1optimizer_1_1_optimizer}{optimizer\-::\-Optimizer}\\*
-$<$ \hyperlink{classffnn_1_1layer_1_1_convolution_acbe0dcc4d5e3c8e65b4cd2677beca126}{Self\-Type} $>$ \hyperlink{classffnn_1_1layer_1_1_convolution_a56d7e87a813fbd9954d283c0f7a32f9d}{Optimizer\-Type}
+$<$ \hyperlink{classffnn_1_1layer_1_1_convolution_ac3985357df433360d75f39353faae600}{Self\-Type} $>$ \hyperlink{classffnn_1_1layer_1_1_convolution_a2daee819da77dc38cb3861397a02903c}{Optimizer\-Type}
 \begin{DoxyCompactList}\small\item\em \hyperlink{classffnn_1_1layer_1_1_layer}{Layer} optimization type standardization. \end{DoxyCompactList}\item 
 typedef \\*
 \hyperlink{classffnn_1_1distribution_1_1_distribution}{distribution\-::\-Distribution}\\*
-$<$ Value\-Type $>$ \hyperlink{classffnn_1_1layer_1_1_convolution_a63016232e871a6869432158dda2ff8dc}{Distribution\-Type}
+$<$ Value\-Type $>$ \hyperlink{classffnn_1_1layer_1_1_convolution_a9c7844d7a6397adba38599846f7ba75c}{Distribution\-Type}
 \begin{DoxyCompactList}\small\item\em Dsitribution standardization. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classffnn_1_1layer_1_1_convolution_af6a4efb533e86d240af67a976f9226de}{Convolution} (const \hyperlink{classffnn_1_1layer_1_1_convolution_1_1_configuration}{Configuration} \&config=\hyperlink{classffnn_1_1layer_1_1_convolution_1_1_configuration}{Configuration}())
+\hyperlink{classffnn_1_1layer_1_1_convolution_accbc6ed0e52e16e2f8d2a029d68011b5}{Convolution} (const \hyperlink{classffnn_1_1layer_1_1_convolution_1_1_configuration}{Configuration} \&config=\hyperlink{classffnn_1_1layer_1_1_convolution_1_1_configuration}{Configuration}())
 \begin{DoxyCompactList}\small\item\em Setup constructor. \end{DoxyCompactList}\item 
-virtual \hyperlink{classffnn_1_1layer_1_1_convolution_a12fa384c801699f967ecffcb66ce9c4c}{$\sim$\-Convolution} ()
+virtual \hyperlink{classffnn_1_1layer_1_1_convolution_a82301134ee4b438304163fc62d3e800f}{$\sim$\-Convolution} ()
 \item 
-bool \hyperlink{classffnn_1_1layer_1_1_convolution_a39ad1c05a0eac019e7c5c09a717dedca}{initialize} ()
+bool \hyperlink{classffnn_1_1layer_1_1_convolution_ab3f6d731184032f58b05651d63e22d14}{initialize} ()
 \begin{DoxyCompactList}\small\item\em Initialize the layer. \end{DoxyCompactList}\item 
-bool \hyperlink{classffnn_1_1layer_1_1_convolution_a86d3151b859c361501f83da01f53b3b9}{forward} ()
+bool \hyperlink{classffnn_1_1layer_1_1_convolution_a5f6bf2bfc15a8020b11dabff0d03eac2}{forward} ()
 \begin{DoxyCompactList}\small\item\em Performs forward value propagation. \end{DoxyCompactList}\item 
-bool \hyperlink{classffnn_1_1layer_1_1_convolution_a624f3e53008a42dd242f550d8c4ee914}{backward} ()
+bool \hyperlink{classffnn_1_1layer_1_1_convolution_a094e10487239ea4eb043347211180f00}{backward} ()
 \begin{DoxyCompactList}\small\item\em Performs backward error propagation. \end{DoxyCompactList}\item 
-bool \hyperlink{classffnn_1_1layer_1_1_convolution_a2d75dbeeff74a61dd8bb54accf56d5d9}{update} ()
+bool \hyperlink{classffnn_1_1layer_1_1_convolution_a66975d31de2fc164cbc9ae284f0d67f7}{update} ()
 \begin{DoxyCompactList}\small\item\em Applies accumulated layer weight updates computed during optimization. \end{DoxyCompactList}\item 
-const Parameters\-Type \& \hyperlink{classffnn_1_1layer_1_1_convolution_ae558267ef378751f9b084f0eb4b61a12}{get\-Parameters} () const 
-\end{DoxyCompactItemize}
+const \hyperlink{classffnn_1_1layer_1_1_convolution_ad66f693126a5a4b3cc7398f3be7c22a7}{Parameters\-Type} \& \hyperlink{classffnn_1_1layer_1_1_convolution_a8c7ea1047ee3f09deadf87ad267284ab}{get\-Parameters} () const 
+\begin{DoxyCompactList}\small\item\em Exposes layer parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{classffnn_1_1layer_1_1_convolution_a14f7de8a42bb068019f6bdab62e6d332}{save} (Output\-Archive \&ar, Version\-Type version) const 
+void \hyperlink{classffnn_1_1layer_1_1_convolution_a06e3973928e3b0f7ef8b0c7aabcf93c8}{save} (Output\-Archive \&ar, Version\-Type version) const 
 \begin{DoxyCompactList}\small\item\em Save serializer. \end{DoxyCompactList}\item 
-void \hyperlink{classffnn_1_1layer_1_1_convolution_a7281b7f4edcc219e5e1bf6ee31e22cfd}{load} (Input\-Archive \&ar, Version\-Type version)
+void \hyperlink{classffnn_1_1layer_1_1_convolution_af002187ef6ca18c4071d88c9fb1bb002}{load} (Input\-Archive \&ar, Version\-Type version)
 \begin{DoxyCompactList}\small\item\em Load serializer. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-\subsubsection*{template$<$typename Value\-Type, typename Layer\-Traits = convolution\-\_\-layer\-\_\-traits$<$\-Value\-Type$>$$>$class ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Layer\-Traits $>$}
+\subsubsection*{template$<$typename Value\-Type, typename Options = typename convolution\-::options$<$$>$, typename Extrinsics = typename convolution\-::extrinsics$<$\-Value\-Type, Options$>$$>$class ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Options, Extrinsics $>$}
 
 A convolution layer. 
 
 \subsection{Member Typedef Documentation}
-\hypertarget{classffnn_1_1layer_1_1_convolution_a473d9761dae92a5c7d3fa746647f2198}{\index{ffnn\-::layer\-::\-Convolution@{ffnn\-::layer\-::\-Convolution}!Base\-Type@{Base\-Type}}
+\hypertarget{classffnn_1_1layer_1_1_convolution_a30a3026202f29a601e539c80824fcf1f}{\index{ffnn\-::layer\-::\-Convolution@{ffnn\-::layer\-::\-Convolution}!Base\-Type@{Base\-Type}}
 \index{Base\-Type@{Base\-Type}!ffnn::layer::Convolution@{ffnn\-::layer\-::\-Convolution}}
-\subsubsection[{Base\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Traits = convolution\-\_\-layer\-\_\-traits$<$\-Value\-Type$>$$>$ using {\bf ffnn\-::layer\-::\-Convolution}$<$ Value\-Type, Layer\-Traits $>$\-::{\bf Base\-Type} =  Layer\-Traits\-::\-Hidden\-Layer\-Type}}\label{classffnn_1_1layer_1_1_convolution_a473d9761dae92a5c7d3fa746647f2198}
+\subsubsection[{Base\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = typename convolution\-::options$<$$>$, typename Extrinsics  = typename convolution\-::extrinsics$<$\-Value\-Type, Options$>$$>$ using {\bf ffnn\-::layer\-::\-Convolution}$<$ Value\-Type, Options, Extrinsics $>$\-::{\bf Base\-Type} =  typename Extrinsics\-::\-Hidden\-Layer\-Type}}\label{classffnn_1_1layer_1_1_convolution_a30a3026202f29a601e539c80824fcf1f}
 
 
 Base type alias. 
 
-\hypertarget{classffnn_1_1layer_1_1_convolution_a63016232e871a6869432158dda2ff8dc}{\index{ffnn\-::layer\-::\-Convolution@{ffnn\-::layer\-::\-Convolution}!Distribution\-Type@{Distribution\-Type}}
+\hypertarget{classffnn_1_1layer_1_1_convolution_a9c7844d7a6397adba38599846f7ba75c}{\index{ffnn\-::layer\-::\-Convolution@{ffnn\-::layer\-::\-Convolution}!Distribution\-Type@{Distribution\-Type}}
 \index{Distribution\-Type@{Distribution\-Type}!ffnn::layer::Convolution@{ffnn\-::layer\-::\-Convolution}}
-\subsubsection[{Distribution\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Traits = convolution\-\_\-layer\-\_\-traits$<$\-Value\-Type$>$$>$ typedef {\bf distribution\-::\-Distribution}$<$Value\-Type$>$ {\bf ffnn\-::layer\-::\-Convolution}$<$ Value\-Type, Layer\-Traits $>$\-::{\bf Distribution\-Type}}}\label{classffnn_1_1layer_1_1_convolution_a63016232e871a6869432158dda2ff8dc}
+\subsubsection[{Distribution\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = typename convolution\-::options$<$$>$, typename Extrinsics  = typename convolution\-::extrinsics$<$\-Value\-Type, Options$>$$>$ typedef {\bf distribution\-::\-Distribution}$<$Value\-Type$>$ {\bf ffnn\-::layer\-::\-Convolution}$<$ Value\-Type, Options, Extrinsics $>$\-::{\bf Distribution\-Type}}}\label{classffnn_1_1layer_1_1_convolution_a9c7844d7a6397adba38599846f7ba75c}
 
 
 Dsitribution standardization. 
 
-\hypertarget{classffnn_1_1layer_1_1_convolution_a747e95b6530d029de9ddcfd92cb0317a}{\index{ffnn\-::layer\-::\-Convolution@{ffnn\-::layer\-::\-Convolution}!Filter\-Traits@{Filter\-Traits}}
-\index{Filter\-Traits@{Filter\-Traits}!ffnn::layer::Convolution@{ffnn\-::layer\-::\-Convolution}}
-\subsubsection[{Filter\-Traits}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Traits = convolution\-\_\-layer\-\_\-traits$<$\-Value\-Type$>$$>$ typedef filter\-\_\-traits$<$Value\-Type, typename Layer\-Traits\-::\-Filter\-Traits$>$ {\bf ffnn\-::layer\-::\-Convolution}$<$ Value\-Type, Layer\-Traits $>$\-::{\bf Filter\-Traits}}}\label{classffnn_1_1layer_1_1_convolution_a747e95b6530d029de9ddcfd92cb0317a}
-
-
-Filter traits standardization. 
-
-\hypertarget{classffnn_1_1layer_1_1_convolution_a992ae89b4a496563a3a7578d522a8f04}{\index{ffnn\-::layer\-::\-Convolution@{ffnn\-::layer\-::\-Convolution}!Filter\-Type@{Filter\-Type}}
-\index{Filter\-Type@{Filter\-Type}!ffnn::layer::Convolution@{ffnn\-::layer\-::\-Convolution}}
-\subsubsection[{Filter\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Traits = convolution\-\_\-layer\-\_\-traits$<$\-Value\-Type$>$$>$ typedef Filter$<$Value\-Type, {\bf Filter\-Traits}$>$ {\bf ffnn\-::layer\-::\-Convolution}$<$ Value\-Type, Layer\-Traits $>$\-::{\bf Filter\-Type}}}\label{classffnn_1_1layer_1_1_convolution_a992ae89b4a496563a3a7578d522a8f04}
-
-
-Receptive-\/volume type standardization. 
-
-\hypertarget{classffnn_1_1layer_1_1_convolution_a80b64b079d5e7d5a69779574989e8cce}{\index{ffnn\-::layer\-::\-Convolution@{ffnn\-::layer\-::\-Convolution}!Forward\-Value\-Map\-Type@{Forward\-Value\-Map\-Type}}
-\index{Forward\-Value\-Map\-Type@{Forward\-Value\-Map\-Type}!ffnn::layer::Convolution@{ffnn\-::layer\-::\-Convolution}}
-\subsubsection[{Forward\-Value\-Map\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Traits = convolution\-\_\-layer\-\_\-traits$<$\-Value\-Type$>$$>$ typedef boost\-::multi\-\_\-array$<$Value\-Type$\ast$, 2$>$ {\bf ffnn\-::layer\-::\-Convolution}$<$ Value\-Type, Layer\-Traits $>$\-::{\bf Forward\-Value\-Map\-Type}}}\label{classffnn_1_1layer_1_1_convolution_a80b64b079d5e7d5a69779574989e8cce}
+\hypertarget{classffnn_1_1layer_1_1_convolution_a5042d4aa0d40a1f1b719340eb5e62edc}{\index{ffnn\-::layer\-::\-Convolution@{ffnn\-::layer\-::\-Convolution}!Forward\-Map\-Type@{Forward\-Map\-Type}}
+\index{Forward\-Map\-Type@{Forward\-Map\-Type}!ffnn::layer::Convolution@{ffnn\-::layer\-::\-Convolution}}
+\subsubsection[{Forward\-Map\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = typename convolution\-::options$<$$>$, typename Extrinsics  = typename convolution\-::extrinsics$<$\-Value\-Type, Options$>$$>$ typedef Extrinsics\-::\-Forward\-Map\-Type {\bf ffnn\-::layer\-::\-Convolution}$<$ Value\-Type, Options, Extrinsics $>$\-::{\bf Forward\-Map\-Type}}}\label{classffnn_1_1layer_1_1_convolution_a5042d4aa0d40a1f1b719340eb5e62edc}
 
 
 2\-D-\/value mapping standardization 
 
-\hypertarget{classffnn_1_1layer_1_1_convolution_a56d7e87a813fbd9954d283c0f7a32f9d}{\index{ffnn\-::layer\-::\-Convolution@{ffnn\-::layer\-::\-Convolution}!Optimizer\-Type@{Optimizer\-Type}}
+\hypertarget{classffnn_1_1layer_1_1_convolution_a2daee819da77dc38cb3861397a02903c}{\index{ffnn\-::layer\-::\-Convolution@{ffnn\-::layer\-::\-Convolution}!Optimizer\-Type@{Optimizer\-Type}}
 \index{Optimizer\-Type@{Optimizer\-Type}!ffnn::layer::Convolution@{ffnn\-::layer\-::\-Convolution}}
-\subsubsection[{Optimizer\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Traits = convolution\-\_\-layer\-\_\-traits$<$\-Value\-Type$>$$>$ typedef {\bf optimizer\-::\-Optimizer}$<${\bf Self\-Type}$>$ {\bf ffnn\-::layer\-::\-Convolution}$<$ Value\-Type, Layer\-Traits $>$\-::{\bf Optimizer\-Type}}}\label{classffnn_1_1layer_1_1_convolution_a56d7e87a813fbd9954d283c0f7a32f9d}
+\subsubsection[{Optimizer\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = typename convolution\-::options$<$$>$, typename Extrinsics  = typename convolution\-::extrinsics$<$\-Value\-Type, Options$>$$>$ typedef {\bf optimizer\-::\-Optimizer}$<${\bf Self\-Type}$>$ {\bf ffnn\-::layer\-::\-Convolution}$<$ Value\-Type, Options, Extrinsics $>$\-::{\bf Optimizer\-Type}}}\label{classffnn_1_1layer_1_1_convolution_a2daee819da77dc38cb3861397a02903c}
 
 
 \hyperlink{classffnn_1_1layer_1_1_layer}{Layer} optimization type standardization. 
 
-\hypertarget{classffnn_1_1layer_1_1_convolution_acbe0dcc4d5e3c8e65b4cd2677beca126}{\index{ffnn\-::layer\-::\-Convolution@{ffnn\-::layer\-::\-Convolution}!Self\-Type@{Self\-Type}}
+\hypertarget{classffnn_1_1layer_1_1_convolution_ad66f693126a5a4b3cc7398f3be7c22a7}{\index{ffnn\-::layer\-::\-Convolution@{ffnn\-::layer\-::\-Convolution}!Parameters\-Type@{Parameters\-Type}}
+\index{Parameters\-Type@{Parameters\-Type}!ffnn::layer::Convolution@{ffnn\-::layer\-::\-Convolution}}
+\subsubsection[{Parameters\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = typename convolution\-::options$<$$>$, typename Extrinsics  = typename convolution\-::extrinsics$<$\-Value\-Type, Options$>$$>$ typedef Extrinsics\-::\-Filter\-Type {\bf ffnn\-::layer\-::\-Convolution}$<$ Value\-Type, Options, Extrinsics $>$\-::{\bf Parameters\-Type}}}\label{classffnn_1_1layer_1_1_convolution_ad66f693126a5a4b3cc7398f3be7c22a7}
+
+
+Filter parameters type standardization. 
+
+\hypertarget{classffnn_1_1layer_1_1_convolution_ac3985357df433360d75f39353faae600}{\index{ffnn\-::layer\-::\-Convolution@{ffnn\-::layer\-::\-Convolution}!Self\-Type@{Self\-Type}}
 \index{Self\-Type@{Self\-Type}!ffnn::layer::Convolution@{ffnn\-::layer\-::\-Convolution}}
-\subsubsection[{Self\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Traits = convolution\-\_\-layer\-\_\-traits$<$\-Value\-Type$>$$>$ using {\bf ffnn\-::layer\-::\-Convolution}$<$ Value\-Type, Layer\-Traits $>$\-::{\bf Self\-Type} =  {\bf Convolution}$<$Value\-Type, Layer\-Traits$>$}}\label{classffnn_1_1layer_1_1_convolution_acbe0dcc4d5e3c8e65b4cd2677beca126}
+\subsubsection[{Self\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = typename convolution\-::options$<$$>$, typename Extrinsics  = typename convolution\-::extrinsics$<$\-Value\-Type, Options$>$$>$ using {\bf ffnn\-::layer\-::\-Convolution}$<$ Value\-Type, Options, Extrinsics $>$\-::{\bf Self\-Type} =  {\bf Convolution}$<$Value\-Type, Options, Extrinsics$>$}}\label{classffnn_1_1layer_1_1_convolution_ac3985357df433360d75f39353faae600}
 
 
 Self type alias. 
 
-\hypertarget{classffnn_1_1layer_1_1_convolution_a70e1c8cd31ce4b5eef308c4b036d8393}{\index{ffnn\-::layer\-::\-Convolution@{ffnn\-::layer\-::\-Convolution}!Shape\-Type@{Shape\-Type}}
+\hypertarget{classffnn_1_1layer_1_1_convolution_ab76070ee3cc7b42325f46bc3bc86bf5f}{\index{ffnn\-::layer\-::\-Convolution@{ffnn\-::layer\-::\-Convolution}!Shape\-Type@{Shape\-Type}}
 \index{Shape\-Type@{Shape\-Type}!ffnn::layer::Convolution@{ffnn\-::layer\-::\-Convolution}}
-\subsubsection[{Shape\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Traits = convolution\-\_\-layer\-\_\-traits$<$\-Value\-Type$>$$>$ typedef Layer\-Traits\-::\-Hidden\-Layer\-Type\-::\-Shape\-Type {\bf ffnn\-::layer\-::\-Convolution}$<$ Value\-Type, Layer\-Traits $>$\-::{\bf Shape\-Type}}}\label{classffnn_1_1layer_1_1_convolution_a70e1c8cd31ce4b5eef308c4b036d8393}
+\subsubsection[{Shape\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = typename convolution\-::options$<$$>$, typename Extrinsics  = typename convolution\-::extrinsics$<$\-Value\-Type, Options$>$$>$ typedef Base\-Type\-::\-Shape\-Type {\bf ffnn\-::layer\-::\-Convolution}$<$ Value\-Type, Options, Extrinsics $>$\-::{\bf Shape\-Type}}}\label{classffnn_1_1layer_1_1_convolution_ab76070ee3cc7b42325f46bc3bc86bf5f}
 
 
 Dimension type standardization. 
@@ -151,34 +137,34 @@ Dimension type standardization.
 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classffnn_1_1layer_1_1_convolution_af6a4efb533e86d240af67a976f9226de}{\index{ffnn\-::layer\-::\-Convolution@{ffnn\-::layer\-::\-Convolution}!Convolution@{Convolution}}
+\hypertarget{classffnn_1_1layer_1_1_convolution_accbc6ed0e52e16e2f8d2a029d68011b5}{\index{ffnn\-::layer\-::\-Convolution@{ffnn\-::layer\-::\-Convolution}!Convolution@{Convolution}}
 \index{Convolution@{Convolution}!ffnn::layer::Convolution@{ffnn\-::layer\-::\-Convolution}}
-\subsubsection[{Convolution}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , size\-\_\-type Height\-At\-Compile\-Time, size\-\_\-type Width\-At\-Compile\-Time, size\-\_\-type Depth\-At\-Compile\-Time, size\-\_\-type Filter\-Height\-At\-Compile\-Time, size\-\_\-type Filter\-Width\-At\-Compile\-Time, size\-\_\-type Filter\-Depth\-At\-Compile\-Time, size\-\_\-type Stride\-At\-Compile\-Time, Embedding\-Mode Mode, typename \-\_\-\-Hidden\-Layer\-Shape $>$ {\bf ffnn\-::layer\-::\-Convolution}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Depth\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode, \-\_\-\-Hidden\-Layer\-Shape $>$\-::{\bf Convolution} (
+\subsubsection[{Convolution}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options , typename Extrinsics $>$ {\bf ffnn\-::layer\-::\-Convolution}$<$ Value\-Type, Options, Extrinsics $>$\-::{\bf Convolution} (
 \begin{DoxyParamCaption}
 \item[{const {\bf Configuration} \&}]{config = {\ttfamily {\bf Configuration}()}}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classffnn_1_1layer_1_1_convolution_af6a4efb533e86d240af67a976f9226de}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classffnn_1_1layer_1_1_convolution_accbc6ed0e52e16e2f8d2a029d68011b5}
 
 
 Setup constructor. 
 
-\hypertarget{classffnn_1_1layer_1_1_convolution_a12fa384c801699f967ecffcb66ce9c4c}{\index{ffnn\-::layer\-::\-Convolution@{ffnn\-::layer\-::\-Convolution}!$\sim$\-Convolution@{$\sim$\-Convolution}}
+\hypertarget{classffnn_1_1layer_1_1_convolution_a82301134ee4b438304163fc62d3e800f}{\index{ffnn\-::layer\-::\-Convolution@{ffnn\-::layer\-::\-Convolution}!$\sim$\-Convolution@{$\sim$\-Convolution}}
 \index{$\sim$\-Convolution@{$\sim$\-Convolution}!ffnn::layer::Convolution@{ffnn\-::layer\-::\-Convolution}}
-\subsubsection[{$\sim$\-Convolution}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , size\-\_\-type Height\-At\-Compile\-Time, size\-\_\-type Width\-At\-Compile\-Time, size\-\_\-type Depth\-At\-Compile\-Time, size\-\_\-type Filter\-Height\-At\-Compile\-Time, size\-\_\-type Filter\-Width\-At\-Compile\-Time, size\-\_\-type Filter\-Depth\-At\-Compile\-Time, size\-\_\-type Stride\-At\-Compile\-Time, Embedding\-Mode Mode, typename \-\_\-\-Hidden\-Layer\-Shape $>$ {\bf ffnn\-::layer\-::\-Convolution}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Depth\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode, \-\_\-\-Hidden\-Layer\-Shape $>$\-::$\sim${\bf Convolution} (
+\subsubsection[{$\sim$\-Convolution}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options , typename Extrinsics $>$ {\bf ffnn\-::layer\-::\-Convolution}$<$ Value\-Type, Options, Extrinsics $>$\-::$\sim${\bf Convolution} (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_convolution_a12fa384c801699f967ecffcb66ce9c4c}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_convolution_a82301134ee4b438304163fc62d3e800f}
 
 
 \subsection{Member Function Documentation}
-\hypertarget{classffnn_1_1layer_1_1_convolution_a624f3e53008a42dd242f550d8c4ee914}{\index{ffnn\-::layer\-::\-Convolution@{ffnn\-::layer\-::\-Convolution}!backward@{backward}}
+\hypertarget{classffnn_1_1layer_1_1_convolution_a094e10487239ea4eb043347211180f00}{\index{ffnn\-::layer\-::\-Convolution@{ffnn\-::layer\-::\-Convolution}!backward@{backward}}
 \index{backward@{backward}!ffnn::layer::Convolution@{ffnn\-::layer\-::\-Convolution}}
-\subsubsection[{backward}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , size\-\_\-type Height\-At\-Compile\-Time, size\-\_\-type Width\-At\-Compile\-Time, size\-\_\-type Depth\-At\-Compile\-Time, size\-\_\-type Filter\-Height\-At\-Compile\-Time, size\-\_\-type Filter\-Width\-At\-Compile\-Time, size\-\_\-type Filter\-Depth\-At\-Compile\-Time, size\-\_\-type Stride\-At\-Compile\-Time, Embedding\-Mode Mode, typename \-\_\-\-Hidden\-Layer\-Shape $>$ bool {\bf ffnn\-::layer\-::\-Convolution}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Depth\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode, \-\_\-\-Hidden\-Layer\-Shape $>$\-::backward (
+\subsubsection[{backward}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options , typename Extrinsics $>$ bool {\bf ffnn\-::layer\-::\-Convolution}$<$ Value\-Type, Options, Extrinsics $>$\-::backward (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{classffnn_1_1layer_1_1_convolution_a624f3e53008a42dd242f550d8c4ee914}
+)}}\label{classffnn_1_1layer_1_1_convolution_a094e10487239ea4eb043347211180f00}
 
 
 Performs backward error propagation. 
@@ -198,13 +184,13 @@ Will throw if an optimizer has not been associated with this layer
 \begin{DoxySeeAlso}{See Also}
 set\-Optimizer 
 \end{DoxySeeAlso}
-\hypertarget{classffnn_1_1layer_1_1_convolution_a86d3151b859c361501f83da01f53b3b9}{\index{ffnn\-::layer\-::\-Convolution@{ffnn\-::layer\-::\-Convolution}!forward@{forward}}
+\hypertarget{classffnn_1_1layer_1_1_convolution_a5f6bf2bfc15a8020b11dabff0d03eac2}{\index{ffnn\-::layer\-::\-Convolution@{ffnn\-::layer\-::\-Convolution}!forward@{forward}}
 \index{forward@{forward}!ffnn::layer::Convolution@{ffnn\-::layer\-::\-Convolution}}
-\subsubsection[{forward}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , size\-\_\-type Height\-At\-Compile\-Time, size\-\_\-type Width\-At\-Compile\-Time, size\-\_\-type Depth\-At\-Compile\-Time, size\-\_\-type Filter\-Height\-At\-Compile\-Time, size\-\_\-type Filter\-Width\-At\-Compile\-Time, size\-\_\-type Filter\-Depth\-At\-Compile\-Time, size\-\_\-type Stride\-At\-Compile\-Time, Embedding\-Mode Mode, typename \-\_\-\-Hidden\-Layer\-Shape $>$ bool {\bf ffnn\-::layer\-::\-Convolution}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Depth\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode, \-\_\-\-Hidden\-Layer\-Shape $>$\-::forward (
+\subsubsection[{forward}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options , typename Extrinsics $>$ bool {\bf ffnn\-::layer\-::\-Convolution}$<$ Value\-Type, Options, Extrinsics $>$\-::forward (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{classffnn_1_1layer_1_1_convolution_a86d3151b859c361501f83da01f53b3b9}
+)}}\label{classffnn_1_1layer_1_1_convolution_a5f6bf2bfc15a8020b11dabff0d03eac2}
 
 
 Performs forward value propagation. 
@@ -216,20 +202,27 @@ Performs forward value propagation.
 {\em false} & otherwise \\
 \hline
 \end{DoxyRetVals}
-\hypertarget{classffnn_1_1layer_1_1_convolution_ae558267ef378751f9b084f0eb4b61a12}{\index{ffnn\-::layer\-::\-Convolution@{ffnn\-::layer\-::\-Convolution}!get\-Parameters@{get\-Parameters}}
+\hypertarget{classffnn_1_1layer_1_1_convolution_a8c7ea1047ee3f09deadf87ad267284ab}{\index{ffnn\-::layer\-::\-Convolution@{ffnn\-::layer\-::\-Convolution}!get\-Parameters@{get\-Parameters}}
 \index{get\-Parameters@{get\-Parameters}!ffnn::layer::Convolution@{ffnn\-::layer\-::\-Convolution}}
-\subsubsection[{get\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Traits = convolution\-\_\-layer\-\_\-traits$<$\-Value\-Type$>$$>$ const Parameters\-Type\& {\bf ffnn\-::layer\-::\-Convolution}$<$ Value\-Type, Layer\-Traits $>$\-::get\-Parameters (
+\subsubsection[{get\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = typename convolution\-::options$<$$>$, typename Extrinsics  = typename convolution\-::extrinsics$<$\-Value\-Type, Options$>$$>$ const {\bf Parameters\-Type}\& {\bf ffnn\-::layer\-::\-Convolution}$<$ Value\-Type, Options, Extrinsics $>$\-::get\-Parameters (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1_convolution_ae558267ef378751f9b084f0eb4b61a12}
-\hypertarget{classffnn_1_1layer_1_1_convolution_a39ad1c05a0eac019e7c5c09a717dedca}{\index{ffnn\-::layer\-::\-Convolution@{ffnn\-::layer\-::\-Convolution}!initialize@{initialize}}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1_convolution_a8c7ea1047ee3f09deadf87ad267284ab}
+
+
+Exposes layer parameters. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classffnn_1_1layer_1_1_convolution}{Convolution} filter parameters 
+\end{DoxyReturn}
+\hypertarget{classffnn_1_1layer_1_1_convolution_ab3f6d731184032f58b05651d63e22d14}{\index{ffnn\-::layer\-::\-Convolution@{ffnn\-::layer\-::\-Convolution}!initialize@{initialize}}
 \index{initialize@{initialize}!ffnn::layer::Convolution@{ffnn\-::layer\-::\-Convolution}}
-\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , size\-\_\-type Height\-At\-Compile\-Time, size\-\_\-type Width\-At\-Compile\-Time, size\-\_\-type Depth\-At\-Compile\-Time, size\-\_\-type Filter\-Height\-At\-Compile\-Time, size\-\_\-type Filter\-Width\-At\-Compile\-Time, size\-\_\-type Filter\-Depth\-At\-Compile\-Time, size\-\_\-type Stride\-At\-Compile\-Time, Embedding\-Mode Mode, typename \-\_\-\-Hidden\-Layer\-Shape $>$ bool {\bf ffnn\-::layer\-::\-Convolution}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Depth\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode, \-\_\-\-Hidden\-Layer\-Shape $>$\-::initialize (
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options , typename Extrinsics $>$ bool {\bf ffnn\-::layer\-::\-Convolution}$<$ Value\-Type, Options, Extrinsics $>$\-::initialize (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{classffnn_1_1layer_1_1_convolution_a39ad1c05a0eac019e7c5c09a717dedca}
+)}}\label{classffnn_1_1layer_1_1_convolution_ab3f6d731184032f58b05651d63e22d14}
 
 
 Initialize the layer. 
@@ -244,14 +237,14 @@ Initialize the layer.
 \begin{DoxyWarning}{Warning}
 If layer is not loaded instance, this method will initialize layer sizings but weights and biases will be zero 
 \end{DoxyWarning}
-\hypertarget{classffnn_1_1layer_1_1_convolution_a7281b7f4edcc219e5e1bf6ee31e22cfd}{\index{ffnn\-::layer\-::\-Convolution@{ffnn\-::layer\-::\-Convolution}!load@{load}}
+\hypertarget{classffnn_1_1layer_1_1_convolution_af002187ef6ca18c4071d88c9fb1bb002}{\index{ffnn\-::layer\-::\-Convolution@{ffnn\-::layer\-::\-Convolution}!load@{load}}
 \index{load@{load}!ffnn::layer::Convolution@{ffnn\-::layer\-::\-Convolution}}
-\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Traits = convolution\-\_\-layer\-\_\-traits$<$\-Value\-Type$>$$>$ void {\bf ffnn\-::layer\-::\-Convolution}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Depth\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode, \-\_\-\-Hidden\-Layer\-Shape $>$\-::load (
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options , typename Extrinsics $>$ void {\bf ffnn\-::layer\-::\-Convolution}$<$ Value\-Type, Options, Extrinsics $>$\-::load (
 \begin{DoxyParamCaption}
 \item[{Input\-Archive \&}]{ar, }
 \item[{Version\-Type}]{version}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classffnn_1_1layer_1_1_convolution_a7281b7f4edcc219e5e1bf6ee31e22cfd}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classffnn_1_1layer_1_1_convolution_af002187ef6ca18c4071d88c9fb1bb002}
 
 
 Load serializer. 
@@ -262,19 +255,19 @@ Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=270pt]{classffnn_1_1layer_1_1_convolution_a7281b7f4edcc219e5e1bf6ee31e22cfd_cgraph}
+\includegraphics[width=270pt]{classffnn_1_1layer_1_1_convolution_af002187ef6ca18c4071d88c9fb1bb002_cgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{classffnn_1_1layer_1_1_convolution_a14f7de8a42bb068019f6bdab62e6d332}{\index{ffnn\-::layer\-::\-Convolution@{ffnn\-::layer\-::\-Convolution}!save@{save}}
+\hypertarget{classffnn_1_1layer_1_1_convolution_a06e3973928e3b0f7ef8b0c7aabcf93c8}{\index{ffnn\-::layer\-::\-Convolution@{ffnn\-::layer\-::\-Convolution}!save@{save}}
 \index{save@{save}!ffnn::layer::Convolution@{ffnn\-::layer\-::\-Convolution}}
-\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Traits = convolution\-\_\-layer\-\_\-traits$<$\-Value\-Type$>$$>$ void {\bf ffnn\-::layer\-::\-Convolution}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Depth\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode, \-\_\-\-Hidden\-Layer\-Shape $>$\-::save (
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options , typename Extrinsics $>$ void {\bf ffnn\-::layer\-::\-Convolution}$<$ Value\-Type, Options, Extrinsics $>$\-::save (
 \begin{DoxyParamCaption}
 \item[{Output\-Archive \&}]{ar, }
 \item[{Version\-Type}]{version}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [protected]}}}\label{classffnn_1_1layer_1_1_convolution_a14f7de8a42bb068019f6bdab62e6d332}
+) const\hspace{0.3cm}{\ttfamily [protected]}}}\label{classffnn_1_1layer_1_1_convolution_a06e3973928e3b0f7ef8b0c7aabcf93c8}
 
 
 Save serializer. 
@@ -285,18 +278,18 @@ Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=272pt]{classffnn_1_1layer_1_1_convolution_a14f7de8a42bb068019f6bdab62e6d332_cgraph}
+\includegraphics[width=272pt]{classffnn_1_1layer_1_1_convolution_a06e3973928e3b0f7ef8b0c7aabcf93c8_cgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{classffnn_1_1layer_1_1_convolution_a2d75dbeeff74a61dd8bb54accf56d5d9}{\index{ffnn\-::layer\-::\-Convolution@{ffnn\-::layer\-::\-Convolution}!update@{update}}
+\hypertarget{classffnn_1_1layer_1_1_convolution_a66975d31de2fc164cbc9ae284f0d67f7}{\index{ffnn\-::layer\-::\-Convolution@{ffnn\-::layer\-::\-Convolution}!update@{update}}
 \index{update@{update}!ffnn::layer::Convolution@{ffnn\-::layer\-::\-Convolution}}
-\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , size\-\_\-type Height\-At\-Compile\-Time, size\-\_\-type Width\-At\-Compile\-Time, size\-\_\-type Depth\-At\-Compile\-Time, size\-\_\-type Filter\-Height\-At\-Compile\-Time, size\-\_\-type Filter\-Width\-At\-Compile\-Time, size\-\_\-type Filter\-Depth\-At\-Compile\-Time, size\-\_\-type Stride\-At\-Compile\-Time, Embedding\-Mode Mode, typename \-\_\-\-Hidden\-Layer\-Shape $>$ bool {\bf ffnn\-::layer\-::\-Convolution}$<$ Value\-Type, Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Filter\-Height\-At\-Compile\-Time, Filter\-Width\-At\-Compile\-Time, Filter\-Depth\-At\-Compile\-Time, Stride\-At\-Compile\-Time, Mode, \-\_\-\-Hidden\-Layer\-Shape $>$\-::update (
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options , typename Extrinsics $>$ bool {\bf ffnn\-::layer\-::\-Convolution}$<$ Value\-Type, Options, Extrinsics $>$\-::update (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{classffnn_1_1layer_1_1_convolution_a2d75dbeeff74a61dd8bb54accf56d5d9}
+)}}\label{classffnn_1_1layer_1_1_convolution_a66975d31de2fc164cbc9ae284f0d67f7}
 
 
 Applies accumulated layer weight updates computed during optimization. 

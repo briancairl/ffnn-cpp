@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mean',['mean',['../structffnn_1_1distribution_1_1_standard_normal_parameters.html#a94d8bae101a2203451f19d19cf4f5ba0',1,'ffnn::distribution::StandardNormalParameters']]]
+  ['mean',['mean',['../structffnn_1_1distribution_1_1standard__normal.html#a3bc379b843223a295fa325afda95247f',1,'ffnn::distribution::standard_normal']]]
 ];
