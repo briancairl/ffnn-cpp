@@ -3,8 +3,8 @@
 }
 {\ttfamily \#include $<$exception$>$}\\*
 {\ttfamily \#include $<$ffnn/config/global.\-h$>$}\\*
-{\ttfamily \#include $<$ffnn/logging.\-h$>$}\\*
-Include dependency graph for assert.\-h\-:\nopagebreak
+Include dependency graph for assert.\-h\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,14 +21,14 @@ This graph shows which files directly or indirectly include this file\-:\nopageb
 \subsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \hyperlink{assert_8h_a2b49bd7cbe87713cc51996494f3c4fd5}{F\-F\-N\-N\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-M\-S\-G}(cond, msg)~static\-\_\-assert(cond, msg)
-\begin{DoxyCompactList}\small\item\em Static assertion definition. \end{DoxyCompactList}\item 
-\#define \hyperlink{assert_8h_aad64ee3fe6ac7c17c2a7b02318563b21}{F\-F\-N\-N\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-R\-U\-N\-T\-I\-M\-E\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-M\-S\-G}(cond, msg)
-\begin{DoxyCompactList}\small\item\em Static (runtime) assertion definition. \end{DoxyCompactList}\item 
 \#define \hyperlink{assert_8h_a0dd452510e5d75d0f71f52ed14143c40}{F\-F\-N\-N\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-M\-S\-G}(cond, msg)~(void(0))
 \item 
 \#define \hyperlink{assert_8h_acebc1a2cbd18085c2c24e2fe4311451b}{F\-F\-N\-N\-\_\-\-A\-S\-S\-E\-R\-T}(cond)~\hyperlink{assert_8h_a0dd452510e5d75d0f71f52ed14143c40}{F\-F\-N\-N\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-M\-S\-G}(cond, \char`\"{}Assertion Failed.\char`\"{})
 \begin{DoxyCompactList}\small\item\em Debug assert defintion. \end{DoxyCompactList}\item 
+\#define \hyperlink{assert_8h_a2b49bd7cbe87713cc51996494f3c4fd5}{F\-F\-N\-N\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-M\-S\-G}(cond, msg)~static\-\_\-assert(cond, msg)
+\begin{DoxyCompactList}\small\item\em Compile-\/time assertion definition. \end{DoxyCompactList}\item 
+\#define \hyperlink{assert_8h_aad64ee3fe6ac7c17c2a7b02318563b21}{F\-F\-N\-N\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-R\-U\-N\-T\-I\-M\-E\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-M\-S\-G}(cond, msg)
+\begin{DoxyCompactList}\small\item\em Static runtime assertion definition. \end{DoxyCompactList}\item 
 \#define \hyperlink{assert_8h_a4bcf259d8e662fe1b9b9d9c603f49d90}{F\-F\-N\-N\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-N\-O\-\_\-\-M\-O\-D\-\_\-\-L\-A\-Y\-E\-R\-\_\-\-E\-X\-T\-R\-I\-N\-S\-I\-C\-S}(N\-S)
 \begin{DoxyCompactList}\small\item\em Compile-\/time assert to enforce templated layer instancing pattern. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -53,6 +53,12 @@ Debug assert defintion.
 \item[{}]{msg}
 \end{DoxyParamCaption}
 )~(void(0))}}\label{assert_8h_a0dd452510e5d75d0f71f52ed14143c40}
+\begin{DoxyAuthor}{Author}
+Brian Cairl 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2017 
+\end{DoxyDate}
 
 
 Referenced by ffnn\-::optimizer\-::\-Adam$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::\-Adam(), ffnn\-::optimizer\-::\-Adam$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::\-Adam(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::backward(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::backward(), ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-::backward(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$\-::backward(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$\-::backward(), ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Options, Extrinsics $>$\-::backward(), ffnn\-::layer\-::\-Hidden$<$ Value\-Type, Options, Extrinsics $>$\-::connect\-To\-Forward\-Layer(), ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$\-::evaluate\-Input\-Size(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::forward(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::forward(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$\-::forward(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$\-::forward(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::initialize(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::initialize(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$\-::initialize(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$\-::initialize(), ffnn\-::layer\-::\-Hidden$<$ Value\-Type, Options, Extrinsics $>$\-::initialize(), ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$\-::\-Layer(), ffnn\-::neuron\-::\-Leaky\-Rectified\-Linear$<$ Value\-Type, \-\_\-\-P, \-\_\-\-B $>$\-::\-Leaky\-Rectified\-Linear(), ffnn\-::distribution\-::\-Normal$<$ Value\-Type $>$\-::\-Normal(), ffnn\-::layer\-::convolution\-::\-Filter$<$ Value\-Type, Options, Extrinsics $>$\-::operator$\ast$=(), ffnn\-::layer\-::convolution\-::\-Filter$<$ Value\-Type, Options, Extrinsics $>$\-::operator+=(), ffnn\-::layer\-::convolution\-::\-Filter$<$ Value\-Type, Options, Extrinsics $>$\-::operator-\/=(), ffnn\-::layer\-::convolution\-::\-Filter$<$ Value\-Type, Options, Extrinsics $>$\-::operator/=(), ffnn\-::layer\-::\-Input$<$ Value\-Type, Network\-Inputs\-At\-Compile\-Time $>$\-::operator$<$$<$(), ffnn\-::layer\-::\-Output$<$ Value\-Type, Network\-Outputs\-At\-Compile\-Time $>$\-::operator$<$$<$(), ffnn\-::layer\-::\-Output$<$ Value\-Type, Network\-Outputs\-At\-Compile\-Time $>$\-::operator$>$$>$(), ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-::set\-Optimizer(), ffnn\-::layer\-::convolution\-::\-Filter$<$ Value\-Type, Options, Extrinsics $>$\-::set\-Zero(), ffnn\-::optimizer\-::\-Adam$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::update(), ffnn\-::optimizer\-::\-Adam$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::update(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::update(), ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-::update(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::update(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$\-::update(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$\-::update(), and ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Options, Extrinsics $>$\-::update().
@@ -68,7 +74,7 @@ Referenced by ffnn\-::optimizer\-::\-Adam$<$ layer\-::\-Fully\-Connected$<$ Valu
 \begin{DoxyCode}
 static\_assert(\(\backslash\)
           std::is\_same<Extrinsics, \textcolor{keyword}{typename} NS::extrinsics<ValueType, Options>>::value,\(\backslash\)
-          \textcolor{stringliteral}{"DO NOT CHANGE CLASS EXTRINSICS."}\(\backslash\)
+          \textcolor{stringliteral}{"DO NOT MODIFY CLASS EXTRINSICS TEMPLATE PARAMETER!"}\(\backslash\)
         );
 \end{DoxyCode}
 
@@ -76,10 +82,11 @@ static\_assert(\(\backslash\)
 Compile-\/time assert to enforce templated layer instancing pattern. 
 
 All layer object (except for the Layer base-\/class) take the following template arguments\-: \begin{DoxyVerb}*        template <typename ValueType,
+*                  ...
 *                  typename Options,
 *                  typename Extrinsics>
 *        \end{DoxyVerb}
- where the {\ttfamily Extrinsics} parameter is reserved for a compile-\/time structure used to deduce types used by the parent layer class. Types are deduced using the {\ttfamily Value\-Type} and {\ttfamily Options} structure, which represent the coefficient type and compile-\/time sizing options for the layer, respectively. \hypertarget{assert_8h_a2b49bd7cbe87713cc51996494f3c4fd5}{\index{assert.\-h@{assert.\-h}!F\-F\-N\-N\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-M\-S\-G@{F\-F\-N\-N\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-M\-S\-G}}
+ where the {\ttfamily Extrinsics} parameter is reserved for a compile-\/time structure used to deduce types used by the parent layer class. Types are deduced using the {\ttfamily Value\-Type} and {\ttfamily Options} structure, which represent the coefficient type and compile-\/time sizing options, respectively. \hypertarget{assert_8h_a2b49bd7cbe87713cc51996494f3c4fd5}{\index{assert.\-h@{assert.\-h}!F\-F\-N\-N\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-M\-S\-G@{F\-F\-N\-N\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-M\-S\-G}}
 \index{F\-F\-N\-N\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-M\-S\-G@{F\-F\-N\-N\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-M\-S\-G}!assert.h@{assert.\-h}}
 \subsubsection[{F\-F\-N\-N\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-M\-S\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\-F\-N\-N\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-M\-S\-G(
 \begin{DoxyParamCaption}
@@ -89,14 +96,11 @@ All layer object (except for the Layer base-\/class) take the following template
 )~static\-\_\-assert(cond, msg)}}\label{assert_8h_a2b49bd7cbe87713cc51996494f3c4fd5}
 
 
-Static assertion definition. 
+Compile-\/time assertion definition. 
 
-\begin{DoxyAuthor}{Author}
-Brian Cairl 
-\end{DoxyAuthor}
-\begin{DoxyDate}{Date}
-2017 
-\end{DoxyDate}
+\begin{DoxyNote}{Note}
+This macro does not get evaluated-\/out when building in R\-E\-L\-E\-A\-S\-E 
+\end{DoxyNote}
 \hypertarget{assert_8h_aad64ee3fe6ac7c17c2a7b02318563b21}{\index{assert.\-h@{assert.\-h}!F\-F\-N\-N\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-R\-U\-N\-T\-I\-M\-E\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-M\-S\-G@{F\-F\-N\-N\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-R\-U\-N\-T\-I\-M\-E\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-M\-S\-G}}
 \index{F\-F\-N\-N\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-R\-U\-N\-T\-I\-M\-E\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-M\-S\-G@{F\-F\-N\-N\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-R\-U\-N\-T\-I\-M\-E\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-M\-S\-G}!assert.h@{assert.\-h}}
 \subsubsection[{F\-F\-N\-N\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-R\-U\-N\-T\-I\-M\-E\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-M\-S\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\-F\-N\-N\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-R\-U\-N\-T\-I\-M\-E\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-M\-S\-G(
@@ -108,16 +112,17 @@ Brian Cairl
 {\bfseries Value\-:}
 \begin{DoxyCode}
 \{\textcolor{keywordflow}{if} (!static\_cast<bool>(cond))\(\backslash\)
-        \{\hyperlink{logging_8h_a48e2bf3dad548dafff4be40132286cbb}{\(\backslash\)}
-\hyperlink{logging_8h_a48e2bf3dad548dafff4be40132286cbb}{            FFNN\_ERROR\_NAMED}(\textcolor{stringliteral}{"FILE:"} << \_\_FILE\_\_ << \textcolor{stringliteral}{" LN:"} << \_\_LINE\_\_, \textcolor{stringliteral}{"\(\backslash\)n>>
-       [ASSERTION FAILED]: "} << msg);\(\backslash\)
-                             throw std::runtime\_error(msg);\(\backslash\)
+        \{\(\backslash\)
+          throw std::runtime\_error(msg);\(\backslash\)
         \}\}
 \end{DoxyCode}
 
 
-Static (runtime) assertion definition. 
+Static runtime assertion definition. 
 
+\begin{DoxyNote}{Note}
+This macro does not get evaluated-\/out when building in R\-E\-L\-E\-A\-S\-E 
+\end{DoxyNote}
 
 
 Referenced by ffnn\-::layer\-::\-Output$<$ Value\-Type, Network\-Outputs\-At\-Compile\-Time $>$\-::initialize().

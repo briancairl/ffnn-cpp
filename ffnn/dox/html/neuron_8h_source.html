@@ -114,14 +114,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classffnn_1_1neuron_1_1_neuron.html#a75bfde562dcb9d0e606f52ca73451de8">   28</a></span>&#160;  <span class="keyword">typedef</span> std::true_type <a class="code" href="classffnn_1_1neuron_1_1_neuron.html#a75bfde562dcb9d0e606f52ca73451de8">IsNeuron</a>;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classffnn_1_1neuron_1_1_neuron.html#ae215373ce29e135cb5fd728964772a32">operator()</a>(<span class="keyword">const</span> ValueType&amp; input, ValueType&amp; output) = 0;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classffnn_1_1neuron_1_1_neuron.html#ac779b179887e6b4505dec96d0319af10">derivative</a>(<span class="keyword">const</span> ValueType&amp; input, ValueType&amp; output) <span class="keyword">const</span> = 0;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;};</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}  <span class="comment">// namespace neuron</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}  <span class="comment">// namespace ffnn</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif  // FFNN_NEURON_NEURON_H</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classffnn_1_1neuron_1_1_neuron.html#a7813fbdc61bac73d1d5dfac46ea178f3">   30</a></span>&#160;  <span class="keyword">typedef</span> ValueType <a class="code" href="classffnn_1_1neuron_1_1_neuron.html#a7813fbdc61bac73d1d5dfac46ea178f3">ScalarType</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classffnn_1_1neuron_1_1_neuron.html#ae215373ce29e135cb5fd728964772a32">operator()</a>(<span class="keyword">const</span> ValueType&amp; input, ValueType&amp; output) = 0;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classffnn_1_1neuron_1_1_neuron.html#ac779b179887e6b4505dec96d0319af10">derivative</a>(<span class="keyword">const</span> ValueType&amp; input, ValueType&amp; output) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;};</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}  <span class="comment">// namespace neuron</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}  <span class="comment">// namespace ffnn</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#endif  // FFNN_NEURON_NEURON_H</span></div>
 <div class="ttc" id="classffnn_1_1neuron_1_1_neuron_html_ae215373ce29e135cb5fd728964772a32"><div class="ttname"><a href="classffnn_1_1neuron_1_1_neuron.html#ae215373ce29e135cb5fd728964772a32">ffnn::neuron::Neuron::operator()</a></div><div class="ttdeci">virtual void operator()(const ValueType &amp;input, ValueType &amp;output)=0</div><div class="ttdoc">Computes activation output. </div></div>
+<div class="ttc" id="classffnn_1_1neuron_1_1_neuron_html_a7813fbdc61bac73d1d5dfac46ea178f3"><div class="ttname"><a href="classffnn_1_1neuron_1_1_neuron.html#a7813fbdc61bac73d1d5dfac46ea178f3">ffnn::neuron::Neuron::ScalarType</a></div><div class="ttdeci">ValueType ScalarType</div><div class="ttdef"><b>Definition:</b> neuron.h:30</div></div>
 <div class="ttc" id="structffnn_1_1neuron_1_1is__neuron_html"><div class="ttname"><a href="structffnn_1_1neuron_1_1is__neuron.html">ffnn::neuron::is_neuron</a></div><div class="ttdef"><b>Definition:</b> neuron.h:16</div></div>
 <div class="ttc" id="classffnn_1_1neuron_1_1_neuron_html_a75bfde562dcb9d0e606f52ca73451de8"><div class="ttname"><a href="classffnn_1_1neuron_1_1_neuron.html#a75bfde562dcb9d0e606f52ca73451de8">ffnn::neuron::Neuron::IsNeuron</a></div><div class="ttdeci">std::true_type IsNeuron</div><div class="ttdef"><b>Definition:</b> neuron.h:28</div></div>
 <div class="ttc" id="classffnn_1_1neuron_1_1_neuron_html"><div class="ttname"><a href="classffnn_1_1neuron_1_1_neuron.html">ffnn::neuron::Neuron</a></div><div class="ttdoc">A basic activation unit type. </div><div class="ttdef"><b>Definition:</b> neuron.h:25</div></div>
@@ -130,7 +133,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jun 2 2017 00:25:18 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 2 2017 00:42:46 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

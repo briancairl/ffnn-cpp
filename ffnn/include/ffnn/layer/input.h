@@ -29,12 +29,6 @@ public:
   /// Base type alias
   using Base = Layer<ValueType>;
 
-  /// Size type standardization
-  typedef typename Base::SizeType SizeType;
-
-  /// Offset type standardization
-  typedef typename Base::OffsetType OffsetType;
-
   /// Dimension type standardization
   typedef typename Base::ShapeType ShapeType;
 
@@ -43,7 +37,7 @@ public:
    * @param input_size  number of inputs supplied to network by this Layer
    */
   explicit
-  Input(SizeType network_input_size = NetworkInputsAtCompileTime);
+  Input(size_type network_input_size = NetworkInputsAtCompileTime);
   virtual ~Input();
 
   /**
@@ -69,7 +63,7 @@ private:
    * @param offset  offset index of a memory location in the input buffer of the next layer
    * @retval output_shape_.size()
    */
-  OffsetType connectToForwardLayer(const Base& next, OffsetType offset);
+  offset_type connectToForwardLayer(const Base& next, offset_type offset);
 
   /// Pointer to first element of next layer
   ValueType* next_ptr_;

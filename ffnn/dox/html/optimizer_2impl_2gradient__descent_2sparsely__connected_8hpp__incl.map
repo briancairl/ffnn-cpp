@@ -1,6 +1,6 @@
 <map id="/home/briancairl/packages/src/ffnn&#45;cpp/ffnn/include/ffnn/optimizer/impl/gradient_descent/sparsely_connected.hpp" name="/home/briancairl/packages/src/ffnn&#45;cpp/ffnn/include/ffnn/optimizer/impl/gradient_descent/sparsely_connected.hpp">
-<area shape="rect" id="node2" href="$assert_8h.html" title="ffnn/assert.h" alt="" coords="127,133,221,160"/>
-<area shape="rect" id="node6" href="$logging_8h.html" title="ffnn/logging.h" alt="" coords="5,299,104,325"/>
-<area shape="rect" id="node4" href="$global_8h.html" title="ffnn/config/global.h" alt="" coords="617,216,748,243"/>
-<area shape="rect" id="node13" href="$sparse__triplet__serialization_8h.html" title="ffnn/internal/eigen\l/sparse_triplet_serialization.h" alt="" coords="997,291,1187,333"/>
+<area shape="rect" id="node2" href="$assert_8h.html" title="ffnn/assert.h" alt="" coords="829,133,923,160"/>
+<area shape="rect" id="node6" href="$logging_8h.html" title="ffnn/logging.h" alt="" coords="1443,299,1543,325"/>
+<area shape="rect" id="node4" href="$global_8h.html" title="ffnn/config/global.h" alt="" coords="810,216,941,243"/>
+<area shape="rect" id="node13" href="$sparse__triplet__serialization_8h.html" title="ffnn/internal/eigen\l/sparse_triplet_serialization.h" alt="" coords="873,291,1063,333"/>
 </map>

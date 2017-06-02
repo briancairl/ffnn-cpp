@@ -332,7 +332,7 @@ typename <a class="el" href="classffnn_1_1layer_1_1_layer.html#ac7c8ad3ab68dbb62
 <tr class="separator:a1a366d73e2b1ead280a6956c85ea56cb inherit pro_attribs_classffnn_1_1layer_1_1_layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;typename ValueType, typename NeuronType, FFNN_SIZE_TYPE SizeAtCompileTime = Eigen::Dynamic, typename _HiddenLayerShape = hidden_layer_shape&lt;SizeAtCompileTime, 1, SizeAtCompileTime, 1&gt;&gt;<br/>
+<div class="textblock"><h3>template&lt;typename ValueType, typename NeuronType, FFNN_SIZE_TYPE SizeAtCompileTime = Eigen::Dynamic, typename _HiddenLayerShape = hidden_layer_traits&lt;SizeAtCompileTime, 1, SizeAtCompileTime, 1&gt;&gt;<br/>
 class ffnn::layer::Activation&lt; ValueType, NeuronType, SizeAtCompileTime, _HiddenLayerShape &gt;</h3>
 
 <p><a class="el" href="classffnn_1_1layer_1_1_activation.html" title="Activation layer. ">Activation</a> layer. </p>
@@ -341,7 +341,7 @@ class ffnn::layer::Activation&lt; ValueType, NeuronType, SizeAtCompileTime, _Hid
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType, typename NeuronType, FFNN_SIZE_TYPE SizeAtCompileTime = Eigen::Dynamic, typename _HiddenLayerShape = hidden_layer_shape&lt;SizeAtCompileTime, 1, SizeAtCompileTime, 1&gt;&gt; </div>
+template&lt;typename ValueType, typename NeuronType, FFNN_SIZE_TYPE SizeAtCompileTime = Eigen::Dynamic, typename _HiddenLayerShape = hidden_layer_traits&lt;SizeAtCompileTime, 1, SizeAtCompileTime, 1&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classffnn_1_1layer_1_1_activation.html">ffnn::layer::Activation</a>&lt; ValueType, NeuronType, SizeAtCompileTime, _HiddenLayerShape &gt;::<a class="el" href="classffnn_1_1layer_1_1_activation.html#a2f462178d98a5439e13962796c483459">Base</a> =  <a class="el" href="classffnn_1_1layer_1_1_hidden.html">Hidden</a>&lt;ValueType, _HiddenLayerShape&gt;</td>
@@ -357,7 +357,7 @@ template&lt;typename ValueType, typename NeuronType, FFNN_SIZE_TYPE SizeAtCompil
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType, typename NeuronType, FFNN_SIZE_TYPE SizeAtCompileTime = Eigen::Dynamic, typename _HiddenLayerShape = hidden_layer_shape&lt;SizeAtCompileTime, 1, SizeAtCompileTime, 1&gt;&gt; </div>
+template&lt;typename ValueType, typename NeuronType, FFNN_SIZE_TYPE SizeAtCompileTime = Eigen::Dynamic, typename _HiddenLayerShape = hidden_layer_traits&lt;SizeAtCompileTime, 1, SizeAtCompileTime, 1&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">typedef Base::OffsetType <a class="el" href="classffnn_1_1layer_1_1_activation.html">ffnn::layer::Activation</a>&lt; ValueType, NeuronType, SizeAtCompileTime, _HiddenLayerShape &gt;::<a class="el" href="classffnn_1_1layer_1_1_activation.html#aac891b2d2a76bcf6035f53ed6abb94dc">OffsetType</a></td>
@@ -373,7 +373,7 @@ template&lt;typename ValueType, typename NeuronType, FFNN_SIZE_TYPE SizeAtCompil
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType, typename NeuronType, FFNN_SIZE_TYPE SizeAtCompileTime = Eigen::Dynamic, typename _HiddenLayerShape = hidden_layer_shape&lt;SizeAtCompileTime, 1, SizeAtCompileTime, 1&gt;&gt; </div>
+template&lt;typename ValueType, typename NeuronType, FFNN_SIZE_TYPE SizeAtCompileTime = Eigen::Dynamic, typename _HiddenLayerShape = hidden_layer_traits&lt;SizeAtCompileTime, 1, SizeAtCompileTime, 1&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">typedef <a class="el" href="classffnn_1_1layer_1_1_layer.html#a3d482813f86f1ec69554b4592c478c32">Base::ScalarType</a> <a class="el" href="classffnn_1_1layer_1_1_activation.html">ffnn::layer::Activation</a>&lt; ValueType, NeuronType, SizeAtCompileTime, _HiddenLayerShape &gt;::<a class="el" href="classffnn_1_1layer_1_1_activation.html#a4ca1ce43c5be7e5b8950af7cb262daca">ScalarType</a></td>
@@ -389,7 +389,7 @@ template&lt;typename ValueType, typename NeuronType, FFNN_SIZE_TYPE SizeAtCompil
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType, typename NeuronType, FFNN_SIZE_TYPE SizeAtCompileTime = Eigen::Dynamic, typename _HiddenLayerShape = hidden_layer_shape&lt;SizeAtCompileTime, 1, SizeAtCompileTime, 1&gt;&gt; </div>
+template&lt;typename ValueType, typename NeuronType, FFNN_SIZE_TYPE SizeAtCompileTime = Eigen::Dynamic, typename _HiddenLayerShape = hidden_layer_traits&lt;SizeAtCompileTime, 1, SizeAtCompileTime, 1&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">typedef Base::SizeType <a class="el" href="classffnn_1_1layer_1_1_activation.html">ffnn::layer::Activation</a>&lt; ValueType, NeuronType, SizeAtCompileTime, _HiddenLayerShape &gt;::<a class="el" href="classffnn_1_1layer_1_1_activation.html#a6a7b6dd86eb70b72a179ce9951fb1149">SizeType</a></td>
@@ -552,7 +552,7 @@ template&lt;typename ValueType , typename NeuronType , FFNN_SIZE_TYPE SizeAtComp
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType, typename NeuronType, FFNN_SIZE_TYPE SizeAtCompileTime = Eigen::Dynamic, typename _HiddenLayerShape = hidden_layer_shape&lt;SizeAtCompileTime, 1, SizeAtCompileTime, 1&gt;&gt; </div>
+template&lt;typename ValueType, typename NeuronType, FFNN_SIZE_TYPE SizeAtCompileTime = Eigen::Dynamic, typename _HiddenLayerShape = hidden_layer_traits&lt;SizeAtCompileTime, 1, SizeAtCompileTime, 1&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -601,7 +601,7 @@ Here is the call graph for this function:</div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType, typename NeuronType, FFNN_SIZE_TYPE SizeAtCompileTime = Eigen::Dynamic, typename _HiddenLayerShape = hidden_layer_shape&lt;SizeAtCompileTime, 1, SizeAtCompileTime, 1&gt;&gt; </div>
+template&lt;typename ValueType, typename NeuronType, FFNN_SIZE_TYPE SizeAtCompileTime = Eigen::Dynamic, typename _HiddenLayerShape = hidden_layer_traits&lt;SizeAtCompileTime, 1, SizeAtCompileTime, 1&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -650,7 +650,7 @@ Here is the call graph for this function:</div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType, typename NeuronType, FFNN_SIZE_TYPE SizeAtCompileTime = Eigen::Dynamic, typename _HiddenLayerShape = hidden_layer_shape&lt;SizeAtCompileTime, 1, SizeAtCompileTime, 1&gt;&gt; </div>
+template&lt;typename ValueType, typename NeuronType, FFNN_SIZE_TYPE SizeAtCompileTime = Eigen::Dynamic, typename _HiddenLayerShape = hidden_layer_traits&lt;SizeAtCompileTime, 1, SizeAtCompileTime, 1&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -689,7 +689,7 @@ template&lt;typename ValueType, typename NeuronType, FFNN_SIZE_TYPE SizeAtCompil
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jun 2 2017 00:25:19 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 2 2017 00:42:46 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

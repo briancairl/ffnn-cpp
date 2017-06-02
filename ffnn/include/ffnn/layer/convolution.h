@@ -103,7 +103,7 @@ template<typename ValueType,
 struct extrinsics
 {
   /// 2D-value mapping standardization
-  typedef boost::multi_array<ValueType*, 2> ForwardMapType;
+  typedef boost::multi_array<ValueType*, 2> ForwardMappingGridType;
 
   /// Filter traits type standardization
   typedef typename filter::options<
@@ -156,7 +156,7 @@ public:
   typedef typename Extrinsics::FilterType ParametersType;
 
   /// 2D-value mapping standardization
-  typedef typename Extrinsics::ForwardMapType ForwardMapType;
+  typedef typename Extrinsics::ForwardMappingGridType ForwardMappingGridType;
 
   /// Layer optimization type standardization
   typedef optimizer::Optimizer<SelfType> OptimizerType;
@@ -412,10 +412,10 @@ private:
   ParametersType parameters_;
 
   /// Forward error mapping grid
-  ForwardMapType forward_error_mappings_;
+  ForwardMappingGridType forward_error_mappings_;
 
   /// Output value mapping grid
-  ForwardMapType output_mappings_;
+  ForwardMappingGridType output_mappings_;
 
   /**
    * @brief Maps outputs of this layer to inputs of the next

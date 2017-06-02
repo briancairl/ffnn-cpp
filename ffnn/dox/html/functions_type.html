@@ -242,7 +242,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>OffsetType
 : <a class="el" href="classffnn_1_1layer_1_1_activation.html#aac891b2d2a76bcf6035f53ed6abb94dc">ffnn::layer::Activation&lt; ValueType, NeuronType, SizeAtCompileTime, _HiddenLayerShape &gt;</a>
 , <a class="el" href="classffnn_1_1layer_1_1_fully_connected.html#a0f5ae1a0bd038f404410ce2af1054833">ffnn::layer::FullyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape &gt;</a>
-, <a class="el" href="classffnn_1_1layer_1_1_input.html#af8249b647f4c1d4404ae98741b1686e1">ffnn::layer::Input&lt; ValueType, NetworkInputsAtCompileTime &gt;</a>
 , <a class="el" href="classffnn_1_1layer_1_1_output.html#a6780ece144b80cb2be355dd65096e9db">ffnn::layer::Output&lt; ValueType, NetworkOutputsAtCompileTime &gt;</a>
 , <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4.html#adeba594318f6939122d3e0edb069d6d6">ffnn::optimizer::GradientDescent&lt; layer::Convolution&lt; TARGS &gt; &gt;</a>
 , <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4.html#aef03166f60cff06f14ed5e36cf371a5e">ffnn::optimizer::GradientDescent&lt; layer::LocalConvolution&lt; TARGS &gt; &gt;</a>
@@ -297,6 +296,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 , <a class="el" href="classffnn_1_1layer_1_1_activation.html#a4ca1ce43c5be7e5b8950af7cb262daca">ffnn::layer::Activation&lt; ValueType, NeuronType, SizeAtCompileTime, _HiddenLayerShape &gt;</a>
 , <a class="el" href="classffnn_1_1layer_1_1_fully_connected.html#aa5e1875ec3ea63c90655419e7dd32a55">ffnn::layer::FullyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape &gt;</a>
 , <a class="el" href="classffnn_1_1layer_1_1_layer.html#a3d482813f86f1ec69554b4592c478c32">ffnn::layer::Layer&lt; ValueType &gt;</a>
+, <a class="el" href="classffnn_1_1neuron_1_1_neuron.html#a7813fbdc61bac73d1d5dfac46ea178f3">ffnn::neuron::Neuron&lt; ValueType &gt;</a>
 , <a class="el" href="classffnn_1_1optimizer_1_1_adam_3_01layer_1_1_fully_connected_3_01_value_type_00_01_inputs_at_co08ce471fd3ee7441a350cc42cfd35bcd.html#a3cd3f5a825a36308f81ff39f9dd51dd1">ffnn::optimizer::Adam&lt; layer::FullyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt; &gt;</a>
 , <a class="el" href="classffnn_1_1optimizer_1_1_adam_3_01layer_1_1_sparsely_connected_3_01_value_type_00_01_inputs_at5101e46d32858ec2169acdeede08d723.html#acbcaaadfd5e5ad46a775e89024f96ec5">ffnn::optimizer::Adam&lt; layer::SparselyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt; &gt;</a>
 , <a class="el" href="classffnn_1_1optimizer_1_1_adam_states.html#a101ae88e46a38141a8fcf99a5382d448">ffnn::optimizer::AdamStates&lt; MatrixType &gt;</a>
@@ -325,7 +325,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>SizeType
 : <a class="el" href="classffnn_1_1layer_1_1_activation.html#a6a7b6dd86eb70b72a179ce9951fb1149">ffnn::layer::Activation&lt; ValueType, NeuronType, SizeAtCompileTime, _HiddenLayerShape &gt;</a>
 , <a class="el" href="classffnn_1_1layer_1_1_fully_connected.html#a2924c85b3cc3e79db3f271cd22cac32c">ffnn::layer::FullyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape &gt;</a>
-, <a class="el" href="classffnn_1_1layer_1_1_input.html#a0d5acc89e0b0ad61f148c18325fb46f4">ffnn::layer::Input&lt; ValueType, NetworkInputsAtCompileTime &gt;</a>
 , <a class="el" href="classffnn_1_1layer_1_1_output.html#a5e41de6c9249494dd9c6a819d7a30e20">ffnn::layer::Output&lt; ValueType, NetworkOutputsAtCompileTime &gt;</a>
 , <a class="el" href="classffnn_1_1optimizer_1_1_adam_3_01layer_1_1_fully_connected_3_01_value_type_00_01_inputs_at_co08ce471fd3ee7441a350cc42cfd35bcd.html#a6bbc6e181e5a5192b7b5cc42e3172372">ffnn::optimizer::Adam&lt; layer::FullyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt; &gt;</a>
 , <a class="el" href="classffnn_1_1optimizer_1_1_adam_3_01layer_1_1_sparsely_connected_3_01_value_type_00_01_inputs_at5101e46d32858ec2169acdeede08d723.html#a4801eb026ada106bb4134b312e557395">ffnn::optimizer::Adam&lt; layer::SparselyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt; &gt;</a>
@@ -357,7 +356,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jun 2 2017 00:25:19 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Jun 2 2017 00:42:47 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
