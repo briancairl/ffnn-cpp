@@ -5,9 +5,6 @@
 #ifndef FFNN_LAYER_ACTIVATION_H
 #define FFNN_LAYER_ACTIVATION_H
 
-// Boost
-#include <boost/dynamic_bitset.hpp>
-
 // FFNN
 #include <ffnn/config/global.h>
 #include <ffnn/layer/hidden.h>
@@ -23,7 +20,7 @@ namespace layer
 template<typename ValueType,
          typename NeuronType,
          FFNN_SIZE_TYPE SizeAtCompileTime = Eigen::Dynamic,
-         typename _HiddenLayerShape = hidden_layer_shape<SizeAtCompileTime, 1, SizeAtCompileTime, 1>>
+         typename _HiddenLayerShape = hidden_layer_traits<SizeAtCompileTime, 1, SizeAtCompileTime, 1>>
 class Activation :
   public Hidden<ValueType, _HiddenLayerShape>
 {

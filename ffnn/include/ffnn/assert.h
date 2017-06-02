@@ -10,7 +10,6 @@
 
 // FFNN
 #include <ffnn/config/global.h>
-#include <ffnn/logging.h>
 
 // No debug printouts in Release build
 #if NDEBUG && !FFNN_ALLOW_ASSERT
@@ -40,8 +39,7 @@
 #define FFNN_STATIC_RUNTIME_ASSERT_MSG(cond, msg)\
         {if (!static_cast<bool>(cond))\
         {\
-            FFNN_ERROR_NAMED("FILE:" << __FILE__ << " LN:" << __LINE__, "\n>> [ASSERTION FAILED]: " << msg);\
-                             throw std::runtime_error(msg);\
+          throw std::runtime_error(msg);\
         }}
 
 /**
@@ -50,6 +48,7 @@
  *        All layer object (except for the Layer base-class) take the following template arguments:
  *        @verbatim
  *        template <typename ValueType,
+ *                  ...
  *                  typename Options,
  *                  typename Extrinsics>
  *        @endverbatim
