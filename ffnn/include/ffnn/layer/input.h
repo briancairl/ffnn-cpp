@@ -24,23 +24,11 @@ namespace input
 /**
  * @brief Describes compile-time options used to set up a Input object
  */
-template<size_type InputHeightAtCompileTime  = Eigen::Dynamic,
-         size_type InputWidthAtCompileTime   = 1,
-         size_type InputDepthAtCompileTime   = 1>
+template<size_type InputsAtCompileTime = Eigen::Dynamic>
 struct options
 {
-  /// Input field height
-  constexpr static size_type input_height = InputHeightAtCompileTime;
-
-  /// Input field width
-  constexpr static size_type input_width = InputWidthAtCompileTime;
-
-  /// Input field depth
-  constexpr static size_type input_depth = InputDepthAtCompileTime;
-
   /// Total network input size
-  constexpr static size_type input_size =
-    multiply_if_not_dynamic_sizes(input_height, input_width, input_depth);
+  constexpr static size_type size = InputsAtCompileTime;
 };
 
 /**
@@ -81,7 +69,7 @@ public:
    * @param input_size  number of inputs supplied to network by this Layer
    */
   explicit
-  Input(size_type network_input_size = NetworkInputsAtCompileTime);
+  Input(size_type network_input_size = Options::size);
   virtual ~Input();
 
   /**

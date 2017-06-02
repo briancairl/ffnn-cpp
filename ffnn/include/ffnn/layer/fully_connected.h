@@ -23,6 +23,42 @@ namespace ffnn
 {
 namespace layer
 {
+namespace fully_connected
+{
+/**
+ * @brief Describes compile-time options used to set up a Input object
+ */
+template<size_type InputsAtCompileTime = Eigen::Dynamic,
+         size_type InputWidthAtCompileTime  = 1,
+         size_type InputDepthAtCompileTime  = 1>
+struct options
+{
+  /// Input field height
+  constexpr static size_type height = InputHeightAtCompileTime;
+
+  /// Input field width
+  constexpr static size_type width = InputWidthAtCompileTime;
+
+  /// Input field depth
+  constexpr static size_type depth = InputDepthAtCompileTime;
+
+  /// Total network fully_connected size
+  constexpr static size_type size =
+    multiply_if_not_dynamic_sizes(height, width, depth);
+};
+
+/**
+ * @brief Describes types based on compile-time options
+ */
+template<typename ValueType,
+         typename Options>
+struct extrinsics
+{
+  ///Layer (base type) standardization
+  typedef Layer<ValueType> LayerType;
+};
+}  // namespace fully_connected
+
 /**
  * @brief A fully-connected layer
  */
