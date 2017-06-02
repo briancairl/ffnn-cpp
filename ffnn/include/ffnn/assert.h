@@ -30,7 +30,7 @@
  * @brief Compile-time assertion definition
  * @note  This macro does not get evaluated-out when building in RELEASE
  */
-#define FFNN_STATIC_ASSERT_MSG(cond, msg) static_assert(cond, msg)
+#define FFNN_STATIC_ASSERT(cond, msg) static_assert(cond, msg)
 
 /**
  * @brief Static runtime assertion definition

@@ -84,7 +84,7 @@ struct options
 
   /// Depth-embedded input width
   constexpr static size_type embedded_input_width =
-    embed_dimension<Mode, RowEmbedding>(input_width,  input_depth);
+    embed_dimension<Mode, RowEmbedding>(input_width, input_depth);
 
   /// Depth-embedded output height
   constexpr static size_type embedded_output_height =
@@ -92,7 +92,7 @@ struct options
 
   /// Depth-embedded output width
   constexpr static size_type embedded_output_width =
-    embed_dimension<Mode, RowEmbedding>(output_width,  output_depth);
+    embed_dimension<Mode, RowEmbedding>(output_width, output_depth);
 };
 
 /**

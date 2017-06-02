@@ -24,7 +24,7 @@ template<typename ValueType,
 class Activation :
   public Hidden<ValueType, _HiddenLayerShape>
 {
-  FFNN_STATIC_ASSERT_MSG(neuron::is_neuron<NeuronType>::value, "NeuronType is not a valid Neuron object.");
+  FFNN_STATIC_ASSERT(neuron::is_neuron<NeuronType>::value, "NeuronType is not a valid Neuron object.");
 
 public:
   /// Base type alias

@@ -13,21 +13,65 @@
 #include <ffnn/config/global.h>
 #include <ffnn/assert.h>
 #include <ffnn/layer/layer.h>
+#include <ffnn/layer/shape.h>
 
 namespace ffnn
 {
 namespace layer
 {
+namespace input
+{
+/**
+ * @brief Describes compile-time options used to set up a Input object
+ */
+template<size_type InputHeightAtCompileTime  = Eigen::Dynamic,
+         size_type InputWidthAtCompileTime   = 1,
+         size_type InputDepthAtCompileTime   = 1>
+struct options
+{
+  /// Input field height
+  constexpr static size_type input_height = InputHeightAtCompileTime;
+
+  /// Input field width
+  constexpr static size_type input_width = InputWidthAtCompileTime;
+
+  /// Input field depth
+  constexpr static size_type input_depth = InputDepthAtCompileTime;
+
+  /// Total network input size
+  constexpr static size_type input_size =
+    multiply_if_not_dynamic_sizes(input_height, input_width, input_depth);
+};
+
+/**
+ * @brief Describes types based on compile-time options
+ */
+template<typename ValueType,
+         typename Options>
+struct extrinsics
+{
+  ///Layer (base type) standardization
+  typedef Layer<ValueType> LayerType;
+};
+}  // namespace input
+
 /**
  * @brief A layer which handles network inputs
  */
-template<typename ValueType, FFNN_SIZE_TYPE NetworkInputsAtCompileTime = Eigen::Dynamic>
+template<typename ValueType,
+         typename Options    = input::options<>,
+         typename Extrinsics = input::extrinsics<ValueType, Options>>
 class Input :
-  public Layer<ValueType>
+  public Extrinsics::LayerType
+{
+  FFNN_ASSERT_NO_MOD_LAYER_EXTRINSICS(input);
 {
 public:
+  /// Self type alias
+  using SelfType = Input<ValueType, Options, Extrinsics>;
+
   /// Base type alias
-  using Base = Layer<ValueType>;
+  using BaseType = typename Extrinsics::LayerType;
 
   /// Dimension type standardization
   typedef typename Base::ShapeType ShapeType;

@@ -9,6 +9,7 @@
 #include <type_traits>
 
 // FFNN
+#include <ffnn/assert.h>
 #include <ffnn/config/global.h>
 
 namespace ffnn
@@ -87,19 +88,28 @@ constexpr SizeType multiply_if_not_dynamic_sizes(SizeType n, SizeType m, SizeTyp
 template<typename SizeType>
 struct Shape
 {
-  static_assert(std::is_integral<SizeType>::value, "SizeType must be an integer type.");
-  static_assert(std::is_signed<SizeType>::value, "SizeType must be a signed type.");
+  FFNN_STATIC_ASSERT(std::is_integral<SizeType>::value, "SizeType must be an integer type.");
+  FFNN_STATIC_ASSERT(std::is_signed<SizeType>::value, "SizeType must be a signed type.");
 
-  SizeType height;
-  SizeType width;
-  SizeType depth;
+  SizeType height; ///< Height coordinate; expected to be greater than zero
+  SizeType width;  ///< Width coordinate; expected to be greater than zero
+  SizeType depth;  ///< Depth coordinate; expected to be greater than zero
 
+  /**
+   * @brief Default constructor
+   */
   Shape() :
     height(Eigen::Dynamic),
     width(Eigen::Dynamic),
     depth(Eigen::Dynamic)
   {}
 
+  /**
+   * @brief Component constructor
+   * @param height  height coordinate
+   * @param width  width coordinate
+   * @param depth  depth coordinate
+   */
   explicit
   Shape(SizeType height, SizeType width = 1, SizeType depth = 1) :
     height(height),
@@ -107,33 +117,57 @@ struct Shape
     depth(depth)
   {}
 
+  /**
+   * @brief Returns product of all dimentions
+   * @return <code>height * width * depth</code>
+   */
   inline SizeType size() const
   {
     return multiply_if_not_dynamic_sizes(height, width, depth);
   }
 
+  /**
+   * @brief Checks if Shape object is valid
+   * @retval true  if all coordinate fields represent sizes greater than zero
+   * @retval false if any coordinate fields represent a dynamic (unassigned) size
+   */
   inline bool valid() const
   {
     return size() > 0;
   }
 
-  operator SizeType() const { return size(); }
+  /**
+   * @brief Casts Shape to a scalar value
+   */
+  operator SizeType() const { return size();}
 
-  void operator=(SizeType count)
+  /**
+   * @brief Assign Shape from a scalar value
+   * @param size  interger size
+   */
+  Shape& operator=(SizeType size)
   {
-    height = count;
+    height = size;
     width  = 1;
     depth  = 1;
+    return *this;
   }
 
-  void operator=(const Shape& dim)
+  /**
+   * @brief Assignment operator
+   * @param other  Another Shape object
+   */
+  Shape& operator=(const Shape& other)
   {
-    height = dim.height;
-    width  = dim.width;
-    depth  = dim.depth;
+    height = other.height;
+    width  = other.width;
+    depth  = other.depth;
+    return *this;
   }
 
-  /// Serializer
+  /**
+   * @brief Boost serializer
+   */
   template<class Archive>
   void serialize(Archive & ar, const unsigned int file_version)
   {

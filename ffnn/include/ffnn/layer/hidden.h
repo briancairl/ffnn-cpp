@@ -98,17 +98,18 @@ struct extrinsics
  * @brief A network hidden-layer object
  */
 template<typename ValueType,
-         typename Options = hidden::options<>,
+         typename Options    = hidden::options<>,
          typename Extrinsics = hidden::extrinsics<ValueType, Options>>
 class Hidden :
   public Extrinsics::LayerType
 {
+  FFNN_ASSERT_NO_MOD_LAYER_EXTRINSICS(hidden);
 public:
   /// Self type alias
-  using SelfType = Hidden<ValueType, Options>;
+  using SelfType = Hidden<ValueType, Options, Extrinsics>;
 
   /// Base type alias
-  using BaseType = Layer<ValueType>;
+  using BaseType = typename Extrinsics::LayerType;
 
   /// Dimension type standardization
   typedef typename BaseType::ShapeType ShapeType;

@@ -25,7 +25,7 @@ template<typename ValueType,
 class Dropout :
   public NeuronType
 {
-  FFNN_STATIC_ASSERT_MSG(is_neuron<NeuronType>::value, "NeuronType is not a valid Neuron object.");
+  FFNN_STATIC_ASSERT(is_neuron<NeuronType>::value, "NeuronType is not a valid Neuron object.");
 public:
   /// Default constructor
   Dropout() :
