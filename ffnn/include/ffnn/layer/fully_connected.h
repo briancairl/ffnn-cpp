@@ -29,7 +29,7 @@ namespace layer
 template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime = Eigen::Dynamic,
          FFNN_SIZE_TYPE OutputsAtCompileTime = Eigen::Dynamic,
-         typename _HiddenLayerShape = hidden_layer_shape<InputsAtCompileTime, 1, OutputsAtCompileTime, 1>>
+         typename _HiddenLayerShape = hidden_layer_traits<InputsAtCompileTime, 1, OutputsAtCompileTime, 1>>
 class FullyConnected :
   public Hidden<ValueType, _HiddenLayerShape>
 {
@@ -42,12 +42,6 @@ public:
 
   /// Scalar type standardization
   typedef typename Base::ScalarType ScalarType;
-
-  /// Size type standardization
-  typedef typename Base::SizeType SizeType;
-
-  /// Offset type standardization
-  typedef typename Base::OffsetType OffsetType;
 
   /// Dimension type standardization
   typedef typename Base::ShapeType ShapeType;
@@ -71,7 +65,7 @@ public:
    * @brief Setup constructor
    * @param output_size  number of layer outputs
    */
-  explicit FullyConnected(SizeType output_size = OutputsAtCompileTime);
+  explicit FullyConnected(size_type output_size = OutputsAtCompileTime);
   virtual ~FullyConnected();
 
   /**

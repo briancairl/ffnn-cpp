@@ -66,7 +66,7 @@ bool Convolution<ValueType, Options, Extrinsics>::initialize()
                    "<" <<
                    BaseType::getID() <<
                    "> initialized as (in=" <<
-                   input_volume_shape_ <<
+                   config_.input_shape_ <<
                    ", out=" <<
                    config_.output_shape_ <<
                    ") (depth_embedding=" <<
@@ -218,8 +218,18 @@ void Convolution<ValueType, Options, Extrinsics>::save(OutputArchive& ar, Versio
   ffnn::internal::signature::apply<SelfType>(ar);
   BaseType::save(ar, version);
 
-  // Save volumes
+  // Save layer parameters
   ar & parameters_;
+
+  // Save layer configuration
+  ar & config_.input_shape_;
+  ar & config_.output_shape_;
+  ar & config_.embedded_input_shape_;
+  ar & config_.embedded_output_shape_;
+  ar & config_.filter_shape_;
+  ar & config_.row_stride_;
+  ar & config_.col_stride_;
+  ar & config_.stride_shape_;
 
   FFNN_DEBUG_NAMED("layer::Convolution", "Saved");
 }
@@ -232,8 +242,18 @@ void Convolution<ValueType, Options, Extrinsics>::load(InputArchive& ar, Version
   ffnn::internal::signature::check<SelfType>(ar);
   BaseType::load(ar, version);
 
-  // Load volumes
+  // Load layer parameters
   ar & parameters_;
+
+  // Load layer configuration
+  ar & config_.input_shape_;
+  ar & config_.output_shape_;
+  ar & config_.embedded_input_shape_;
+  ar & config_.embedded_output_shape_;
+  ar & config_.filter_shape_;
+  ar & config_.row_stride_;
+  ar & config_.col_stride_;
+  ar & config_.stride_shape_;
 
   FFNN_DEBUG_NAMED("layer::Convolution", "Loaded");
 }

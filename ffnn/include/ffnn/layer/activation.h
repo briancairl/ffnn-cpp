@@ -33,12 +33,6 @@ public:
   /// Scalar type standardization
   typedef typename Base::ScalarType ScalarType;
 
-  /// Size type standardization
-  typedef typename Base::SizeType SizeType;
-
-  /// Offset type standardization
-  typedef typename Base::OffsetType OffsetType;
-
   /**
    * @brief Default constructor
    */

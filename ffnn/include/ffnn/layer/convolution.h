@@ -391,20 +391,6 @@ private:
   /// Layer configurations
   Configuration config_;
 
-  /** 
-   * @brief Shape of the ouput
-   * @note This is unlike BaseType::input_shape_ as it represents the layer input
-   *       shape without regard for depth-embedding
-   **/
-  ShapeType input_volume_shape_;
-
-  /**
-   * @brief Shape of the ouput
-   * @note This is unlike BaseType::input_shape_ as it represents the layer output
-   *       shape without regard for depth-embedding
-   */
-  ShapeType output_volume_shape_;
-
   /**
    * @brief Layer parameters
    * @note  For the Convolution layer, theses are Filter coefficients
