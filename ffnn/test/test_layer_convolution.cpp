@@ -32,13 +32,13 @@ TEST(TestLayerConvolution, Dynamic_SizingWithConfigStruct)
   EXPECT_EQ(layer.getOutputShape().width,  21);
 }
 
-TEST(TestLayerConvolution, Static_FilterSizing)
+TEST(TestLayerConvolution, Static_FilterSizing_ColEmbedding)
 {
-  using Options = ffnn::layer::convolution::options<4, 4, 2, 4, 4, 5, 3, 3>;
+  using ffnn::layer::convolution::ColEmbedding;
+  using Options = ffnn::layer::convolution::options<4, 4, 2, 4, 4, 5, 3, 3, ColEmbedding>;
   using Conv = ffnn::layer::Convolution<float, Options>;
-  using Config = Conv::Configuration;
 
-  Conv layer(Config().setInputShape(4, 4, 2));
+  Conv layer;
 
   // Check ColEmbedding input sizing
   EXPECT_EQ(layer.getInputShape().height, 4 * 2);
@@ -47,6 +47,23 @@ TEST(TestLayerConvolution, Static_FilterSizing)
   // Check ColEmbedding output sizing
   EXPECT_EQ(layer.getOutputShape().height, 1 * 5);
   EXPECT_EQ(layer.getOutputShape().width,  1);
+}
+
+TEST(TestLayerConvolution, Static_FilterSizing_RowEmbedding)
+{
+  using ffnn::layer::convolution::RowEmbedding;
+  using Options = ffnn::layer::convolution::options<4, 4, 2, 4, 4, 5, 3, 3, RowEmbedding>;
+  using Conv = ffnn::layer::Convolution<float, Options>;
+
+  Conv layer;
+
+  // Check ColEmbedding input sizing
+  EXPECT_EQ(layer.getInputShape().height, 4);
+  EXPECT_EQ(layer.getInputShape().width,  4 * 2);
+
+  // Check ColEmbedding output sizing
+  EXPECT_EQ(layer.getOutputShape().height, 1);
+  EXPECT_EQ(layer.getOutputShape().width,  1 * 5);
 }
 
 // Run tests
