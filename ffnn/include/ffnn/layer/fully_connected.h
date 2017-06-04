@@ -10,11 +10,11 @@
 #include <type_traits>
 
 // FFNN
-#include <ffnn/layer/internal/shape.h>
 #include <ffnn/internal/traits.h>
 
-#include <ffnn/layer/hidden.h>
 #include <ffnn/layer/fully_connected/compile_time_options.h>
+#include <ffnn/layer/fully_connected/configuration.h>
+#include <ffnn/layer/shape.h>
 
 #include <ffnn/optimizer/optimizer.h>
 #include <ffnn/optimizer/fwd.h>
@@ -39,20 +39,20 @@ public:
   /// Base type alias
   using BaseType = typename Extrinsics::HiddenLayerType;
 
+  /// Configuration type standardization
+  typedef convolution::Configuration<SelfType, ValueType, Options, Extrinsics> Configuration;
+
   /// Dimension type standardization
   typedef typename Base::ShapeType ShapeType;
 
   /// Parameters (connection weights) type standardization
-  typedef Extrinsics::ConectionWeightsType ParametersType;
-
-  /// Layer optimization type standardization
-  typedef optimizer::Optimizer<Self> Optimizer;
+  typedef Extrinsics::ParametersType ParametersType;
 
   /**
    * @brief Setup constructor
-   * @param output_size  number of layer outputs
+   * @param config  Layer configuration struct
    */
-  explicit FullyConnected(size_type output_size = OutputsAtCompileTime);
+  explicit FullyConnected(const Configuration& config = Configuration());
   virtual ~FullyConnected();
 
   /**
@@ -105,21 +105,12 @@ public:
   void setOptimizer(typename Optimizer::Ptr opt);
 
   /**
-   * @brief Exposes internal connection weights
-   * @return input-output connection weights
+   * @brief Exposes layer parameters
+   * @return Connection weight parameters
    */
-  inline const WeightMatrixType& getWeights() const
+  inline const ParametersType& getParameters() const
   {
-    return w_;
-  }
-
-  /**
-   * @brief Exposes internal biasing weights
-   * @return input-biasing vector
-   */
-  inline const BiasVectorType& getBiases() const
-  {
-    return b_;
+    return parameters_;
   }
 
 private:
@@ -149,15 +140,10 @@ protected:
   /// Load serialize
   void load(InputArchive& ar, VersionType version);
 #endif
-
-public:
-  EIGEN_MAKE_ALIGNED_OPERATOR_NEW_IF(
-    ffnn::internal::traits::is_alignable_128<WeightMatrixType>::value ||
-    ffnn::internal::traits::is_alignable_128<BiasVectorType>::value);
 };
 }  // namespace layer
 }  // namespace ffnn
 
 /// FFNN (implementation)
-#include <ffnn/layer/impl/fully_connected.hpp>
+#include <ffnn/impl/layer/fully_connected.hpp>
 #endif  // FFNN_LAYER_FULLY_CONNECTED_H

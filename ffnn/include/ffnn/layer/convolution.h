@@ -51,13 +51,14 @@ public:
   typedef typename BaseType::ShapeType ShapeType;
 
   /// Filter parameters type standardization
-  typedef typename Extrinsics::FilterType ParametersType;
+  typedef typename Extrinsics::ParametersType ParametersType;
 
   /// 2D-value mapping standardization
   typedef typename Extrinsics::ForwardMappingGridType ForwardMappingGridType;
 
   /**
    * @brief Setup constructor
+   * @param config  Layer configuration struct
    */
   explicit Convolution(const Configuration& config = Configuration());
   virtual ~Convolution();

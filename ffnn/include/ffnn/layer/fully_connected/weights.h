@@ -49,9 +49,7 @@ public:
   /**
    * @brief Default constructor
    */
-  Weights() :
-    bias(0)
-  {}
+  Weights() {}
 
   /**
    * @brief Sets all Weights kernels and biases to zero
@@ -143,14 +141,14 @@ public:
   }
 
   /**
-   * @brief Scales kernels and bias value
+   * @brief Scales weight and bias values
    * @param scale  scalar value
    * @return *this
    */
   Weights& operator*=(ValueType scale)
   {
     weights *= scale;
-    bias *= scale;
+    biases *= scale;
     return *this;
   }
 
@@ -201,6 +199,10 @@ public:
     biases.array() /= other.biases.array();
     return *this;
   }
+
+  EIGEN_MAKE_ALIGNED_OPERATOR_NEW_IF(
+    ffnn::internal::traits::is_alignable_128<WeightBlockType>::value ||
+    ffnn::internal::traits::is_alignable_128<BiasBlockType>::value);
 
 #ifndef FFNN_NO_SERIALIZATION_SUPPORT
 private:

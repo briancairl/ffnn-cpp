@@ -15,7 +15,6 @@
 #include <ffnn/internal/config.h>
 #include <ffnn/internal/traits.h>
 #include <ffnn/layer/shape.h>
-#include <ffnn/layer/fully_connected/sizing.h>
 
 namespace ffnn
 {
@@ -29,8 +28,7 @@ namespace weights
  * @brief Describes compile-time options used to set up a Weights object
  */
 template<size_type InputsAtCompileTime  = Eigen::Dynamic,
-         size_type OutputsAtCompileTime = Eigen::Dynamic,
-         int DataOrdering = Eigen::ColMajor>
+         size_type OutputsAtCompileTime = Eigen::Dynamic>
 struct options
 {
   /// FullyConnected layer input count
@@ -38,9 +36,6 @@ struct options
 
   /// FullyConnected layer output count
   constexpr static size_type output_size = OutputsAtCompileTime;
-
-  /// Data ordering
-  constexpr static int data_ordering = DataOrdering;
 
   /// Used to check if dimensions are fixed
   constexpr static bool has_fixed_sizes = !is_dynamic(InputsAtCompileTime) &&
@@ -59,15 +54,15 @@ struct extrinsics
     ValueType,
     Options::output_size,
     Options::input_size,
-    Options::data_ordering
+    Eigen::ColMajor
   > WeightBlockType;
 
   /// Output block type standardization
   typedef Eigen::Matrix<
     ValueType,
     Options::output_size,
-    Options::1,
-    Options::data_ordering
+    1,
+    Eigen::ColMajor
   > BiasBlockType;
 };
 }  // namespace weights

@@ -67,6 +67,8 @@ public:
    */
   inline Configuration& setOptimizer(const typename OptimizerType::Ptr& optimizer)
   {
+    FFNN_ASSERT_MSG(optimizer, "Optimizer resource is invalid.");
+
     optimizer_ = optimizer;
     return *this;
   }
@@ -78,6 +80,8 @@ public:
    */
   inline Configuration& setParameterDistribution(const typename DistributionType::Ptr& distribution)
   {
+    FFNN_ASSERT_MSG(distribution, "Distribution resource is invalid.");
+
     distribution_ = distribution;
     return *this;
   }
@@ -91,6 +95,10 @@ public:
    */
   inline Configuration& setInputShape(size_type height, size_type width, size_type depth)
   {
+    FFNN_ASSERT_MSG(height > 0, "Input height must be positive.");
+    FFNN_ASSERT_MSG(width > 0,  "Input width must be positive.");
+    FFNN_ASSERT_MSG(depth > 0,  "Input depth must be positive.");
+
     input_shape_ = ShapeType(height, width, depth);
     return resolve();
   }
@@ -107,6 +115,10 @@ public:
    */
   inline Configuration& setFilterShape(size_type height, size_type width, size_type depth)
   {
+    FFNN_ASSERT_MSG(height > 0, "Kernel height must be positive.");
+    FFNN_ASSERT_MSG(width > 0,  "Kernel width must be positive.");
+    FFNN_ASSERT_MSG(depth > 0,  "Kernel depth must be positive.");
+
     filter_shape_ = ShapeType(height, width, depth);
     return resolve();
   }
@@ -121,6 +133,8 @@ public:
    */
   inline Configuration& setStride(size_type row_stride, size_type col_stride = -1)
   {
+    FFNN_ASSERT_MSG(row_stride > 0, "Sride must be positive.");
+
     row_stride_ = row_stride;
     col_stride_ = (col_stride <= 0) ? row_stride : col_stride;
     return resolve();

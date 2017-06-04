@@ -53,7 +53,10 @@ struct extrinsics
     1,
     Options::input_data_ordering,
     Options::output_data_ordering
-  > ConnectionWeightsOptions;
+  > WeightsOptions;
+
+  /// Layer parameters type
+  typedef Weights<ValueType, WeightsOptions> ParametersType;
 
   /// Compile-time Hidden layer traits
   typedef typename hidden::options<

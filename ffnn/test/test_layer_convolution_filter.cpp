@@ -47,7 +47,7 @@ TEST(TestLayerConvolutionFilter, Static_RowEmbedding_KernelSizing)
   }
 }
 
-TEST(TestLayerConvolutionFilter, Static_ParameterConcept_Scaling)
+TEST(TestLayerConvolutionFilter, Static_Scaling)
 {
   using ffnn::layer::convolution::RowEmbedding;
   using ffnn::layer::convolution::filter::options;
@@ -69,7 +69,7 @@ TEST(TestLayerConvolutionFilter, Static_ParameterConcept_Scaling)
   }
 }
 
-TEST(TestLayerConvolutionFilter, Static_ParameterConcept_ElementWiseDivision)
+TEST(TestLayerConvolutionFilter, Static_ElementWiseDivision)
 {
   using ffnn::layer::convolution::RowEmbedding;
   using ffnn::layer::convolution::filter::options;
@@ -99,7 +99,7 @@ TEST(TestLayerConvolutionFilter, Static_ParameterConcept_ElementWiseDivision)
 }
 
 
-TEST(TestLayerConvolutionFilter, Static_ParameterConcept_Assignment)
+TEST(TestLayerConvolutionFilter, Static_Assignment)
 {
   using ffnn::layer::convolution::RowEmbedding;
   using ffnn::layer::convolution::filter::options;
@@ -128,7 +128,7 @@ TEST(TestLayerConvolutionFilter, Static_ParameterConcept_Assignment)
   }
 }
 
-TEST(TestLayerConvolutionFilter, Static_ParameterConcept_ElementWiseMultiplication)
+TEST(TestLayerConvolutionFilter, Static_ElementWiseMultiplication)
 {
   using ffnn::layer::convolution::RowEmbedding;
   using ffnn::layer::convolution::filter::options;
@@ -158,7 +158,7 @@ TEST(TestLayerConvolutionFilter, Static_ParameterConcept_ElementWiseMultiplicati
   }
 }
 
-TEST(TestLayerConvolutionFilter, Static_ParameterConcept_ElementWiseAddition)
+TEST(TestLayerConvolutionFilter, Static_ElementWiseAddition)
 {
   using ffnn::layer::convolution::RowEmbedding;
   using ffnn::layer::convolution::filter::options;
@@ -188,7 +188,7 @@ TEST(TestLayerConvolutionFilter, Static_ParameterConcept_ElementWiseAddition)
   }
 }
 
-TEST(TestLayerConvolutionFilter, Static_ParameterConcept_ElementWiseSubtraction)
+TEST(TestLayerConvolutionFilter, Static_ElementWiseSubtraction)
 {
   using ffnn::layer::convolution::RowEmbedding;
   using ffnn::layer::convolution::filter::options;

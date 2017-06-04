@@ -22,10 +22,13 @@ template <typename ValueType,
           typename Options,
           typename Extrinsics>
 Convolution<ValueType, Options, Extrinsics>::
-Convolution(const Configuration& c) :
-  BaseType(c.embedded_input_shape_, c.embedded_output_shape_)
+Convolution(const Configuration& config) :
+  BaseType(config.embedded_input_shape_, config.embedded_output_shape_)
 {
-  FFNN_INTERNAL_DEBUG_NAMED("layer::Convolution", "[" << c.input_shape_ << " | " << c.output_shape_ << "]");
+  FFNN_INTERNAL_DEBUG_NAMED(
+    "layer::Convolution",
+    "["   << config.input_shape_  << " | " << config.output_shape_ << "]"
+  );
 }
 
 template <typename ValueType,
@@ -33,7 +36,10 @@ template <typename ValueType,
           typename Extrinsics>
 Convolution<ValueType, Options, Extrinsics>::~Convolution()
 {
-  FFNN_INTERNAL_DEBUG_NAMED("layer::Convolution", "Destroying [layer::Convolution] object <" << this->getID() << ">");
+  FFNN_INTERNAL_DEBUG_NAMED(
+    "layer::Convolution",
+    "Destroying [layer::Convolution] object <" << this->getID() << ">"
+  );
 }
 
 template <typename ValueType,
@@ -43,12 +49,14 @@ bool Convolution<ValueType, Options, Extrinsics>::initialize()
 {
   if (BaseType::isInitialized())
   {
-    FFNN_WARN_NAMED("layer::Convolution", "<" << BaseType::getID() << "> already initialized.");
+    FFNN_WARN_NAMED("layer::Convolution",
+                    "<" << BaseType::getID() << "> already initialized.");
     return false;
   }
   else if (!BaseType::initialize())
   {
-    FFNN_WARN_NAMED("layer::Convolution", "<" << BaseType::getID() << "> failed basic initializaition.");
+    FFNN_WARN_NAMED("layer::Convolution",
+                    "<" << BaseType::getID() << "> failed basic initializaition.");
     return false;
   }
   else if (BaseType::setupRequired())
@@ -86,6 +94,8 @@ template <typename ValueType,
           typename Extrinsics>
 bool Convolution<ValueType, Options, Extrinsics>::forward()
 {
+  FFNN_ASSERT_MSG(config_.optimizer_, "No optimization resource set.");
+
   // Run forward optimized iteration
   if (!config_.optimizer_->forward(*this))
   {

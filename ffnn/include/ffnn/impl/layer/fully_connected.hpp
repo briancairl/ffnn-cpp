@@ -18,34 +18,41 @@ namespace ffnn
 {
 namespace layer
 {
-template<typename ValueType,
-         FFNN_SIZE_TYPE InputsAtCompileTime,
-         FFNN_SIZE_TYPE OutputsAtCompileTime,
-         typename _HiddenLayerShape>
-FullyConnected<TARGS>::FullyConnected(SizeType output_size) :
-  Base(ShapeType(InputsAtCompileTime), ShapeType(output_size)),
-  opt_(boost::make_shared<typename optimizer::None<Self>>())
-{}
-
-template<typename ValueType,
-         FFNN_SIZE_TYPE InputsAtCompileTime,
-         FFNN_SIZE_TYPE OutputsAtCompileTime,
-         typename _HiddenLayerShape>
-FullyConnected<TARGS>::~FullyConnected()
+template <typename ValueType,
+          typename Options,
+          typename Extrinsics>
+FullyConnected<ValueType, Options, Extrinsics>::
+FullyConnected(const Configuration& config) :
+  BaseType(ShapeType(config.input_size_, 1, 1),
+           ShapeType(config.output_size_, 1, 1))
 {
-  FFNN_INTERNAL_DEBUG_NAMED("layer::FullyConnected", "Destroying [layer::FullyConnected] object <" << this->getID() << ">");
+  FFNN_INTERNAL_DEBUG_NAMED(
+    "layer::FullyConnected",
+    "[" << config.input_size_  << " | " << config.output_size_ << "]"
+  );
 }
 
-template<typename ValueType,
-         FFNN_SIZE_TYPE InputsAtCompileTime,
-         FFNN_SIZE_TYPE OutputsAtCompileTime,
-         typename _HiddenLayerShape>
-bool FullyConnected<TARGS>::initialize()
+template <typename ValueType,
+          typename Options,
+          typename Extrinsics>
+FullyConnected<ValueType, Options, Extrinsics>::~FullyConnected()
+{
+  FFNN_INTERNAL_DEBUG_NAMED(
+    "layer::FullyConnected",
+    "Destroying [layer::FullyConnected] object <" << this->getID() << ">"
+  );
+}
+
+template <typename ValueType,
+          typename Options,
+          typename Extrinsics>
+bool FullyConnected<ValueType, Options, Extrinsics>::initialize()
 {
   // Abort if layer is already initialized
   if (Base::setupRequired() && Base::isInitialized())
   {
-    FFNN_WARN_NAMED("layer::FullyConnected", "<" << Base::getID() << "> already initialized.");
+    FFNN_WARN_NAMED("layer::FullyConnected",
+                    "<" << Base::getID() << "> already initialized.");
     return false;
   }
   else if (!Base::initialize())
@@ -60,9 +67,9 @@ bool FullyConnected<TARGS>::initialize()
   }
 
   // Setup optimizer
-  if (opt_)
+  if (config_.optimizer_)
   {
-    opt_->initialize(*this);
+    config_.optimizer_->initialize(*this);
   }
 
   FFNN_DEBUG_NAMED("layer::FullyConnected",
@@ -73,136 +80,94 @@ bool FullyConnected<TARGS>::initialize()
                    ", out=" <<
                    Base::getOutputShape().size() <<
                    ") [with 1 biasing input] (optimizer=" <<
-                   opt_->name() <<
+                   config_.optimizer_->name() <<
                    ")");
   return true;
 }
 
-template<typename ValueType,
-         FFNN_SIZE_TYPE InputsAtCompileTime,
-         FFNN_SIZE_TYPE OutputsAtCompileTime,
-         typename _HiddenLayerShape>
-template<typename WeightDistribution,
-         typename BiasDistribution>
-bool FullyConnected<TARGS>::initialize(const WeightDistribution& wd, const BiasDistribution& bd)
+template <typename ValueType,
+          typename Options,
+          typename Extrinsics>
+bool FullyConnected<ValueType, Options, Extrinsics>::forward()
 {
-  if (initialize())
-  {
-    if (Base::setupRequired())
-    {
-      // Set layer connections weights
-      {
-        auto fn = [](ValueType x, const WeightDistribution& dist) {return dist.generate();};
-        w_ = w_.unaryExpr(boost::bind<ValueType>(fn, _1, wd));
-      }
+  FFNN_ASSERT_MSG(config_.optimizer_, "No optimization resource set.");
 
-      // Set layer biases
-      {
-        auto fn = [](ValueType x, const BiasDistribution& dist) {return dist.generate();};
-        b_ = b_.unaryExpr(boost::bind<ValueType>(fn, _1, bd));
-      }
-      return true;
-    }
-    FFNN_WARN_NAMED("layer::FullyConnected",
-                    "Layer was previously loaded. Trained parameters will not be reset.");
-    return false;
-  }
-  return false;
-}
-
-template<typename ValueType,
-         FFNN_SIZE_TYPE InputsAtCompileTime,
-         FFNN_SIZE_TYPE OutputsAtCompileTime,
-         typename _HiddenLayerShape>
-bool FullyConnected<TARGS>::forward()
-{
-  if (!opt_->forward(*this))
+  if (!config_.optimizer_->forward(*this))
   {
     return false;
   }
 
   // Compute weighted + biased outputs
-  Base::output_.noalias() = w_ * Base::input_;
-  Base::output_ += b_;
+  Base::output_.noalias() = parameters_.weights * Base::input_;
+  Base::output_ += parameters_.bias;
   return true;
 }
 
-template<typename ValueType,
-         FFNN_SIZE_TYPE InputsAtCompileTime,
-         FFNN_SIZE_TYPE OutputsAtCompileTime,
-         typename _HiddenLayerShape>
-bool FullyConnected<TARGS>::backward()
+template <typename ValueType,
+          typename Options,
+          typename Extrinsics>
+bool FullyConnected<ValueType, Options, Extrinsics>::backward()
 {
-  FFNN_ASSERT_MSG(opt_, "No optimization resource set.");
+  FFNN_ASSERT_MSG(config_.optimizer_, "No optimization resource set.");
 
   // Compute backward error
-  Base::backward_error_.noalias() = w_.transpose() * Base::forward_error_;
+  Base::backward_error_.noalias() = parameters_.weights.transpose() * Base::forward_error_;
 
   // Run optimizer
-  return opt_->backward(*this);
+  return config_.optimizer_->backward(*this);
 }
 
-template<typename ValueType,
-         FFNN_SIZE_TYPE InputsAtCompileTime,
-         FFNN_SIZE_TYPE OutputsAtCompileTime,
-         typename _HiddenLayerShape>
-bool FullyConnected<TARGS>::update()
+template <typename ValueType,
+          typename Options,
+          typename Extrinsics>
+bool FullyConnected<ValueType, Options, Extrinsics>::update()
 {
-  FFNN_ASSERT_MSG(opt_, "No optimization resource set.");
-  return opt_->update(*this);
+  FFNN_ASSERT_MSG(config_.optimizer_, "No optimization resource set.");
+  return config_.optimizer_->update(*this);
 }
 
-template<typename ValueType,
-         FFNN_SIZE_TYPE InputsAtCompileTime,
-         FFNN_SIZE_TYPE OutputsAtCompileTime,
-         typename _HiddenLayerShape>
-void FullyConnected<TARGS>::reset()
+template <typename ValueType,
+          typename Options,
+          typename Extrinsics>
+void FullyConnected<ValueType, Options, Extrinsics>::reset()
 {
   // Zero out connection weights and biases with appropriate size
-  w_.setZero(Base::getOutputShape().size(), Base::getInputShape().size());
-  b_.setZero(Base::getOutputShape().size(), 1);
+  parameters_.setZero(Base::getInputShape().size(),
+                      Base::getOutputShape().size());
 }
 
-template<typename ValueType,
-         FFNN_SIZE_TYPE InputsAtCompileTime,
-         FFNN_SIZE_TYPE OutputsAtCompileTime,
-         typename _HiddenLayerShape>
-void FullyConnected<TARGS>::setOptimizer(typename Optimizer::Ptr opt)
-{
-  FFNN_ASSERT_MSG(opt, "Input optimizer object is an empty resource.");
-  opt_ = opt;
-}
-
-template<typename ValueType,
-         FFNN_SIZE_TYPE InputsAtCompileTime,
-         FFNN_SIZE_TYPE OutputsAtCompileTime,
-         typename _HiddenLayerShape>
-void FullyConnected<TARGS>::save(typename FullyConnected<TARGS>::OutputArchive& ar,
-                                 typename FullyConnected<TARGS>::VersionType version) const
+template <typename ValueType,
+          typename Options,
+          typename Extrinsics>
+void FullyConnected<ValueType, Options, Extrinsics>::save(typename FullyConnected<ValueType, Options, Extrinsics>::OutputArchive& ar,
+                                                          typename FullyConnected<ValueType, Options, Extrinsics>::VersionType version) const
 {
   ffnn::internal::signature::apply<FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape>>(ar);
   Base::save(ar, version);
 
-  // Save weight/bias matrix
-  ar & w_;
-  ar & b_;
+  // Save parameters
+  ar & parameters_;
+
+  // Save config
+  ar & config_;
 
   FFNN_DEBUG_NAMED("layer::FullyConnected", "Saved");
 }
 
-template<typename ValueType,
-         FFNN_SIZE_TYPE InputsAtCompileTime,
-         FFNN_SIZE_TYPE OutputsAtCompileTime,
-         typename _HiddenLayerShape>
-void FullyConnected<TARGS>::load(typename FullyConnected<TARGS>::InputArchive& ar,
-                                 typename FullyConnected<TARGS>::VersionType version)
+template <typename ValueType,
+          typename Options,
+          typename Extrinsics>
+void FullyConnected<ValueType, Options, Extrinsics>::load(typename FullyConnected<ValueType, Options, Extrinsics>::InputArchive& ar,
+                                                          typename FullyConnected<ValueType, Options, Extrinsics>::VersionType version)
 {
   ffnn::internal::signature::check<FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape>>(ar);
   Base::load(ar, version);
 
-  // Save weight/bias matrix
-  ar & w_;
-  ar & b_;
+  // Load parameters
+  ar & parameters_;
+
+  // Load config
+  ar & config_;
 
   FFNN_DEBUG_NAMED("layer::FullyConnected", "Loaded");
 }

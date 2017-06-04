@@ -116,8 +116,8 @@ struct extrinsics
     Options::embedding_mode
   > FilterOptions;
 
-  /// Filter tyoe standardization
-  typedef Filter<ValueType, FilterOptions> FilterType;
+  /// Parameters type standardization
+  typedef Filter<ValueType, FilterOptions> ParametersType;
 
   /// Compile-time Hidden layer traits
   typedef typename hidden::options<
