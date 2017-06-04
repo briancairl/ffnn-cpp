@@ -28,23 +28,23 @@ namespace fully_connected
 /**
  * @brief Describes compile-time options used to set up a Input object
  */
-template<size_type InputsAtCompileTime = Eigen::Dynamic,
-         size_type InputWidthAtCompileTime  = 1,
-         size_type InputDepthAtCompileTime  = 1>
+template<size_type InputsAtCompileTime  = Eigen::Dynamic,
+         size_type OutputsAtCompileTime = Eigen::Dynamic,
+         int InputDataOrdering  = Eigen::ColMajor,
+         int OutputDataOrdering = Eigen::ColMajor>
 struct options
 {
-  /// Input field height
-  constexpr static size_type height = InputHeightAtCompileTime;
+  /// Input count
+  constexpr static size_type input_size = InputsAtCompileTime;
 
-  /// Input field width
-  constexpr static size_type width = InputWidthAtCompileTime;
+  /// Input data ordering
+  constexpr static int input_data_ordering = InputDataOrdering;
 
-  /// Input field depth
-  constexpr static size_type depth = InputDepthAtCompileTime;
+  /// Output count
+  constexpr static size_type output_size = OutputsAtCompileTime;
 
-  /// Total network fully_connected size
-  constexpr static size_type size =
-    multiply_if_not_dynamic_sizes(height, width, depth);
+  /// Output data ordering
+  constexpr static int output_data_ordering = OutputDataOrdering;
 };
 
 /**
@@ -54,30 +54,36 @@ template<typename ValueType,
          typename Options>
 struct extrinsics
 {
-  ///Layer (base type) standardization
-  typedef Layer<ValueType> LayerType;
+  /// Compile-time Hidden layer traits
+  typedef typename hidden::options<
+    Options::input_size,
+    1,
+    Options::output_size,
+    1,
+    Options::input_data_ordering,
+    Options::output_data_ordering
+  > HiddenLayerOptions;
+
+  /// Hidden layer (base type) standardization
+  typedef Hidden<ValueType, HiddenLayerOptions> HiddenLayerType;
 };
 }  // namespace fully_connected
 
 /**
  * @brief A fully-connected layer
  */
-template<typename ValueType,
-         FFNN_SIZE_TYPE InputsAtCompileTime = Eigen::Dynamic,
-         FFNN_SIZE_TYPE OutputsAtCompileTime = Eigen::Dynamic,
-         typename _HiddenLayerShape = hidden_layer_traits<InputsAtCompileTime, 1, OutputsAtCompileTime, 1>>
+template <typename ValueType,
+          typename Options    = typename fully_connected::options<>,
+          typename Extrinsics = typename fully_connected::extrinsics<ValueType, Options>>
 class FullyConnected :
-  public Hidden<ValueType, _HiddenLayerShape>
+  public Extrinsics::HiddenLayerType
 {
 public:
-  /// Base type alias
-  using Base = Hidden<ValueType, _HiddenLayerShape>;
-
   /// Self type alias
-  using Self = FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>;
+  using SelfType = FullyConnected<ValueType, Options, Extrinsics>;
 
-  /// Scalar type standardization
-  typedef typename Base::ScalarType ScalarType;
+  /// Base type alias
+  using BaseType = typename Extrinsics::HiddenLayerType;
 
   /// Dimension type standardization
   typedef typename Base::ShapeType ShapeType;

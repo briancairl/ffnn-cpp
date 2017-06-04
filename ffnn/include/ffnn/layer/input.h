@@ -52,7 +52,7 @@ template<typename ValueType,
 class Input :
   public Extrinsics::LayerType
 {
-  FFNN_ASSERT_NO_MOD_LAYER_EXTRINSICS(input);
+  FFNN_ASSERT_NO_MODIFY_EXTRINSICS(input);
 {
 public:
   /// Self type alias

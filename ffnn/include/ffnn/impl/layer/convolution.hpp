@@ -22,10 +22,10 @@ template <typename ValueType,
           typename Options,
           typename Extrinsics>
 Convolution<ValueType, Options, Extrinsics>::
-Convolution(const Configuration& config) :
-  BaseType(config.embedded_input_shape_, config.embedded_output_shape_)
+Convolution(const Configuration& c) :
+  BaseType(c.embedded_input_shape_, c.embedded_output_shape_)
 {
-  FFNN_INTERNAL_DEBUG_NAMED("layer::Convolution", "[" << config.input_shape_ << " | " << config.output_shape_ << "]");
+  FFNN_INTERNAL_DEBUG_NAMED("layer::Convolution", "[" << c.input_shape_ << " | " << c.output_shape_ << "]");
 }
 
 template <typename ValueType,
@@ -165,14 +165,8 @@ void Convolution<ValueType, Options, Extrinsics>::reset()
   parameters_.setZero(_fs.height, _fs.width, _is.depth, _os.depth);
 
   // Initialize filter weights
-  FFNN_ASSERT_MSG(config_.parameter_distribution_, "Parameter distribution resource not set.");
-  for (auto& kernel : parameters_)
-  {
-    distribution::setRandom(kernel, *config_.parameter_distribution_);
-  }
-
-  // Initialize filter bias
-  parameters_.bias = config_.parameter_distribution_->generate();
+  FFNN_ASSERT_MSG(config_.distribution_, "Parameter distribution resource not set.");
+  parameters_.setRandom(*config_.distribution_);
 }
 
 template <typename ValueType,
@@ -221,15 +215,8 @@ void Convolution<ValueType, Options, Extrinsics>::save(OutputArchive& ar, Versio
   // Save layer parameters
   ar & parameters_;
 
-  // Save layer configuration
-  ar & config_.input_shape_;
-  ar & config_.output_shape_;
-  ar & config_.embedded_input_shape_;
-  ar & config_.embedded_output_shape_;
-  ar & config_.filter_shape_;
-  ar & config_.row_stride_;
-  ar & config_.col_stride_;
-  ar & config_.stride_shape_;
+  // Load layer configuration
+  ar & config_;
 
   FFNN_DEBUG_NAMED("layer::Convolution", "Saved");
 }
@@ -246,14 +233,7 @@ void Convolution<ValueType, Options, Extrinsics>::load(InputArchive& ar, Version
   ar & parameters_;
 
   // Load layer configuration
-  ar & config_.input_shape_;
-  ar & config_.output_shape_;
-  ar & config_.embedded_input_shape_;
-  ar & config_.embedded_output_shape_;
-  ar & config_.filter_shape_;
-  ar & config_.row_stride_;
-  ar & config_.col_stride_;
-  ar & config_.stride_shape_;
+  ar & config_;
 
   FFNN_DEBUG_NAMED("layer::Convolution", "Loaded");
 }

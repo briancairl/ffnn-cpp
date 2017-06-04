@@ -2,8 +2,8 @@
  * @author Brian Cairl
  * @date 2017
  */
-#ifndef FFNN_LAYER_CONVOLUTION_DEFS_H
-#define FFNN_LAYER_CONVOLUTION_DEFS_H
+#ifndef FFNN_LAYER_CONVOLUTION_DIMENSIONS_H
+#define FFNN_LAYER_CONVOLUTION_DIMENSIONS_H
 
 namespace ffnn
 {
@@ -11,6 +11,14 @@ namespace layer
 {
 namespace convolution
 {
+/**
+ * @brief Used to select how depth of an input/outut volume is embedded
+ *        in matrix form
+ * @note  <code>RowEmbedding</code> generally implies that the underly matrix will have
+ *        row-major ordering. This is because of how this data is usually accessed
+ * @note  <code>ColEmbedding</code> generally implies that the underly matrix will have
+ *        collumn-major ordering. This is because of how this data is usually accessed
+ */
 typedef enum
 {
   RowEmbedding = 0, ///< Embed depth along filter matrix rows
@@ -72,4 +80,4 @@ constexpr SizeType output_dimension(SizeType n, SizeType fn, SizeType stride)
 }  // namespace convolution
 }  // namespace layer
 }  // namespace ffnn
-#endif  // FFNN_LAYER_CONVOLUTION_DEFS_H
+#endif  // FFNN_LAYER_CONVOLUTION_DIMENSIONS_H

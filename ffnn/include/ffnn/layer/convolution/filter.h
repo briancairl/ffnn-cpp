@@ -14,8 +14,12 @@
 #include <ffnn/assert.h>
 #include <ffnn/config/global.h>
 #include <ffnn/internal/traits.h>
+
+#include <ffnn/distribution/distribution.h>
+
 #include <ffnn/layer/shape.h>
-#include <ffnn/layer/convolution/defs.h>
+#include <ffnn/layer/convolution/sizing.h>
+#include <ffnn/layer/convolution/filter/compile_time_options.h>
 
 namespace ffnn
 {
@@ -23,75 +27,6 @@ namespace layer
 {
 namespace convolution
 {
-namespace filter
-{
-/**
- * @brief Describes compile-time options and extrinsic parameters used to set up a Filter object
- * @param HeightAtCompileTime  height of the filter kernel
- * @param WidthAtCompileTime  width of the filter kernel
- * @param DepthAtCompileTime  depth of the filter kernel
- * @param KernelCountAtCompileTime  number of kernels this filter will have
- */
-template<size_type HeightAtCompileTime = Eigen::Dynamic,
-         size_type WidthAtCompileTime  = Eigen::Dynamic,
-         size_type DepthAtCompileTime  = Eigen::Dynamic,
-         size_type KernelCountAtCompileTime = Eigen::Dynamic,
-         EmbeddingMode Mode = ColEmbedding>
-struct options
-{
-  /// Data embedding mode
-  constexpr static EmbeddingMode embedding_mode = Mode;
-
-  /// Kernel height at compile-time
-  constexpr static size_type kernel_height = HeightAtCompileTime;
-
-  /// Kernel width at compile-time
-  constexpr static size_type kernel_width = WidthAtCompileTime;
-
-  /// Kernel depth at compile-time
-  constexpr static size_type kernel_depth = DepthAtCompileTime;
-
-  /// Number of filter kernels at compile-time
-  constexpr static size_type kernel_count = KernelCountAtCompileTime;
-
-  /// Depth embedded kernel height at compile-time
-  constexpr static size_type embedded_kernel_height = embed_dimension<embedding_mode, ColEmbedding>(kernel_height, kernel_depth);
-
-  /// Depth embedded kernel width at compile-time
-  constexpr static size_type embedded_kernel_width = embed_dimension<embedding_mode, RowEmbedding>(kernel_width, kernel_depth);
-
-  /// <code>true</code> if number of kernels in the filter is determined at compile-time and is fixed
-  constexpr static bool has_fixed_kernel_count = (KernelCountAtCompileTime > 0);
-};
-
-/**
- * @brief Describes types based on compile-time options
- */
-template<typename ValueType,
-         typename Options>
-struct extrinsics
-{
-  /// Kernel type standardization
-  typedef Eigen::Matrix<
-    ValueType,
-    Options::embedded_kernel_height,
-    Options::embedded_kernel_width,
-    embed_data_order<Options::embedding_mode>()
-  > KernelType;
-
-  /// Base type standardization
-  typedef typename std::conditional<
-    Options::has_fixed_kernel_count,
-    std::array<KernelType, Options::kernel_count>,
-    typename std::conditional<
-      internal::traits::is_alignable_128<KernelType>::value,
-      std::vector<KernelType, Eigen::aligned_allocator<KernelType>>,
-      std::vector<KernelType>
-    >::type
-  >::type FilterBaseType;
-};
-}  // namespace filter
-
 /**
  * @brief Filter parameters to be use with a Convolution layer
  * @param ValueType scalar value type
@@ -100,9 +35,11 @@ struct extrinsics
 template<typename ValueType,
          typename Options    = typename filter::options<>,
          typename Extrinsics = typename filter::extrinsics<ValueType, Options>>
-struct Filter :
+class Filter :
   public Extrinsics::FilterBaseType
 {
+  FFNN_ASSERT_NO_MODIFY_EXTRINSICS(filter);
+public:
   /// Filter kernel matrix standardization
   typedef typename Extrinsics::KernelType KernelType;
 
@@ -129,6 +66,18 @@ struct Filter :
 
   /**
    * @brief Sets all Filter kernels and scalar bias unit to zero
+   */
+  void setZero()
+  {
+    for (auto& kernel : *this)
+    {
+      kernel.setZero();
+    }
+    bias = 0;
+  }
+
+  /**
+   * @brief Sets all Filter kernels and scalar bias unit to zero
    * @param kernel_height  height of filter kernel
    * @param kernel_width  width of filter kernel
    * @param kernel_depth  depth of filter kernel
@@ -136,34 +85,28 @@ struct Filter :
    */
   template<bool T = Options::has_fixed_kernel_count>
   typename std::enable_if<T>::type
-    setZero(size_type kernel_height = Options::kernel_height,
-            size_type kernel_width  = Options::kernel_width,
-            size_type kernel_depth  = Options::kernel_depth,
-            size_type kernel_count  = Options::kernel_count)
+    setZero(size_type kernel_height,
+            size_type kernel_width,
+            size_type kernel_depth,
+            size_type kernel_count)
   {
     FFNN_ASSERT_MSG(kernel_height > 0, "kernel_height must be positive");
-    FFNN_ASSERT_MSG(kernel_width > 0,  "kernel_height must be positive");
-    FFNN_ASSERT_MSG(kernel_depth > 0,  "kernel_height must be positive");
+    FFNN_ASSERT_MSG(kernel_width > 0,  "kernel_width must be positive");
+    FFNN_ASSERT_MSG(kernel_depth > 0,  "kernel_depth must be positive");
     FFNN_ASSERT_MSG(kernel_count > 0,  "kernel_count must be positive");
     FFNN_ASSERT_MSG(kernel_count == Options::kernel_count,  "kernel_count is fixed");
-    const auto h = embed_dimension<Options::embedding_mode, ColEmbedding>(kernel_height, kernel_depth);
-    const auto w = embed_dimension<Options::embedding_mode, RowEmbedding>(kernel_width,  kernel_depth);
-    for (auto& kernel : *this)
-    {
-      kernel.setZero(h, w);
-    }
-    bias = 0;
+    setZero();
   }
   template<bool T = Options::has_fixed_kernel_count>
   typename std::enable_if<!T>::type
-    setZero(size_type kernel_height = Options::kernel_height,
-            size_type kernel_width  = Options::kernel_width,
-            size_type kernel_depth  = Options::kernel_depth,
-            size_type kernel_count  = Options::kernel_count)
+    setZero(size_type kernel_height,
+            size_type kernel_width,
+            size_type kernel_depth,
+            size_type kernel_count)
   {
     FFNN_ASSERT_MSG(kernel_height > 0, "kernel_height must be positive");
-    FFNN_ASSERT_MSG(kernel_width > 0,  "kernel_height must be positive");
-    FFNN_ASSERT_MSG(kernel_depth > 0,  "kernel_height must be positive");
+    FFNN_ASSERT_MSG(kernel_width > 0,  "kernel_width must be positive");
+    FFNN_ASSERT_MSG(kernel_depth > 0,  "kernel_depth must be positive");
     FFNN_ASSERT_MSG(kernel_count > 0,  "kernel_count must be positive");
     this->resize(kernel_count);
     const auto h = embed_dimension<Options::embedding_mode, ColEmbedding>(kernel_height, kernel_depth);
@@ -173,6 +116,78 @@ struct Filter :
       kernel.setZero(h, w);
     }
     bias = 0;
+  }
+
+  /**
+   * @brief Sets all Filter kernels and scalar bias unit to a random value
+   *        drawn from a specified distribution
+   */
+  template<typename DistributionType>
+  void setRandom(const DistributionType& distribution)
+  {
+    static_assert(internal::traits::is_distribution<DistributionType>::value,
+                  "[DistributionType] MUST FUFILL DISTRIBUTION CONCEPT REQUIREMENTS!");
+
+    for (auto& kernel : *this)
+    {
+      distribution::setRandom(kernel, distribution);
+    }
+    bias = distribution.generate();
+  }
+
+  /**
+   * @brief Sets all Filter kernels and scalar bias unit to a random value
+   *        drawn from a specified distribution
+   * @param distribution
+   * @param kernel_height  height of filter kernel
+   * @param kernel_width  width of filter kernel
+   * @param kernel_depth  depth of filter kernel
+   * @param kernel_count  number of kernels
+   */
+  template<typename DistributionType,
+           bool T = Options::has_fixed_kernel_count>
+  typename std::enable_if<T>::type
+    setRandom(const DistributionType& distribution,
+              size_type kernel_height,
+              size_type kernel_width,
+              size_type kernel_depth,
+              size_type kernel_count)
+  {
+    static_assert(internal::traits::is_distribution<DistributionType>::value,
+                  "[DistributionType] MUST FUFILL DISTRIBUTION CONCEPT REQUIREMENTS!");
+
+    FFNN_ASSERT_MSG(kernel_height > 0, "kernel_height must be positive");
+    FFNN_ASSERT_MSG(kernel_width > 0,  "kernel_width must be positive");
+    FFNN_ASSERT_MSG(kernel_depth > 0,  "kernel_depth must be positive");
+    FFNN_ASSERT_MSG(kernel_count > 0,  "kernel_count must be positive");
+    FFNN_ASSERT_MSG(kernel_count == Options::kernel_count,  "kernel_count is fixed");
+    setRandom(distribution);
+  }
+  template<typename DistributionType,
+           bool T = Options::has_fixed_kernel_count>
+  typename std::enable_if<!T>::type
+    setRandom(const DistributionType& distribution,
+              size_type kernel_height,
+              size_type kernel_width,
+              size_type kernel_depth,
+              size_type kernel_count)
+  {
+    static_assert(internal::traits::is_distribution<DistributionType>::value,
+                  "[DistributionType] MUST FUFILL DISTRIBUTION CONCEPT REQUIREMENTS!");
+
+    FFNN_ASSERT_MSG(kernel_height > 0, "kernel_height must be positive");
+    FFNN_ASSERT_MSG(kernel_width > 0,  "kernel_width must be positive");
+    FFNN_ASSERT_MSG(kernel_depth > 0,  "kernel_depth must be positive");
+    FFNN_ASSERT_MSG(kernel_count > 0,  "kernel_count must be positive");
+    this->resize(kernel_count);
+    const auto h = embed_dimension<Options::embedding_mode, ColEmbedding>(kernel_height, kernel_depth);
+    const auto w = embed_dimension<Options::embedding_mode, RowEmbedding>(kernel_width,  kernel_depth);
+    for (auto& kernel : *this)
+    {
+      kernel.resize(h, w);
+      distribution::setRandom(kernel, distribution);
+    }
+    bias = distribution.generate();
   }
 
   /**
@@ -259,6 +274,9 @@ struct Filter :
    * @note  Necessary to fufill <code>ParameterType</code> concept
    */
   Filter& array() { return *this;}
+
+private:
+  friend class boost::serialization::access;
 
   /**
    * @brief Save serializer

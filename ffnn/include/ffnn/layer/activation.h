@@ -31,7 +31,7 @@ public:
   using Base = Hidden<ValueType, _HiddenLayerShape>;
 
   /// Scalar type standardization
-  typedef typename Base::ScalarType ScalarType;
+  typedef typename Base::Scalar Scalar;
 
   /**
    * @brief Default constructor

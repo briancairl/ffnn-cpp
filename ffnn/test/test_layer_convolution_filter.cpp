@@ -16,8 +16,8 @@
 TEST(TestLayerConvolutionFilter, Static_ColEmbedding_KernelSizing)
 {
   using ffnn::layer::convolution::ColEmbedding;
-  using ffnn::layer::convolution::filter_options;
-  typedef ffnn::layer::convolution::Filter<float, filter_options<float, 4, 4, 4, 10, ColEmbedding>> Filter;
+  using ffnn::layer::convolution::filter::options;
+  typedef ffnn::layer::convolution::Filter<float, options<4, 4, 4, 10, ColEmbedding>> Filter;
   Filter filter;
 
   EXPECT_NO_THROW(filter.setZero(4, 4, 4, 10));
@@ -34,8 +34,8 @@ TEST(TestLayerConvolutionFilter, Static_ColEmbedding_KernelSizing)
 TEST(TestLayerConvolutionFilter, Static_RowEmbedding_KernelSizing)
 {
   using ffnn::layer::convolution::RowEmbedding;
-  using ffnn::layer::convolution::filter_options;
-  typedef ffnn::layer::convolution::Filter<float, filter_options<float, 3, 3, 5, 12, RowEmbedding>> Filter;
+  using ffnn::layer::convolution::filter::options;
+  typedef ffnn::layer::convolution::Filter<float, options<3, 3, 5, 12, RowEmbedding>> Filter;
   Filter filter;
 
   EXPECT_NO_THROW(filter.setZero(3, 3, 5, 12));
@@ -50,8 +50,8 @@ TEST(TestLayerConvolutionFilter, Static_RowEmbedding_KernelSizing)
 TEST(TestLayerConvolutionFilter, Static_ParameterConcept_Scaling)
 {
   using ffnn::layer::convolution::RowEmbedding;
-  using ffnn::layer::convolution::filter_options;
-  typedef ffnn::layer::convolution::Filter<float, filter_options<float, 3, 3, 5, 12, RowEmbedding>> Filter;
+  using ffnn::layer::convolution::filter::options;
+  typedef ffnn::layer::convolution::Filter<float, options<3, 3, 5, 12, RowEmbedding>> Filter;
   Filter filterA, filterB;
 
   filterA.bias = 1;
@@ -72,8 +72,8 @@ TEST(TestLayerConvolutionFilter, Static_ParameterConcept_Scaling)
 TEST(TestLayerConvolutionFilter, Static_ParameterConcept_ElementWiseDivision)
 {
   using ffnn::layer::convolution::RowEmbedding;
-  using ffnn::layer::convolution::filter_options;
-  typedef ffnn::layer::convolution::Filter<float, filter_options<float, 3, 3, 5, 12, RowEmbedding>> Filter;
+  using ffnn::layer::convolution::filter::options;
+  typedef ffnn::layer::convolution::Filter<float, options<3, 3, 5, 12, RowEmbedding>> Filter;
   Filter filterA, filterB;
 
   filterA.bias = 1;
@@ -102,8 +102,8 @@ TEST(TestLayerConvolutionFilter, Static_ParameterConcept_ElementWiseDivision)
 TEST(TestLayerConvolutionFilter, Static_ParameterConcept_Assignment)
 {
   using ffnn::layer::convolution::RowEmbedding;
-  using ffnn::layer::convolution::filter_options;
-  typedef ffnn::layer::convolution::Filter<float, filter_options<float, 3, 3, 5, 12, RowEmbedding>> Filter;
+  using ffnn::layer::convolution::filter::options;
+  typedef ffnn::layer::convolution::Filter<float, options<3, 3, 5, 12, RowEmbedding>> Filter;
   Filter filterA, filterB;
 
   filterA.bias = 1;
@@ -131,8 +131,8 @@ TEST(TestLayerConvolutionFilter, Static_ParameterConcept_Assignment)
 TEST(TestLayerConvolutionFilter, Static_ParameterConcept_ElementWiseMultiplication)
 {
   using ffnn::layer::convolution::RowEmbedding;
-  using ffnn::layer::convolution::filter_options;
-  typedef ffnn::layer::convolution::Filter<float, filter_options<float, 3, 3, 5, 12, RowEmbedding>> Filter;
+  using ffnn::layer::convolution::filter::options;
+  typedef ffnn::layer::convolution::Filter<float, options<3, 3, 5, 12, RowEmbedding>> Filter;
   Filter filterA, filterB;
 
   filterA.bias = 1;
@@ -161,8 +161,8 @@ TEST(TestLayerConvolutionFilter, Static_ParameterConcept_ElementWiseMultiplicati
 TEST(TestLayerConvolutionFilter, Static_ParameterConcept_ElementWiseAddition)
 {
   using ffnn::layer::convolution::RowEmbedding;
-  using ffnn::layer::convolution::filter_options;
-  typedef ffnn::layer::convolution::Filter<float, filter_options<float, 3, 3, 5, 12, RowEmbedding>> Filter;
+  using ffnn::layer::convolution::filter::options;
+  typedef ffnn::layer::convolution::Filter<float, options<3, 3, 5, 12, RowEmbedding>> Filter;
   Filter filterA, filterB;
 
   filterA.bias = 1;
@@ -191,8 +191,8 @@ TEST(TestLayerConvolutionFilter, Static_ParameterConcept_ElementWiseAddition)
 TEST(TestLayerConvolutionFilter, Static_ParameterConcept_ElementWiseSubtraction)
 {
   using ffnn::layer::convolution::RowEmbedding;
-  using ffnn::layer::convolution::filter_options;
-  typedef ffnn::layer::convolution::Filter<float, filter_options<float, 3, 3, 5, 12, RowEmbedding>> Filter;
+  using ffnn::layer::convolution::filter::options;
+  typedef ffnn::layer::convolution::Filter<float, options<3, 3, 5, 12, RowEmbedding>> Filter;
   Filter filterA, filterB;
 
   filterA.bias = 1;
@@ -221,8 +221,8 @@ TEST(TestLayerConvolutionFilter, Static_ParameterConcept_ElementWiseSubtraction)
 TEST(TestLayerConvolutionFilter, Static_Serialization_ColEmbedding)
 {
   using ffnn::layer::convolution::ColEmbedding;
-  using ffnn::layer::convolution::filter_options;
-  typedef ffnn::layer::convolution::Filter<float, filter_options<float, 3, 3, 5, 12, ColEmbedding>> Filter;
+  using ffnn::layer::convolution::filter::options;
+  typedef ffnn::layer::convolution::Filter<float, options<3, 3, 5, 12, ColEmbedding>> Filter;
 
   Filter filter;
   filter.setZero(3, 3, 5, 12);
@@ -251,8 +251,8 @@ TEST(TestLayerConvolutionFilter, Static_Serialization_ColEmbedding)
 TEST(TestLayerConvolutionFilter, Static_Serialization_RowEmbedding)
 {
   using ffnn::layer::convolution::RowEmbedding;
-  using ffnn::layer::convolution::filter_options;
-  typedef ffnn::layer::convolution::Filter<float, filter_options<float, 3, 3, 5, 12, RowEmbedding>> Filter;
+  using ffnn::layer::convolution::filter::options;
+  typedef ffnn::layer::convolution::Filter<float, options<3, 3, 5, 12, RowEmbedding>> Filter;
 
   Filter filter;
   filter.setZero(3, 3, 5, 12);

@@ -29,6 +29,37 @@ struct is_alignable_128 :
     std::false_type
   >::type
 {};
+
+/**
+ * @brief Checks if a type fufills the requirements of the Distribution concept
+ * @param Object object to check
+ */
+template<typename Object>
+struct is_distribution
+{
+private:
+  typedef typename Object::Scalar ValueType;
+
+  template<typename U>
+  static auto test_generate(int) -> decltype(std::declval<U>().generate(), std::true_type());
+ 
+  template<typename U>
+  static auto test_cdf(int, ValueType v) -> decltype(std::declval<U>().cdf(v), std::true_type());
+
+  template<typename>
+  static std::false_type test_generate(...);
+
+  template<typename>
+  static std::false_type test_cdf(...);
+
+public:
+  constexpr static bool value =
+    std::integral_constant<
+      bool,
+      std::is_same<decltype(test_generate<Object>(0)), std::true_type>::value &&
+      std::is_same<decltype(test_cdf<Object>(0, ValueType(0))), std::true_type>::value
+    >::value;
+};
 }  // namespace traits
 }  // namespace internal
 }  // namespace ffnn

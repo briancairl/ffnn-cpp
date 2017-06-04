@@ -14,11 +14,11 @@ class AdamStates
 {
 public:
 
-  typedef typename MatrixType::Scalar ScalarType;
+  typedef typename MatrixType::Scalar Scalar;
 
   typedef typename MatrixType::Index SizeType;
 
-  void update(MatrixType& gradient, ScalarType beta1, ScalarType beta2, ScalarType eps)
+  void update(MatrixType& gradient, Scalar beta1, Scalar beta2, Scalar eps)
   {
     // Update gradient moments
     mean_ += beta1 * (gradient - mean_);

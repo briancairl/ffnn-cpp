@@ -28,7 +28,7 @@ public:
   typedef GradientDescent<LayerType> Base;
 
   /// Scalar type standardization
-  typedef typename LayerType::ScalarType ScalarType;
+  typedef typename LayerType::Scalar Scalar;
 
   /// Size type standardization
   typedef typename LayerType::SizeType SizeType;
@@ -50,7 +50,7 @@ public:
    * @param lr  Learning rate
    */
   explicit
-  Adam(ScalarType lr, ScalarType beta1 = 0.9, ScalarType beta2 = 0.999, ScalarType eps = 1e-8) :
+  Adam(Scalar lr, Scalar beta1 = 0.9, Scalar beta2 = 0.999, Scalar eps = 1e-8) :
     Base(lr),
     beta1_(beta1),
     beta2_(beta2),
@@ -97,13 +97,13 @@ public:
 
 private:
   /// Mean decay rate
-  const ScalarType beta1_;
+  const Scalar beta1_;
 
   /// Variance decay rate
-  const ScalarType beta2_;
+  const Scalar beta2_;
 
   /// Variance normalization value
-  const ScalarType epsilon_;
+  const Scalar epsilon_;
 
   /// Running estimates of mean/variance of weight gradients
   AdamStates<WeightMatrixType> weight_gradient_states_;

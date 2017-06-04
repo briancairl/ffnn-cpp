@@ -26,7 +26,7 @@ public:
   typedef typename layer::FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime> LayerType;
 
   /// Scalar type standardization
-  typedef typename LayerType::ScalarType ScalarType;
+  typedef typename LayerType::Scalar Scalar;
 
   /// Size type standardization
   typedef typename LayerType::SizeType SizeType;
@@ -48,7 +48,7 @@ public:
    * @param lr  Learning rate
    */
   explicit
-  GradientDescent(ScalarType lr) :
+  GradientDescent(Scalar lr) :
     Optimizer<LayerType>("GradientDescent[FullyConnected]"),
     lr_(lr)
   {}
@@ -138,7 +138,7 @@ public:
 
 protected:
   /// Learning rate
-  ScalarType lr_;
+  Scalar lr_;
 
   /// Total weight matrix gradient
   WeightMatrixType weight_gradient_;

@@ -14,7 +14,9 @@
 #include <boost/shared_ptr.hpp>
 
 // FFNN
+#include <ffnn/assert.h>
 #include <ffnn/config/global.h>
+#include <ffnn/internal/traits.h>
 
 namespace ffnn
 {
@@ -24,11 +26,11 @@ template<typename ValueType>
 class Distribution
 {
 public:
-  /// Self type standarization
-  typedef Distribution<ValueType> SelfType;
+  /// Scalar type standarization
+  typedef ValueType Scalar;
 
   /// Self type standarization
-  typedef ValueType ScalarType;
+  typedef Distribution<ValueType> SelfType;
 
   /// Shared resource standardization
   typedef boost::shared_ptr<SelfType> Ptr;
@@ -39,14 +41,14 @@ public:
   /**
    * @brief Generates a random value according to given distribution
    */
-  virtual ScalarType generate() const = 0;
+  virtual Scalar generate() const = 0;
 
   /**
    * @brief Computes CDF of distribution at specified point
    * @param[in] value  CDF upper bound
    * @return cumulative probability
    */
-  virtual ScalarType cdf(const ScalarType& value) const = 0;
+  virtual Scalar cdf(const Scalar& value) const = 0;
 };
 
 /**
@@ -58,15 +60,16 @@ template<typename M,
          typename DistributionType>
 void setRandom(Eigen::MatrixBase<M>& x, const DistributionType& dist)
 {
-  // Check that scalar representation matches between objects
-  using MatrixType   = typename Eigen::MatrixBase<M>;
-  using M_ScalarType = typename MatrixType::Scalar;
-  using D_ScalarType = typename DistributionType::ScalarType;
-  static_assert(std::is_same<M_ScalarType, D_ScalarType>::value,
-                "Scalar type mismatch between Eigen::MatrixBase<M> and DistributionType.");
+  static_assert(internal::traits::is_distribution<DistributionType>::value,
+                "[DistributionType] MUST FUFILL DISTRIBUTION CONCEPT REQUIREMENTS!");
+
+  static_assert(std::is_same<typename DistributionType::Scalar,
+                             typename Eigen::MatrixBase<M>::Scalar>::value,
+                "SCALAR TYPE MISMATCH BETWEEN [Eigen::MatrixBase<M>::Scalar] AND [DistributionType::Scalar]!");
 
   // Assign random values to all coefficients
-  auto unaryExprSetRandomCoeff = [&dist](M_ScalarType x) -> M_ScalarType
+  auto unaryExprSetRandomCoeff = [&dist](typename DistributionType::Scalar x)
+    -> typename DistributionType::Scalar
   {
     return dist.generate();
   };

@@ -27,7 +27,7 @@ class Neuron
 public:
   typedef std::true_type IsNeuron;
 
-  typedef ValueType ScalarType;
+  typedef ValueType Scalar;
 
   /**
    * @brief Computes activation output

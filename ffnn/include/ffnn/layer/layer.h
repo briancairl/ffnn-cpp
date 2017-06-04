@@ -44,7 +44,7 @@ public:
   typedef boost::shared_ptr<const SelfType> ConstPtr;
 
   /// Scalar type standardization
-  typedef ValueType ScalarType;
+  typedef ValueType Scalar;
 
   /// Dimension type standardization
   typedef Shape<size_type> ShapeType;

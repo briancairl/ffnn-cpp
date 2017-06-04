@@ -26,7 +26,7 @@ public:
   typedef typename layer::SparselyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime> LayerType;
 
   /// Scalar type standardization
-  typedef typename LayerType::ScalarType ScalarType;
+  typedef typename LayerType::Scalar Scalar;
 
   /// Size type standardization
   typedef typename LayerType::SizeType SizeType;
@@ -48,7 +48,7 @@ public:
    * @param lr  Learning rate
    */
   explicit
-  GradientDescent(ScalarType lr) :
+  GradientDescent(Scalar lr) :
     Optimizer<LayerType>("GradientDescent[SparselyConnected]"),
     lr_(lr)
   {}
@@ -149,7 +149,7 @@ public:
 
 protected:
   /// Learning rate
-  ScalarType lr_;
+  Scalar lr_;
 
   /// Weight matrix delta
   WeightMatrixType weight_gradient_;

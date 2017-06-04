@@ -48,7 +48,7 @@ public:
   typedef typename layer::LocalConvolution<TARGS> LayerType;
 
   /// Scalar type standardization
-  typedef typename LayerType::ScalarType ScalarType;
+  typedef typename LayerType::Scalar Scalar;
 
   /// Size type standardization
   typedef typename LayerType::SizeType SizeType;
@@ -73,7 +73,7 @@ public:
    * @param lr  Learning rate
    */
   explicit
-  GradientDescent(ScalarType lr) :
+  GradientDescent(Scalar lr) :
     Optimizer<LayerType>("GradientDescent[LocalConvolution]"),
     lr_(lr)
   {}
@@ -191,7 +191,7 @@ public:
 
 protected:
   /// Learning rate
-  ScalarType lr_;
+  Scalar lr_;
 
   /// Total parameter gradient
   ParametersType gradient_;

@@ -15,27 +15,27 @@ namespace boost
 {
 namespace serialization
 {
-template <class Archive, typename ScalarType, typename StorageIndex>
-void save(Archive & ar, const Eigen::Triplet<ScalarType, StorageIndex> & m, const unsigned int version)
+template <class Archive, typename Scalar, typename StorageIndex>
+void save(Archive & ar, const Eigen::Triplet<Scalar, StorageIndex> & m, const unsigned int version)
 {
     ar & m.row();
     ar & m.col();
     ar & m.value();
 }
 
-template <class Archive, typename ScalarType, typename StorageIndex>
-void load(Archive & ar, Eigen::Triplet<ScalarType, StorageIndex> & m, const unsigned int version)
+template <class Archive, typename Scalar, typename StorageIndex>
+void load(Archive & ar, Eigen::Triplet<Scalar, StorageIndex> & m, const unsigned int version)
 {
     int row,col;
-    ScalarType value;
+    Scalar value;
     ar & row;
     ar & col;
     ar & value;
-    m = Eigen::Triplet<ScalarType, StorageIndex>(row,col,value);
+    m = Eigen::Triplet<Scalar, StorageIndex>(row,col,value);
 }
 
-template <class Archive, typename ScalarType, typename StorageIndex>
-void serialize(Archive & ar, Eigen::Triplet<ScalarType, StorageIndex> & m, const unsigned int version)
+template <class Archive, typename Scalar, typename StorageIndex>
+void serialize(Archive & ar, Eigen::Triplet<Scalar, StorageIndex> & m, const unsigned int version)
 {
     boost::serialization::split_free(ar,m,version);
 }
