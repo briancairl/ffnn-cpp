@@ -1,6 +1,6 @@
 /**
  * @note HEADER-ONLY IMPLEMENTATION FILE
- * @warn Do not include directly
+ * @warning Do not include directly
  */
 #ifndef FFNN_LAYER_IMPL_INPUT_HPP
 #define FFNN_LAYER_IMPL_INPUT_HPP

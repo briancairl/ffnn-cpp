@@ -95,6 +95,7 @@ public:
     FFNN_ASSERT_MSG(kernel_depth > 0,  "kernel_depth must be positive");
     FFNN_ASSERT_MSG(kernel_count > 0,  "kernel_count must be positive");
     FFNN_ASSERT_MSG(kernel_count == Options::kernel_count,  "kernel_count is fixed");
+
     setZero();
   }
   template<bool T = Options::has_fixed_kernel_count>
@@ -108,6 +109,7 @@ public:
     FFNN_ASSERT_MSG(kernel_width > 0,  "kernel_width must be positive");
     FFNN_ASSERT_MSG(kernel_depth > 0,  "kernel_depth must be positive");
     FFNN_ASSERT_MSG(kernel_count > 0,  "kernel_count must be positive");
+
     this->resize(kernel_count);
     const auto h = embed_dimension<Options::embedding_mode, ColEmbedding>(kernel_height, kernel_depth);
     const auto w = embed_dimension<Options::embedding_mode, RowEmbedding>(kernel_width,  kernel_depth);
@@ -161,6 +163,7 @@ public:
     FFNN_ASSERT_MSG(kernel_depth > 0,  "kernel_depth must be positive");
     FFNN_ASSERT_MSG(kernel_count > 0,  "kernel_count must be positive");
     FFNN_ASSERT_MSG(kernel_count == Options::kernel_count,  "kernel_count is fixed");
+
     setRandom(distribution);
   }
   template<typename DistributionType,
@@ -179,6 +182,7 @@ public:
     FFNN_ASSERT_MSG(kernel_width > 0,  "kernel_width must be positive");
     FFNN_ASSERT_MSG(kernel_depth > 0,  "kernel_depth must be positive");
     FFNN_ASSERT_MSG(kernel_count > 0,  "kernel_count must be positive");
+
     this->resize(kernel_count);
     const auto h = embed_dimension<Options::embedding_mode, ColEmbedding>(kernel_height, kernel_depth);
     const auto w = embed_dimension<Options::embedding_mode, RowEmbedding>(kernel_width,  kernel_depth);
@@ -275,72 +279,10 @@ public:
    */
   Filter& array() { return *this;}
 
+#ifndef FFNN_NO_SERIALIZATION_SUPPORT
 private:
-  friend class boost::serialization::access;
-
-  /**
-   * @brief Save serializer
-   * @param ar  output archive
-   * @param version  archive versioning information
-   */
-  template<class Archive>
-  void save(Archive & ar, const unsigned int version) const
-  {
-    size_type n = this->size();
-
-    ar & bias;
-    ar & n;
-    for (const auto& kernel : *this)
-    {
-      ar & kernel;
-    }
-  }
-
-  /**
-   * @brief Load serializer
-   * @param ar  input archive
-   * @param version  archive versioning information
-   * @note Statically sized version
-   */
-  template<class Archive, bool T = Options::has_fixed_kernel_count>
-  typename std::enable_if<T>::type
-    load(Archive & ar, const unsigned int version)
-  {
-    size_type n = this->size();
-
-    ar & bias;
-    ar & n ;
-    for (size_type idx = 0; idx < n; idx++)
-    {
-      ar & (*this)[idx];
-    }
-  }
-  template<class Archive, bool T = Options::has_fixed_kernel_count>
-  typename std::enable_if<!T>::type
-    load(Archive & ar, const unsigned int version)
-  {
-    size_type n;
-
-    ar & bias;
-    ar & n;
-
-    this->resize(n);
-    for (size_type idx = 0; idx < n; idx++)
-    {
-      ar & (*this)[idx];
-    }
-  }
-
-  /**
-   * @brief Serializer
-   * @param ar  input/output archive
-   * @param version  archive versioning information
-   */
-  template<class Archive>
-  void serialize(Archive & ar, const unsigned int file_version)
-  {
-    boost::serialization::split_member(ar, *this, file_version);
-  }
+  #include <ffnn/impl/layer/convolution/filter/serialization_class_definitions.hpp>
+#endif
 };
 }  // namespace convolution
 }  // namespace layer

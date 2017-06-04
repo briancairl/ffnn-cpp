@@ -1,6 +1,6 @@
 /**
  * @note HEADER-ONLY IMPLEMENTATION FILE
- * @warn Do not include directly
+ * @warning Do not include directly
  */
 
 // FFNN

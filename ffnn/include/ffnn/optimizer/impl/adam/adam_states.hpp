@@ -1,6 +1,6 @@
 /**
  * @note HEADER-ONLY IMPLEMENTATION FILE
- * @warn Do not include directly
+ * @warning Do not include directly
  */
 #ifndef FFNN_LAYER_OPTIMIZATION_ADAM_STATES_HPP
 #define FFNN_LAYER_OPTIMIZATION_ADAM_STATES_HPP

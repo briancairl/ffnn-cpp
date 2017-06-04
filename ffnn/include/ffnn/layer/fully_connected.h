@@ -15,6 +15,7 @@
 
 // FFNN
 #include <ffnn/layer/hidden.h>
+#include <ffnn/layer/fully_connected/compile_time_options.h>
 #include <ffnn/neuron/neuron.h>
 #include <ffnn/optimizer/optimizer.h>
 #include <ffnn/optimizer/fwd.h>
@@ -23,52 +24,6 @@ namespace ffnn
 {
 namespace layer
 {
-namespace fully_connected
-{
-/**
- * @brief Describes compile-time options used to set up a Input object
- */
-template<size_type InputsAtCompileTime  = Eigen::Dynamic,
-         size_type OutputsAtCompileTime = Eigen::Dynamic,
-         int InputDataOrdering  = Eigen::ColMajor,
-         int OutputDataOrdering = Eigen::ColMajor>
-struct options
-{
-  /// Input count
-  constexpr static size_type input_size = InputsAtCompileTime;
-
-  /// Input data ordering
-  constexpr static int input_data_ordering = InputDataOrdering;
-
-  /// Output count
-  constexpr static size_type output_size = OutputsAtCompileTime;
-
-  /// Output data ordering
-  constexpr static int output_data_ordering = OutputDataOrdering;
-};
-
-/**
- * @brief Describes types based on compile-time options
- */
-template<typename ValueType,
-         typename Options>
-struct extrinsics
-{
-  /// Compile-time Hidden layer traits
-  typedef typename hidden::options<
-    Options::input_size,
-    1,
-    Options::output_size,
-    1,
-    Options::input_data_ordering,
-    Options::output_data_ordering
-  > HiddenLayerOptions;
-
-  /// Hidden layer (base type) standardization
-  typedef Hidden<ValueType, HiddenLayerOptions> HiddenLayerType;
-};
-}  // namespace fully_connected
-
 /**
  * @brief A fully-connected layer
  */
@@ -190,15 +145,6 @@ public:
     return b_;
   }
 
-protected:
-  FFNN_REGISTER_SERIALIZABLE(FullyConnected)
-
-  /// Save serialize
-  void save(OutputArchive& ar, VersionType version) const;
-
-  /// Load serialize
-  void load(InputArchive& ar, VersionType version);
-
 private:
   FFNN_REGISTER_OPTIMIZER(FullyConnected, Adam);
   FFNN_REGISTER_OPTIMIZER(FullyConnected, GradientDescent);
@@ -215,6 +161,17 @@ private:
    * @see   setOptimizer
    */
   typename Optimizer::Ptr opt_;
+
+#ifndef FFNN_NO_SERIALIZATION_SUPPORT
+protected:
+  FFNN_REGISTER_SERIALIZABLE(FullyConnected)
+
+  /// Save serialize
+  void save(OutputArchive& ar, VersionType version) const;
+
+  /// Load serialize
+  void load(InputArchive& ar, VersionType version);
+#endif
 
 public:
   EIGEN_MAKE_ALIGNED_OPERATOR_NEW_IF(

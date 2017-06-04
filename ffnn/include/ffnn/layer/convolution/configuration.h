@@ -127,8 +127,6 @@ public:
   }
 
 private:
-  friend class boost::serialization::access;
-
   /**
    * @brief Recompute sizing config from user inputs
    * @return *this
@@ -191,23 +189,9 @@ private:
    */
   typename OptimizerType::Ptr optimizer_;
 
-  /**
-   * @brief Serializer
-   * @param ar  input/output archive
-   * @param version  archive versioning information
-   */
-  template<class Archive>
-  void serialize(Archive & ar, const unsigned int file_version)
-  {
-    ar & input_shape_;
-    ar & output_shape_;
-    ar & embedded_input_shape_;
-    ar & embedded_output_shape_;
-    ar & filter_shape_;
-    ar & row_stride_;
-    ar & col_stride_;
-    ar & stride_shape_;
-  }
+#ifndef FFNN_NO_SERIALIZATION_SUPPORT
+  #include <ffnn/impl/layer/convolution/configuration/serialization_class_definitions.hpp>
+#endif
 };
 }  // namespace convolution
 }  // namespace layer

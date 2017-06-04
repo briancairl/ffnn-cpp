@@ -94,14 +94,6 @@ public:
   virtual bool update() = 0;
 
 protected:
-  FFNN_REGISTER_SERIALIZABLE(Hidden)
-
-  /// Save serializer
-  void save(OutputArchive& ar, VersionType version) const;
-
-  /// Load serializer
-  void load(InputArchive& ar, VersionType version);
-
   /// Memory-mapped input vector
   InputMappingType input_;
 
@@ -121,6 +113,17 @@ protected:
    * @retval <code>offset + output_shape_.size()</code>
    */
   virtual offset_type connectToForwardLayer(const Layer<ValueType>& next, offset_type offset);
+
+#ifndef FFNN_NO_SERIALIZATION_SUPPORT
+protected:
+  FFNN_REGISTER_SERIALIZABLE(Hidden)
+
+  /// Save serializer
+  void save(OutputArchive& ar, VersionType version) const;
+
+  /// Load serializer
+  void load(InputArchive& ar, VersionType version);
+#endif
 };
 }  // namespace layer
 }  // namespace ffnn

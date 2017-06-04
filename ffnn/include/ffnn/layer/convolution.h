@@ -107,15 +107,6 @@ public:
     return parameters_;
   }
 
-protected:
-  FFNN_REGISTER_SERIALIZABLE(Convolution)
-
-  /// Save serializer
-  void save(OutputArchive& ar, VersionType version) const;
-
-  /// Load serializer
-  void load(InputArchive& ar, VersionType version);
-
 private:
   //FFNN_REGISTER_OPTIMIZER(Convolution, Adam);
   FFNN_REGISTER_OPTIMIZER(Convolution, GradientDescent);
@@ -147,6 +138,17 @@ private:
    * @retval <code>offset + output_shape_.size()</code>
    */
   offset_type connectToForwardLayer(const Layer<ValueType>& next, offset_type offset);
+
+#ifndef FFNN_NO_SERIALIZATION_SUPPORT
+protected:
+  FFNN_REGISTER_SERIALIZABLE(Convolution)
+
+  /// Save serializer
+  void save(OutputArchive& ar, VersionType version) const;
+
+  /// Load serializer
+  void load(InputArchive& ar, VersionType version);
+#endif
 };
 }  // namespace layer
 }  // namespace ffnn
