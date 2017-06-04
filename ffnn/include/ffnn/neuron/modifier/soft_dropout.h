@@ -6,7 +6,7 @@
 #define FFNN_NEURON_MODIFIER_SOFT_DROPOUT_H
 
 // FFNN
-#include <ffnn/config/global.h>
+#include <ffnn/internal/config.h>
 
 namespace ffnn
 {

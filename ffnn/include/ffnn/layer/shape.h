@@ -10,7 +10,7 @@
 
 // FFNN
 #include <ffnn/assert.h>
-#include <ffnn/config/global.h>
+#include <ffnn/internal/config.h>
 
 namespace ffnn
 {

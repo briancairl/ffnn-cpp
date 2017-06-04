@@ -10,7 +10,7 @@
 #include <type_traits>
 
 // FFNN
-#include <ffnn/config/global.h>
+#include <ffnn/internal/config.h>
 #include <ffnn/internal/serializable.h>
 #include <ffnn/internal/unique.h>
 #include <ffnn/layer/shape.h>

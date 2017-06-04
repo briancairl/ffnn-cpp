@@ -7,7 +7,7 @@
 
 // FFNN
 #include <ffnn/assert.h>
-#include <ffnn/config/global.h>
+#include <ffnn/internal/config.h>
 #include <ffnn/neuron/neuron.h>
 
 namespace ffnn

@@ -6,7 +6,7 @@
 #define FFNN_LAYER_ACTIVATION_H
 
 // FFNN
-#include <ffnn/config/global.h>
+#include <ffnn/internal/config.h>
 #include <ffnn/layer/hidden.h>
 #include <ffnn/neuron/neuron.h>
 

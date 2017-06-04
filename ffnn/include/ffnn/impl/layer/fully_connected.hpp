@@ -18,11 +18,6 @@ namespace ffnn
 {
 namespace layer
 {
-#define TARGS ValueType,\
-              InputsAtCompileTime,\
-              OutputsAtCompileTime,\
-              _HiddenLayerShape
-
 template<typename ValueType,
          FFNN_SIZE_TYPE InputsAtCompileTime,
          FFNN_SIZE_TYPE OutputsAtCompileTime,
@@ -214,5 +209,4 @@ void FullyConnected<TARGS>::load(typename FullyConnected<TARGS>::InputArchive& a
 
 }  // namespace layer
 }  // namespace ffnn
-#undef TARGS
 #endif  // FFNN_LAYER_IMPL_FULLY_CONNECTED_HPP

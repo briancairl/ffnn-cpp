@@ -43,7 +43,7 @@ public:
   typedef boost::variate_generator<boost::mt19937&, DistributionType> GeneratorType;
 
   Normal(ValueType mean  = Options::mean,
-         ValueType scale = Options::scale) : 
+         ValueType scale = Options::scale) :
     distribution_(mean, scale)
   {
     FFNN_ASSERT_MSG(scale > 0, "Scale (variance) should be positive");

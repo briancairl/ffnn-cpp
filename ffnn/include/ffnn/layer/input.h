@@ -10,7 +10,7 @@
 #include <iostream>
 
 // FFNN
-#include <ffnn/config/global.h>
+#include <ffnn/internal/config.h>
 #include <ffnn/assert.h>
 #include <ffnn/layer/layer.h>
 #include <ffnn/layer/shape.h>

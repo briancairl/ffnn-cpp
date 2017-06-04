@@ -9,14 +9,13 @@
 #include <vector>
 #include <type_traits>
 
-// FFNN (internal)
+// FFNN
 #include <ffnn/layer/internal/shape.h>
 #include <ffnn/internal/traits.h>
 
-// FFNN
 #include <ffnn/layer/hidden.h>
 #include <ffnn/layer/fully_connected/compile_time_options.h>
-#include <ffnn/neuron/neuron.h>
+
 #include <ffnn/optimizer/optimizer.h>
 #include <ffnn/optimizer/fwd.h>
 
@@ -43,17 +42,8 @@ public:
   /// Dimension type standardization
   typedef typename Base::ShapeType ShapeType;
 
-  /// Matrix type standardization
-  typedef typename Base::InputBlockType InputBlockType;
-
-  /// Matrix type standardization
-  typedef typename Base::OutputBlockType OutputBlockType;
-
-  /// Bia vector type standardization
-  typedef typename Base::OutputBlockType BiasVectorType;
-
-  /// Input-output weight matrix
-  typedef Eigen::Matrix<ValueType, OutputsAtCompileTime, InputsAtCompileTime, Eigen::ColMajor> WeightMatrixType;
+  /// Parameters (connection weights) type standardization
+  typedef Extrinsics::ConectionWeightsType ParametersType;
 
   /// Layer optimization type standardization
   typedef optimizer::Optimizer<Self> Optimizer;
@@ -74,19 +64,6 @@ public:
    *          but weights and biases will be zero
    */
   bool initialize();
-
-  /**
-   * @brief Initialize layer weights and biases according to particular distributions
-   * @param wd  distribution to sample for connection weights
-   * @param bd  distribution to sample for biases
-   * @retval true  if layer was initialized successfully
-   * @retval false otherwise
-   *
-   * @warning If layer is a loaded instance, this method will initialize layer sizings
-   *          but weights will not be reset according to the given distributions
-   */
-  template<typename WeightDistribution, typename BiasDistribution>
-  bool initialize(const WeightDistribution& wd, const BiasDistribution& bd);
 
   /**
    * @brief Performs forward value propagation

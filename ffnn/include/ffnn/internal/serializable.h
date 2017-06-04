@@ -10,7 +10,7 @@
 #include <type_traits>
 
 // FFNN
-#include <ffnn/config/global.h>
+#include <ffnn/internal/config.h>
 
 namespace ffnn
 {

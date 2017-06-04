@@ -14,7 +14,7 @@
 #include <boost/shared_ptr.hpp>
 
 // FFNN
-#include <ffnn/config/global.h>
+#include <ffnn/internal/config.h>
 #include <ffnn/assert.h>
 
 namespace ffnn

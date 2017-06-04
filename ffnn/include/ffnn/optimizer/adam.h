@@ -7,7 +7,7 @@
 #define FFNN_LAYER_OPTIMIZATION_ADAM_H
 
 // FFNN
-#include <ffnn/config/global.h>
+#include <ffnn/internal/config.h>
 #include <ffnn/assert.h>
 #include <ffnn/optimizer/gradient_descent.h>
 #include <ffnn/optimizer/fwd.h>

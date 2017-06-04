@@ -12,7 +12,7 @@
 
 // FFNN
 #include <ffnn/assert.h>
-#include <ffnn/config/global.h>
+#include <ffnn/internal/config.h>
 #include <ffnn/internal/traits.h>
 
 #include <ffnn/distribution/distribution.h>
@@ -216,7 +216,7 @@ public:
    */
   Filter& operator-=(const Filter& other)
   {
-    FFNN_ASSERT_MSG(this->size() == other.size(), "Filter sizes inconsistent");
+    FFNN_ASSERT_MSG(this->size() == other.size(), "Kernel coutns are inconsistent");
     for (size_t idx = 0UL; idx < this->size(); idx++)
     {
       (*this)[idx] -= other[idx];
@@ -232,7 +232,7 @@ public:
    */
   Filter& operator+=(const Filter& other)
   {
-    FFNN_ASSERT_MSG(this->size() == other.size(), "Filter sizes inconsistent");
+    FFNN_ASSERT_MSG(this->size() == other.size(), "Kernel coutns are inconsistent");
     for (size_t idx = 0UL; idx < this->size(); idx++)
     {
       (*this)[idx] += other[idx];
@@ -248,7 +248,7 @@ public:
    */
   Filter& operator*=(const Filter& other)
   {
-    FFNN_ASSERT_MSG(this->size() == other.size(), "Filter sizes inconsistent");
+    FFNN_ASSERT_MSG(this->size() == other.size(), "Kernel coutns are inconsistent");
     for (size_t idx = 0UL; idx < this->size(); idx++)
     {
       (*this)[idx].array() *= other[idx].array();
@@ -264,7 +264,7 @@ public:
    */
   Filter& operator/=(const Filter& other)
   {
-    FFNN_ASSERT_MSG(this->size() == other.size(), "Filter sizes inconsistent");
+    FFNN_ASSERT_MSG(this->size() == other.size(), "Kernel coutns are inconsistent");
     for (size_t idx = 0UL; idx < this->size(); idx++)
     {
       (*this)[idx].array() /= other[idx].array();
@@ -272,12 +272,6 @@ public:
     this->bias /= other.bias;
     return *this;
   }
-
-  /**
-   * @brief Returns reference <code>*this</code>
-   * @note  Necessary to fufill <code>ParameterType</code> concept
-   */
-  Filter& array() { return *this;}
 
 #ifndef FFNN_NO_SERIALIZATION_SUPPORT
 private:

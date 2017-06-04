@@ -9,7 +9,7 @@
 #include <iostream>
 
 // FFNN
-#include <ffnn/config/global.h>
+#include <ffnn/internal/config.h>
 #include <ffnn/layer/layer.h>
 
 namespace ffnn

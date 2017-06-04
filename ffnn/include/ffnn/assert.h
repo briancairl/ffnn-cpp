@@ -10,7 +10,7 @@
 #include <type_traits>
 
 // FFNN
-#include <ffnn/config/global.h>
+#include <ffnn/internal/config.h>
 
 // No debug printouts in Release build
 #if NDEBUG && !FFNN_ALLOW_ASSERT

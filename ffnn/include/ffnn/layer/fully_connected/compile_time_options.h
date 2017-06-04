@@ -7,7 +7,8 @@
 
 // FFNN
 #include <ffnn/assert.h>
-#include <ffnn/config/global.h>
+#include <ffnn/internal/config.h>
+#include <ffnn/layer/fully_connected/weights/compile_time_options.h>
 
 namespace ffnn
 {
@@ -44,6 +45,16 @@ template<typename ValueType,
          typename Options>
 struct extrinsics
 {
+  /// Compile-time Hidden layer traits
+  typedef typename hidden::options<
+    Options::input_size,
+    1,
+    Options::output_size,
+    1,
+    Options::input_data_ordering,
+    Options::output_data_ordering
+  > ConnectionWeightsOptions;
+
   /// Compile-time Hidden layer traits
   typedef typename hidden::options<
     Options::input_size,

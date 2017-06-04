@@ -12,7 +12,7 @@
 
 // FFNN
 #include <ffnn/assert.h>
-#include <ffnn/config/global.h>
+#include <ffnn/internal/config.h>
 #include <ffnn/internal/traits.h>
 #include <ffnn/layer/shape.h>
 #include <ffnn/layer/convolution/sizing.h>
@@ -63,8 +63,8 @@ struct options
   constexpr static size_type embedded_kernel_width =
     embed_dimension<embedding_mode, RowEmbedding>(kernel_width, kernel_depth);
 
-  /// <code>true</code> if number of kernels in the filter is determined at compile-time and is fixed
-  constexpr static bool has_fixed_kernel_count = (KernelCountAtCompileTime > 0);
+  /// Used to check if number of kernels in the filter is fixed
+  constexpr static bool has_fixed_kernel_count = !is_dynamic(KernelCountAtCompileTime);
 };
 
 /**
