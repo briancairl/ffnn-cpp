@@ -15,40 +15,25 @@ namespace ffnn
 namespace optimizer
 {
 template<>
-template<typename ValueType,
-         FFNN_SIZE_TYPE InputsAtCompileTime,
-         FFNN_SIZE_TYPE OutputsAtCompileTime>
-class GradientDescent<layer::FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>>:
-  public Optimizer<layer::FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime>>
+template <typename ValueType,
+          typename Options,
+          typename Extrinsics>
+class GradientDescent<layer::FullyConnected<ValueType, Options, Extrinsics>>:
+  public Optimizer<layer::FullyConnected<ValueType, Options, Extrinsics>>
 {
 public:
-  /// Layer type standardization
-  typedef typename layer::FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime> LayerType;
-
-  /// Scalar type standardization
-  typedef typename LayerType::Scalar Scalar;
-
-  /// Size type standardization
-  typedef typename LayerType::SizeType SizeType;
-
   /// Matrix type standardization
   typedef typename LayerType::InputBlockType InputBlockType;
 
   /// Matrix type standardization
-  typedef typename LayerType::OutputBlockType OutputBlockType;
-
-  /// Input-output weight matrix
-  typedef typename LayerType::WeightMatrixType WeightMatrixType;
-
-  /// Bia vector type standardization
-  typedef typename LayerType::BiasVectorType BiasVectorType;
+  typedef typename LayerType::ParametersType ParametersType;
 
   /**
    * @brief Setup constructor
    * @param lr  Learning rate
    */
   explicit
-  GradientDescent(Scalar lr) :
+  GradientDescent(ValueType lr) :
     Optimizer<LayerType>("GradientDescent[FullyConnected]"),
     lr_(lr)
   {}
@@ -61,23 +46,27 @@ public:
   virtual void initialize(LayerType& layer)
   {
     FFNN_ASSERT_MSG(layer.isInitialized(), "Layer to optimize is not initialized.");
-    reset(layer);
 
-    // Reset previous input
-    prev_input_.setZero(layer.input_shape_.size(), 1);
+    // Capture gradient sizing
+    gradient_ = layer.parameters_;
+
+    // Capture input sizing
+    prev_input_ = layer.input_;
+
+    // Reset optimizer
+    reset(layer);
   }
 
   /**
-   * @brief Resetrs persistent Optimizer states
+   * @brief Resets persistent Optimizer states
    * @param[in, out] layer  Layer to optimize
    */
   virtual void reset(LayerType& layer)
   {
-    // Reset weight delta
-    weight_gradient_.setZero(layer.output_shape_.size(), layer.input_shape_.size());
+    FFNN_ASSERT_MSG(layer.isInitialized(), "Layer to optimize is not initialized.");
 
-    // Reset bias delta
-    bias_gradient_.setZero(layer.output_shape_.size(), 1);
+    // Reset gradient
+    gradient_.setZero();
   }
 
   /**
@@ -106,8 +95,8 @@ public:
     FFNN_ASSERT_MSG(layer.isInitialized(), "Layer to optimize is not initialized.");
 
     // Compute and accumulate new gradient
-    weight_gradient_.noalias() += layer.forward_error_ * prev_input_.transpose();
-    bias_gradient_.noalias() += layer.forward_error_;
+    gradient_.weights.noalias() += layer.forward_error_ * prev_input_.transpose();
+    gradient_.biases.noalias() += layer.forward_error_;
 
     // Back-prop error
     return true;
@@ -124,12 +113,10 @@ public:
     FFNN_ASSERT_MSG(layer.isInitialized(), "Layer to optimize is not initialized.");
 
     // Incorporate learning rate
-    weight_gradient_ *= lr_;
-    bias_gradient_ *= lr_;
+    gradient_ *= lr_;
 
-    // Update weights
-    layer.w_.noalias() -= weight_gradient_;
-    layer.b_.noalias() -= bias_gradient_;
+    // Update parameters
+    layer.parameters_ -= gradient_;
 
     // Reinitialize optimizer
     reset(layer);
@@ -138,16 +125,13 @@ public:
 
 protected:
   /// Learning rate
-  Scalar lr_;
-
-  /// Total weight matrix gradient
-  WeightMatrixType weight_gradient_;
-
-  /// Total bias vector delta
-  BiasVectorType bias_gradient_;
+  ValueType lr_;
 
   /// Previous input
   InputBlockType prev_input_;
+
+  /// Coefficient gradient
+  ParametersType gradient_;
 };
 }  // namespace optimizer
 }  // namespace ffnn
