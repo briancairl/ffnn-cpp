@@ -123,6 +123,7 @@ template <typename ValueType,
 bool FullyConnected<ValueType, Options, Extrinsics>::update()
 {
   FFNN_ASSERT_MSG(config_.optimizer_, "No optimization resource set.");
+
   return config_.optimizer_->update(*this);
 }
 
