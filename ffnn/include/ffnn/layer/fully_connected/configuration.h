@@ -46,9 +46,9 @@ public:
   /**
    * @brief Default constructor
    */
-  Configuration() :
-    input_shape_(Options::input_size, 1, 1),
-    output_shape_(Options::output_shape, 1, 1),
+  Configuration(size_type output_size = Options::output_size) :
+    input_size_(Options::input_size),
+    output_size_(output_size),
     distribution_(boost::make_shared<typename distribution::StandardNormal<ValueType>>()),
     optimizer_(boost::make_shared<typename optimizer::None<LayerType>>())
   {}
@@ -86,7 +86,7 @@ public:
    * @param depth   depth of the input volume
    * @return *this
    */
-  inline Configuration& setInputShape(size_type height, size_type width, size_type depth)
+  inline Configuration& setInputShape(size_type height, size_type width = 1, size_type depth = 1)
   {
     FFNN_ASSERT_MSG(height > 0, "Input height must be positive.");
     FFNN_ASSERT_MSG(width > 0,  "Input width must be positive.");
@@ -103,30 +103,13 @@ public:
    * @param depth   depth of the input volume
    * @return *this
    */
-  inline Configuration& setOutputShape(size_type height, size_type width, size_type depth)
+  inline Configuration& setOutputShape(size_type height, size_type width = 1, size_type depth = 1)
   {
     FFNN_ASSERT_MSG(height > 0, "Output height must be positive.");
     FFNN_ASSERT_MSG(width > 0,  "Output width must be positive.");
     FFNN_ASSERT_MSG(depth > 0,  "Output depth must be positive.");
 
     output_size_ = ShapeType(height, width, depth).size();
-    return *this;
-  }
-
-  /**
-   * @brief Sets configuration from output count
-   * @param size_type  number of layer outputs
-   * @return *this
-   *
-   * @note This assignment operator overload allows for layer setup with a single
-   *       integer, since the only free parameter required to be specified for
-   *       setting up a FullyConnected layer is the number of layer outputs
-   */
-  inline Configuration& operator=(size_type output_size)
-  {
-    FFNN_ASSERT_MSG(output_size > 0, "Output size must be positive.");
-
-    output_size_ = output_size;
     return *this;
   }
 

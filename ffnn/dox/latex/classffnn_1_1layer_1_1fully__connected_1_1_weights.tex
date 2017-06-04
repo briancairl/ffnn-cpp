@@ -1,0 +1,363 @@
+\hypertarget{classffnn_1_1layer_1_1fully__connected_1_1_weights}{\section{ffnn\-:\-:layer\-:\-:fully\-\_\-connected\-:\-:Weights$<$ Value\-Type, Options, Extrinsics $>$ Class Template Reference}
+\label{classffnn_1_1layer_1_1fully__connected_1_1_weights}\index{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights$<$ Value\-Type, Options, Extrinsics $>$@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights$<$ Value\-Type, Options, Extrinsics $>$}}
+}
+
+
+\hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights}{Weights} parameters to be use with a \hyperlink{classffnn_1_1layer_1_1_fully_connected}{Fully\-Connected} layer.  
+
+
+
+
+{\ttfamily \#include \char`\"{}weights.\-h\char`\"{}}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Extrinsics\-::\-Weight\-Block\-Type \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights_a60cdcf8a80260e8558f1e64f8a0a8218}{Weight\-Block\-Type}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights}{Weights} kernel matrix standardization. \end{DoxyCompactList}\item 
+typedef Extrinsics\-::\-Bias\-Block\-Type \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights_a6f5ad97bf46dac9d55752b5117768957}{Bias\-Block\-Type}
+\begin{DoxyCompactList}\small\item\em Bias kernel matrix standardization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights_adfed6ebcda1671b18651fa448817eb23}{Weights} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+void \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights_a8727a71235138839d46c785b535bf23b}{set\-Zero} ()
+\begin{DoxyCompactList}\small\item\em Sets all \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights}{Weights} kernels and biases to zero. \end{DoxyCompactList}\item 
+{\footnotesize template$<$bool T = Options\-::has\-\_\-fixed\-\_\-sizes$>$ }\\std\-::enable\-\_\-if$<$ T $>$\-::type \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights_a2ce57cfffde02e760391b929685e7b71}{set\-Zero} (\hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} input\-\_\-size, \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} output\-\_\-size)
+\begin{DoxyCompactList}\small\item\em Sets all \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights}{Weights} kernels and scalar bias unit to zero. \end{DoxyCompactList}\item 
+{\footnotesize template$<$bool T = Options\-::has\-\_\-fixed\-\_\-sizes$>$ }\\std\-::enable\-\_\-if$<$!T $>$\-::type \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights_aaef333db5c2b5fcf73e3eb6335b2d6d4}{set\-Zero} (\hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} input\-\_\-size, \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} output\-\_\-size)
+\item 
+{\footnotesize template$<$typename Distribution\-Type $>$ }\\void \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights_aeaa3b146b866244465e4752b411d60eb}{set\-Random} (const Distribution\-Type \&distribution)
+\begin{DoxyCompactList}\small\item\em Sets all \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights}{Weights} kernels and scalar bias unit to a random value drawn from a specified distribution. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Distribution\-Type , bool T = Options\-::has\-\_\-fixed\-\_\-sizes$>$ }\\std\-::enable\-\_\-if$<$ T $>$\-::type \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights_a5f7cc9a635c17f41f9afc09ba9e8fdd3}{set\-Random} (const Distribution\-Type \&distribution, \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} input\-\_\-size, \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} output\-\_\-size)
+\begin{DoxyCompactList}\small\item\em Sets all \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights}{Weights} kernels and scalar bias unit to a random value drawn from a specified distribution. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Distribution\-Type , bool T = Options\-::has\-\_\-fixed\-\_\-sizes$>$ }\\std\-::enable\-\_\-if$<$!T $>$\-::type \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights_ac208d20c12ccc0409467a45cef06b79d}{set\-Random} (const Distribution\-Type \&distribution, \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} input\-\_\-size, \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} output\-\_\-size)
+\item 
+\hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights}{Weights} \& \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights_add66d266dff8ea2b5b82524943d186e3}{operator$\ast$=} (Value\-Type scale)
+\begin{DoxyCompactList}\small\item\em Scales weight and bias values. \end{DoxyCompactList}\item 
+\hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights}{Weights} \& \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights_a81bee14ac3a3df0867dae9466582e8c9}{operator-\/=} (const \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights}{Weights} \&other)
+\begin{DoxyCompactList}\small\item\em In-\/place subtraction between two \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights}{Weights} objects. \end{DoxyCompactList}\item 
+\hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights}{Weights} \& \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights_a00cf9205826d87af40fb6b9975414620}{operator+=} (const \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights}{Weights} \&other)
+\begin{DoxyCompactList}\small\item\em In-\/place addition between two \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights}{Weights} objects. \end{DoxyCompactList}\item 
+\hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights}{Weights} \& \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights_a03b0a9d4f05ce1f5e5d521176590bab1}{operator$\ast$=} (const \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights}{Weights} \&other)
+\begin{DoxyCompactList}\small\item\em In-\/place coefficient-\/wise multiplication between two \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights}{Weights} objects. \end{DoxyCompactList}\item 
+\hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights}{Weights} \& \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights_add32128aeadacb037e767f2127523848}{operator/=} (const \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights}{Weights} \&other)
+\begin{DoxyCompactList}\small\item\em In-\/place coefficient-\/wise division between two \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights}{Weights} objects. \end{DoxyCompactList}\item 
+\hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights_a2924043c88c2c37a8607d8b4aee7e457}{E\-I\-G\-E\-N\-\_\-\-M\-A\-K\-E\-\_\-\-A\-L\-I\-G\-N\-E\-D\-\_\-\-O\-P\-E\-R\-A\-T\-O\-R\-\_\-\-N\-E\-W\-\_\-\-I\-F} (\hyperlink{structffnn_1_1internal_1_1traits_1_1is__alignable__128}{ffnn\-::internal\-::traits\-::is\-\_\-alignable\-\_\-128}$<$ \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights_a60cdcf8a80260e8558f1e64f8a0a8218}{Weight\-Block\-Type} $>$\-::value$\vert$$\vert$\hyperlink{structffnn_1_1internal_1_1traits_1_1is__alignable__128}{ffnn\-::internal\-::traits\-::is\-\_\-alignable\-\_\-128}$<$ \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights_a6f5ad97bf46dac9d55752b5117768957}{Bias\-Block\-Type} $>$\-::value)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights_a60cdcf8a80260e8558f1e64f8a0a8218}{Weight\-Block\-Type} \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights_a9baed4c318d41e712f821c02c4cb4c4a}{weights}
+\item 
+\hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights_a6f5ad97bf46dac9d55752b5117768957}{Bias\-Block\-Type} \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights_ac2ab5399d4525f4b75959a9d8d7f994a}{biases}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Value\-Type, typename Options = typename weights\-::options$<$$>$, typename Extrinsics = typename weights\-::extrinsics$<$\-Value\-Type, Options$>$$>$class ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights$<$ Value\-Type, Options, Extrinsics $>$}
+
+\hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights}{Weights} parameters to be use with a \hyperlink{classffnn_1_1layer_1_1_fully_connected}{Fully\-Connected} layer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Value\-Type} & scalar value type \\
+\hline
+{\em Options} & weights sizing and data-\/ordering information \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classffnn_1_1layer_1_1fully__connected_1_1_weights_a6f5ad97bf46dac9d55752b5117768957}{\index{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights}!Bias\-Block\-Type@{Bias\-Block\-Type}}
+\index{Bias\-Block\-Type@{Bias\-Block\-Type}!ffnn::layer::fully_connected::Weights@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights}}
+\subsubsection[{Bias\-Block\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = typename weights\-::options$<$$>$, typename Extrinsics  = typename weights\-::extrinsics$<$\-Value\-Type, Options$>$$>$ typedef Extrinsics\-::\-Bias\-Block\-Type {\bf ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights}$<$ Value\-Type, Options, Extrinsics $>$\-::{\bf Bias\-Block\-Type}}}\label{classffnn_1_1layer_1_1fully__connected_1_1_weights_a6f5ad97bf46dac9d55752b5117768957}
+
+
+Bias kernel matrix standardization. 
+
+\hypertarget{classffnn_1_1layer_1_1fully__connected_1_1_weights_a60cdcf8a80260e8558f1e64f8a0a8218}{\index{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights}!Weight\-Block\-Type@{Weight\-Block\-Type}}
+\index{Weight\-Block\-Type@{Weight\-Block\-Type}!ffnn::layer::fully_connected::Weights@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights}}
+\subsubsection[{Weight\-Block\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = typename weights\-::options$<$$>$, typename Extrinsics  = typename weights\-::extrinsics$<$\-Value\-Type, Options$>$$>$ typedef Extrinsics\-::\-Weight\-Block\-Type {\bf ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights}$<$ Value\-Type, Options, Extrinsics $>$\-::{\bf Weight\-Block\-Type}}}\label{classffnn_1_1layer_1_1fully__connected_1_1_weights_a60cdcf8a80260e8558f1e64f8a0a8218}
+
+
+\hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights}{Weights} kernel matrix standardization. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classffnn_1_1layer_1_1fully__connected_1_1_weights_adfed6ebcda1671b18651fa448817eb23}{\index{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights}!Weights@{Weights}}
+\index{Weights@{Weights}!ffnn::layer::fully_connected::Weights@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights}}
+\subsubsection[{Weights}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = typename weights\-::options$<$$>$, typename Extrinsics  = typename weights\-::extrinsics$<$\-Value\-Type, Options$>$$>$ {\bf ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights}$<$ Value\-Type, Options, Extrinsics $>$\-::{\bf Weights} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1fully__connected_1_1_weights_adfed6ebcda1671b18651fa448817eb23}
+
+
+Default constructor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classffnn_1_1layer_1_1fully__connected_1_1_weights_a2924043c88c2c37a8607d8b4aee7e457}{\index{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights}!E\-I\-G\-E\-N\-\_\-\-M\-A\-K\-E\-\_\-\-A\-L\-I\-G\-N\-E\-D\-\_\-\-O\-P\-E\-R\-A\-T\-O\-R\-\_\-\-N\-E\-W\-\_\-\-I\-F@{E\-I\-G\-E\-N\-\_\-\-M\-A\-K\-E\-\_\-\-A\-L\-I\-G\-N\-E\-D\-\_\-\-O\-P\-E\-R\-A\-T\-O\-R\-\_\-\-N\-E\-W\-\_\-\-I\-F}}
+\index{E\-I\-G\-E\-N\-\_\-\-M\-A\-K\-E\-\_\-\-A\-L\-I\-G\-N\-E\-D\-\_\-\-O\-P\-E\-R\-A\-T\-O\-R\-\_\-\-N\-E\-W\-\_\-\-I\-F@{E\-I\-G\-E\-N\-\_\-\-M\-A\-K\-E\-\_\-\-A\-L\-I\-G\-N\-E\-D\-\_\-\-O\-P\-E\-R\-A\-T\-O\-R\-\_\-\-N\-E\-W\-\_\-\-I\-F}!ffnn::layer::fully_connected::Weights@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights}}
+\subsubsection[{E\-I\-G\-E\-N\-\_\-\-M\-A\-K\-E\-\_\-\-A\-L\-I\-G\-N\-E\-D\-\_\-\-O\-P\-E\-R\-A\-T\-O\-R\-\_\-\-N\-E\-W\-\_\-\-I\-F}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = typename weights\-::options$<$$>$, typename Extrinsics  = typename weights\-::extrinsics$<$\-Value\-Type, Options$>$$>$ {\bf ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights}$<$ Value\-Type, Options, Extrinsics $>$\-::E\-I\-G\-E\-N\-\_\-\-M\-A\-K\-E\-\_\-\-A\-L\-I\-G\-N\-E\-D\-\_\-\-O\-P\-E\-R\-A\-T\-O\-R\-\_\-\-N\-E\-W\-\_\-\-I\-F (
+\begin{DoxyParamCaption}
+\item[{{\bf ffnn\-::internal\-::traits\-::is\-\_\-alignable\-\_\-128}$<$ {\bf Weight\-Block\-Type} $>$\-::value$\vert$$\vert${\bf ffnn\-::internal\-::traits\-::is\-\_\-alignable\-\_\-128}$<$ {\bf Bias\-Block\-Type} $>$\-::value}]{}
+\end{DoxyParamCaption}
+)}}\label{classffnn_1_1layer_1_1fully__connected_1_1_weights_a2924043c88c2c37a8607d8b4aee7e457}
+\hypertarget{classffnn_1_1layer_1_1fully__connected_1_1_weights_add66d266dff8ea2b5b82524943d186e3}{\index{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!ffnn::layer::fully_connected::Weights@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights}}
+\subsubsection[{operator$\ast$=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = typename weights\-::options$<$$>$, typename Extrinsics  = typename weights\-::extrinsics$<$\-Value\-Type, Options$>$$>$ {\bf Weights}\& {\bf ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights}$<$ Value\-Type, Options, Extrinsics $>$\-::operator$\ast$= (
+\begin{DoxyParamCaption}
+\item[{Value\-Type}]{scale}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1fully__connected_1_1_weights_add66d266dff8ea2b5b82524943d186e3}
+
+
+Scales weight and bias values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scale} & scalar value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$\ast$this 
+\end{DoxyReturn}
+\hypertarget{classffnn_1_1layer_1_1fully__connected_1_1_weights_a03b0a9d4f05ce1f5e5d521176590bab1}{\index{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!ffnn::layer::fully_connected::Weights@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights}}
+\subsubsection[{operator$\ast$=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = typename weights\-::options$<$$>$, typename Extrinsics  = typename weights\-::extrinsics$<$\-Value\-Type, Options$>$$>$ {\bf Weights}\& {\bf ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights}$<$ Value\-Type, Options, Extrinsics $>$\-::operator$\ast$= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Weights}$<$ Value\-Type, Options, Extrinsics $>$ \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1fully__connected_1_1_weights_a03b0a9d4f05ce1f5e5d521176590bab1}
+
+
+In-\/place coefficient-\/wise multiplication between two \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights}{Weights} objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights}{Weights} object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$\ast$this 
+\end{DoxyReturn}
+\hypertarget{classffnn_1_1layer_1_1fully__connected_1_1_weights_a00cf9205826d87af40fb6b9975414620}{\index{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!ffnn::layer::fully_connected::Weights@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights}}
+\subsubsection[{operator+=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = typename weights\-::options$<$$>$, typename Extrinsics  = typename weights\-::extrinsics$<$\-Value\-Type, Options$>$$>$ {\bf Weights}\& {\bf ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights}$<$ Value\-Type, Options, Extrinsics $>$\-::operator+= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Weights}$<$ Value\-Type, Options, Extrinsics $>$ \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1fully__connected_1_1_weights_a00cf9205826d87af40fb6b9975414620}
+
+
+In-\/place addition between two \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights}{Weights} objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights}{Weights} object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$\ast$this 
+\end{DoxyReturn}
+\hypertarget{classffnn_1_1layer_1_1fully__connected_1_1_weights_a81bee14ac3a3df0867dae9466582e8c9}{\index{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!ffnn::layer::fully_connected::Weights@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights}}
+\subsubsection[{operator-\/=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = typename weights\-::options$<$$>$, typename Extrinsics  = typename weights\-::extrinsics$<$\-Value\-Type, Options$>$$>$ {\bf Weights}\& {\bf ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights}$<$ Value\-Type, Options, Extrinsics $>$\-::operator-\/= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Weights}$<$ Value\-Type, Options, Extrinsics $>$ \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1fully__connected_1_1_weights_a81bee14ac3a3df0867dae9466582e8c9}
+
+
+In-\/place subtraction between two \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights}{Weights} objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights}{Weights} object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$\ast$this 
+\end{DoxyReturn}
+\hypertarget{classffnn_1_1layer_1_1fully__connected_1_1_weights_add32128aeadacb037e767f2127523848}{\index{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!ffnn::layer::fully_connected::Weights@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights}}
+\subsubsection[{operator/=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = typename weights\-::options$<$$>$, typename Extrinsics  = typename weights\-::extrinsics$<$\-Value\-Type, Options$>$$>$ {\bf Weights}\& {\bf ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights}$<$ Value\-Type, Options, Extrinsics $>$\-::operator/= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Weights}$<$ Value\-Type, Options, Extrinsics $>$ \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1fully__connected_1_1_weights_add32128aeadacb037e767f2127523848}
+
+
+In-\/place coefficient-\/wise division between two \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights}{Weights} objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights}{Weights} object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$\ast$this 
+\end{DoxyReturn}
+\hypertarget{classffnn_1_1layer_1_1fully__connected_1_1_weights_aeaa3b146b866244465e4752b411d60eb}{\index{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights}!set\-Random@{set\-Random}}
+\index{set\-Random@{set\-Random}!ffnn::layer::fully_connected::Weights@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights}}
+\subsubsection[{set\-Random}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = typename weights\-::options$<$$>$, typename Extrinsics  = typename weights\-::extrinsics$<$\-Value\-Type, Options$>$$>$ template$<$typename Distribution\-Type $>$ void {\bf ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights}$<$ Value\-Type, Options, Extrinsics $>$\-::set\-Random (
+\begin{DoxyParamCaption}
+\item[{const Distribution\-Type \&}]{distribution}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1fully__connected_1_1_weights_aeaa3b146b866244465e4752b411d60eb}
+
+
+Sets all \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights}{Weights} kernels and scalar bias unit to a random value drawn from a specified distribution. 
+
+
+
+Referenced by ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights$<$ Value\-Type, Options, Extrinsics $>$\-::set\-Random().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{classffnn_1_1layer_1_1fully__connected_1_1_weights_aeaa3b146b866244465e4752b411d60eb_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classffnn_1_1layer_1_1fully__connected_1_1_weights_a5f7cc9a635c17f41f9afc09ba9e8fdd3}{\index{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights}!set\-Random@{set\-Random}}
+\index{set\-Random@{set\-Random}!ffnn::layer::fully_connected::Weights@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights}}
+\subsubsection[{set\-Random}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = typename weights\-::options$<$$>$, typename Extrinsics  = typename weights\-::extrinsics$<$\-Value\-Type, Options$>$$>$ template$<$typename Distribution\-Type , bool T = Options\-::has\-\_\-fixed\-\_\-sizes$>$ std\-::enable\-\_\-if$<$T$>$\-::type {\bf ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights}$<$ Value\-Type, Options, Extrinsics $>$\-::set\-Random (
+\begin{DoxyParamCaption}
+\item[{const Distribution\-Type \&}]{distribution, }
+\item[{{\bf size\-\_\-type}}]{input\-\_\-size, }
+\item[{{\bf size\-\_\-type}}]{output\-\_\-size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1fully__connected_1_1_weights_a5f7cc9a635c17f41f9afc09ba9e8fdd3}
+
+
+Sets all \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights}{Weights} kernels and scalar bias unit to a random value drawn from a specified distribution. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em distribution} & \\
+\hline
+{\em input\-\_\-size} & number of inputs to a connected layer \\
+\hline
+{\em output\-\_\-size} & number of outputs from a connected layer \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classffnn_1_1layer_1_1fully__connected_1_1_weights_a5f7cc9a635c17f41f9afc09ba9e8fdd3_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classffnn_1_1layer_1_1fully__connected_1_1_weights_ac208d20c12ccc0409467a45cef06b79d}{\index{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights}!set\-Random@{set\-Random}}
+\index{set\-Random@{set\-Random}!ffnn::layer::fully_connected::Weights@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights}}
+\subsubsection[{set\-Random}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = typename weights\-::options$<$$>$, typename Extrinsics  = typename weights\-::extrinsics$<$\-Value\-Type, Options$>$$>$ template$<$typename Distribution\-Type , bool T = Options\-::has\-\_\-fixed\-\_\-sizes$>$ std\-::enable\-\_\-if$<$!T$>$\-::type {\bf ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights}$<$ Value\-Type, Options, Extrinsics $>$\-::set\-Random (
+\begin{DoxyParamCaption}
+\item[{const Distribution\-Type \&}]{distribution, }
+\item[{{\bf size\-\_\-type}}]{input\-\_\-size, }
+\item[{{\bf size\-\_\-type}}]{output\-\_\-size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1fully__connected_1_1_weights_ac208d20c12ccc0409467a45cef06b79d}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classffnn_1_1layer_1_1fully__connected_1_1_weights_ac208d20c12ccc0409467a45cef06b79d_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classffnn_1_1layer_1_1fully__connected_1_1_weights_a8727a71235138839d46c785b535bf23b}{\index{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights}!set\-Zero@{set\-Zero}}
+\index{set\-Zero@{set\-Zero}!ffnn::layer::fully_connected::Weights@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights}}
+\subsubsection[{set\-Zero}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = typename weights\-::options$<$$>$, typename Extrinsics  = typename weights\-::extrinsics$<$\-Value\-Type, Options$>$$>$ void {\bf ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights}$<$ Value\-Type, Options, Extrinsics $>$\-::set\-Zero (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1fully__connected_1_1_weights_a8727a71235138839d46c785b535bf23b}
+
+
+Sets all \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights}{Weights} kernels and biases to zero. 
+
+
+
+Referenced by ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights$<$ Value\-Type, Options, Extrinsics $>$\-::set\-Zero().
+
+\hypertarget{classffnn_1_1layer_1_1fully__connected_1_1_weights_a2ce57cfffde02e760391b929685e7b71}{\index{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights}!set\-Zero@{set\-Zero}}
+\index{set\-Zero@{set\-Zero}!ffnn::layer::fully_connected::Weights@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights}}
+\subsubsection[{set\-Zero}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = typename weights\-::options$<$$>$, typename Extrinsics  = typename weights\-::extrinsics$<$\-Value\-Type, Options$>$$>$ template$<$bool T = Options\-::has\-\_\-fixed\-\_\-sizes$>$ std\-::enable\-\_\-if$<$T$>$\-::type {\bf ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights}$<$ Value\-Type, Options, Extrinsics $>$\-::set\-Zero (
+\begin{DoxyParamCaption}
+\item[{{\bf size\-\_\-type}}]{input\-\_\-size, }
+\item[{{\bf size\-\_\-type}}]{output\-\_\-size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1fully__connected_1_1_weights_a2ce57cfffde02e760391b929685e7b71}
+
+
+Sets all \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights}{Weights} kernels and scalar bias unit to zero. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\-\_\-size} & number of inputs to a connected layer \\
+\hline
+{\em output\-\_\-size} & number of outputs from a connected layer \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{classffnn_1_1layer_1_1fully__connected_1_1_weights_a2ce57cfffde02e760391b929685e7b71_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classffnn_1_1layer_1_1fully__connected_1_1_weights_aaef333db5c2b5fcf73e3eb6335b2d6d4}{\index{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights}!set\-Zero@{set\-Zero}}
+\index{set\-Zero@{set\-Zero}!ffnn::layer::fully_connected::Weights@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights}}
+\subsubsection[{set\-Zero}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = typename weights\-::options$<$$>$, typename Extrinsics  = typename weights\-::extrinsics$<$\-Value\-Type, Options$>$$>$ template$<$bool T = Options\-::has\-\_\-fixed\-\_\-sizes$>$ std\-::enable\-\_\-if$<$!T$>$\-::type {\bf ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights}$<$ Value\-Type, Options, Extrinsics $>$\-::set\-Zero (
+\begin{DoxyParamCaption}
+\item[{{\bf size\-\_\-type}}]{input\-\_\-size, }
+\item[{{\bf size\-\_\-type}}]{output\-\_\-size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1fully__connected_1_1_weights_aaef333db5c2b5fcf73e3eb6335b2d6d4}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classffnn_1_1layer_1_1fully__connected_1_1_weights_ac2ab5399d4525f4b75959a9d8d7f994a}{\index{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights}!biases@{biases}}
+\index{biases@{biases}!ffnn::layer::fully_connected::Weights@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights}}
+\subsubsection[{biases}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = typename weights\-::options$<$$>$, typename Extrinsics  = typename weights\-::extrinsics$<$\-Value\-Type, Options$>$$>$ {\bf Bias\-Block\-Type} {\bf ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights}$<$ Value\-Type, Options, Extrinsics $>$\-::biases}}\label{classffnn_1_1layer_1_1fully__connected_1_1_weights_ac2ab5399d4525f4b75959a9d8d7f994a}
+
+
+Referenced by ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights$<$ Value\-Type, Options, Extrinsics $>$\-::operator$\ast$=(), ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights$<$ Value\-Type, Options, Extrinsics $>$\-::operator+=(), ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights$<$ Value\-Type, Options, Extrinsics $>$\-::operator-\/=(), ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights$<$ Value\-Type, Options, Extrinsics $>$\-::operator/=(), ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights$<$ Value\-Type, Options, Extrinsics $>$\-::set\-Random(), and ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights$<$ Value\-Type, Options, Extrinsics $>$\-::set\-Zero().
+
+\hypertarget{classffnn_1_1layer_1_1fully__connected_1_1_weights_a9baed4c318d41e712f821c02c4cb4c4a}{\index{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights}!weights@{weights}}
+\index{weights@{weights}!ffnn::layer::fully_connected::Weights@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights}}
+\subsubsection[{weights}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = typename weights\-::options$<$$>$, typename Extrinsics  = typename weights\-::extrinsics$<$\-Value\-Type, Options$>$$>$ {\bf Weight\-Block\-Type} {\bf ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights}$<$ Value\-Type, Options, Extrinsics $>$\-::weights}}\label{classffnn_1_1layer_1_1fully__connected_1_1_weights_a9baed4c318d41e712f821c02c4cb4c4a}
+
+
+Referenced by ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights$<$ Value\-Type, Options, Extrinsics $>$\-::operator$\ast$=(), ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights$<$ Value\-Type, Options, Extrinsics $>$\-::operator+=(), ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights$<$ Value\-Type, Options, Extrinsics $>$\-::operator-\/=(), ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights$<$ Value\-Type, Options, Extrinsics $>$\-::operator/=(), ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights$<$ Value\-Type, Options, Extrinsics $>$\-::set\-Random(), and ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights$<$ Value\-Type, Options, Extrinsics $>$\-::set\-Zero().
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/fully\-\_\-connected/\hyperlink{weights_8h}{weights.\-h}\end{DoxyCompactItemize}

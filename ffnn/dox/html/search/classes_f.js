@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['triplet',['Triplet',['../class_eigen_1_1_triplet.html',1,'Eigen']]]
+  ['weights',['Weights',['../classffnn_1_1layer_1_1fully__connected_1_1_weights.html',1,'ffnn::layer::fully_connected']]]
 ];

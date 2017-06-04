@@ -1,0 +1,60 @@
+\hypertarget{structffnn_1_1layer_1_1fully__connected_1_1weights_1_1options}{\section{ffnn\-:\-:layer\-:\-:fully\-\_\-connected\-:\-:weights\-:\-:options$<$ Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ Struct Template Reference}
+\label{structffnn_1_1layer_1_1fully__connected_1_1weights_1_1options}\index{ffnn\-::layer\-::fully\-\_\-connected\-::weights\-::options$<$ Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$@{ffnn\-::layer\-::fully\-\_\-connected\-::weights\-::options$<$ Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$}}
+}
+
+
+Describes compile-\/time options used to set up a \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights}{Weights} object.  
+
+
+
+
+{\ttfamily \#include \char`\"{}compile\-\_\-time\-\_\-options.\-h\char`\"{}}
+
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} \hyperlink{structffnn_1_1layer_1_1fully__connected_1_1weights_1_1options_aa9973b3dcef51f2684f3c36bbeccd767}{input\-\_\-size} = Inputs\-At\-Compile\-Time
+\begin{DoxyCompactList}\small\item\em \hyperlink{classffnn_1_1layer_1_1_fully_connected}{Fully\-Connected} layer input count. \end{DoxyCompactList}\item 
+static constexpr \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} \hyperlink{structffnn_1_1layer_1_1fully__connected_1_1weights_1_1options_a45dac283a1611df3497baf255d8645c1}{output\-\_\-size} = Outputs\-At\-Compile\-Time
+\begin{DoxyCompactList}\small\item\em \hyperlink{classffnn_1_1layer_1_1_fully_connected}{Fully\-Connected} layer output count. \end{DoxyCompactList}\item 
+static constexpr bool \hyperlink{structffnn_1_1layer_1_1fully__connected_1_1weights_1_1options_acb66c282ebaa5f29ce34d14b68551b94}{has\-\_\-fixed\-\_\-sizes}
+\begin{DoxyCompactList}\small\item\em Used to check if dimensions are fixed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$size\-\_\-type Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic$>$struct ffnn\-::layer\-::fully\-\_\-connected\-::weights\-::options$<$ Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$}
+
+Describes compile-\/time options used to set up a \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights}{Weights} object. 
+
+\subsection{Member Data Documentation}
+\hypertarget{structffnn_1_1layer_1_1fully__connected_1_1weights_1_1options_acb66c282ebaa5f29ce34d14b68551b94}{\index{ffnn\-::layer\-::fully\-\_\-connected\-::weights\-::options@{ffnn\-::layer\-::fully\-\_\-connected\-::weights\-::options}!has\-\_\-fixed\-\_\-sizes@{has\-\_\-fixed\-\_\-sizes}}
+\index{has\-\_\-fixed\-\_\-sizes@{has\-\_\-fixed\-\_\-sizes}!ffnn::layer::fully_connected::weights::options@{ffnn\-::layer\-::fully\-\_\-connected\-::weights\-::options}}
+\subsubsection[{has\-\_\-fixed\-\_\-sizes}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\-\_\-type Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic$>$ constexpr bool {\bf ffnn\-::layer\-::fully\-\_\-connected\-::weights\-::options}$<$ Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::has\-\_\-fixed\-\_\-sizes\hspace{0.3cm}{\ttfamily [static]}}}\label{structffnn_1_1layer_1_1fully__connected_1_1weights_1_1options_acb66c282ebaa5f29ce34d14b68551b94}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= !\hyperlink{namespaceffnn_1_1layer_a83ba223c7b7eb8e3d926b98b266f24c8}{is\_dynamic}(InputsAtCompileTime) &&
+                                          !\hyperlink{namespaceffnn_1_1layer_a83ba223c7b7eb8e3d926b98b266f24c8}{is\_dynamic}(OutputsAtCompileTime)
+\end{DoxyCode}
+
+
+Used to check if dimensions are fixed. 
+
+\hypertarget{structffnn_1_1layer_1_1fully__connected_1_1weights_1_1options_aa9973b3dcef51f2684f3c36bbeccd767}{\index{ffnn\-::layer\-::fully\-\_\-connected\-::weights\-::options@{ffnn\-::layer\-::fully\-\_\-connected\-::weights\-::options}!input\-\_\-size@{input\-\_\-size}}
+\index{input\-\_\-size@{input\-\_\-size}!ffnn::layer::fully_connected::weights::options@{ffnn\-::layer\-::fully\-\_\-connected\-::weights\-::options}}
+\subsubsection[{input\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\-\_\-type Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic$>$ constexpr {\bf size\-\_\-type} {\bf ffnn\-::layer\-::fully\-\_\-connected\-::weights\-::options}$<$ Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::input\-\_\-size = Inputs\-At\-Compile\-Time\hspace{0.3cm}{\ttfamily [static]}}}\label{structffnn_1_1layer_1_1fully__connected_1_1weights_1_1options_aa9973b3dcef51f2684f3c36bbeccd767}
+
+
+\hyperlink{classffnn_1_1layer_1_1_fully_connected}{Fully\-Connected} layer input count. 
+
+\hypertarget{structffnn_1_1layer_1_1fully__connected_1_1weights_1_1options_a45dac283a1611df3497baf255d8645c1}{\index{ffnn\-::layer\-::fully\-\_\-connected\-::weights\-::options@{ffnn\-::layer\-::fully\-\_\-connected\-::weights\-::options}!output\-\_\-size@{output\-\_\-size}}
+\index{output\-\_\-size@{output\-\_\-size}!ffnn::layer::fully_connected::weights::options@{ffnn\-::layer\-::fully\-\_\-connected\-::weights\-::options}}
+\subsubsection[{output\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\-\_\-type Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic$>$ constexpr {\bf size\-\_\-type} {\bf ffnn\-::layer\-::fully\-\_\-connected\-::weights\-::options}$<$ Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::output\-\_\-size = Outputs\-At\-Compile\-Time\hspace{0.3cm}{\ttfamily [static]}}}\label{structffnn_1_1layer_1_1fully__connected_1_1weights_1_1options_a45dac283a1611df3497baf255d8645c1}
+
+
+\hyperlink{classffnn_1_1layer_1_1_fully_connected}{Fully\-Connected} layer output count. 
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/fully\-\_\-connected/weights/\hyperlink{fully__connected_2weights_2compile__time__options_8h}{compile\-\_\-time\-\_\-options.\-h}\end{DoxyCompactItemize}

@@ -8,5 +8,7 @@ var searchData=
   ['options',['options',['../structffnn_1_1layer_1_1hidden_1_1options.html',1,'ffnn::layer::hidden']]],
   ['options',['options',['../structffnn_1_1layer_1_1convolution_1_1filter_1_1options.html',1,'ffnn::layer::convolution::filter']]],
   ['options',['options',['../structffnn_1_1layer_1_1convolution_1_1options.html',1,'ffnn::layer::convolution']]],
+  ['options',['options',['../structffnn_1_1layer_1_1fully__connected_1_1options.html',1,'ffnn::layer::fully_connected']]],
+  ['options',['options',['../structffnn_1_1layer_1_1fully__connected_1_1weights_1_1options.html',1,'ffnn::layer::fully_connected::weights']]],
   ['output',['Output',['../classffnn_1_1layer_1_1_output.html',1,'ffnn::layer']]]
 ];

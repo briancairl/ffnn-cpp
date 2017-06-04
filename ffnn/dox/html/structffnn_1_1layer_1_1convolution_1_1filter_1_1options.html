@@ -97,10 +97,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>Describes compile-time options and extrinsic parameters used to set up a <a class="el" href="structffnn_1_1layer_1_1convolution_1_1_filter.html" title="Filter parameters to be use with a Convolution layer. ">Filter</a> object.  
+<p>Describes compile-time options and extrinsic parameters used to set up a <a class="el" href="classffnn_1_1layer_1_1convolution_1_1_filter.html" title="Filter parameters to be use with a Convolution layer. ">Filter</a> object.  
  <a href="structffnn_1_1layer_1_1convolution_1_1filter_1_1options.html#details">More...</a></p>
 
-<p><code>#include &quot;<a class="el" href="filter_8h_source.html">filter.h</a>&quot;</code></p>
+<p><code>#include &quot;<a class="el" href="convolution_2filter_2compile__time__options_8h_source.html">compile_time_options.h</a>&quot;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -119,21 +119,21 @@ Static Public Attributes</h2></td></tr>
 <tr class="memitem:a615d2970fd2d4ded6bbacff86d6f71e4"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="namespaceffnn.html#a63b90a2fd70eb76684eac482a51633e5">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structffnn_1_1layer_1_1convolution_1_1filter_1_1options.html#a615d2970fd2d4ded6bbacff86d6f71e4">kernel_count</a> = KernelCountAtCompileTime</td></tr>
 <tr class="memdesc:a615d2970fd2d4ded6bbacff86d6f71e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of filter kernels at compile-time.  <a href="#a615d2970fd2d4ded6bbacff86d6f71e4">More...</a><br/></td></tr>
 <tr class="separator:a615d2970fd2d4ded6bbacff86d6f71e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f86b4cfe7a30523e5ff50d99708659a"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="namespaceffnn.html#a63b90a2fd70eb76684eac482a51633e5">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structffnn_1_1layer_1_1convolution_1_1filter_1_1options.html#a1f86b4cfe7a30523e5ff50d99708659a">embedded_kernel_height</a> = <a class="el" href="namespaceffnn_1_1layer_1_1convolution.html#a0cca23056b3d9d79e6604c9419814351">embed_dimension</a>&lt;<a class="el" href="structffnn_1_1layer_1_1convolution_1_1filter_1_1options.html#a364919ad62fa093fbf5d142bd4f37d6e">embedding_mode</a>, <a class="el" href="namespaceffnn_1_1layer_1_1convolution.html#ad420d4eb8edd7c254d1f0aaaad81017fae2ba27e8fa1aed3f003e54947f37d17e">ColEmbedding</a>&gt;(<a class="el" href="structffnn_1_1layer_1_1convolution_1_1filter_1_1options.html#a89572b22e67e07c6f68d5c51070b0dbf">kernel_height</a>, <a class="el" href="structffnn_1_1layer_1_1convolution_1_1filter_1_1options.html#a699036320138871693bcd0ecfb977d6b">kernel_depth</a>)</td></tr>
+<tr class="memitem:a1f86b4cfe7a30523e5ff50d99708659a"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="namespaceffnn.html#a63b90a2fd70eb76684eac482a51633e5">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structffnn_1_1layer_1_1convolution_1_1filter_1_1options.html#a1f86b4cfe7a30523e5ff50d99708659a">embedded_kernel_height</a></td></tr>
 <tr class="memdesc:a1f86b4cfe7a30523e5ff50d99708659a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Depth embedded kernel height at compile-time.  <a href="#a1f86b4cfe7a30523e5ff50d99708659a">More...</a><br/></td></tr>
 <tr class="separator:a1f86b4cfe7a30523e5ff50d99708659a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9cc6dff082340e5c7388f8878ea3a7f4"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="namespaceffnn.html#a63b90a2fd70eb76684eac482a51633e5">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structffnn_1_1layer_1_1convolution_1_1filter_1_1options.html#a9cc6dff082340e5c7388f8878ea3a7f4">embedded_kernel_width</a> = <a class="el" href="namespaceffnn_1_1layer_1_1convolution.html#a0cca23056b3d9d79e6604c9419814351">embed_dimension</a>&lt;<a class="el" href="structffnn_1_1layer_1_1convolution_1_1filter_1_1options.html#a364919ad62fa093fbf5d142bd4f37d6e">embedding_mode</a>, <a class="el" href="namespaceffnn_1_1layer_1_1convolution.html#ad420d4eb8edd7c254d1f0aaaad81017fa1c03b5145e31615496457aa687a180c2">RowEmbedding</a>&gt;(<a class="el" href="structffnn_1_1layer_1_1convolution_1_1filter_1_1options.html#afd97cb92020381b3f2489b92946fdc11">kernel_width</a>, <a class="el" href="structffnn_1_1layer_1_1convolution_1_1filter_1_1options.html#a699036320138871693bcd0ecfb977d6b">kernel_depth</a>)</td></tr>
+<tr class="memitem:a9cc6dff082340e5c7388f8878ea3a7f4"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="namespaceffnn.html#a63b90a2fd70eb76684eac482a51633e5">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structffnn_1_1layer_1_1convolution_1_1filter_1_1options.html#a9cc6dff082340e5c7388f8878ea3a7f4">embedded_kernel_width</a></td></tr>
 <tr class="memdesc:a9cc6dff082340e5c7388f8878ea3a7f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Depth embedded kernel width at compile-time.  <a href="#a9cc6dff082340e5c7388f8878ea3a7f4">More...</a><br/></td></tr>
 <tr class="separator:a9cc6dff082340e5c7388f8878ea3a7f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe85a502882816dd562acd349c96b30e"><td class="memItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structffnn_1_1layer_1_1convolution_1_1filter_1_1options.html#afe85a502882816dd562acd349c96b30e">has_fixed_kernel_count</a> = (KernelCountAtCompileTime &gt; 0)</td></tr>
-<tr class="memdesc:afe85a502882816dd562acd349c96b30e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>true</code> if number of kernels in the filter is determined at compile-time and is fixed  <a href="#afe85a502882816dd562acd349c96b30e">More...</a><br/></td></tr>
+<tr class="memitem:afe85a502882816dd562acd349c96b30e"><td class="memItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structffnn_1_1layer_1_1convolution_1_1filter_1_1options.html#afe85a502882816dd562acd349c96b30e">has_fixed_kernel_count</a> = !<a class="el" href="namespaceffnn_1_1layer.html#a83ba223c7b7eb8e3d926b98b266f24c8">is_dynamic</a>(KernelCountAtCompileTime)</td></tr>
+<tr class="memdesc:afe85a502882816dd562acd349c96b30e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to check if number of kernels in the filter is fixed.  <a href="#afe85a502882816dd562acd349c96b30e">More...</a><br/></td></tr>
 <tr class="separator:afe85a502882816dd562acd349c96b30e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;size_type HeightAtCompileTime = Eigen::Dynamic, size_type WidthAtCompileTime = Eigen::Dynamic, size_type DepthAtCompileTime = Eigen::Dynamic, size_type KernelCountAtCompileTime = Eigen::Dynamic, EmbeddingMode Mode = ColEmbedding&gt;<br/>
 struct ffnn::layer::convolution::filter::options&lt; HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, KernelCountAtCompileTime, Mode &gt;</h3>
 
-<p>Describes compile-time options and extrinsic parameters used to set up a <a class="el" href="structffnn_1_1layer_1_1convolution_1_1_filter.html" title="Filter parameters to be use with a Convolution layer. ">Filter</a> object. </p>
+<p>Describes compile-time options and extrinsic parameters used to set up a <a class="el" href="classffnn_1_1layer_1_1convolution_1_1_filter.html" title="Filter parameters to be use with a Convolution layer. ">Filter</a> object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">HeightAtCompileTime</td><td>height of the filter kernel </td></tr>
@@ -154,7 +154,7 @@ template&lt;size_type HeightAtCompileTime = Eigen::Dynamic, size_type WidthAtCom
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="namespaceffnn.html#a63b90a2fd70eb76684eac482a51633e5">size_type</a> <a class="el" href="structffnn_1_1layer_1_1convolution_1_1filter_1_1options.html">ffnn::layer::convolution::filter::options</a>&lt; HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, KernelCountAtCompileTime, Mode &gt;::embedded_kernel_height = <a class="el" href="namespaceffnn_1_1layer_1_1convolution.html#a0cca23056b3d9d79e6604c9419814351">embed_dimension</a>&lt;<a class="el" href="structffnn_1_1layer_1_1convolution_1_1filter_1_1options.html#a364919ad62fa093fbf5d142bd4f37d6e">embedding_mode</a>, <a class="el" href="namespaceffnn_1_1layer_1_1convolution.html#ad420d4eb8edd7c254d1f0aaaad81017fae2ba27e8fa1aed3f003e54947f37d17e">ColEmbedding</a>&gt;(<a class="el" href="structffnn_1_1layer_1_1convolution_1_1filter_1_1options.html#a89572b22e67e07c6f68d5c51070b0dbf">kernel_height</a>, <a class="el" href="structffnn_1_1layer_1_1convolution_1_1filter_1_1options.html#a699036320138871693bcd0ecfb977d6b">kernel_depth</a>)</td>
+          <td class="memname">constexpr <a class="el" href="namespaceffnn.html#a63b90a2fd70eb76684eac482a51633e5">size_type</a> <a class="el" href="structffnn_1_1layer_1_1convolution_1_1filter_1_1options.html">ffnn::layer::convolution::filter::options</a>&lt; HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, KernelCountAtCompileTime, Mode &gt;::embedded_kernel_height</td>
         </tr>
       </table>
   </td>
@@ -163,7 +163,9 @@ template&lt;size_type HeightAtCompileTime = Eigen::Dynamic, size_type WidthAtCom
   </tr>
 </table>
 </div><div class="memdoc">
-
+<b>Initial value:</b><div class="fragment"><div class="line">=</div>
+<div class="line">    embed_dimension&lt;embedding_mode, ColEmbedding&gt;(<a class="code" href="structffnn_1_1layer_1_1convolution_1_1filter_1_1options.html#a89572b22e67e07c6f68d5c51070b0dbf">kernel_height</a>, <a class="code" href="structffnn_1_1layer_1_1convolution_1_1filter_1_1options.html#a699036320138871693bcd0ecfb977d6b">kernel_depth</a>)</div>
+</div><!-- fragment -->
 <p>Depth embedded kernel height at compile-time. </p>
 
 </div>
@@ -178,7 +180,7 @@ template&lt;size_type HeightAtCompileTime = Eigen::Dynamic, size_type WidthAtCom
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="namespaceffnn.html#a63b90a2fd70eb76684eac482a51633e5">size_type</a> <a class="el" href="structffnn_1_1layer_1_1convolution_1_1filter_1_1options.html">ffnn::layer::convolution::filter::options</a>&lt; HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, KernelCountAtCompileTime, Mode &gt;::embedded_kernel_width = <a class="el" href="namespaceffnn_1_1layer_1_1convolution.html#a0cca23056b3d9d79e6604c9419814351">embed_dimension</a>&lt;<a class="el" href="structffnn_1_1layer_1_1convolution_1_1filter_1_1options.html#a364919ad62fa093fbf5d142bd4f37d6e">embedding_mode</a>, <a class="el" href="namespaceffnn_1_1layer_1_1convolution.html#ad420d4eb8edd7c254d1f0aaaad81017fa1c03b5145e31615496457aa687a180c2">RowEmbedding</a>&gt;(<a class="el" href="structffnn_1_1layer_1_1convolution_1_1filter_1_1options.html#afd97cb92020381b3f2489b92946fdc11">kernel_width</a>, <a class="el" href="structffnn_1_1layer_1_1convolution_1_1filter_1_1options.html#a699036320138871693bcd0ecfb977d6b">kernel_depth</a>)</td>
+          <td class="memname">constexpr <a class="el" href="namespaceffnn.html#a63b90a2fd70eb76684eac482a51633e5">size_type</a> <a class="el" href="structffnn_1_1layer_1_1convolution_1_1filter_1_1options.html">ffnn::layer::convolution::filter::options</a>&lt; HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, KernelCountAtCompileTime, Mode &gt;::embedded_kernel_width</td>
         </tr>
       </table>
   </td>
@@ -187,7 +189,9 @@ template&lt;size_type HeightAtCompileTime = Eigen::Dynamic, size_type WidthAtCom
   </tr>
 </table>
 </div><div class="memdoc">
-
+<b>Initial value:</b><div class="fragment"><div class="line">=</div>
+<div class="line">    embed_dimension&lt;embedding_mode, RowEmbedding&gt;(<a class="code" href="structffnn_1_1layer_1_1convolution_1_1filter_1_1options.html#afd97cb92020381b3f2489b92946fdc11">kernel_width</a>, <a class="code" href="structffnn_1_1layer_1_1convolution_1_1filter_1_1options.html#a699036320138871693bcd0ecfb977d6b">kernel_depth</a>)</div>
+</div><!-- fragment -->
 <p>Depth embedded kernel width at compile-time. </p>
 
 </div>
@@ -226,7 +230,7 @@ template&lt;size_type HeightAtCompileTime = Eigen::Dynamic, size_type WidthAtCom
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr bool <a class="el" href="structffnn_1_1layer_1_1convolution_1_1filter_1_1options.html">ffnn::layer::convolution::filter::options</a>&lt; HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, KernelCountAtCompileTime, Mode &gt;::has_fixed_kernel_count = (KernelCountAtCompileTime &gt; 0)</td>
+          <td class="memname">constexpr bool <a class="el" href="structffnn_1_1layer_1_1convolution_1_1filter_1_1options.html">ffnn::layer::convolution::filter::options</a>&lt; HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, KernelCountAtCompileTime, Mode &gt;::has_fixed_kernel_count = !<a class="el" href="namespaceffnn_1_1layer.html#a83ba223c7b7eb8e3d926b98b266f24c8">is_dynamic</a>(KernelCountAtCompileTime)</td>
         </tr>
       </table>
   </td>
@@ -236,7 +240,7 @@ template&lt;size_type HeightAtCompileTime = Eigen::Dynamic, size_type WidthAtCom
 </table>
 </div><div class="memdoc">
 
-<p><code>true</code> if number of kernels in the filter is determined at compile-time and is fixed </p>
+<p>Used to check if number of kernels in the filter is fixed. </p>
 
 </div>
 </div>
@@ -337,12 +341,12 @@ template&lt;size_type HeightAtCompileTime = Eigen::Dynamic, size_type WidthAtCom
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/home/briancairl/packages/src/ffnn-cpp/ffnn/include/ffnn/layer/convolution/<a class="el" href="filter_8h_source.html">filter.h</a></li>
+<li>/home/briancairl/packages/src/ffnn-cpp/ffnn/include/ffnn/layer/convolution/filter/<a class="el" href="convolution_2filter_2compile__time__options_8h_source.html">compile_time_options.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jun 2 2017 00:42:46 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jun 3 2017 23:40:28 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

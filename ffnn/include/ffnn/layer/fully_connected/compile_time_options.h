@@ -8,6 +8,9 @@
 // FFNN
 #include <ffnn/assert.h>
 #include <ffnn/internal/config.h>
+#include <ffnn/layer/hidden.h>
+#include <ffnn/layer/hidden/compile_time_options.h>
+#include <ffnn/layer/fully_connected/weights.h>
 #include <ffnn/layer/fully_connected/weights/compile_time_options.h>
 
 namespace ffnn
@@ -20,22 +23,14 @@ namespace fully_connected
  * @brief Describes compile-time options used to set up a Input object
  */
 template<size_type InputsAtCompileTime  = Eigen::Dynamic,
-         size_type OutputsAtCompileTime = Eigen::Dynamic,
-         int InputDataOrdering  = Eigen::ColMajor,
-         int OutputDataOrdering = Eigen::ColMajor>
+         size_type OutputsAtCompileTime = Eigen::Dynamic>
 struct options
 {
   /// Input count
   constexpr static size_type input_size = InputsAtCompileTime;
 
-  /// Input data ordering
-  constexpr static int input_data_ordering = InputDataOrdering;
-
   /// Output count
   constexpr static size_type output_size = OutputsAtCompileTime;
-
-  /// Output data ordering
-  constexpr static int output_data_ordering = OutputDataOrdering;
 };
 
 /**
@@ -45,14 +40,10 @@ template<typename ValueType,
          typename Options>
 struct extrinsics
 {
-  /// Compile-time Hidden layer traits
-  typedef typename hidden::options<
+  /// Weights sizing traits
+  typedef typename weights::options<
     Options::input_size,
-    1,
-    Options::output_size,
-    1,
-    Options::input_data_ordering,
-    Options::output_data_ordering
+    Options::output_size
   > WeightsOptions;
 
   /// Layer parameters type
@@ -60,12 +51,10 @@ struct extrinsics
 
   /// Compile-time Hidden layer traits
   typedef typename hidden::options<
-    Options::input_size,
-    1,
-    Options::output_size,
-    1,
-    Options::input_data_ordering,
-    Options::output_data_ordering
+    Options::input_size,  1,
+    Options::output_size, 1,
+    Eigen::ColMajor,
+    Eigen::ColMajor
   > HiddenLayerOptions;
 
   /// Hidden layer (base type) standardization

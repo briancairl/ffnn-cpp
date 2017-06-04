@@ -11,6 +11,8 @@
 // FFNN
 #include <ffnn/internal/config.h>
 #include <ffnn/assert.h>
+#include <ffnn/layer/layer.h>
+#include <ffnn/layer/hidden/compile_time_options.h>
 
 namespace ffnn
 {

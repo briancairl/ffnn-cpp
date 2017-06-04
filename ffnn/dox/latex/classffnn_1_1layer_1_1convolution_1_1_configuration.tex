@@ -1,0 +1,217 @@
+\hypertarget{classffnn_1_1layer_1_1convolution_1_1_configuration}{\section{ffnn\-:\-:layer\-:\-:convolution\-:\-:Configuration$<$ Layer\-Type, Value\-Type, Options, Extrinsic $>$ Class Template Reference}
+\label{classffnn_1_1layer_1_1convolution_1_1_configuration}\index{ffnn\-::layer\-::convolution\-::\-Configuration$<$ Layer\-Type, Value\-Type, Options, Extrinsic $>$@{ffnn\-::layer\-::convolution\-::\-Configuration$<$ Layer\-Type, Value\-Type, Options, Extrinsic $>$}}
+}
+
+
+\hyperlink{classffnn_1_1layer_1_1_layer}{Layer} configuration struct.  
+
+
+
+
+{\ttfamily \#include \char`\"{}configuration.\-h\char`\"{}}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Layer\-Type\-::\-Shape\-Type \hyperlink{classffnn_1_1layer_1_1convolution_1_1_configuration_a4bb0b2d358739ef69e845994050602e1}{Shape\-Type}
+\begin{DoxyCompactList}\small\item\em \hyperlink{structffnn_1_1layer_1_1_shape}{Shape} type standardization. \end{DoxyCompactList}\item 
+typedef \\*
+\hyperlink{classffnn_1_1distribution_1_1_distribution}{distribution\-::\-Distribution}\\*
+$<$ Value\-Type $>$ \hyperlink{classffnn_1_1layer_1_1convolution_1_1_configuration_ac34e983386fa6c4af4311cf95371444b}{Distribution\-Type}
+\begin{DoxyCompactList}\small\item\em Distribution type standardization. \end{DoxyCompactList}\item 
+typedef \hyperlink{classffnn_1_1optimizer_1_1_optimizer}{optimizer\-::\-Optimizer}\\*
+$<$ \hyperlink{classffnn_1_1layer_1_1convolution_1_1_configuration_a12e530507865f85db9b75c2d78493442}{Layer\-Type} $>$ \hyperlink{classffnn_1_1layer_1_1convolution_1_1_configuration_af8f1c1e1c842a15756475259dcdd6bd4}{Optimizer\-Type}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classffnn_1_1layer_1_1_layer}{Layer} optimization type standardization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classffnn_1_1layer_1_1convolution_1_1_configuration_adeb09f69e78469506bd5a7b104c15074}{Configuration} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classffnn_1_1layer_1_1convolution_1_1_configuration}{Configuration} \& \hyperlink{classffnn_1_1layer_1_1convolution_1_1_configuration_ab90bdde3aebd594c13ff08be86263b17}{set\-Optimizer} (const typename \hyperlink{classffnn_1_1optimizer_1_1_optimizer_ac03e7181934bf0c12a97fc67a60484ab}{Optimizer\-Type\-::\-Ptr} \&optimizer)
+\begin{DoxyCompactList}\small\item\em Sets layer optimization resource. \end{DoxyCompactList}\item 
+\hyperlink{classffnn_1_1layer_1_1convolution_1_1_configuration}{Configuration} \& \hyperlink{classffnn_1_1layer_1_1convolution_1_1_configuration_a6ba415f38f2b68b2522b435375ae20ae}{set\-Parameter\-Distribution} (const typename \hyperlink{classffnn_1_1distribution_1_1_distribution_a51d4ea875b70b07862c5f68b20c8f41a}{Distribution\-Type\-::\-Ptr} \&distribution)
+\begin{DoxyCompactList}\small\item\em Sets layer parameter initialization distribution. \end{DoxyCompactList}\item 
+\hyperlink{classffnn_1_1layer_1_1convolution_1_1_configuration}{Configuration} \& \hyperlink{classffnn_1_1layer_1_1convolution_1_1_configuration_aa8f81c754750e48ea95e1f4765be83b5}{set\-Input\-Shape} (\hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} height, \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} width, \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} depth)
+\begin{DoxyCompactList}\small\item\em Sets layer input shape. \end{DoxyCompactList}\item 
+\hyperlink{classffnn_1_1layer_1_1convolution_1_1_configuration}{Configuration} \& \hyperlink{classffnn_1_1layer_1_1convolution_1_1_configuration_aa28ac2eeb2c151c9eac8580ad1aa2bd8}{set\-Filter\-Shape} (\hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} height, \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} width, \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} depth)
+\begin{DoxyCompactList}\small\item\em Sets layer filter shape options. \end{DoxyCompactList}\item 
+\hyperlink{classffnn_1_1layer_1_1convolution_1_1_configuration}{Configuration} \& \hyperlink{classffnn_1_1layer_1_1convolution_1_1_configuration_ad870ec83ea571443bef8a6faa676bab6}{set\-Stride} (\hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} row\-\_\-stride, \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} col\-\_\-stride=-\/1)
+\begin{DoxyCompactList}\small\item\em Sets filter stride options. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+friend \hyperlink{classffnn_1_1layer_1_1convolution_1_1_configuration_a12e530507865f85db9b75c2d78493442}{Layer\-Type}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Layer\-Type, typename Value\-Type, typename Options, typename Extrinsic$>$class ffnn\-::layer\-::convolution\-::\-Configuration$<$ Layer\-Type, Value\-Type, Options, Extrinsic $>$}
+
+\hyperlink{classffnn_1_1layer_1_1_layer}{Layer} configuration struct. 
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classffnn_1_1layer_1_1convolution_1_1_configuration_ac34e983386fa6c4af4311cf95371444b}{\index{ffnn\-::layer\-::convolution\-::\-Configuration@{ffnn\-::layer\-::convolution\-::\-Configuration}!Distribution\-Type@{Distribution\-Type}}
+\index{Distribution\-Type@{Distribution\-Type}!ffnn::layer::convolution::Configuration@{ffnn\-::layer\-::convolution\-::\-Configuration}}
+\subsubsection[{Distribution\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Layer\-Type, typename Value\-Type, typename Options, typename Extrinsic$>$ typedef {\bf distribution\-::\-Distribution}$<$Value\-Type$>$ {\bf ffnn\-::layer\-::convolution\-::\-Configuration}$<$ {\bf Layer\-Type}, Value\-Type, Options, Extrinsic $>$\-::{\bf Distribution\-Type}}}\label{classffnn_1_1layer_1_1convolution_1_1_configuration_ac34e983386fa6c4af4311cf95371444b}
+
+
+Distribution type standardization. 
+
+\hypertarget{classffnn_1_1layer_1_1convolution_1_1_configuration_af8f1c1e1c842a15756475259dcdd6bd4}{\index{ffnn\-::layer\-::convolution\-::\-Configuration@{ffnn\-::layer\-::convolution\-::\-Configuration}!Optimizer\-Type@{Optimizer\-Type}}
+\index{Optimizer\-Type@{Optimizer\-Type}!ffnn::layer::convolution::Configuration@{ffnn\-::layer\-::convolution\-::\-Configuration}}
+\subsubsection[{Optimizer\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Layer\-Type, typename Value\-Type, typename Options, typename Extrinsic$>$ typedef {\bf optimizer\-::\-Optimizer}$<${\bf Layer\-Type}$>$ {\bf ffnn\-::layer\-::convolution\-::\-Configuration}$<$ {\bf Layer\-Type}, Value\-Type, Options, Extrinsic $>$\-::{\bf Optimizer\-Type}}}\label{classffnn_1_1layer_1_1convolution_1_1_configuration_af8f1c1e1c842a15756475259dcdd6bd4}
+
+
+\hyperlink{classffnn_1_1layer_1_1_layer}{Layer} optimization type standardization. 
+
+\hypertarget{classffnn_1_1layer_1_1convolution_1_1_configuration_a4bb0b2d358739ef69e845994050602e1}{\index{ffnn\-::layer\-::convolution\-::\-Configuration@{ffnn\-::layer\-::convolution\-::\-Configuration}!Shape\-Type@{Shape\-Type}}
+\index{Shape\-Type@{Shape\-Type}!ffnn::layer::convolution::Configuration@{ffnn\-::layer\-::convolution\-::\-Configuration}}
+\subsubsection[{Shape\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Layer\-Type, typename Value\-Type, typename Options, typename Extrinsic$>$ typedef Layer\-Type\-::\-Shape\-Type {\bf ffnn\-::layer\-::convolution\-::\-Configuration}$<$ {\bf Layer\-Type}, Value\-Type, Options, Extrinsic $>$\-::{\bf Shape\-Type}}}\label{classffnn_1_1layer_1_1convolution_1_1_configuration_a4bb0b2d358739ef69e845994050602e1}
+
+
+\hyperlink{structffnn_1_1layer_1_1_shape}{Shape} type standardization. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classffnn_1_1layer_1_1convolution_1_1_configuration_adeb09f69e78469506bd5a7b104c15074}{\index{ffnn\-::layer\-::convolution\-::\-Configuration@{ffnn\-::layer\-::convolution\-::\-Configuration}!Configuration@{Configuration}}
+\index{Configuration@{Configuration}!ffnn::layer::convolution::Configuration@{ffnn\-::layer\-::convolution\-::\-Configuration}}
+\subsubsection[{Configuration}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Layer\-Type, typename Value\-Type, typename Options, typename Extrinsic$>$ {\bf ffnn\-::layer\-::convolution\-::\-Configuration}$<$ {\bf Layer\-Type}, Value\-Type, Options, Extrinsic $>$\-::{\bf Configuration} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1convolution_1_1_configuration_adeb09f69e78469506bd5a7b104c15074}
+
+
+Default constructor. 
+
+Try to resolve from template arguments 
+
+\subsection{Member Function Documentation}
+\hypertarget{classffnn_1_1layer_1_1convolution_1_1_configuration_aa28ac2eeb2c151c9eac8580ad1aa2bd8}{\index{ffnn\-::layer\-::convolution\-::\-Configuration@{ffnn\-::layer\-::convolution\-::\-Configuration}!set\-Filter\-Shape@{set\-Filter\-Shape}}
+\index{set\-Filter\-Shape@{set\-Filter\-Shape}!ffnn::layer::convolution::Configuration@{ffnn\-::layer\-::convolution\-::\-Configuration}}
+\subsubsection[{set\-Filter\-Shape}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Layer\-Type, typename Value\-Type, typename Options, typename Extrinsic$>$ {\bf Configuration}\& {\bf ffnn\-::layer\-::convolution\-::\-Configuration}$<$ {\bf Layer\-Type}, Value\-Type, Options, Extrinsic $>$\-::set\-Filter\-Shape (
+\begin{DoxyParamCaption}
+\item[{{\bf size\-\_\-type}}]{height, }
+\item[{{\bf size\-\_\-type}}]{width, }
+\item[{{\bf size\-\_\-type}}]{depth}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1convolution_1_1_configuration_aa28ac2eeb2c151c9eac8580ad1aa2bd8}
+
+
+Sets layer filter shape options. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & height of the filter kernel \\
+\hline
+{\em width} & width of the filter kernel \\
+\hline
+{\em depth} & number of kernels \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$\ast$this
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The shape specified here is {\ttfamily (H, W, N-\/\-Kernels)}. Each kernel actually has the dimensions {\ttfamily (H, W, D)}, where {\ttfamily (D)} is the depth of the input volume 
+\end{DoxyNote}
+\hypertarget{classffnn_1_1layer_1_1convolution_1_1_configuration_aa8f81c754750e48ea95e1f4765be83b5}{\index{ffnn\-::layer\-::convolution\-::\-Configuration@{ffnn\-::layer\-::convolution\-::\-Configuration}!set\-Input\-Shape@{set\-Input\-Shape}}
+\index{set\-Input\-Shape@{set\-Input\-Shape}!ffnn::layer::convolution::Configuration@{ffnn\-::layer\-::convolution\-::\-Configuration}}
+\subsubsection[{set\-Input\-Shape}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Layer\-Type, typename Value\-Type, typename Options, typename Extrinsic$>$ {\bf Configuration}\& {\bf ffnn\-::layer\-::convolution\-::\-Configuration}$<$ {\bf Layer\-Type}, Value\-Type, Options, Extrinsic $>$\-::set\-Input\-Shape (
+\begin{DoxyParamCaption}
+\item[{{\bf size\-\_\-type}}]{height, }
+\item[{{\bf size\-\_\-type}}]{width, }
+\item[{{\bf size\-\_\-type}}]{depth}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1convolution_1_1_configuration_aa8f81c754750e48ea95e1f4765be83b5}
+
+
+Sets layer input shape. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & height of the input volume \\
+\hline
+{\em width} & width of the input volume \\
+\hline
+{\em depth} & depth of the input volume \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$\ast$this 
+\end{DoxyReturn}
+\hypertarget{classffnn_1_1layer_1_1convolution_1_1_configuration_ab90bdde3aebd594c13ff08be86263b17}{\index{ffnn\-::layer\-::convolution\-::\-Configuration@{ffnn\-::layer\-::convolution\-::\-Configuration}!set\-Optimizer@{set\-Optimizer}}
+\index{set\-Optimizer@{set\-Optimizer}!ffnn::layer::convolution::Configuration@{ffnn\-::layer\-::convolution\-::\-Configuration}}
+\subsubsection[{set\-Optimizer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Layer\-Type, typename Value\-Type, typename Options, typename Extrinsic$>$ {\bf Configuration}\& {\bf ffnn\-::layer\-::convolution\-::\-Configuration}$<$ {\bf Layer\-Type}, Value\-Type, Options, Extrinsic $>$\-::set\-Optimizer (
+\begin{DoxyParamCaption}
+\item[{const typename {\bf Optimizer\-Type\-::\-Ptr} \&}]{optimizer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1convolution_1_1_configuration_ab90bdde3aebd594c13ff08be86263b17}
+
+
+Sets layer optimization resource. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em optimizer} & layer optimizer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$\ast$this 
+\end{DoxyReturn}
+\hypertarget{classffnn_1_1layer_1_1convolution_1_1_configuration_a6ba415f38f2b68b2522b435375ae20ae}{\index{ffnn\-::layer\-::convolution\-::\-Configuration@{ffnn\-::layer\-::convolution\-::\-Configuration}!set\-Parameter\-Distribution@{set\-Parameter\-Distribution}}
+\index{set\-Parameter\-Distribution@{set\-Parameter\-Distribution}!ffnn::layer::convolution::Configuration@{ffnn\-::layer\-::convolution\-::\-Configuration}}
+\subsubsection[{set\-Parameter\-Distribution}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Layer\-Type, typename Value\-Type, typename Options, typename Extrinsic$>$ {\bf Configuration}\& {\bf ffnn\-::layer\-::convolution\-::\-Configuration}$<$ {\bf Layer\-Type}, Value\-Type, Options, Extrinsic $>$\-::set\-Parameter\-Distribution (
+\begin{DoxyParamCaption}
+\item[{const typename {\bf Distribution\-Type\-::\-Ptr} \&}]{distribution}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1convolution_1_1_configuration_a6ba415f38f2b68b2522b435375ae20ae}
+
+
+Sets layer parameter initialization distribution. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em distribution} & value distribution resource \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$\ast$this 
+\end{DoxyReturn}
+\hypertarget{classffnn_1_1layer_1_1convolution_1_1_configuration_ad870ec83ea571443bef8a6faa676bab6}{\index{ffnn\-::layer\-::convolution\-::\-Configuration@{ffnn\-::layer\-::convolution\-::\-Configuration}!set\-Stride@{set\-Stride}}
+\index{set\-Stride@{set\-Stride}!ffnn::layer::convolution::Configuration@{ffnn\-::layer\-::convolution\-::\-Configuration}}
+\subsubsection[{set\-Stride}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Layer\-Type, typename Value\-Type, typename Options, typename Extrinsic$>$ {\bf Configuration}\& {\bf ffnn\-::layer\-::convolution\-::\-Configuration}$<$ {\bf Layer\-Type}, Value\-Type, Options, Extrinsic $>$\-::set\-Stride (
+\begin{DoxyParamCaption}
+\item[{{\bf size\-\_\-type}}]{row\-\_\-stride, }
+\item[{{\bf size\-\_\-type}}]{col\-\_\-stride = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1convolution_1_1_configuration_ad870ec83ea571443bef8a6faa676bab6}
+
+
+Sets filter stride options. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row\-\_\-stride} & filter stride along rows of input volume \\
+\hline
+{\em col\-\_\-stride} & filter stride along rows of input volume \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$\ast$this
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If {\ttfamily col\-\_\-stride} is not specified, it is defaulted to {\ttfamily row\-\_\-stride} 
+\end{DoxyNote}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classffnn_1_1layer_1_1convolution_1_1_configuration_a12e530507865f85db9b75c2d78493442}{\index{ffnn\-::layer\-::convolution\-::\-Configuration@{ffnn\-::layer\-::convolution\-::\-Configuration}!Layer\-Type@{Layer\-Type}}
+\index{Layer\-Type@{Layer\-Type}!ffnn::layer::convolution::Configuration@{ffnn\-::layer\-::convolution\-::\-Configuration}}
+\subsubsection[{Layer\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Layer\-Type, typename Value\-Type, typename Options, typename Extrinsic$>$ friend {\bf ffnn\-::layer\-::convolution\-::\-Configuration}$<$ Layer\-Type, Value\-Type, Options, Extrinsic $>$\-::Layer\-Type}}\label{classffnn_1_1layer_1_1convolution_1_1_configuration_a12e530507865f85db9b75c2d78493442}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/convolution/\hyperlink{convolution_2configuration_8h}{configuration.\-h}\end{DoxyCompactItemize}

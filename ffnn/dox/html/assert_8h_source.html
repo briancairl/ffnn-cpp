@@ -83,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_5926a80ed3446c810579ca6fe92ab4ca.html">include</a></li><li class="navelem"><a class="el" href="dir_18fff403c5eccb83d761ba51d6ac7b98.html">ffnn</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_f1374a92efe2cc1f1014c2355d0648ea.html">ffnn</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -97,42 +97,43 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// C++ Standard Library</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;exception&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// FFNN</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="global_8h.html">ffnn/config/global.h</a>&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">// No debug printouts in Release build</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#if NDEBUG &amp;&amp; !FFNN_ALLOW_ASSERT</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define FFNN_NO_ASSERT</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#ifdef  FFNN_NO_ASSERT</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define FFNN_ASSERT_MSG(cond, msg) FFNN_STATIC_RUNTIME_ASSERT_MSG(cond, msg)</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="assert_8h.html#a0dd452510e5d75d0f71f52ed14143c40">   23</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define FFNN_ASSERT_MSG(cond, msg) (void(0))</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="assert_8h.html#acebc1a2cbd18085c2c24e2fe4311451b">   27</a></span>&#160;<span class="preprocessor">#define FFNN_ASSERT(cond) FFNN_ASSERT_MSG(cond, &quot;Assertion Failed.&quot;)</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="assert_8h.html#a2b49bd7cbe87713cc51996494f3c4fd5">   33</a></span>&#160;<span class="preprocessor">#define FFNN_STATIC_ASSERT_MSG(cond, msg) static_assert(cond, msg)</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="assert_8h.html#aad64ee3fe6ac7c17c2a7b02318563b21">   39</a></span>&#160;<span class="preprocessor">#define FFNN_STATIC_RUNTIME_ASSERT_MSG(cond, msg)\</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">        {if (!static_cast&lt;bool&gt;(cond))\</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">        {\</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">          throw std::runtime_error(msg);\</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">        }}</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="assert_8h.html#a4bcf259d8e662fe1b9b9d9c603f49d90">   60</a></span>&#160;<span class="preprocessor">#define FFNN_ASSERT_NO_MOD_LAYER_EXTRINSICS(NS)\</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">        static_assert(\</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">          std::is_same&lt;Extrinsics, typename NS::extrinsics&lt;ValueType, Options&gt;&gt;::value,\</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">          &quot;DO NOT MODIFY CLASS EXTRINSICS TEMPLATE PARAMETER!&quot;\</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">        );</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif  // FFNN_ASSERT_H</span></div>
-<div class="ttc" id="global_8h_html"><div class="ttname"><a href="global_8h.html">global.h</a></div></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;type_traits&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">// FFNN</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="config_8h.html">ffnn/internal/config.h</a>&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// No debug printouts in Release build</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#if NDEBUG &amp;&amp; !FFNN_ALLOW_ASSERT</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define FFNN_NO_ASSERT</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifdef  FFNN_NO_ASSERT</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define FFNN_ASSERT_MSG(cond, msg) FFNN_STATIC_RUNTIME_ASSERT_MSG(cond, msg)</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="assert_8h.html#a0dd452510e5d75d0f71f52ed14143c40">   24</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define FFNN_ASSERT_MSG(cond, msg) (void(0))</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="assert_8h.html#acebc1a2cbd18085c2c24e2fe4311451b">   28</a></span>&#160;<span class="preprocessor">#define FFNN_ASSERT(cond) FFNN_ASSERT_MSG(cond, &quot;Assertion Failed.&quot;)</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="assert_8h.html#a239b61758d68adadb15eb14ab7fa589b">   34</a></span>&#160;<span class="preprocessor">#define FFNN_STATIC_ASSERT(cond, msg) static_assert(cond, msg)</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="assert_8h.html#aad64ee3fe6ac7c17c2a7b02318563b21">   40</a></span>&#160;<span class="preprocessor">#define FFNN_STATIC_RUNTIME_ASSERT_MSG(cond, msg)\</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">        {if (!static_cast&lt;bool&gt;(cond))\</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">        {\</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">          throw std::runtime_error(msg);\</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">        }}</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="assert_8h.html#abb0f32cd720478346d8bd674d9c91a37">   61</a></span>&#160;<span class="preprocessor">#define FFNN_ASSERT_DONT_MODIFY_EXTRINSICS(NS)\</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">        static_assert(\</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">          std::is_same&lt;Extrinsics, typename NS::extrinsics&lt;ValueType, Options&gt;&gt;::value,\</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">          &quot;DO NOT MODIFY CLASS EXTRINSICS TEMPLATE PARAMETER!&quot;\</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">        );</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif  // FFNN_ASSERT_H</span></div>
+<div class="ttc" id="config_8h_html"><div class="ttname"><a href="config_8h.html">config.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jun 2 2017 00:42:46 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jun 3 2017 23:40:28 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

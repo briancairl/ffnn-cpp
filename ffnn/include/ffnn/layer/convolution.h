@@ -36,7 +36,7 @@ template <typename ValueType,
 class Convolution :
   public Extrinsics::HiddenLayerType
 {
-  FFNN_ASSERT_NO_MODIFY_EXTRINSICS(convolution);
+  FFNN_ASSERT_DONT_MODIFY_EXTRINSICS(convolution);
 public:
   /// Self type alias
   using SelfType = Convolution<ValueType, Options, Extrinsics>;
@@ -86,7 +86,6 @@ public:
    * @retval false  otherwise
    * @warning Does not apply layer weight updates
    * @warning Will throw if an optimizer has not been associated with this layer
-   * @see setOptimizer
    */
   bool backward();
 
@@ -95,7 +94,6 @@ public:
    * @retval true  if weight update succeeded
    * @retval false  otherwise
    * @warning Will throw if an optimizer has not been associated with this layer
-   * @see setOptimizer
    */
   bool update();
 
@@ -142,7 +140,7 @@ private:
 
 #ifndef FFNN_NO_SERIALIZATION_SUPPORT
 protected:
-  FFNN_REGISTER_SERIALIZABLE(Convolution)
+  FFNN_REGISTER_SERIALIZABLE(Convolution);
 
   /// Save serializer
   void save(OutputArchive& ar, VersionType version) const;

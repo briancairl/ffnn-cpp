@@ -1,0 +1,38 @@
+\hypertarget{sizing_8h}{\section{/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/convolution/sizing.h File Reference}
+\label{sizing_8h}\index{/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/convolution/sizing.\-h@{/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/convolution/sizing.\-h}}
+}
+This graph shows which files directly or indirectly include this file\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sizing_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespaceffnn}{ffnn}
+\item 
+\hyperlink{namespaceffnn_1_1layer}{ffnn\-::layer}
+\item 
+\hyperlink{namespaceffnn_1_1layer_1_1convolution}{ffnn\-::layer\-::convolution}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{namespaceffnn_1_1layer_1_1convolution_ad420d4eb8edd7c254d1f0aaaad81017f}{ffnn\-::layer\-::convolution\-::\-Embedding\-Mode} \{ \hyperlink{namespaceffnn_1_1layer_1_1convolution_ad420d4eb8edd7c254d1f0aaaad81017fa1c03b5145e31615496457aa687a180c2}{ffnn\-::layer\-::convolution\-::\-Row\-Embedding} = 0, 
+\hyperlink{namespaceffnn_1_1layer_1_1convolution_ad420d4eb8edd7c254d1f0aaaad81017fae2ba27e8fa1aed3f003e54947f37d17e}{ffnn\-::layer\-::convolution\-::\-Col\-Embedding} = 1
+ \}
+\begin{DoxyCompactList}\small\item\em Used to select how depth of an input/outut volume is embedded in matrix form. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$Embedding\-Mode mode, Embedding\-Mode ref, typename Size\-Type $>$ }\\constexpr Size\-Type \hyperlink{namespaceffnn_1_1layer_1_1convolution_a0cca23056b3d9d79e6604c9419814351}{ffnn\-::layer\-::convolution\-::embed\-\_\-dimension} (Size\-Type n, Size\-Type m)
+\begin{DoxyCompactList}\small\item\em Selects size or depth-\/embedded size based on embedding mode. \end{DoxyCompactList}\item 
+{\footnotesize template$<$Embedding\-Mode mode$>$ }\\constexpr int \hyperlink{namespaceffnn_1_1layer_1_1convolution_a88d0a4ec4a7dbc89c35ce95d859a78cf}{ffnn\-::layer\-::convolution\-::embed\-\_\-data\-\_\-order} ()
+\begin{DoxyCompactList}\small\item\em Selects data ordering based on embedding mode. \end{DoxyCompactList}\item 
+{\footnotesize template$<$Embedding\-Mode mode, typename Shape\-Type $>$ }\\Shape\-Type \hyperlink{namespaceffnn_1_1layer_1_1convolution_a773c97d21219b026d77a46ac642ef4e6}{ffnn\-::layer\-::convolution\-::embed\-\_\-shape\-\_\-transform} (const Shape\-Type \&shape)
+\begin{DoxyCompactList}\small\item\em Transforms shape dimensions to a depth-\/embedded representation. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Size\-Type $>$ }\\constexpr Size\-Type \hyperlink{namespaceffnn_1_1layer_1_1convolution_aca263840b789df041d868a8a87dbf36a}{ffnn\-::layer\-::convolution\-::output\-\_\-dimension} (Size\-Type n, Size\-Type fn, Size\-Type stride)
+\begin{DoxyCompactList}\small\item\em Computes convolution output size. \end{DoxyCompactList}\end{DoxyCompactItemize}

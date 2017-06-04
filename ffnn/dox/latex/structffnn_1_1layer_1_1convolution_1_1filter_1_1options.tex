@@ -3,12 +3,12 @@
 }
 
 
-Describes compile-\/time options and extrinsic parameters used to set up a \hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter}{Filter} object.  
+Describes compile-\/time options and extrinsic parameters used to set up a \hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter}{Filter} object.  
 
 
 
 
-{\ttfamily \#include \char`\"{}filter.\-h\char`\"{}}
+{\ttfamily \#include \char`\"{}compile\-\_\-time\-\_\-options.\-h\char`\"{}}
 
 \subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
@@ -23,18 +23,18 @@ static constexpr \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{siz
 \begin{DoxyCompactList}\small\item\em Kernel depth at compile-\/time. \end{DoxyCompactList}\item 
 static constexpr \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} \hyperlink{structffnn_1_1layer_1_1convolution_1_1filter_1_1options_a615d2970fd2d4ded6bbacff86d6f71e4}{kernel\-\_\-count} = Kernel\-Count\-At\-Compile\-Time
 \begin{DoxyCompactList}\small\item\em Number of filter kernels at compile-\/time. \end{DoxyCompactList}\item 
-static constexpr \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} \hyperlink{structffnn_1_1layer_1_1convolution_1_1filter_1_1options_a1f86b4cfe7a30523e5ff50d99708659a}{embedded\-\_\-kernel\-\_\-height} = \hyperlink{namespaceffnn_1_1layer_1_1convolution_a0cca23056b3d9d79e6604c9419814351}{embed\-\_\-dimension}$<$\hyperlink{structffnn_1_1layer_1_1convolution_1_1filter_1_1options_a364919ad62fa093fbf5d142bd4f37d6e}{embedding\-\_\-mode}, \hyperlink{namespaceffnn_1_1layer_1_1convolution_ad420d4eb8edd7c254d1f0aaaad81017fae2ba27e8fa1aed3f003e54947f37d17e}{Col\-Embedding}$>$(\hyperlink{structffnn_1_1layer_1_1convolution_1_1filter_1_1options_a89572b22e67e07c6f68d5c51070b0dbf}{kernel\-\_\-height}, \hyperlink{structffnn_1_1layer_1_1convolution_1_1filter_1_1options_a699036320138871693bcd0ecfb977d6b}{kernel\-\_\-depth})
+static constexpr \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} \hyperlink{structffnn_1_1layer_1_1convolution_1_1filter_1_1options_a1f86b4cfe7a30523e5ff50d99708659a}{embedded\-\_\-kernel\-\_\-height}
 \begin{DoxyCompactList}\small\item\em Depth embedded kernel height at compile-\/time. \end{DoxyCompactList}\item 
-static constexpr \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} \hyperlink{structffnn_1_1layer_1_1convolution_1_1filter_1_1options_a9cc6dff082340e5c7388f8878ea3a7f4}{embedded\-\_\-kernel\-\_\-width} = \hyperlink{namespaceffnn_1_1layer_1_1convolution_a0cca23056b3d9d79e6604c9419814351}{embed\-\_\-dimension}$<$\hyperlink{structffnn_1_1layer_1_1convolution_1_1filter_1_1options_a364919ad62fa093fbf5d142bd4f37d6e}{embedding\-\_\-mode}, \hyperlink{namespaceffnn_1_1layer_1_1convolution_ad420d4eb8edd7c254d1f0aaaad81017fa1c03b5145e31615496457aa687a180c2}{Row\-Embedding}$>$(\hyperlink{structffnn_1_1layer_1_1convolution_1_1filter_1_1options_afd97cb92020381b3f2489b92946fdc11}{kernel\-\_\-width}, \hyperlink{structffnn_1_1layer_1_1convolution_1_1filter_1_1options_a699036320138871693bcd0ecfb977d6b}{kernel\-\_\-depth})
+static constexpr \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} \hyperlink{structffnn_1_1layer_1_1convolution_1_1filter_1_1options_a9cc6dff082340e5c7388f8878ea3a7f4}{embedded\-\_\-kernel\-\_\-width}
 \begin{DoxyCompactList}\small\item\em Depth embedded kernel width at compile-\/time. \end{DoxyCompactList}\item 
-static constexpr bool \hyperlink{structffnn_1_1layer_1_1convolution_1_1filter_1_1options_afe85a502882816dd562acd349c96b30e}{has\-\_\-fixed\-\_\-kernel\-\_\-count} = (Kernel\-Count\-At\-Compile\-Time $>$ 0)
-\begin{DoxyCompactList}\small\item\em {\ttfamily true} if number of kernels in the filter is determined at compile-\/time and is fixed \end{DoxyCompactList}\end{DoxyCompactItemize}
+static constexpr bool \hyperlink{structffnn_1_1layer_1_1convolution_1_1filter_1_1options_afe85a502882816dd562acd349c96b30e}{has\-\_\-fixed\-\_\-kernel\-\_\-count} = !\hyperlink{namespaceffnn_1_1layer_a83ba223c7b7eb8e3d926b98b266f24c8}{is\-\_\-dynamic}(Kernel\-Count\-At\-Compile\-Time)
+\begin{DoxyCompactList}\small\item\em Used to check if number of kernels in the filter is fixed. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 \subsubsection*{template$<$size\-\_\-type Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, Embedding\-Mode Mode = Col\-Embedding$>$struct ffnn\-::layer\-::convolution\-::filter\-::options$<$ Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Kernel\-Count\-At\-Compile\-Time, Mode $>$}
 
-Describes compile-\/time options and extrinsic parameters used to set up a \hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter}{Filter} object. 
+Describes compile-\/time options and extrinsic parameters used to set up a \hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter}{Filter} object. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -52,14 +52,26 @@ Describes compile-\/time options and extrinsic parameters used to set up a \hype
 \subsection{Member Data Documentation}
 \hypertarget{structffnn_1_1layer_1_1convolution_1_1filter_1_1options_a1f86b4cfe7a30523e5ff50d99708659a}{\index{ffnn\-::layer\-::convolution\-::filter\-::options@{ffnn\-::layer\-::convolution\-::filter\-::options}!embedded\-\_\-kernel\-\_\-height@{embedded\-\_\-kernel\-\_\-height}}
 \index{embedded\-\_\-kernel\-\_\-height@{embedded\-\_\-kernel\-\_\-height}!ffnn::layer::convolution::filter::options@{ffnn\-::layer\-::convolution\-::filter\-::options}}
-\subsubsection[{embedded\-\_\-kernel\-\_\-height}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\-\_\-type Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, Embedding\-Mode Mode = Col\-Embedding$>$ constexpr {\bf size\-\_\-type} {\bf ffnn\-::layer\-::convolution\-::filter\-::options}$<$ Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Kernel\-Count\-At\-Compile\-Time, Mode $>$\-::embedded\-\_\-kernel\-\_\-height = {\bf embed\-\_\-dimension}$<${\bf embedding\-\_\-mode}, {\bf Col\-Embedding}$>$({\bf kernel\-\_\-height}, {\bf kernel\-\_\-depth})\hspace{0.3cm}{\ttfamily [static]}}}\label{structffnn_1_1layer_1_1convolution_1_1filter_1_1options_a1f86b4cfe7a30523e5ff50d99708659a}
+\subsubsection[{embedded\-\_\-kernel\-\_\-height}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\-\_\-type Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, Embedding\-Mode Mode = Col\-Embedding$>$ constexpr {\bf size\-\_\-type} {\bf ffnn\-::layer\-::convolution\-::filter\-::options}$<$ Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Kernel\-Count\-At\-Compile\-Time, Mode $>$\-::embedded\-\_\-kernel\-\_\-height\hspace{0.3cm}{\ttfamily [static]}}}\label{structffnn_1_1layer_1_1convolution_1_1filter_1_1options_a1f86b4cfe7a30523e5ff50d99708659a}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+    embed\_dimension<embedding\_mode, ColEmbedding>(\hyperlink{structffnn_1_1layer_1_1convolution_1_1filter_1_1options_a89572b22e67e07c6f68d5c51070b0dbf}{kernel\_height}, 
+      \hyperlink{structffnn_1_1layer_1_1convolution_1_1filter_1_1options_a699036320138871693bcd0ecfb977d6b}{kernel\_depth})
+\end{DoxyCode}
 
 
 Depth embedded kernel height at compile-\/time. 
 
 \hypertarget{structffnn_1_1layer_1_1convolution_1_1filter_1_1options_a9cc6dff082340e5c7388f8878ea3a7f4}{\index{ffnn\-::layer\-::convolution\-::filter\-::options@{ffnn\-::layer\-::convolution\-::filter\-::options}!embedded\-\_\-kernel\-\_\-width@{embedded\-\_\-kernel\-\_\-width}}
 \index{embedded\-\_\-kernel\-\_\-width@{embedded\-\_\-kernel\-\_\-width}!ffnn::layer::convolution::filter::options@{ffnn\-::layer\-::convolution\-::filter\-::options}}
-\subsubsection[{embedded\-\_\-kernel\-\_\-width}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\-\_\-type Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, Embedding\-Mode Mode = Col\-Embedding$>$ constexpr {\bf size\-\_\-type} {\bf ffnn\-::layer\-::convolution\-::filter\-::options}$<$ Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Kernel\-Count\-At\-Compile\-Time, Mode $>$\-::embedded\-\_\-kernel\-\_\-width = {\bf embed\-\_\-dimension}$<${\bf embedding\-\_\-mode}, {\bf Row\-Embedding}$>$({\bf kernel\-\_\-width}, {\bf kernel\-\_\-depth})\hspace{0.3cm}{\ttfamily [static]}}}\label{structffnn_1_1layer_1_1convolution_1_1filter_1_1options_a9cc6dff082340e5c7388f8878ea3a7f4}
+\subsubsection[{embedded\-\_\-kernel\-\_\-width}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\-\_\-type Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, Embedding\-Mode Mode = Col\-Embedding$>$ constexpr {\bf size\-\_\-type} {\bf ffnn\-::layer\-::convolution\-::filter\-::options}$<$ Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Kernel\-Count\-At\-Compile\-Time, Mode $>$\-::embedded\-\_\-kernel\-\_\-width\hspace{0.3cm}{\ttfamily [static]}}}\label{structffnn_1_1layer_1_1convolution_1_1filter_1_1options_a9cc6dff082340e5c7388f8878ea3a7f4}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+    embed\_dimension<embedding\_mode, RowEmbedding>(\hyperlink{structffnn_1_1layer_1_1convolution_1_1filter_1_1options_afd97cb92020381b3f2489b92946fdc11}{kernel\_width}, 
+      \hyperlink{structffnn_1_1layer_1_1convolution_1_1filter_1_1options_a699036320138871693bcd0ecfb977d6b}{kernel\_depth})
+\end{DoxyCode}
 
 
 Depth embedded kernel width at compile-\/time. 
@@ -73,10 +85,10 @@ Data embedding mode.
 
 \hypertarget{structffnn_1_1layer_1_1convolution_1_1filter_1_1options_afe85a502882816dd562acd349c96b30e}{\index{ffnn\-::layer\-::convolution\-::filter\-::options@{ffnn\-::layer\-::convolution\-::filter\-::options}!has\-\_\-fixed\-\_\-kernel\-\_\-count@{has\-\_\-fixed\-\_\-kernel\-\_\-count}}
 \index{has\-\_\-fixed\-\_\-kernel\-\_\-count@{has\-\_\-fixed\-\_\-kernel\-\_\-count}!ffnn::layer::convolution::filter::options@{ffnn\-::layer\-::convolution\-::filter\-::options}}
-\subsubsection[{has\-\_\-fixed\-\_\-kernel\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\-\_\-type Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, Embedding\-Mode Mode = Col\-Embedding$>$ constexpr bool {\bf ffnn\-::layer\-::convolution\-::filter\-::options}$<$ Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Kernel\-Count\-At\-Compile\-Time, Mode $>$\-::has\-\_\-fixed\-\_\-kernel\-\_\-count = (Kernel\-Count\-At\-Compile\-Time $>$ 0)\hspace{0.3cm}{\ttfamily [static]}}}\label{structffnn_1_1layer_1_1convolution_1_1filter_1_1options_afe85a502882816dd562acd349c96b30e}
+\subsubsection[{has\-\_\-fixed\-\_\-kernel\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\-\_\-type Height\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Width\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Depth\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Kernel\-Count\-At\-Compile\-Time = Eigen\-::\-Dynamic, Embedding\-Mode Mode = Col\-Embedding$>$ constexpr bool {\bf ffnn\-::layer\-::convolution\-::filter\-::options}$<$ Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Kernel\-Count\-At\-Compile\-Time, Mode $>$\-::has\-\_\-fixed\-\_\-kernel\-\_\-count = !{\bf is\-\_\-dynamic}(Kernel\-Count\-At\-Compile\-Time)\hspace{0.3cm}{\ttfamily [static]}}}\label{structffnn_1_1layer_1_1convolution_1_1filter_1_1options_afe85a502882816dd562acd349c96b30e}
 
 
-{\ttfamily true} if number of kernels in the filter is determined at compile-\/time and is fixed 
+Used to check if number of kernels in the filter is fixed. 
 
 \hypertarget{structffnn_1_1layer_1_1convolution_1_1filter_1_1options_a615d2970fd2d4ded6bbacff86d6f71e4}{\index{ffnn\-::layer\-::convolution\-::filter\-::options@{ffnn\-::layer\-::convolution\-::filter\-::options}!kernel\-\_\-count@{kernel\-\_\-count}}
 \index{kernel\-\_\-count@{kernel\-\_\-count}!ffnn::layer::convolution::filter::options@{ffnn\-::layer\-::convolution\-::filter\-::options}}
@@ -110,4 +122,4 @@ Kernel width at compile-\/time.
 
 The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
 \item 
-/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/convolution/\hyperlink{filter_8h}{filter.\-h}\end{DoxyCompactItemize}
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/convolution/filter/\hyperlink{convolution_2filter_2compile__time__options_8h}{compile\-\_\-time\-\_\-options.\-h}\end{DoxyCompactItemize}

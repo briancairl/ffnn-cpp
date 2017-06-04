@@ -125,9 +125,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>initialize()
 : <a class="el" href="classffnn_1_1layer_1_1_activation.html#a10a733b3fc1378fd8d1f33d231ee3e83">ffnn::layer::Activation&lt; ValueType, NeuronType, SizeAtCompileTime, _HiddenLayerShape &gt;</a>
 , <a class="el" href="classffnn_1_1layer_1_1_convolution.html#ab3f6d731184032f58b05651d63e22d14">ffnn::layer::Convolution&lt; ValueType, Options, Extrinsics &gt;</a>
-, <a class="el" href="classffnn_1_1layer_1_1_fully_connected.html#a044ad3ef520054c9e94cc80d5096ce47">ffnn::layer::FullyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape &gt;</a>
+, <a class="el" href="classffnn_1_1layer_1_1_fully_connected.html#a26c93b2711c548ca0e7e2dc864998f41">ffnn::layer::FullyConnected&lt; ValueType, Options, Extrinsics &gt;</a>
 , <a class="el" href="classffnn_1_1layer_1_1_hidden.html#a50b9141e7d96fb7c6a1a6418fb204d92">ffnn::layer::Hidden&lt; ValueType, Options, Extrinsics &gt;</a>
-, <a class="el" href="classffnn_1_1layer_1_1_input.html#ac3de713973a8f67dc348a088ab6dbe1c">ffnn::layer::Input&lt; ValueType, NetworkInputsAtCompileTime &gt;</a>
 , <a class="el" href="classffnn_1_1layer_1_1_layer.html#ae8a7daa81382a7965b8ab8861da7e522">ffnn::layer::Layer&lt; ValueType &gt;</a>
 , <a class="el" href="classffnn_1_1layer_1_1_output.html#ab9ebd05595bc6b75718191aa48e70ad2">ffnn::layer::Output&lt; ValueType, NetworkOutputsAtCompileTime &gt;</a>
 , <a class="el" href="classffnn_1_1optimizer_1_1_adam_3_01layer_1_1_fully_connected_3_01_value_type_00_01_inputs_at_co08ce471fd3ee7441a350cc42cfd35bcd.html#aa67f949f7a1228c221d06b1b1e03c28b">ffnn::optimizer::Adam&lt; layer::FullyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt; &gt;</a>
@@ -142,9 +141,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>initialized_
 : <a class="el" href="classffnn_1_1layer_1_1_layer.html#a4e353c2498ffed566076b3a7fd187e7b">ffnn::layer::Layer&lt; ValueType &gt;</a>
-</li>
-<li>Input()
-: <a class="el" href="classffnn_1_1layer_1_1_input.html#a4e6396d50f2138352a0558109874a4e3">ffnn::layer::Input&lt; ValueType, NetworkInputsAtCompileTime &gt;</a>
 </li>
 <li>input_
 : <a class="el" href="classffnn_1_1layer_1_1_hidden.html#afe2644f671f711cf0ca1357621dfc3a6">ffnn::layer::Hidden&lt; ValueType, Options, Extrinsics &gt;</a>
@@ -165,6 +161,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>input_shape_
 : <a class="el" href="classffnn_1_1layer_1_1_layer.html#a07cc49b6890743a8045e3adc7c07aca5">ffnn::layer::Layer&lt; ValueType &gt;</a>
 </li>
+<li>input_size
+: <a class="el" href="structffnn_1_1layer_1_1fully__connected_1_1options.html#ae136ed9ebf9016f397acc9f3c10c9a32">ffnn::layer::fully_connected::options&lt; InputsAtCompileTime, OutputsAtCompileTime &gt;</a>
+, <a class="el" href="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1options.html#aa9973b3dcef51f2684f3c36bbeccd767">ffnn::layer::fully_connected::weights::options&lt; InputsAtCompileTime, OutputsAtCompileTime &gt;</a>
+</li>
 <li>input_width
 : <a class="el" href="structffnn_1_1layer_1_1convolution_1_1options.html#a17abc9ea9d41cf399fbeae5e3f7580f4">ffnn::layer::convolution::options&lt; HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, KernelHeightAtCompileTime, KernelWidthAtCompileTime, KernelCountAtCompileTime, RowStrideAtCompileTime, ColStrideAtCompileTime, Mode &gt;</a>
 , <a class="el" href="structffnn_1_1layer_1_1hidden_1_1options.html#a4567b834d82f7f709d014809b34ec8c4">ffnn::layer::hidden::options&lt; InputHeightAtCompileTime, InputWidthAtCompileTime, OutputHeightAtCompileTime, OutputWidthAtCompileTime, InputDataOrdering, OutputDataOrdering &gt;</a>
@@ -173,8 +173,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="classffnn_1_1internal_1_1_serializable.html#aadc27d79d606f35a82dd88bad33fa6d2">ffnn::internal::Serializable</a>
 </li>
 <li>InputBlockType
-: <a class="el" href="classffnn_1_1layer_1_1_fully_connected.html#a1360eaafde26c8b36ddb6fe4095b6119">ffnn::layer::FullyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape &gt;</a>
-, <a class="el" href="structffnn_1_1layer_1_1hidden_1_1extrinsics.html#af5299a48a27726ba0d407ecb28890092">ffnn::layer::hidden::extrinsics&lt; ValueType, Options &gt;</a>
+: <a class="el" href="structffnn_1_1layer_1_1hidden_1_1extrinsics.html#af5299a48a27726ba0d407ecb28890092">ffnn::layer::hidden::extrinsics&lt; ValueType, Options &gt;</a>
 , <a class="el" href="classffnn_1_1layer_1_1_hidden.html#abd5a3b5c55984948f903fe88759efaf4">ffnn::layer::Hidden&lt; ValueType, Options, Extrinsics &gt;</a>
 , <a class="el" href="classffnn_1_1optimizer_1_1_adam_3_01layer_1_1_fully_connected_3_01_value_type_00_01_inputs_at_co08ce471fd3ee7441a350cc42cfd35bcd.html#a0f9a1a492d0763a6068fd01c3c8d705a">ffnn::optimizer::Adam&lt; layer::FullyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt; &gt;</a>
 , <a class="el" href="classffnn_1_1optimizer_1_1_adam_3_01layer_1_1_sparsely_connected_3_01_value_type_00_01_inputs_at5101e46d32858ec2169acdeede08d723.html#a91ec5d1a25381d6c8e864474bd5e5817">ffnn::optimizer::Adam&lt; layer::SparselyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt; &gt;</a>
@@ -197,7 +196,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jun 2 2017 00:42:47 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jun 3 2017 23:40:29 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

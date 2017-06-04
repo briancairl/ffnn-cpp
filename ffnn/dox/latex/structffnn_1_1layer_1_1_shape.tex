@@ -13,31 +13,35 @@
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\hyperlink{structffnn_1_1layer_1_1_shape_aab4fc107d498c7d36937156561d0119f}{F\-F\-N\-N\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T} (std\-::is\-\_\-integral$<$ Size\-Type $>$\-::value,\char`\"{}Size\-Type must be an integer type.\char`\"{})
+\item 
+\hyperlink{structffnn_1_1layer_1_1_shape_a232bf3234a372c8a2bffe7075dcb2386}{F\-F\-N\-N\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T} (std\-::is\-\_\-signed$<$ Size\-Type $>$\-::value,\char`\"{}Size\-Type must be a signed type.\char`\"{})
+\item 
 \hyperlink{structffnn_1_1layer_1_1_shape_a084eabd9eec94244907367aca6d39e4a}{Shape} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
 \hyperlink{structffnn_1_1layer_1_1_shape_a5beff127a2bb5b14e7d831471623fd48}{Shape} (Size\-Type \hyperlink{structffnn_1_1layer_1_1_shape_a96608d7bcef7733a1b1f4782827a0c78}{height}, Size\-Type \hyperlink{structffnn_1_1layer_1_1_shape_a860cbac53d9e20bdf8283298c6369cbc}{width}=1, Size\-Type \hyperlink{structffnn_1_1layer_1_1_shape_a37ec3deb8c9f2d6617e6f63799c0fcbf}{depth}=1)
-\item 
+\begin{DoxyCompactList}\small\item\em Component constructor. \end{DoxyCompactList}\item 
 Size\-Type \hyperlink{structffnn_1_1layer_1_1_shape_a6e8ffdbc3feeb20a1f246b3ec56e40ca}{size} () const 
-\item 
+\begin{DoxyCompactList}\small\item\em Returns product of all dimentions. \end{DoxyCompactList}\item 
 bool \hyperlink{structffnn_1_1layer_1_1_shape_abef3f2121d2b9f132d02889cd3ceab41}{valid} () const 
-\item 
+\begin{DoxyCompactList}\small\item\em Checks if \hyperlink{structffnn_1_1layer_1_1_shape}{Shape} object is valid. \end{DoxyCompactList}\item 
 \hyperlink{structffnn_1_1layer_1_1_shape_a10aa9362c85c14aa54e736e497b300ee}{operator Size\-Type} () const 
-\item 
-void \hyperlink{structffnn_1_1layer_1_1_shape_a649e708cf5a7b2ff9ce7bf855f9d7114}{operator=} (Size\-Type count)
-\item 
-void \hyperlink{structffnn_1_1layer_1_1_shape_a0835cec02738f5a6cc7b165ce4ec3dc0}{operator=} (const \hyperlink{structffnn_1_1layer_1_1_shape}{Shape} \&dim)
-\item 
+\begin{DoxyCompactList}\small\item\em Casts \hyperlink{structffnn_1_1layer_1_1_shape}{Shape} to a scalar value. \end{DoxyCompactList}\item 
+\hyperlink{structffnn_1_1layer_1_1_shape}{Shape} \& \hyperlink{structffnn_1_1layer_1_1_shape_abb7c4a95e452d41b2d837b1eaa21cd7a}{operator=} (Size\-Type \hyperlink{structffnn_1_1layer_1_1_shape_a6e8ffdbc3feeb20a1f246b3ec56e40ca}{size})
+\begin{DoxyCompactList}\small\item\em Assign \hyperlink{structffnn_1_1layer_1_1_shape}{Shape} from a scalar value. \end{DoxyCompactList}\item 
+\hyperlink{structffnn_1_1layer_1_1_shape}{Shape} \& \hyperlink{structffnn_1_1layer_1_1_shape_ab5c5fa4a73bc8036e72f79f2fcd0b793}{operator=} (const \hyperlink{structffnn_1_1layer_1_1_shape}{Shape} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Archive $>$ }\\void \hyperlink{structffnn_1_1layer_1_1_shape_a53fc6b96338bf4f87d9b2736a40cb172}{serialize} (Archive \&ar, const unsigned int file\-\_\-version)
-\begin{DoxyCompactList}\small\item\em Serializer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Boost serializer. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 Size\-Type \hyperlink{structffnn_1_1layer_1_1_shape_a96608d7bcef7733a1b1f4782827a0c78}{height}
-\item 
+\begin{DoxyCompactList}\small\item\em Height coordinate; expected to be greater than zero. \end{DoxyCompactList}\item 
 Size\-Type \hyperlink{structffnn_1_1layer_1_1_shape_a860cbac53d9e20bdf8283298c6369cbc}{width}
-\item 
+\begin{DoxyCompactList}\small\item\em Width coordinate; expected to be greater than zero. \end{DoxyCompactList}\item 
 Size\-Type \hyperlink{structffnn_1_1layer_1_1_shape_a37ec3deb8c9f2d6617e6f63799c0fcbf}{depth}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Depth coordinate; expected to be greater than zero. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -53,6 +57,10 @@ Size\-Type \hyperlink{structffnn_1_1layer_1_1_shape_a37ec3deb8c9f2d6617e6f63799c
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{structffnn_1_1layer_1_1_shape_a084eabd9eec94244907367aca6d39e4a}
+
+
+Default constructor. 
+
 \hypertarget{structffnn_1_1layer_1_1_shape_a5beff127a2bb5b14e7d831471623fd48}{\index{ffnn\-::layer\-::\-Shape@{ffnn\-::layer\-::\-Shape}!Shape@{Shape}}
 \index{Shape@{Shape}!ffnn::layer::Shape@{ffnn\-::layer\-::\-Shape}}
 \subsubsection[{Shape}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Size\-Type$>$ {\bf ffnn\-::layer\-::\-Shape}$<$ Size\-Type $>$\-::{\bf Shape} (
@@ -64,7 +72,36 @@ Size\-Type \hyperlink{structffnn_1_1layer_1_1_shape_a37ec3deb8c9f2d6617e6f63799c
 )\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{structffnn_1_1layer_1_1_shape_a5beff127a2bb5b14e7d831471623fd48}
 
 
+Component constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & height coordinate \\
+\hline
+{\em width} & width coordinate \\
+\hline
+{\em depth} & depth coordinate \\
+\hline
+\end{DoxyParams}
+
+
 \subsection{Member Function Documentation}
+\hypertarget{structffnn_1_1layer_1_1_shape_aab4fc107d498c7d36937156561d0119f}{\index{ffnn\-::layer\-::\-Shape@{ffnn\-::layer\-::\-Shape}!F\-F\-N\-N\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T@{F\-F\-N\-N\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T}}
+\index{F\-F\-N\-N\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T@{F\-F\-N\-N\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T}!ffnn::layer::Shape@{ffnn\-::layer\-::\-Shape}}
+\subsubsection[{F\-F\-N\-N\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Size\-Type$>$ {\bf ffnn\-::layer\-::\-Shape}$<$ Size\-Type $>$\-::F\-F\-N\-N\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T (
+\begin{DoxyParamCaption}
+\item[{std\-::is\-\_\-integral$<$ Size\-Type $>$\-::value}]{, }
+\item[{\char`\"{}Size\-Type must be an integer type.\char`\"{}}]{}
+\end{DoxyParamCaption}
+)}}\label{structffnn_1_1layer_1_1_shape_aab4fc107d498c7d36937156561d0119f}
+\hypertarget{structffnn_1_1layer_1_1_shape_a232bf3234a372c8a2bffe7075dcb2386}{\index{ffnn\-::layer\-::\-Shape@{ffnn\-::layer\-::\-Shape}!F\-F\-N\-N\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T@{F\-F\-N\-N\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T}}
+\index{F\-F\-N\-N\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T@{F\-F\-N\-N\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T}!ffnn::layer::Shape@{ffnn\-::layer\-::\-Shape}}
+\subsubsection[{F\-F\-N\-N\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Size\-Type$>$ {\bf ffnn\-::layer\-::\-Shape}$<$ Size\-Type $>$\-::F\-F\-N\-N\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T (
+\begin{DoxyParamCaption}
+\item[{std\-::is\-\_\-signed$<$ Size\-Type $>$\-::value}]{, }
+\item[{\char`\"{}Size\-Type must be a signed type.\char`\"{}}]{}
+\end{DoxyParamCaption}
+)}}\label{structffnn_1_1layer_1_1_shape_a232bf3234a372c8a2bffe7075dcb2386}
 \hypertarget{structffnn_1_1layer_1_1_shape_a10aa9362c85c14aa54e736e497b300ee}{\index{ffnn\-::layer\-::\-Shape@{ffnn\-::layer\-::\-Shape}!operator Size\-Type@{operator Size\-Type}}
 \index{operator Size\-Type@{operator Size\-Type}!ffnn::layer::Shape@{ffnn\-::layer\-::\-Shape}}
 \subsubsection[{operator Size\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Size\-Type$>$ {\bf ffnn\-::layer\-::\-Shape}$<$ Size\-Type $>$\-::operator Size\-Type (
@@ -74,7 +111,12 @@ Size\-Type \hyperlink{structffnn_1_1layer_1_1_shape_a37ec3deb8c9f2d6617e6f63799c
 ) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{structffnn_1_1layer_1_1_shape_a10aa9362c85c14aa54e736e497b300ee}
 
 
-Here is the call graph for this function\-:\nopagebreak
+Casts \hyperlink{structffnn_1_1layer_1_1_shape}{Shape} to a scalar value. 
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -83,20 +125,38 @@ Here is the call graph for this function\-:\nopagebreak
 \end{figure}
 
 
-\hypertarget{structffnn_1_1layer_1_1_shape_a649e708cf5a7b2ff9ce7bf855f9d7114}{\index{ffnn\-::layer\-::\-Shape@{ffnn\-::layer\-::\-Shape}!operator=@{operator=}}
+\hypertarget{structffnn_1_1layer_1_1_shape_abb7c4a95e452d41b2d837b1eaa21cd7a}{\index{ffnn\-::layer\-::\-Shape@{ffnn\-::layer\-::\-Shape}!operator=@{operator=}}
 \index{operator=@{operator=}!ffnn::layer::Shape@{ffnn\-::layer\-::\-Shape}}
-\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Size\-Type$>$ void {\bf ffnn\-::layer\-::\-Shape}$<$ Size\-Type $>$\-::operator= (
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Size\-Type$>$ {\bf Shape}\& {\bf ffnn\-::layer\-::\-Shape}$<$ Size\-Type $>$\-::operator= (
 \begin{DoxyParamCaption}
-\item[{Size\-Type}]{count}
+\item[{Size\-Type}]{size}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structffnn_1_1layer_1_1_shape_a649e708cf5a7b2ff9ce7bf855f9d7114}
-\hypertarget{structffnn_1_1layer_1_1_shape_a0835cec02738f5a6cc7b165ce4ec3dc0}{\index{ffnn\-::layer\-::\-Shape@{ffnn\-::layer\-::\-Shape}!operator=@{operator=}}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structffnn_1_1layer_1_1_shape_abb7c4a95e452d41b2d837b1eaa21cd7a}
+
+
+Assign \hyperlink{structffnn_1_1layer_1_1_shape}{Shape} from a scalar value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & interger size \\
+\hline
+\end{DoxyParams}
+\hypertarget{structffnn_1_1layer_1_1_shape_ab5c5fa4a73bc8036e72f79f2fcd0b793}{\index{ffnn\-::layer\-::\-Shape@{ffnn\-::layer\-::\-Shape}!operator=@{operator=}}
 \index{operator=@{operator=}!ffnn::layer::Shape@{ffnn\-::layer\-::\-Shape}}
-\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Size\-Type$>$ void {\bf ffnn\-::layer\-::\-Shape}$<$ Size\-Type $>$\-::operator= (
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Size\-Type$>$ {\bf Shape}\& {\bf ffnn\-::layer\-::\-Shape}$<$ Size\-Type $>$\-::operator= (
 \begin{DoxyParamCaption}
-\item[{const {\bf Shape}$<$ Size\-Type $>$ \&}]{dim}
+\item[{const {\bf Shape}$<$ Size\-Type $>$ \&}]{other}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structffnn_1_1layer_1_1_shape_a0835cec02738f5a6cc7b165ce4ec3dc0}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{structffnn_1_1layer_1_1_shape_ab5c5fa4a73bc8036e72f79f2fcd0b793}
+
+
+Assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Another \hyperlink{structffnn_1_1layer_1_1_shape}{Shape} object \\
+\hline
+\end{DoxyParams}
 \hypertarget{structffnn_1_1layer_1_1_shape_a53fc6b96338bf4f87d9b2736a40cb172}{\index{ffnn\-::layer\-::\-Shape@{ffnn\-::layer\-::\-Shape}!serialize@{serialize}}
 \index{serialize@{serialize}!ffnn::layer::Shape@{ffnn\-::layer\-::\-Shape}}
 \subsubsection[{serialize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Size\-Type$>$ template$<$class Archive $>$ void {\bf ffnn\-::layer\-::\-Shape}$<$ Size\-Type $>$\-::serialize (
@@ -107,7 +167,7 @@ Here is the call graph for this function\-:\nopagebreak
 )\hspace{0.3cm}{\ttfamily [inline]}}}\label{structffnn_1_1layer_1_1_shape_a53fc6b96338bf4f87d9b2736a40cb172}
 
 
-Serializer. 
+Boost serializer. 
 
 \hypertarget{structffnn_1_1layer_1_1_shape_a6e8ffdbc3feeb20a1f246b3ec56e40ca}{\index{ffnn\-::layer\-::\-Shape@{ffnn\-::layer\-::\-Shape}!size@{size}}
 \index{size@{size}!ffnn::layer::Shape@{ffnn\-::layer\-::\-Shape}}
@@ -118,7 +178,14 @@ Serializer.
 ) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{structffnn_1_1layer_1_1_shape_a6e8ffdbc3feeb20a1f246b3ec56e40ca}
 
 
-Referenced by ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::initialize(), ffnn\-::optimizer\-::\-Adam$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::initialize(), ffnn\-::layer\-::\-Shape$<$ Size\-Type $>$\-::operator Size\-Type(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::reset(), and ffnn\-::layer\-::\-Shape$<$ size\-\_\-type $>$\-::valid().
+Returns product of all dimentions. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily height $\ast$ width $\ast$ depth} 
+\end{DoxyReturn}
+
+
+Referenced by ffnn\-::layer\-::\-Shape$<$ Size\-Type $>$\-::operator Size\-Type(), ffnn\-::layer\-::\-Shape$<$ size\-\_\-type $>$\-::operator=(), and ffnn\-::layer\-::\-Shape$<$ size\-\_\-type $>$\-::valid().
 
 \hypertarget{structffnn_1_1layer_1_1_shape_abef3f2121d2b9f132d02889cd3ceab41}{\index{ffnn\-::layer\-::\-Shape@{ffnn\-::layer\-::\-Shape}!valid@{valid}}
 \index{valid@{valid}!ffnn::layer::Shape@{ffnn\-::layer\-::\-Shape}}
@@ -127,6 +194,17 @@ Referenced by ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Conn
 {}
 \end{DoxyParamCaption}
 ) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{structffnn_1_1layer_1_1_shape_abef3f2121d2b9f132d02889cd3ceab41}
+
+
+Checks if \hyperlink{structffnn_1_1layer_1_1_shape}{Shape} object is valid. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & if all coordinate fields represent sizes greater than zero \\
+\hline
+{\em false} & if any coordinate fields represent a dynamic (unassigned) size \\
+\hline
+\end{DoxyRetVals}
 
 
 Referenced by ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$\-::\-Layer().
@@ -139,6 +217,10 @@ Referenced by ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$\-::\-Layer().
 \subsubsection[{depth}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Size\-Type$>$ Size\-Type {\bf ffnn\-::layer\-::\-Shape}$<$ Size\-Type $>$\-::depth}}\label{structffnn_1_1layer_1_1_shape_a37ec3deb8c9f2d6617e6f63799c0fcbf}
 
 
+Depth coordinate; expected to be greater than zero. 
+
+
+
 Referenced by ffnn\-::layer\-::\-Shape$<$ size\-\_\-type $>$\-::operator=(), ffnn\-::layer\-::\-Shape$<$ size\-\_\-type $>$\-::serialize(), and ffnn\-::layer\-::\-Shape$<$ size\-\_\-type $>$\-::size().
 
 \hypertarget{structffnn_1_1layer_1_1_shape_a96608d7bcef7733a1b1f4782827a0c78}{\index{ffnn\-::layer\-::\-Shape@{ffnn\-::layer\-::\-Shape}!height@{height}}
@@ -146,11 +228,19 @@ Referenced by ffnn\-::layer\-::\-Shape$<$ size\-\_\-type $>$\-::operator=(), ffn
 \subsubsection[{height}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Size\-Type$>$ Size\-Type {\bf ffnn\-::layer\-::\-Shape}$<$ Size\-Type $>$\-::height}}\label{structffnn_1_1layer_1_1_shape_a96608d7bcef7733a1b1f4782827a0c78}
 
 
+Height coordinate; expected to be greater than zero. 
+
+
+
 Referenced by ffnn\-::layer\-::\-Shape$<$ size\-\_\-type $>$\-::operator=(), ffnn\-::layer\-::\-Shape$<$ size\-\_\-type $>$\-::serialize(), and ffnn\-::layer\-::\-Shape$<$ size\-\_\-type $>$\-::size().
 
 \hypertarget{structffnn_1_1layer_1_1_shape_a860cbac53d9e20bdf8283298c6369cbc}{\index{ffnn\-::layer\-::\-Shape@{ffnn\-::layer\-::\-Shape}!width@{width}}
 \index{width@{width}!ffnn::layer::Shape@{ffnn\-::layer\-::\-Shape}}
 \subsubsection[{width}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Size\-Type$>$ Size\-Type {\bf ffnn\-::layer\-::\-Shape}$<$ Size\-Type $>$\-::width}}\label{structffnn_1_1layer_1_1_shape_a860cbac53d9e20bdf8283298c6369cbc}
+
+
+Width coordinate; expected to be greater than zero. 
+
 
 
 Referenced by ffnn\-::layer\-::\-Shape$<$ size\-\_\-type $>$\-::operator=(), ffnn\-::layer\-::\-Shape$<$ size\-\_\-type $>$\-::serialize(), and ffnn\-::layer\-::\-Shape$<$ size\-\_\-type $>$\-::size().

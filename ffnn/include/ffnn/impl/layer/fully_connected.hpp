@@ -49,19 +49,19 @@ template <typename ValueType,
 bool FullyConnected<ValueType, Options, Extrinsics>::initialize()
 {
   // Abort if layer is already initialized
-  if (Base::setupRequired() && Base::isInitialized())
+  if (BaseType::setupRequired() && BaseType::isInitialized())
   {
     FFNN_WARN_NAMED("layer::FullyConnected",
-                    "<" << Base::getID() << "> already initialized.");
+                    "<" << BaseType::getID() << "> already initialized.");
     return false;
   }
-  else if (!Base::initialize())
+  else if (!BaseType::initialize())
   {
     return false;
   }
 
   // Initialize weights
-  if (Base::setupRequired())
+  if (BaseType::setupRequired())
   {
     reset();
   }
@@ -74,11 +74,11 @@ bool FullyConnected<ValueType, Options, Extrinsics>::initialize()
 
   FFNN_DEBUG_NAMED("layer::FullyConnected",
                    "<" <<
-                   Base::getID() <<
+                   BaseType::getID() <<
                    "> initialized as (in=" <<
-                   Base::getInputShape().size() <<
+                   BaseType::getInputShape().size() <<
                    ", out=" <<
-                   Base::getOutputShape().size() <<
+                   BaseType::getOutputShape().size() <<
                    ") [with 1 biasing input] (optimizer=" <<
                    config_.optimizer_->name() <<
                    ")");
@@ -98,8 +98,8 @@ bool FullyConnected<ValueType, Options, Extrinsics>::forward()
   }
 
   // Compute weighted + biased outputs
-  Base::output_.noalias() = parameters_.weights * Base::input_;
-  Base::output_ += parameters_.bias;
+  BaseType::output_.noalias() = parameters_.weights * BaseType::input_;
+  BaseType::output_ += parameters_.biases;
   return true;
 }
 
@@ -111,7 +111,7 @@ bool FullyConnected<ValueType, Options, Extrinsics>::backward()
   FFNN_ASSERT_MSG(config_.optimizer_, "No optimization resource set.");
 
   // Compute backward error
-  Base::backward_error_.noalias() = parameters_.weights.transpose() * Base::forward_error_;
+  BaseType::backward_error_.noalias() = parameters_.weights.transpose() * BaseType::forward_error_;
 
   // Run optimizer
   return config_.optimizer_->backward(*this);
@@ -132,18 +132,17 @@ template <typename ValueType,
 void FullyConnected<ValueType, Options, Extrinsics>::reset()
 {
   // Zero out connection weights and biases with appropriate size
-  parameters_.setZero(Base::getInputShape().size(),
-                      Base::getOutputShape().size());
+  parameters_.setZero(BaseType::getInputShape().size(),
+                      BaseType::getOutputShape().size());
 }
 
 template <typename ValueType,
           typename Options,
           typename Extrinsics>
-void FullyConnected<ValueType, Options, Extrinsics>::save(typename FullyConnected<ValueType, Options, Extrinsics>::OutputArchive& ar,
-                                                          typename FullyConnected<ValueType, Options, Extrinsics>::VersionType version) const
+void FullyConnected<ValueType, Options, Extrinsics>::save(OutputArchive& ar, VersionType version) const
 {
-  ffnn::internal::signature::apply<FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape>>(ar);
-  Base::save(ar, version);
+  ffnn::internal::signature::apply<SelfType>(ar);
+  BaseType::save(ar, version);
 
   // Save parameters
   ar & parameters_;
@@ -157,11 +156,10 @@ void FullyConnected<ValueType, Options, Extrinsics>::save(typename FullyConnecte
 template <typename ValueType,
           typename Options,
           typename Extrinsics>
-void FullyConnected<ValueType, Options, Extrinsics>::load(typename FullyConnected<ValueType, Options, Extrinsics>::InputArchive& ar,
-                                                          typename FullyConnected<ValueType, Options, Extrinsics>::VersionType version)
+void FullyConnected<ValueType, Options, Extrinsics>::load(InputArchive& ar, VersionType version)
 {
-  ffnn::internal::signature::check<FullyConnected<ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape>>(ar);
-  Base::load(ar, version);
+  ffnn::internal::signature::check<SelfType>(ar);
+  BaseType::load(ar, version);
 
   // Load parameters
   ar & parameters_;

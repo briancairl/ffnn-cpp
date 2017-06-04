@@ -1,0 +1,3 @@
+<map id="ffnn::layer::fully_connected::Weights::setRandom" name="ffnn::layer::fully_connected::Weights::setRandom">
+<area shape="rect" id="node2" href="$namespaceffnn_1_1distribution.html#aacaa8d87a0c4ec48fb1251623532dac7" title="Sets random coefficients according to particular distribution. " alt="" coords="200,11,315,53"/>
+</map>

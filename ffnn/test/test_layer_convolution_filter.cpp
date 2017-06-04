@@ -98,7 +98,6 @@ TEST(TestLayerConvolutionFilter, Static_ElementWiseDivision)
   }
 }
 
-
 TEST(TestLayerConvolutionFilter, Static_Assignment)
 {
   using ffnn::layer::convolution::RowEmbedding;

@@ -3,11 +3,12 @@
 }
 {\ttfamily \#include $<$vector$>$}\\*
 {\ttfamily \#include $<$type\-\_\-traits$>$}\\*
-{\ttfamily \#include $<$ffnn/config/global.\-h$>$}\\*
+{\ttfamily \#include $<$ffnn/internal/config.\-h$>$}\\*
 {\ttfamily \#include $<$ffnn/assert.\-h$>$}\\*
-{\ttfamily \#include $<$ffnn/layer/layer.\-h$>$}\\*
 {\ttfamily \#include $<$ffnn/internal/serializable.\-h$>$}\\*
 {\ttfamily \#include $<$ffnn/internal/traits.\-h$>$}\\*
+{\ttfamily \#include $<$ffnn/layer/layer.\-h$>$}\\*
+{\ttfamily \#include $<$ffnn/layer/hidden/compile\-\_\-time\-\_\-options.\-h$>$}\\*
 {\ttfamily \#include $<$ffnn/impl/layer/hidden.\-hpp$>$}\\*
 Include dependency graph for hidden.\-h\-:
 \nopagebreak
@@ -17,7 +18,8 @@ Include dependency graph for hidden.\-h\-:
 \includegraphics[width=350pt]{hidden_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\-:\nopagebreak
+This graph shows which files directly or indirectly include this file\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -27,10 +29,6 @@ This graph shows which files directly or indirectly include this file\-:\nopageb
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-struct \hyperlink{structffnn_1_1layer_1_1hidden_1_1options}{ffnn\-::layer\-::hidden\-::options$<$ Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, Input\-Data\-Ordering, Output\-Data\-Ordering $>$}
-\begin{DoxyCompactList}\small\item\em Describes compile-\/time options used to set up a \hyperlink{classffnn_1_1layer_1_1_convolution}{Convolution} object. \end{DoxyCompactList}\item 
-struct \hyperlink{structffnn_1_1layer_1_1hidden_1_1extrinsics}{ffnn\-::layer\-::hidden\-::extrinsics$<$ Value\-Type, Options $>$}
-\begin{DoxyCompactList}\small\item\em Describes types based on compile-\/time options. \end{DoxyCompactList}\item 
 class \hyperlink{classffnn_1_1layer_1_1_hidden}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, Options, Extrinsics $>$}
 \begin{DoxyCompactList}\small\item\em A network hidden-\/layer object. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Namespaces}
@@ -39,6 +37,4 @@ class \hyperlink{classffnn_1_1layer_1_1_hidden}{ffnn\-::layer\-::\-Hidden$<$ Val
 \hyperlink{namespaceffnn}{ffnn}
 \item 
 \hyperlink{namespaceffnn_1_1layer}{ffnn\-::layer}
-\item 
-\hyperlink{namespaceffnn_1_1layer_1_1hidden}{ffnn\-::layer\-::hidden}
 \end{DoxyCompactItemize}

@@ -2,7 +2,8 @@
 \label{assert_8h}\index{/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/assert.\-h@{/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/assert.\-h}}
 }
 {\ttfamily \#include $<$exception$>$}\\*
-{\ttfamily \#include $<$ffnn/config/global.\-h$>$}\\*
+{\ttfamily \#include $<$type\-\_\-traits$>$}\\*
+{\ttfamily \#include $<$ffnn/internal/config.\-h$>$}\\*
 Include dependency graph for assert.\-h\-:
 \nopagebreak
 \begin{figure}[H]
@@ -11,7 +12,8 @@ Include dependency graph for assert.\-h\-:
 \includegraphics[width=350pt]{assert_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\-:\nopagebreak
+This graph shows which files directly or indirectly include this file\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -25,11 +27,11 @@ This graph shows which files directly or indirectly include this file\-:\nopageb
 \item 
 \#define \hyperlink{assert_8h_acebc1a2cbd18085c2c24e2fe4311451b}{F\-F\-N\-N\-\_\-\-A\-S\-S\-E\-R\-T}(cond)~\hyperlink{assert_8h_a0dd452510e5d75d0f71f52ed14143c40}{F\-F\-N\-N\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-M\-S\-G}(cond, \char`\"{}Assertion Failed.\char`\"{})
 \begin{DoxyCompactList}\small\item\em Debug assert defintion. \end{DoxyCompactList}\item 
-\#define \hyperlink{assert_8h_a2b49bd7cbe87713cc51996494f3c4fd5}{F\-F\-N\-N\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-M\-S\-G}(cond, msg)~static\-\_\-assert(cond, msg)
+\#define \hyperlink{assert_8h_a239b61758d68adadb15eb14ab7fa589b}{F\-F\-N\-N\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T}(cond, msg)~static\-\_\-assert(cond, msg)
 \begin{DoxyCompactList}\small\item\em Compile-\/time assertion definition. \end{DoxyCompactList}\item 
 \#define \hyperlink{assert_8h_aad64ee3fe6ac7c17c2a7b02318563b21}{F\-F\-N\-N\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-R\-U\-N\-T\-I\-M\-E\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-M\-S\-G}(cond, msg)
 \begin{DoxyCompactList}\small\item\em Static runtime assertion definition. \end{DoxyCompactList}\item 
-\#define \hyperlink{assert_8h_a4bcf259d8e662fe1b9b9d9c603f49d90}{F\-F\-N\-N\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-N\-O\-\_\-\-M\-O\-D\-\_\-\-L\-A\-Y\-E\-R\-\_\-\-E\-X\-T\-R\-I\-N\-S\-I\-C\-S}(N\-S)
+\#define \hyperlink{assert_8h_abb0f32cd720478346d8bd674d9c91a37}{F\-F\-N\-N\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-D\-O\-N\-T\-\_\-\-M\-O\-D\-I\-F\-Y\-\_\-\-E\-X\-T\-R\-I\-N\-S\-I\-C\-S}(N\-S)
 \begin{DoxyCompactList}\small\item\em Compile-\/time assert to enforce templated layer instancing pattern. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -45,31 +47,13 @@ This graph shows which files directly or indirectly include this file\-:\nopageb
 
 Debug assert defintion. 
 
-\hypertarget{assert_8h_a0dd452510e5d75d0f71f52ed14143c40}{\index{assert.\-h@{assert.\-h}!F\-F\-N\-N\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-M\-S\-G@{F\-F\-N\-N\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-M\-S\-G}}
-\index{F\-F\-N\-N\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-M\-S\-G@{F\-F\-N\-N\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-M\-S\-G}!assert.h@{assert.\-h}}
-\subsubsection[{F\-F\-N\-N\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-M\-S\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\-F\-N\-N\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-M\-S\-G(
-\begin{DoxyParamCaption}
-\item[{}]{cond, }
-\item[{}]{msg}
-\end{DoxyParamCaption}
-)~(void(0))}}\label{assert_8h_a0dd452510e5d75d0f71f52ed14143c40}
-\begin{DoxyAuthor}{Author}
-Brian Cairl 
-\end{DoxyAuthor}
-\begin{DoxyDate}{Date}
-2017 
-\end{DoxyDate}
-
-
-Referenced by ffnn\-::optimizer\-::\-Adam$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::\-Adam(), ffnn\-::optimizer\-::\-Adam$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::\-Adam(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::backward(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::backward(), ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-::backward(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$\-::backward(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$\-::backward(), ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Options, Extrinsics $>$\-::backward(), ffnn\-::layer\-::\-Hidden$<$ Value\-Type, Options, Extrinsics $>$\-::connect\-To\-Forward\-Layer(), ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$\-::evaluate\-Input\-Size(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::forward(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::forward(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$\-::forward(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$\-::forward(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::initialize(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::initialize(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$\-::initialize(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$\-::initialize(), ffnn\-::layer\-::\-Hidden$<$ Value\-Type, Options, Extrinsics $>$\-::initialize(), ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$\-::\-Layer(), ffnn\-::neuron\-::\-Leaky\-Rectified\-Linear$<$ Value\-Type, \-\_\-\-P, \-\_\-\-B $>$\-::\-Leaky\-Rectified\-Linear(), ffnn\-::distribution\-::\-Normal$<$ Value\-Type $>$\-::\-Normal(), ffnn\-::layer\-::convolution\-::\-Filter$<$ Value\-Type, Options, Extrinsics $>$\-::operator$\ast$=(), ffnn\-::layer\-::convolution\-::\-Filter$<$ Value\-Type, Options, Extrinsics $>$\-::operator+=(), ffnn\-::layer\-::convolution\-::\-Filter$<$ Value\-Type, Options, Extrinsics $>$\-::operator-\/=(), ffnn\-::layer\-::convolution\-::\-Filter$<$ Value\-Type, Options, Extrinsics $>$\-::operator/=(), ffnn\-::layer\-::\-Input$<$ Value\-Type, Network\-Inputs\-At\-Compile\-Time $>$\-::operator$<$$<$(), ffnn\-::layer\-::\-Output$<$ Value\-Type, Network\-Outputs\-At\-Compile\-Time $>$\-::operator$<$$<$(), ffnn\-::layer\-::\-Output$<$ Value\-Type, Network\-Outputs\-At\-Compile\-Time $>$\-::operator$>$$>$(), ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-::set\-Optimizer(), ffnn\-::layer\-::convolution\-::\-Filter$<$ Value\-Type, Options, Extrinsics $>$\-::set\-Zero(), ffnn\-::optimizer\-::\-Adam$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::update(), ffnn\-::optimizer\-::\-Adam$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::update(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::update(), ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-::update(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::update(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$\-::update(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$\-::update(), and ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Options, Extrinsics $>$\-::update().
-
-\hypertarget{assert_8h_a4bcf259d8e662fe1b9b9d9c603f49d90}{\index{assert.\-h@{assert.\-h}!F\-F\-N\-N\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-N\-O\-\_\-\-M\-O\-D\-\_\-\-L\-A\-Y\-E\-R\-\_\-\-E\-X\-T\-R\-I\-N\-S\-I\-C\-S@{F\-F\-N\-N\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-N\-O\-\_\-\-M\-O\-D\-\_\-\-L\-A\-Y\-E\-R\-\_\-\-E\-X\-T\-R\-I\-N\-S\-I\-C\-S}}
-\index{F\-F\-N\-N\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-N\-O\-\_\-\-M\-O\-D\-\_\-\-L\-A\-Y\-E\-R\-\_\-\-E\-X\-T\-R\-I\-N\-S\-I\-C\-S@{F\-F\-N\-N\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-N\-O\-\_\-\-M\-O\-D\-\_\-\-L\-A\-Y\-E\-R\-\_\-\-E\-X\-T\-R\-I\-N\-S\-I\-C\-S}!assert.h@{assert.\-h}}
-\subsubsection[{F\-F\-N\-N\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-N\-O\-\_\-\-M\-O\-D\-\_\-\-L\-A\-Y\-E\-R\-\_\-\-E\-X\-T\-R\-I\-N\-S\-I\-C\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\-F\-N\-N\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-N\-O\-\_\-\-M\-O\-D\-\_\-\-L\-A\-Y\-E\-R\-\_\-\-E\-X\-T\-R\-I\-N\-S\-I\-C\-S(
+\hypertarget{assert_8h_abb0f32cd720478346d8bd674d9c91a37}{\index{assert.\-h@{assert.\-h}!F\-F\-N\-N\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-D\-O\-N\-T\-\_\-\-M\-O\-D\-I\-F\-Y\-\_\-\-E\-X\-T\-R\-I\-N\-S\-I\-C\-S@{F\-F\-N\-N\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-D\-O\-N\-T\-\_\-\-M\-O\-D\-I\-F\-Y\-\_\-\-E\-X\-T\-R\-I\-N\-S\-I\-C\-S}}
+\index{F\-F\-N\-N\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-D\-O\-N\-T\-\_\-\-M\-O\-D\-I\-F\-Y\-\_\-\-E\-X\-T\-R\-I\-N\-S\-I\-C\-S@{F\-F\-N\-N\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-D\-O\-N\-T\-\_\-\-M\-O\-D\-I\-F\-Y\-\_\-\-E\-X\-T\-R\-I\-N\-S\-I\-C\-S}!assert.h@{assert.\-h}}
+\subsubsection[{F\-F\-N\-N\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-D\-O\-N\-T\-\_\-\-M\-O\-D\-I\-F\-Y\-\_\-\-E\-X\-T\-R\-I\-N\-S\-I\-C\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\-F\-N\-N\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-D\-O\-N\-T\-\_\-\-M\-O\-D\-I\-F\-Y\-\_\-\-E\-X\-T\-R\-I\-N\-S\-I\-C\-S(
 \begin{DoxyParamCaption}
 \item[{}]{N\-S}
 \end{DoxyParamCaption}
-)}}\label{assert_8h_a4bcf259d8e662fe1b9b9d9c603f49d90}
+)}}\label{assert_8h_abb0f32cd720478346d8bd674d9c91a37}
 {\bfseries Value\-:}
 \begin{DoxyCode}
 static\_assert(\(\backslash\)
@@ -86,14 +70,32 @@ All layer object (except for the Layer base-\/class) take the following template
 *                  typename Options,
 *                  typename Extrinsics>
 *        \end{DoxyVerb}
- where the {\ttfamily Extrinsics} parameter is reserved for a compile-\/time structure used to deduce types used by the parent layer class. Types are deduced using the {\ttfamily Value\-Type} and {\ttfamily Options} structure, which represent the coefficient type and compile-\/time sizing options, respectively. \hypertarget{assert_8h_a2b49bd7cbe87713cc51996494f3c4fd5}{\index{assert.\-h@{assert.\-h}!F\-F\-N\-N\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-M\-S\-G@{F\-F\-N\-N\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-M\-S\-G}}
-\index{F\-F\-N\-N\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-M\-S\-G@{F\-F\-N\-N\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-M\-S\-G}!assert.h@{assert.\-h}}
-\subsubsection[{F\-F\-N\-N\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-M\-S\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\-F\-N\-N\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-M\-S\-G(
+ where the {\ttfamily Extrinsics} parameter is reserved for a compile-\/time structure used to deduce types used by the parent layer class. Types are deduced using the {\ttfamily Value\-Type} and {\ttfamily Options} structure, which represent the coefficient type and compile-\/time sizing options, respectively. \hypertarget{assert_8h_a0dd452510e5d75d0f71f52ed14143c40}{\index{assert.\-h@{assert.\-h}!F\-F\-N\-N\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-M\-S\-G@{F\-F\-N\-N\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-M\-S\-G}}
+\index{F\-F\-N\-N\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-M\-S\-G@{F\-F\-N\-N\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-M\-S\-G}!assert.h@{assert.\-h}}
+\subsubsection[{F\-F\-N\-N\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-M\-S\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\-F\-N\-N\-\_\-\-A\-S\-S\-E\-R\-T\-\_\-\-M\-S\-G(
 \begin{DoxyParamCaption}
 \item[{}]{cond, }
 \item[{}]{msg}
 \end{DoxyParamCaption}
-)~static\-\_\-assert(cond, msg)}}\label{assert_8h_a2b49bd7cbe87713cc51996494f3c4fd5}
+)~(void(0))}}\label{assert_8h_a0dd452510e5d75d0f71f52ed14143c40}
+\begin{DoxyAuthor}{Author}
+Brian Cairl 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2017 
+\end{DoxyDate}
+
+
+Referenced by ffnn\-::optimizer\-::\-Adam$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::\-Adam(), ffnn\-::optimizer\-::\-Adam$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::\-Adam(), ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$\-::backward(), ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Options, Extrinsics $>$\-::backward(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::backward(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::backward(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$\-::backward(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$\-::backward(), ffnn\-::layer\-::\-Hidden$<$ Value\-Type, Options, Extrinsics $>$\-::connect\-To\-Forward\-Layer(), ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$\-::evaluate\-Input\-Size(), ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$\-::forward(), ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Options, Extrinsics $>$\-::forward(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::forward(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::forward(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$\-::forward(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$\-::forward(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::initialize(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::initialize(), ffnn\-::layer\-::\-Hidden$<$ Value\-Type, Options, Extrinsics $>$\-::initialize(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$\-::initialize(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$\-::initialize(), ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$\-::\-Layer(), ffnn\-::neuron\-::\-Leaky\-Rectified\-Linear$<$ Value\-Type, \-\_\-\-P, \-\_\-\-B $>$\-::\-Leaky\-Rectified\-Linear(), ffnn\-::distribution\-::\-Normal$<$ Value\-Type $>$\-::\-Normal(), ffnn\-::layer\-::convolution\-::\-Filter$<$ Value\-Type, Options, Extrinsics $>$\-::operator$\ast$=(), ffnn\-::layer\-::convolution\-::\-Filter$<$ Value\-Type, Options, Extrinsics $>$\-::operator+=(), ffnn\-::layer\-::convolution\-::\-Filter$<$ Value\-Type, Options, Extrinsics $>$\-::operator-\/=(), ffnn\-::layer\-::convolution\-::\-Filter$<$ Value\-Type, Options, Extrinsics $>$\-::operator/=(), ffnn\-::layer\-::\-Output$<$ Value\-Type, Network\-Outputs\-At\-Compile\-Time $>$\-::operator$<$$<$(), ffnn\-::layer\-::fully\-\_\-connected\-::\-Configuration$<$ Self\-Type, Value\-Type, Options, Extrinsics $>$\-::operator=(), ffnn\-::layer\-::\-Output$<$ Value\-Type, Network\-Outputs\-At\-Compile\-Time $>$\-::operator$>$$>$(), ffnn\-::layer\-::convolution\-::\-Configuration$<$ Self\-Type, Value\-Type, Options, Extrinsics $>$\-::set\-Filter\-Shape(), ffnn\-::layer\-::fully\-\_\-connected\-::\-Configuration$<$ Self\-Type, Value\-Type, Options, Extrinsics $>$\-::set\-Input\-Shape(), ffnn\-::layer\-::convolution\-::\-Configuration$<$ Self\-Type, Value\-Type, Options, Extrinsics $>$\-::set\-Input\-Shape(), ffnn\-::layer\-::fully\-\_\-connected\-::\-Configuration$<$ Self\-Type, Value\-Type, Options, Extrinsics $>$\-::set\-Optimizer(), ffnn\-::layer\-::convolution\-::\-Configuration$<$ Self\-Type, Value\-Type, Options, Extrinsics $>$\-::set\-Optimizer(), ffnn\-::layer\-::fully\-\_\-connected\-::\-Configuration$<$ Self\-Type, Value\-Type, Options, Extrinsics $>$\-::set\-Output\-Shape(), ffnn\-::layer\-::fully\-\_\-connected\-::\-Configuration$<$ Self\-Type, Value\-Type, Options, Extrinsics $>$\-::set\-Parameter\-Distribution(), ffnn\-::layer\-::convolution\-::\-Configuration$<$ Self\-Type, Value\-Type, Options, Extrinsics $>$\-::set\-Parameter\-Distribution(), ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights$<$ Value\-Type, Options, Extrinsics $>$\-::set\-Random(), ffnn\-::layer\-::convolution\-::\-Filter$<$ Value\-Type, Options, Extrinsics $>$\-::set\-Random(), ffnn\-::layer\-::convolution\-::\-Configuration$<$ Self\-Type, Value\-Type, Options, Extrinsics $>$\-::set\-Stride(), ffnn\-::layer\-::fully\-\_\-connected\-::\-Weights$<$ Value\-Type, Options, Extrinsics $>$\-::set\-Zero(), ffnn\-::layer\-::convolution\-::\-Filter$<$ Value\-Type, Options, Extrinsics $>$\-::set\-Zero(), ffnn\-::optimizer\-::\-Adam$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::update(), ffnn\-::optimizer\-::\-Adam$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::update(), ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$\-::update(), ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Options, Extrinsics $>$\-::update(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::update(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::update(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$\-::update(), and ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$\-::update().
+
+\hypertarget{assert_8h_a239b61758d68adadb15eb14ab7fa589b}{\index{assert.\-h@{assert.\-h}!F\-F\-N\-N\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T@{F\-F\-N\-N\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T}}
+\index{F\-F\-N\-N\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T@{F\-F\-N\-N\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T}!assert.h@{assert.\-h}}
+\subsubsection[{F\-F\-N\-N\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\-F\-N\-N\-\_\-\-S\-T\-A\-T\-I\-C\-\_\-\-A\-S\-S\-E\-R\-T(
+\begin{DoxyParamCaption}
+\item[{}]{cond, }
+\item[{}]{msg}
+\end{DoxyParamCaption}
+)~static\-\_\-assert(cond, msg)}}\label{assert_8h_a239b61758d68adadb15eb14ab7fa589b}
 
 
 Compile-\/time assertion definition. 

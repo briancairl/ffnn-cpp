@@ -83,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_5926a80ed3446c810579ca6fe92ab4ca.html">include</a></li><li class="navelem"><a class="el" href="dir_18fff403c5eccb83d761ba51d6ac7b98.html">ffnn</a></li><li class="navelem"><a class="el" href="dir_b34734f2657196132f8d574a6885ab20.html">distribution</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_f1374a92efe2cc1f1014c2355d0648ea.html">ffnn</a></li><li class="navelem"><a class="el" href="dir_5c93aae96294bf2b153d3e5922c550b7.html">distribution</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -104,63 +104,69 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;boost/shared_ptr.hpp&gt;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">// FFNN</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="global_8h.html">ffnn/config/global.h</a>&gt;</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">namespace </span>ffnn</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="namespaceffnn_1_1distribution.html">   21</a></span>&#160;<span class="keyword">namespace </span>distribution</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="assert_8h.html">ffnn/assert.h</a>&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="config_8h.html">ffnn/internal/config.h</a>&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="traits_8h.html">ffnn/internal/traits.h</a>&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="namespaceffnn.html">   21</a></span>&#160;<span class="keyword">namespace </span>ffnn</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType&gt;</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classffnn_1_1distribution_1_1_distribution.html">   24</a></span>&#160;<span class="keyword">class </span><a class="code" href="classffnn_1_1distribution_1_1_distribution.html">Distribution</a></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classffnn_1_1distribution_1_1_distribution.html#ae1a3da8f16a034d6c051fcfdcf69f0d2">   28</a></span>&#160;  <span class="keyword">typedef</span> <a class="code" href="classffnn_1_1distribution_1_1_distribution.html">Distribution&lt;ValueType&gt;</a> <a class="code" href="classffnn_1_1distribution_1_1_distribution.html#ae1a3da8f16a034d6c051fcfdcf69f0d2">SelfType</a>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classffnn_1_1distribution_1_1_distribution.html#ad62797f0dcb4bb4698bdf17e3f3b07bb">   31</a></span>&#160;  <span class="keyword">typedef</span> ValueType <a class="code" href="classffnn_1_1distribution_1_1_distribution.html#ad62797f0dcb4bb4698bdf17e3f3b07bb">ScalarType</a>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classffnn_1_1distribution_1_1_distribution.html#a51d4ea875b70b07862c5f68b20c8f41a">   34</a></span>&#160;  <span class="keyword">typedef</span> boost::shared_ptr&lt;SelfType&gt; <a class="code" href="classffnn_1_1distribution_1_1_distribution.html#a51d4ea875b70b07862c5f68b20c8f41a">Ptr</a>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classffnn_1_1distribution_1_1_distribution.html#a829c8056b31313f6196f5659ca9503cc">   37</a></span>&#160;  <span class="keyword">typedef</span> boost::shared_ptr&lt;const SelfType&gt; <a class="code" href="classffnn_1_1distribution_1_1_distribution.html#a829c8056b31313f6196f5659ca9503cc">ConstPtr</a>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="classffnn_1_1distribution_1_1_distribution.html#ad62797f0dcb4bb4698bdf17e3f3b07bb">ScalarType</a> <a class="code" href="classffnn_1_1distribution_1_1_distribution.html#a150f344a8fe585fdebd462a4a07ec0ed">generate</a>() <span class="keyword">const</span> = 0;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="classffnn_1_1distribution_1_1_distribution.html#ad62797f0dcb4bb4698bdf17e3f3b07bb">ScalarType</a> <a class="code" href="classffnn_1_1distribution_1_1_distribution.html#aaa3f1b954382c25a5fc50da0de37722c">cdf</a>(<span class="keyword">const</span> <a class="code" href="classffnn_1_1distribution_1_1_distribution.html#ad62797f0dcb4bb4698bdf17e3f3b07bb">ScalarType</a>&amp; value) <span class="keyword">const</span> = 0;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;};</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> M,</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;         <span class="keyword">typename</span> DistributionType&gt;</div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="namespaceffnn_1_1distribution.html#aacaa8d87a0c4ec48fb1251623532dac7">   59</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceffnn_1_1distribution.html#aacaa8d87a0c4ec48fb1251623532dac7">setRandom</a>(Eigen::MatrixBase&lt;M&gt;&amp; x, <span class="keyword">const</span> DistributionType&amp; dist)</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="comment">// Check that scalar representation matches between objects</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keyword">using</span> MatrixType   = <span class="keyword">typename</span> Eigen::MatrixBase&lt;M&gt;;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keyword">using</span> M_ScalarType = <span class="keyword">typename</span> MatrixType::Scalar;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keyword">using</span> D_ScalarType = <span class="keyword">typename</span> DistributionType::ScalarType;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  static_assert(std::is_same&lt;M_ScalarType, D_ScalarType&gt;::value,</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                <span class="stringliteral">&quot;Scalar type mismatch between Eigen::MatrixBase&lt;M&gt; and DistributionType.&quot;</span>);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="comment">// Assign random values to all coefficients</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keyword">auto</span> unaryExprSetRandomCoeff = [&amp;dist](M_ScalarType x) -&gt; M_ScalarType</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">return</span> dist.generate();</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  };</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  x = x.unaryExpr(unaryExprSetRandomCoeff);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}  <span class="comment">// namespace distribution</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}  <span class="comment">// namespace ffnn</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#endif  // FFNN_DISTRIBUTION_DISTRIBUTION_H</span></div>
-<div class="ttc" id="classffnn_1_1distribution_1_1_distribution_html_ad62797f0dcb4bb4698bdf17e3f3b07bb"><div class="ttname"><a href="classffnn_1_1distribution_1_1_distribution.html#ad62797f0dcb4bb4698bdf17e3f3b07bb">ffnn::distribution::Distribution::ScalarType</a></div><div class="ttdeci">ValueType ScalarType</div><div class="ttdoc">Self type standarization. </div><div class="ttdef"><b>Definition:</b> distribution.h:31</div></div>
-<div class="ttc" id="classffnn_1_1distribution_1_1_distribution_html_a150f344a8fe585fdebd462a4a07ec0ed"><div class="ttname"><a href="classffnn_1_1distribution_1_1_distribution.html#a150f344a8fe585fdebd462a4a07ec0ed">ffnn::distribution::Distribution::generate</a></div><div class="ttdeci">virtual ScalarType generate() const =0</div><div class="ttdoc">Generates a random value according to given distribution. </div></div>
-<div class="ttc" id="classffnn_1_1distribution_1_1_distribution_html_a829c8056b31313f6196f5659ca9503cc"><div class="ttname"><a href="classffnn_1_1distribution_1_1_distribution.html#a829c8056b31313f6196f5659ca9503cc">ffnn::distribution::Distribution::ConstPtr</a></div><div class="ttdeci">boost::shared_ptr&lt; const SelfType &gt; ConstPtr</div><div class="ttdoc">Constant shared resource standardization. </div><div class="ttdef"><b>Definition:</b> distribution.h:37</div></div>
-<div class="ttc" id="namespaceffnn_1_1distribution_html_aacaa8d87a0c4ec48fb1251623532dac7"><div class="ttname"><a href="namespaceffnn_1_1distribution.html#aacaa8d87a0c4ec48fb1251623532dac7">ffnn::distribution::setRandom</a></div><div class="ttdeci">void setRandom(Eigen::MatrixBase&lt; M &gt; &amp;x, const DistributionType &amp;dist)</div><div class="ttdoc">Sets random coefficients according to particular distribution. </div><div class="ttdef"><b>Definition:</b> distribution.h:59</div></div>
-<div class="ttc" id="classffnn_1_1distribution_1_1_distribution_html_aaa3f1b954382c25a5fc50da0de37722c"><div class="ttname"><a href="classffnn_1_1distribution_1_1_distribution.html#aaa3f1b954382c25a5fc50da0de37722c">ffnn::distribution::Distribution::cdf</a></div><div class="ttdeci">virtual ScalarType cdf(const ScalarType &amp;value) const =0</div><div class="ttdoc">Computes CDF of distribution at specified point. </div></div>
-<div class="ttc" id="global_8h_html"><div class="ttname"><a href="global_8h.html">global.h</a></div></div>
-<div class="ttc" id="classffnn_1_1distribution_1_1_distribution_html_ae1a3da8f16a034d6c051fcfdcf69f0d2"><div class="ttname"><a href="classffnn_1_1distribution_1_1_distribution.html#ae1a3da8f16a034d6c051fcfdcf69f0d2">ffnn::distribution::Distribution::SelfType</a></div><div class="ttdeci">Distribution&lt; ValueType &gt; SelfType</div><div class="ttdoc">Self type standarization. </div><div class="ttdef"><b>Definition:</b> distribution.h:28</div></div>
-<div class="ttc" id="classffnn_1_1distribution_1_1_distribution_html"><div class="ttname"><a href="classffnn_1_1distribution_1_1_distribution.html">ffnn::distribution::Distribution</a></div><div class="ttdef"><b>Definition:</b> distribution.h:24</div></div>
-<div class="ttc" id="classffnn_1_1distribution_1_1_distribution_html_a51d4ea875b70b07862c5f68b20c8f41a"><div class="ttname"><a href="classffnn_1_1distribution_1_1_distribution.html#a51d4ea875b70b07862c5f68b20c8f41a">ffnn::distribution::Distribution::Ptr</a></div><div class="ttdeci">boost::shared_ptr&lt; SelfType &gt; Ptr</div><div class="ttdoc">Shared resource standardization. </div><div class="ttdef"><b>Definition:</b> distribution.h:34</div></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="namespaceffnn_1_1distribution.html">   23</a></span>&#160;<span class="keyword">namespace </span>distribution</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType&gt;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classffnn_1_1distribution_1_1_distribution.html">   26</a></span>&#160;<span class="keyword">class </span><a class="code" href="classffnn_1_1distribution_1_1_distribution.html">Distribution</a></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classffnn_1_1distribution_1_1_distribution.html#af0757b85660b34a2ae32a285cfdbfd1d">   30</a></span>&#160;  <span class="keyword">typedef</span> ValueType <a class="code" href="classffnn_1_1distribution_1_1_distribution.html#af0757b85660b34a2ae32a285cfdbfd1d">Scalar</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classffnn_1_1distribution_1_1_distribution.html#ae1a3da8f16a034d6c051fcfdcf69f0d2">   33</a></span>&#160;  <span class="keyword">typedef</span> <a class="code" href="classffnn_1_1distribution_1_1_distribution.html">Distribution&lt;ValueType&gt;</a> <a class="code" href="classffnn_1_1distribution_1_1_distribution.html#ae1a3da8f16a034d6c051fcfdcf69f0d2">SelfType</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classffnn_1_1distribution_1_1_distribution.html#a51d4ea875b70b07862c5f68b20c8f41a">   36</a></span>&#160;  <span class="keyword">typedef</span> boost::shared_ptr&lt;SelfType&gt; <a class="code" href="classffnn_1_1distribution_1_1_distribution.html#a51d4ea875b70b07862c5f68b20c8f41a">Ptr</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classffnn_1_1distribution_1_1_distribution.html#a829c8056b31313f6196f5659ca9503cc">   39</a></span>&#160;  <span class="keyword">typedef</span> boost::shared_ptr&lt;const SelfType&gt; <a class="code" href="classffnn_1_1distribution_1_1_distribution.html#a829c8056b31313f6196f5659ca9503cc">ConstPtr</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="classffnn_1_1distribution_1_1_distribution.html#af0757b85660b34a2ae32a285cfdbfd1d">Scalar</a> <a class="code" href="classffnn_1_1distribution_1_1_distribution.html#ac4581c9b98931804766020773af0f6aa">generate</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="classffnn_1_1distribution_1_1_distribution.html#af0757b85660b34a2ae32a285cfdbfd1d">Scalar</a> <a class="code" href="classffnn_1_1distribution_1_1_distribution.html#a6dc8a8a1f57ddf862cafd671daf66d31">cdf</a>(<span class="keyword">const</span> <a class="code" href="classffnn_1_1distribution_1_1_distribution.html#af0757b85660b34a2ae32a285cfdbfd1d">Scalar</a>&amp; value) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;};</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> M,</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;         <span class="keyword">typename</span> DistributionType&gt;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="namespaceffnn_1_1distribution.html#aacaa8d87a0c4ec48fb1251623532dac7">   61</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceffnn_1_1distribution.html#aacaa8d87a0c4ec48fb1251623532dac7">setRandom</a>(Eigen::MatrixBase&lt;M&gt;&amp; x, <span class="keyword">const</span> DistributionType&amp; dist)</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;{</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  static_assert(<a class="code" href="structffnn_1_1internal_1_1traits_1_1is__distribution.html">internal::traits::is_distribution&lt;DistributionType&gt;::value</a>,</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <span class="stringliteral">&quot;[DistributionType] MUST FUFILL DISTRIBUTION CONCEPT REQUIREMENTS!&quot;</span>);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  static_assert(std::is_same&lt;<span class="keyword">typename</span> DistributionType::Scalar,</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                             <span class="keyword">typename</span> Eigen::MatrixBase&lt;M&gt;::Scalar&gt;::value,</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <span class="stringliteral">&quot;SCALAR TYPE MISMATCH BETWEEN [Eigen::MatrixBase&lt;M&gt;::Scalar] AND [DistributionType::Scalar]!&quot;</span>);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="comment">// Assign random values to all coefficients</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keyword">auto</span> unaryExprSetRandomCoeff = [&amp;dist](<span class="keyword">typename</span> DistributionType::Scalar x)</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    -&gt; <span class="keyword">typename</span> DistributionType::Scalar</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">return</span> dist.generate();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  };</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  x = x.unaryExpr(unaryExprSetRandomCoeff);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}  <span class="comment">// namespace distribution</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}  <span class="comment">// namespace ffnn</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#endif  // FFNN_DISTRIBUTION_DISTRIBUTION_H</span></div>
+<div class="ttc" id="classffnn_1_1distribution_1_1_distribution_html_a829c8056b31313f6196f5659ca9503cc"><div class="ttname"><a href="classffnn_1_1distribution_1_1_distribution.html#a829c8056b31313f6196f5659ca9503cc">ffnn::distribution::Distribution::ConstPtr</a></div><div class="ttdeci">boost::shared_ptr&lt; const SelfType &gt; ConstPtr</div><div class="ttdoc">Constant shared resource standardization. </div><div class="ttdef"><b>Definition:</b> distribution.h:39</div></div>
+<div class="ttc" id="namespaceffnn_1_1distribution_html_aacaa8d87a0c4ec48fb1251623532dac7"><div class="ttname"><a href="namespaceffnn_1_1distribution.html#aacaa8d87a0c4ec48fb1251623532dac7">ffnn::distribution::setRandom</a></div><div class="ttdeci">void setRandom(Eigen::MatrixBase&lt; M &gt; &amp;x, const DistributionType &amp;dist)</div><div class="ttdoc">Sets random coefficients according to particular distribution. </div><div class="ttdef"><b>Definition:</b> distribution.h:61</div></div>
+<div class="ttc" id="config_8h_html"><div class="ttname"><a href="config_8h.html">config.h</a></div></div>
+<div class="ttc" id="traits_8h_html"><div class="ttname"><a href="traits_8h.html">traits.h</a></div></div>
+<div class="ttc" id="classffnn_1_1distribution_1_1_distribution_html_ae1a3da8f16a034d6c051fcfdcf69f0d2"><div class="ttname"><a href="classffnn_1_1distribution_1_1_distribution.html#ae1a3da8f16a034d6c051fcfdcf69f0d2">ffnn::distribution::Distribution::SelfType</a></div><div class="ttdeci">Distribution&lt; ValueType &gt; SelfType</div><div class="ttdoc">Self type standarization. </div><div class="ttdef"><b>Definition:</b> distribution.h:33</div></div>
+<div class="ttc" id="assert_8h_html"><div class="ttname"><a href="assert_8h.html">assert.h</a></div></div>
+<div class="ttc" id="structffnn_1_1internal_1_1traits_1_1is__distribution_html"><div class="ttname"><a href="structffnn_1_1internal_1_1traits_1_1is__distribution.html">ffnn::internal::traits::is_distribution</a></div><div class="ttdoc">Checks if a type fufills the requirements of the Distribution concept. </div><div class="ttdef"><b>Definition:</b> traits.h:38</div></div>
+<div class="ttc" id="classffnn_1_1distribution_1_1_distribution_html_ac4581c9b98931804766020773af0f6aa"><div class="ttname"><a href="classffnn_1_1distribution_1_1_distribution.html#ac4581c9b98931804766020773af0f6aa">ffnn::distribution::Distribution::generate</a></div><div class="ttdeci">virtual Scalar generate() const =0</div><div class="ttdoc">Generates a random value according to given distribution. </div></div>
+<div class="ttc" id="classffnn_1_1distribution_1_1_distribution_html_af0757b85660b34a2ae32a285cfdbfd1d"><div class="ttname"><a href="classffnn_1_1distribution_1_1_distribution.html#af0757b85660b34a2ae32a285cfdbfd1d">ffnn::distribution::Distribution::Scalar</a></div><div class="ttdeci">ValueType Scalar</div><div class="ttdoc">Scalar type standarization. </div><div class="ttdef"><b>Definition:</b> distribution.h:30</div></div>
+<div class="ttc" id="classffnn_1_1distribution_1_1_distribution_html"><div class="ttname"><a href="classffnn_1_1distribution_1_1_distribution.html">ffnn::distribution::Distribution</a></div><div class="ttdef"><b>Definition:</b> distribution.h:26</div></div>
+<div class="ttc" id="classffnn_1_1distribution_1_1_distribution_html_a51d4ea875b70b07862c5f68b20c8f41a"><div class="ttname"><a href="classffnn_1_1distribution_1_1_distribution.html#a51d4ea875b70b07862c5f68b20c8f41a">ffnn::distribution::Distribution::Ptr</a></div><div class="ttdeci">boost::shared_ptr&lt; SelfType &gt; Ptr</div><div class="ttdoc">Shared resource standardization. </div><div class="ttdef"><b>Definition:</b> distribution.h:36</div></div>
+<div class="ttc" id="classffnn_1_1distribution_1_1_distribution_html_a6dc8a8a1f57ddf862cafd671daf66d31"><div class="ttname"><a href="classffnn_1_1distribution_1_1_distribution.html#a6dc8a8a1f57ddf862cafd671daf66d31">ffnn::distribution::Distribution::cdf</a></div><div class="ttdeci">virtual Scalar cdf(const Scalar &amp;value) const =0</div><div class="ttdoc">Computes CDF of distribution at specified point. </div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jun 2 2017 00:42:46 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jun 3 2017 23:40:28 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

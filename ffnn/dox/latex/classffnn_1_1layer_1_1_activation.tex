@@ -33,12 +33,8 @@ Collaboration diagram for ffnn\-:\-:layer\-:\-:Activation$<$ Value\-Type, Neuron
 \item 
 using \hyperlink{classffnn_1_1layer_1_1_activation_a2f462178d98a5439e13962796c483459}{Base} = \hyperlink{classffnn_1_1layer_1_1_hidden}{Hidden}$<$ Value\-Type, \-\_\-\-Hidden\-Layer\-Shape $>$
 \begin{DoxyCompactList}\small\item\em Base type alias. \end{DoxyCompactList}\item 
-typedef \hyperlink{classffnn_1_1layer_1_1_layer_a3d482813f86f1ec69554b4592c478c32}{Base\-::\-Scalar\-Type} \hyperlink{classffnn_1_1layer_1_1_activation_a4ca1ce43c5be7e5b8950af7cb262daca}{Scalar\-Type}
-\begin{DoxyCompactList}\small\item\em Scalar type standardization. \end{DoxyCompactList}\item 
-typedef Base\-::\-Size\-Type \hyperlink{classffnn_1_1layer_1_1_activation_a6a7b6dd86eb70b72a179ce9951fb1149}{Size\-Type}
-\begin{DoxyCompactList}\small\item\em Size type standardization. \end{DoxyCompactList}\item 
-typedef Base\-::\-Offset\-Type \hyperlink{classffnn_1_1layer_1_1_activation_aac891b2d2a76bcf6035f53ed6abb94dc}{Offset\-Type}
-\begin{DoxyCompactList}\small\item\em Offset type standardization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+typedef \hyperlink{classffnn_1_1layer_1_1_layer_ab3b9b082aed9ee8d4e30a823b723a740}{Base\-::\-Scalar} \hyperlink{classffnn_1_1layer_1_1_activation_a5b1e9d46855882ea22be0b9703d67832}{Scalar}
+\begin{DoxyCompactList}\small\item\em Scalar type standardization. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -77,26 +73,12 @@ void \hyperlink{classffnn_1_1layer_1_1_activation_abf041de6c530dfb271dd42689927e
 
 Base type alias. 
 
-\hypertarget{classffnn_1_1layer_1_1_activation_aac891b2d2a76bcf6035f53ed6abb94dc}{\index{ffnn\-::layer\-::\-Activation@{ffnn\-::layer\-::\-Activation}!Offset\-Type@{Offset\-Type}}
-\index{Offset\-Type@{Offset\-Type}!ffnn::layer::Activation@{ffnn\-::layer\-::\-Activation}}
-\subsubsection[{Offset\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Neuron\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Size\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Hidden\-Layer\-Shape = hidden\-\_\-layer\-\_\-traits$<$\-Size\-At\-Compile\-Time, 1, Size\-At\-Compile\-Time, 1$>$$>$ typedef Base\-::\-Offset\-Type {\bf ffnn\-::layer\-::\-Activation}$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-::{\bf Offset\-Type}}}\label{classffnn_1_1layer_1_1_activation_aac891b2d2a76bcf6035f53ed6abb94dc}
-
-
-Offset type standardization. 
-
-\hypertarget{classffnn_1_1layer_1_1_activation_a4ca1ce43c5be7e5b8950af7cb262daca}{\index{ffnn\-::layer\-::\-Activation@{ffnn\-::layer\-::\-Activation}!Scalar\-Type@{Scalar\-Type}}
-\index{Scalar\-Type@{Scalar\-Type}!ffnn::layer::Activation@{ffnn\-::layer\-::\-Activation}}
-\subsubsection[{Scalar\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Neuron\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Size\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Hidden\-Layer\-Shape = hidden\-\_\-layer\-\_\-traits$<$\-Size\-At\-Compile\-Time, 1, Size\-At\-Compile\-Time, 1$>$$>$ typedef {\bf Base\-::\-Scalar\-Type} {\bf ffnn\-::layer\-::\-Activation}$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-::{\bf Scalar\-Type}}}\label{classffnn_1_1layer_1_1_activation_a4ca1ce43c5be7e5b8950af7cb262daca}
+\hypertarget{classffnn_1_1layer_1_1_activation_a5b1e9d46855882ea22be0b9703d67832}{\index{ffnn\-::layer\-::\-Activation@{ffnn\-::layer\-::\-Activation}!Scalar@{Scalar}}
+\index{Scalar@{Scalar}!ffnn::layer::Activation@{ffnn\-::layer\-::\-Activation}}
+\subsubsection[{Scalar}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Neuron\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Size\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Hidden\-Layer\-Shape = hidden\-\_\-layer\-\_\-traits$<$\-Size\-At\-Compile\-Time, 1, Size\-At\-Compile\-Time, 1$>$$>$ typedef {\bf Base\-::\-Scalar} {\bf ffnn\-::layer\-::\-Activation}$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-::{\bf Scalar}}}\label{classffnn_1_1layer_1_1_activation_a5b1e9d46855882ea22be0b9703d67832}
 
 
 Scalar type standardization. 
-
-\hypertarget{classffnn_1_1layer_1_1_activation_a6a7b6dd86eb70b72a179ce9951fb1149}{\index{ffnn\-::layer\-::\-Activation@{ffnn\-::layer\-::\-Activation}!Size\-Type@{Size\-Type}}
-\index{Size\-Type@{Size\-Type}!ffnn::layer::Activation@{ffnn\-::layer\-::\-Activation}}
-\subsubsection[{Size\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Neuron\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Size\-At\-Compile\-Time = Eigen\-::\-Dynamic, typename \-\_\-\-Hidden\-Layer\-Shape = hidden\-\_\-layer\-\_\-traits$<$\-Size\-At\-Compile\-Time, 1, Size\-At\-Compile\-Time, 1$>$$>$ typedef Base\-::\-Size\-Type {\bf ffnn\-::layer\-::\-Activation}$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$\-::{\bf Size\-Type}}}\label{classffnn_1_1layer_1_1_activation_a6a7b6dd86eb70b72a179ce9951fb1149}
-
-
-Size type standardization. 
 
 
 
@@ -199,7 +181,8 @@ Reimplemented from \hyperlink{classffnn_1_1internal_1_1_unique_a926ca4f63e3f6f0c
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -226,7 +209,8 @@ Reimplemented from \hyperlink{classffnn_1_1internal_1_1_unique_a21fd15cd137dd1cc
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

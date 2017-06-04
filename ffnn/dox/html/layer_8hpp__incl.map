@@ -1,7 +1,7 @@
 <map id="/home/briancairl/packages/src/ffnn&#45;cpp/ffnn/include/ffnn/impl/layer/layer.hpp" name="/home/briancairl/packages/src/ffnn&#45;cpp/ffnn/include/ffnn/impl/layer/layer.hpp">
-<area shape="rect" id="node3" href="$assert_8h.html" title="ffnn/assert.h" alt="" coords="793,117,887,144"/>
-<area shape="rect" id="node7" href="$logging_8h.html" title="ffnn/logging.h" alt="" coords="1443,283,1543,309"/>
-<area shape="rect" id="node18" href="$signature_8h.html" title="ffnn/internal/signature.h" alt="" coords="610,117,768,144"/>
-<area shape="rect" id="node5" href="$global_8h.html" title="ffnn/config/global.h" alt="" coords="811,200,943,227"/>
-<area shape="rect" id="node14" href="$sparse__triplet__serialization_8h.html" title="ffnn/internal/eigen\l/sparse_triplet_serialization.h" alt="" coords="873,275,1063,317"/>
+<area shape="rect" id="node3" href="$assert_8h.html" title="ffnn/assert.h" alt="" coords="830,117,924,144"/>
+<area shape="rect" id="node8" href="$logging_8h.html" title="ffnn/logging.h" alt="" coords="1443,283,1543,309"/>
+<area shape="rect" id="node19" href="$signature_8h.html" title="ffnn/internal/signature.h" alt="" coords="647,117,805,144"/>
+<area shape="rect" id="node6" href="$config_8h.html" title="ffnn/internal/config.h" alt="" coords="807,200,947,227"/>
+<area shape="rect" id="node15" href="$sparse__triplet__serialization_8h.html" title="ffnn/internal/eigen\l/sparse_triplet_serialization.h" alt="" coords="873,275,1063,317"/>
 </map>

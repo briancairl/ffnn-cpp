@@ -1,0 +1,386 @@
+\hypertarget{classffnn_1_1layer_1_1convolution_1_1_filter}{\section{ffnn\-:\-:layer\-:\-:convolution\-:\-:Filter$<$ Value\-Type, Options, Extrinsics $>$ Class Template Reference}
+\label{classffnn_1_1layer_1_1convolution_1_1_filter}\index{ffnn\-::layer\-::convolution\-::\-Filter$<$ Value\-Type, Options, Extrinsics $>$@{ffnn\-::layer\-::convolution\-::\-Filter$<$ Value\-Type, Options, Extrinsics $>$}}
+}
+
+
+\hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter}{Filter} parameters to be use with a \hyperlink{classffnn_1_1layer_1_1_convolution}{Convolution} layer.  
+
+
+
+
+{\ttfamily \#include \char`\"{}filter.\-h\char`\"{}}
+
+
+
+Inheritance diagram for ffnn\-:\-:layer\-:\-:convolution\-:\-:Filter$<$ Value\-Type, Options, Extrinsics $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{classffnn_1_1layer_1_1convolution_1_1_filter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ffnn\-:\-:layer\-:\-:convolution\-:\-:Filter$<$ Value\-Type, Options, Extrinsics $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{classffnn_1_1layer_1_1convolution_1_1_filter__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Extrinsics\-::\-Kernel\-Type \hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter_ad5cce121107613f7bfd80ff7df649b96}{Kernel\-Type}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter}{Filter} kernel matrix standardization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$bool T = Options\-::has\-\_\-fixed\-\_\-kernel\-\_\-count$>$ }\\\hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter_a92680fc95854201cf47f44ffb91e17e9}{Filter} (typename std\-::enable\-\_\-if$<$ T $>$\-::type $\ast$=nullptr)
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+{\footnotesize template$<$bool T = Options\-::has\-\_\-fixed\-\_\-kernel\-\_\-count$>$ }\\\hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter_ae4efedce4c1e0470bb144b5a1b115465}{Filter} (\hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} filter\-\_\-count=Eigen\-::\-Dynamic, typename std\-::enable\-\_\-if$<$!T $>$\-::type $\ast$=nullptr)
+\item 
+void \hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter_adba3235a36053b7f669c68691a38e804}{set\-Zero} ()
+\begin{DoxyCompactList}\small\item\em Sets all \hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter}{Filter} kernels and scalar bias unit to zero. \end{DoxyCompactList}\item 
+{\footnotesize template$<$bool T = Options\-::has\-\_\-fixed\-\_\-kernel\-\_\-count$>$ }\\std\-::enable\-\_\-if$<$ T $>$\-::type \hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter_ae965817157c5b968ebb045df1c96ee38}{set\-Zero} (\hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} kernel\-\_\-height, \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} kernel\-\_\-width, \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} kernel\-\_\-depth, \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} kernel\-\_\-count)
+\begin{DoxyCompactList}\small\item\em Sets all \hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter}{Filter} kernels and scalar bias unit to zero. \end{DoxyCompactList}\item 
+{\footnotesize template$<$bool T = Options\-::has\-\_\-fixed\-\_\-kernel\-\_\-count$>$ }\\std\-::enable\-\_\-if$<$!T $>$\-::type \hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter_aa9a4f44db1cc39b2f142f5065a3f470f}{set\-Zero} (\hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} kernel\-\_\-height, \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} kernel\-\_\-width, \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} kernel\-\_\-depth, \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} kernel\-\_\-count)
+\item 
+{\footnotesize template$<$typename Distribution\-Type $>$ }\\void \hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter_a9b6cc0b1a995d2baa23ce553e202a78d}{set\-Random} (const Distribution\-Type \&distribution)
+\begin{DoxyCompactList}\small\item\em Sets all \hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter}{Filter} kernels and scalar bias unit to a random value drawn from a specified distribution. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Distribution\-Type , bool T = Options\-::has\-\_\-fixed\-\_\-kernel\-\_\-count$>$ }\\std\-::enable\-\_\-if$<$ T $>$\-::type \hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter_a8e54711d041308aeb854ce78c79fb61a}{set\-Random} (const Distribution\-Type \&distribution, \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} kernel\-\_\-height, \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} kernel\-\_\-width, \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} kernel\-\_\-depth, \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} kernel\-\_\-count)
+\begin{DoxyCompactList}\small\item\em Sets all \hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter}{Filter} kernels and scalar bias unit to a random value drawn from a specified distribution. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Distribution\-Type , bool T = Options\-::has\-\_\-fixed\-\_\-kernel\-\_\-count$>$ }\\std\-::enable\-\_\-if$<$!T $>$\-::type \hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter_a64ad81cd3cfd39f2d594618355fe1b71}{set\-Random} (const Distribution\-Type \&distribution, \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} kernel\-\_\-height, \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} kernel\-\_\-width, \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} kernel\-\_\-depth, \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} kernel\-\_\-count)
+\item 
+\hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter}{Filter} \& \hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter_a266f401f904688abe76239cd6563dd3c}{operator$\ast$=} (Value\-Type scale)
+\begin{DoxyCompactList}\small\item\em Scales kernels and bias value. \end{DoxyCompactList}\item 
+\hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter}{Filter} \& \hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter_ad25eed8e7ffa78ff50fb3318cef81de5}{operator-\/=} (const \hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter}{Filter} \&other)
+\begin{DoxyCompactList}\small\item\em In-\/place subtraction between two \hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter}{Filter} objects. \end{DoxyCompactList}\item 
+\hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter}{Filter} \& \hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter_a49da4098c5d9a8e400a248a564c84ec1}{operator+=} (const \hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter}{Filter} \&other)
+\begin{DoxyCompactList}\small\item\em In-\/place addition between two \hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter}{Filter} objects. \end{DoxyCompactList}\item 
+\hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter}{Filter} \& \hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter_aaaa1e310acdc9ab2372109b827d4edaa}{operator$\ast$=} (const \hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter}{Filter} \&other)
+\begin{DoxyCompactList}\small\item\em In-\/place coefficient-\/wise multiplication between two \hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter}{Filter} objects. \end{DoxyCompactList}\item 
+\hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter}{Filter} \& \hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter_afa3ec94a3919f5e844182e991ef972fc}{operator/=} (const \hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter}{Filter} \&other)
+\begin{DoxyCompactList}\small\item\em In-\/place coefficient-\/wise division between two \hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter}{Filter} objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Value\-Type \hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter_a3638f1ebfd8d5d4469392dd7b2470cc3}{bias}
+\begin{DoxyCompactList}\small\item\em Bias value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Value\-Type, typename Options = typename filter\-::options$<$$>$, typename Extrinsics = typename filter\-::extrinsics$<$\-Value\-Type, Options$>$$>$class ffnn\-::layer\-::convolution\-::\-Filter$<$ Value\-Type, Options, Extrinsics $>$}
+
+\hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter}{Filter} parameters to be use with a \hyperlink{classffnn_1_1layer_1_1_convolution}{Convolution} layer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Value\-Type} & scalar value type \\
+\hline
+{\em Options} & filter sizing and data-\/ordering information \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classffnn_1_1layer_1_1convolution_1_1_filter_ad5cce121107613f7bfd80ff7df649b96}{\index{ffnn\-::layer\-::convolution\-::\-Filter@{ffnn\-::layer\-::convolution\-::\-Filter}!Kernel\-Type@{Kernel\-Type}}
+\index{Kernel\-Type@{Kernel\-Type}!ffnn::layer::convolution::Filter@{ffnn\-::layer\-::convolution\-::\-Filter}}
+\subsubsection[{Kernel\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = typename filter\-::options$<$$>$, typename Extrinsics  = typename filter\-::extrinsics$<$\-Value\-Type, Options$>$$>$ typedef Extrinsics\-::\-Kernel\-Type {\bf ffnn\-::layer\-::convolution\-::\-Filter}$<$ Value\-Type, Options, Extrinsics $>$\-::{\bf Kernel\-Type}}}\label{classffnn_1_1layer_1_1convolution_1_1_filter_ad5cce121107613f7bfd80ff7df649b96}
+
+
+\hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter}{Filter} kernel matrix standardization. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classffnn_1_1layer_1_1convolution_1_1_filter_a92680fc95854201cf47f44ffb91e17e9}{\index{ffnn\-::layer\-::convolution\-::\-Filter@{ffnn\-::layer\-::convolution\-::\-Filter}!Filter@{Filter}}
+\index{Filter@{Filter}!ffnn::layer::convolution::Filter@{ffnn\-::layer\-::convolution\-::\-Filter}}
+\subsubsection[{Filter}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = typename filter\-::options$<$$>$, typename Extrinsics  = typename filter\-::extrinsics$<$\-Value\-Type, Options$>$$>$ template$<$bool T = Options\-::has\-\_\-fixed\-\_\-kernel\-\_\-count$>$ {\bf ffnn\-::layer\-::convolution\-::\-Filter}$<$ Value\-Type, Options, Extrinsics $>$\-::{\bf Filter} (
+\begin{DoxyParamCaption}
+\item[{typename std\-::enable\-\_\-if$<$ T $>$\-::type $\ast$}]{ = {\ttfamily nullptr}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1convolution_1_1_filter_a92680fc95854201cf47f44ffb91e17e9}
+
+
+Default constructor. 
+
+\hypertarget{classffnn_1_1layer_1_1convolution_1_1_filter_ae4efedce4c1e0470bb144b5a1b115465}{\index{ffnn\-::layer\-::convolution\-::\-Filter@{ffnn\-::layer\-::convolution\-::\-Filter}!Filter@{Filter}}
+\index{Filter@{Filter}!ffnn::layer::convolution::Filter@{ffnn\-::layer\-::convolution\-::\-Filter}}
+\subsubsection[{Filter}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = typename filter\-::options$<$$>$, typename Extrinsics  = typename filter\-::extrinsics$<$\-Value\-Type, Options$>$$>$ template$<$bool T = Options\-::has\-\_\-fixed\-\_\-kernel\-\_\-count$>$ {\bf ffnn\-::layer\-::convolution\-::\-Filter}$<$ Value\-Type, Options, Extrinsics $>$\-::{\bf Filter} (
+\begin{DoxyParamCaption}
+\item[{{\bf size\-\_\-type}}]{filter\-\_\-count = {\ttfamily Eigen\-:\-:Dynamic}, }
+\item[{typename std\-::enable\-\_\-if$<$!T $>$\-::type $\ast$}]{ = {\ttfamily nullptr}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1convolution_1_1_filter_ae4efedce4c1e0470bb144b5a1b115465}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classffnn_1_1layer_1_1convolution_1_1_filter_a266f401f904688abe76239cd6563dd3c}{\index{ffnn\-::layer\-::convolution\-::\-Filter@{ffnn\-::layer\-::convolution\-::\-Filter}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!ffnn::layer::convolution::Filter@{ffnn\-::layer\-::convolution\-::\-Filter}}
+\subsubsection[{operator$\ast$=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = typename filter\-::options$<$$>$, typename Extrinsics  = typename filter\-::extrinsics$<$\-Value\-Type, Options$>$$>$ {\bf Filter}\& {\bf ffnn\-::layer\-::convolution\-::\-Filter}$<$ Value\-Type, Options, Extrinsics $>$\-::operator$\ast$= (
+\begin{DoxyParamCaption}
+\item[{Value\-Type}]{scale}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1convolution_1_1_filter_a266f401f904688abe76239cd6563dd3c}
+
+
+Scales kernels and bias value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scale} & scalar value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$\ast$this 
+\end{DoxyReturn}
+\hypertarget{classffnn_1_1layer_1_1convolution_1_1_filter_aaaa1e310acdc9ab2372109b827d4edaa}{\index{ffnn\-::layer\-::convolution\-::\-Filter@{ffnn\-::layer\-::convolution\-::\-Filter}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!ffnn::layer::convolution::Filter@{ffnn\-::layer\-::convolution\-::\-Filter}}
+\subsubsection[{operator$\ast$=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = typename filter\-::options$<$$>$, typename Extrinsics  = typename filter\-::extrinsics$<$\-Value\-Type, Options$>$$>$ {\bf Filter}\& {\bf ffnn\-::layer\-::convolution\-::\-Filter}$<$ Value\-Type, Options, Extrinsics $>$\-::operator$\ast$= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Filter}$<$ Value\-Type, Options, Extrinsics $>$ \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1convolution_1_1_filter_aaaa1e310acdc9ab2372109b827d4edaa}
+
+
+In-\/place coefficient-\/wise multiplication between two \hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter}{Filter} objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter}{Filter} object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$\ast$this 
+\end{DoxyReturn}
+\hypertarget{classffnn_1_1layer_1_1convolution_1_1_filter_a49da4098c5d9a8e400a248a564c84ec1}{\index{ffnn\-::layer\-::convolution\-::\-Filter@{ffnn\-::layer\-::convolution\-::\-Filter}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!ffnn::layer::convolution::Filter@{ffnn\-::layer\-::convolution\-::\-Filter}}
+\subsubsection[{operator+=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = typename filter\-::options$<$$>$, typename Extrinsics  = typename filter\-::extrinsics$<$\-Value\-Type, Options$>$$>$ {\bf Filter}\& {\bf ffnn\-::layer\-::convolution\-::\-Filter}$<$ Value\-Type, Options, Extrinsics $>$\-::operator+= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Filter}$<$ Value\-Type, Options, Extrinsics $>$ \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1convolution_1_1_filter_a49da4098c5d9a8e400a248a564c84ec1}
+
+
+In-\/place addition between two \hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter}{Filter} objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter}{Filter} object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$\ast$this 
+\end{DoxyReturn}
+\hypertarget{classffnn_1_1layer_1_1convolution_1_1_filter_ad25eed8e7ffa78ff50fb3318cef81de5}{\index{ffnn\-::layer\-::convolution\-::\-Filter@{ffnn\-::layer\-::convolution\-::\-Filter}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!ffnn::layer::convolution::Filter@{ffnn\-::layer\-::convolution\-::\-Filter}}
+\subsubsection[{operator-\/=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = typename filter\-::options$<$$>$, typename Extrinsics  = typename filter\-::extrinsics$<$\-Value\-Type, Options$>$$>$ {\bf Filter}\& {\bf ffnn\-::layer\-::convolution\-::\-Filter}$<$ Value\-Type, Options, Extrinsics $>$\-::operator-\/= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Filter}$<$ Value\-Type, Options, Extrinsics $>$ \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1convolution_1_1_filter_ad25eed8e7ffa78ff50fb3318cef81de5}
+
+
+In-\/place subtraction between two \hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter}{Filter} objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter}{Filter} object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$\ast$this 
+\end{DoxyReturn}
+\hypertarget{classffnn_1_1layer_1_1convolution_1_1_filter_afa3ec94a3919f5e844182e991ef972fc}{\index{ffnn\-::layer\-::convolution\-::\-Filter@{ffnn\-::layer\-::convolution\-::\-Filter}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!ffnn::layer::convolution::Filter@{ffnn\-::layer\-::convolution\-::\-Filter}}
+\subsubsection[{operator/=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = typename filter\-::options$<$$>$, typename Extrinsics  = typename filter\-::extrinsics$<$\-Value\-Type, Options$>$$>$ {\bf Filter}\& {\bf ffnn\-::layer\-::convolution\-::\-Filter}$<$ Value\-Type, Options, Extrinsics $>$\-::operator/= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Filter}$<$ Value\-Type, Options, Extrinsics $>$ \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1convolution_1_1_filter_afa3ec94a3919f5e844182e991ef972fc}
+
+
+In-\/place coefficient-\/wise division between two \hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter}{Filter} objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter}{Filter} object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$\ast$this 
+\end{DoxyReturn}
+\hypertarget{classffnn_1_1layer_1_1convolution_1_1_filter_a9b6cc0b1a995d2baa23ce553e202a78d}{\index{ffnn\-::layer\-::convolution\-::\-Filter@{ffnn\-::layer\-::convolution\-::\-Filter}!set\-Random@{set\-Random}}
+\index{set\-Random@{set\-Random}!ffnn::layer::convolution::Filter@{ffnn\-::layer\-::convolution\-::\-Filter}}
+\subsubsection[{set\-Random}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = typename filter\-::options$<$$>$, typename Extrinsics  = typename filter\-::extrinsics$<$\-Value\-Type, Options$>$$>$ template$<$typename Distribution\-Type $>$ void {\bf ffnn\-::layer\-::convolution\-::\-Filter}$<$ Value\-Type, Options, Extrinsics $>$\-::set\-Random (
+\begin{DoxyParamCaption}
+\item[{const Distribution\-Type \&}]{distribution}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1convolution_1_1_filter_a9b6cc0b1a995d2baa23ce553e202a78d}
+
+
+Sets all \hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter}{Filter} kernels and scalar bias unit to a random value drawn from a specified distribution. 
+
+
+
+Referenced by ffnn\-::layer\-::convolution\-::\-Filter$<$ Value\-Type, Options, Extrinsics $>$\-::set\-Random().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{classffnn_1_1layer_1_1convolution_1_1_filter_a9b6cc0b1a995d2baa23ce553e202a78d_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classffnn_1_1layer_1_1convolution_1_1_filter_a8e54711d041308aeb854ce78c79fb61a}{\index{ffnn\-::layer\-::convolution\-::\-Filter@{ffnn\-::layer\-::convolution\-::\-Filter}!set\-Random@{set\-Random}}
+\index{set\-Random@{set\-Random}!ffnn::layer::convolution::Filter@{ffnn\-::layer\-::convolution\-::\-Filter}}
+\subsubsection[{set\-Random}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = typename filter\-::options$<$$>$, typename Extrinsics  = typename filter\-::extrinsics$<$\-Value\-Type, Options$>$$>$ template$<$typename Distribution\-Type , bool T = Options\-::has\-\_\-fixed\-\_\-kernel\-\_\-count$>$ std\-::enable\-\_\-if$<$T$>$\-::type {\bf ffnn\-::layer\-::convolution\-::\-Filter}$<$ Value\-Type, Options, Extrinsics $>$\-::set\-Random (
+\begin{DoxyParamCaption}
+\item[{const Distribution\-Type \&}]{distribution, }
+\item[{{\bf size\-\_\-type}}]{kernel\-\_\-height, }
+\item[{{\bf size\-\_\-type}}]{kernel\-\_\-width, }
+\item[{{\bf size\-\_\-type}}]{kernel\-\_\-depth, }
+\item[{{\bf size\-\_\-type}}]{kernel\-\_\-count}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1convolution_1_1_filter_a8e54711d041308aeb854ce78c79fb61a}
+
+
+Sets all \hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter}{Filter} kernels and scalar bias unit to a random value drawn from a specified distribution. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em distribution} & \\
+\hline
+{\em kernel\-\_\-height} & height of filter kernel \\
+\hline
+{\em kernel\-\_\-width} & width of filter kernel \\
+\hline
+{\em kernel\-\_\-depth} & depth of filter kernel \\
+\hline
+{\em kernel\-\_\-count} & number of kernels \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classffnn_1_1layer_1_1convolution_1_1_filter_a8e54711d041308aeb854ce78c79fb61a_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classffnn_1_1layer_1_1convolution_1_1_filter_a64ad81cd3cfd39f2d594618355fe1b71}{\index{ffnn\-::layer\-::convolution\-::\-Filter@{ffnn\-::layer\-::convolution\-::\-Filter}!set\-Random@{set\-Random}}
+\index{set\-Random@{set\-Random}!ffnn::layer::convolution::Filter@{ffnn\-::layer\-::convolution\-::\-Filter}}
+\subsubsection[{set\-Random}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = typename filter\-::options$<$$>$, typename Extrinsics  = typename filter\-::extrinsics$<$\-Value\-Type, Options$>$$>$ template$<$typename Distribution\-Type , bool T = Options\-::has\-\_\-fixed\-\_\-kernel\-\_\-count$>$ std\-::enable\-\_\-if$<$!T$>$\-::type {\bf ffnn\-::layer\-::convolution\-::\-Filter}$<$ Value\-Type, Options, Extrinsics $>$\-::set\-Random (
+\begin{DoxyParamCaption}
+\item[{const Distribution\-Type \&}]{distribution, }
+\item[{{\bf size\-\_\-type}}]{kernel\-\_\-height, }
+\item[{{\bf size\-\_\-type}}]{kernel\-\_\-width, }
+\item[{{\bf size\-\_\-type}}]{kernel\-\_\-depth, }
+\item[{{\bf size\-\_\-type}}]{kernel\-\_\-count}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1convolution_1_1_filter_a64ad81cd3cfd39f2d594618355fe1b71}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{classffnn_1_1layer_1_1convolution_1_1_filter_a64ad81cd3cfd39f2d594618355fe1b71_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classffnn_1_1layer_1_1convolution_1_1_filter_adba3235a36053b7f669c68691a38e804}{\index{ffnn\-::layer\-::convolution\-::\-Filter@{ffnn\-::layer\-::convolution\-::\-Filter}!set\-Zero@{set\-Zero}}
+\index{set\-Zero@{set\-Zero}!ffnn::layer::convolution::Filter@{ffnn\-::layer\-::convolution\-::\-Filter}}
+\subsubsection[{set\-Zero}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = typename filter\-::options$<$$>$, typename Extrinsics  = typename filter\-::extrinsics$<$\-Value\-Type, Options$>$$>$ void {\bf ffnn\-::layer\-::convolution\-::\-Filter}$<$ Value\-Type, Options, Extrinsics $>$\-::set\-Zero (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1convolution_1_1_filter_adba3235a36053b7f669c68691a38e804}
+
+
+Sets all \hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter}{Filter} kernels and scalar bias unit to zero. 
+
+
+
+Referenced by ffnn\-::layer\-::convolution\-::\-Filter$<$ Value\-Type, Options, Extrinsics $>$\-::set\-Zero().
+
+\hypertarget{classffnn_1_1layer_1_1convolution_1_1_filter_ae965817157c5b968ebb045df1c96ee38}{\index{ffnn\-::layer\-::convolution\-::\-Filter@{ffnn\-::layer\-::convolution\-::\-Filter}!set\-Zero@{set\-Zero}}
+\index{set\-Zero@{set\-Zero}!ffnn::layer::convolution::Filter@{ffnn\-::layer\-::convolution\-::\-Filter}}
+\subsubsection[{set\-Zero}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = typename filter\-::options$<$$>$, typename Extrinsics  = typename filter\-::extrinsics$<$\-Value\-Type, Options$>$$>$ template$<$bool T = Options\-::has\-\_\-fixed\-\_\-kernel\-\_\-count$>$ std\-::enable\-\_\-if$<$T$>$\-::type {\bf ffnn\-::layer\-::convolution\-::\-Filter}$<$ Value\-Type, Options, Extrinsics $>$\-::set\-Zero (
+\begin{DoxyParamCaption}
+\item[{{\bf size\-\_\-type}}]{kernel\-\_\-height, }
+\item[{{\bf size\-\_\-type}}]{kernel\-\_\-width, }
+\item[{{\bf size\-\_\-type}}]{kernel\-\_\-depth, }
+\item[{{\bf size\-\_\-type}}]{kernel\-\_\-count}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1convolution_1_1_filter_ae965817157c5b968ebb045df1c96ee38}
+
+
+Sets all \hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter}{Filter} kernels and scalar bias unit to zero. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em kernel\-\_\-height} & height of filter kernel \\
+\hline
+{\em kernel\-\_\-width} & width of filter kernel \\
+\hline
+{\em kernel\-\_\-depth} & depth of filter kernel \\
+\hline
+{\em kernel\-\_\-count} & number of kernels \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{classffnn_1_1layer_1_1convolution_1_1_filter_ae965817157c5b968ebb045df1c96ee38_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classffnn_1_1layer_1_1convolution_1_1_filter_aa9a4f44db1cc39b2f142f5065a3f470f}{\index{ffnn\-::layer\-::convolution\-::\-Filter@{ffnn\-::layer\-::convolution\-::\-Filter}!set\-Zero@{set\-Zero}}
+\index{set\-Zero@{set\-Zero}!ffnn::layer::convolution::Filter@{ffnn\-::layer\-::convolution\-::\-Filter}}
+\subsubsection[{set\-Zero}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = typename filter\-::options$<$$>$, typename Extrinsics  = typename filter\-::extrinsics$<$\-Value\-Type, Options$>$$>$ template$<$bool T = Options\-::has\-\_\-fixed\-\_\-kernel\-\_\-count$>$ std\-::enable\-\_\-if$<$!T$>$\-::type {\bf ffnn\-::layer\-::convolution\-::\-Filter}$<$ Value\-Type, Options, Extrinsics $>$\-::set\-Zero (
+\begin{DoxyParamCaption}
+\item[{{\bf size\-\_\-type}}]{kernel\-\_\-height, }
+\item[{{\bf size\-\_\-type}}]{kernel\-\_\-width, }
+\item[{{\bf size\-\_\-type}}]{kernel\-\_\-depth, }
+\item[{{\bf size\-\_\-type}}]{kernel\-\_\-count}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1convolution_1_1_filter_aa9a4f44db1cc39b2f142f5065a3f470f}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classffnn_1_1layer_1_1convolution_1_1_filter_a3638f1ebfd8d5d4469392dd7b2470cc3}{\index{ffnn\-::layer\-::convolution\-::\-Filter@{ffnn\-::layer\-::convolution\-::\-Filter}!bias@{bias}}
+\index{bias@{bias}!ffnn::layer::convolution::Filter@{ffnn\-::layer\-::convolution\-::\-Filter}}
+\subsubsection[{bias}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = typename filter\-::options$<$$>$, typename Extrinsics  = typename filter\-::extrinsics$<$\-Value\-Type, Options$>$$>$ Value\-Type {\bf ffnn\-::layer\-::convolution\-::\-Filter}$<$ Value\-Type, Options, Extrinsics $>$\-::bias}}\label{classffnn_1_1layer_1_1convolution_1_1_filter_a3638f1ebfd8d5d4469392dd7b2470cc3}
+
+
+Bias value. 
+
+
+
+Referenced by ffnn\-::layer\-::convolution\-::\-Filter$<$ Value\-Type, Options, Extrinsics $>$\-::operator$\ast$=(), ffnn\-::layer\-::convolution\-::\-Filter$<$ Value\-Type, Options, Extrinsics $>$\-::operator+=(), ffnn\-::layer\-::convolution\-::\-Filter$<$ Value\-Type, Options, Extrinsics $>$\-::operator-\/=(), ffnn\-::layer\-::convolution\-::\-Filter$<$ Value\-Type, Options, Extrinsics $>$\-::operator/=(), ffnn\-::layer\-::convolution\-::\-Filter$<$ Value\-Type, Options, Extrinsics $>$\-::set\-Random(), and ffnn\-::layer\-::convolution\-::\-Filter$<$ Value\-Type, Options, Extrinsics $>$\-::set\-Zero().
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/convolution/\hyperlink{filter_8h}{filter.\-h}\end{DoxyCompactItemize}

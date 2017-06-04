@@ -1,9 +1,12 @@
 <map id="/home/briancairl/packages/src/ffnn&#45;cpp/ffnn/include/ffnn/layer/convolution/filter.h" name="/home/briancairl/packages/src/ffnn&#45;cpp/ffnn/include/ffnn/layer/convolution/filter.h">
-<area shape="rect" id="node5" href="$assert_8h.html" title="ffnn/assert.h" alt="" coords="819,117,913,144"/>
-<area shape="rect" id="node7" href="$global_8h.html" title="ffnn/config/global.h" alt="" coords="693,200,824,227"/>
-<area shape="rect" id="node20" href="$traits_8h.html" title="ffnn/internal/traits.h" alt="" coords="406,117,540,144"/>
-<area shape="rect" id="node21" href="$shape_8h.html" title="ffnn/layer/shape.h" alt="" coords="617,117,743,144"/>
-<area shape="rect" id="node22" href="$defs_8h.html" title="ffnn/layer/convolution\l/defs.h" alt="" coords="939,110,1085,151"/>
-<area shape="rect" id="node9" href="$logging_8h.html" title="ffnn/logging.h" alt="" coords="94,283,193,309"/>
-<area shape="rect" id="node16" href="$sparse__triplet__serialization_8h.html" title="ffnn/internal/eigen\l/sparse_triplet_serialization.h" alt="" coords="997,275,1187,317"/>
+<area shape="rect" id="node5" href="$assert_8h.html" title="ffnn/assert.h" alt="" coords="820,304,914,331"/>
+<area shape="rect" id="node7" href="$config_8h.html" title="ffnn/internal/config.h" alt="" coords="907,379,1046,405"/>
+<area shape="rect" id="node20" href="$traits_8h.html" title="ffnn/internal/traits.h" alt="" coords="559,304,693,331"/>
+<area shape="rect" id="node21" href="$distribution_8h.html" title="ffnn/distribution/distribution.h" alt="" coords="255,221,445,248"/>
+<area shape="rect" id="node25" href="$shape_8h.html" title="ffnn/layer/shape.h" alt="" coords="829,221,955,248"/>
+<area shape="rect" id="node26" href="$sizing_8h.html" title="ffnn/layer/convolution\l/sizing.h" alt="" coords="1031,214,1178,255"/>
+<area shape="rect" id="node27" href="$convolution_2filter_2compile__time__options_8h.html" title="ffnn/layer/convolution\l/filter/compile_time_options.h" alt="" coords="653,117,845,158"/>
+<area shape="rect" id="node28" href="$convolution_2filter_2serialization__class__definitions_8hpp.html" title="ffnn/impl/layer/convolution\l/filter/serialization_class\l_definitions.hpp" alt="" coords="1304,109,1478,165"/>
+<area shape="rect" id="node9" href="$logging_8h.html" title="ffnn/logging.h" alt="" coords="312,461,411,488"/>
+<area shape="rect" id="node16" href="$sparse__triplet__serialization_8h.html" title="ffnn/internal/eigen\l/sparse_triplet_serialization.h" alt="" coords="1215,454,1405,495"/>
 </map>

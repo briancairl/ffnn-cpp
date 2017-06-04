@@ -32,7 +32,7 @@ template<typename ValueType,
 class Hidden :
   public Extrinsics::LayerType
 {
-  FFNN_ASSERT_NO_MODIFY_EXTRINSICS(hidden);
+  FFNN_ASSERT_DONT_MODIFY_EXTRINSICS(hidden);
 public:
   /// Self type alias
   using SelfType = Hidden<ValueType, Options, Extrinsics>;

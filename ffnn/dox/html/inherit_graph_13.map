@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$structffnn_1_1layer_1_1hidden_1_1extrinsics.html" title="Describes types based on compile&#45;time options. " alt="" coords="6,4,170,60"/>
+<area shape="rect" id="node2" href="$classffnn_1_1layer_1_1_convolution.html" title="A convolution layer. " alt="" coords="179,5,405,46"/>
+<area shape="rect" id="node3" href="$classffnn_1_1layer_1_1_fully_connected.html" title="A fully&#45;connected layer. " alt="" coords="179,70,405,111"/>
 </map>

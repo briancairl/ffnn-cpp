@@ -1,5 +1,5 @@
 <map id="/home/briancairl/packages/src/ffnn&#45;cpp/ffnn/include/ffnn/neuron/modifier/soft_dropout.h" name="/home/briancairl/packages/src/ffnn&#45;cpp/ffnn/include/ffnn/neuron/modifier/soft_dropout.h">
-<area shape="rect" id="node2" href="$global_8h.html" title="ffnn/config/global.h" alt="" coords="693,125,824,152"/>
+<area shape="rect" id="node2" href="$config_8h.html" title="ffnn/internal/config.h" alt="" coords="689,125,828,152"/>
 <area shape="rect" id="node4" href="$logging_8h.html" title="ffnn/logging.h" alt="" coords="94,208,193,235"/>
 <area shape="rect" id="node11" href="$sparse__triplet__serialization_8h.html" title="ffnn/internal/eigen\l/sparse_triplet_serialization.h" alt="" coords="997,201,1187,242"/>
 </map>

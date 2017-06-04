@@ -25,6 +25,21 @@ TEST(TestLayerFullyConnected, Dynamic_OutputSize)
   using Hidden = ffnn::layer::FullyConnected<float>;
 
   Hidden fully_connected(30);
+
+  EXPECT_EQ(fully_connected.getOutputShape().size(), 30);
+}
+
+TEST(TestLayerFullyConnected, Dynamic_Config_InputOutputSize)
+{
+  // Layer-type alias
+  using Hidden = ffnn::layer::FullyConnected<float>;
+
+  Hidden fully_connected(Hidden::Configuration()
+                         .setInputShape(10, 1, 3)
+                         .setOutputShape(30, 3));
+
+  EXPECT_EQ(fully_connected.getInputShape().size(), 30);
+  EXPECT_EQ(fully_connected.getOutputShape().size(), 90);
 }
 
 // Run tests

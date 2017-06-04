@@ -1,17 +1,18 @@
 \hypertarget{convolution_8h}{\section{/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/convolution.h File Reference}
 \label{convolution_8h}\index{/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/convolution.\-h@{/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/convolution.\-h}}
 }
-{\ttfamily \#include \char`\"{}boost/multi\-\_\-array.\-hpp\char`\"{}}\\*
 {\ttfamily \#include $<$ffnn/assert.\-h$>$}\\*
-{\ttfamily \#include $<$ffnn/config/global.\-h$>$}\\*
+{\ttfamily \#include $<$ffnn/internal/config.\-h$>$}\\*
 {\ttfamily \#include $<$ffnn/distribution/distribution.\-h$>$}\\*
 {\ttfamily \#include $<$ffnn/distribution/normal.\-h$>$}\\*
 {\ttfamily \#include $<$ffnn/layer/layer.\-h$>$}\\*
 {\ttfamily \#include $<$ffnn/layer/hidden.\-h$>$}\\*
 {\ttfamily \#include $<$ffnn/optimizer/fwd.\-h$>$}\\*
 {\ttfamily \#include $<$ffnn/optimizer/optimizer.\-h$>$}\\*
-{\ttfamily \#include $<$ffnn/layer/convolution/defs.\-h$>$}\\*
 {\ttfamily \#include $<$ffnn/layer/convolution/filter.\-h$>$}\\*
+{\ttfamily \#include $<$ffnn/layer/convolution/sizing.\-h$>$}\\*
+{\ttfamily \#include $<$ffnn/layer/convolution/configuration.\-h$>$}\\*
+{\ttfamily \#include $<$ffnn/layer/convolution/compile\-\_\-time\-\_\-options.\-h$>$}\\*
 {\ttfamily \#include $<$ffnn/impl/layer/convolution.\-hpp$>$}\\*
 Include dependency graph for convolution.\-h\-:
 \nopagebreak
@@ -31,20 +32,12 @@ This graph shows which files directly or indirectly include this file\-:\nopageb
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-struct \hyperlink{structffnn_1_1layer_1_1convolution_1_1options}{ffnn\-::layer\-::convolution\-::options$<$ Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Kernel\-Height\-At\-Compile\-Time, Kernel\-Width\-At\-Compile\-Time, Kernel\-Count\-At\-Compile\-Time, Row\-Stride\-At\-Compile\-Time, Col\-Stride\-At\-Compile\-Time, Mode $>$}
-\begin{DoxyCompactList}\small\item\em Describes compile-\/time options used to set up a \hyperlink{classffnn_1_1layer_1_1_convolution}{Convolution} object. \end{DoxyCompactList}\item 
-struct \hyperlink{structffnn_1_1layer_1_1convolution_1_1extrinsics}{ffnn\-::layer\-::convolution\-::extrinsics$<$ Value\-Type, Options $>$}
-\begin{DoxyCompactList}\small\item\em Describes types based on compile-\/time options. \end{DoxyCompactList}\item 
 class \hyperlink{classffnn_1_1layer_1_1_convolution}{ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Options, Extrinsics $>$}
-\begin{DoxyCompactList}\small\item\em A convolution layer. \end{DoxyCompactList}\item 
-class \hyperlink{classffnn_1_1layer_1_1_convolution_1_1_configuration}{ffnn\-::layer\-::\-Convolution$<$ Value\-Type, Options, Extrinsics $>$\-::\-Configuration}
-\begin{DoxyCompactList}\small\item\em \hyperlink{classffnn_1_1layer_1_1_layer}{Layer} configuration struct. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A convolution layer. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{namespaceffnn}{ffnn}
 \item 
 \hyperlink{namespaceffnn_1_1layer}{ffnn\-::layer}
-\item 
-\hyperlink{namespaceffnn_1_1layer_1_1convolution}{ffnn\-::layer\-::convolution}
 \end{DoxyCompactItemize}

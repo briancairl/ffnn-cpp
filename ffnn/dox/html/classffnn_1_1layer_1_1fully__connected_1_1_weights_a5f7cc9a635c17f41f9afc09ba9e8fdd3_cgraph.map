@@ -1,0 +1,4 @@
+<map id="ffnn::layer::fully_connected::Weights::setRandom" name="ffnn::layer::fully_connected::Weights::setRandom">
+<area shape="rect" id="node2" href="$classffnn_1_1layer_1_1fully__connected_1_1_weights.html#aeaa3b146b866244465e4752b411d60eb" title="Sets all Weights kernels and scalar bias unit to a random value drawn from a specified distribution..." alt="" coords="201,4,346,60"/>
+<area shape="rect" id="node3" href="$namespaceffnn_1_1distribution.html#aacaa8d87a0c4ec48fb1251623532dac7" title="Sets random coefficients according to particular distribution. " alt="" coords="395,11,509,53"/>
+</map>

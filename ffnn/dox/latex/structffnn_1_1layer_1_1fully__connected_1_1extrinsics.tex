@@ -1,0 +1,73 @@
+\hypertarget{structffnn_1_1layer_1_1fully__connected_1_1extrinsics}{\section{ffnn\-:\-:layer\-:\-:fully\-\_\-connected\-:\-:extrinsics$<$ Value\-Type, Options $>$ Struct Template Reference}
+\label{structffnn_1_1layer_1_1fully__connected_1_1extrinsics}\index{ffnn\-::layer\-::fully\-\_\-connected\-::extrinsics$<$ Value\-Type, Options $>$@{ffnn\-::layer\-::fully\-\_\-connected\-::extrinsics$<$ Value\-Type, Options $>$}}
+}
+
+
+Describes types based on compile-\/time options.  
+
+
+
+
+{\ttfamily \#include \char`\"{}compile\-\_\-time\-\_\-options.\-h\char`\"{}}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \\*
+\hyperlink{structffnn_1_1layer_1_1fully__connected_1_1options}{fully\-\_\-connected\-::options}\\*
+$<$ Options\-::input\-\_\-size, \\*
+Options\-::output\-\_\-size $>$ \hyperlink{structffnn_1_1layer_1_1fully__connected_1_1extrinsics_ab1412ad01dbaed107141f39e23c73ab5}{Weights\-Options}
+\begin{DoxyCompactList}\small\item\em Compile-\/time \hyperlink{classffnn_1_1layer_1_1_hidden}{Hidden} layer traits. \end{DoxyCompactList}\item 
+typedef \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_weights}{Weights}$<$ Value\-Type, \\*
+\hyperlink{structffnn_1_1layer_1_1fully__connected_1_1extrinsics_ab1412ad01dbaed107141f39e23c73ab5}{Weights\-Options} $>$ \hyperlink{structffnn_1_1layer_1_1fully__connected_1_1extrinsics_a829f6f75fcd23a45225c85b7b0ac51f3}{Parameters\-Type}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classffnn_1_1layer_1_1_layer}{Layer} parameters type. \end{DoxyCompactList}\item 
+typedef \hyperlink{structffnn_1_1layer_1_1hidden_1_1options}{hidden\-::options}\\*
+$<$ Options\-::input\-\_\-size, \\*
+1, Options\-::output\-\_\-size, \\*
+1, Eigen\-::\-Col\-Major, \\*
+Eigen\-::\-Col\-Major $>$ \hyperlink{structffnn_1_1layer_1_1fully__connected_1_1extrinsics_a051d178770500c0f9775ab63d8a8f9fb}{Hidden\-Layer\-Options}
+\begin{DoxyCompactList}\small\item\em Compile-\/time \hyperlink{classffnn_1_1layer_1_1_hidden}{Hidden} layer traits. \end{DoxyCompactList}\item 
+typedef \hyperlink{classffnn_1_1layer_1_1_hidden}{Hidden}$<$ Value\-Type, \\*
+\hyperlink{structffnn_1_1layer_1_1fully__connected_1_1extrinsics_a051d178770500c0f9775ab63d8a8f9fb}{Hidden\-Layer\-Options} $>$ \hyperlink{structffnn_1_1layer_1_1fully__connected_1_1extrinsics_aafc02edf8e6c520eae8e44f92abb1925}{Hidden\-Layer\-Type}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classffnn_1_1layer_1_1_hidden}{Hidden} layer (base type) standardization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Value\-Type, typename Options$>$struct ffnn\-::layer\-::fully\-\_\-connected\-::extrinsics$<$ Value\-Type, Options $>$}
+
+Describes types based on compile-\/time options. 
+
+\subsection{Member Typedef Documentation}
+\hypertarget{structffnn_1_1layer_1_1fully__connected_1_1extrinsics_a051d178770500c0f9775ab63d8a8f9fb}{\index{ffnn\-::layer\-::fully\-\_\-connected\-::extrinsics@{ffnn\-::layer\-::fully\-\_\-connected\-::extrinsics}!Hidden\-Layer\-Options@{Hidden\-Layer\-Options}}
+\index{Hidden\-Layer\-Options@{Hidden\-Layer\-Options}!ffnn::layer::fully_connected::extrinsics@{ffnn\-::layer\-::fully\-\_\-connected\-::extrinsics}}
+\subsubsection[{Hidden\-Layer\-Options}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options $>$ typedef {\bf hidden\-::options}$<$ Options\-::input\-\_\-size, 1, Options\-::output\-\_\-size, 1, Eigen\-::\-Col\-Major, Eigen\-::\-Col\-Major $>$ {\bf ffnn\-::layer\-::fully\-\_\-connected\-::extrinsics}$<$ Value\-Type, Options $>$\-::{\bf Hidden\-Layer\-Options}}}\label{structffnn_1_1layer_1_1fully__connected_1_1extrinsics_a051d178770500c0f9775ab63d8a8f9fb}
+
+
+Compile-\/time \hyperlink{classffnn_1_1layer_1_1_hidden}{Hidden} layer traits. 
+
+\hypertarget{structffnn_1_1layer_1_1fully__connected_1_1extrinsics_aafc02edf8e6c520eae8e44f92abb1925}{\index{ffnn\-::layer\-::fully\-\_\-connected\-::extrinsics@{ffnn\-::layer\-::fully\-\_\-connected\-::extrinsics}!Hidden\-Layer\-Type@{Hidden\-Layer\-Type}}
+\index{Hidden\-Layer\-Type@{Hidden\-Layer\-Type}!ffnn::layer::fully_connected::extrinsics@{ffnn\-::layer\-::fully\-\_\-connected\-::extrinsics}}
+\subsubsection[{Hidden\-Layer\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options $>$ typedef {\bf Hidden}$<$Value\-Type, {\bf Hidden\-Layer\-Options}$>$ {\bf ffnn\-::layer\-::fully\-\_\-connected\-::extrinsics}$<$ Value\-Type, Options $>$\-::{\bf Hidden\-Layer\-Type}}}\label{structffnn_1_1layer_1_1fully__connected_1_1extrinsics_aafc02edf8e6c520eae8e44f92abb1925}
+
+
+\hyperlink{classffnn_1_1layer_1_1_hidden}{Hidden} layer (base type) standardization. 
+
+\hypertarget{structffnn_1_1layer_1_1fully__connected_1_1extrinsics_a829f6f75fcd23a45225c85b7b0ac51f3}{\index{ffnn\-::layer\-::fully\-\_\-connected\-::extrinsics@{ffnn\-::layer\-::fully\-\_\-connected\-::extrinsics}!Parameters\-Type@{Parameters\-Type}}
+\index{Parameters\-Type@{Parameters\-Type}!ffnn::layer::fully_connected::extrinsics@{ffnn\-::layer\-::fully\-\_\-connected\-::extrinsics}}
+\subsubsection[{Parameters\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options $>$ typedef {\bf Weights}$<$Value\-Type, {\bf Weights\-Options}$>$ {\bf ffnn\-::layer\-::fully\-\_\-connected\-::extrinsics}$<$ Value\-Type, Options $>$\-::{\bf Parameters\-Type}}}\label{structffnn_1_1layer_1_1fully__connected_1_1extrinsics_a829f6f75fcd23a45225c85b7b0ac51f3}
+
+
+\hyperlink{classffnn_1_1layer_1_1_layer}{Layer} parameters type. 
+
+\hypertarget{structffnn_1_1layer_1_1fully__connected_1_1extrinsics_ab1412ad01dbaed107141f39e23c73ab5}{\index{ffnn\-::layer\-::fully\-\_\-connected\-::extrinsics@{ffnn\-::layer\-::fully\-\_\-connected\-::extrinsics}!Weights\-Options@{Weights\-Options}}
+\index{Weights\-Options@{Weights\-Options}!ffnn::layer::fully_connected::extrinsics@{ffnn\-::layer\-::fully\-\_\-connected\-::extrinsics}}
+\subsubsection[{Weights\-Options}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options $>$ typedef {\bf fully\-\_\-connected\-::options}$<$ Options\-::input\-\_\-size, Options\-::output\-\_\-size $>$ {\bf ffnn\-::layer\-::fully\-\_\-connected\-::extrinsics}$<$ Value\-Type, Options $>$\-::{\bf Weights\-Options}}}\label{structffnn_1_1layer_1_1fully__connected_1_1extrinsics_ab1412ad01dbaed107141f39e23c73ab5}
+
+
+Compile-\/time \hyperlink{classffnn_1_1layer_1_1_hidden}{Hidden} layer traits. 
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/fully\-\_\-connected/\hyperlink{fully__connected_2compile__time__options_8h}{compile\-\_\-time\-\_\-options.\-h}\end{DoxyCompactItemize}

@@ -9,19 +9,21 @@
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-struct \hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter}{Filter}
-\begin{DoxyCompactList}\small\item\em \hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter}{Filter} parameters to be use with a \hyperlink{classffnn_1_1layer_1_1_convolution}{Convolution} layer. \end{DoxyCompactList}\item 
 struct \hyperlink{structffnn_1_1layer_1_1convolution_1_1options}{options}
 \begin{DoxyCompactList}\small\item\em Describes compile-\/time options used to set up a \hyperlink{classffnn_1_1layer_1_1_convolution}{Convolution} object. \end{DoxyCompactList}\item 
 struct \hyperlink{structffnn_1_1layer_1_1convolution_1_1extrinsics}{extrinsics}
-\begin{DoxyCompactList}\small\item\em Describes types based on compile-\/time options. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Describes types based on compile-\/time options. \end{DoxyCompactList}\item 
+class \hyperlink{classffnn_1_1layer_1_1convolution_1_1_configuration}{Configuration}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classffnn_1_1layer_1_1_layer}{Layer} configuration struct. \end{DoxyCompactList}\item 
+class \hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter}{Filter}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter}{Filter} parameters to be use with a \hyperlink{classffnn_1_1layer_1_1_convolution}{Convolution} layer. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
 enum \hyperlink{namespaceffnn_1_1layer_1_1convolution_ad420d4eb8edd7c254d1f0aaaad81017f}{Embedding\-Mode} \{ \hyperlink{namespaceffnn_1_1layer_1_1convolution_ad420d4eb8edd7c254d1f0aaaad81017fa1c03b5145e31615496457aa687a180c2}{Row\-Embedding} = 0, 
 \hyperlink{namespaceffnn_1_1layer_1_1convolution_ad420d4eb8edd7c254d1f0aaaad81017fae2ba27e8fa1aed3f003e54947f37d17e}{Col\-Embedding} = 1
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Used to select how depth of an input/outut volume is embedded in matrix form. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -39,6 +41,15 @@ enum \hyperlink{namespaceffnn_1_1layer_1_1convolution_ad420d4eb8edd7c254d1f0aaaa
 \hypertarget{namespaceffnn_1_1layer_1_1convolution_ad420d4eb8edd7c254d1f0aaaad81017f}{\index{ffnn\-::layer\-::convolution@{ffnn\-::layer\-::convolution}!Embedding\-Mode@{Embedding\-Mode}}
 \index{Embedding\-Mode@{Embedding\-Mode}!ffnn::layer::convolution@{ffnn\-::layer\-::convolution}}
 \subsubsection[{Embedding\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf ffnn\-::layer\-::convolution\-::\-Embedding\-Mode}}}\label{namespaceffnn_1_1layer_1_1convolution_ad420d4eb8edd7c254d1f0aaaad81017f}
+
+
+Used to select how depth of an input/outut volume is embedded in matrix form. 
+
+\begin{DoxyNote}{Note}
+{\ttfamily Row\-Embedding} generally implies that the underly matrix will have row-\/major ordering. This is because of how this data is usually accessed 
+
+{\ttfamily Col\-Embedding} generally implies that the underly matrix will have collumn-\/major ordering. This is because of how this data is usually accessed 
+\end{DoxyNote}
 \begin{Desc}
 \item[Enumerator]\par
 \begin{description}

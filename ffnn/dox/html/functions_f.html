@@ -124,9 +124,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h3><a class="anchor" id="index_f"></a>- f -</h3><ul>
 <li>FFNN_REGISTER_SERIALIZABLE()
 : <a class="el" href="classffnn_1_1internal_1_1_unique.html#ace4b1ad17d5dbcc4dcd555435753ab4a">ffnn::internal::Unique</a>
+, <a class="el" href="classffnn_1_1layer_1_1_convolution.html#aeb9c1983ad3858070fe1d31c3ab2f8c0">ffnn::layer::Convolution&lt; ValueType, Options, Extrinsics &gt;</a>
+, <a class="el" href="classffnn_1_1layer_1_1_fully_connected.html#ad66275e42a79a3f10b34828b98d964ab">ffnn::layer::FullyConnected&lt; ValueType, Options, Extrinsics &gt;</a>
+</li>
+<li>FFNN_STATIC_ASSERT()
+: <a class="el" href="structffnn_1_1layer_1_1_shape.html#aab4fc107d498c7d36937156561d0119f">ffnn::layer::Shape&lt; SizeType &gt;</a>
 </li>
 <li>Filter()
-: <a class="el" href="structffnn_1_1layer_1_1convolution_1_1_filter.html#a92680fc95854201cf47f44ffb91e17e9">ffnn::layer::convolution::Filter&lt; ValueType, Options, Extrinsics &gt;</a>
+: <a class="el" href="classffnn_1_1layer_1_1convolution_1_1_filter.html#a92680fc95854201cf47f44ffb91e17e9">ffnn::layer::convolution::Filter&lt; ValueType, Options, Extrinsics &gt;</a>
 </li>
 <li>FilterBaseType
 : <a class="el" href="structffnn_1_1layer_1_1convolution_1_1filter_1_1extrinsics.html#aa033ddfd5dc48de1253f1071211990e3">ffnn::layer::convolution::filter::extrinsics&lt; ValueType, Options &gt;</a>
@@ -134,13 +139,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>FilterOptions
 : <a class="el" href="structffnn_1_1layer_1_1convolution_1_1extrinsics.html#a0de5368aa5d42881cfd7406cc2762bc5">ffnn::layer::convolution::extrinsics&lt; ValueType, Options &gt;</a>
 </li>
-<li>FilterType
-: <a class="el" href="structffnn_1_1layer_1_1convolution_1_1extrinsics.html#a3e02025b65ed127949b68053776507c8">ffnn::layer::convolution::extrinsics&lt; ValueType, Options &gt;</a>
-</li>
 <li>forward()
 : <a class="el" href="classffnn_1_1layer_1_1_activation.html#a8435ed1feadfcfc2343dd65a1542fe23">ffnn::layer::Activation&lt; ValueType, NeuronType, SizeAtCompileTime, _HiddenLayerShape &gt;</a>
 , <a class="el" href="classffnn_1_1layer_1_1_convolution.html#a5f6bf2bfc15a8020b11dabff0d03eac2">ffnn::layer::Convolution&lt; ValueType, Options, Extrinsics &gt;</a>
-, <a class="el" href="classffnn_1_1layer_1_1_fully_connected.html#a350e7910bd416f67d30113425ea74f59">ffnn::layer::FullyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape &gt;</a>
+, <a class="el" href="classffnn_1_1layer_1_1_fully_connected.html#ab346f0f7b59414c24e66db4d20d1d304">ffnn::layer::FullyConnected&lt; ValueType, Options, Extrinsics &gt;</a>
 , <a class="el" href="classffnn_1_1layer_1_1_hidden.html#aba6a84a760d66acec2e6e67c29a67f5b">ffnn::layer::Hidden&lt; ValueType, Options, Extrinsics &gt;</a>
 , <a class="el" href="classffnn_1_1layer_1_1_layer.html#aa47aae451c4a9ee4daef90b60ac291a1">ffnn::layer::Layer&lt; ValueType &gt;</a>
 , <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4.html#a873062535938aebab53a62d93f3e7db7">ffnn::optimizer::GradientDescent&lt; layer::Convolution&lt; TARGS &gt; &gt;</a>
@@ -153,18 +155,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>forward_error_
 : <a class="el" href="classffnn_1_1layer_1_1_hidden.html#a1abba7440bdde56f49673de2acf58b30">ffnn::layer::Hidden&lt; ValueType, Options, Extrinsics &gt;</a>
 </li>
-<li>ForwardMapType
-: <a class="el" href="structffnn_1_1layer_1_1convolution_1_1extrinsics.html#abda7b16eb793b1b130063d51ef701296">ffnn::layer::convolution::extrinsics&lt; ValueType, Options &gt;</a>
-, <a class="el" href="classffnn_1_1layer_1_1_convolution.html#a5042d4aa0d40a1f1b719340eb5e62edc">ffnn::layer::Convolution&lt; ValueType, Options, Extrinsics &gt;</a>
+<li>ForwardMappingGridType
+: <a class="el" href="structffnn_1_1layer_1_1convolution_1_1extrinsics.html#ac75346616a5d8766c52ccf663bd97170">ffnn::layer::convolution::extrinsics&lt; ValueType, Options &gt;</a>
+, <a class="el" href="classffnn_1_1layer_1_1_convolution.html#a2b15b4e46b7679753e4f3e28b619bae5">ffnn::layer::Convolution&lt; ValueType, Options, Extrinsics &gt;</a>
 </li>
 <li>FullyConnected()
-: <a class="el" href="classffnn_1_1layer_1_1_fully_connected.html#a3d846cacf7bcbab5dd193b30a16011f2">ffnn::layer::FullyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime, _HiddenLayerShape &gt;</a>
+: <a class="el" href="classffnn_1_1layer_1_1_fully_connected.html#a9eaa4a8e35a5092b8b130b70eb553ad3">ffnn::layer::FullyConnected&lt; ValueType, Options, Extrinsics &gt;</a>
 </li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jun 2 2017 00:42:47 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jun 3 2017 23:40:29 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

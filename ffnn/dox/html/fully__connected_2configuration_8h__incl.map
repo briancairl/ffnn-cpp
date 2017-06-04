@@ -1,0 +1,12 @@
+<map id="/home/briancairl/packages/src/ffnn&#45;cpp/ffnn/include/ffnn/layer/fully_connected/configuration.h" name="/home/briancairl/packages/src/ffnn&#45;cpp/ffnn/include/ffnn/layer/fully_connected/configuration.h">
+<area shape="rect" id="node3" href="$assert_8h.html" title="ffnn/assert.h" alt="" coords="995,237,1089,264"/>
+<area shape="rect" id="node6" href="$config_8h.html" title="ffnn/internal/config.h" alt="" coords="689,320,828,347"/>
+<area shape="rect" id="node19" href="$distribution_8h.html" title="ffnn/distribution/distribution.h" alt="" coords="1069,140,1259,167"/>
+<area shape="rect" id="node24" href="$normal_8h.html" title="ffnn/distribution/normal.h" alt="" coords="1547,140,1711,167"/>
+<area shape="rect" id="node30" href="$fwd_8h.html" title="ffnn/optimizer/fwd.h" alt="" coords="1737,140,1873,167"/>
+<area shape="rect" id="node31" href="$optimizer_8h.html" title="ffnn/optimizer/optimizer.h" alt="" coords="654,140,823,167"/>
+<area shape="rect" id="node33" href="$fully__connected_2configuration_2serialization__class__definitions_8hpp.html" title="ffnn/impl/layer/fully\l_connected/configuration\l/serialization_class_definitions.hpp" alt="" coords="1899,125,2121,181"/>
+<area shape="rect" id="node8" href="$logging_8h.html" title="ffnn/logging.h" alt="" coords="94,403,193,429"/>
+<area shape="rect" id="node15" href="$sparse__triplet__serialization_8h.html" title="ffnn/internal/eigen\l/sparse_triplet_serialization.h" alt="" coords="997,395,1187,437"/>
+<area shape="rect" id="node23" href="$traits_8h.html" title="ffnn/internal/traits.h" alt="" coords="1217,237,1351,264"/>
+</map>

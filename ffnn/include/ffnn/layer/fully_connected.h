@@ -40,13 +40,13 @@ public:
   using BaseType = typename Extrinsics::HiddenLayerType;
 
   /// Configuration type standardization
-  typedef convolution::Configuration<SelfType, ValueType, Options, Extrinsics> Configuration;
+  typedef fully_connected::Configuration<SelfType, ValueType, Options, Extrinsics> Configuration;
 
   /// Dimension type standardization
-  typedef typename Base::ShapeType ShapeType;
+  typedef typename BaseType::ShapeType ShapeType;
 
   /// Parameters (connection weights) type standardization
-  typedef Extrinsics::ParametersType ParametersType;
+  typedef typename Extrinsics::ParametersType ParametersType;
 
   /**
    * @brief Setup constructor
@@ -97,14 +97,6 @@ public:
   void reset();
 
   /**
-   * @brief Sets an optimizer used update network weights during back-propagation
-   * @param opt  optimizer to set
-   * @warning <code>backward</code> and <code>update</code> methods are expected to throw if an
-   *          optimizer has not been set explicitly
-   */
-  void setOptimizer(typename Optimizer::Ptr opt);
-
-  /**
    * @brief Exposes layer parameters
    * @return Connection weight parameters
    */
@@ -117,22 +109,18 @@ private:
   FFNN_REGISTER_OPTIMIZER(FullyConnected, Adam);
   FFNN_REGISTER_OPTIMIZER(FullyConnected, GradientDescent);
 
-  /// Weight matrix
-  WeightMatrixType w_;
-
-  /// Bias vector
-  BiasVectorType b_;
+  /// Layer configurations
+  Configuration config_;
 
   /**
-   * @brief Weight optimization resource
-   * @note  This will be the <code>optimizer::None</code> type by default
-   * @see   setOptimizer
+   * @brief Layer parameters
+   * @note  For the FullyConnected layer, theses are connection Weights
    */
-  typename Optimizer::Ptr opt_;
+  ParametersType parameters_;
 
 #ifndef FFNN_NO_SERIALIZATION_SUPPORT
 protected:
-  FFNN_REGISTER_SERIALIZABLE(FullyConnected)
+  FFNN_REGISTER_SERIALIZABLE(FullyConnected);
 
   /// Save serialize
   void save(OutputArchive& ar, VersionType version) const;

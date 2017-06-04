@@ -38,7 +38,7 @@ template<typename ValueType,
 class Filter :
   public Extrinsics::FilterBaseType
 {
-  FFNN_ASSERT_NO_MODIFY_EXTRINSICS(filter);
+  FFNN_ASSERT_DONT_MODIFY_EXTRINSICS(filter);
 public:
   /// Filter kernel matrix standardization
   typedef typename Extrinsics::KernelType KernelType;

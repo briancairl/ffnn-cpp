@@ -5,10 +5,13 @@
 {\ttfamily \#include $<$vector$>$}\\*
 {\ttfamily \#include $<$type\-\_\-traits$>$}\\*
 {\ttfamily \#include $<$ffnn/assert.\-h$>$}\\*
-{\ttfamily \#include $<$ffnn/config/global.\-h$>$}\\*
+{\ttfamily \#include $<$ffnn/internal/config.\-h$>$}\\*
 {\ttfamily \#include $<$ffnn/internal/traits.\-h$>$}\\*
+{\ttfamily \#include $<$ffnn/distribution/distribution.\-h$>$}\\*
 {\ttfamily \#include $<$ffnn/layer/shape.\-h$>$}\\*
-{\ttfamily \#include $<$ffnn/layer/convolution/defs.\-h$>$}\\*
+{\ttfamily \#include $<$ffnn/layer/convolution/sizing.\-h$>$}\\*
+{\ttfamily \#include $<$ffnn/layer/convolution/filter/compile\-\_\-time\-\_\-options.\-h$>$}\\*
+{\ttfamily \#include $<$ffnn/impl/layer/convolution/filter/serialization\-\_\-class\-\_\-definitions.\-hpp$>$}\\*
 Include dependency graph for filter.\-h\-:
 \nopagebreak
 \begin{figure}[H]
@@ -27,12 +30,8 @@ This graph shows which files directly or indirectly include this file\-:\nopageb
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-struct \hyperlink{structffnn_1_1layer_1_1convolution_1_1filter_1_1options}{ffnn\-::layer\-::convolution\-::filter\-::options$<$ Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Kernel\-Count\-At\-Compile\-Time, Mode $>$}
-\begin{DoxyCompactList}\small\item\em Describes compile-\/time options and extrinsic parameters used to set up a \hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter}{Filter} object. \end{DoxyCompactList}\item 
-struct \hyperlink{structffnn_1_1layer_1_1convolution_1_1filter_1_1extrinsics}{ffnn\-::layer\-::convolution\-::filter\-::extrinsics$<$ Value\-Type, Options $>$}
-\begin{DoxyCompactList}\small\item\em Describes types based on compile-\/time options. \end{DoxyCompactList}\item 
-struct \hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter}{ffnn\-::layer\-::convolution\-::\-Filter$<$ Value\-Type, Options, Extrinsics $>$}
-\begin{DoxyCompactList}\small\item\em \hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter}{Filter} parameters to be use with a \hyperlink{classffnn_1_1layer_1_1_convolution}{Convolution} layer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+class \hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter}{ffnn\-::layer\-::convolution\-::\-Filter$<$ Value\-Type, Options, Extrinsics $>$}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter}{Filter} parameters to be use with a \hyperlink{classffnn_1_1layer_1_1_convolution}{Convolution} layer. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
@@ -41,6 +40,4 @@ struct \hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter}{ffnn\-::layer\-
 \hyperlink{namespaceffnn_1_1layer}{ffnn\-::layer}
 \item 
 \hyperlink{namespaceffnn_1_1layer_1_1convolution}{ffnn\-::layer\-::convolution}
-\item 
-\hyperlink{namespaceffnn_1_1layer_1_1convolution_1_1filter}{ffnn\-::layer\-::convolution\-::filter}
 \end{DoxyCompactItemize}

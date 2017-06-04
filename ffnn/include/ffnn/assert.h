@@ -58,7 +58,7 @@
  *        and <code>Options</code> structure, which represent the coefficient type and compile-time
  *        sizing options, respectively.
  */
-#define FFNN_ASSERT_NO_MODIFY_EXTRINSICS(NS)\
+#define FFNN_ASSERT_DONT_MODIFY_EXTRINSICS(NS)\
         static_assert(\
           std::is_same<Extrinsics, typename NS::extrinsics<ValueType, Options>>::value,\
           "DO NOT MODIFY CLASS EXTRINSICS TEMPLATE PARAMETER!"\

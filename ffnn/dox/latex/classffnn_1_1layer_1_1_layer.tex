@@ -12,7 +12,8 @@ Base object for all layer types.
 
 
 
-Inheritance diagram for ffnn\-:\-:layer\-:\-:Layer$<$ Value\-Type $>$\-:\nopagebreak
+Inheritance diagram for ffnn\-:\-:layer\-:\-:Layer$<$ Value\-Type $>$\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -41,7 +42,7 @@ $<$ \hyperlink{classffnn_1_1layer_1_1_layer_a01db5ce644b97af72dca31a759aa33c5}{S
 typedef boost\-::shared\-\_\-ptr\\*
 $<$ const \hyperlink{classffnn_1_1layer_1_1_layer_a01db5ce644b97af72dca31a759aa33c5}{Self\-Type} $>$ \hyperlink{classffnn_1_1layer_1_1_layer_adc3e5427239b7ce83615364d859ef449}{Const\-Ptr}
 \begin{DoxyCompactList}\small\item\em Constant shared resource standardization. \end{DoxyCompactList}\item 
-typedef Value\-Type \hyperlink{classffnn_1_1layer_1_1_layer_a3d482813f86f1ec69554b4592c478c32}{Scalar\-Type}
+typedef Value\-Type \hyperlink{classffnn_1_1layer_1_1_layer_ab3b9b082aed9ee8d4e30a823b723a740}{Scalar}
 \begin{DoxyCompactList}\small\item\em Scalar type standardization. \end{DoxyCompactList}\item 
 typedef \hyperlink{structffnn_1_1layer_1_1_shape}{Shape}$<$ \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} $>$ \hyperlink{classffnn_1_1layer_1_1_layer_ae2f2d0063ab4b2c2a3a6ebf81f4ec32f}{Shape\-Type}
 \begin{DoxyCompactList}\small\item\em Dimension type standardization. \end{DoxyCompactList}\item 
@@ -152,9 +153,9 @@ Constant shared resource standardization.
 
 Shared resource standardization. 
 
-\hypertarget{classffnn_1_1layer_1_1_layer_a3d482813f86f1ec69554b4592c478c32}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!Scalar\-Type@{Scalar\-Type}}
-\index{Scalar\-Type@{Scalar\-Type}!ffnn::layer::Layer@{ffnn\-::layer\-::\-Layer}}
-\subsubsection[{Scalar\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type$>$ typedef Value\-Type {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type $>$\-::{\bf Scalar\-Type}}}\label{classffnn_1_1layer_1_1_layer_a3d482813f86f1ec69554b4592c478c32}
+\hypertarget{classffnn_1_1layer_1_1_layer_ab3b9b082aed9ee8d4e30a823b723a740}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!Scalar@{Scalar}}
+\index{Scalar@{Scalar}!ffnn::layer::Layer@{ffnn\-::layer\-::\-Layer}}
+\subsubsection[{Scalar}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type$>$ typedef Value\-Type {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type $>$\-::{\bf Scalar}}}\label{classffnn_1_1layer_1_1_layer_ab3b9b082aed9ee8d4e30a823b723a740}
 
 
 Scalar type standardization. 
@@ -197,7 +198,8 @@ Setup constructor.
 \end{DoxyParams}
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -236,7 +238,7 @@ Backward value propagation.
 \end{DoxyRetVals}
 
 
-Implemented in \hyperlink{classffnn_1_1layer_1_1_hidden_ac26b0c21f2d47b06b6ecba0211bb696e}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, \-\_\-\-Hidden\-Layer\-Shape $>$}, \hyperlink{classffnn_1_1layer_1_1_fully_connected_ab4a63eb87bd3f2288258b341fcfd165f}{ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}, and \hyperlink{classffnn_1_1layer_1_1_activation_aa5166a595cb135c7ad62569361de101b}{ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}.
+Implemented in \hyperlink{classffnn_1_1layer_1_1_hidden_ac26b0c21f2d47b06b6ecba0211bb696e}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, \-\_\-\-Hidden\-Layer\-Shape $>$}, and \hyperlink{classffnn_1_1layer_1_1_activation_aa5166a595cb135c7ad62569361de101b}{ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}.
 
 \hypertarget{classffnn_1_1layer_1_1_layer_a707f7e1944522080da49d97077ddc649}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!connect\-Input\-Layers@{connect\-Input\-Layers}}
 \index{connect\-Input\-Layers@{connect\-Input\-Layers}!ffnn::layer::Layer@{ffnn\-::layer\-::\-Layer}}
@@ -316,7 +318,7 @@ Forward value propagation.
 \end{DoxyRetVals}
 
 
-Implemented in \hyperlink{classffnn_1_1layer_1_1_hidden_aba6a84a760d66acec2e6e67c29a67f5b}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, \-\_\-\-Hidden\-Layer\-Shape $>$}, \hyperlink{classffnn_1_1layer_1_1_fully_connected_a350e7910bd416f67d30113425ea74f59}{ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}, and \hyperlink{classffnn_1_1layer_1_1_activation_a8435ed1feadfcfc2343dd65a1542fe23}{ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}.
+Implemented in \hyperlink{classffnn_1_1layer_1_1_hidden_aba6a84a760d66acec2e6e67c29a67f5b}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, \-\_\-\-Hidden\-Layer\-Shape $>$}, and \hyperlink{classffnn_1_1layer_1_1_activation_a8435ed1feadfcfc2343dd65a1542fe23}{ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}.
 
 \hypertarget{classffnn_1_1layer_1_1_layer_a0caad62750e9610e607fb18d87df63b8}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!get\-Backward\-Error\-Buffer@{get\-Backward\-Error\-Buffer}}
 \index{get\-Backward\-Error\-Buffer@{get\-Backward\-Error\-Buffer}!ffnn::layer::Layer@{ffnn\-::layer\-::\-Layer}}
@@ -383,7 +385,7 @@ Initialize the layer.
 
 
 
-Reimplemented in \hyperlink{classffnn_1_1layer_1_1_hidden_a50b9141e7d96fb7c6a1a6418fb204d92}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, \-\_\-\-Hidden\-Layer\-Shape $>$}, \hyperlink{classffnn_1_1layer_1_1_fully_connected_a55089e2810d6848950da5ca33000da8a}{ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}, \hyperlink{classffnn_1_1layer_1_1_activation_a10a733b3fc1378fd8d1f33d231ee3e83}{ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}, \hyperlink{classffnn_1_1layer_1_1_output_ab9ebd05595bc6b75718191aa48e70ad2}{ffnn\-::layer\-::\-Output$<$ Value\-Type, Network\-Outputs\-At\-Compile\-Time $>$}, and \hyperlink{classffnn_1_1layer_1_1_input_ac3de713973a8f67dc348a088ab6dbe1c}{ffnn\-::layer\-::\-Input$<$ Value\-Type, Network\-Inputs\-At\-Compile\-Time $>$}.
+Reimplemented in \hyperlink{classffnn_1_1layer_1_1_hidden_a50b9141e7d96fb7c6a1a6418fb204d92}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, \-\_\-\-Hidden\-Layer\-Shape $>$}, \hyperlink{classffnn_1_1layer_1_1_output_ab9ebd05595bc6b75718191aa48e70ad2}{ffnn\-::layer\-::\-Output$<$ Value\-Type, Network\-Outputs\-At\-Compile\-Time $>$}, and \hyperlink{classffnn_1_1layer_1_1_activation_a10a733b3fc1378fd8d1f33d231ee3e83}{ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}.
 
 \hypertarget{classffnn_1_1layer_1_1_layer_a2166b32e32c3f4e979ed7454ddb5817f}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!is\-Initialized@{is\-Initialized}}
 \index{is\-Initialized@{is\-Initialized}!ffnn::layer::Layer@{ffnn\-::layer\-::\-Layer}}
@@ -403,10 +405,6 @@ Returns true if layer has been initialized.
 {\em false} & otherwise \\
 \hline
 \end{DoxyRetVals}
-
-
-Referenced by ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::backward(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::forward(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::initialize(), ffnn\-::optimizer\-::\-Adam$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::update(), and ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::update().
-
 \hypertarget{classffnn_1_1layer_1_1_layer_a23f5f3c958d888632010327471c7b012}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!load@{load}}
 \index{load@{load}!ffnn::layer::Layer@{ffnn\-::layer\-::\-Layer}}
 \subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type$>$ void {\bf ffnn\-::layer\-::\-Layer}$<$ Value\-Type $>$\-::load (
@@ -429,7 +427,8 @@ Reimplemented in \hyperlink{classffnn_1_1layer_1_1_hidden_a94cba25f361e7077a3b7e
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -460,7 +459,8 @@ Reimplemented in \hyperlink{classffnn_1_1layer_1_1_hidden_a1ef2b7dc49a8094981251
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -507,7 +507,7 @@ Applies layer weight updates.
 \end{DoxyRetVals}
 
 
-Implemented in \hyperlink{classffnn_1_1layer_1_1_hidden_ac95dceacf1a0ea65674fb269a48730fb}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, \-\_\-\-Hidden\-Layer\-Shape $>$}, \hyperlink{classffnn_1_1layer_1_1_fully_connected_a7dd4dbe010c3d290c131b21b35f6301e}{ffnn\-::layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}, and \hyperlink{classffnn_1_1layer_1_1_activation_a24a044458729f72466af06153851f5b2}{ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}.
+Implemented in \hyperlink{classffnn_1_1layer_1_1_hidden_ac95dceacf1a0ea65674fb269a48730fb}{ffnn\-::layer\-::\-Hidden$<$ Value\-Type, \-\_\-\-Hidden\-Layer\-Shape $>$}, and \hyperlink{classffnn_1_1layer_1_1_activation_a24a044458729f72466af06153851f5b2}{ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}.
 
 
 
@@ -569,7 +569,7 @@ Total number of input connections.
 
 
 
-Referenced by ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$\-::get\-Input\-Shape(), ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::initialize(), ffnn\-::optimizer\-::\-Adam$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::initialize(), ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$\-::\-Layer(), and ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::reset().
+Referenced by ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$\-::get\-Input\-Shape(), and ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$\-::\-Layer().
 
 \hypertarget{classffnn_1_1layer_1_1_layer_a453330bda96277cd7b794bfab4804c47}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!output\-\_\-shape\-\_\-@{output\-\_\-shape\-\_\-}}
 \index{output\-\_\-shape\-\_\-@{output\-\_\-shape\-\_\-}!ffnn::layer::Layer@{ffnn\-::layer\-::\-Layer}}
@@ -580,7 +580,7 @@ Total number of output connections.
 
 
 
-Referenced by ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$\-::get\-Output\-Shape(), ffnn\-::optimizer\-::\-Adam$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::initialize(), ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$\-::\-Layer(), and ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::reset().
+Referenced by ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$\-::get\-Output\-Shape(), and ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$\-::\-Layer().
 
 \hypertarget{classffnn_1_1layer_1_1_layer_ad9e644d000ce8595192153c6c49927b6}{\index{ffnn\-::layer\-::\-Layer@{ffnn\-::layer\-::\-Layer}!prev\-\_\-@{prev\-\_\-}}
 \index{prev\-\_\-@{prev\-\_\-}!ffnn::layer::Layer@{ffnn\-::layer\-::\-Layer}}

@@ -83,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_5926a80ed3446c810579ca6fe92ab4ca.html">include</a></li><li class="navelem"><a class="el" href="dir_18fff403c5eccb83d761ba51d6ac7b98.html">ffnn</a></li><li class="navelem"><a class="el" href="dir_7d94fc796354cbe62ec6eb381edf14b2.html">optimizer</a></li><li class="navelem"><a class="el" href="dir_83983c8a7a3aa69daf7264a59290d3ff.html">impl</a></li><li class="navelem"><a class="el" href="dir_efe35592d3626c91be3b1d5fffcdc724.html">adam</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_f1374a92efe2cc1f1014c2355d0648ea.html">ffnn</a></li><li class="navelem"><a class="el" href="dir_a2521f0ae4dc34be5e580c6bd6433832.html">optimizer</a></li><li class="navelem"><a class="el" href="dir_3e23c505f922872d90d16fbf7d315c91.html">impl</a></li><li class="navelem"><a class="el" href="dir_993faf14eab45453ec92af03194a0900.html">adam</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -104,11 +104,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classffnn_1_1optimizer_1_1_adam_states.html#a101ae88e46a38141a8fcf99a5382d448">   17</a></span>&#160;  <span class="keyword">typedef</span> <span class="keyword">typename</span> MatrixType::Scalar <a class="code" href="classffnn_1_1optimizer_1_1_adam_states.html#a101ae88e46a38141a8fcf99a5382d448">ScalarType</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classffnn_1_1optimizer_1_1_adam_states.html#a5ff656035aff83f1e06140d556e21977">   17</a></span>&#160;  <span class="keyword">typedef</span> <span class="keyword">typename</span> MatrixType::Scalar <a class="code" href="classffnn_1_1optimizer_1_1_adam_states.html#a5ff656035aff83f1e06140d556e21977">Scalar</a>;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
 <div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classffnn_1_1optimizer_1_1_adam_states.html#a02c5c9a4b2a5689061570f493e842f0b">   19</a></span>&#160;  <span class="keyword">typedef</span> <span class="keyword">typename</span> MatrixType::Index <a class="code" href="classffnn_1_1optimizer_1_1_adam_states.html#a02c5c9a4b2a5689061570f493e842f0b">SizeType</a>;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classffnn_1_1optimizer_1_1_adam_states.html#ac33f6872ccbbdaa0b38c000df76f42a5">   21</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classffnn_1_1optimizer_1_1_adam_states.html#ac33f6872ccbbdaa0b38c000df76f42a5">update</a>(MatrixType&amp; gradient, <a class="code" href="classffnn_1_1optimizer_1_1_adam_states.html#a101ae88e46a38141a8fcf99a5382d448">ScalarType</a> beta1, <a class="code" href="classffnn_1_1optimizer_1_1_adam_states.html#a101ae88e46a38141a8fcf99a5382d448">ScalarType</a> beta2, <a class="code" href="classffnn_1_1optimizer_1_1_adam_states.html#a101ae88e46a38141a8fcf99a5382d448">ScalarType</a> eps)</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classffnn_1_1optimizer_1_1_adam_states.html#a3c5963e78d7cca8c7c7a81d9034c5c27">   21</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classffnn_1_1optimizer_1_1_adam_states.html#a3c5963e78d7cca8c7c7a81d9034c5c27">update</a>(MatrixType&amp; gradient, <a class="code" href="classffnn_1_1optimizer_1_1_adam_states.html#a5ff656035aff83f1e06140d556e21977">Scalar</a> beta1, <a class="code" href="classffnn_1_1optimizer_1_1_adam_states.html#a5ff656035aff83f1e06140d556e21977">Scalar</a> beta2, <a class="code" href="classffnn_1_1optimizer_1_1_adam_states.html#a5ff656035aff83f1e06140d556e21977">Scalar</a> eps)</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  {</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="comment">// Update gradient moments</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    mean_ += beta1 * (gradient - mean_);</div>
@@ -136,15 +136,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}  <span class="comment">// namespace optimizer</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}  <span class="comment">// namespace ffnn</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#endif  // FFNN_LAYER_OPTIMIZATION_ADAM_STATES_HPP</span></div>
-<div class="ttc" id="classffnn_1_1optimizer_1_1_adam_states_html_ac33f6872ccbbdaa0b38c000df76f42a5"><div class="ttname"><a href="classffnn_1_1optimizer_1_1_adam_states.html#ac33f6872ccbbdaa0b38c000df76f42a5">ffnn::optimizer::AdamStates::update</a></div><div class="ttdeci">void update(MatrixType &amp;gradient, ScalarType beta1, ScalarType beta2, ScalarType eps)</div><div class="ttdef"><b>Definition:</b> adam_states.hpp:21</div></div>
+<div class="ttc" id="classffnn_1_1optimizer_1_1_adam_states_html_a5ff656035aff83f1e06140d556e21977"><div class="ttname"><a href="classffnn_1_1optimizer_1_1_adam_states.html#a5ff656035aff83f1e06140d556e21977">ffnn::optimizer::AdamStates::Scalar</a></div><div class="ttdeci">MatrixType::Scalar Scalar</div><div class="ttdef"><b>Definition:</b> adam_states.hpp:17</div></div>
 <div class="ttc" id="classffnn_1_1optimizer_1_1_adam_states_html"><div class="ttname"><a href="classffnn_1_1optimizer_1_1_adam_states.html">ffnn::optimizer::AdamStates</a></div><div class="ttdef"><b>Definition:</b> adam_states.hpp:13</div></div>
+<div class="ttc" id="classffnn_1_1optimizer_1_1_adam_states_html_a3c5963e78d7cca8c7c7a81d9034c5c27"><div class="ttname"><a href="classffnn_1_1optimizer_1_1_adam_states.html#a3c5963e78d7cca8c7c7a81d9034c5c27">ffnn::optimizer::AdamStates::update</a></div><div class="ttdeci">void update(MatrixType &amp;gradient, Scalar beta1, Scalar beta2, Scalar eps)</div><div class="ttdef"><b>Definition:</b> adam_states.hpp:21</div></div>
 <div class="ttc" id="classffnn_1_1optimizer_1_1_adam_states_html_a02c5c9a4b2a5689061570f493e842f0b"><div class="ttname"><a href="classffnn_1_1optimizer_1_1_adam_states.html#a02c5c9a4b2a5689061570f493e842f0b">ffnn::optimizer::AdamStates::SizeType</a></div><div class="ttdeci">MatrixType::Index SizeType</div><div class="ttdef"><b>Definition:</b> adam_states.hpp:19</div></div>
 <div class="ttc" id="classffnn_1_1optimizer_1_1_adam_states_html_a37cb508c7d60d1df86cab12254596055"><div class="ttname"><a href="classffnn_1_1optimizer_1_1_adam_states.html#a37cb508c7d60d1df86cab12254596055">ffnn::optimizer::AdamStates::initialize</a></div><div class="ttdeci">void initialize(SizeType rows, SizeType col)</div><div class="ttdef"><b>Definition:</b> adam_states.hpp:35</div></div>
-<div class="ttc" id="classffnn_1_1optimizer_1_1_adam_states_html_a101ae88e46a38141a8fcf99a5382d448"><div class="ttname"><a href="classffnn_1_1optimizer_1_1_adam_states.html#a101ae88e46a38141a8fcf99a5382d448">ffnn::optimizer::AdamStates::ScalarType</a></div><div class="ttdeci">MatrixType::Scalar ScalarType</div><div class="ttdef"><b>Definition:</b> adam_states.hpp:17</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jun 2 2017 00:42:46 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jun 3 2017 23:40:28 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -1,0 +1,211 @@
+\hypertarget{classffnn_1_1layer_1_1fully__connected_1_1_configuration}{\section{ffnn\-:\-:layer\-:\-:fully\-\_\-connected\-:\-:Configuration$<$ Layer\-Type, Value\-Type, Options, Extrinsic $>$ Class Template Reference}
+\label{classffnn_1_1layer_1_1fully__connected_1_1_configuration}\index{ffnn\-::layer\-::fully\-\_\-connected\-::\-Configuration$<$ Layer\-Type, Value\-Type, Options, Extrinsic $>$@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Configuration$<$ Layer\-Type, Value\-Type, Options, Extrinsic $>$}}
+}
+
+
+\hyperlink{classffnn_1_1layer_1_1_layer}{Layer} configuration struct.  
+
+
+
+
+{\ttfamily \#include \char`\"{}configuration.\-h\char`\"{}}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Layer\-Type\-::\-Shape\-Type \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_configuration_ade943726f101a3d900d19c72707a56a3}{Shape\-Type}
+\begin{DoxyCompactList}\small\item\em \hyperlink{structffnn_1_1layer_1_1_shape}{Shape} type standardization. \end{DoxyCompactList}\item 
+typedef \\*
+\hyperlink{classffnn_1_1distribution_1_1_distribution}{distribution\-::\-Distribution}\\*
+$<$ Value\-Type $>$ \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_configuration_a898b9f9b53bccc645867242b7fa163e9}{Distribution\-Type}
+\begin{DoxyCompactList}\small\item\em Distribution type standardization. \end{DoxyCompactList}\item 
+typedef \hyperlink{classffnn_1_1optimizer_1_1_optimizer}{optimizer\-::\-Optimizer}\\*
+$<$ \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_configuration_a935cd081500398ecc6c5ed195dbc9402}{Layer\-Type} $>$ \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_configuration_ab1936b042b4c8a89da3031e2d5e767e4}{Optimizer\-Type}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classffnn_1_1layer_1_1_layer}{Layer} optimization type standardization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_configuration_a45405cabe4150cc5bef98c6ba2ed8269}{Configuration} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_configuration}{Configuration} \& \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_configuration_aa5f4f697dec7bc7457b0448c39174c19}{set\-Optimizer} (const typename \hyperlink{classffnn_1_1optimizer_1_1_optimizer_ac03e7181934bf0c12a97fc67a60484ab}{Optimizer\-Type\-::\-Ptr} \&optimizer)
+\begin{DoxyCompactList}\small\item\em Sets layer optimization resource. \end{DoxyCompactList}\item 
+\hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_configuration}{Configuration} \& \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_configuration_a66ce1823e1154fb558df93c7f02a6b13}{set\-Parameter\-Distribution} (const typename \hyperlink{classffnn_1_1distribution_1_1_distribution_a51d4ea875b70b07862c5f68b20c8f41a}{Distribution\-Type\-::\-Ptr} \&distribution)
+\begin{DoxyCompactList}\small\item\em Sets layer parameter initialization distribution. \end{DoxyCompactList}\item 
+\hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_configuration}{Configuration} \& \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_configuration_a7d44d4ad9151eb2ec67ac6f70631243c}{set\-Input\-Shape} (\hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} height, \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} width, \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} depth)
+\begin{DoxyCompactList}\small\item\em Sets layer input shape. \end{DoxyCompactList}\item 
+\hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_configuration}{Configuration} \& \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_configuration_a5f3a8300c013879d62ba166b8add7e11}{set\-Output\-Shape} (\hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} height, \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} width, \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} depth)
+\begin{DoxyCompactList}\small\item\em Sets layer input shape. \end{DoxyCompactList}\item 
+\hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_configuration}{Configuration} \& \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_configuration_a5b1e4a818190551c4d59effe1358f2e7}{operator=} (\hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} output\-\_\-size)
+\begin{DoxyCompactList}\small\item\em Sets configuration from output count. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+friend \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_configuration_a935cd081500398ecc6c5ed195dbc9402}{Layer\-Type}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Layer\-Type, typename Value\-Type, typename Options, typename Extrinsic$>$class ffnn\-::layer\-::fully\-\_\-connected\-::\-Configuration$<$ Layer\-Type, Value\-Type, Options, Extrinsic $>$}
+
+\hyperlink{classffnn_1_1layer_1_1_layer}{Layer} configuration struct. 
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classffnn_1_1layer_1_1fully__connected_1_1_configuration_a898b9f9b53bccc645867242b7fa163e9}{\index{ffnn\-::layer\-::fully\-\_\-connected\-::\-Configuration@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Configuration}!Distribution\-Type@{Distribution\-Type}}
+\index{Distribution\-Type@{Distribution\-Type}!ffnn::layer::fully_connected::Configuration@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Configuration}}
+\subsubsection[{Distribution\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Layer\-Type, typename Value\-Type, typename Options, typename Extrinsic$>$ typedef {\bf distribution\-::\-Distribution}$<$Value\-Type$>$ {\bf ffnn\-::layer\-::fully\-\_\-connected\-::\-Configuration}$<$ {\bf Layer\-Type}, Value\-Type, Options, Extrinsic $>$\-::{\bf Distribution\-Type}}}\label{classffnn_1_1layer_1_1fully__connected_1_1_configuration_a898b9f9b53bccc645867242b7fa163e9}
+
+
+Distribution type standardization. 
+
+\hypertarget{classffnn_1_1layer_1_1fully__connected_1_1_configuration_ab1936b042b4c8a89da3031e2d5e767e4}{\index{ffnn\-::layer\-::fully\-\_\-connected\-::\-Configuration@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Configuration}!Optimizer\-Type@{Optimizer\-Type}}
+\index{Optimizer\-Type@{Optimizer\-Type}!ffnn::layer::fully_connected::Configuration@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Configuration}}
+\subsubsection[{Optimizer\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Layer\-Type, typename Value\-Type, typename Options, typename Extrinsic$>$ typedef {\bf optimizer\-::\-Optimizer}$<${\bf Layer\-Type}$>$ {\bf ffnn\-::layer\-::fully\-\_\-connected\-::\-Configuration}$<$ {\bf Layer\-Type}, Value\-Type, Options, Extrinsic $>$\-::{\bf Optimizer\-Type}}}\label{classffnn_1_1layer_1_1fully__connected_1_1_configuration_ab1936b042b4c8a89da3031e2d5e767e4}
+
+
+\hyperlink{classffnn_1_1layer_1_1_layer}{Layer} optimization type standardization. 
+
+\hypertarget{classffnn_1_1layer_1_1fully__connected_1_1_configuration_ade943726f101a3d900d19c72707a56a3}{\index{ffnn\-::layer\-::fully\-\_\-connected\-::\-Configuration@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Configuration}!Shape\-Type@{Shape\-Type}}
+\index{Shape\-Type@{Shape\-Type}!ffnn::layer::fully_connected::Configuration@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Configuration}}
+\subsubsection[{Shape\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Layer\-Type, typename Value\-Type, typename Options, typename Extrinsic$>$ typedef Layer\-Type\-::\-Shape\-Type {\bf ffnn\-::layer\-::fully\-\_\-connected\-::\-Configuration}$<$ {\bf Layer\-Type}, Value\-Type, Options, Extrinsic $>$\-::{\bf Shape\-Type}}}\label{classffnn_1_1layer_1_1fully__connected_1_1_configuration_ade943726f101a3d900d19c72707a56a3}
+
+
+\hyperlink{structffnn_1_1layer_1_1_shape}{Shape} type standardization. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classffnn_1_1layer_1_1fully__connected_1_1_configuration_a45405cabe4150cc5bef98c6ba2ed8269}{\index{ffnn\-::layer\-::fully\-\_\-connected\-::\-Configuration@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Configuration}!Configuration@{Configuration}}
+\index{Configuration@{Configuration}!ffnn::layer::fully_connected::Configuration@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Configuration}}
+\subsubsection[{Configuration}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Layer\-Type, typename Value\-Type, typename Options, typename Extrinsic$>$ {\bf ffnn\-::layer\-::fully\-\_\-connected\-::\-Configuration}$<$ {\bf Layer\-Type}, Value\-Type, Options, Extrinsic $>$\-::{\bf Configuration} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1fully__connected_1_1_configuration_a45405cabe4150cc5bef98c6ba2ed8269}
+
+
+Default constructor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classffnn_1_1layer_1_1fully__connected_1_1_configuration_a5b1e4a818190551c4d59effe1358f2e7}{\index{ffnn\-::layer\-::fully\-\_\-connected\-::\-Configuration@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Configuration}!operator=@{operator=}}
+\index{operator=@{operator=}!ffnn::layer::fully_connected::Configuration@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Configuration}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Layer\-Type, typename Value\-Type, typename Options, typename Extrinsic$>$ {\bf Configuration}\& {\bf ffnn\-::layer\-::fully\-\_\-connected\-::\-Configuration}$<$ {\bf Layer\-Type}, Value\-Type, Options, Extrinsic $>$\-::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf size\-\_\-type}}]{output\-\_\-size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1fully__connected_1_1_configuration_a5b1e4a818190551c4d59effe1358f2e7}
+
+
+Sets configuration from output count. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size\-\_\-type} & number of layer outputs \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$\ast$this
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This assignment operator overload allows for layer setup with a single integer, since the only free parameter required to be specified for setting up a \hyperlink{classffnn_1_1layer_1_1_fully_connected}{Fully\-Connected} layer is the number of layer outputs 
+\end{DoxyNote}
+\hypertarget{classffnn_1_1layer_1_1fully__connected_1_1_configuration_a7d44d4ad9151eb2ec67ac6f70631243c}{\index{ffnn\-::layer\-::fully\-\_\-connected\-::\-Configuration@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Configuration}!set\-Input\-Shape@{set\-Input\-Shape}}
+\index{set\-Input\-Shape@{set\-Input\-Shape}!ffnn::layer::fully_connected::Configuration@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Configuration}}
+\subsubsection[{set\-Input\-Shape}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Layer\-Type, typename Value\-Type, typename Options, typename Extrinsic$>$ {\bf Configuration}\& {\bf ffnn\-::layer\-::fully\-\_\-connected\-::\-Configuration}$<$ {\bf Layer\-Type}, Value\-Type, Options, Extrinsic $>$\-::set\-Input\-Shape (
+\begin{DoxyParamCaption}
+\item[{{\bf size\-\_\-type}}]{height, }
+\item[{{\bf size\-\_\-type}}]{width, }
+\item[{{\bf size\-\_\-type}}]{depth}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1fully__connected_1_1_configuration_a7d44d4ad9151eb2ec67ac6f70631243c}
+
+
+Sets layer input shape. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & height of the input volume \\
+\hline
+{\em width} & width of the input volume \\
+\hline
+{\em depth} & depth of the input volume \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$\ast$this 
+\end{DoxyReturn}
+\hypertarget{classffnn_1_1layer_1_1fully__connected_1_1_configuration_aa5f4f697dec7bc7457b0448c39174c19}{\index{ffnn\-::layer\-::fully\-\_\-connected\-::\-Configuration@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Configuration}!set\-Optimizer@{set\-Optimizer}}
+\index{set\-Optimizer@{set\-Optimizer}!ffnn::layer::fully_connected::Configuration@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Configuration}}
+\subsubsection[{set\-Optimizer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Layer\-Type, typename Value\-Type, typename Options, typename Extrinsic$>$ {\bf Configuration}\& {\bf ffnn\-::layer\-::fully\-\_\-connected\-::\-Configuration}$<$ {\bf Layer\-Type}, Value\-Type, Options, Extrinsic $>$\-::set\-Optimizer (
+\begin{DoxyParamCaption}
+\item[{const typename {\bf Optimizer\-Type\-::\-Ptr} \&}]{optimizer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1fully__connected_1_1_configuration_aa5f4f697dec7bc7457b0448c39174c19}
+
+
+Sets layer optimization resource. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em optimizer} & layer optimizer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$\ast$this 
+\end{DoxyReturn}
+\hypertarget{classffnn_1_1layer_1_1fully__connected_1_1_configuration_a5f3a8300c013879d62ba166b8add7e11}{\index{ffnn\-::layer\-::fully\-\_\-connected\-::\-Configuration@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Configuration}!set\-Output\-Shape@{set\-Output\-Shape}}
+\index{set\-Output\-Shape@{set\-Output\-Shape}!ffnn::layer::fully_connected::Configuration@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Configuration}}
+\subsubsection[{set\-Output\-Shape}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Layer\-Type, typename Value\-Type, typename Options, typename Extrinsic$>$ {\bf Configuration}\& {\bf ffnn\-::layer\-::fully\-\_\-connected\-::\-Configuration}$<$ {\bf Layer\-Type}, Value\-Type, Options, Extrinsic $>$\-::set\-Output\-Shape (
+\begin{DoxyParamCaption}
+\item[{{\bf size\-\_\-type}}]{height, }
+\item[{{\bf size\-\_\-type}}]{width, }
+\item[{{\bf size\-\_\-type}}]{depth}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1fully__connected_1_1_configuration_a5f3a8300c013879d62ba166b8add7e11}
+
+
+Sets layer input shape. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & height of the input volume \\
+\hline
+{\em width} & width of the input volume \\
+\hline
+{\em depth} & depth of the input volume \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$\ast$this 
+\end{DoxyReturn}
+\hypertarget{classffnn_1_1layer_1_1fully__connected_1_1_configuration_a66ce1823e1154fb558df93c7f02a6b13}{\index{ffnn\-::layer\-::fully\-\_\-connected\-::\-Configuration@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Configuration}!set\-Parameter\-Distribution@{set\-Parameter\-Distribution}}
+\index{set\-Parameter\-Distribution@{set\-Parameter\-Distribution}!ffnn::layer::fully_connected::Configuration@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Configuration}}
+\subsubsection[{set\-Parameter\-Distribution}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Layer\-Type, typename Value\-Type, typename Options, typename Extrinsic$>$ {\bf Configuration}\& {\bf ffnn\-::layer\-::fully\-\_\-connected\-::\-Configuration}$<$ {\bf Layer\-Type}, Value\-Type, Options, Extrinsic $>$\-::set\-Parameter\-Distribution (
+\begin{DoxyParamCaption}
+\item[{const typename {\bf Distribution\-Type\-::\-Ptr} \&}]{distribution}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1fully__connected_1_1_configuration_a66ce1823e1154fb558df93c7f02a6b13}
+
+
+Sets layer parameter initialization distribution. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em distribution} & value distribution resource \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$\ast$this 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classffnn_1_1layer_1_1fully__connected_1_1_configuration_a935cd081500398ecc6c5ed195dbc9402}{\index{ffnn\-::layer\-::fully\-\_\-connected\-::\-Configuration@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Configuration}!Layer\-Type@{Layer\-Type}}
+\index{Layer\-Type@{Layer\-Type}!ffnn::layer::fully_connected::Configuration@{ffnn\-::layer\-::fully\-\_\-connected\-::\-Configuration}}
+\subsubsection[{Layer\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Layer\-Type, typename Value\-Type, typename Options, typename Extrinsic$>$ friend {\bf ffnn\-::layer\-::fully\-\_\-connected\-::\-Configuration}$<$ Layer\-Type, Value\-Type, Options, Extrinsic $>$\-::Layer\-Type}}\label{classffnn_1_1layer_1_1fully__connected_1_1_configuration_a935cd081500398ecc6c5ed195dbc9402}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/fully\-\_\-connected/\hyperlink{fully__connected_2configuration_8h}{configuration.\-h}\end{DoxyCompactItemize}

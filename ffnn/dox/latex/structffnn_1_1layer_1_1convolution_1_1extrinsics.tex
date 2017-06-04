@@ -8,13 +8,13 @@ Describes types based on compile-\/time options.
 
 
 
-{\ttfamily \#include \char`\"{}convolution.\-h\char`\"{}}
+{\ttfamily \#include \char`\"{}compile\-\_\-time\-\_\-options.\-h\char`\"{}}
 
 \subsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
 typedef boost\-::multi\-\_\-array\\*
-$<$ Value\-Type $\ast$, 2 $>$ \hyperlink{structffnn_1_1layer_1_1convolution_1_1extrinsics_abda7b16eb793b1b130063d51ef701296}{Forward\-Map\-Type}
+$<$ Value\-Type $\ast$, 2 $>$ \hyperlink{structffnn_1_1layer_1_1convolution_1_1extrinsics_ac75346616a5d8766c52ccf663bd97170}{Forward\-Mapping\-Grid\-Type}
 \begin{DoxyCompactList}\small\item\em 2\-D-\/value mapping standardization \end{DoxyCompactList}\item 
 typedef \hyperlink{structffnn_1_1layer_1_1convolution_1_1filter_1_1options}{filter\-::options}\\*
 $<$ Options\-::kernel\-\_\-height, \\*
@@ -22,10 +22,10 @@ Options\-::kernel\-\_\-width, \\*
 Options\-::input\-\_\-depth, \\*
 Options\-::kernel\-\_\-count, \\*
 Options\-::embedding\-\_\-mode $>$ \hyperlink{structffnn_1_1layer_1_1convolution_1_1extrinsics_a0de5368aa5d42881cfd7406cc2762bc5}{Filter\-Options}
-\begin{DoxyCompactList}\small\item\em \hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter}{Filter} traits type standardization. \end{DoxyCompactList}\item 
-typedef \hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter}{Filter}$<$ Value\-Type, \\*
-\hyperlink{structffnn_1_1layer_1_1convolution_1_1extrinsics_a0de5368aa5d42881cfd7406cc2762bc5}{Filter\-Options} $>$ \hyperlink{structffnn_1_1layer_1_1convolution_1_1extrinsics_a3e02025b65ed127949b68053776507c8}{Filter\-Type}
-\begin{DoxyCompactList}\small\item\em \hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter}{Filter} tyoe standardization. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em \hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter}{Filter} traits type standardization. \end{DoxyCompactList}\item 
+typedef \hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter}{Filter}$<$ Value\-Type, \\*
+\hyperlink{structffnn_1_1layer_1_1convolution_1_1extrinsics_a0de5368aa5d42881cfd7406cc2762bc5}{Filter\-Options} $>$ \hyperlink{structffnn_1_1layer_1_1convolution_1_1extrinsics_a7f09ed7d5f347efd854649ac8ac22e21}{Parameters\-Type}
+\begin{DoxyCompactList}\small\item\em Parameters type standardization. \end{DoxyCompactList}\item 
 typedef \hyperlink{structffnn_1_1layer_1_1hidden_1_1options}{hidden\-::options}\\*
 $<$ Options\-::embedded\-\_\-input\-\_\-height, \\*
 Options\-::embedded\-\_\-input\-\_\-width, \\*
@@ -52,18 +52,11 @@ Describes types based on compile-\/time options.
 \subsubsection[{Filter\-Options}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options $>$ typedef {\bf filter\-::options}$<$ Options\-::kernel\-\_\-height, Options\-::kernel\-\_\-width, Options\-::input\-\_\-depth, Options\-::kernel\-\_\-count, Options\-::embedding\-\_\-mode $>$ {\bf ffnn\-::layer\-::convolution\-::extrinsics}$<$ Value\-Type, Options $>$\-::{\bf Filter\-Options}}}\label{structffnn_1_1layer_1_1convolution_1_1extrinsics_a0de5368aa5d42881cfd7406cc2762bc5}
 
 
-\hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter}{Filter} traits type standardization. 
+\hyperlink{classffnn_1_1layer_1_1convolution_1_1_filter}{Filter} traits type standardization. 
 
-\hypertarget{structffnn_1_1layer_1_1convolution_1_1extrinsics_a3e02025b65ed127949b68053776507c8}{\index{ffnn\-::layer\-::convolution\-::extrinsics@{ffnn\-::layer\-::convolution\-::extrinsics}!Filter\-Type@{Filter\-Type}}
-\index{Filter\-Type@{Filter\-Type}!ffnn::layer::convolution::extrinsics@{ffnn\-::layer\-::convolution\-::extrinsics}}
-\subsubsection[{Filter\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options $>$ typedef {\bf Filter}$<$Value\-Type, {\bf Filter\-Options}$>$ {\bf ffnn\-::layer\-::convolution\-::extrinsics}$<$ Value\-Type, Options $>$\-::{\bf Filter\-Type}}}\label{structffnn_1_1layer_1_1convolution_1_1extrinsics_a3e02025b65ed127949b68053776507c8}
-
-
-\hyperlink{structffnn_1_1layer_1_1convolution_1_1_filter}{Filter} tyoe standardization. 
-
-\hypertarget{structffnn_1_1layer_1_1convolution_1_1extrinsics_abda7b16eb793b1b130063d51ef701296}{\index{ffnn\-::layer\-::convolution\-::extrinsics@{ffnn\-::layer\-::convolution\-::extrinsics}!Forward\-Map\-Type@{Forward\-Map\-Type}}
-\index{Forward\-Map\-Type@{Forward\-Map\-Type}!ffnn::layer::convolution::extrinsics@{ffnn\-::layer\-::convolution\-::extrinsics}}
-\subsubsection[{Forward\-Map\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options $>$ typedef boost\-::multi\-\_\-array$<$Value\-Type$\ast$, 2$>$ {\bf ffnn\-::layer\-::convolution\-::extrinsics}$<$ Value\-Type, Options $>$\-::{\bf Forward\-Map\-Type}}}\label{structffnn_1_1layer_1_1convolution_1_1extrinsics_abda7b16eb793b1b130063d51ef701296}
+\hypertarget{structffnn_1_1layer_1_1convolution_1_1extrinsics_ac75346616a5d8766c52ccf663bd97170}{\index{ffnn\-::layer\-::convolution\-::extrinsics@{ffnn\-::layer\-::convolution\-::extrinsics}!Forward\-Mapping\-Grid\-Type@{Forward\-Mapping\-Grid\-Type}}
+\index{Forward\-Mapping\-Grid\-Type@{Forward\-Mapping\-Grid\-Type}!ffnn::layer::convolution::extrinsics@{ffnn\-::layer\-::convolution\-::extrinsics}}
+\subsubsection[{Forward\-Mapping\-Grid\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options $>$ typedef boost\-::multi\-\_\-array$<$Value\-Type$\ast$, 2$>$ {\bf ffnn\-::layer\-::convolution\-::extrinsics}$<$ Value\-Type, Options $>$\-::{\bf Forward\-Mapping\-Grid\-Type}}}\label{structffnn_1_1layer_1_1convolution_1_1extrinsics_ac75346616a5d8766c52ccf663bd97170}
 
 
 2\-D-\/value mapping standardization 
@@ -82,8 +75,15 @@ Compile-\/time \hyperlink{classffnn_1_1layer_1_1_hidden}{Hidden} layer traits.
 
 \hyperlink{classffnn_1_1layer_1_1_hidden}{Hidden} layer (base type) standardization. 
 
+\hypertarget{structffnn_1_1layer_1_1convolution_1_1extrinsics_a7f09ed7d5f347efd854649ac8ac22e21}{\index{ffnn\-::layer\-::convolution\-::extrinsics@{ffnn\-::layer\-::convolution\-::extrinsics}!Parameters\-Type@{Parameters\-Type}}
+\index{Parameters\-Type@{Parameters\-Type}!ffnn::layer::convolution::extrinsics@{ffnn\-::layer\-::convolution\-::extrinsics}}
+\subsubsection[{Parameters\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options $>$ typedef {\bf Filter}$<$Value\-Type, {\bf Filter\-Options}$>$ {\bf ffnn\-::layer\-::convolution\-::extrinsics}$<$ Value\-Type, Options $>$\-::{\bf Parameters\-Type}}}\label{structffnn_1_1layer_1_1convolution_1_1extrinsics_a7f09ed7d5f347efd854649ac8ac22e21}
+
+
+Parameters type standardization. 
+
 
 
 The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
 \item 
-/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/\hyperlink{convolution_8h}{convolution.\-h}\end{DoxyCompactItemize}
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/convolution/\hyperlink{convolution_2compile__time__options_8h}{compile\-\_\-time\-\_\-options.\-h}\end{DoxyCompactItemize}

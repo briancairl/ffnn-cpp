@@ -32,7 +32,7 @@ template<typename ValueType,
          typename Extrinsics = typename weights::extrinsics<ValueType, Options>>
 class Weights
 {
-  FFNN_ASSERT_NO_MODIFY_EXTRINSICS(weights);
+  FFNN_ASSERT_DONT_MODIFY_EXTRINSICS(weights);
 public:
   /// Weights kernel matrix standardization
   typedef typename Extrinsics::WeightBlockType WeightBlockType;
@@ -62,27 +62,27 @@ public:
 
   /**
    * @brief Sets all Weights kernels and scalar bias unit to zero
-   * @param n_inputs  number of inputs to a connected layer
-   * @param n_outputs  number of outputs from a connected layer
+   * @param input_size  number of inputs to a connected layer
+   * @param output_size  number of outputs from a connected layer
    */
   template<bool T = Options::has_fixed_sizes>
   typename std::enable_if<T>::type
-    setZero(size_type n_inputs, size_type n_outputs)
+    setZero(size_type input_size, size_type output_size)
   {
-    FFNN_ASSERT_MSG(n_inputs > 0,  "n_inputs must be positive");
-    FFNN_ASSERT_MSG(n_outputs > 0, "n_outputs must be positive");
+    FFNN_ASSERT_MSG(input_size == Options::input_size,  "input_size is fixed");
+    FFNN_ASSERT_MSG(output_size == Options::output_size, "output_size is fixed");
 
     setZero();
   }
   template<bool T = Options::has_fixed_sizes>
   typename std::enable_if<!T>::type
-    setZero(size_type n_inputs, size_type n_outputs)
+    setZero(size_type input_size, size_type output_size)
   {
-    FFNN_ASSERT_MSG(n_inputs > 0,  "n_inputs must be positive");
-    FFNN_ASSERT_MSG(n_outputs > 0, "n_outputs must be positive");
+    FFNN_ASSERT_MSG(input_size > 0,  "input_size must be positive");
+    FFNN_ASSERT_MSG(output_size > 0, "output_size must be positive");
 
-    weights.setZero(n_outputs, n_inputs);
-    biases.setZero(n_outputs);
+    weights.setZero(output_size, input_size);
+    biases.setZero(output_size);
   }
 
   /**
@@ -103,21 +103,21 @@ public:
    * @brief Sets all Weights kernels and scalar bias unit to a random value
    *        drawn from a specified distribution
    * @param distribution
-   * @param n_inputs  number of inputs to a connected layer
-   * @param n_outputs  number of outputs from a connected layer
+   * @param input_size  number of inputs to a connected layer
+   * @param output_size  number of outputs from a connected layer
    */
   template<typename DistributionType,
            bool T = Options::has_fixed_sizes>
   typename std::enable_if<T>::type
     setRandom(const DistributionType& distribution,
-              size_type n_inputs,
-              size_type n_outputs)
+              size_type input_size,
+              size_type output_size)
   {
     static_assert(internal::traits::is_distribution<DistributionType>::value,
                   "[DistributionType] MUST FUFILL DISTRIBUTION CONCEPT REQUIREMENTS!");
 
-    FFNN_ASSERT_MSG(n_inputs > 0,  "n_inputs must be positive");
-    FFNN_ASSERT_MSG(n_outputs > 0, "n_outputs must be positive");
+    FFNN_ASSERT_MSG(input_size > 0,  "input_size must be positive");
+    FFNN_ASSERT_MSG(output_size > 0, "output_size must be positive");
 
     setRandom(distribution);
   }
@@ -125,17 +125,17 @@ public:
            bool T = Options::has_fixed_sizes>
   typename std::enable_if<!T>::type
     setRandom(const DistributionType& distribution,
-              size_type n_inputs,
-              size_type n_outputs)
+              size_type input_size,
+              size_type output_size)
   {
     static_assert(internal::traits::is_distribution<DistributionType>::value,
                   "[DistributionType] MUST FUFILL DISTRIBUTION CONCEPT REQUIREMENTS!");
 
-    FFNN_ASSERT_MSG(n_inputs > 0,  "n_inputs must be positive");
-    FFNN_ASSERT_MSG(n_outputs > 0, "n_outputs must be positive");
+    FFNN_ASSERT_MSG(input_size > 0,  "input_size must be positive");
+    FFNN_ASSERT_MSG(output_size > 0, "output_size must be positive");
 
-    weights.resize(n_outputs, n_inputs);
-    biases.resize(n_outputs);
+    weights.resize(output_size, input_size);
+    biases.resize(output_size);
 
     setRandom(distribution);
   }

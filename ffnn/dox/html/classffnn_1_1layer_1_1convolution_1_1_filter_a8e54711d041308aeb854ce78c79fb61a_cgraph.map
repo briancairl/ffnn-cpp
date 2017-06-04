@@ -1,0 +1,4 @@
+<map id="ffnn::layer::convolution::Filter::setRandom" name="ffnn::layer::convolution::Filter::setRandom">
+<area shape="rect" id="node2" href="$classffnn_1_1layer_1_1convolution_1_1_filter.html#a9b6cc0b1a995d2baa23ce553e202a78d" title="Sets all Filter kernels and scalar bias unit to a random value drawn from a specified distribution..." alt="" coords="208,5,363,46"/>
+<area shape="rect" id="node3" href="$namespaceffnn_1_1distribution.html#aacaa8d87a0c4ec48fb1251623532dac7" title="Sets random coefficients according to particular distribution. " alt="" coords="411,5,525,46"/>
+</map>
