@@ -160,6 +160,7 @@ template <typename ValueType,
 bool Convolution<ValueType, Options, Extrinsics>::update()
 {
   FFNN_ASSERT_MSG(config_.optimizer_, "Optimization resource not set.");
+
   return config_.optimizer_->update(*this);
 }
 
