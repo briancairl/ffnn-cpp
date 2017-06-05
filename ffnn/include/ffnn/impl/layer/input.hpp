@@ -2,8 +2,8 @@
  * @note HEADER-ONLY IMPLEMENTATION FILE
  * @warning Do not include directly
  */
-#ifndef FFNN_LAYER_IMPL_INPUT_HPP
-#define FFNN_LAYER_IMPL_INPUT_HPP
+#ifndef FFNN_IMPL_LAYER_INPUT_HPP
+#define FFNN_IMPL_LAYER_INPUT_HPP
 
 // FFNN
 #include <ffnn/logging.h>
@@ -12,42 +12,50 @@ namespace ffnn
 {
 namespace layer
 {
-#define TARGS ValueType, NetworkInputsAtCompileTime
-
-template<typename ValueType, FFNN_SIZE_TYPE NetworkInputsAtCompileTime>
-Input<TARGS>::Input(SizeType network_input_size) :
-  Base(ShapeType(0), ShapeType(network_input_size)),
+template<typename ValueType,
+         typename Options,
+         typename Extrinsics>
+Input<ValueType, Options, Extrinsics>::Input(const Configuration& config) :
+  BaseType(ShapeType(), ShapeType(config.input_size_, 1, 1)),
+  config_(config),
   next_ptr_(NULL)
 {
-  FFNN_INTERNAL_DEBUG_NAMED("layer::Layer", "Network input size: " << network_input_size);
+  FFNN_INTERNAL_DEBUG_NAMED("layer::Layer",
+                            "Network input size: " << config.input_size_);
 }
 
-template<typename ValueType, FFNN_SIZE_TYPE NetworkInputsAtCompileTime>
-Input<TARGS>::~Input()
+template<typename ValueType,
+         typename Options,
+         typename Extrinsics>
+Input<ValueType, Options, Extrinsics>::~Input()
 {
-  FFNN_INTERNAL_DEBUG_NAMED("layer::Input", "Destroying [layer::Input] object <" << this->getID() << ">");
+  FFNN_INTERNAL_DEBUG_NAMED("layer::Input",
+                            "Destroying [layer::Input] object <" << this->getID() << ">");
 }
 
-template<typename ValueType, FFNN_SIZE_TYPE NetworkInputsAtCompileTime>
-bool Input<TARGS>::initialize()
+template<typename ValueType,
+         typename Options,
+         typename Extrinsics>
+bool Input<ValueType, Options, Extrinsics>::initialize()
 {
-  if (Base::initialize())
+  if (BaseType::initialize())
   {
     FFNN_DEBUG_NAMED("layer::Input",
                      "<" <<
-                     Base::getID() <<
+                     BaseType::getID() <<
                      "> initialized as network input (net-in=" <<
-                     Base::getOutputShape().size() <<
+                     BaseType::getOutputShape().size() <<
                      ")");
     return true;
   }
-  FFNN_ERROR_NAMED("layer::Input", "<" << Base::getID() << "> failed to initialize.");
+  FFNN_ERROR_NAMED("layer::Input", "<" << BaseType::getID() << "> failed to initialize.");
   return false;
 }
 
-template<typename ValueType, FFNN_SIZE_TYPE NetworkInputsAtCompileTime>
-typename Input<TARGS>::OffsetType
-Input<TARGS>::connectToForwardLayer(const Base& next, OffsetType offset)
+template<typename ValueType,
+         typename Options,
+         typename Extrinsics>
+offset_type Input<ValueType, Options, Extrinsics>::connectToForwardLayer(const BaseType& next, offset_type offset)
 {
   next_ptr_ = const_cast<ValueType*>(next.getInputBuffer().data());
 
@@ -55,12 +63,14 @@ Input<TARGS>::connectToForwardLayer(const Base& next, OffsetType offset)
   return this->getOutputShape().size();
 }
 
-template<typename ValueType, FFNN_SIZE_TYPE NetworkInputsAtCompileTime>
+template<typename ValueType,
+         typename Options,
+         typename Extrinsics>
 template<typename NetworkInputType>
-void Input<TARGS>::operator<<(const NetworkInputType& input) const
+void Input<ValueType, Options, Extrinsics>::operator<<(const NetworkInputType& input) const
 {
   // Check input data size
-  FFNN_ASSERT_MSG(input.size() == Base::getOutputShape().size(),
+  FFNN_ASSERT_MSG(input.size() == BaseType::getOutputShape().size(),
                   "Input data size does not match expected network input size.");
 
   // Copy input data to first network layer
@@ -68,5 +78,4 @@ void Input<TARGS>::operator<<(const NetworkInputType& input) const
 }
 }  // namespace layer
 }  // namespace ffnn
-#undef TARGS
-#endif  // FFNN_LAYER_IMPL_INPUT_HPP
+#endif  // FFNN_IMPL_LAYER_INPUT_HPP

@@ -6,11 +6,15 @@
 #define FFNN_LAYER_OUTPUT_H
 
 // C++ Standard Library
-#include <iostream>
+#include <cstring>
 
 // FFNN
+#include <ffnn/assert.h>
 #include <ffnn/internal/config.h>
 #include <ffnn/layer/layer.h>
+#include <ffnn/layer/shape.h>
+#include <ffnn/layer/output/compile_time_options.h>
+#include <ffnn/layer/output/configuration.h>
 
 namespace ffnn
 {
@@ -20,27 +24,31 @@ namespace layer
  * @brief A layer which handles network outputs
  */
 template<typename ValueType,
-         FFNN_SIZE_TYPE NetworkOutputsAtCompileTime = Eigen::Dynamic>
+         typename Options    = output::options<>,
+         typename Extrinsics = output::extrinsics<ValueType, Options>>
 class Output :
-  public Layer<ValueType>
+  public Extrinsics::LayerType
 {
+  FFNN_ASSERT_DONT_MODIFY_EXTRINSICS(output);
 public:
+  /// Self type alias
+  using SelfType = Output<ValueType, Options, Extrinsics>;
+
   /// Base type alias
-  using Base = Layer<ValueType>;
-
-  /// Size type standardization
-  typedef typename Base::SizeType SizeType;
-
-  /// Offset type standardization
-  typedef typename Base::OffsetType OffsetType;
+  using BaseType = typename Extrinsics::LayerType;
 
   /// Dimension type standardization
-  typedef typename Base::ShapeType ShapeType;
+  typedef typename BaseType::ShapeType ShapeType;
+
+  /// Configuration type standardization
+  typedef output::Configuration<SelfType, ValueType, Options, Extrinsics> Configuration;
 
   /**
-   * @brief Default constructor
+   * @brief Setup constructor
+   * @param config  layer configuration
    */
-  Output();
+  explicit
+  Output(const Configuration& config = Configuration());
   virtual ~Output();
 
   /**
@@ -49,8 +57,38 @@ public:
   bool initialize();
 
   /**
+   * @brief Applies layer weight updates
+   * @retval true  if weight update succeeded
+   * @retval false  otherwise
+   */
+  bool update()
+  {
+    return true;
+  };
+
+  /**
+   * @brief Forward value propagation
+   * @retval true  if forward-propagation succeeded
+   * @retval false  otherwise
+   */
+  bool forward()
+  {
+    return true;
+  };
+
+  /**
+   * @brief Backward value propagation
+   * @retval true  if backward-propagation succeeded
+   * @retval false  otherwise
+   */
+  bool backward()
+  {
+    return true;
+  };
+
+  /**
    * @brief Get network output value
-   * @param[out] output  network input data
+   * @param[out] output  network output data
    * @note <code>NetworkOutputType</code> must have the following methods
    *       - <code>NetworkOutputType::data()</code> to expose a pointer to a contiguous memory block
    *       - <code>NetworkOutputType::size()</code> to expose the size of the memory block
@@ -75,11 +113,11 @@ private:
    * @brief Passthrough
    * @note  The Output layer is the terminal layer of a network
    */
-  OffsetType connectToForwardLayer(const Base& next, OffsetType offset);
+  offset_type connectToForwardLayer(const BaseType& next, offset_type offset);
 };
 }  // namespace layer
 }  // namespace ffnn
 
 /// FFNN (implementation)
-#include <ffnn/layer/impl/output.hpp>
+#include <ffnn/impl/layer/output.hpp>
 #endif  // FFNN_LAYER_OUTPUT_H

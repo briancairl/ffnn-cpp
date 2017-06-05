@@ -14,90 +14,105 @@ namespace layer
 {
 #define TARGS ValueType, NetworkOutputsAtCompileTime
 
-template<typename ValueType, FFNN_SIZE_TYPE NetworkOutputsAtCompileTime>
-Output<TARGS>::Output() :
-  Base(ShapeType(NetworkOutputsAtCompileTime), ShapeType(0))
+template<typename ValueType,
+         typename Options,
+         typename Extrinsics>
+Output<ValueType, Options, Extrinsics>::Output(const Configuration& config) :
+  BaseType(ShapeType(config.output_size_), ShapeType())
 {
-  FFNN_INTERNAL_DEBUG_NAMED("layer::Layer", "Network output size (compile-time): " << NetworkOutputsAtCompileTime);
+  FFNN_INTERNAL_DEBUG_NAMED("layer::Layer",
+                            "Network output size: " << config.output_size_);
 }
 
-template<typename ValueType, FFNN_SIZE_TYPE NetworkOutputsAtCompileTime>
-Output<TARGS>::~Output()
+template<typename ValueType,
+         typename Options,
+         typename Extrinsics>
+Output<ValueType, Options, Extrinsics>::~Output()
 {
-  FFNN_INTERNAL_DEBUG_NAMED("layer::Output", "Destroying [layer::Output] object <" << this->getID() << ">");
+  FFNN_INTERNAL_DEBUG_NAMED("layer::Output",
+                            "Destroying [layer::Output] object <" << this->getID() << ">");
 }
 
-template<typename ValueType, FFNN_SIZE_TYPE NetworkOutputsAtCompileTime>
-bool Output<TARGS>::initialize()
+template<typename ValueType,
+         typename Options,
+         typename Extrinsics>
+bool Output<ValueType, Options, Extrinsics>::initialize()
 {
   // Abort if layer is already initialized
-  if (Base::setupRequired() && Base::isInitialized())
+  if (BaseType::setupRequired() && BaseType::isInitialized())
   {
-    FFNN_WARN_NAMED("layer::Output", "<" << Base::getID() << "> already initialized.");
+    FFNN_WARN_NAMED("layer::Output", "<" << BaseType::getID() << "> already initialized.");
     return false;
   }
 
   // Resolve input dimensions from previous layer output dimensions
-  Base::input_shape_ = Base::evaluateInputSize();
+  BaseType::input_shape_ = BaseType::evaluateInputSize();
 
   // Validate network input count
-  FFNN_STATIC_RUNTIME_ASSERT_MSG (NetworkOutputsAtCompileTime < 0 || Base::input_shape_.size() == NetworkOutputsAtCompileTime,
+  FFNN_STATIC_RUNTIME_ASSERT_MSG (Options::output_size < 0 || BaseType::input_shape_.size() == Options::output_size,
                           "(NetworkOutputsAtCompileTime != `resolved input size`) for fixed-size layer.");
 
   // Do basic initialization and connect last hidden layer
-  if (Base::initialize())
+  if (BaseType::initialize())
   {
-    if (Base::connectInputLayers() != Base::getInputShape().size())
+    if (BaseType::connectInputLayers() != BaseType::getInputShape().size())
     {
       // Error initializing
-      Base::initialized_ = false;
+      BaseType::initialized_ = false;
     }
     else
     {
       FFNN_DEBUG_NAMED("layer::Output",
-                       "<" << Base::getID() <<
+                       "<" << BaseType::getID() <<
                        "> initialized as network output (net-out=" <<
-                       Base::getInputShape().size() << ")");
+                       BaseType::getInputShape().size() << ")");
       return true;
     }
   }
-  FFNN_ERROR_NAMED("layer::Output", "<" << Base::getID() << "> failed to initialize.");
+  FFNN_ERROR_NAMED("layer::Output", "<" << BaseType::getID() << "> failed to initialize.");
   return false;
 }
 
-template<typename ValueType, FFNN_SIZE_TYPE NetworkOutputsAtCompileTime>
-typename Output<TARGS>::OffsetType
-Output<TARGS>::connectToForwardLayer(const Base& next, OffsetType offset)
+template<typename ValueType,
+         typename Options,
+         typename Extrinsics>
+offset_type Output<ValueType, Options, Extrinsics>::connectToForwardLayer(const BaseType& next, offset_type offset)
 {
   return 0; /* do nothing */
 }
 
-template<typename ValueType, FFNN_SIZE_TYPE NetworkOutputsAtCompileTime>
+template<typename ValueType,
+         typename Options,
+         typename Extrinsics>
 template<typename NetworkOutputType>
-void Output<TARGS>::operator>>(NetworkOutputType& output)
+void Output<ValueType, Options, Extrinsics>::operator>>(NetworkOutputType& output)
 {
   // Check output data size
-  FFNN_ASSERT_MSG(output.size() == Base::getInputShape().size(),
+  FFNN_ASSERT_MSG(output.size() == BaseType::getInputShape().size(),
                   "Output object size does not match expected network output size.");
 
   // Copy output data from last network layer
   std::memcpy(const_cast<ValueType*>(output.data()),
-              const_cast<ValueType*>(Base::input_buffer_.data()),
-              Base::input_buffer_.size() * sizeof(ValueType));
+              const_cast<ValueType*>(BaseType::input_buffer_.data()),
+              BaseType::input_buffer_.size() * sizeof(ValueType));
 }
 
-template<typename ValueType, FFNN_SIZE_TYPE NetworkOutputsAtCompileTime>
+template<typename ValueType,
+         typename Options,
+         typename Extrinsics>
 template<typename NetworkTargetType>
-void Output<TARGS>::operator<<(const NetworkTargetType& target)
+void Output<ValueType, Options, Extrinsics>::operator<<(const NetworkTargetType& target)
 {
   // Check target data size
-  FFNN_ASSERT_MSG(target.size() == Base::getInputShape().size(),
+  FFNN_ASSERT_MSG(target.size() == BaseType::getInputShape().size(),
                   "Target object size does not match expected network output size.");
 
   // Compute network error
-  for (SizeType idx = 0; idx < Base::backward_error_buffer_.size(); idx++)
+  const auto n = static_cast<offset_type>(BaseType::backward_error_buffer_.size());
+  for (offset_type idx = 0; idx < n; idx++)
   {
-    Base::backward_error_buffer_.data()[idx] = Base::input_buffer_.data()[idx] - target.data()[idx];
+    BaseType::backward_error_buffer_.data()[idx] =
+      BaseType::input_buffer_.data()[idx] - target.data()[idx];
   }
 }
 }  // namespace layer

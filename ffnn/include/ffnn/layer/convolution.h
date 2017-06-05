@@ -44,9 +44,6 @@ public:
   /// Base type alias
   using BaseType = typename Extrinsics::HiddenLayerType;
 
-  /// Configuration type standardization
-  typedef convolution::Configuration<SelfType, ValueType, Options, Extrinsics> Configuration;
-
   /// Dimension type standardization
   typedef typename BaseType::ShapeType ShapeType;
 
@@ -55,6 +52,9 @@ public:
 
   /// 2D-value mapping standardization
   typedef typename Extrinsics::ForwardMappingGridType ForwardMappingGridType;
+
+  /// Configuration type standardization
+  typedef convolution::Configuration<SelfType, ValueType, Options, Extrinsics> Configuration;
 
   /**
    * @brief Setup constructor
@@ -115,6 +115,14 @@ private:
    */
   void reset();
 
+  /**
+   * @brief Maps outputs of this layer to inputs of the next
+   * @param next  a subsequent layer
+   * @param offset  offset index of a memory location in the input buffer of the next layer
+   * @retval <code>offset + output_shape_.size()</code>
+   */
+  offset_type connectToForwardLayer(const Layer<ValueType>& next, offset_type offset);
+
   /// Layer configurations
   Configuration config_;
 
@@ -130,13 +138,6 @@ private:
   /// Output value mapping grid
   ForwardMappingGridType output_mappings_;
 
-  /**
-   * @brief Maps outputs of this layer to inputs of the next
-   * @param next  a subsequent layer
-   * @param offset  offset index of a memory location in the input buffer of the next layer
-   * @retval <code>offset + output_shape_.size()</code>
-   */
-  offset_type connectToForwardLayer(const Layer<ValueType>& next, offset_type offset);
 
 #ifndef FFNN_NO_SERIALIZATION_SUPPORT
 protected:

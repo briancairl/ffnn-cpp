@@ -54,9 +54,8 @@ Layer<ValueType>::Layer(const ShapeType& input_shape, const ShapeType& output_sh
   input_shape_(input_shape),
   output_shape_(output_shape)
 {
-  FFNN_ASSERT_MSG(output_shape_.valid(), "Output shape is invalid.");
-
-  FFNN_INTERNAL_DEBUG_NAMED("layer::Layer", "[" << input_shape_ << " | " << output_shape_ << "]");
+  FFNN_INTERNAL_DEBUG_NAMED("layer::Layer",
+                            "[" << input_shape_ << " | " << output_shape_ << "]");
 }
 
 template<typename ValueType>

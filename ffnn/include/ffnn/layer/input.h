@@ -7,42 +7,19 @@
 
 // C++ Standard Library
 #include <cstring>
-#include <iostream>
 
 // FFNN
-#include <ffnn/internal/config.h>
 #include <ffnn/assert.h>
+#include <ffnn/internal/config.h>
 #include <ffnn/layer/layer.h>
 #include <ffnn/layer/shape.h>
+#include <ffnn/layer/input/compile_time_options.h>
+#include <ffnn/layer/input/configuration.h>
 
 namespace ffnn
 {
 namespace layer
 {
-namespace input
-{
-/**
- * @brief Describes compile-time options used to set up a Input object
- */
-template<size_type InputsAtCompileTime = Eigen::Dynamic>
-struct options
-{
-  /// Total network input size
-  constexpr static size_type size = InputsAtCompileTime;
-};
-
-/**
- * @brief Describes types based on compile-time options
- */
-template<typename ValueType,
-         typename Options>
-struct extrinsics
-{
-  ///Layer (base type) standardization
-  typedef Layer<ValueType> LayerType;
-};
-}  // namespace input
-
 /**
  * @brief A layer which handles network inputs
  */
@@ -53,7 +30,6 @@ class Input :
   public Extrinsics::LayerType
 {
   FFNN_ASSERT_DONT_MODIFY_EXTRINSICS(input);
-{
 public:
   /// Self type alias
   using SelfType = Input<ValueType, Options, Extrinsics>;
@@ -62,20 +38,53 @@ public:
   using BaseType = typename Extrinsics::LayerType;
 
   /// Dimension type standardization
-  typedef typename Base::ShapeType ShapeType;
+  typedef typename BaseType::ShapeType ShapeType;
+
+  /// Configuration type standardization
+  typedef input::Configuration<SelfType, ValueType, Options, Extrinsics> Configuration;
 
   /**
    * @brief Setup constructor
-   * @param input_size  number of inputs supplied to network by this Layer
+   * @param config  layer configuration
    */
   explicit
-  Input(size_type network_input_size = Options::size);
+  Input(const Configuration& config = Configuration());
   virtual ~Input();
 
   /**
    * @brief Initialize the layer
    */
   bool initialize();
+
+  /**
+   * @brief Applies layer weight updates
+   * @retval true  if weight update succeeded
+   * @retval false  otherwise
+   */
+  bool update()
+  {
+    return true;
+  };
+
+  /**
+   * @brief Forward value propagation
+   * @retval true  if forward-propagation succeeded
+   * @retval false  otherwise
+   */
+  bool forward()
+  {
+    return true;
+  };
+
+  /**
+   * @brief Backward value propagation
+   * @retval true  if backward-propagation succeeded
+   * @retval false  otherwise
+   */
+  bool backward()
+  {
+    return true;
+  };
 
   /**
    * @brief Sets network input values
@@ -89,13 +98,17 @@ public:
   void operator<<(const NetworkInputType& input) const;
 
 private:
+
   /**
    * @brief Maps outputs of this layer to inputs of the next
    * @param next  a subsequent layer
    * @param offset  offset index of a memory location in the input buffer of the next layer
    * @retval output_shape_.size()
    */
-  offset_type connectToForwardLayer(const Base& next, offset_type offset);
+  offset_type connectToForwardLayer(const BaseType& next, offset_type offset);
+
+  /// Layer configuration struct
+  Configuration config_;
 
   /// Pointer to first element of next layer
   ValueType* next_ptr_;
@@ -104,5 +117,5 @@ private:
 }  // namespace ffnn
 
 /// FFNN (implementation)
-#include <ffnn/layer/impl/input.hpp>
+#include <ffnn/impl/layer/input.hpp>
 #endif  // FFNN_LAYER_INPUT_H

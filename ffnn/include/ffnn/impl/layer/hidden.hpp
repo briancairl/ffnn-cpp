@@ -24,7 +24,8 @@ Hidden<ValueType, Options, Extrinsics>::Hidden(const ShapeType& input_shape, con
   backward_error_(NULL, input_shape.height, input_shape.width),
   forward_error_(NULL, output_shape.height, output_shape.width)
 {
-  FFNN_INTERNAL_DEBUG_NAMED("layer::Hidden", "[" << input_shape << " | " << output_shape << "]");
+  FFNN_INTERNAL_DEBUG_NAMED("layer::Hidden",
+                            "[" << input_shape << " | " << output_shape << "]");
 }
 
 template <typename ValueType,
@@ -32,7 +33,8 @@ template <typename ValueType,
           typename Extrinsics>
 Hidden<ValueType, Options, Extrinsics>::~Hidden()
 {
-  FFNN_INTERNAL_DEBUG_NAMED("layer::Hidden", "Destroying [layer::Hidden] object <" << this->getID() << ">");
+  FFNN_INTERNAL_DEBUG_NAMED("layer::Hidden",
+                            "Destroying [layer::Hidden] object <" << this->getID() << ">");
 }
 
 template <typename ValueType,

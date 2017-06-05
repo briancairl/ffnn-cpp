@@ -39,14 +39,14 @@ public:
   /// Base type alias
   using BaseType = typename Extrinsics::HiddenLayerType;
 
-  /// Configuration type standardization
-  typedef fully_connected::Configuration<SelfType, ValueType, Options, Extrinsics> Configuration;
-
   /// Dimension type standardization
   typedef typename BaseType::ShapeType ShapeType;
 
   /// Parameters (connection weights) type standardization
   typedef typename Extrinsics::ParametersType ParametersType;
+
+  /// Configuration type standardization
+  typedef fully_connected::Configuration<SelfType, ValueType, Options, Extrinsics> Configuration;
 
   /**
    * @brief Setup constructor

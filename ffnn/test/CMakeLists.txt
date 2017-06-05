@@ -42,6 +42,26 @@ target_link_libraries(test_layer_fully_connected_weights
   ${GTEST_LIBRARIES}
 )
 
+catkin_add_gtest(test_layer_input
+  test_layer_input.cpp
+)
+target_link_libraries(test_layer_input
+  ${Boost_LIBRARIES}
+  ${catkin_LIBRARIES}
+  ${EIGEN_LIBRARIES}
+  ${GTEST_LIBRARIES}
+)
+
+catkin_add_gtest(test_layer_output
+  test_layer_output.cpp
+)
+target_link_libraries(test_layer_output
+  ${Boost_LIBRARIES}
+  ${catkin_LIBRARIES}
+  ${EIGEN_LIBRARIES}
+  ${GTEST_LIBRARIES}
+)
+
 catkin_add_gtest(test_layer_fully_connected
   test_layer_fully_connected.cpp
 )

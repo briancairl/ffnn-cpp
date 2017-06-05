@@ -19,7 +19,7 @@
 #include <ffnn/layer/fully_connected.h>
 
 
-TEST(TestLayerFullyConnected, Dynamic_OutputSize)
+TEST(TestLayerFullyConnected, Dynamic_SingleArg)
 {
   // Layer-type alias
   using Hidden = ffnn::layer::FullyConnected<float>;
