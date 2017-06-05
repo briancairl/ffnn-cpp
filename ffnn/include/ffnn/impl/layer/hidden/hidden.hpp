@@ -2,8 +2,8 @@
  * @note HEADER-ONLY IMPLEMENTATION FILE
  * @warning Do not include directly
  */
-#ifndef FFNN_LAYER_IMPL_HIDDEN_HPP
-#define FFNN_LAYER_IMPL_HIDDEN_HPP
+#ifndef FFNN_IMPL_LAYER_HIDDEN_HIDDEN_HPP
+#define FFNN_IMPL_LAYER_HIDDEN_HIDDEN_HPP
 
 // FFNN
 #include <ffnn/assert.h>
@@ -133,4 +133,4 @@ void Hidden<ValueType, Options, Extrinsics>::load(typename Hidden<ValueType, Opt
 }
 }  // namespace layer
 }  // namespace ffnn
-#endif  // FFNN_LAYER_IMPL_HIDDEN_HPP
+#endif  // FFNN_IMPL_LAYER_HIDDEN_HIDDEN_HPP

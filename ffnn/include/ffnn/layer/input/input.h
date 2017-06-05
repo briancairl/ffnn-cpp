@@ -2,8 +2,8 @@
  * @author Brian Cairl
  * @date 2017
  */
-#ifndef FFNN_LAYER_INPUT_H
-#define FFNN_LAYER_INPUT_H
+#ifndef FFNN_LAYER_INPUT_INPUT_H
+#define FFNN_LAYER_INPUT_INPUT_H
 
 // C++ Standard Library
 #include <cstring>
@@ -117,5 +117,5 @@ private:
 }  // namespace ffnn
 
 /// FFNN (implementation)
-#include <ffnn/impl/layer/input.hpp>
-#endif  // FFNN_LAYER_INPUT_H
+#include <ffnn/impl/layer/input/input.hpp>
+#endif  // FFNN_LAYER_INPUT_INPUT_H

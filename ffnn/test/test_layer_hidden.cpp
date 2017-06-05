@@ -18,9 +18,8 @@
 // FFNN
 #include <ffnn/layer/input.h>
 #include <ffnn/layer/output.h>
-#include <ffnn/layer/hidden.h>
 #include <ffnn/layer/layer.h>
-
+#include <ffnn/layer/hidden/hidden.h>
 
 class Hidden :
   public ffnn::layer::Hidden<float>

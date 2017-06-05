@@ -11,7 +11,7 @@
 
 // FFNN
 #include <ffnn/logging.h>
-#include <ffnn/layer/convolution.h>
+#include <ffnn/layer/convolution/convolution.h>
 
 TEST(TestLayerConvolution, Dynamic_SizingWithConfigStruct)
 {

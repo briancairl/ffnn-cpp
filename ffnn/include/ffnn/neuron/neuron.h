@@ -12,12 +12,6 @@ namespace ffnn
 {
 namespace neuron
 {
-template<typename NeuronType>
-struct is_neuron
-{
-  constexpr static bool value = NeuronType::IsNeuron::value;
-};
-
 /**
  * @brief A basic activation unit type
  */
@@ -25,8 +19,6 @@ template<typename ValueType>
 class Neuron
 {
 public:
-  typedef std::true_type IsNeuron;
-
   typedef ValueType Scalar;
 
   /**

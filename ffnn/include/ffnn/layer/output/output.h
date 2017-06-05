@@ -2,8 +2,8 @@
  * @author Brian Cairl
  * @date 2017
  */
-#ifndef FFNN_LAYER_OUTPUT_H
-#define FFNN_LAYER_OUTPUT_H
+#ifndef FFNN_LAYER_OUTPUT_OUTPUT_H
+#define FFNN_LAYER_OUTPUT_OUTPUT_H
 
 // C++ Standard Library
 #include <cstring>
@@ -119,5 +119,5 @@ private:
 }  // namespace ffnn
 
 /// FFNN (implementation)
-#include <ffnn/impl/layer/output.hpp>
-#endif  // FFNN_LAYER_OUTPUT_H
+#include <ffnn/impl/layer/output/output.hpp>
+#endif  // FFNN_LAYER_OUTPUT_OUTPUT_H

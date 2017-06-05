@@ -2,8 +2,8 @@
  * @note HEADER-ONLY IMPLEMENTATION FILE
  * @warning Do not include directly
  */
-#ifndef FFNN_IMPL_LAYER_INPUT_HPP
-#define FFNN_IMPL_LAYER_INPUT_HPP
+#ifndef FFNN_IMPL_LAYER_INPUT_INPUT_HPP
+#define FFNN_IMPL_LAYER_INPUT_INPUT_HPP
 
 // FFNN
 #include <ffnn/logging.h>
@@ -78,4 +78,4 @@ void Input<ValueType, Options, Extrinsics>::operator<<(const NetworkInputType& i
 }
 }  // namespace layer
 }  // namespace ffnn
-#endif  // FFNN_IMPL_LAYER_INPUT_HPP
+#endif  // FFNN_IMPL_LAYER_INPUT_INPUT_HPP

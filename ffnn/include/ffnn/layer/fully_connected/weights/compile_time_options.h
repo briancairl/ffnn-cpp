@@ -38,8 +38,7 @@ struct options
   constexpr static size_type output_size = OutputsAtCompileTime;
 
   /// Used to check if dimensions are fixed
-  constexpr static bool has_fixed_sizes = !is_dynamic(InputsAtCompileTime) &&
-                                          !is_dynamic(OutputsAtCompileTime);
+  constexpr static bool has_fixed_sizes = !is_dynamic(input_size) && !is_dynamic(output_size);
 };
 
 /**

@@ -2,21 +2,19 @@
  * @author Brian Cairl
  * @date 2017
  */
-#ifndef FFNN_LAYER_HIDDEN_H
-#define FFNN_LAYER_HIDDEN_H
+#ifndef FFNN_LAYER_HIDDEN_HIDDEN_H
+#define FFNN_LAYER_HIDDEN_HIDDEN_H
 
 // C++ Standard Library
 #include <vector>
 #include <type_traits>
 
 // FFNN
-#include <ffnn/internal/config.h>
 #include <ffnn/assert.h>
+#include <ffnn/internal/config.h>
 #include <ffnn/internal/serializable.h>
 #include <ffnn/internal/traits.h>
-
 #include <ffnn/layer/layer.h>
-
 #include <ffnn/layer/hidden/compile_time_options.h>
 
 namespace ffnn
@@ -116,7 +114,7 @@ protected:
 
 #ifndef FFNN_NO_SERIALIZATION_SUPPORT
 protected:
-  FFNN_REGISTER_SERIALIZABLE(Hidden)
+  FFNN_REGISTER_SERIALIZABLE(Hidden);
 
   /// Save serializer
   void save(OutputArchive& ar, VersionType version) const;
@@ -129,5 +127,5 @@ protected:
 }  // namespace ffnn
 
 /// FFNN (implementation)
-#include <ffnn/impl/layer/hidden.hpp>
-#endif  // FFNN_LAYER_HIDDEN_H
+#include <ffnn/impl/layer/hidden/hidden.hpp>
+#endif  // FFNN_LAYER_HIDDEN_HIDDEN_H

@@ -8,7 +8,9 @@
 // FFNN
 #include <ffnn/assert.h>
 #include <ffnn/internal/config.h>
-#include <ffnn/layer/hidden.h>
+#include <ffnn/optimizer/fwd.h>
+#include <ffnn/optimizer/optimizer.h>
+#include <ffnn/layer/hidden/hidden.h>
 #include <ffnn/layer/hidden/compile_time_options.h>
 #include <ffnn/layer/fully_connected/weights.h>
 #include <ffnn/layer/fully_connected/weights/compile_time_options.h>

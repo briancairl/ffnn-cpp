@@ -2,8 +2,8 @@
  * @note HEADER-ONLY IMPLEMENTATION FILE
  * @warning Do not include directly
  */
-#ifndef FFNN_LAYER_IMPL_OUTPUT_HPP
-#define FFNN_LAYER_IMPL_OUTPUT_HPP
+#ifndef FFNN_IMPL_LAYER_OUTPUT_OUTPUT_HPP
+#define FFNN_IMPL_LAYER_OUTPUT_OUTPUT_HPP
 
 // FFNN
 #include <ffnn/logging.h>
@@ -12,8 +12,6 @@ namespace ffnn
 {
 namespace layer
 {
-#define TARGS ValueType, NetworkOutputsAtCompileTime
-
 template<typename ValueType,
          typename Options,
          typename Extrinsics>
@@ -117,5 +115,4 @@ void Output<ValueType, Options, Extrinsics>::operator<<(const NetworkTargetType&
 }
 }  // namespace layer
 }  // namespace ffnn
-#undef TARGS
-#endif  // FFNN_LAYER_IMPL_OUTPUT_HPP
+#endif  // FFNN_IMPL_LAYER_OUTPUT_OUTPUT_HPP

@@ -9,41 +9,57 @@ namespace ffnn
 {
 namespace optimizer
 {
-template<typename MatrixType>
+template<typename ValueType, typename LayerType>
 class AdamStates
 {
 public:
+  AdamStates(ValueType beta1, ValueType beta2, ValueType eps) :
+    inv_beta1_(1 - beta1),
+    inv_beta2_(1 - beta2),
+    epsilon_(eps)
+  {}
 
-  typedef typename MatrixType::Scalar Scalar;
-
-  typedef typename MatrixType::Index SizeType;
-
-  void update(MatrixType& gradient, Scalar beta1, Scalar beta2, Scalar eps)
+  void update(ParametersType& gradient)
   {
     // Update gradient moments
     mean_ += beta1 * (gradient - mean_);
     var_  += beta2 * (gradient - var_);
 
     // Compute learning rates for all weights
+    ParametersType tmp;
     gradient = var_;
-    gradient /= (1 - beta2);
-    gradient.array() += eps;
-    gradient = mean_.array() / gradient.array();
-    gradient /= (1 - beta1);
+    gradient /= inv_beta2_;
+    gradient += epsilon_;
+    tmp = mean_;
+    tmp /= gradient;
+    gradient = tmp;
+    gradient /= inv_beta1_;
   }
 
-  inline void initialize(SizeType rows, SizeType col)
+  inline void initialize(const LayerType& layer)
   {
-    mean_.setZero(rows, col);
-    var_.setZero(rows, col);
+    mean_ = layer.getParameters();
+    mean_.setZero();
+
+    var_  = layer.getParameters();
+    var_.setZero();
   }
 
 private:
+  /// Mean decay rate
+  const ValueType inv_beta1_;
+
+  /// Variance decay rate
+  const ValueType inv_beta2_;
+
+  /// Variance normalization value
+  const ValueType epsilon_;
+
   /// Running mean of error gradient
-  MatrixType mean_;
+  ParametersType mean_;
 
   /// Uncentered variance of error gradient
-  MatrixType var_;
+  ParametersType var_;
 };
 }  // namespace optimizer
 }  // namespace ffnn

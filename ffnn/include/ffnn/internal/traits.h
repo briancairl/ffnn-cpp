@@ -44,7 +44,8 @@ private:
   static auto test_generate(int) -> decltype(std::declval<U>().generate(), std::true_type());
  
   template<typename U>
-  static auto test_cdf(int, ValueType v) -> decltype(std::declval<U>().cdf(v), std::true_type());
+  static auto test_cdf(int, ValueType v)
+    -> decltype(std::declval<U>().cdf(v), std::true_type());
 
   template<typename>
   static std::false_type test_generate(...);
@@ -58,6 +59,41 @@ public:
       bool,
       std::is_same<decltype(test_generate<Object>(0)), std::true_type>::value &&
       std::is_same<decltype(test_cdf<Object>(0, ValueType(0))), std::true_type>::value
+    >::value;
+};
+
+/**
+ * @brief Checks if a type fufills the requirements of the Neuron concept
+ * @param Object object to check
+ */
+template<typename Object>
+struct is_neuron
+{
+private:
+  typedef typename Object::Scalar ValueType;
+
+  template<typename U>
+  static auto test_operator(int, const ValueType& input, ValueType& output)
+    -> decltype(std::declval<U>().operator()(input, output), std::true_type());
+ 
+  template<typename U>
+  static auto test_derivative(int, const ValueType& input, ValueType& output)
+    -> decltype(std::declval<U>().derivative(input, output), std::true_type());
+
+  template<typename>
+  static std::false_type test_operator(...);
+
+  template<typename>
+  static std::false_type test_derivative(...);
+
+  ValueType tv_;
+
+public:
+  constexpr static bool value =
+    std::integral_constant<
+      bool,
+      std::is_same<decltype(test_operator<Object>(0, tv_, tv_)), std::true_type>::value &&
+      std::is_same<decltype(test_derivative<Object>(0, tv_, tv_)), std::true_type>::value
     >::value;
 };
 }  // namespace traits

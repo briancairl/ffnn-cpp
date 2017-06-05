@@ -2,8 +2,8 @@
  * @note HEADER-ONLY IMPLEMENTATION FILE
  * @warning Do not include directly
  */
-#ifndef FFNN_LAYER_IMPL_FULLY_CONNECTED_HPP
-#define FFNN_LAYER_IMPL_FULLY_CONNECTED_HPP
+#ifndef FFNN_IMPL_LAYER_FULLY_CONNECTED_FULLY_CONNECTED_HPP
+#define FFNN_IMPL_LAYER_FULLY_CONNECTED_FULLY_CONNECTED_HPP
 
 // Boost
 #include <boost/bind.hpp>
@@ -23,8 +23,7 @@ template <typename ValueType,
           typename Extrinsics>
 FullyConnected<ValueType, Options, Extrinsics>::
 FullyConnected(const Configuration& config) :
-  BaseType(ShapeType(config.input_size_, 1, 1),
-           ShapeType(config.output_size_, 1, 1))
+  BaseType(ShapeType(config.input_size_, 1, 1), ShapeType(config.output_size_, 1, 1))
 {
   FFNN_INTERNAL_DEBUG_NAMED(
     "layer::FullyConnected",
@@ -173,4 +172,4 @@ void FullyConnected<ValueType, Options, Extrinsics>::load(InputArchive& ar, Vers
 
 }  // namespace layer
 }  // namespace ffnn
-#endif  // FFNN_LAYER_IMPL_FULLY_CONNECTED_HPP
+#endif  // FFNN_IMPL_LAYER_FULLY_CONNECTED_FULLY_CONNECTED_HPP

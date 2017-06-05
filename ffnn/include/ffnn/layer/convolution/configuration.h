@@ -11,13 +11,10 @@
 // FFNN
 #include <ffnn/assert.h>
 #include <ffnn/internal/config.h>
-
 #include <ffnn/distribution/distribution.h>
 #include <ffnn/distribution/normal.h>
-
 #include <ffnn/optimizer/fwd.h>
 #include <ffnn/optimizer/optimizer.h>
-
 #include <ffnn/layer/convolution/sizing.h>
 
 namespace ffnn

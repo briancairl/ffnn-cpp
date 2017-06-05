@@ -63,4 +63,9 @@
           std::is_same<Extrinsics, typename NS::extrinsics<ValueType, Options>>::value,\
           "DO NOT MODIFY CLASS EXTRINSICS TEMPLATE PARAMETER!"\
         );
+#define FFNN_ASSERT_DONT_MODIFY_EXTRINSICS_EXT(NS, ARGS)\
+        static_assert(\
+          std::is_same<Extrinsics, typename NS::extrinsics<ValueType, ARGS, Options>>::value,\
+          "DO NOT MODIFY CLASS EXTRINSICS TEMPLATE PARAMETER!"\
+        );
 #endif  // FFNN_ASSERT_H

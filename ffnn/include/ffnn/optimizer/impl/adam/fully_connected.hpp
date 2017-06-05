@@ -52,14 +52,12 @@ public:
   explicit
   Adam(Scalar lr, Scalar beta1 = 0.9, Scalar beta2 = 0.999, Scalar eps = 1e-8) :
     Base(lr),
-    beta1_(beta1),
-    beta2_(beta2),
-    epsilon_(eps)
+    gradient_states_(beta1, beta2, eps)
   {
-    Base::setName("Adam[FullyConnected]");
-    FFNN_ASSERT_MSG(beta1_ > 0 && beta1_ < 1, "'beta1' should be in the range (0, 1).");
-    FFNN_ASSERT_MSG(beta2_ > 0 && beta2_ < 1, "'beta2' should be in the range (0, 1).");
-    FFNN_ASSERT_MSG(epsilon_ > 0, "Epsilon should be > 0.");
+    Base::setName("Adam");
+    FFNN_ASSERT_MSG(beta1 > 0 && beta1 < 1, "'beta1' should be in the range (0, 1).");
+    FFNN_ASSERT_MSG(beta2 > 0 && beta2 < 1, "'beta2' should be in the range (0, 1).");
+    FFNN_ASSERT_MSG(eps > 0, "Epsilon should be > 0.");
   }
   virtual ~Adam() {}
 
@@ -106,10 +104,7 @@ private:
   const Scalar epsilon_;
 
   /// Running estimates of mean/variance of weight gradients
-  AdamStates<WeightMatrixType> weight_gradient_states_;
-
-  /// Running estimates of mean/variance of bias gradients 
-  AdamStates<BiasVectorType> bias_gradient_states_;
+  AdamStates<WeightMatrixType> gradient_states_;
 };
 }  // namespace optimizer
 }  // namespace ffnn

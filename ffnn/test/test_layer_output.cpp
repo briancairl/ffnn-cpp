@@ -11,9 +11,9 @@
 
 // FFNN
 #include <ffnn/logging.h>
-#include <ffnn/layer/output.h>
+#include <ffnn/layer/output/output.h>
 
-TEST(TestLayerInout, Static)
+TEST(TestLayerOutput, Static)
 {
   using ffnn::layer::output::options;
   using Output = ffnn::layer::Output<float, options<300>>;
@@ -24,7 +24,7 @@ TEST(TestLayerInout, Static)
   EXPECT_EQ(layer.getInputShape().size(), 300);
 }
 
-TEST(TestLayerInout, Dynamic_SingleArg)
+TEST(TestLayerOutput, Dynamic_SingleArg)
 {
   using Output = ffnn::layer::Output<float>;
 
@@ -34,7 +34,7 @@ TEST(TestLayerInout, Dynamic_SingleArg)
   EXPECT_EQ(layer.getInputShape().size(), 300);
 }
 
-TEST(TestLayerInout, Dynamic_OutputShape)
+TEST(TestLayerOutput, Dynamic_OutputShape)
 {
   using Output = ffnn::layer::Output<float>;
   using Config = Output::Configuration; 

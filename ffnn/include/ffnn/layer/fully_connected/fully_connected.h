@@ -2,8 +2,8 @@
  * @author Brian Cairl
  * @date 2017
  */
-#ifndef FFNN_LAYER_FULLY_CONNECTED_H
-#define FFNN_LAYER_FULLY_CONNECTED_H
+#ifndef FFNN_LAYER_FULLY_CONNECTED_FULLY_CONNECTED_H
+#define FFNN_LAYER_FULLY_CONNECTED_FULLY_CONNECTED_H
 
 // C++ Standard Library
 #include <vector>
@@ -11,13 +11,9 @@
 
 // FFNN
 #include <ffnn/internal/traits.h>
-
-#include <ffnn/layer/fully_connected/compile_time_options.h>
-#include <ffnn/layer/fully_connected/configuration.h>
 #include <ffnn/layer/shape.h>
-
-#include <ffnn/optimizer/optimizer.h>
-#include <ffnn/optimizer/fwd.h>
+#include <ffnn/layer/fully_connected/configuration.h>
+#include <ffnn/layer/fully_connected/compile_time_options.h>
 
 namespace ffnn
 {
@@ -133,5 +129,5 @@ protected:
 }  // namespace ffnn
 
 /// FFNN (implementation)
-#include <ffnn/impl/layer/fully_connected.hpp>
-#endif  // FFNN_LAYER_FULLY_CONNECTED_H
+#include <ffnn/impl/layer/fully_connected/fully_connected.hpp>
+#endif  // FFNN_LAYER_FULLY_CONNECTED_FULLY_CONNECTED_H

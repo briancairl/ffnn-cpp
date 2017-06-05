@@ -2,8 +2,8 @@
  * @note HEADER-ONLY IMPLEMENTATION FILE
  * @warning Do not include directly
  */
-#ifndef FFNN_LAYER_IMPL_CONVOLUTION_HPP
-#define FFNN_LAYER_IMPL_CONVOLUTION_HPP
+#ifndef FFNN_IMPL_LAYER_CONVOLUTION_CONVOLUTION_HPP
+#define FFNN_IMPL_LAYER_CONVOLUTION_CONVOLUTION_HPP
 
 // C++ Standard Library
 #include <exception>
@@ -250,4 +250,4 @@ void Convolution<ValueType, Options, Extrinsics>::load(InputArchive& ar, Version
 }
 }  // namespace layer
 }  // namespace ffnn
-#endif  // FFNN_LAYER_IMPL_CONVOLUTION_HPP
+#endif  // FFNN_IMPL_LAYER_CONVOLUTION_CONVOLUTION_HPP

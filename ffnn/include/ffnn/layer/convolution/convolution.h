@@ -2,8 +2,8 @@
  * @author Brian Cairl
  * @date 2017
  */
-#ifndef FFNN_LAYER_CONVOLUTION_H
-#define FFNN_LAYER_CONVOLUTION_H
+#ifndef FFNN_LAYER_CONVOLUTION_CONVOLUTION_H
+#define FFNN_LAYER_CONVOLUTION_CONVOLUTION_H
 
 // FFNN
 #include <ffnn/assert.h>
@@ -11,9 +11,6 @@
 
 #include <ffnn/distribution/distribution.h>
 #include <ffnn/distribution/normal.h>
-
-#include <ffnn/layer/layer.h>
-#include <ffnn/layer/hidden.h>
 
 #include <ffnn/optimizer/fwd.h>
 #include <ffnn/optimizer/optimizer.h>
@@ -154,5 +151,5 @@ protected:
 }  // namespace ffnn
 
 /// FFNN (implementation)
-#include <ffnn/impl/layer/convolution.hpp>
-#endif  // FFNN_LAYER_CONVOLUTION_H
+#include <ffnn/impl/layer/convolution/convolution.hpp>
+#endif  // FFNN_LAYER_CONVOLUTION_CONVOLUTION_H
