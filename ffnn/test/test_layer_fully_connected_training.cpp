@@ -27,6 +27,7 @@
 TEST(TestLayerFullyConnectedTraining, Dynamic_GradientDescent)
 {
   using namespace ffnn::layer;
+  using namespace ffnn::optimizer;
 
   // Layer-type alias
   using Layer  = Layer<float>;
@@ -35,7 +36,7 @@ TEST(TestLayerFullyConnectedTraining, Dynamic_GradientDescent)
   using Output = Output<float>;
 
   // Optimizer alias
-  using Optimizer = ffnn::optimizer::GradientDescent<Hidden>;
+  using Optimizer = GradientDescent<Hidden>;
 
   // Layer sizes
   static const ffnn::size_type DIM = 32;
@@ -104,6 +105,7 @@ TEST(TestLayerFullyConnectedTraining, Dynamic_GradientDescent)
 TEST(TestLayerFullyConnectedTraining, Static_GradientDescent)
 {
   using namespace ffnn::layer;
+  using namespace ffnn::optimizer;
 
   // Layer-type alias
   using Layer  = Layer<float>;
@@ -112,7 +114,7 @@ TEST(TestLayerFullyConnectedTraining, Static_GradientDescent)
   using Output = Output<float, output::options<32>>;
 
   // Optimizer alias
-  using Optimizer = ffnn::optimizer::GradientDescent<Hidden>;
+  using Optimizer = GradientDescent<Hidden>;
 
   // Layer sizes
   static const ffnn::size_type DIM = 32;
