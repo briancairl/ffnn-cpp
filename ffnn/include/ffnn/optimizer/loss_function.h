@@ -17,7 +17,9 @@ typedef enum
   CrossEntropy,
   L2,
   L1,
-  Hinge
+  Logistic,
+  Hinge,
+  Exponential,
 }
 LossFunction;
 

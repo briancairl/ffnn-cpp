@@ -111,7 +111,8 @@ bool FullyConnected<ValueType, Options, Extrinsics>::backward()
   FFNN_ASSERT_MSG(config_.optimizer_, "No optimization resource set.");
 
   // Compute backward error
-  BaseType::backward_error_.noalias() = parameters_.weights.transpose() * BaseType::forward_error_;
+  BaseType::backward_error_.noalias() =
+    parameters_.weights.transpose() * BaseType::forward_error_;
 
   // Run optimizer
   return config_.optimizer_->backward(*this);

@@ -5,9 +5,12 @@
 #ifndef FFNN_LAYER_OPTIMIZATION_GRADIENT_DESCENT_H
 #define FFNN_LAYER_OPTIMIZATION_GRADIENT_DESCENT_H
 
+// C++ Standard Library
+#include <type_traits>
+
 // FFNN
-#include <ffnn/internal/config.h>
 #include <ffnn/assert.h>
+#include <ffnn/internal/config.h>
 #include <ffnn/optimizer/optimizer.h>
 #include <ffnn/optimizer/fwd.h>
 
@@ -16,7 +19,7 @@ namespace ffnn
 namespace optimizer
 {
 template<typename LayerType,
-         LossFunction LossFn = L2>
+         LossFunction LossFn = CrossEntropy>
 class GradientDescent :
   public Optimizer<LayerType>
 {
