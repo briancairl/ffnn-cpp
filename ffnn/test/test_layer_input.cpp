@@ -11,7 +11,7 @@
 
 // FFNN
 #include <ffnn/logging.h>
-#include <ffnn/layer/input/input.h>
+#include <ffnn/layer/input.h>
 
 TEST(TestLayerInout, Static)
 {

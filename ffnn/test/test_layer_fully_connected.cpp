@@ -16,7 +16,7 @@
 
 // FFNN
 #include <ffnn/logging.h>
-#include <ffnn/layer/fully_connected/fully_connected.h>
+#include <ffnn/layer/fully_connected.h>
 
 
 TEST(TestLayerFullyConnected, Dynamic_SingleArg)

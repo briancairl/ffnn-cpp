@@ -12,7 +12,7 @@
 // FFNN
 #include <ffnn/logging.h>
 #include <ffnn/neuron/sigmoid.h>
-#include <ffnn/layer/activation/activation.h>
+#include <ffnn/layer/activation.h>
 
 TEST(TestLayerInout, Static)
 {

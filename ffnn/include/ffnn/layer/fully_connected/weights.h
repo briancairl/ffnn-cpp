@@ -82,7 +82,7 @@ public:
     FFNN_ASSERT_MSG(output_size > 0, "output_size must be positive");
 
     weights.setZero(output_size, input_size);
-    biases.setZero(output_size);
+    biases.setZero(output_size, 1);
   }
 
   /**

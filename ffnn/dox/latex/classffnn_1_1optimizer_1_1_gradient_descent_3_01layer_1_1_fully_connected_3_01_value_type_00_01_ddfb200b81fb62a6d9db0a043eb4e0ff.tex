@@ -1,0 +1,236 @@
+\hypertarget{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_ddfb200b81fb62a6d9db0a043eb4e0ff}{\section{ffnn\-:\-:optimizer\-:\-:Gradient\-Descent$<$ layer\-:\-:Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$ Class Template Reference}
+\label{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_ddfb200b81fb62a6d9db0a043eb4e0ff}\index{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$}}
+}
+
+
+{\ttfamily \#include \char`\"{}fully\-\_\-connected.\-hpp\char`\"{}}
+
+
+
+Inheritance diagram for ffnn\-:\-:optimizer\-:\-:Gradient\-Descent$<$ layer\-:\-:Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_39ad54512ff1957dd1b22e0a25a0e829}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ffnn\-:\-:optimizer\-:\-:Gradient\-Descent$<$ layer\-:\-:Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_452ed1b4df3a279848aa9b40a85a4da7}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Layer\-Type\-::\-Input\-Block\-Type \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_ddfb200b81fb62a6d9db0a043eb4e0ff_acef432d1b0d484bfeaf886db8c3cb016}{Input\-Block\-Type}
+\begin{DoxyCompactList}\small\item\em Matrix type standardization. \end{DoxyCompactList}\item 
+typedef Layer\-Type\-::\-Parameters\-Type \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_ddfb200b81fb62a6d9db0a043eb4e0ff_afab2e9175492cce91e264fbac5fa88ce}{Parameters\-Type}
+\begin{DoxyCompactList}\small\item\em Matrix type standardization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_ddfb200b81fb62a6d9db0a043eb4e0ff_a3a7056550875f01e78fc3b2ebc7bc03a}{Gradient\-Descent} (Value\-Type lr)
+\begin{DoxyCompactList}\small\item\em Setup constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_ddfb200b81fb62a6d9db0a043eb4e0ff_a666a345ec1a026d4d6faaa2be7b6b653}{$\sim$\-Gradient\-Descent} ()
+\item 
+virtual void \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_ddfb200b81fb62a6d9db0a043eb4e0ff_ac4a124d633cbf9b2ab9d407271d03729}{initialize} (Layer\-Type \&layer)
+\begin{DoxyCompactList}\small\item\em Initializes the \hyperlink{classffnn_1_1optimizer_1_1_optimizer}{Optimizer}. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_ddfb200b81fb62a6d9db0a043eb4e0ff_adc687723589de3c71f309f0278d9667c}{reset} (Layer\-Type \&layer)
+\begin{DoxyCompactList}\small\item\em Resets persistent \hyperlink{classffnn_1_1optimizer_1_1_optimizer}{Optimizer} states. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_ddfb200b81fb62a6d9db0a043eb4e0ff_acb91cc8ee88e3877920b6ac3b83cc29f}{forward} (Layer\-Type \&layer)
+\begin{DoxyCompactList}\small\item\em Computes one forward optimization update step. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_ddfb200b81fb62a6d9db0a043eb4e0ff_a6deaa4bad60edc72e6f75a26c8cec452}{backward} (Layer\-Type \&layer)
+\begin{DoxyCompactList}\small\item\em Computes optimization step during backward propogation. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_ddfb200b81fb62a6d9db0a043eb4e0ff_a9d80453a2e693e23943021af563a35e4}{update} (Layer\-Type \&layer)
+\begin{DoxyCompactList}\small\item\em Applies optimization update. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Value\-Type \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_ddfb200b81fb62a6d9db0a043eb4e0ff_a1bbfde5fbe4acf422bbba66c4a4ec354}{lr\-\_\-}
+\begin{DoxyCompactList}\small\item\em Learning rate. \end{DoxyCompactList}\item 
+\hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_ddfb200b81fb62a6d9db0a043eb4e0ff_acef432d1b0d484bfeaf886db8c3cb016}{Input\-Block\-Type} \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_ddfb200b81fb62a6d9db0a043eb4e0ff_a460658037ced98085c44247a95c35441}{prev\-\_\-input\-\_\-}
+\begin{DoxyCompactList}\small\item\em Previous input. \end{DoxyCompactList}\item 
+\hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_ddfb200b81fb62a6d9db0a043eb4e0ff_afab2e9175492cce91e264fbac5fa88ce}{Parameters\-Type} \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_ddfb200b81fb62a6d9db0a043eb4e0ff_a849361a121e5f2e53e6734770b516f1b}{gradient\-\_\-}
+\begin{DoxyCompactList}\small\item\em Coefficient gradient. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_ddfb200b81fb62a6d9db0a043eb4e0ff_acef432d1b0d484bfeaf886db8c3cb016}{\index{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$}!Input\-Block\-Type@{Input\-Block\-Type}}
+\index{Input\-Block\-Type@{Input\-Block\-Type}!ffnn::optimizer::GradientDescent< layer::FullyConnected< ValueType, Options, Extrinsics > >@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$}}
+\subsubsection[{Input\-Block\-Type}]{\setlength{\rightskip}{0pt plus 5cm}typedef Layer\-Type\-::\-Input\-Block\-Type {\bf ffnn\-::optimizer\-::\-Gradient\-Descent}$<$ {\bf layer\-::\-Fully\-Connected}$<$ Value\-Type, Options, Extrinsics $>$ $>$\-::{\bf Input\-Block\-Type}}}\label{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_ddfb200b81fb62a6d9db0a043eb4e0ff_acef432d1b0d484bfeaf886db8c3cb016}
+
+
+Matrix type standardization. 
+
+\hypertarget{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_ddfb200b81fb62a6d9db0a043eb4e0ff_afab2e9175492cce91e264fbac5fa88ce}{\index{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$}!Parameters\-Type@{Parameters\-Type}}
+\index{Parameters\-Type@{Parameters\-Type}!ffnn::optimizer::GradientDescent< layer::FullyConnected< ValueType, Options, Extrinsics > >@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$}}
+\subsubsection[{Parameters\-Type}]{\setlength{\rightskip}{0pt plus 5cm}typedef Layer\-Type\-::\-Parameters\-Type {\bf ffnn\-::optimizer\-::\-Gradient\-Descent}$<$ {\bf layer\-::\-Fully\-Connected}$<$ Value\-Type, Options, Extrinsics $>$ $>$\-::{\bf Parameters\-Type}}}\label{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_ddfb200b81fb62a6d9db0a043eb4e0ff_afab2e9175492cce91e264fbac5fa88ce}
+
+
+Matrix type standardization. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_ddfb200b81fb62a6d9db0a043eb4e0ff_a3a7056550875f01e78fc3b2ebc7bc03a}{\index{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$}!Gradient\-Descent@{Gradient\-Descent}}
+\index{Gradient\-Descent@{Gradient\-Descent}!ffnn::optimizer::GradientDescent< layer::FullyConnected< ValueType, Options, Extrinsics > >@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$}}
+\subsubsection[{Gradient\-Descent}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ffnn\-::optimizer\-::\-Gradient\-Descent}$<$ {\bf layer\-::\-Fully\-Connected}$<$ Value\-Type, Options, Extrinsics $>$ $>$\-::{\bf Gradient\-Descent} (
+\begin{DoxyParamCaption}
+\item[{Value\-Type}]{lr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_ddfb200b81fb62a6d9db0a043eb4e0ff_a3a7056550875f01e78fc3b2ebc7bc03a}
+
+
+Setup constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lr} & Learning rate \\
+\hline
+\end{DoxyParams}
+\hypertarget{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_ddfb200b81fb62a6d9db0a043eb4e0ff_a666a345ec1a026d4d6faaa2be7b6b653}{\index{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$}!$\sim$\-Gradient\-Descent@{$\sim$\-Gradient\-Descent}}
+\index{$\sim$\-Gradient\-Descent@{$\sim$\-Gradient\-Descent}!ffnn::optimizer::GradientDescent< layer::FullyConnected< ValueType, Options, Extrinsics > >@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$}}
+\subsubsection[{$\sim$\-Gradient\-Descent}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf ffnn\-::optimizer\-::\-Gradient\-Descent}$<$ {\bf layer\-::\-Fully\-Connected}$<$ Value\-Type, Options, Extrinsics $>$ $>$\-::$\sim${\bf Gradient\-Descent} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_ddfb200b81fb62a6d9db0a043eb4e0ff_a666a345ec1a026d4d6faaa2be7b6b653}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_ddfb200b81fb62a6d9db0a043eb4e0ff_a6deaa4bad60edc72e6f75a26c8cec452}{\index{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$}!backward@{backward}}
+\index{backward@{backward}!ffnn::optimizer::GradientDescent< layer::FullyConnected< ValueType, Options, Extrinsics > >@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$}}
+\subsubsection[{backward}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool {\bf ffnn\-::optimizer\-::\-Gradient\-Descent}$<$ {\bf layer\-::\-Fully\-Connected}$<$ Value\-Type, Options, Extrinsics $>$ $>$\-::backward (
+\begin{DoxyParamCaption}
+\item[{Layer\-Type \&}]{layer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_ddfb200b81fb62a6d9db0a043eb4e0ff_a6deaa4bad60edc72e6f75a26c8cec452}
+
+
+Computes optimization step during backward propogation. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em layer} & Layer to optimize \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & if optimization setp was successful \\
+\hline
+{\em false} & otherwise \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_ddfb200b81fb62a6d9db0a043eb4e0ff_acb91cc8ee88e3877920b6ac3b83cc29f}{\index{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$}!forward@{forward}}
+\index{forward@{forward}!ffnn::optimizer::GradientDescent< layer::FullyConnected< ValueType, Options, Extrinsics > >@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$}}
+\subsubsection[{forward}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool {\bf ffnn\-::optimizer\-::\-Gradient\-Descent}$<$ {\bf layer\-::\-Fully\-Connected}$<$ Value\-Type, Options, Extrinsics $>$ $>$\-::forward (
+\begin{DoxyParamCaption}
+\item[{Layer\-Type \&}]{layer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_ddfb200b81fb62a6d9db0a043eb4e0ff_acb91cc8ee88e3877920b6ac3b83cc29f}
+
+
+Computes one forward optimization update step. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em layer} & Layer to optimize \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & if optimization setp was successful \\
+\hline
+{\em false} & otherwise \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_ddfb200b81fb62a6d9db0a043eb4e0ff_ac4a124d633cbf9b2ab9d407271d03729}{\index{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$}!initialize@{initialize}}
+\index{initialize@{initialize}!ffnn::optimizer::GradientDescent< layer::FullyConnected< ValueType, Options, Extrinsics > >@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}virtual void {\bf ffnn\-::optimizer\-::\-Gradient\-Descent}$<$ {\bf layer\-::\-Fully\-Connected}$<$ Value\-Type, Options, Extrinsics $>$ $>$\-::initialize (
+\begin{DoxyParamCaption}
+\item[{Layer\-Type \&}]{layer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_ddfb200b81fb62a6d9db0a043eb4e0ff_ac4a124d633cbf9b2ab9d407271d03729}
+
+
+Initializes the \hyperlink{classffnn_1_1optimizer_1_1_optimizer}{Optimizer}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em layer} & Layer to optimize \\
+\hline
+\end{DoxyParams}
+\hypertarget{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_ddfb200b81fb62a6d9db0a043eb4e0ff_adc687723589de3c71f309f0278d9667c}{\index{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$}!reset@{reset}}
+\index{reset@{reset}!ffnn::optimizer::GradientDescent< layer::FullyConnected< ValueType, Options, Extrinsics > >@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}virtual void {\bf ffnn\-::optimizer\-::\-Gradient\-Descent}$<$ {\bf layer\-::\-Fully\-Connected}$<$ Value\-Type, Options, Extrinsics $>$ $>$\-::reset (
+\begin{DoxyParamCaption}
+\item[{Layer\-Type \&}]{layer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_ddfb200b81fb62a6d9db0a043eb4e0ff_adc687723589de3c71f309f0278d9667c}
+
+
+Resets persistent \hyperlink{classffnn_1_1optimizer_1_1_optimizer}{Optimizer} states. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em layer} & Layer to optimize \\
+\hline
+\end{DoxyParams}
+\hypertarget{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_ddfb200b81fb62a6d9db0a043eb4e0ff_a9d80453a2e693e23943021af563a35e4}{\index{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$}!update@{update}}
+\index{update@{update}!ffnn::optimizer::GradientDescent< layer::FullyConnected< ValueType, Options, Extrinsics > >@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool {\bf ffnn\-::optimizer\-::\-Gradient\-Descent}$<$ {\bf layer\-::\-Fully\-Connected}$<$ Value\-Type, Options, Extrinsics $>$ $>$\-::update (
+\begin{DoxyParamCaption}
+\item[{Layer\-Type \&}]{layer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_ddfb200b81fb62a6d9db0a043eb4e0ff_a9d80453a2e693e23943021af563a35e4}
+
+
+Applies optimization update. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em layer} & Layer to optimize \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & if optimization update was applied successfully \\
+\hline
+{\em false} & otherwise \\
+\hline
+\end{DoxyRetVals}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_ddfb200b81fb62a6d9db0a043eb4e0ff_a849361a121e5f2e53e6734770b516f1b}{\index{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$}!gradient\-\_\-@{gradient\-\_\-}}
+\index{gradient\-\_\-@{gradient\-\_\-}!ffnn::optimizer::GradientDescent< layer::FullyConnected< ValueType, Options, Extrinsics > >@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$}}
+\subsubsection[{gradient\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Parameters\-Type} {\bf ffnn\-::optimizer\-::\-Gradient\-Descent}$<$ {\bf layer\-::\-Fully\-Connected}$<$ Value\-Type, Options, Extrinsics $>$ $>$\-::gradient\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_ddfb200b81fb62a6d9db0a043eb4e0ff_a849361a121e5f2e53e6734770b516f1b}
+
+
+Coefficient gradient. 
+
+\hypertarget{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_ddfb200b81fb62a6d9db0a043eb4e0ff_a1bbfde5fbe4acf422bbba66c4a4ec354}{\index{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$}!lr\-\_\-@{lr\-\_\-}}
+\index{lr\-\_\-@{lr\-\_\-}!ffnn::optimizer::GradientDescent< layer::FullyConnected< ValueType, Options, Extrinsics > >@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$}}
+\subsubsection[{lr\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}Value\-Type {\bf ffnn\-::optimizer\-::\-Gradient\-Descent}$<$ {\bf layer\-::\-Fully\-Connected}$<$ Value\-Type, Options, Extrinsics $>$ $>$\-::lr\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_ddfb200b81fb62a6d9db0a043eb4e0ff_a1bbfde5fbe4acf422bbba66c4a4ec354}
+
+
+Learning rate. 
+
+\hypertarget{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_ddfb200b81fb62a6d9db0a043eb4e0ff_a460658037ced98085c44247a95c35441}{\index{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$}!prev\-\_\-input\-\_\-@{prev\-\_\-input\-\_\-}}
+\index{prev\-\_\-input\-\_\-@{prev\-\_\-input\-\_\-}!ffnn::optimizer::GradientDescent< layer::FullyConnected< ValueType, Options, Extrinsics > >@{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$}}
+\subsubsection[{prev\-\_\-input\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Input\-Block\-Type} {\bf ffnn\-::optimizer\-::\-Gradient\-Descent}$<$ {\bf layer\-::\-Fully\-Connected}$<$ Value\-Type, Options, Extrinsics $>$ $>$\-::prev\-\_\-input\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_ddfb200b81fb62a6d9db0a043eb4e0ff_a460658037ced98085c44247a95c35441}
+
+
+Previous input. 
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/optimizer/impl/gradient\-\_\-descent/\hyperlink{optimizer_2impl_2gradient__descent_2fully__connected_8hpp}{fully\-\_\-connected.\-hpp}\end{DoxyCompactItemize}

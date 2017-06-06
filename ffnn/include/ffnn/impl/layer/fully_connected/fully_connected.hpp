@@ -23,7 +23,8 @@ template <typename ValueType,
           typename Extrinsics>
 FullyConnected<ValueType, Options, Extrinsics>::
 FullyConnected(const Configuration& config) :
-  BaseType(ShapeType(config.input_size_, 1, 1), ShapeType(config.output_size_, 1, 1))
+  BaseType(ShapeType(config.input_size_, 1, 1), ShapeType(config.output_size_, 1, 1)),
+  config_(config)
 {
   FFNN_INTERNAL_DEBUG_NAMED(
     "layer::FullyConnected",

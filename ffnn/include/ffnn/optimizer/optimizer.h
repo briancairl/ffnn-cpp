@@ -2,8 +2,8 @@
  * @author Brian Cairl
  * @date 2017
  */
-#ifndef FFNN_LAYER_OPTIMIZATION_OPTIMIZER_H
-#define FFNN_LAYER_OPTIMIZATION_OPTIMIZER_H
+#ifndef FFNN_LAYER_OPTIMIZER_OPTIMIZER_H
+#define FFNN_LAYER_OPTIMIZER_OPTIMIZER_H
 
 // C++ Standard Library
 #include <string>
@@ -16,6 +16,7 @@
 // FFNN
 #include <ffnn/internal/config.h>
 #include <ffnn/assert.h>
+#include <ffnn/optimizer/loss_function.h>
 
 namespace ffnn
 {
@@ -34,10 +35,14 @@ public:
   /// Constant shared resource standardization
   typedef boost::shared_ptr<const Optimizer> ConstPtr;
 
+  /// Scalar type standardization
+  typedef typename LayerType::Scalar Scalar;
+
   /**
    * @brief Naming constructor
    * @param name  name associated with the optimizer
    */
+  explicit
   Optimizer(const std::string& name) :
     name_(name)
   {}
@@ -102,13 +107,14 @@ private:
 
 /**
  * @brief Registers an optimizer to a Layer
- * @param layer layer type name
  * @param opt Optimizer type
  * @note An optimizer must be registered to a Layer to allow use
  */
-#define FFNN_REGISTER_OPTIMIZER(layer, opt)\
-  friend class ::ffnn::optimizer::opt<layer>;
+#define FFNN_REGISTER_OPTIMIZER(opt)\
+  template<typename _LayerType,\
+           ::ffnn::optimizer::LossFunction _LossFunctionSpec>\
+  friend class ::ffnn::optimizer::opt;
 
 }  // namespace optimizer
 }  // namespace ffnn
-#endif  // FFNN_LAYER_OPTIMIZATION_OPTIMIZER_H
+#endif  // FFNN_LAYER_OPTIMIZER_OPTIMIZER_H

@@ -10,18 +10,6 @@
 #include <ffnn/logging.h>
 #include <ffnn/layer/shape.h>
 
-TEST(TestLayerShape, ShapeAtCompileTime)
-{
-  typedef ffnn::layer::ShapeAtCompileTime<int, 1, 2, 3> TestShape;
-
-  const auto h = TestShape::HeightAtCompileTime;
-  const auto w = TestShape::WidthAtCompileTime;
-  const auto d = TestShape::DepthAtCompileTime;
-  EXPECT_EQ(h, 1);
-  EXPECT_EQ(w, 2);
-  EXPECT_EQ(d, 3);
-}
-
 TEST(TestLayerShape, Shape)
 {
   const ffnn::layer::Shape<int> shape(1, 2, 3);

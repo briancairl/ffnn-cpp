@@ -24,6 +24,7 @@ template <typename ValueType,
 Convolution<ValueType, Options, Extrinsics>::
 Convolution(const Configuration& config) :
   BaseType(config.embedded_input_shape_, config.embedded_output_shape_)
+  config_(config)
 {
   FFNN_INTERNAL_DEBUG_NAMED(
     "layer::Convolution",

@@ -25,7 +25,8 @@ template<typename ValueType,
          typename Extrinsics>
 Activation<ValueType, NeuronType, Options, Extrinsics>::
 Activation(const Configuration& config) :
-  BaseType(ShapeType(config.input_size_, 1, 1), ShapeType(config.output_size_, 1, 1))
+  BaseType(ShapeType(config.input_size_, 1, 1), ShapeType(config.output_size_, 1, 1)),
+  config_(config)
 {}
 
 template<typename ValueType,

@@ -5,14 +5,17 @@
 #ifndef FFNN_LAYER_OPTIMIZATION_FWD_H
 #define FFNN_LAYER_OPTIMIZATION_FWD_H
 
+// FFNN
+#include <ffnn/optimizer/loss_function.h>
+
 namespace ffnn
 {
 namespace optimizer
 {
 // Foward Declarations
 template<typename LayerType> class None;
-template<typename LayerType> class Adam;
-template<typename LayerType> class GradientDescent;
+template<typename LayerType, LossFunction LossFn> class Adam;
+template<typename LayerType, LossFunction LossFn> class GradientDescent;
 
 }  // namespace optimizer
 }  // namespace ffnn

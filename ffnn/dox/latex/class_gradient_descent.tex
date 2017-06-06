@@ -1,0 +1,263 @@
+\hypertarget{class_gradient_descent}{\section{Gradient\-Descent$<$ Value\-Type, Layer\-Type $>$ Class Template Reference}
+\label{class_gradient_descent}\index{Gradient\-Descent$<$ Value\-Type, Layer\-Type $>$@{Gradient\-Descent$<$ Value\-Type, Layer\-Type $>$}}
+}
+
+
+{\ttfamily \#include \char`\"{}gradient\-\_\-descent.\-h\char`\"{}}
+
+
+
+Inheritance diagram for Gradient\-Descent$<$ Value\-Type, Layer\-Type $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{class_gradient_descent__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Gradient\-Descent$<$ Value\-Type, Layer\-Type $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{class_gradient_descent__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Layer\-Type\-::\-Input\-Block\-Type \hyperlink{class_gradient_descent_ac722ab757e64bce7c56067de83cb02db}{Input\-Block\-Type}
+\begin{DoxyCompactList}\small\item\em Matrix type standardization. \end{DoxyCompactList}\item 
+typedef Layer\-Type\-::\-Parameters\-Type \hyperlink{class_gradient_descent_a4fad1eabbf046df49564b647df175d3d}{Parameters\-Type}
+\begin{DoxyCompactList}\small\item\em Matrix type standardization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_gradient_descent_a2493f9a96fb8eb22aa6eac2fe2af1948}{Gradient\-Descent} (Value\-Type lr)
+\begin{DoxyCompactList}\small\item\em Setup constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{class_gradient_descent_ae86436201e4c6e041837c815de3eb4d4}{$\sim$\-Gradient\-Descent} ()
+\item 
+void \hyperlink{class_gradient_descent_a1915d0839e2605a95214a8df3fc81109}{initialize} (Layer\-Type \&layer)
+\begin{DoxyCompactList}\small\item\em Initializes the Optimizer. \end{DoxyCompactList}\item 
+void \hyperlink{class_gradient_descent_aa6b1c9d30473fdf4dc2616665e6d1952}{reset} (Layer\-Type \&layer)
+\begin{DoxyCompactList}\small\item\em Resets persistent Optimizer states. \end{DoxyCompactList}\item 
+bool \hyperlink{class_gradient_descent_add831bddf60b4ee8ee68b964ccb8b6bb}{forward} (Layer\-Type \&layer)
+\begin{DoxyCompactList}\small\item\em Computes one forward optimization update step. \end{DoxyCompactList}\item 
+bool \hyperlink{class_gradient_descent_ad9096611d288da2427dbce4261eeca99}{backward} (Layer\-Type \&layer)
+\begin{DoxyCompactList}\small\item\em Computes optimization step during backward propogation. \end{DoxyCompactList}\item 
+bool \hyperlink{class_gradient_descent_ac66c2ab70fd324b1b09c0593bb0132af}{update} (Layer\-Type \&layer)
+\begin{DoxyCompactList}\small\item\em Applies optimization update. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Value\-Type \hyperlink{class_gradient_descent_ad30dfe9d565d302f7fedde8f8091ac75}{lr\-\_\-}
+\begin{DoxyCompactList}\small\item\em Learning rate. \end{DoxyCompactList}\item 
+\hyperlink{class_gradient_descent_ac722ab757e64bce7c56067de83cb02db}{Input\-Block\-Type} \hyperlink{class_gradient_descent_aaf7ea2e806c9f55fb8644667583f27ff}{prev\-\_\-input\-\_\-}
+\begin{DoxyCompactList}\small\item\em Previous input. \end{DoxyCompactList}\item 
+\hyperlink{class_gradient_descent_a4fad1eabbf046df49564b647df175d3d}{Parameters\-Type} \hyperlink{class_gradient_descent_a552169cc01e9c6222da57190797aa32f}{gradient\-\_\-}
+\begin{DoxyCompactList}\small\item\em Coefficient gradient. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Value\-Type, typename Layer\-Type$>$class Gradient\-Descent$<$ Value\-Type, Layer\-Type $>$}
+
+\begin{DoxyAuthor}{Author}
+Brian Cairl 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2017 
+\end{DoxyDate}
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{class_gradient_descent_ac722ab757e64bce7c56067de83cb02db}{\index{Gradient\-Descent@{Gradient\-Descent}!Input\-Block\-Type@{Input\-Block\-Type}}
+\index{Input\-Block\-Type@{Input\-Block\-Type}!GradientDescent@{Gradient\-Descent}}
+\subsubsection[{Input\-Block\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Layer\-Type $>$ typedef Layer\-Type\-::\-Input\-Block\-Type {\bf Gradient\-Descent}$<$ Value\-Type, Layer\-Type $>$\-::{\bf Input\-Block\-Type}}}\label{class_gradient_descent_ac722ab757e64bce7c56067de83cb02db}
+
+
+Matrix type standardization. 
+
+\hypertarget{class_gradient_descent_a4fad1eabbf046df49564b647df175d3d}{\index{Gradient\-Descent@{Gradient\-Descent}!Parameters\-Type@{Parameters\-Type}}
+\index{Parameters\-Type@{Parameters\-Type}!GradientDescent@{Gradient\-Descent}}
+\subsubsection[{Parameters\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Layer\-Type $>$ typedef Layer\-Type\-::\-Parameters\-Type {\bf Gradient\-Descent}$<$ Value\-Type, Layer\-Type $>$\-::{\bf Parameters\-Type}}}\label{class_gradient_descent_a4fad1eabbf046df49564b647df175d3d}
+
+
+Matrix type standardization. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_gradient_descent_a2493f9a96fb8eb22aa6eac2fe2af1948}{\index{Gradient\-Descent@{Gradient\-Descent}!Gradient\-Descent@{Gradient\-Descent}}
+\index{Gradient\-Descent@{Gradient\-Descent}!GradientDescent@{Gradient\-Descent}}
+\subsubsection[{Gradient\-Descent}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Layer\-Type $>$ {\bf Gradient\-Descent}$<$ Value\-Type, Layer\-Type $>$\-::{\bf Gradient\-Descent} (
+\begin{DoxyParamCaption}
+\item[{Value\-Type}]{lr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{class_gradient_descent_a2493f9a96fb8eb22aa6eac2fe2af1948}
+
+
+Setup constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lr} & Learning rate \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_gradient_descent_ae86436201e4c6e041837c815de3eb4d4}{\index{Gradient\-Descent@{Gradient\-Descent}!$\sim$\-Gradient\-Descent@{$\sim$\-Gradient\-Descent}}
+\index{$\sim$\-Gradient\-Descent@{$\sim$\-Gradient\-Descent}!GradientDescent@{Gradient\-Descent}}
+\subsubsection[{$\sim$\-Gradient\-Descent}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Layer\-Type $>$ virtual {\bf Gradient\-Descent}$<$ Value\-Type, Layer\-Type $>$\-::$\sim${\bf Gradient\-Descent} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_gradient_descent_ae86436201e4c6e041837c815de3eb4d4}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_gradient_descent_ad9096611d288da2427dbce4261eeca99}{\index{Gradient\-Descent@{Gradient\-Descent}!backward@{backward}}
+\index{backward@{backward}!GradientDescent@{Gradient\-Descent}}
+\subsubsection[{backward}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Layer\-Type $>$ bool {\bf Gradient\-Descent}$<$ Value\-Type, Layer\-Type $>$\-::backward (
+\begin{DoxyParamCaption}
+\item[{Layer\-Type \&}]{layer}
+\end{DoxyParamCaption}
+)}}\label{class_gradient_descent_ad9096611d288da2427dbce4261eeca99}
+
+
+Computes optimization step during backward propogation. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em layer} & Layer to optimize \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & if optimization setup was successful \\
+\hline
+{\em false} & otherwise \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{class_gradient_descent_add831bddf60b4ee8ee68b964ccb8b6bb}{\index{Gradient\-Descent@{Gradient\-Descent}!forward@{forward}}
+\index{forward@{forward}!GradientDescent@{Gradient\-Descent}}
+\subsubsection[{forward}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Layer\-Type $>$ bool {\bf Gradient\-Descent}$<$ Value\-Type, Layer\-Type $>$\-::forward (
+\begin{DoxyParamCaption}
+\item[{Layer\-Type \&}]{layer}
+\end{DoxyParamCaption}
+)}}\label{class_gradient_descent_add831bddf60b4ee8ee68b964ccb8b6bb}
+
+
+Computes one forward optimization update step. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em layer} & Layer to optimize \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & if optimization setup was successful \\
+\hline
+{\em false} & otherwise \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{class_gradient_descent_a1915d0839e2605a95214a8df3fc81109}{\index{Gradient\-Descent@{Gradient\-Descent}!initialize@{initialize}}
+\index{initialize@{initialize}!GradientDescent@{Gradient\-Descent}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Layer\-Type $>$ void {\bf Gradient\-Descent}$<$ Value\-Type, Layer\-Type $>$\-::initialize (
+\begin{DoxyParamCaption}
+\item[{Layer\-Type \&}]{layer}
+\end{DoxyParamCaption}
+)}}\label{class_gradient_descent_a1915d0839e2605a95214a8df3fc81109}
+
+
+Initializes the Optimizer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em layer} & Layer to optimize \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_gradient_descent_aa6b1c9d30473fdf4dc2616665e6d1952}{\index{Gradient\-Descent@{Gradient\-Descent}!reset@{reset}}
+\index{reset@{reset}!GradientDescent@{Gradient\-Descent}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Layer\-Type $>$ void {\bf Gradient\-Descent}$<$ Value\-Type, Layer\-Type $>$\-::reset (
+\begin{DoxyParamCaption}
+\item[{Layer\-Type \&}]{layer}
+\end{DoxyParamCaption}
+)}}\label{class_gradient_descent_aa6b1c9d30473fdf4dc2616665e6d1952}
+
+
+Resets persistent Optimizer states. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em layer} & Layer to optimize \\
+\hline
+\end{DoxyParams}
+
+
+Referenced by Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$\-::initialize(), and Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$\-::update().
+
+\hypertarget{class_gradient_descent_ac66c2ab70fd324b1b09c0593bb0132af}{\index{Gradient\-Descent@{Gradient\-Descent}!update@{update}}
+\index{update@{update}!GradientDescent@{Gradient\-Descent}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Layer\-Type $>$ bool {\bf Gradient\-Descent}$<$ Value\-Type, Layer\-Type $>$\-::update (
+\begin{DoxyParamCaption}
+\item[{Layer\-Type \&}]{layer}
+\end{DoxyParamCaption}
+)}}\label{class_gradient_descent_ac66c2ab70fd324b1b09c0593bb0132af}
+
+
+Applies optimization update. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em layer} & Layer to optimize \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & if optimization update was applied successfully \\
+\hline
+{\em false} & otherwise \\
+\hline
+\end{DoxyRetVals}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_gradient_descent_a552169cc01e9c6222da57190797aa32f}{\index{Gradient\-Descent@{Gradient\-Descent}!gradient\-\_\-@{gradient\-\_\-}}
+\index{gradient\-\_\-@{gradient\-\_\-}!GradientDescent@{Gradient\-Descent}}
+\subsubsection[{gradient\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Layer\-Type $>$ {\bf Parameters\-Type} {\bf Gradient\-Descent}$<$ Value\-Type, Layer\-Type $>$\-::gradient\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_gradient_descent_a552169cc01e9c6222da57190797aa32f}
+
+
+Coefficient gradient. 
+
+
+
+Referenced by Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$\-::backward(), Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$\-::initialize(), Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$\-::reset(), and Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$\-::update().
+
+\hypertarget{class_gradient_descent_ad30dfe9d565d302f7fedde8f8091ac75}{\index{Gradient\-Descent@{Gradient\-Descent}!lr\-\_\-@{lr\-\_\-}}
+\index{lr\-\_\-@{lr\-\_\-}!GradientDescent@{Gradient\-Descent}}
+\subsubsection[{lr\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Layer\-Type $>$ Value\-Type {\bf Gradient\-Descent}$<$ Value\-Type, Layer\-Type $>$\-::lr\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_gradient_descent_ad30dfe9d565d302f7fedde8f8091ac75}
+
+
+Learning rate. 
+
+
+
+Referenced by Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$\-::update().
+
+\hypertarget{class_gradient_descent_aaf7ea2e806c9f55fb8644667583f27ff}{\index{Gradient\-Descent@{Gradient\-Descent}!prev\-\_\-input\-\_\-@{prev\-\_\-input\-\_\-}}
+\index{prev\-\_\-input\-\_\-@{prev\-\_\-input\-\_\-}!GradientDescent@{Gradient\-Descent}}
+\subsubsection[{prev\-\_\-input\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Layer\-Type $>$ {\bf Input\-Block\-Type} {\bf Gradient\-Descent}$<$ Value\-Type, Layer\-Type $>$\-::prev\-\_\-input\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_gradient_descent_aaf7ea2e806c9f55fb8644667583f27ff}
+
+
+Previous input. 
+
+
+
+Referenced by Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$\-::backward(), Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$\-::forward(), and Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$\-::initialize().
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/optimizer/\hyperlink{gradient__descent_8h}{gradient\-\_\-descent.\-h}\end{DoxyCompactItemize}

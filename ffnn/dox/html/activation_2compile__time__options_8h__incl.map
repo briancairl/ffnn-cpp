@@ -1,0 +1,16 @@
+<map id="/home/briancairl/packages/src/ffnn&#45;cpp/ffnn/include/ffnn/layer/activation/compile_time_options.h" name="/home/briancairl/packages/src/ffnn&#45;cpp/ffnn/include/ffnn/layer/activation/compile_time_options.h">
+<area shape="rect" id="node5" href="$assert_8h.html" title="ffnn/assert.h" alt="" coords="1106,464,1200,491"/>
+<area shape="rect" id="node7" href="$config_8h.html" title="ffnn/internal/config.h" alt="" coords="890,547,1029,573"/>
+<area shape="rect" id="node20" href="$traits_8h.html" title="ffnn/internal/traits.h" alt="" coords="2646,208,2780,235"/>
+<area shape="rect" id="node21" href="$hidden_8h.html" title="ffnn/layer/hidden/hidden.h" alt="" coords="1311,125,1481,152"/>
+<area shape="rect" id="node36" href="$hidden_2compile__time__options_8h.html" title="ffnn/layer/hidden/compile\l_time_options.h" alt="" coords="1327,201,1493,242"/>
+<area shape="rect" id="node9" href="$logging_8h.html" title="ffnn/logging.h" alt="" coords="1443,629,1543,656"/>
+<area shape="rect" id="node16" href="$sparse__triplet__serialization_8h.html" title="ffnn/internal/eigen\l/sparse_triplet_serialization.h" alt="" coords="783,622,973,663"/>
+<area shape="rect" id="node22" href="$serializable_8h.html" title="ffnn/internal/serializable.h" alt="" coords="2353,464,2524,491"/>
+<area shape="rect" id="node23" href="$layer_8h.html" title="ffnn/layer/layer.h" alt="" coords="1566,291,1684,317"/>
+<area shape="rect" id="node37" href="$hidden_8hpp.html" title="ffnn/impl/layer/hidden\l/hidden.hpp" alt="" coords="1105,366,1252,407"/>
+<area shape="rect" id="node25" href="$unique_8h.html" title="ffnn/internal/unique.h" alt="" coords="1759,373,1901,400"/>
+<area shape="rect" id="node33" href="$shape_8h.html" title="ffnn/layer/shape.h" alt="" coords="1394,373,1520,400"/>
+<area shape="rect" id="node34" href="$layer_8hpp.html" title="ffnn/impl/layer/layer.hpp" alt="" coords="1545,373,1705,400"/>
+<area shape="rect" id="node30" href="$signature_8h.html" title="ffnn/internal/signature.h" alt="" coords="1327,464,1485,491"/>
+</map>

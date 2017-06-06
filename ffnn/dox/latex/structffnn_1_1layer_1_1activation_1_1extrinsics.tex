@@ -1,0 +1,65 @@
+\hypertarget{structffnn_1_1layer_1_1activation_1_1extrinsics}{\section{ffnn\-:\-:layer\-:\-:activation\-:\-:extrinsics$<$ Value\-Type, Neuron\-Type, Options $>$ Struct Template Reference}
+\label{structffnn_1_1layer_1_1activation_1_1extrinsics}\index{ffnn\-::layer\-::activation\-::extrinsics$<$ Value\-Type, Neuron\-Type, Options $>$@{ffnn\-::layer\-::activation\-::extrinsics$<$ Value\-Type, Neuron\-Type, Options $>$}}
+}
+
+
+Describes types based on compile-\/time options.  
+
+
+
+
+{\ttfamily \#include \char`\"{}compile\-\_\-time\-\_\-options.\-h\char`\"{}}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\-::conditional\\*
+$<$ Options\-::has\-\_\-fixed\-\_\-sizes, \\*
+std\-::array$<$ Neuron\-Type, \\*
+Options\-::input\-\_\-size $>$\\*
+, std\-::vector$<$ Neuron\-Type $>$\\*
+ $>$\-::type \hyperlink{structffnn_1_1layer_1_1activation_1_1extrinsics_a3bd0eb92b3368bfef1fead81906baa89}{Neuron\-Block\-Type}
+\begin{DoxyCompactList}\small\item\em Nueron block type standardization. \end{DoxyCompactList}\item 
+typedef \hyperlink{structffnn_1_1layer_1_1hidden_1_1options}{hidden\-::options}\\*
+$<$ Options\-::input\-\_\-size, \\*
+1, Options\-::output\-\_\-size, \\*
+1, Eigen\-::\-Col\-Major, \\*
+Eigen\-::\-Col\-Major $>$ \hyperlink{structffnn_1_1layer_1_1activation_1_1extrinsics_a879a4e29c3e7ff05ccc1d8a967230bb5}{Hidden\-Layer\-Options}
+\begin{DoxyCompactList}\small\item\em Compile-\/time \hyperlink{classffnn_1_1layer_1_1_hidden}{Hidden} layer traits. \end{DoxyCompactList}\item 
+typedef \hyperlink{classffnn_1_1layer_1_1_hidden}{Hidden}$<$ Value\-Type, \\*
+\hyperlink{structffnn_1_1layer_1_1activation_1_1extrinsics_a879a4e29c3e7ff05ccc1d8a967230bb5}{Hidden\-Layer\-Options} $>$ \hyperlink{structffnn_1_1layer_1_1activation_1_1extrinsics_abdfd375dd1e57312be2298b48ab00851}{Hidden\-Layer\-Type}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classffnn_1_1layer_1_1_hidden}{Hidden} layer (base type) standardization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Value\-Type, typename Neuron\-Type, typename Options$>$struct ffnn\-::layer\-::activation\-::extrinsics$<$ Value\-Type, Neuron\-Type, Options $>$}
+
+Describes types based on compile-\/time options. 
+
+\subsection{Member Typedef Documentation}
+\hypertarget{structffnn_1_1layer_1_1activation_1_1extrinsics_a879a4e29c3e7ff05ccc1d8a967230bb5}{\index{ffnn\-::layer\-::activation\-::extrinsics@{ffnn\-::layer\-::activation\-::extrinsics}!Hidden\-Layer\-Options@{Hidden\-Layer\-Options}}
+\index{Hidden\-Layer\-Options@{Hidden\-Layer\-Options}!ffnn::layer::activation::extrinsics@{ffnn\-::layer\-::activation\-::extrinsics}}
+\subsubsection[{Hidden\-Layer\-Options}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Neuron\-Type , typename Options $>$ typedef {\bf hidden\-::options}$<$ Options\-::input\-\_\-size, 1, Options\-::output\-\_\-size, 1, Eigen\-::\-Col\-Major, Eigen\-::\-Col\-Major $>$ {\bf ffnn\-::layer\-::activation\-::extrinsics}$<$ Value\-Type, Neuron\-Type, Options $>$\-::{\bf Hidden\-Layer\-Options}}}\label{structffnn_1_1layer_1_1activation_1_1extrinsics_a879a4e29c3e7ff05ccc1d8a967230bb5}
+
+
+Compile-\/time \hyperlink{classffnn_1_1layer_1_1_hidden}{Hidden} layer traits. 
+
+\hypertarget{structffnn_1_1layer_1_1activation_1_1extrinsics_abdfd375dd1e57312be2298b48ab00851}{\index{ffnn\-::layer\-::activation\-::extrinsics@{ffnn\-::layer\-::activation\-::extrinsics}!Hidden\-Layer\-Type@{Hidden\-Layer\-Type}}
+\index{Hidden\-Layer\-Type@{Hidden\-Layer\-Type}!ffnn::layer::activation::extrinsics@{ffnn\-::layer\-::activation\-::extrinsics}}
+\subsubsection[{Hidden\-Layer\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Neuron\-Type , typename Options $>$ typedef {\bf Hidden}$<$Value\-Type, {\bf Hidden\-Layer\-Options}$>$ {\bf ffnn\-::layer\-::activation\-::extrinsics}$<$ Value\-Type, Neuron\-Type, Options $>$\-::{\bf Hidden\-Layer\-Type}}}\label{structffnn_1_1layer_1_1activation_1_1extrinsics_abdfd375dd1e57312be2298b48ab00851}
+
+
+\hyperlink{classffnn_1_1layer_1_1_hidden}{Hidden} layer (base type) standardization. 
+
+\hypertarget{structffnn_1_1layer_1_1activation_1_1extrinsics_a3bd0eb92b3368bfef1fead81906baa89}{\index{ffnn\-::layer\-::activation\-::extrinsics@{ffnn\-::layer\-::activation\-::extrinsics}!Neuron\-Block\-Type@{Neuron\-Block\-Type}}
+\index{Neuron\-Block\-Type@{Neuron\-Block\-Type}!ffnn::layer::activation::extrinsics@{ffnn\-::layer\-::activation\-::extrinsics}}
+\subsubsection[{Neuron\-Block\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Neuron\-Type , typename Options $>$ typedef std\-::conditional$<$ Options\-::has\-\_\-fixed\-\_\-sizes, std\-::array$<$Neuron\-Type, Options\-::input\-\_\-size$>$, std\-::vector$<$Neuron\-Type$>$ $>$\-::type {\bf ffnn\-::layer\-::activation\-::extrinsics}$<$ Value\-Type, Neuron\-Type, Options $>$\-::{\bf Neuron\-Block\-Type}}}\label{structffnn_1_1layer_1_1activation_1_1extrinsics_a3bd0eb92b3368bfef1fead81906baa89}
+
+
+Nueron block type standardization. 
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/activation/\hyperlink{activation_2compile__time__options_8h}{compile\-\_\-time\-\_\-options.\-h}\end{DoxyCompactItemize}

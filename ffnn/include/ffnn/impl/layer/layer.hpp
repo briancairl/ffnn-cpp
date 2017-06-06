@@ -52,7 +52,9 @@ bool connect(const typename LayerType::Ptr& from, const typename LayerType::Ptr&
 template<typename ValueType>
 Layer<ValueType>::Layer(const ShapeType& input_shape, const ShapeType& output_shape) :
   input_shape_(input_shape),
-  output_shape_(output_shape)
+  output_shape_(output_shape),
+  initialized_(false),
+  setup_required_(true)
 {
   FFNN_INTERNAL_DEBUG_NAMED("layer::Layer",
                             "[" << input_shape_ << " | " << output_shape_ << "]");
@@ -86,7 +88,7 @@ bool Layer<ValueType>::initialize()
 
   // Set initialization flag
   initialized_ = true;
-  return isInitialized();
+  return initialized_;
 }
 
 template<typename ValueType>

@@ -61,7 +61,8 @@ public:
   inline Configuration& setOptimizer(const typename OptimizerType::Ptr& optimizer)
   {
     FFNN_ASSERT_MSG(optimizer, "Optimizer resource is invalid.");
-
+    FFNN_INTERNAL_DEBUG_NAMED("layer::FullyConnected::Configuration",
+                              "Set option: [" << optimizer->name() << "] optimizer.");
     optimizer_ = optimizer;
     return *this;
   }
@@ -74,7 +75,8 @@ public:
   inline Configuration& setParameterDistribution(const typename DistributionType::Ptr& distribution)
   {
     FFNN_ASSERT_MSG(distribution, "Distribution resource is invalid.");
-
+    FFNN_INTERNAL_DEBUG_NAMED("layer::FullyConnected::Configuration",
+                              "Set parameter initialization distribution.");
     distribution_ = distribution;
     return *this;
   }
@@ -93,6 +95,8 @@ public:
     FFNN_ASSERT_MSG(depth > 0,  "Input depth must be positive.");
 
     input_size_ = ShapeType(height, width, depth).size();
+    FFNN_INTERNAL_DEBUG_NAMED("layer::FullyConnected::Configuration",
+                              "Set option: [" << input_size_ << "] as total input count.");
     return *this;
   }
 
@@ -110,6 +114,8 @@ public:
     FFNN_ASSERT_MSG(depth > 0,  "Output depth must be positive.");
 
     output_size_ = ShapeType(height, width, depth).size();
+    FFNN_INTERNAL_DEBUG_NAMED("layer::FullyConnected::Configuration",
+                              "Set option: [" << output_size_ << "] as total output count.");
     return *this;
   }
 

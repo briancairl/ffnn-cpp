@@ -16,7 +16,8 @@ template<typename ValueType,
          typename Options,
          typename Extrinsics>
 Output<ValueType, Options, Extrinsics>::Output(const Configuration& config) :
-  BaseType(ShapeType(config.output_size_), ShapeType())
+  BaseType(ShapeType(config.output_size_), ShapeType()),
+  config_(config)
 {
   FFNN_INTERNAL_DEBUG_NAMED("layer::Layer",
                             "Network output size: " << config.output_size_);

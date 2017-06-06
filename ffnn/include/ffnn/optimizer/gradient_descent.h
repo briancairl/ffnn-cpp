@@ -11,12 +11,22 @@
 #include <ffnn/optimizer/optimizer.h>
 #include <ffnn/optimizer/fwd.h>
 
-template<typename ValueType,
-         typename LayerType>
+namespace ffnn
+{
+namespace optimizer
+{
+template<typename LayerType,
+         LossFunction LossFn = L2>
 class GradientDescent :
   public Optimizer<LayerType>
 {
 public:
+  /// Base type standardization
+  typedef Optimizer<LayerType> BaseType;
+
+  /// Scalar type standardization
+  typedef typename BaseType::Scalar Scalar;
+
   /// Matrix type standardization
   typedef typename LayerType::InputBlockType InputBlockType;
 
@@ -28,24 +38,24 @@ public:
    * @param lr  Learning rate
    */
   explicit
-  GradientDescent(ValueType lr);
+  GradientDescent(Scalar lr);
   virtual ~GradientDescent() {}
 
   /**
    * @brief Initializes the Optimizer
-   * @param[in, out] layer  Layer to optimize
+   * @param[in,out] layer  Layer to optimize
    */
   void initialize(LayerType& layer);
 
   /**
    * @brief Resets persistent Optimizer states
-   * @param[in, out] layer  Layer to optimize
+   * @param[in,out] layer  Layer to optimize
    */
   void reset(LayerType& layer);
 
   /**
    * @brief Computes one forward optimization update step
-   * @param[in, out] layer  Layer to optimize
+   * @param[in,out] layer  Layer to optimize
    * @retval true  if optimization setup was successful
    * @retval false  otherwise
    */
@@ -53,7 +63,7 @@ public:
 
   /**
    * @brief Computes optimization step during backward propogation
-   * @param[in, out] layer  Layer to optimize
+   * @param[in,out] layer  Layer to optimize
    * @retval true  if optimization setup was successful
    * @retval false  otherwise
    */
@@ -61,7 +71,7 @@ public:
 
   /**
    * @brief Applies optimization update
-   * @param[in, out] layer  Layer to optimize
+   * @param[in,out] layer  Layer to optimize
    * @retval true  if optimization update was applied successfully
    * @retval false  otherwise
    */
@@ -69,7 +79,7 @@ public:
 
 protected:
   /// Learning rate
-  ValueType lr_;
+  Scalar lr_;
 
   /// Previous input
   InputBlockType prev_input_;
@@ -80,8 +90,10 @@ protected:
 }  // namespace optimizer
 }  // namespace ffnn
 
-/// FFNN (specializations)
-#include <ffnn/optimizer/impl/gradient_descent/convolution.hpp>
-#include <ffnn/optimizer/impl/gradient_descent/fully_connected.hpp>
+/// FFNN (implementation)
+#include <ffnn/impl/optimizer/gradient_descent/gradient_descent.hpp>
 
+/// FFNN (specializations)
+//#include <ffnn/impl/optimizer/gradient_descent/convolution.hpp>
+#include <ffnn/impl/optimizer/gradient_descent/fully_connected.hpp>
 #endif  // FFNN_LAYER_OPTIMIZATION_GRADIENT_DESCENT_H

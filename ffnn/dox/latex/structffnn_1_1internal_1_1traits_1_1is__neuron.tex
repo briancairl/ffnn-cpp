@@ -1,0 +1,51 @@
+\hypertarget{structffnn_1_1internal_1_1traits_1_1is__neuron}{\section{ffnn\-:\-:internal\-:\-:traits\-:\-:is\-\_\-neuron$<$ Object $>$ Struct Template Reference}
+\label{structffnn_1_1internal_1_1traits_1_1is__neuron}\index{ffnn\-::internal\-::traits\-::is\-\_\-neuron$<$ Object $>$@{ffnn\-::internal\-::traits\-::is\-\_\-neuron$<$ Object $>$}}
+}
+
+
+Checks if a type fufills the requirements of the Neuron concept.  
+
+
+
+
+{\ttfamily \#include \char`\"{}traits.\-h\char`\"{}}
+
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr bool \hyperlink{structffnn_1_1internal_1_1traits_1_1is__neuron_a672d6bd8da5e49790bfa7ce7f6bf795e}{value}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Object$>$struct ffnn\-::internal\-::traits\-::is\-\_\-neuron$<$ Object $>$}
+
+Checks if a type fufills the requirements of the Neuron concept. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Object} & object to check \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structffnn_1_1internal_1_1traits_1_1is__neuron_a672d6bd8da5e49790bfa7ce7f6bf795e}{\index{ffnn\-::internal\-::traits\-::is\-\_\-neuron@{ffnn\-::internal\-::traits\-::is\-\_\-neuron}!value@{value}}
+\index{value@{value}!ffnn::internal::traits::is_neuron@{ffnn\-::internal\-::traits\-::is\-\_\-neuron}}
+\subsubsection[{value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Object $>$ constexpr bool {\bf ffnn\-::internal\-::traits\-::is\-\_\-neuron}$<$ Object $>$\-::value\hspace{0.3cm}{\ttfamily [static]}}}\label{structffnn_1_1internal_1_1traits_1_1is__neuron_a672d6bd8da5e49790bfa7ce7f6bf795e}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+=
+    std::integral\_constant<
+      bool,
+      std::is\_same<decltype(test\_operator<Object>(0, tv\_, tv\_)), std::true\_type>
+      \hyperlink{structffnn_1_1internal_1_1traits_1_1is__neuron_a672d6bd8da5e49790bfa7ce7f6bf795e}{::value} &&
+      std::is\_same<decltype(test\_derivative<Object>(0, tv\_, tv\_)), std::true\_type>
+      \hyperlink{structffnn_1_1internal_1_1traits_1_1is__neuron_a672d6bd8da5e49790bfa7ce7f6bf795e}{::value}
+    >\hyperlink{structffnn_1_1internal_1_1traits_1_1is__neuron_a672d6bd8da5e49790bfa7ce7f6bf795e}{::value}
+\end{DoxyCode}
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/internal/\hyperlink{traits_8h}{traits.\-h}\end{DoxyCompactItemize}

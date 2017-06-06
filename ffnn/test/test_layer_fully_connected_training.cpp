@@ -22,41 +22,30 @@
 #include <ffnn/layer/input.h>
 #include <ffnn/layer/fully_connected.h>
 #include <ffnn/layer/output.h>
-#include <ffnn/neuron/lecun_sigmoid.h>
 #include <ffnn/optimizer/gradient_descent.h>
-#include <ffnn/distribution/normal.h>
 
-/***********************************************************/
-// Creates network workflow with one FullyConnected hidden
-// layer and updates using a GradientDescent optimizer
-//
-// Tests:
-//    - layer::Input
-//    - layer::Output
-//    - layer::FullyConnected
-//    - optimizer::GradientDescent
-/***********************************************************/
-TEST(TestLayerFullyConnectedWithOptimizers, GradientDescent)
+TEST(TestLayerFullyConnectedTraining, Dynamic_GradientDescent)
 {
+  using namespace ffnn::layer;
+
   // Layer-type alias
-  using Layer  = ffnn::layer::Layer<float>;
-  using Input  = ffnn::layer::Input<float>;
-  using Hidden = ffnn::layer::FullyConnected<float>;
-  using Output = ffnn::layer::Output<float>;
+  using Layer  = Layer<float>;
+  using Input  = Input<float>;
+  using Hidden = FullyConnected<float>;
+  using Output = Output<float>;
+
+  // Optimizer alias
+  using Optimizer = ffnn::optimizer::GradientDescent<Hidden>;
 
   // Layer sizes
-  static const Layer::SizeType DIM = 32;
+  static const ffnn::size_type DIM = 32;
 
   // Create layers
-  auto input = boost::make_shared<Input>(DIM);
-  auto hidden = boost::make_shared<Hidden>(DIM);
+  auto input  = boost::make_shared<Input>(DIM);
+  auto hidden = boost::make_shared<Hidden>(Hidden::Configuration()
+                                           .setOutputShape(DIM)
+                                           .setOptimizer(boost::make_shared<Optimizer>(1e-3)));
   auto output = boost::make_shared<Output>();
-
-  // Set optimizer (gradient descent)
-  {
-    using Optimizer = ffnn::optimizer::GradientDescent<Hidden>;
-    hidden->setOptimizer(boost::make_shared<Optimizer>(1e-3));
-  }
 
   // Create network
   std::vector<Layer::Ptr> layers({input, hidden, output});
@@ -64,13 +53,12 @@ TEST(TestLayerFullyConnectedWithOptimizers, GradientDescent)
   // Connect layers
   for (size_t idx = 1UL; idx < layers.size(); idx++)
   {
-    EXPECT_TRUE(ffnn::layer::connect<Layer>(layers[idx-1UL], layers[idx]));
+    EXPECT_TRUE(connect<Layer>(layers[idx-1UL], layers[idx]));
   }
 
   // Intializer layers
   input->initialize();
-  hidden->initialize(ffnn::distribution::Normal<float>(0, 1.0 / (DIM*DIM)),
-                     ffnn::distribution::Normal<float>(0, 1.0 / (DIM*DIM)));
+  hidden->initialize();
   output->initialize();
 
   // Initialize and check all layers and 
@@ -84,8 +72,7 @@ TEST(TestLayerFullyConnectedWithOptimizers, GradientDescent)
   Hidden::InputBlockType output_data(DIM, 1);
 
   // Check that error montonically decreases
-  float prev_error = std::numeric_limits<float>::infinity();
-  for (size_t idx = 0UL; idx < 100; idx++)
+  for (size_t idx = 0UL; idx < 1000; idx++)
   {
     // Forward activate
     (*input) << target_data;
@@ -94,10 +81,6 @@ TEST(TestLayerFullyConnectedWithOptimizers, GradientDescent)
       EXPECT_TRUE(layer->forward());
     }
     (*output) >> output_data;
-
-    // Compute error and check
-    double error = (target_data - output_data).norm();
-    EXPECT_LT(error, prev_error);
 
     // Set target
     (*output) << target_data;
@@ -113,61 +96,46 @@ TEST(TestLayerFullyConnectedWithOptimizers, GradientDescent)
     {
       EXPECT_TRUE(layer->update());
     }
-
-    // Store previous error
-    prev_error = error;
   }
+  EXPECT_NEAR((target_data - output_data).norm(), 0.0, 1e-4);
 }
 
-/***********************************************************/
-// Creates network workflow with one FullyConnected hidden
-// layer and updates using a GradientDescent optimizer
-//
-// Tests:
-//    - layer::Input
-//    - layer::Output
-//    - layer::FullyConnected
-//    - layer::Activation
-//    - optimizer::GradientDescent
-/***********************************************************/
-TEST(TestLayerFullyConnectedActivationWithOptimizers, GradientDescent)
+
+TEST(TestLayerFullyConnectedTraining, Static_GradientDescent)
 {
+  using namespace ffnn::layer;
+
   // Layer-type alias
-  using Layer  = ffnn::layer::Layer<float>;
-  using Input  = ffnn::layer::Input<float>;
-  using Hidden = ffnn::layer::FullyConnected<float>;
-  using Activation = ffnn::layer::Activation<float, ffnn::neuron::LeCunSigmoid<float>>;
-  using Output = ffnn::layer::Output<float>;
+  using Layer  = Layer<float>;
+  using Input  = Input<float, input::options<32>>;
+  using Hidden = FullyConnected<float, fully_connected::options<32, 32>>;
+  using Output = Output<float, output::options<32>>;
+
+  // Optimizer alias
+  using Optimizer = ffnn::optimizer::GradientDescent<Hidden>;
 
   // Layer sizes
-  static const Layer::SizeType DIM = 32;
+  static const ffnn::size_type DIM = 32;
 
   // Create layers
-  auto input = boost::make_shared<Input>(Layer::ShapeType(DIM));  
-  auto hidden1 = boost::make_shared<Hidden>(Layer::ShapeType(DIM));
-  auto hidden2 = boost::make_shared<Activation>();
-  auto output = boost::make_shared<Output>();  
-
-  // Set optimizer (gradient descent)
-  {
-    using Optimizer = ffnn::optimizer::GradientDescent<Hidden>;
-    hidden1->setOptimizer(boost::make_shared<Optimizer>(1e-3));
-  }
+  auto input  = boost::make_shared<Input>(DIM);
+  auto hidden = boost::make_shared<Hidden>(Hidden::Configuration()
+                                           .setOutputShape(DIM)
+                                           .setOptimizer(boost::make_shared<Optimizer>(1e-3)));
+  auto output = boost::make_shared<Output>();
 
   // Create network
-  std::vector<Layer::Ptr> layers({input, hidden1, hidden2, output});
+  std::vector<Layer::Ptr> layers({input, hidden, output});
 
   // Connect layers
   for (size_t idx = 1UL; idx < layers.size(); idx++)
   {
-    EXPECT_TRUE(ffnn::layer::connect<Layer>(layers[idx-1UL], layers[idx]));
+    EXPECT_TRUE(connect<Layer>(layers[idx-1UL], layers[idx]));
   }
 
   // Intializer layers
   input->initialize();
-  hidden1->initialize(ffnn::distribution::Normal<float>(0, 1.0 / (DIM*DIM)),
-                      ffnn::distribution::Normal<float>(0, 1.0 / (DIM*DIM)));
-  hidden2->initialize();
+  hidden->initialize();
   output->initialize();
 
   // Initialize and check all layers and 
@@ -181,8 +149,7 @@ TEST(TestLayerFullyConnectedActivationWithOptimizers, GradientDescent)
   Hidden::InputBlockType output_data(DIM, 1);
 
   // Check that error montonically decreases
-  float prev_error = std::numeric_limits<float>::infinity();
-  for (size_t idx = 0UL; idx < 100; idx++)
+  for (size_t idx = 0UL; idx < 1000; idx++)
   {
     // Forward activate
     (*input) << target_data;
@@ -191,10 +158,6 @@ TEST(TestLayerFullyConnectedActivationWithOptimizers, GradientDescent)
       EXPECT_TRUE(layer->forward());
     }
     (*output) >> output_data;
-
-    // Compute error and check
-    double error = (target_data - output_data).norm();
-    EXPECT_LE(error, prev_error);
 
     // Set target
     (*output) << target_data;
@@ -210,10 +173,8 @@ TEST(TestLayerFullyConnectedActivationWithOptimizers, GradientDescent)
     {
       EXPECT_TRUE(layer->update());
     }
-
-    // Store previous error
-    prev_error = error;
   }
+  EXPECT_NEAR((target_data - output_data).norm(), 0.0, 1e-4);
 }
 
 // Run tests

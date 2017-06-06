@@ -129,18 +129,6 @@ target_link_libraries(test_layer_fully_connected_io
 # Training
 #-------------------------------------------------------------
 
-##############################################################
-# Tests:
-#    - layer::Input
-#    - layer::Output
-#    - layer::FullyConnected
-#    - layer::Activation
-#    - neuron::modifier::Dropout
-#    - neuron::Linear
-#  	 - optimizer::GradientDescent[FullyConnected]
-#  	 - optimizer::GradientDescent[Activation]
-##############################################################
-
 catkin_add_gtest(test_layer_activation_dropout_training
   test_layer_activation_dropout_training.cpp
 )

@@ -50,7 +50,7 @@ public:
  * @brief Imbues an object with objects/types for serialization
  * @warning Must be placed in the <code>protected</code> portion of a class definition
  */
-#define FFNN_REGISTER_SERIALIZABLE(object)\
+#define FFNN_REGISTER_SERIALIZABLE(Object)\
   typedef std::true_type IsSerializable;\
   typedef ::ffnn::internal::Serializable::VersionType VersionType;\
   typedef ::ffnn::internal::Serializable::InputArchive InputArchive;\
