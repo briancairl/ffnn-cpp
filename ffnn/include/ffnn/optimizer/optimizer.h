@@ -69,7 +69,7 @@ public:
   virtual bool forward(LayerType& layer) = 0;
 
   /**
-   * @brief Computes one optimizer update step
+   * @brief Computes one gradient update step
    * @param[in, out] layer  Layer to optimize
    * @retval true  if optimizer setp was successful
    * @retval false  otherwise
@@ -77,7 +77,7 @@ public:
   virtual bool backward(LayerType& layer) = 0;
 
   /**
-   * @brief Applies optimizer update
+   * @brief Applies accumulated gradient update
    * @param[in, out] layer  Layer to optimize
    * @retval true  if optimizer update was applied successfully
    * @retval false  otherwise

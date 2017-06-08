@@ -37,6 +37,12 @@ public:
   // Use BaseType constructors
   using BaseType::BaseType;
 
+  /**
+   * @brief Computes one gradient update step
+   * @param[in, out] layer  Layer to optimize
+   * @retval true  if optimizer setp was successful
+   * @retval false  otherwise
+   */
   bool backward(LayerType& layer)
   {
     FFNN_ASSERT_MSG(layer.isInitialized(), "Layer to optimize is not initialized.");
@@ -51,16 +57,19 @@ public:
     {
       for (offset_type jdx = 0, wdx = 0; jdx < _os.width; jdx++, wdx += _ss.width)
       {
-        for (offset_type kdx = 0; kdx < static_cast<offset_type>(this->gradient_.size()); kdx++)
+        for (offset_type kdx = 0; kdx < static_cast<offset_type>(BaseType::gradient_.size()); kdx++)
         {
           // Remap indices
           offset_type u_idx, u_jdx;
           remap<Options::embedding_mode>(_os, idx, jdx, kdx, u_idx, u_jdx);
 
-          // Accumulate gradient updates
-          this->gradient_[kdx] += this->prev_input_.block(hdx, wdx, _is.height, _is.width) *
-                                  layer.forward_error_(u_idx, u_jdx);
-          this->gradient_.bias += layer.forward_error_(u_idx, u_jdx);
+          // Accumulate kernel gradient updates
+          BaseType::gradient_[kdx] +=
+            BaseType::prev_input_.block(hdx, wdx, _is.height, _is.width) *
+            layer.forward_error_(u_idx, u_jdx);
+
+          // Accumulate bias gradient updates
+          BaseType::gradient_.bias += layer.forward_error_(u_idx, u_jdx);
         }
       }
     }
@@ -70,6 +79,7 @@ public:
   }
 
 private:
+  /// Helper to remap filter/input indices
   template<EmbeddingMode T>
   typename std::enable_if<T == ColEmbedding, void>::type
     remap(const ShapeType& s, offset_type idx, offset_type jdx, offset_type kdx, offset_type& u_idx, offset_type& u_jdx)

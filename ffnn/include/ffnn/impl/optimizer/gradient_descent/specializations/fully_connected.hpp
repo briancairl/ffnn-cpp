@@ -28,6 +28,12 @@ public:
   // Use BaseType constructors
   using BaseType::BaseType;
 
+  /**
+   * @brief Computes one gradient update step
+   * @param[in, out] layer  Layer to optimize
+   * @retval true  if optimizer setp was successful
+   * @retval false  otherwise
+   */
   bool backward(LayerType& layer)
   {
     FFNN_ASSERT_MSG(layer.isInitialized(), "Layer to optimize is not initialized.");
