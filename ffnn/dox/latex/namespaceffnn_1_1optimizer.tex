@@ -4,25 +4,61 @@
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
+class \hyperlink{classffnn_1_1optimizer_1_1_adam_states}{Adam\-States}
+\item 
+class \hyperlink{classffnn_1_1optimizer_1_1_adam_3_01layer_1_1_fully_connected_3_01_value_type_00_01_inputs_at_co08ce471fd3ee7441a350cc42cfd35bcd}{Adam$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$}
+\item 
+class \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4}{Gradient\-Descent$<$ layer\-::\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}
+\item 
+class \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_5467194c2be34d4b726502ad96dff6d3}{Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$, Cross\-Entropy $>$}
+\item 
 class \hyperlink{classffnn_1_1optimizer_1_1_none}{None}
 \item 
 class \hyperlink{classffnn_1_1optimizer_1_1_adam}{Adam}
 \item 
 class \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent}{Gradient\-Descent}
 \item 
-class \hyperlink{classffnn_1_1optimizer_1_1_adam_states}{Adam\-States}
-\item 
-class \hyperlink{classffnn_1_1optimizer_1_1_adam_3_01layer_1_1_fully_connected_3_01_value_type_00_01_inputs_at_co08ce471fd3ee7441a350cc42cfd35bcd}{Adam$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$}
-\item 
-class \hyperlink{classffnn_1_1optimizer_1_1_adam_3_01layer_1_1_sparsely_connected_3_01_value_type_00_01_inputs_at5101e46d32858ec2169acdeede08d723}{Adam$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$}
-\item 
-class \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4}{Gradient\-Descent$<$ layer\-::\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}
-\item 
-class \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_5f7b01db2ae4d39760d70ee323649a60}{Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$}
-\item 
-class \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4}{Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}
-\item 
-class \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_sparsely_connected_3_01_value_type_00_e6c27913ab0d90f52f73031aa88c19bf}{Gradient\-Descent$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$}
+class \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent__}{Gradient\-Descent\-\_\-}
 \item 
 class \hyperlink{classffnn_1_1optimizer_1_1_optimizer}{Optimizer}
 \begin{DoxyCompactList}\small\item\em A layer-\/wise optimizer visitor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{namespaceffnn_1_1optimizer_a9a8fe8c3d1a3a20231195d767fbf65fa}{Loss\-Function} \{ \\*
+\hyperlink{namespaceffnn_1_1optimizer_a9a8fe8c3d1a3a20231195d767fbf65faaa0598d50e766937658e2677d13e574f8}{Cross\-Entropy}, 
+\hyperlink{namespaceffnn_1_1optimizer_a9a8fe8c3d1a3a20231195d767fbf65faaeb6fd7c27abcc8aaf97be3622c44ce4b}{L2}, 
+\hyperlink{namespaceffnn_1_1optimizer_a9a8fe8c3d1a3a20231195d767fbf65faadb600e39bd84006159541fa0cd788cc9}{L1}, 
+\hyperlink{namespaceffnn_1_1optimizer_a9a8fe8c3d1a3a20231195d767fbf65faafda22da78e671e6ea3845179b756aed6}{Logistic}, 
+\\*
+\hyperlink{namespaceffnn_1_1optimizer_a9a8fe8c3d1a3a20231195d767fbf65faa9a2f9c7afed39162a2b1c13936e8b266}{Hinge}, 
+\hyperlink{namespaceffnn_1_1optimizer_a9a8fe8c3d1a3a20231195d767fbf65faa912c1f6b00a2fbbae2d62b7f791a9ff4}{Exponential}
+ \}
+\begin{DoxyCompactList}\small\item\em Loss-\/function enumerations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{namespaceffnn_1_1optimizer_a9a8fe8c3d1a3a20231195d767fbf65fa}{\index{ffnn\-::optimizer@{ffnn\-::optimizer}!Loss\-Function@{Loss\-Function}}
+\index{Loss\-Function@{Loss\-Function}!ffnn::optimizer@{ffnn\-::optimizer}}
+\subsubsection[{Loss\-Function}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf ffnn\-::optimizer\-::\-Loss\-Function}}}\label{namespaceffnn_1_1optimizer_a9a8fe8c3d1a3a20231195d767fbf65fa}
+
+
+Loss-\/function enumerations. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Cross\-Entropy@{Cross\-Entropy}!ffnn\-::optimizer@{ffnn\-::optimizer}}\index{ffnn\-::optimizer@{ffnn\-::optimizer}!Cross\-Entropy@{Cross\-Entropy}}\item[{\em 
+\hypertarget{namespaceffnn_1_1optimizer_a9a8fe8c3d1a3a20231195d767fbf65faaa0598d50e766937658e2677d13e574f8}{Cross\-Entropy}\label{namespaceffnn_1_1optimizer_a9a8fe8c3d1a3a20231195d767fbf65faaa0598d50e766937658e2677d13e574f8}
+}]\index{L2@{L2}!ffnn\-::optimizer@{ffnn\-::optimizer}}\index{ffnn\-::optimizer@{ffnn\-::optimizer}!L2@{L2}}\item[{\em 
+\hypertarget{namespaceffnn_1_1optimizer_a9a8fe8c3d1a3a20231195d767fbf65faaeb6fd7c27abcc8aaf97be3622c44ce4b}{L2}\label{namespaceffnn_1_1optimizer_a9a8fe8c3d1a3a20231195d767fbf65faaeb6fd7c27abcc8aaf97be3622c44ce4b}
+}]\index{L1@{L1}!ffnn\-::optimizer@{ffnn\-::optimizer}}\index{ffnn\-::optimizer@{ffnn\-::optimizer}!L1@{L1}}\item[{\em 
+\hypertarget{namespaceffnn_1_1optimizer_a9a8fe8c3d1a3a20231195d767fbf65faadb600e39bd84006159541fa0cd788cc9}{L1}\label{namespaceffnn_1_1optimizer_a9a8fe8c3d1a3a20231195d767fbf65faadb600e39bd84006159541fa0cd788cc9}
+}]\index{Logistic@{Logistic}!ffnn\-::optimizer@{ffnn\-::optimizer}}\index{ffnn\-::optimizer@{ffnn\-::optimizer}!Logistic@{Logistic}}\item[{\em 
+\hypertarget{namespaceffnn_1_1optimizer_a9a8fe8c3d1a3a20231195d767fbf65faafda22da78e671e6ea3845179b756aed6}{Logistic}\label{namespaceffnn_1_1optimizer_a9a8fe8c3d1a3a20231195d767fbf65faafda22da78e671e6ea3845179b756aed6}
+}]\index{Hinge@{Hinge}!ffnn\-::optimizer@{ffnn\-::optimizer}}\index{ffnn\-::optimizer@{ffnn\-::optimizer}!Hinge@{Hinge}}\item[{\em 
+\hypertarget{namespaceffnn_1_1optimizer_a9a8fe8c3d1a3a20231195d767fbf65faa9a2f9c7afed39162a2b1c13936e8b266}{Hinge}\label{namespaceffnn_1_1optimizer_a9a8fe8c3d1a3a20231195d767fbf65faa9a2f9c7afed39162a2b1c13936e8b266}
+}]\index{Exponential@{Exponential}!ffnn\-::optimizer@{ffnn\-::optimizer}}\index{ffnn\-::optimizer@{ffnn\-::optimizer}!Exponential@{Exponential}}\item[{\em 
+\hypertarget{namespaceffnn_1_1optimizer_a9a8fe8c3d1a3a20231195d767fbf65faa912c1f6b00a2fbbae2d62b7f791a9ff4}{Exponential}\label{namespaceffnn_1_1optimizer_a9a8fe8c3d1a3a20231195d767fbf65faa912c1f6b00a2fbbae2d62b7f791a9ff4}
+}]\end{description}
+\end{Desc}

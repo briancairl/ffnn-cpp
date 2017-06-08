@@ -127,10 +127,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>bias
 : <a class="el" href="classffnn_1_1layer_1_1convolution_1_1_filter.html#a3638f1ebfd8d5d4469392dd7b2470cc3">ffnn::layer::convolution::Filter&lt; ValueType, Options, Extrinsics &gt;</a>
 </li>
-<li>bias_gradient_
-: <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_5f7b01db2ae4d39760d70ee323649a60.html#ab9e5c3af9ed401ddc36ea6e2437e4e51">ffnn::optimizer::GradientDescent&lt; layer::FullyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt; &gt;</a>
-, <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_sparsely_connected_3_01_value_type_00_e6c27913ab0d90f52f73031aa88c19bf.html#a38013045946f2a6d8a30445c9048654f">ffnn::optimizer::GradientDescent&lt; layer::SparselyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt; &gt;</a>
-</li>
 <li>biases
 : <a class="el" href="classffnn_1_1layer_1_1fully__connected_1_1_weights.html#ac2ab5399d4525f4b75959a9d8d7f994a">ffnn::layer::fully_connected::Weights&lt; ValueType, Options, Extrinsics &gt;</a>
 </li>
@@ -187,7 +183,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h3><a class="anchor" id="index_g"></a>- g -</h3><ul>
 <li>gradient_
 : <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4.html#a2e5183618894852cb53de619372d6ad1">ffnn::optimizer::GradientDescent&lt; layer::Convolution&lt; TARGS &gt; &gt;</a>
-, <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4.html#aca3bb81659bef8b65fb7bf64713bff5e">ffnn::optimizer::GradientDescent&lt; layer::LocalConvolution&lt; TARGS &gt; &gt;</a>
+, <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent__.html#a47f75b7c806bdd2bd254c147a35e3ae2">ffnn::optimizer::GradientDescent_&lt; LayerType, LossFn &gt;</a>
 </li>
 </ul>
 
@@ -197,7 +193,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="structffnn_1_1layer_1_1convolution_1_1filter_1_1options.html#afe85a502882816dd562acd349c96b30e">ffnn::layer::convolution::filter::options&lt; HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, KernelCountAtCompileTime, Mode &gt;</a>
 </li>
 <li>has_fixed_sizes
-: <a class="el" href="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1options.html#acb66c282ebaa5f29ce34d14b68551b94">ffnn::layer::fully_connected::weights::options&lt; InputsAtCompileTime, OutputsAtCompileTime &gt;</a>
+: <a class="el" href="structffnn_1_1layer_1_1activation_1_1options.html#a13a10e2f2f0c480715aa64ef95d32c57">ffnn::layer::activation::options&lt; SizeAtCompileTime &gt;</a>
+, <a class="el" href="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1options.html#acb66c282ebaa5f29ce34d14b68551b94">ffnn::layer::fully_connected::weights::options&lt; InputsAtCompileTime, OutputsAtCompileTime &gt;</a>
 </li>
 <li>height
 : <a class="el" href="structffnn_1_1layer_1_1_shape.html#a96608d7bcef7733a1b1f4782827a0c78">ffnn::layer::Shape&lt; SizeType &gt;</a>
@@ -229,8 +226,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="classffnn_1_1layer_1_1_layer.html#a07cc49b6890743a8045e3adc7c07aca5">ffnn::layer::Layer&lt; ValueType &gt;</a>
 </li>
 <li>input_size
-: <a class="el" href="structffnn_1_1layer_1_1fully__connected_1_1options.html#ae136ed9ebf9016f397acc9f3c10c9a32">ffnn::layer::fully_connected::options&lt; InputsAtCompileTime, OutputsAtCompileTime &gt;</a>
+: <a class="el" href="structffnn_1_1layer_1_1activation_1_1options.html#ae32f71e7e41f1adc1c29eb94d8138cab">ffnn::layer::activation::options&lt; SizeAtCompileTime &gt;</a>
+, <a class="el" href="structffnn_1_1layer_1_1fully__connected_1_1options.html#ae136ed9ebf9016f397acc9f3c10c9a32">ffnn::layer::fully_connected::options&lt; InputsAtCompileTime, OutputsAtCompileTime &gt;</a>
 , <a class="el" href="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1options.html#aa9973b3dcef51f2684f3c36bbeccd767">ffnn::layer::fully_connected::weights::options&lt; InputsAtCompileTime, OutputsAtCompileTime &gt;</a>
+, <a class="el" href="structffnn_1_1layer_1_1input_1_1options.html#a3d31a36c926c1926e653e5e19e034b82">ffnn::layer::input::options&lt; InputsAtCompileTime &gt;</a>
 </li>
 <li>input_width
 : <a class="el" href="structffnn_1_1layer_1_1convolution_1_1options.html#a17abc9ea9d41cf399fbeae5e3f7580f4">ffnn::layer::convolution::options&lt; HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, KernelHeightAtCompileTime, KernelWidthAtCompileTime, KernelCountAtCompileTime, RowStrideAtCompileTime, ColStrideAtCompileTime, Mode &gt;</a>
@@ -260,17 +259,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <h3><a class="anchor" id="index_l"></a>- l -</h3><ul>
 <li>LayerType
-: <a class="el" href="classffnn_1_1layer_1_1convolution_1_1_configuration.html#a12e530507865f85db9b75c2d78493442">ffnn::layer::convolution::Configuration&lt; LayerType, ValueType, Options, Extrinsic &gt;</a>
+: <a class="el" href="classffnn_1_1layer_1_1activation_1_1_configuration.html#a183c2a31aadeb5f7f04c7caa65e079f0">ffnn::layer::activation::Configuration&lt; LayerType, ValueType, Options, Extrinsic &gt;</a>
+, <a class="el" href="classffnn_1_1layer_1_1convolution_1_1_configuration.html#a12e530507865f85db9b75c2d78493442">ffnn::layer::convolution::Configuration&lt; LayerType, ValueType, Options, Extrinsic &gt;</a>
 , <a class="el" href="classffnn_1_1layer_1_1fully__connected_1_1_configuration.html#a935cd081500398ecc6c5ed195dbc9402">ffnn::layer::fully_connected::Configuration&lt; LayerType, ValueType, Options, Extrinsic &gt;</a>
+, <a class="el" href="classffnn_1_1layer_1_1input_1_1_configuration.html#aa9f841f1b4632050db96bf5f3718679d">ffnn::layer::input::Configuration&lt; LayerType, ValueType, Options, Extrinsic &gt;</a>
+, <a class="el" href="classffnn_1_1layer_1_1output_1_1_configuration.html#a91d957d5fc4cd2f9dcf348096fb013eb">ffnn::layer::output::Configuration&lt; LayerType, ValueType, Options, Extrinsic &gt;</a>
 </li>
 <li>leak_factor_
 : <a class="el" href="classffnn_1_1neuron_1_1_leaky_rectified_linear.html#ab205c35e3123e8965efe63cd665020cb">ffnn::neuron::LeakyRectifiedLinear&lt; ValueType, _P, _B &gt;</a>
 </li>
 <li>lr_
 : <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4.html#a756ac46b510f19492b0a7874a8f6831b">ffnn::optimizer::GradientDescent&lt; layer::Convolution&lt; TARGS &gt; &gt;</a>
-, <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_5f7b01db2ae4d39760d70ee323649a60.html#ae93f581c5257c180827d0dea59f64033">ffnn::optimizer::GradientDescent&lt; layer::FullyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt; &gt;</a>
-, <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4.html#ac0e79e0149a0b23eade51c86155032a1">ffnn::optimizer::GradientDescent&lt; layer::LocalConvolution&lt; TARGS &gt; &gt;</a>
-, <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_sparsely_connected_3_01_value_type_00_e6c27913ab0d90f52f73031aa88c19bf.html#a3bdbafb20c8bb1b0a7e1c9a745601537">ffnn::optimizer::GradientDescent&lt; layer::SparselyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt; &gt;</a>
+, <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent__.html#a600bd6a5552e490da1b230c67a5e67d6">ffnn::optimizer::GradientDescent_&lt; LayerType, LossFn &gt;</a>
 </li>
 </ul>
 
@@ -300,8 +300,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="classffnn_1_1layer_1_1_layer.html#a453330bda96277cd7b794bfab4804c47">ffnn::layer::Layer&lt; ValueType &gt;</a>
 </li>
 <li>output_size
-: <a class="el" href="structffnn_1_1layer_1_1fully__connected_1_1options.html#a7b40e94c99dc865af66d8f2ee5a8c4cc">ffnn::layer::fully_connected::options&lt; InputsAtCompileTime, OutputsAtCompileTime &gt;</a>
+: <a class="el" href="structffnn_1_1layer_1_1activation_1_1options.html#a21ed6511496f57fe62bd15f71c2c14ef">ffnn::layer::activation::options&lt; SizeAtCompileTime &gt;</a>
+, <a class="el" href="structffnn_1_1layer_1_1fully__connected_1_1options.html#a7b40e94c99dc865af66d8f2ee5a8c4cc">ffnn::layer::fully_connected::options&lt; InputsAtCompileTime, OutputsAtCompileTime &gt;</a>
 , <a class="el" href="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1options.html#a45dac283a1611df3497baf255d8645c1">ffnn::layer::fully_connected::weights::options&lt; InputsAtCompileTime, OutputsAtCompileTime &gt;</a>
+, <a class="el" href="structffnn_1_1layer_1_1output_1_1options.html#a8aa6cec799240a3620701c6b4baaef02">ffnn::layer::output::options&lt; OutputsAtCompileTime &gt;</a>
 </li>
 <li>output_width
 : <a class="el" href="structffnn_1_1layer_1_1convolution_1_1options.html#a3d54e3e43cc0e955c4a64bcf6b5800d7">ffnn::layer::convolution::options&lt; HeightAtCompileTime, WidthAtCompileTime, DepthAtCompileTime, KernelHeightAtCompileTime, KernelWidthAtCompileTime, KernelCountAtCompileTime, RowStrideAtCompileTime, ColStrideAtCompileTime, Mode &gt;</a>
@@ -316,9 +318,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>prev_input_
 : <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4.html#afb2c039078e26446400314336dc24482">ffnn::optimizer::GradientDescent&lt; layer::Convolution&lt; TARGS &gt; &gt;</a>
-, <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_5f7b01db2ae4d39760d70ee323649a60.html#a3f8d4e20a604d30d722a464f4e8c9523">ffnn::optimizer::GradientDescent&lt; layer::FullyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt; &gt;</a>
-, <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4.html#a3b3340a82cc543a9352c6c50472cb0ac">ffnn::optimizer::GradientDescent&lt; layer::LocalConvolution&lt; TARGS &gt; &gt;</a>
-, <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_sparsely_connected_3_01_value_type_00_e6c27913ab0d90f52f73031aa88c19bf.html#acce1f255ec414b8eddef1429398bccce">ffnn::optimizer::GradientDescent&lt; layer::SparselyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt; &gt;</a>
+, <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent__.html#a6a51e6729537c7de173ea53a27965415">ffnn::optimizer::GradientDescent_&lt; LayerType, LossFn &gt;</a>
 </li>
 </ul>
 
@@ -343,16 +343,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h3><a class="anchor" id="index_v"></a>- v -</h3><ul>
 <li>value
 : <a class="el" href="structffnn_1_1internal_1_1traits_1_1is__distribution.html#a7f4813ca467ef824a4f98c1d18442bfc">ffnn::internal::traits::is_distribution&lt; Object &gt;</a>
-, <a class="el" href="structffnn_1_1neuron_1_1is__neuron.html#adfafc315a5352f2a186959d8402490d1">ffnn::neuron::is_neuron&lt; NeuronType &gt;</a>
+, <a class="el" href="structffnn_1_1internal_1_1traits_1_1is__neuron.html#a672d6bd8da5e49790bfa7ce7f6bf795e">ffnn::internal::traits::is_neuron&lt; Object &gt;</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_w"></a>- w -</h3><ul>
-<li>weight_gradient_
-: <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_5f7b01db2ae4d39760d70ee323649a60.html#a3a3cad49f1855a20dbf9ff62178bf9ff">ffnn::optimizer::GradientDescent&lt; layer::FullyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt; &gt;</a>
-, <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_sparsely_connected_3_01_value_type_00_e6c27913ab0d90f52f73031aa88c19bf.html#a105f65dc92c783222f228fed80c52fda">ffnn::optimizer::GradientDescent&lt; layer::SparselyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt; &gt;</a>
-</li>
 <li>weights
 : <a class="el" href="classffnn_1_1layer_1_1fully__connected_1_1_weights.html#a9baed4c318d41e712f821c02c4cb4c4a">ffnn::layer::fully_connected::Weights&lt; ValueType, Options, Extrinsics &gt;</a>
 </li>
@@ -363,7 +359,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jun 3 2017 23:40:29 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 8 2017 01:08:57 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

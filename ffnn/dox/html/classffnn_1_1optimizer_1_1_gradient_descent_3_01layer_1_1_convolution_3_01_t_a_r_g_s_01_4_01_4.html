@@ -99,7 +99,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &quot;<a class="el" href="optimizer_2impl_2gradient__descent_2convolution_8hpp_source.html">convolution.hpp</a>&quot;</code></p>
+<p><code>#include &quot;<a class="el" href="optimizer_2gradient__descent_2specializations_2convolution_8hpp_source.html">convolution.hpp</a>&quot;</code></p>
 <div class="dynheader">
 Inheritance diagram for ffnn::optimizer::GradientDescent&lt; layer::Convolution&lt; TARGS &gt; &gt;:</div>
 <div class="dyncontent">
@@ -117,7 +117,7 @@ Collaboration diagram for ffnn::optimizer::GradientDescent&lt; layer::Convolutio
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a4b4e11ad265dd0fba9010b60d6cea09b"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classffnn_1_1layer_1_1_convolution.html">layer::Convolution</a>&lt; <a class="el" href="local__convolution_8hpp.html#a005b9b79411aa786124330e813a99057">TARGS</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4.html#a4b4e11ad265dd0fba9010b60d6cea09b">LayerType</a></td></tr>
+<tr class="memitem:a4b4e11ad265dd0fba9010b60d6cea09b"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classffnn_1_1layer_1_1_convolution.html">layer::Convolution</a>&lt; <a class="el" href="optimizer_2gradient__descent_2specializations_2convolution_8hpp.html#a005b9b79411aa786124330e813a99057">TARGS</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4.html#a4b4e11ad265dd0fba9010b60d6cea09b">LayerType</a></td></tr>
 <tr class="memdesc:a4b4e11ad265dd0fba9010b60d6cea09b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Layer type standardization.  <a href="#a4b4e11ad265dd0fba9010b60d6cea09b">More...</a><br/></td></tr>
 <tr class="separator:a4b4e11ad265dd0fba9010b60d6cea09b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6995cac929c8df2dd70dddf488998e66"><td class="memItemLeft" align="right" valign="top">typedef LayerType::Scalar&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4.html#a6995cac929c8df2dd70dddf488998e66">Scalar</a></td></tr>
@@ -147,6 +147,10 @@ Public Types</h2></td></tr>
 &lt; const <a class="el" href="classffnn_1_1optimizer_1_1_optimizer.html">Optimizer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1optimizer_1_1_optimizer.html#a5d62c55f6f830e993ffe801fb17a1c3a">ConstPtr</a></td></tr>
 <tr class="memdesc:a5d62c55f6f830e993ffe801fb17a1c3a inherit pub_types_classffnn_1_1optimizer_1_1_optimizer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constant shared resource standardization.  <a href="#a5d62c55f6f830e993ffe801fb17a1c3a">More...</a><br/></td></tr>
 <tr class="separator:a5d62c55f6f830e993ffe801fb17a1c3a inherit pub_types_classffnn_1_1optimizer_1_1_optimizer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acaa42e2661559c561caf881c4d934b8c inherit pub_types_classffnn_1_1optimizer_1_1_optimizer"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classffnn_1_1layer_1_1_convolution.html">layer::Convolution</a><br class="typebreak"/>
+&lt; <a class="el" href="optimizer_2gradient__descent_2specializations_2convolution_8hpp.html#a005b9b79411aa786124330e813a99057">TARGS</a> &gt;::<a class="el" href="classffnn_1_1optimizer_1_1_optimizer.html#acaa42e2661559c561caf881c4d934b8c">Scalar</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1optimizer_1_1_optimizer.html#acaa42e2661559c561caf881c4d934b8c">Scalar</a></td></tr>
+<tr class="memdesc:acaa42e2661559c561caf881c4d934b8c inherit pub_types_classffnn_1_1optimizer_1_1_optimizer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scalar type standardization.  <a href="#acaa42e2661559c561caf881c4d934b8c">More...</a><br/></td></tr>
+<tr class="separator:acaa42e2661559c561caf881c4d934b8c inherit pub_types_classffnn_1_1optimizer_1_1_optimizer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -201,7 +205,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef LayerType::InputBlockType <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent.html">ffnn::optimizer::GradientDescent</a>&lt; <a class="el" href="classffnn_1_1layer_1_1_convolution.html">layer::Convolution</a>&lt; <a class="el" href="local__convolution_8hpp.html#a005b9b79411aa786124330e813a99057">TARGS</a> &gt; &gt;::<a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4.html#a52ff7f9db21ea50795ccbc475a3cc643">InputBlockType</a></td>
+          <td class="memname">typedef LayerType::InputBlockType <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent.html">ffnn::optimizer::GradientDescent</a>&lt; <a class="el" href="classffnn_1_1layer_1_1_convolution.html">layer::Convolution</a>&lt; <a class="el" href="optimizer_2gradient__descent_2specializations_2convolution_8hpp.html#a005b9b79411aa786124330e813a99057">TARGS</a> &gt; &gt;::<a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4.html#a52ff7f9db21ea50795ccbc475a3cc643">InputBlockType</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -215,7 +219,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef <a class="el" href="classffnn_1_1layer_1_1_convolution.html">layer::Convolution</a>&lt;<a class="el" href="local__convolution_8hpp.html#a005b9b79411aa786124330e813a99057">TARGS</a>&gt; <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent.html">ffnn::optimizer::GradientDescent</a>&lt; <a class="el" href="classffnn_1_1layer_1_1_convolution.html">layer::Convolution</a>&lt; <a class="el" href="local__convolution_8hpp.html#a005b9b79411aa786124330e813a99057">TARGS</a> &gt; &gt;::<a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4.html#a4b4e11ad265dd0fba9010b60d6cea09b">LayerType</a></td>
+          <td class="memname">typedef <a class="el" href="classffnn_1_1layer_1_1_convolution.html">layer::Convolution</a>&lt;<a class="el" href="optimizer_2gradient__descent_2specializations_2convolution_8hpp.html#a005b9b79411aa786124330e813a99057">TARGS</a>&gt; <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent.html">ffnn::optimizer::GradientDescent</a>&lt; <a class="el" href="classffnn_1_1layer_1_1_convolution.html">layer::Convolution</a>&lt; <a class="el" href="optimizer_2gradient__descent_2specializations_2convolution_8hpp.html#a005b9b79411aa786124330e813a99057">TARGS</a> &gt; &gt;::<a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4.html#a4b4e11ad265dd0fba9010b60d6cea09b">LayerType</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -229,7 +233,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef LayerType::OffsetType <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent.html">ffnn::optimizer::GradientDescent</a>&lt; <a class="el" href="classffnn_1_1layer_1_1_convolution.html">layer::Convolution</a>&lt; <a class="el" href="local__convolution_8hpp.html#a005b9b79411aa786124330e813a99057">TARGS</a> &gt; &gt;::<a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4.html#adeba594318f6939122d3e0edb069d6d6">OffsetType</a></td>
+          <td class="memname">typedef LayerType::OffsetType <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent.html">ffnn::optimizer::GradientDescent</a>&lt; <a class="el" href="classffnn_1_1layer_1_1_convolution.html">layer::Convolution</a>&lt; <a class="el" href="optimizer_2gradient__descent_2specializations_2convolution_8hpp.html#a005b9b79411aa786124330e813a99057">TARGS</a> &gt; &gt;::<a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4.html#adeba594318f6939122d3e0edb069d6d6">OffsetType</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -243,7 +247,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef LayerType::OutputBlockType <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent.html">ffnn::optimizer::GradientDescent</a>&lt; <a class="el" href="classffnn_1_1layer_1_1_convolution.html">layer::Convolution</a>&lt; <a class="el" href="local__convolution_8hpp.html#a005b9b79411aa786124330e813a99057">TARGS</a> &gt; &gt;::<a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4.html#a24c60e1a115ce2e27567a5b068eaf0a8">OutputBlockType</a></td>
+          <td class="memname">typedef LayerType::OutputBlockType <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent.html">ffnn::optimizer::GradientDescent</a>&lt; <a class="el" href="classffnn_1_1layer_1_1_convolution.html">layer::Convolution</a>&lt; <a class="el" href="optimizer_2gradient__descent_2specializations_2convolution_8hpp.html#a005b9b79411aa786124330e813a99057">TARGS</a> &gt; &gt;::<a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4.html#a24c60e1a115ce2e27567a5b068eaf0a8">OutputBlockType</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -257,7 +261,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef <a class="el" href="classffnn_1_1layer_1_1_convolution.html#af2568040fc4089f93a6483da08dcc266">LayerType::ParametersType</a> <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent.html">ffnn::optimizer::GradientDescent</a>&lt; <a class="el" href="classffnn_1_1layer_1_1_convolution.html">layer::Convolution</a>&lt; <a class="el" href="local__convolution_8hpp.html#a005b9b79411aa786124330e813a99057">TARGS</a> &gt; &gt;::<a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4.html#a0bbe4560ab81eacf8e75ac5510ad696e">ParametersType</a></td>
+          <td class="memname">typedef <a class="el" href="classffnn_1_1layer_1_1_convolution.html#af2568040fc4089f93a6483da08dcc266">LayerType::ParametersType</a> <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent.html">ffnn::optimizer::GradientDescent</a>&lt; <a class="el" href="classffnn_1_1layer_1_1_convolution.html">layer::Convolution</a>&lt; <a class="el" href="optimizer_2gradient__descent_2specializations_2convolution_8hpp.html#a005b9b79411aa786124330e813a99057">TARGS</a> &gt; &gt;::<a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4.html#a0bbe4560ab81eacf8e75ac5510ad696e">ParametersType</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -271,7 +275,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef LayerType::Scalar <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent.html">ffnn::optimizer::GradientDescent</a>&lt; <a class="el" href="classffnn_1_1layer_1_1_convolution.html">layer::Convolution</a>&lt; <a class="el" href="local__convolution_8hpp.html#a005b9b79411aa786124330e813a99057">TARGS</a> &gt; &gt;::<a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4.html#a6995cac929c8df2dd70dddf488998e66">Scalar</a></td>
+          <td class="memname">typedef LayerType::Scalar <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent.html">ffnn::optimizer::GradientDescent</a>&lt; <a class="el" href="classffnn_1_1layer_1_1_convolution.html">layer::Convolution</a>&lt; <a class="el" href="optimizer_2gradient__descent_2specializations_2convolution_8hpp.html#a005b9b79411aa786124330e813a99057">TARGS</a> &gt; &gt;::<a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4.html#a6995cac929c8df2dd70dddf488998e66">Scalar</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -285,7 +289,7 @@ Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef LayerType::SizeType <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent.html">ffnn::optimizer::GradientDescent</a>&lt; <a class="el" href="classffnn_1_1layer_1_1_convolution.html">layer::Convolution</a>&lt; <a class="el" href="local__convolution_8hpp.html#a005b9b79411aa786124330e813a99057">TARGS</a> &gt; &gt;::<a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4.html#a02796dc7270c0180e5e0cfa57e015dde">SizeType</a></td>
+          <td class="memname">typedef LayerType::SizeType <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent.html">ffnn::optimizer::GradientDescent</a>&lt; <a class="el" href="classffnn_1_1layer_1_1_convolution.html">layer::Convolution</a>&lt; <a class="el" href="optimizer_2gradient__descent_2specializations_2convolution_8hpp.html#a005b9b79411aa786124330e813a99057">TARGS</a> &gt; &gt;::<a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4.html#a02796dc7270c0180e5e0cfa57e015dde">SizeType</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -303,7 +307,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent.html">ffnn::optimizer::GradientDescent</a>&lt; <a class="el" href="classffnn_1_1layer_1_1_convolution.html">layer::Convolution</a>&lt; <a class="el" href="local__convolution_8hpp.html#a005b9b79411aa786124330e813a99057">TARGS</a> &gt; &gt;::<a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent.html">GradientDescent</a> </td>
+          <td class="memname"><a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent.html">ffnn::optimizer::GradientDescent</a>&lt; <a class="el" href="classffnn_1_1layer_1_1_convolution.html">layer::Convolution</a>&lt; <a class="el" href="optimizer_2gradient__descent_2specializations_2convolution_8hpp.html#a005b9b79411aa786124330e813a99057">TARGS</a> &gt; &gt;::<a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent.html">GradientDescent</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4.html#a6995cac929c8df2dd70dddf488998e66">Scalar</a>&#160;</td>
           <td class="paramname"><em>lr</em></td><td>)</td>
@@ -335,7 +339,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent.html">ffnn::optimizer::GradientDescent</a>&lt; <a class="el" href="classffnn_1_1layer_1_1_convolution.html">layer::Convolution</a>&lt; <a class="el" href="local__convolution_8hpp.html#a005b9b79411aa786124330e813a99057">TARGS</a> &gt; &gt;::~<a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent.html">GradientDescent</a> </td>
+          <td class="memname">virtual <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent.html">ffnn::optimizer::GradientDescent</a>&lt; <a class="el" href="classffnn_1_1layer_1_1_convolution.html">layer::Convolution</a>&lt; <a class="el" href="optimizer_2gradient__descent_2specializations_2convolution_8hpp.html#a005b9b79411aa786124330e813a99057">TARGS</a> &gt; &gt;::~<a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent.html">GradientDescent</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -359,7 +363,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent.html">ffnn::optimizer::GradientDescent</a>&lt; <a class="el" href="classffnn_1_1layer_1_1_convolution.html">layer::Convolution</a>&lt; <a class="el" href="local__convolution_8hpp.html#a005b9b79411aa786124330e813a99057">TARGS</a> &gt; &gt;::backward </td>
+          <td class="memname">bool <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent.html">ffnn::optimizer::GradientDescent</a>&lt; <a class="el" href="classffnn_1_1layer_1_1_convolution.html">layer::Convolution</a>&lt; <a class="el" href="optimizer_2gradient__descent_2specializations_2convolution_8hpp.html#a005b9b79411aa786124330e813a99057">TARGS</a> &gt; &gt;::backward </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4.html#a4b4e11ad265dd0fba9010b60d6cea09b">LayerType</a> &amp;&#160;</td>
           <td class="paramname"><em>layer</em></td><td>)</td>
@@ -400,7 +404,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent.html">ffnn::optimizer::GradientDescent</a>&lt; <a class="el" href="classffnn_1_1layer_1_1_convolution.html">layer::Convolution</a>&lt; <a class="el" href="local__convolution_8hpp.html#a005b9b79411aa786124330e813a99057">TARGS</a> &gt; &gt;::forward </td>
+          <td class="memname">bool <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent.html">ffnn::optimizer::GradientDescent</a>&lt; <a class="el" href="classffnn_1_1layer_1_1_convolution.html">layer::Convolution</a>&lt; <a class="el" href="optimizer_2gradient__descent_2specializations_2convolution_8hpp.html#a005b9b79411aa786124330e813a99057">TARGS</a> &gt; &gt;::forward </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4.html#a4b4e11ad265dd0fba9010b60d6cea09b">LayerType</a> &amp;&#160;</td>
           <td class="paramname"><em>layer</em></td><td>)</td>
@@ -441,7 +445,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent.html">ffnn::optimizer::GradientDescent</a>&lt; <a class="el" href="classffnn_1_1layer_1_1_convolution.html">layer::Convolution</a>&lt; <a class="el" href="local__convolution_8hpp.html#a005b9b79411aa786124330e813a99057">TARGS</a> &gt; &gt;::initialize </td>
+          <td class="memname">void <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent.html">ffnn::optimizer::GradientDescent</a>&lt; <a class="el" href="classffnn_1_1layer_1_1_convolution.html">layer::Convolution</a>&lt; <a class="el" href="optimizer_2gradient__descent_2specializations_2convolution_8hpp.html#a005b9b79411aa786124330e813a99057">TARGS</a> &gt; &gt;::initialize </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4.html#a4b4e11ad265dd0fba9010b60d6cea09b">LayerType</a> &amp;&#160;</td>
           <td class="paramname"><em>layer</em></td><td>)</td>
@@ -475,7 +479,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent.html">ffnn::optimizer::GradientDescent</a>&lt; <a class="el" href="classffnn_1_1layer_1_1_convolution.html">layer::Convolution</a>&lt; <a class="el" href="local__convolution_8hpp.html#a005b9b79411aa786124330e813a99057">TARGS</a> &gt; &gt;::reset </td>
+          <td class="memname">void <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent.html">ffnn::optimizer::GradientDescent</a>&lt; <a class="el" href="classffnn_1_1layer_1_1_convolution.html">layer::Convolution</a>&lt; <a class="el" href="optimizer_2gradient__descent_2specializations_2convolution_8hpp.html#a005b9b79411aa786124330e813a99057">TARGS</a> &gt; &gt;::reset </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4.html#a4b4e11ad265dd0fba9010b60d6cea09b">LayerType</a> &amp;&#160;</td>
           <td class="paramname"><em>layer</em></td><td>)</td>
@@ -509,7 +513,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent.html">ffnn::optimizer::GradientDescent</a>&lt; <a class="el" href="classffnn_1_1layer_1_1_convolution.html">layer::Convolution</a>&lt; <a class="el" href="local__convolution_8hpp.html#a005b9b79411aa786124330e813a99057">TARGS</a> &gt; &gt;::update </td>
+          <td class="memname">bool <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent.html">ffnn::optimizer::GradientDescent</a>&lt; <a class="el" href="classffnn_1_1layer_1_1_convolution.html">layer::Convolution</a>&lt; <a class="el" href="optimizer_2gradient__descent_2specializations_2convolution_8hpp.html#a005b9b79411aa786124330e813a99057">TARGS</a> &gt; &gt;::update </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4.html#a4b4e11ad265dd0fba9010b60d6cea09b">LayerType</a> &amp;&#160;</td>
           <td class="paramname"><em>layer</em></td><td>)</td>
@@ -551,7 +555,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4.html#a0bbe4560ab81eacf8e75ac5510ad696e">ParametersType</a> <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent.html">ffnn::optimizer::GradientDescent</a>&lt; <a class="el" href="classffnn_1_1layer_1_1_convolution.html">layer::Convolution</a>&lt; <a class="el" href="local__convolution_8hpp.html#a005b9b79411aa786124330e813a99057">TARGS</a> &gt; &gt;::gradient_</td>
+          <td class="memname"><a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4.html#a0bbe4560ab81eacf8e75ac5510ad696e">ParametersType</a> <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent.html">ffnn::optimizer::GradientDescent</a>&lt; <a class="el" href="classffnn_1_1layer_1_1_convolution.html">layer::Convolution</a>&lt; <a class="el" href="optimizer_2gradient__descent_2specializations_2convolution_8hpp.html#a005b9b79411aa786124330e813a99057">TARGS</a> &gt; &gt;::gradient_</td>
         </tr>
       </table>
   </td>
@@ -573,7 +577,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4.html#a6995cac929c8df2dd70dddf488998e66">Scalar</a> <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent.html">ffnn::optimizer::GradientDescent</a>&lt; <a class="el" href="classffnn_1_1layer_1_1_convolution.html">layer::Convolution</a>&lt; <a class="el" href="local__convolution_8hpp.html#a005b9b79411aa786124330e813a99057">TARGS</a> &gt; &gt;::lr_</td>
+          <td class="memname"><a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4.html#a6995cac929c8df2dd70dddf488998e66">Scalar</a> <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent.html">ffnn::optimizer::GradientDescent</a>&lt; <a class="el" href="classffnn_1_1layer_1_1_convolution.html">layer::Convolution</a>&lt; <a class="el" href="optimizer_2gradient__descent_2specializations_2convolution_8hpp.html#a005b9b79411aa786124330e813a99057">TARGS</a> &gt; &gt;::lr_</td>
         </tr>
       </table>
   </td>
@@ -595,7 +599,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4.html#a52ff7f9db21ea50795ccbc475a3cc643">InputBlockType</a> <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent.html">ffnn::optimizer::GradientDescent</a>&lt; <a class="el" href="classffnn_1_1layer_1_1_convolution.html">layer::Convolution</a>&lt; <a class="el" href="local__convolution_8hpp.html#a005b9b79411aa786124330e813a99057">TARGS</a> &gt; &gt;::prev_input_</td>
+          <td class="memname"><a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4.html#a52ff7f9db21ea50795ccbc475a3cc643">InputBlockType</a> <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent.html">ffnn::optimizer::GradientDescent</a>&lt; <a class="el" href="classffnn_1_1layer_1_1_convolution.html">layer::Convolution</a>&lt; <a class="el" href="optimizer_2gradient__descent_2specializations_2convolution_8hpp.html#a005b9b79411aa786124330e813a99057">TARGS</a> &gt; &gt;::prev_input_</td>
         </tr>
       </table>
   </td>
@@ -610,12 +614,12 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/briancairl/packages/src/ffnn-cpp/ffnn/include/ffnn/optimizer/impl/gradient_descent/<a class="el" href="optimizer_2impl_2gradient__descent_2convolution_8hpp_source.html">convolution.hpp</a></li>
+<li>/home/briancairl/packages/src/ffnn-cpp/ffnn/include/ffnn/impl/optimizer/gradient_descent/specializations/<a class="el" href="optimizer_2gradient__descent_2specializations_2convolution_8hpp_source.html">convolution.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jun 3 2017 23:40:29 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 8 2017 01:08:57 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

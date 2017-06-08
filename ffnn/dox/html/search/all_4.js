@@ -17,10 +17,13 @@ var searchData=
   ['embeddingmode',['EmbeddingMode',['../namespaceffnn_1_1layer_1_1convolution.html#ad420d4eb8edd7c254d1f0aaaad81017f',1,'ffnn::layer::convolution']]],
   ['endc',['ENDC',['../group___unicode_color_definitions.html#gab21e47dcbc216f8fc7de88bd217f9f0a',1,'ffnn::logging']]],
   ['evaluateinputsize',['evaluateInputSize',['../classffnn_1_1layer_1_1_layer.html#a8ab7812798c4826bb235ef1064715b86',1,'ffnn::layer::Layer']]],
-  ['extrinsics',['extrinsics',['../structffnn_1_1layer_1_1fully__connected_1_1extrinsics.html',1,'ffnn::layer::fully_connected']]],
-  ['extrinsics',['extrinsics',['../structffnn_1_1layer_1_1hidden_1_1extrinsics.html',1,'ffnn::layer::hidden']]],
-  ['extrinsics',['extrinsics',['../structffnn_1_1layer_1_1convolution_1_1filter_1_1extrinsics.html',1,'ffnn::layer::convolution::filter']]],
-  ['extrinsics',['extrinsics',['../structffnn_1_1layer_1_1fully__connected_1_1weights_1_1extrinsics.html',1,'ffnn::layer::fully_connected::weights']]],
+  ['exponential',['Exponential',['../namespaceffnn_1_1optimizer.html#a9a8fe8c3d1a3a20231195d767fbf65faa912c1f6b00a2fbbae2d62b7f791a9ff4',1,'ffnn::optimizer']]],
   ['extrinsics',['extrinsics',['../structffnn_1_1layer_1_1convolution_1_1extrinsics.html',1,'ffnn::layer::convolution']]],
-  ['extrinsics_3c_20valuetype_2c_20_5fhiddenlayershape_20_3e',['extrinsics&lt; ValueType, _HiddenLayerShape &gt;',['../structffnn_1_1layer_1_1hidden_1_1extrinsics.html',1,'ffnn::layer::hidden']]]
+  ['extrinsics',['extrinsics',['../structffnn_1_1layer_1_1output_1_1extrinsics.html',1,'ffnn::layer::output']]],
+  ['extrinsics',['extrinsics',['../structffnn_1_1layer_1_1hidden_1_1extrinsics.html',1,'ffnn::layer::hidden']]],
+  ['extrinsics',['extrinsics',['../structffnn_1_1layer_1_1fully__connected_1_1weights_1_1extrinsics.html',1,'ffnn::layer::fully_connected::weights']]],
+  ['extrinsics',['extrinsics',['../structffnn_1_1layer_1_1fully__connected_1_1extrinsics.html',1,'ffnn::layer::fully_connected']]],
+  ['extrinsics',['extrinsics',['../structffnn_1_1layer_1_1input_1_1extrinsics.html',1,'ffnn::layer::input']]],
+  ['extrinsics',['extrinsics',['../structffnn_1_1layer_1_1activation_1_1extrinsics.html',1,'ffnn::layer::activation']]],
+  ['extrinsics',['extrinsics',['../structffnn_1_1layer_1_1convolution_1_1filter_1_1extrinsics.html',1,'ffnn::layer::convolution::filter']]]
 ];

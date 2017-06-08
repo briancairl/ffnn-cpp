@@ -111,9 +111,10 @@ private:
  * @note An optimizer must be registered to a Layer to allow use
  */
 #define FFNN_REGISTER_OPTIMIZER(opt)\
-  template<typename _LayerType,\
-           ::ffnn::optimizer::LossFunction _LossFunctionSpec>\
-  friend class ::ffnn::optimizer::opt;
+  template<typename _LayerType, ::ffnn::optimizer::LossFunction _LossFunctionSpec>\
+  friend class ::ffnn::optimizer::opt;\
+  template<typename _LayerType, ::ffnn::optimizer::LossFunction _LossFunctionSpec>\
+  friend class ::ffnn::optimizer::opt##_;
 
 }  // namespace optimizer
 }  // namespace ffnn

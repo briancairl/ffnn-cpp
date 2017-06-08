@@ -1,13 +1,18 @@
 \section{Class Hierarchy}
 This inheritance list is sorted roughly, but not completely, alphabetically\-:\begin{DoxyCompactList}
-\item \contentsline{section}{ffnn\-:\-:optimizer\-:\-:Adam$<$ Layer\-Type $>$}{\pageref{classffnn_1_1optimizer_1_1_adam}}{}
-\item \contentsline{section}{ffnn\-:\-:optimizer\-:\-:Adam\-States$<$ Matrix\-Type $>$}{\pageref{classffnn_1_1optimizer_1_1_adam_states}}{}
-\item \contentsline{section}{ffnn\-:\-:optimizer\-:\-:Adam\-States$<$ Bias\-Vector\-Type $>$}{\pageref{classffnn_1_1optimizer_1_1_adam_states}}{}
+\item \contentsline{section}{ffnn\-:\-:optimizer\-:\-:Adam$<$ Layer\-Type, Loss\-Fn $>$}{\pageref{classffnn_1_1optimizer_1_1_adam}}{}
+\item \contentsline{section}{ffnn\-:\-:optimizer\-:\-:Adam\-States$<$ Value\-Type, Layer\-Type $>$}{\pageref{classffnn_1_1optimizer_1_1_adam_states}}{}
 \item \contentsline{section}{ffnn\-:\-:optimizer\-:\-:Adam\-States$<$ Weight\-Matrix\-Type $>$}{\pageref{classffnn_1_1optimizer_1_1_adam_states}}{}
-\item \contentsline{section}{ffnn\-:\-:layer\-:\-:fully\-\_\-connected\-:\-:Configuration$<$ Layer\-Type, Value\-Type, Options, Extrinsic $>$}{\pageref{classffnn_1_1layer_1_1fully__connected_1_1_configuration}}{}
+\item \contentsline{section}{ffnn\-:\-:layer\-:\-:activation\-:\-:Configuration$<$ Layer\-Type, Value\-Type, Options, Extrinsic $>$}{\pageref{classffnn_1_1layer_1_1activation_1_1_configuration}}{}
+\item \contentsline{section}{ffnn\-:\-:layer\-:\-:input\-:\-:Configuration$<$ Layer\-Type, Value\-Type, Options, Extrinsic $>$}{\pageref{classffnn_1_1layer_1_1input_1_1_configuration}}{}
 \item \contentsline{section}{ffnn\-:\-:layer\-:\-:convolution\-:\-:Configuration$<$ Layer\-Type, Value\-Type, Options, Extrinsic $>$}{\pageref{classffnn_1_1layer_1_1convolution_1_1_configuration}}{}
+\item \contentsline{section}{ffnn\-:\-:layer\-:\-:output\-:\-:Configuration$<$ Layer\-Type, Value\-Type, Options, Extrinsic $>$}{\pageref{classffnn_1_1layer_1_1output_1_1_configuration}}{}
+\item \contentsline{section}{ffnn\-:\-:layer\-:\-:fully\-\_\-connected\-:\-:Configuration$<$ Layer\-Type, Value\-Type, Options, Extrinsic $>$}{\pageref{classffnn_1_1layer_1_1fully__connected_1_1_configuration}}{}
 \item \contentsline{section}{ffnn\-:\-:layer\-:\-:fully\-\_\-connected\-:\-:Configuration$<$ Self\-Type, Value\-Type, Options, Extrinsics $>$}{\pageref{classffnn_1_1layer_1_1fully__connected_1_1_configuration}}{}
 \item \contentsline{section}{ffnn\-:\-:layer\-:\-:convolution\-:\-:Configuration$<$ Self\-Type, Value\-Type, Options, Extrinsics $>$}{\pageref{classffnn_1_1layer_1_1convolution_1_1_configuration}}{}
+\item \contentsline{section}{ffnn\-:\-:layer\-:\-:output\-:\-:Configuration$<$ Self\-Type, Value\-Type, Options, Extrinsics $>$}{\pageref{classffnn_1_1layer_1_1output_1_1_configuration}}{}
+\item \contentsline{section}{ffnn\-:\-:layer\-:\-:input\-:\-:Configuration$<$ Self\-Type, Value\-Type, Options, Extrinsics $>$}{\pageref{classffnn_1_1layer_1_1input_1_1_configuration}}{}
+\item \contentsline{section}{ffnn\-:\-:layer\-:\-:activation\-:\-:Configuration$<$ Self\-Type, Value\-Type, Options, Extrinsics $>$}{\pageref{classffnn_1_1layer_1_1activation_1_1_configuration}}{}
 \item \contentsline{section}{ffnn\-:\-:distribution\-:\-:Distribution$<$ Value\-Type $>$}{\pageref{classffnn_1_1distribution_1_1_distribution}}{}
 \begin{DoxyCompactList}
 \item \contentsline{section}{ffnn\-:\-:distribution\-:\-:Normal$<$ Value\-Type, Options $>$}{\pageref{classffnn_1_1distribution_1_1_normal}}{}
@@ -16,24 +21,33 @@ This inheritance list is sorted roughly, but not completely, alphabetically\-:\b
 \item \contentsline{section}{ffnn\-:\-:distribution\-:\-:Standard\-Normal$<$ Value\-Type $>$}{\pageref{structffnn_1_1distribution_1_1_standard_normal}}{}
 \end{DoxyCompactList}
 \end{DoxyCompactList}
+\item \contentsline{section}{ffnn\-:\-:layer\-:\-:activation\-:\-:extrinsics$<$ Value\-Type, Neuron\-Type, Options $>$}{\pageref{structffnn_1_1layer_1_1activation_1_1extrinsics}}{}
+\item \contentsline{section}{ffnn\-:\-:layer\-:\-:hidden\-:\-:extrinsics$<$ Value\-Type, Options $>$}{\pageref{structffnn_1_1layer_1_1hidden_1_1extrinsics}}{}
+\item \contentsline{section}{ffnn\-:\-:layer\-:\-:input\-:\-:extrinsics$<$ Value\-Type, Options $>$}{\pageref{structffnn_1_1layer_1_1input_1_1extrinsics}}{}
+\item \contentsline{section}{ffnn\-:\-:layer\-:\-:convolution\-:\-:extrinsics$<$ Value\-Type, Options $>$}{\pageref{structffnn_1_1layer_1_1convolution_1_1extrinsics}}{}
+\item \contentsline{section}{ffnn\-:\-:layer\-:\-:output\-:\-:extrinsics$<$ Value\-Type, Options $>$}{\pageref{structffnn_1_1layer_1_1output_1_1extrinsics}}{}
+\item \contentsline{section}{ffnn\-:\-:layer\-:\-:convolution\-:\-:filter\-:\-:extrinsics$<$ Value\-Type, Options $>$}{\pageref{structffnn_1_1layer_1_1convolution_1_1filter_1_1extrinsics}}{}
 \item \contentsline{section}{ffnn\-:\-:layer\-:\-:fully\-\_\-connected\-:\-:extrinsics$<$ Value\-Type, Options $>$}{\pageref{structffnn_1_1layer_1_1fully__connected_1_1extrinsics}}{}
 \item \contentsline{section}{ffnn\-:\-:layer\-:\-:fully\-\_\-connected\-:\-:weights\-:\-:extrinsics$<$ Value\-Type, Options $>$}{\pageref{structffnn_1_1layer_1_1fully__connected_1_1weights_1_1extrinsics}}{}
-\item \contentsline{section}{ffnn\-:\-:layer\-:\-:convolution\-:\-:extrinsics$<$ Value\-Type, Options $>$}{\pageref{structffnn_1_1layer_1_1convolution_1_1extrinsics}}{}
-\item \contentsline{section}{ffnn\-:\-:layer\-:\-:hidden\-:\-:extrinsics$<$ Value\-Type, Options $>$}{\pageref{structffnn_1_1layer_1_1hidden_1_1extrinsics}}{}
-\item \contentsline{section}{ffnn\-:\-:layer\-:\-:convolution\-:\-:filter\-:\-:extrinsics$<$ Value\-Type, Options $>$}{\pageref{structffnn_1_1layer_1_1convolution_1_1filter_1_1extrinsics}}{}
-\item \contentsline{section}{ffnn\-:\-:layer\-:\-:hidden\-:\-:extrinsics$<$ Value\-Type, \-\_\-\-Hidden\-Layer\-Shape $>$}{\pageref{structffnn_1_1layer_1_1hidden_1_1extrinsics}}{}
 \item Filter\-Base\-Type\begin{DoxyCompactList}
 \item \contentsline{section}{ffnn\-:\-:layer\-:\-:convolution\-:\-:Filter$<$ Value\-Type, Options, Extrinsics $>$}{\pageref{classffnn_1_1layer_1_1convolution_1_1_filter}}{}
 \end{DoxyCompactList}
-\item \contentsline{section}{ffnn\-:\-:optimizer\-:\-:Gradient\-Descent$<$ Layer\-Type $>$}{\pageref{classffnn_1_1optimizer_1_1_gradient_descent}}{}
+\item \contentsline{section}{ffnn\-:\-:optimizer\-:\-:Gradient\-Descent$<$ Layer\-Type, Loss\-Fn $>$}{\pageref{classffnn_1_1optimizer_1_1_gradient_descent}}{}
+\item \contentsline{section}{ffnn\-:\-:optimizer\-:\-:Gradient\-Descent$<$ layer\-:\-:Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$}{\pageref{classffnn_1_1optimizer_1_1_gradient_descent}}{}
+\begin{DoxyCompactList}
+\item \contentsline{section}{ffnn\-:\-:optimizer\-:\-:Adam$<$ layer\-:\-:Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$}{\pageref{classffnn_1_1optimizer_1_1_adam_3_01layer_1_1_fully_connected_3_01_value_type_00_01_inputs_at_co08ce471fd3ee7441a350cc42cfd35bcd}}{}
+\end{DoxyCompactList}
 \item Hidden\-Layer\-Type\begin{DoxyCompactList}
+\item \contentsline{section}{ffnn\-:\-:layer\-:\-:Activation$<$ Value\-Type, Neuron\-Type, Options, Extrinsics $>$}{\pageref{classffnn_1_1layer_1_1_activation}}{}
 \item \contentsline{section}{ffnn\-:\-:layer\-:\-:Convolution$<$ Value\-Type, Options, Extrinsics $>$}{\pageref{classffnn_1_1layer_1_1_convolution}}{}
 \item \contentsline{section}{ffnn\-:\-:layer\-:\-:Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$}{\pageref{classffnn_1_1layer_1_1_fully_connected}}{}
 \end{DoxyCompactList}
 \item \contentsline{section}{ffnn\-:\-:internal\-:\-:traits\-:\-:is\-\_\-distribution$<$ Object $>$}{\pageref{structffnn_1_1internal_1_1traits_1_1is__distribution}}{}
-\item \contentsline{section}{ffnn\-:\-:neuron\-:\-:is\-\_\-neuron$<$ Neuron\-Type $>$}{\pageref{structffnn_1_1neuron_1_1is__neuron}}{}
+\item \contentsline{section}{ffnn\-:\-:internal\-:\-:traits\-:\-:is\-\_\-neuron$<$ Object $>$}{\pageref{structffnn_1_1internal_1_1traits_1_1is__neuron}}{}
 \item Layer\-Type\begin{DoxyCompactList}
 \item \contentsline{section}{ffnn\-:\-:layer\-:\-:Hidden$<$ Value\-Type, Options, Extrinsics $>$}{\pageref{classffnn_1_1layer_1_1_hidden}}{}
+\item \contentsline{section}{ffnn\-:\-:layer\-:\-:Input$<$ Value\-Type, Options, Extrinsics $>$}{\pageref{classffnn_1_1layer_1_1_input}}{}
+\item \contentsline{section}{ffnn\-:\-:layer\-:\-:Output$<$ Value\-Type, Options, Extrinsics $>$}{\pageref{classffnn_1_1layer_1_1_output}}{}
 \end{DoxyCompactList}
 \item \contentsline{section}{ffnn\-:\-:neuron\-:\-:Neuron$<$ Value\-Type $>$}{\pageref{classffnn_1_1neuron_1_1_neuron}}{}
 \begin{DoxyCompactList}
@@ -50,47 +64,33 @@ This inheritance list is sorted roughly, but not completely, alphabetically\-:\b
 \end{DoxyCompactList}
 \item \contentsline{section}{ffnn\-:\-:optimizer\-:\-:Optimizer$<$ Layer\-Type $>$}{\pageref{classffnn_1_1optimizer_1_1_optimizer}}{}
 \begin{DoxyCompactList}
+\item \contentsline{section}{ffnn\-:\-:optimizer\-:\-:Gradient\-Descent\-\_\-$<$ Layer\-Type, Loss\-Fn $>$}{\pageref{classffnn_1_1optimizer_1_1_gradient_descent__}}{}
 \item \contentsline{section}{ffnn\-:\-:optimizer\-:\-:None$<$ Layer\-Type $>$}{\pageref{classffnn_1_1optimizer_1_1_none}}{}
 \end{DoxyCompactList}
 \item \contentsline{section}{ffnn\-:\-:optimizer\-:\-:Optimizer$<$ layer\-:\-:Convolution$<$ T\-A\-R\-G\-S $>$ $>$}{\pageref{classffnn_1_1optimizer_1_1_optimizer}}{}
 \begin{DoxyCompactList}
 \item \contentsline{section}{ffnn\-:\-:optimizer\-:\-:Gradient\-Descent$<$ layer\-:\-:Convolution$<$ T\-A\-R\-G\-S $>$ $>$}{\pageref{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4}}{}
 \end{DoxyCompactList}
-\item \contentsline{section}{ffnn\-:\-:optimizer\-:\-:Optimizer$<$ layer\-:\-:Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$}{\pageref{classffnn_1_1optimizer_1_1_optimizer}}{}
+\item \contentsline{section}{ffnn\-:\-:optimizer\-:\-:Optimizer$<$ layer\-:\-:Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$ $>$}{\pageref{classffnn_1_1optimizer_1_1_optimizer}}{}
 \begin{DoxyCompactList}
-\item \contentsline{section}{ffnn\-:\-:optimizer\-:\-:Gradient\-Descent$<$ layer\-:\-:Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$}{\pageref{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_5f7b01db2ae4d39760d70ee323649a60}}{}
+\item \contentsline{section}{ffnn\-:\-:optimizer\-:\-:Gradient\-Descent\-\_\-$<$ layer\-:\-:Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$, Cross\-Entropy $>$}{\pageref{classffnn_1_1optimizer_1_1_gradient_descent__}}{}
 \begin{DoxyCompactList}
-\item \contentsline{section}{ffnn\-:\-:optimizer\-:\-:Adam$<$ layer\-:\-:Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$}{\pageref{classffnn_1_1optimizer_1_1_adam_3_01layer_1_1_fully_connected_3_01_value_type_00_01_inputs_at_co08ce471fd3ee7441a350cc42cfd35bcd}}{}
+\item \contentsline{section}{ffnn\-:\-:optimizer\-:\-:Gradient\-Descent$<$ layer\-:\-:Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$, Cross\-Entropy $>$}{\pageref{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_5467194c2be34d4b726502ad96dff6d3}}{}
 \end{DoxyCompactList}
 \end{DoxyCompactList}
-\item \contentsline{section}{ffnn\-:\-:optimizer\-:\-:Optimizer$<$ layer\-:\-:Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}{\pageref{classffnn_1_1optimizer_1_1_optimizer}}{}
-\begin{DoxyCompactList}
-\item \contentsline{section}{ffnn\-:\-:optimizer\-:\-:Gradient\-Descent$<$ layer\-:\-:Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}{\pageref{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4}}{}
-\end{DoxyCompactList}
-\item \contentsline{section}{ffnn\-:\-:optimizer\-:\-:Optimizer$<$ layer\-:\-:Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$}{\pageref{classffnn_1_1optimizer_1_1_optimizer}}{}
-\begin{DoxyCompactList}
-\item \contentsline{section}{ffnn\-:\-:optimizer\-:\-:Gradient\-Descent$<$ layer\-:\-:Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$}{\pageref{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_sparsely_connected_3_01_value_type_00_e6c27913ab0d90f52f73031aa88c19bf}}{}
-\begin{DoxyCompactList}
-\item \contentsline{section}{ffnn\-:\-:optimizer\-:\-:Adam$<$ layer\-:\-:Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$}{\pageref{classffnn_1_1optimizer_1_1_adam_3_01layer_1_1_sparsely_connected_3_01_value_type_00_01_inputs_at5101e46d32858ec2169acdeede08d723}}{}
-\end{DoxyCompactList}
-\end{DoxyCompactList}
-\item \contentsline{section}{ffnn\-:\-:layer\-:\-:convolution\-:\-:filter\-:\-:options$<$ Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Kernel\-Count\-At\-Compile\-Time, Mode $>$}{\pageref{structffnn_1_1layer_1_1convolution_1_1filter_1_1options}}{}
-\item \contentsline{section}{ffnn\-:\-:layer\-:\-:hidden\-:\-:options$<$ Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, Input\-Data\-Ordering, Output\-Data\-Ordering $>$}{\pageref{structffnn_1_1layer_1_1hidden_1_1options}}{}
-\item \contentsline{section}{ffnn\-:\-:layer\-:\-:fully\-\_\-connected\-:\-:options$<$ Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$}{\pageref{structffnn_1_1layer_1_1fully__connected_1_1options}}{}
-\item \contentsline{section}{ffnn\-:\-:layer\-:\-:convolution\-:\-:options$<$ Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Kernel\-Height\-At\-Compile\-Time, Kernel\-Width\-At\-Compile\-Time, Kernel\-Count\-At\-Compile\-Time, Row\-Stride\-At\-Compile\-Time, Col\-Stride\-At\-Compile\-Time, Mode $>$}{\pageref{structffnn_1_1layer_1_1convolution_1_1options}}{}
+\item \contentsline{section}{ffnn\-:\-:layer\-:\-:output\-:\-:options$<$ Outputs\-At\-Compile\-Time $>$}{\pageref{structffnn_1_1layer_1_1output_1_1options}}{}
+\item \contentsline{section}{ffnn\-:\-:layer\-:\-:input\-:\-:options$<$ Inputs\-At\-Compile\-Time $>$}{\pageref{structffnn_1_1layer_1_1input_1_1options}}{}
 \item \contentsline{section}{ffnn\-:\-:layer\-:\-:fully\-\_\-connected\-:\-:weights\-:\-:options$<$ Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$}{\pageref{structffnn_1_1layer_1_1fully__connected_1_1weights_1_1options}}{}
+\item \contentsline{section}{ffnn\-:\-:layer\-:\-:convolution\-:\-:options$<$ Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Kernel\-Height\-At\-Compile\-Time, Kernel\-Width\-At\-Compile\-Time, Kernel\-Count\-At\-Compile\-Time, Row\-Stride\-At\-Compile\-Time, Col\-Stride\-At\-Compile\-Time, Mode $>$}{\pageref{structffnn_1_1layer_1_1convolution_1_1options}}{}
+\item \contentsline{section}{ffnn\-:\-:layer\-:\-:activation\-:\-:options$<$ Size\-At\-Compile\-Time $>$}{\pageref{structffnn_1_1layer_1_1activation_1_1options}}{}
+\item \contentsline{section}{ffnn\-:\-:layer\-:\-:hidden\-:\-:options$<$ Input\-Height\-At\-Compile\-Time, Input\-Width\-At\-Compile\-Time, Output\-Height\-At\-Compile\-Time, Output\-Width\-At\-Compile\-Time, Input\-Data\-Ordering, Output\-Data\-Ordering $>$}{\pageref{structffnn_1_1layer_1_1hidden_1_1options}}{}
+\item \contentsline{section}{ffnn\-:\-:layer\-:\-:convolution\-:\-:filter\-:\-:options$<$ Height\-At\-Compile\-Time, Width\-At\-Compile\-Time, Depth\-At\-Compile\-Time, Kernel\-Count\-At\-Compile\-Time, Mode $>$}{\pageref{structffnn_1_1layer_1_1convolution_1_1filter_1_1options}}{}
+\item \contentsline{section}{ffnn\-:\-:layer\-:\-:fully\-\_\-connected\-:\-:options$<$ Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$}{\pageref{structffnn_1_1layer_1_1fully__connected_1_1options}}{}
 \item \contentsline{section}{ffnn\-:\-:internal\-:\-:Serializable}{\pageref{classffnn_1_1internal_1_1_serializable}}{}
 \begin{DoxyCompactList}
 \item \contentsline{section}{ffnn\-:\-:internal\-:\-:Unique}{\pageref{classffnn_1_1internal_1_1_unique}}{}
 \begin{DoxyCompactList}
 \item \contentsline{section}{ffnn\-:\-:layer\-:\-:Layer$<$ Value\-Type $>$}{\pageref{classffnn_1_1layer_1_1_layer}}{}
-\begin{DoxyCompactList}
-\item \contentsline{section}{ffnn\-:\-:layer\-:\-:Output$<$ Value\-Type, Network\-Outputs\-At\-Compile\-Time $>$}{\pageref{classffnn_1_1layer_1_1_output}}{}
-\item \contentsline{section}{ffnn\-:\-:layer\-:\-:Hidden$<$ Value\-Type, \-\_\-\-Hidden\-Layer\-Shape $>$}{\pageref{classffnn_1_1layer_1_1_hidden}}{}
-\begin{DoxyCompactList}
-\item \contentsline{section}{ffnn\-:\-:layer\-:\-:Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}{\pageref{classffnn_1_1layer_1_1_activation}}{}
-\end{DoxyCompactList}
-\end{DoxyCompactList}
 \end{DoxyCompactList}
 \end{DoxyCompactList}
 \item \contentsline{section}{ffnn\-:\-:layer\-:\-:Shape$<$ Size\-Type $>$}{\pageref{structffnn_1_1layer_1_1_shape}}{}

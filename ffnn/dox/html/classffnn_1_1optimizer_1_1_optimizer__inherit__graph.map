@@ -1,3 +1,4 @@
 <map id="ffnn::optimizer::Optimizer&lt; LayerType &gt;" name="ffnn::optimizer::Optimizer&lt; LayerType &gt;">
-<area shape="rect" id="node2" href="$classffnn_1_1optimizer_1_1_none.html" title="ffnn::optimizer::None\l\&lt; LayerType \&gt;" alt="" coords="17,97,161,138"/>
+<area shape="rect" id="node2" href="$classffnn_1_1optimizer_1_1_gradient_descent__.html" title="ffnn::optimizer::Gradient\lDescent_\&lt; LayerType \&gt;" alt="" coords="5,97,168,138"/>
+<area shape="rect" id="node3" href="$classffnn_1_1optimizer_1_1_none.html" title="ffnn::optimizer::None\l\&lt; LayerType \&gt;" alt="" coords="192,97,336,138"/>
 </map>

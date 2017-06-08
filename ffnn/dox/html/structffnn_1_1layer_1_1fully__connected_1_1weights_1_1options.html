@@ -110,7 +110,7 @@ Static Public Attributes</h2></td></tr>
 <tr class="memitem:a45dac283a1611df3497baf255d8645c1"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="namespaceffnn.html#a63b90a2fd70eb76684eac482a51633e5">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1options.html#a45dac283a1611df3497baf255d8645c1">output_size</a> = OutputsAtCompileTime</td></tr>
 <tr class="memdesc:a45dac283a1611df3497baf255d8645c1"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classffnn_1_1layer_1_1_fully_connected.html" title="A fully-connected layer. ">FullyConnected</a> layer output count.  <a href="#a45dac283a1611df3497baf255d8645c1">More...</a><br/></td></tr>
 <tr class="separator:a45dac283a1611df3497baf255d8645c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb66c282ebaa5f29ce34d14b68551b94"><td class="memItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1options.html#acb66c282ebaa5f29ce34d14b68551b94">has_fixed_sizes</a></td></tr>
+<tr class="memitem:acb66c282ebaa5f29ce34d14b68551b94"><td class="memItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1options.html#acb66c282ebaa5f29ce34d14b68551b94">has_fixed_sizes</a> = !<a class="el" href="namespaceffnn_1_1layer.html#a83ba223c7b7eb8e3d926b98b266f24c8">is_dynamic</a>(<a class="el" href="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1options.html#aa9973b3dcef51f2684f3c36bbeccd767">input_size</a>) &amp;&amp; !<a class="el" href="namespaceffnn_1_1layer.html#a83ba223c7b7eb8e3d926b98b266f24c8">is_dynamic</a>(<a class="el" href="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1options.html#a45dac283a1611df3497baf255d8645c1">output_size</a>)</td></tr>
 <tr class="memdesc:acb66c282ebaa5f29ce34d14b68551b94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to check if dimensions are fixed.  <a href="#acb66c282ebaa5f29ce34d14b68551b94">More...</a><br/></td></tr>
 <tr class="separator:acb66c282ebaa5f29ce34d14b68551b94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -130,7 +130,7 @@ template&lt;size_type InputsAtCompileTime = Eigen::Dynamic, size_type OutputsAtC
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr bool <a class="el" href="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1options.html">ffnn::layer::fully_connected::weights::options</a>&lt; InputsAtCompileTime, OutputsAtCompileTime &gt;::has_fixed_sizes</td>
+          <td class="memname">constexpr bool <a class="el" href="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1options.html">ffnn::layer::fully_connected::weights::options</a>&lt; InputsAtCompileTime, OutputsAtCompileTime &gt;::has_fixed_sizes = !<a class="el" href="namespaceffnn_1_1layer.html#a83ba223c7b7eb8e3d926b98b266f24c8">is_dynamic</a>(<a class="el" href="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1options.html#aa9973b3dcef51f2684f3c36bbeccd767">input_size</a>) &amp;&amp; !<a class="el" href="namespaceffnn_1_1layer.html#a83ba223c7b7eb8e3d926b98b266f24c8">is_dynamic</a>(<a class="el" href="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1options.html#a45dac283a1611df3497baf255d8645c1">output_size</a>)</td>
         </tr>
       </table>
   </td>
@@ -139,9 +139,7 @@ template&lt;size_type InputsAtCompileTime = Eigen::Dynamic, size_type OutputsAtC
   </tr>
 </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= !<a class="code" href="namespaceffnn_1_1layer.html#a83ba223c7b7eb8e3d926b98b266f24c8">is_dynamic</a>(InputsAtCompileTime) &amp;&amp;</div>
-<div class="line">                                          !<a class="code" href="namespaceffnn_1_1layer.html#a83ba223c7b7eb8e3d926b98b266f24c8">is_dynamic</a>(OutputsAtCompileTime)</div>
-</div><!-- fragment -->
+
 <p>Used to check if dimensions are fixed. </p>
 
 </div>
@@ -200,7 +198,7 @@ template&lt;size_type InputsAtCompileTime = Eigen::Dynamic, size_type OutputsAtC
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jun 3 2017 23:40:28 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 8 2017 01:08:57 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

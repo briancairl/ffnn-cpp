@@ -12,8 +12,7 @@ A convolution layer.
 
 
 
-Inheritance diagram for ffnn\-:\-:layer\-:\-:Convolution$<$ Value\-Type, Options, Extrinsics $>$\-:
-\nopagebreak
+Inheritance diagram for ffnn\-:\-:layer\-:\-:Convolution$<$ Value\-Type, Options, Extrinsics $>$\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -22,8 +21,7 @@ Inheritance diagram for ffnn\-:\-:layer\-:\-:Convolution$<$ Value\-Type, Options
 \end{figure}
 
 
-Collaboration diagram for ffnn\-:\-:layer\-:\-:Convolution$<$ Value\-Type, Options, Extrinsics $>$\-:
-\nopagebreak
+Collaboration diagram for ffnn\-:\-:layer\-:\-:Convolution$<$ Value\-Type, Options, Extrinsics $>$\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -37,18 +35,18 @@ using \hyperlink{classffnn_1_1layer_1_1_convolution_ac3985357df433360d75f39353fa
 \begin{DoxyCompactList}\small\item\em Self type alias. \end{DoxyCompactList}\item 
 using \hyperlink{classffnn_1_1layer_1_1_convolution_a30a3026202f29a601e539c80824fcf1f}{Base\-Type} = typename Extrinsics\-::\-Hidden\-Layer\-Type
 \begin{DoxyCompactList}\small\item\em Base type alias. \end{DoxyCompactList}\item 
-typedef \\*
-\hyperlink{classffnn_1_1layer_1_1convolution_1_1_configuration}{convolution\-::\-Configuration}\\*
-$<$ \hyperlink{classffnn_1_1layer_1_1_convolution_ac3985357df433360d75f39353faae600}{Self\-Type}, Value\-Type, Options, \\*
-Extrinsics $>$ \hyperlink{classffnn_1_1layer_1_1_convolution_a01dee52138bb0d51a1ecddb5504176be}{Configuration}
-\begin{DoxyCompactList}\small\item\em Configuration type standardization. \end{DoxyCompactList}\item 
 typedef Base\-Type\-::\-Shape\-Type \hyperlink{classffnn_1_1layer_1_1_convolution_ab76070ee3cc7b42325f46bc3bc86bf5f}{Shape\-Type}
 \begin{DoxyCompactList}\small\item\em Dimension type standardization. \end{DoxyCompactList}\item 
 typedef Extrinsics\-::\-Parameters\-Type \hyperlink{classffnn_1_1layer_1_1_convolution_af2568040fc4089f93a6483da08dcc266}{Parameters\-Type}
 \begin{DoxyCompactList}\small\item\em Filter parameters type standardization. \end{DoxyCompactList}\item 
 typedef \\*
 Extrinsics\-::\-Forward\-Mapping\-Grid\-Type \hyperlink{classffnn_1_1layer_1_1_convolution_a2b15b4e46b7679753e4f3e28b619bae5}{Forward\-Mapping\-Grid\-Type}
-\begin{DoxyCompactList}\small\item\em 2\-D-\/value mapping standardization \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em 2\-D-\/value mapping standardization \end{DoxyCompactList}\item 
+typedef \\*
+\hyperlink{classffnn_1_1layer_1_1convolution_1_1_configuration}{convolution\-::\-Configuration}\\*
+$<$ \hyperlink{classffnn_1_1layer_1_1_convolution_ac3985357df433360d75f39353faae600}{Self\-Type}, Value\-Type, Options, \\*
+Extrinsics $>$ \hyperlink{classffnn_1_1layer_1_1_convolution_a01dee52138bb0d51a1ecddb5504176be}{Configuration}
+\begin{DoxyCompactList}\small\item\em Configuration type standardization. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -177,9 +175,6 @@ Does not apply layer weight updates
 
 Will throw if an optimizer has not been associated with this layer 
 \end{DoxyWarning}
-\begin{DoxySeeAlso}{See Also}
-set\-Optimizer 
-\end{DoxySeeAlso}
 \hypertarget{classffnn_1_1layer_1_1_convolution_aeb9c1983ad3858070fe1d31c3ab2f8c0}{\index{ffnn\-::layer\-::\-Convolution@{ffnn\-::layer\-::\-Convolution}!F\-F\-N\-N\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-S\-E\-R\-I\-A\-L\-I\-Z\-A\-B\-L\-E@{F\-F\-N\-N\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-S\-E\-R\-I\-A\-L\-I\-Z\-A\-B\-L\-E}}
 \index{F\-F\-N\-N\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-S\-E\-R\-I\-A\-L\-I\-Z\-A\-B\-L\-E@{F\-F\-N\-N\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-S\-E\-R\-I\-A\-L\-I\-Z\-A\-B\-L\-E}!ffnn::layer::Convolution@{ffnn\-::layer\-::\-Convolution}}
 \subsubsection[{F\-F\-N\-N\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-S\-E\-R\-I\-A\-L\-I\-Z\-A\-B\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = typename convolution\-::options$<$$>$, typename Extrinsics  = typename convolution\-::extrinsics$<$\-Value\-Type, Options$>$$>$ {\bf ffnn\-::layer\-::\-Convolution}$<$ Value\-Type, Options, Extrinsics $>$\-::F\-F\-N\-N\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-S\-E\-R\-I\-A\-L\-I\-Z\-A\-B\-L\-E (
@@ -254,8 +249,7 @@ Load serializer.
 
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -278,8 +272,7 @@ Save serializer.
 
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -309,12 +302,9 @@ Applies accumulated layer weight updates computed during optimization.
 \begin{DoxyWarning}{Warning}
 Will throw if an optimizer has not been associated with this layer 
 \end{DoxyWarning}
-\begin{DoxySeeAlso}{See Also}
-set\-Optimizer 
-\end{DoxySeeAlso}
 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
 /home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/\hyperlink{convolution_8h}{convolution.\-h}\item 
-/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/impl/layer/\hyperlink{impl_2layer_2convolution_8hpp}{convolution.\-hpp}\end{DoxyCompactItemize}
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/impl/layer/convolution/\hyperlink{layer_2convolution_2convolution_8hpp}{convolution.\-hpp}\end{DoxyCompactItemize}

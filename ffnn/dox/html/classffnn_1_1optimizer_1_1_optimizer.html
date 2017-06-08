@@ -107,7 +107,7 @@ Inheritance diagram for ffnn::optimizer::Optimizer&lt; LayerType &gt;:</div>
 <div class="dyncontent">
 <div class="center"><img src="classffnn_1_1optimizer_1_1_optimizer__inherit__graph.png" border="0" usemap="#ffnn_1_1optimizer_1_1_optimizer_3_01_layer_type_01_4_inherit__map" alt="Inheritance graph"/></div>
 <map name="ffnn_1_1optimizer_1_1_optimizer_3_01_layer_type_01_4_inherit__map" id="ffnn_1_1optimizer_1_1_optimizer_3_01_layer_type_01_4_inherit__map">
-<area shape="rect" id="node2" href="classffnn_1_1optimizer_1_1_none.html" title="ffnn::optimizer::None\l\&lt; LayerType \&gt;" alt="" coords="17,97,161,138"/></map>
+<area shape="rect" id="node2" href="classffnn_1_1optimizer_1_1_gradient_descent__.html" title="ffnn::optimizer::Gradient\lDescent_\&lt; LayerType \&gt;" alt="" coords="5,97,168,138"/><area shape="rect" id="node3" href="classffnn_1_1optimizer_1_1_none.html" title="ffnn::optimizer::None\l\&lt; LayerType \&gt;" alt="" coords="192,97,336,138"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
@@ -120,6 +120,9 @@ Public Types</h2></td></tr>
 &lt; const <a class="el" href="classffnn_1_1optimizer_1_1_optimizer.html">Optimizer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1optimizer_1_1_optimizer.html#a5d62c55f6f830e993ffe801fb17a1c3a">ConstPtr</a></td></tr>
 <tr class="memdesc:a5d62c55f6f830e993ffe801fb17a1c3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constant shared resource standardization.  <a href="#a5d62c55f6f830e993ffe801fb17a1c3a">More...</a><br/></td></tr>
 <tr class="separator:a5d62c55f6f830e993ffe801fb17a1c3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acaa42e2661559c561caf881c4d934b8c"><td class="memItemLeft" align="right" valign="top">typedef LayerType::Scalar&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1optimizer_1_1_optimizer.html#acaa42e2661559c561caf881c4d934b8c">Scalar</a></td></tr>
+<tr class="memdesc:acaa42e2661559c561caf881c4d934b8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scalar type standardization.  <a href="#acaa42e2661559c561caf881c4d934b8c">More...</a><br/></td></tr>
+<tr class="separator:acaa42e2661559c561caf881c4d934b8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -188,6 +191,22 @@ template&lt;typename LayerType&gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="acaa42e2661559c561caf881c4d934b8c"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename LayerType&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef LayerType::Scalar <a class="el" href="classffnn_1_1optimizer_1_1_optimizer.html">ffnn::optimizer::Optimizer</a>&lt; LayerType &gt;::<a class="el" href="classffnn_1_1optimizer_1_1_optimizer.html#acaa42e2661559c561caf881c4d934b8c">Scalar</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Scalar type standardization. </p>
+
+</div>
+</div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a5daf7f0191df7c672247e0d5a25fbafa"></a>
 <div class="memitem">
@@ -208,7 +227,7 @@ template&lt;typename LayerType&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -288,7 +307,7 @@ template&lt;typename LayerType&gt; </div>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4.html#ab9bd2d9c46a329a2652a397ef01d77aa">ffnn::optimizer::GradientDescent&lt; layer::LocalConvolution&lt; TARGS &gt; &gt;</a>, <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4.html#a8b37b876d0d861623d36764a37e3e6e2">ffnn::optimizer::GradientDescent&lt; layer::Convolution&lt; TARGS &gt; &gt;</a>, <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_5f7b01db2ae4d39760d70ee323649a60.html#a216318398f796e0b2a2522a45a4441be">ffnn::optimizer::GradientDescent&lt; layer::FullyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt; &gt;</a>, <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_sparsely_connected_3_01_value_type_00_e6c27913ab0d90f52f73031aa88c19bf.html#a21e3b66b2d83b356b4534cf6d789fa18">ffnn::optimizer::GradientDescent&lt; layer::SparselyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt; &gt;</a>, and <a class="el" href="classffnn_1_1optimizer_1_1_none.html#a1b8fb0b29f3f0afccc557f6b486fb3fe">ffnn::optimizer::None&lt; LayerType &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4.html#a8b37b876d0d861623d36764a37e3e6e2">ffnn::optimizer::GradientDescent&lt; layer::Convolution&lt; TARGS &gt; &gt;</a>, <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent__.html#a810bd29432c41b39239337139b7a0a0b">ffnn::optimizer::GradientDescent_&lt; LayerType, LossFn &gt;</a>, <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent__.html#a810bd29432c41b39239337139b7a0a0b">ffnn::optimizer::GradientDescent_&lt; layer::FullyConnected&lt; ValueType, Options, Extrinsics &gt;, CrossEntropy &gt;</a>, and <a class="el" href="classffnn_1_1optimizer_1_1_none.html#a1b8fb0b29f3f0afccc557f6b486fb3fe">ffnn::optimizer::None&lt; LayerType &gt;</a>.</p>
 
 </div>
 </div>
@@ -331,7 +350,7 @@ template&lt;typename LayerType&gt; </div>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4.html#a19104dcb39006cdc50d8b55f027df6c6">ffnn::optimizer::GradientDescent&lt; layer::LocalConvolution&lt; TARGS &gt; &gt;</a>, <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4.html#a873062535938aebab53a62d93f3e7db7">ffnn::optimizer::GradientDescent&lt; layer::Convolution&lt; TARGS &gt; &gt;</a>, <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_5f7b01db2ae4d39760d70ee323649a60.html#afa8fe46160d16887fc7abb4de34a65e5">ffnn::optimizer::GradientDescent&lt; layer::FullyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt; &gt;</a>, <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_sparsely_connected_3_01_value_type_00_e6c27913ab0d90f52f73031aa88c19bf.html#a7e9882cd69c5d4ee64f5614614e9d96c">ffnn::optimizer::GradientDescent&lt; layer::SparselyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt; &gt;</a>, and <a class="el" href="classffnn_1_1optimizer_1_1_none.html#a4aa65aa33dc45fa3b5d30e7f2a7169f2">ffnn::optimizer::None&lt; LayerType &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4.html#a873062535938aebab53a62d93f3e7db7">ffnn::optimizer::GradientDescent&lt; layer::Convolution&lt; TARGS &gt; &gt;</a>, <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent__.html#a3fda5e93b5fc359c4e36fc1c681e6929">ffnn::optimizer::GradientDescent_&lt; LayerType, LossFn &gt;</a>, <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent__.html#a3fda5e93b5fc359c4e36fc1c681e6929">ffnn::optimizer::GradientDescent_&lt; layer::FullyConnected&lt; ValueType, Options, Extrinsics &gt;, CrossEntropy &gt;</a>, and <a class="el" href="classffnn_1_1optimizer_1_1_none.html#a4aa65aa33dc45fa3b5d30e7f2a7169f2">ffnn::optimizer::None&lt; LayerType &gt;</a>.</p>
 
 </div>
 </div>
@@ -367,7 +386,7 @@ template&lt;typename LayerType&gt; </div>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4.html#a968cbe2160f43f52fd918880ee4832b4">ffnn::optimizer::GradientDescent&lt; layer::LocalConvolution&lt; TARGS &gt; &gt;</a>, <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4.html#a6dbb9707492c05e512163935ac7330c9">ffnn::optimizer::GradientDescent&lt; layer::Convolution&lt; TARGS &gt; &gt;</a>, <a class="el" href="classffnn_1_1optimizer_1_1_adam_3_01layer_1_1_fully_connected_3_01_value_type_00_01_inputs_at_co08ce471fd3ee7441a350cc42cfd35bcd.html#aa67f949f7a1228c221d06b1b1e03c28b">ffnn::optimizer::Adam&lt; layer::FullyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt; &gt;</a>, <a class="el" href="classffnn_1_1optimizer_1_1_adam_3_01layer_1_1_sparsely_connected_3_01_value_type_00_01_inputs_at5101e46d32858ec2169acdeede08d723.html#a3529c6f6fb1befc882cc3ae17c00ba5a">ffnn::optimizer::Adam&lt; layer::SparselyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt; &gt;</a>, <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_5f7b01db2ae4d39760d70ee323649a60.html#a2e152e94571b7948b514c9d4cbd70504">ffnn::optimizer::GradientDescent&lt; layer::FullyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt; &gt;</a>, <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_sparsely_connected_3_01_value_type_00_e6c27913ab0d90f52f73031aa88c19bf.html#ac3fa00e4febe86906ff6045fe77777b0">ffnn::optimizer::GradientDescent&lt; layer::SparselyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt; &gt;</a>, and <a class="el" href="classffnn_1_1optimizer_1_1_none.html#a976eb3fe07f8c23a81851e7af4169ec8">ffnn::optimizer::None&lt; LayerType &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4.html#a6dbb9707492c05e512163935ac7330c9">ffnn::optimizer::GradientDescent&lt; layer::Convolution&lt; TARGS &gt; &gt;</a>, <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent__.html#a9b2a8f8c1a1411ffb3b2d207c42fca9e">ffnn::optimizer::GradientDescent_&lt; LayerType, LossFn &gt;</a>, <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent__.html#a9b2a8f8c1a1411ffb3b2d207c42fca9e">ffnn::optimizer::GradientDescent_&lt; layer::FullyConnected&lt; ValueType, Options, Extrinsics &gt;, CrossEntropy &gt;</a>, and <a class="el" href="classffnn_1_1optimizer_1_1_none.html#a976eb3fe07f8c23a81851e7af4169ec8">ffnn::optimizer::None&lt; LayerType &gt;</a>.</p>
 
 </div>
 </div>
@@ -396,7 +415,7 @@ template&lt;typename LayerType&gt; </div>
 
 <p>Exposes name of the optimizer. </p>
 
-<p>Referenced by <a class="el" href="classffnn_1_1optimizer_1_1_optimizer.html#ab9aa028897eed9617b6439e1ea56a1ee">ffnn::optimizer::Optimizer&lt; layer::SparselyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt; &gt;::setName()</a>.</p>
+<p>Referenced by <a class="el" href="classffnn_1_1optimizer_1_1_optimizer.html#ab9aa028897eed9617b6439e1ea56a1ee">ffnn::optimizer::Optimizer&lt; layer::Convolution&lt; TARGS &gt; &gt;::setName()</a>.</p>
 
 </div>
 </div>
@@ -432,7 +451,7 @@ template&lt;typename LayerType&gt; </div>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4.html#a4295c66fd36d4679dfda2a1f1c78b37b">ffnn::optimizer::GradientDescent&lt; layer::LocalConvolution&lt; TARGS &gt; &gt;</a>, <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4.html#ab5761e35397a5d346dc81c225af9402a">ffnn::optimizer::GradientDescent&lt; layer::Convolution&lt; TARGS &gt; &gt;</a>, <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_5f7b01db2ae4d39760d70ee323649a60.html#a8317088f22bb86f204108a82f9233844">ffnn::optimizer::GradientDescent&lt; layer::FullyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt; &gt;</a>, <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_sparsely_connected_3_01_value_type_00_e6c27913ab0d90f52f73031aa88c19bf.html#a61e4190921d10b1ec15f0a710b12df22">ffnn::optimizer::GradientDescent&lt; layer::SparselyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt; &gt;</a>, and <a class="el" href="classffnn_1_1optimizer_1_1_none.html#a10f714488a57b139b91a03939a8809ac">ffnn::optimizer::None&lt; LayerType &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4.html#ab5761e35397a5d346dc81c225af9402a">ffnn::optimizer::GradientDescent&lt; layer::Convolution&lt; TARGS &gt; &gt;</a>, <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent__.html#a50581919467a4bb592eeb7fa98cd3b34">ffnn::optimizer::GradientDescent_&lt; LayerType, LossFn &gt;</a>, <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent__.html#a50581919467a4bb592eeb7fa98cd3b34">ffnn::optimizer::GradientDescent_&lt; layer::FullyConnected&lt; ValueType, Options, Extrinsics &gt;, CrossEntropy &gt;</a>, and <a class="el" href="classffnn_1_1optimizer_1_1_none.html#a10f714488a57b139b91a03939a8809ac">ffnn::optimizer::None&lt; LayerType &gt;</a>.</p>
 
 </div>
 </div>
@@ -503,7 +522,7 @@ template&lt;typename LayerType&gt; </div>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4.html#a78a1029caa29a3f5d1548a85dac1a4dd">ffnn::optimizer::GradientDescent&lt; layer::LocalConvolution&lt; TARGS &gt; &gt;</a>, <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4.html#a3cbbcd9490ff52ee7984bfcb17db4ee1">ffnn::optimizer::GradientDescent&lt; layer::Convolution&lt; TARGS &gt; &gt;</a>, <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_sparsely_connected_3_01_value_type_00_e6c27913ab0d90f52f73031aa88c19bf.html#ada280929e93a2d12f0bc21e9077e75a1">ffnn::optimizer::GradientDescent&lt; layer::SparselyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt; &gt;</a>, <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_5f7b01db2ae4d39760d70ee323649a60.html#a4e15c26f4b561a8ea3ca3de3b324e1cf">ffnn::optimizer::GradientDescent&lt; layer::FullyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt; &gt;</a>, <a class="el" href="classffnn_1_1optimizer_1_1_adam_3_01layer_1_1_fully_connected_3_01_value_type_00_01_inputs_at_co08ce471fd3ee7441a350cc42cfd35bcd.html#ad42586e39195fc9a72057f20b657f8be">ffnn::optimizer::Adam&lt; layer::FullyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt; &gt;</a>, <a class="el" href="classffnn_1_1optimizer_1_1_adam_3_01layer_1_1_sparsely_connected_3_01_value_type_00_01_inputs_at5101e46d32858ec2169acdeede08d723.html#aaa3b2eb55a9d80d51330c132df65214b">ffnn::optimizer::Adam&lt; layer::SparselyConnected&lt; ValueType, InputsAtCompileTime, OutputsAtCompileTime &gt; &gt;</a>, and <a class="el" href="classffnn_1_1optimizer_1_1_none.html#aa2d59b906b49fb976b50a810479637fd">ffnn::optimizer::None&lt; LayerType &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4.html#a3cbbcd9490ff52ee7984bfcb17db4ee1">ffnn::optimizer::GradientDescent&lt; layer::Convolution&lt; TARGS &gt; &gt;</a>, <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent__.html#a90fface371af7bef89880d278a9b2007">ffnn::optimizer::GradientDescent_&lt; LayerType, LossFn &gt;</a>, <a class="el" href="classffnn_1_1optimizer_1_1_gradient_descent__.html#a90fface371af7bef89880d278a9b2007">ffnn::optimizer::GradientDescent_&lt; layer::FullyConnected&lt; ValueType, Options, Extrinsics &gt;, CrossEntropy &gt;</a>, and <a class="el" href="classffnn_1_1optimizer_1_1_none.html#aa2d59b906b49fb976b50a810479637fd">ffnn::optimizer::None&lt; LayerType &gt;</a>.</p>
 
 </div>
 </div>
@@ -513,7 +532,7 @@ template&lt;typename LayerType&gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jun 3 2017 23:40:29 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 8 2017 01:08:57 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

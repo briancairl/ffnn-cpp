@@ -1,10 +1,14 @@
 \hypertarget{output_8h}{\section{/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/output.h File Reference}
 \label{output_8h}\index{/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/output.\-h@{/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/output.\-h}}
 }
-{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$cstring$>$}\\*
+{\ttfamily \#include $<$ffnn/assert.\-h$>$}\\*
 {\ttfamily \#include $<$ffnn/internal/config.\-h$>$}\\*
 {\ttfamily \#include $<$ffnn/layer/layer.\-h$>$}\\*
-{\ttfamily \#include $<$ffnn/layer/impl/output.\-hpp$>$}\\*
+{\ttfamily \#include $<$ffnn/layer/shape.\-h$>$}\\*
+{\ttfamily \#include $<$ffnn/layer/output/compile\-\_\-time\-\_\-options.\-h$>$}\\*
+{\ttfamily \#include $<$ffnn/layer/output/configuration.\-h$>$}\\*
+{\ttfamily \#include $<$ffnn/impl/layer/output/output.\-hpp$>$}\\*
 Include dependency graph for output.\-h\-:
 \nopagebreak
 \begin{figure}[H]
@@ -16,7 +20,7 @@ Include dependency graph for output.\-h\-:
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \hyperlink{classffnn_1_1layer_1_1_output}{ffnn\-::layer\-::\-Output$<$ Value\-Type, Network\-Outputs\-At\-Compile\-Time $>$}
+class \hyperlink{classffnn_1_1layer_1_1_output}{ffnn\-::layer\-::\-Output$<$ Value\-Type, Options, Extrinsics $>$}
 \begin{DoxyCompactList}\small\item\em A layer which handles network outputs. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Namespaces}
 \begin{DoxyCompactItemize}

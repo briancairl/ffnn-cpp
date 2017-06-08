@@ -95,25 +95,31 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef FFNN_LAYER_OPTIMIZATION_FWD_H</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define FFNN_LAYER_OPTIMIZATION_FWD_H</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span>ffnn</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="namespaceffnn_1_1optimizer.html">   10</a></span>&#160;<span class="keyword">namespace </span>optimizer</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">// Foward Declarations</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classffnn_1_1optimizer_1_1_none.html">   13</a></span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> LayerType&gt; <span class="keyword">class </span><a class="code" href="classffnn_1_1optimizer_1_1_none.html">None</a>;</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classffnn_1_1optimizer_1_1_adam.html">   14</a></span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> LayerType&gt; <span class="keyword">class </span><a class="code" href="classffnn_1_1optimizer_1_1_adam.html">Adam</a>;</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classffnn_1_1optimizer_1_1_gradient_descent.html">   15</a></span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> LayerType&gt; <span class="keyword">class </span><a class="code" href="classffnn_1_1optimizer_1_1_gradient_descent.html">GradientDescent</a>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}  <span class="comment">// namespace optimizer</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}  <span class="comment">// namespace ffnn</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#endif  // FFNN_LAYER_OPTIMIZATION_OPTIMIZER_H</span></div>
-<div class="ttc" id="classffnn_1_1optimizer_1_1_adam_html"><div class="ttname"><a href="classffnn_1_1optimizer_1_1_adam.html">ffnn::optimizer::Adam</a></div><div class="ttdef"><b>Definition:</b> fwd.h:14</div></div>
-<div class="ttc" id="classffnn_1_1optimizer_1_1_none_html"><div class="ttname"><a href="classffnn_1_1optimizer_1_1_none.html">ffnn::optimizer::None</a></div><div class="ttdef"><b>Definition:</b> fwd.h:13</div></div>
-<div class="ttc" id="classffnn_1_1optimizer_1_1_gradient_descent_html"><div class="ttname"><a href="classffnn_1_1optimizer_1_1_gradient_descent.html">ffnn::optimizer::GradientDescent</a></div><div class="ttdef"><b>Definition:</b> fwd.h:15</div></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// FFNN</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="loss__function_8h.html">ffnn/optimizer/loss_function.h</a>&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span>ffnn</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span>optimizer</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// Foward Declarations</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classffnn_1_1optimizer_1_1_none.html">   16</a></span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> LayerType&gt; <span class="keyword">class </span><a class="code" href="classffnn_1_1optimizer_1_1_none.html">None</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classffnn_1_1optimizer_1_1_adam.html">   17</a></span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> LayerType, LossFunction LossFn&gt; <span class="keyword">class </span><a class="code" href="classffnn_1_1optimizer_1_1_adam.html">Adam</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classffnn_1_1optimizer_1_1_gradient_descent.html">   18</a></span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> LayerType, LossFunction LossFn&gt; <span class="keyword">class </span><a class="code" href="classffnn_1_1optimizer_1_1_gradient_descent.html">GradientDescent</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classffnn_1_1optimizer_1_1_gradient_descent__.html">   19</a></span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> LayerType, LossFunction LossFn&gt; <span class="keyword">class </span><a class="code" href="classffnn_1_1optimizer_1_1_gradient_descent__.html">GradientDescent_</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}  <span class="comment">// namespace optimizer</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}  <span class="comment">// namespace ffnn</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#endif  // FFNN_LAYER_OPTIMIZATION_OPTIMIZER_H</span></div>
+<div class="ttc" id="classffnn_1_1optimizer_1_1_adam_html"><div class="ttname"><a href="classffnn_1_1optimizer_1_1_adam.html">ffnn::optimizer::Adam</a></div><div class="ttdef"><b>Definition:</b> fwd.h:17</div></div>
+<div class="ttc" id="classffnn_1_1optimizer_1_1_none_html"><div class="ttname"><a href="classffnn_1_1optimizer_1_1_none.html">ffnn::optimizer::None</a></div><div class="ttdef"><b>Definition:</b> fwd.h:16</div></div>
+<div class="ttc" id="classffnn_1_1optimizer_1_1_gradient_descent_html"><div class="ttname"><a href="classffnn_1_1optimizer_1_1_gradient_descent.html">ffnn::optimizer::GradientDescent</a></div><div class="ttdef"><b>Definition:</b> fwd.h:18</div></div>
+<div class="ttc" id="classffnn_1_1optimizer_1_1_gradient_descent___html"><div class="ttname"><a href="classffnn_1_1optimizer_1_1_gradient_descent__.html">ffnn::optimizer::GradientDescent_</a></div><div class="ttdef"><b>Definition:</b> fwd.h:19</div></div>
+<div class="ttc" id="loss__function_8h_html"><div class="ttname"><a href="loss__function_8h.html">loss_function.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jun 3 2017 23:40:28 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 8 2017 01:08:56 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -1,9 +1,10 @@
-<map id="/home/briancairl/packages/src/ffnn&#45;cpp/ffnn/include/ffnn/impl/layer/activation.hpp" name="/home/briancairl/packages/src/ffnn&#45;cpp/ffnn/include/ffnn/impl/layer/activation.hpp">
-<area shape="rect" id="node4" href="$assert_8h.html" title="ffnn/assert.h" alt="" coords="1051,259,1145,285"/>
-<area shape="rect" id="node9" href="$logging_8h.html" title="ffnn/logging.h" alt="" coords="5,416,104,443"/>
-<area shape="rect" id="node20" href="$none_8h.html" title="ffnn/optimizer/none.h" alt="" coords="577,109,721,136"/>
-<area shape="rect" id="node25" href="$signature_8h.html" title="ffnn/internal/signature.h" alt="" coords="1191,109,1349,136"/>
-<area shape="rect" id="node7" href="$config_8h.html" title="ffnn/internal/config.h" alt="" coords="674,333,813,360"/>
-<area shape="rect" id="node16" href="$sparse__triplet__serialization_8h.html" title="ffnn/internal/eigen\l/sparse_triplet_serialization.h" alt="" coords="907,409,1097,450"/>
-<area shape="rect" id="node22" href="$optimizer_8h.html" title="ffnn/optimizer/optimizer.h" alt="" coords="642,184,811,211"/>
+<map id="/home/briancairl/packages/src/ffnn&#45;cpp/ffnn/include/ffnn/impl/layer/activation/activation.hpp" name="/home/briancairl/packages/src/ffnn&#45;cpp/ffnn/include/ffnn/impl/layer/activation/activation.hpp">
+<area shape="rect" id="node4" href="$assert_8h.html" title="ffnn/assert.h" alt="" coords="1007,283,1101,309"/>
+<area shape="rect" id="node9" href="$logging_8h.html" title="ffnn/logging.h" alt="" coords="1443,448,1543,475"/>
+<area shape="rect" id="node20" href="$none_8h.html" title="ffnn/optimizer/none.h" alt="" coords="983,125,1127,152"/>
+<area shape="rect" id="node26" href="$signature_8h.html" title="ffnn/internal/signature.h" alt="" coords="1227,125,1385,152"/>
+<area shape="rect" id="node7" href="$config_8h.html" title="ffnn/internal/config.h" alt="" coords="811,365,951,392"/>
+<area shape="rect" id="node16" href="$sparse__triplet__serialization_8h.html" title="ffnn/internal/eigen\l/sparse_triplet_serialization.h" alt="" coords="783,441,973,482"/>
+<area shape="rect" id="node22" href="$optimizer_8h.html" title="ffnn/optimizer/optimizer.h" alt="" coords="674,200,843,227"/>
+<area shape="rect" id="node25" href="$loss__function_8h.html" title="ffnn/optimizer/loss\l_function.h" alt="" coords="671,275,800,317"/>
 </map>

@@ -12,11 +12,12 @@ A layer-\/wise optimizer visitor.
 
 
 
-Inheritance diagram for ffnn\-:\-:optimizer\-:\-:Optimizer$<$ Layer\-Type $>$\-:\nopagebreak
+Inheritance diagram for ffnn\-:\-:optimizer\-:\-:Optimizer$<$ Layer\-Type $>$\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=206pt]{classffnn_1_1optimizer_1_1_optimizer__inherit__graph}
+\includegraphics[width=328pt]{classffnn_1_1optimizer_1_1_optimizer__inherit__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Types}
@@ -27,7 +28,9 @@ $<$ \hyperlink{classffnn_1_1optimizer_1_1_optimizer}{Optimizer} $>$ \hyperlink{c
 \begin{DoxyCompactList}\small\item\em Shared resource standardization. \end{DoxyCompactList}\item 
 typedef boost\-::shared\-\_\-ptr\\*
 $<$ const \hyperlink{classffnn_1_1optimizer_1_1_optimizer}{Optimizer} $>$ \hyperlink{classffnn_1_1optimizer_1_1_optimizer_a5d62c55f6f830e993ffe801fb17a1c3a}{Const\-Ptr}
-\begin{DoxyCompactList}\small\item\em Constant shared resource standardization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Constant shared resource standardization. \end{DoxyCompactList}\item 
+typedef Layer\-Type\-::\-Scalar \hyperlink{classffnn_1_1optimizer_1_1_optimizer_acaa42e2661559c561caf881c4d934b8c}{Scalar}
+\begin{DoxyCompactList}\small\item\em Scalar type standardization. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -71,6 +74,13 @@ Constant shared resource standardization.
 
 Shared resource standardization. 
 
+\hypertarget{classffnn_1_1optimizer_1_1_optimizer_acaa42e2661559c561caf881c4d934b8c}{\index{ffnn\-::optimizer\-::\-Optimizer@{ffnn\-::optimizer\-::\-Optimizer}!Scalar@{Scalar}}
+\index{Scalar@{Scalar}!ffnn::optimizer::Optimizer@{ffnn\-::optimizer\-::\-Optimizer}}
+\subsubsection[{Scalar}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Layer\-Type$>$ typedef Layer\-Type\-::\-Scalar {\bf ffnn\-::optimizer\-::\-Optimizer}$<$ Layer\-Type $>$\-::{\bf Scalar}}}\label{classffnn_1_1optimizer_1_1_optimizer_acaa42e2661559c561caf881c4d934b8c}
+
+
+Scalar type standardization. 
+
 
 
 \subsection{Constructor \& Destructor Documentation}
@@ -80,7 +90,7 @@ Shared resource standardization.
 \begin{DoxyParamCaption}
 \item[{const std\-::string \&}]{name}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1optimizer_1_1_optimizer_a5daf7f0191df7c672247e0d5a25fbafa}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{classffnn_1_1optimizer_1_1_optimizer_a5daf7f0191df7c672247e0d5a25fbafa}
 
 
 Naming constructor. 
@@ -125,7 +135,7 @@ Computes one optimizer update step.
 \end{DoxyRetVals}
 
 
-Implemented in \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_ab9bd2d9c46a329a2652a397ef01d77aa}{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}, \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4_a8b37b876d0d861623d36764a37e3e6e2}{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}, \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_5f7b01db2ae4d39760d70ee323649a60_a216318398f796e0b2a2522a45a4441be}{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$}, \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_sparsely_connected_3_01_value_type_00_e6c27913ab0d90f52f73031aa88c19bf_a21e3b66b2d83b356b4534cf6d789fa18}{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$}, and \hyperlink{classffnn_1_1optimizer_1_1_none_a1b8fb0b29f3f0afccc557f6b486fb3fe}{ffnn\-::optimizer\-::\-None$<$ Layer\-Type $>$}.
+Implemented in \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4_a8b37b876d0d861623d36764a37e3e6e2}{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}, \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent___a810bd29432c41b39239337139b7a0a0b}{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-$<$ Layer\-Type, Loss\-Fn $>$}, \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent___a810bd29432c41b39239337139b7a0a0b}{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$, Cross\-Entropy $>$}, and \hyperlink{classffnn_1_1optimizer_1_1_none_a1b8fb0b29f3f0afccc557f6b486fb3fe}{ffnn\-::optimizer\-::\-None$<$ Layer\-Type $>$}.
 
 \hypertarget{classffnn_1_1optimizer_1_1_optimizer_a80505cfdeba0a3c8d1db19a2821613f2}{\index{ffnn\-::optimizer\-::\-Optimizer@{ffnn\-::optimizer\-::\-Optimizer}!forward@{forward}}
 \index{forward@{forward}!ffnn::optimizer::Optimizer@{ffnn\-::optimizer\-::\-Optimizer}}
@@ -152,7 +162,7 @@ Computes one optimizer update step.
 \end{DoxyRetVals}
 
 
-Implemented in \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_a19104dcb39006cdc50d8b55f027df6c6}{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}, \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4_a873062535938aebab53a62d93f3e7db7}{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}, \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_5f7b01db2ae4d39760d70ee323649a60_afa8fe46160d16887fc7abb4de34a65e5}{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$}, \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_sparsely_connected_3_01_value_type_00_e6c27913ab0d90f52f73031aa88c19bf_a7e9882cd69c5d4ee64f5614614e9d96c}{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$}, and \hyperlink{classffnn_1_1optimizer_1_1_none_a4aa65aa33dc45fa3b5d30e7f2a7169f2}{ffnn\-::optimizer\-::\-None$<$ Layer\-Type $>$}.
+Implemented in \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4_a873062535938aebab53a62d93f3e7db7}{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}, \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent___a3fda5e93b5fc359c4e36fc1c681e6929}{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-$<$ Layer\-Type, Loss\-Fn $>$}, \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent___a3fda5e93b5fc359c4e36fc1c681e6929}{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$, Cross\-Entropy $>$}, and \hyperlink{classffnn_1_1optimizer_1_1_none_a4aa65aa33dc45fa3b5d30e7f2a7169f2}{ffnn\-::optimizer\-::\-None$<$ Layer\-Type $>$}.
 
 \hypertarget{classffnn_1_1optimizer_1_1_optimizer_a4302b66ba9b013ae4833eca235ff306a}{\index{ffnn\-::optimizer\-::\-Optimizer@{ffnn\-::optimizer\-::\-Optimizer}!initialize@{initialize}}
 \index{initialize@{initialize}!ffnn::optimizer::Optimizer@{ffnn\-::optimizer\-::\-Optimizer}}
@@ -172,7 +182,7 @@ Initializes the \hyperlink{classffnn_1_1optimizer_1_1_optimizer}{Optimizer}.
 \end{DoxyParams}
 
 
-Implemented in \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_a968cbe2160f43f52fd918880ee4832b4}{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}, \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4_a6dbb9707492c05e512163935ac7330c9}{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}, \hyperlink{classffnn_1_1optimizer_1_1_adam_3_01layer_1_1_fully_connected_3_01_value_type_00_01_inputs_at_co08ce471fd3ee7441a350cc42cfd35bcd_aa67f949f7a1228c221d06b1b1e03c28b}{ffnn\-::optimizer\-::\-Adam$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$}, \hyperlink{classffnn_1_1optimizer_1_1_adam_3_01layer_1_1_sparsely_connected_3_01_value_type_00_01_inputs_at5101e46d32858ec2169acdeede08d723_a3529c6f6fb1befc882cc3ae17c00ba5a}{ffnn\-::optimizer\-::\-Adam$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$}, \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_5f7b01db2ae4d39760d70ee323649a60_a2e152e94571b7948b514c9d4cbd70504}{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$}, \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_sparsely_connected_3_01_value_type_00_e6c27913ab0d90f52f73031aa88c19bf_ac3fa00e4febe86906ff6045fe77777b0}{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$}, and \hyperlink{classffnn_1_1optimizer_1_1_none_a976eb3fe07f8c23a81851e7af4169ec8}{ffnn\-::optimizer\-::\-None$<$ Layer\-Type $>$}.
+Implemented in \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4_a6dbb9707492c05e512163935ac7330c9}{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}, \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent___a9b2a8f8c1a1411ffb3b2d207c42fca9e}{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-$<$ Layer\-Type, Loss\-Fn $>$}, \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent___a9b2a8f8c1a1411ffb3b2d207c42fca9e}{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$, Cross\-Entropy $>$}, and \hyperlink{classffnn_1_1optimizer_1_1_none_a976eb3fe07f8c23a81851e7af4169ec8}{ffnn\-::optimizer\-::\-None$<$ Layer\-Type $>$}.
 
 \hypertarget{classffnn_1_1optimizer_1_1_optimizer_a9c472d1e2ef75decdae1cf2db7582582}{\index{ffnn\-::optimizer\-::\-Optimizer@{ffnn\-::optimizer\-::\-Optimizer}!name@{name}}
 \index{name@{name}!ffnn::optimizer::Optimizer@{ffnn\-::optimizer\-::\-Optimizer}}
@@ -187,7 +197,7 @@ Exposes name of the optimizer.
 
 
 
-Referenced by ffnn\-::optimizer\-::\-Optimizer$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$\-::set\-Name().
+Referenced by ffnn\-::optimizer\-::\-Optimizer$<$ layer\-::\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$\-::set\-Name().
 
 \hypertarget{classffnn_1_1optimizer_1_1_optimizer_ade04e7582eb7b833713a9bd33e0e8346}{\index{ffnn\-::optimizer\-::\-Optimizer@{ffnn\-::optimizer\-::\-Optimizer}!reset@{reset}}
 \index{reset@{reset}!ffnn::optimizer::Optimizer@{ffnn\-::optimizer\-::\-Optimizer}}
@@ -207,7 +217,7 @@ Resetrs persistent \hyperlink{classffnn_1_1optimizer_1_1_optimizer}{Optimizer} s
 \end{DoxyParams}
 
 
-Implemented in \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_a4295c66fd36d4679dfda2a1f1c78b37b}{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}, \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4_ab5761e35397a5d346dc81c225af9402a}{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}, \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_5f7b01db2ae4d39760d70ee323649a60_a8317088f22bb86f204108a82f9233844}{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$}, \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_sparsely_connected_3_01_value_type_00_e6c27913ab0d90f52f73031aa88c19bf_a61e4190921d10b1ec15f0a710b12df22}{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$}, and \hyperlink{classffnn_1_1optimizer_1_1_none_a10f714488a57b139b91a03939a8809ac}{ffnn\-::optimizer\-::\-None$<$ Layer\-Type $>$}.
+Implemented in \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4_ab5761e35397a5d346dc81c225af9402a}{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}, \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent___a50581919467a4bb592eeb7fa98cd3b34}{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-$<$ Layer\-Type, Loss\-Fn $>$}, \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent___a50581919467a4bb592eeb7fa98cd3b34}{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$, Cross\-Entropy $>$}, and \hyperlink{classffnn_1_1optimizer_1_1_none_a10f714488a57b139b91a03939a8809ac}{ffnn\-::optimizer\-::\-None$<$ Layer\-Type $>$}.
 
 \hypertarget{classffnn_1_1optimizer_1_1_optimizer_ab9aa028897eed9617b6439e1ea56a1ee}{\index{ffnn\-::optimizer\-::\-Optimizer@{ffnn\-::optimizer\-::\-Optimizer}!set\-Name@{set\-Name}}
 \index{set\-Name@{set\-Name}!ffnn::optimizer::Optimizer@{ffnn\-::optimizer\-::\-Optimizer}}
@@ -245,7 +255,7 @@ Applies optimizer update.
 \end{DoxyRetVals}
 
 
-Implemented in \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_local_convolution_3_01_t_a_r_g_s_01_4_01_4_a78a1029caa29a3f5d1548a85dac1a4dd}{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Local\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}, \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4_a3cbbcd9490ff52ee7984bfcb17db4ee1}{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}, \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_sparsely_connected_3_01_value_type_00_e6c27913ab0d90f52f73031aa88c19bf_ada280929e93a2d12f0bc21e9077e75a1}{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$}, \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_5f7b01db2ae4d39760d70ee323649a60_a4e15c26f4b561a8ea3ca3de3b324e1cf}{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$}, \hyperlink{classffnn_1_1optimizer_1_1_adam_3_01layer_1_1_fully_connected_3_01_value_type_00_01_inputs_at_co08ce471fd3ee7441a350cc42cfd35bcd_ad42586e39195fc9a72057f20b657f8be}{ffnn\-::optimizer\-::\-Adam$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$}, \hyperlink{classffnn_1_1optimizer_1_1_adam_3_01layer_1_1_sparsely_connected_3_01_value_type_00_01_inputs_at5101e46d32858ec2169acdeede08d723_aaa3b2eb55a9d80d51330c132df65214b}{ffnn\-::optimizer\-::\-Adam$<$ layer\-::\-Sparsely\-Connected$<$ Value\-Type, Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$ $>$}, and \hyperlink{classffnn_1_1optimizer_1_1_none_aa2d59b906b49fb976b50a810479637fd}{ffnn\-::optimizer\-::\-None$<$ Layer\-Type $>$}.
+Implemented in \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4_a3cbbcd9490ff52ee7984bfcb17db4ee1}{ffnn\-::optimizer\-::\-Gradient\-Descent$<$ layer\-::\-Convolution$<$ T\-A\-R\-G\-S $>$ $>$}, \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent___a90fface371af7bef89880d278a9b2007}{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-$<$ Layer\-Type, Loss\-Fn $>$}, \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent___a90fface371af7bef89880d278a9b2007}{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-$<$ layer\-::\-Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$, Cross\-Entropy $>$}, and \hyperlink{classffnn_1_1optimizer_1_1_none_aa2d59b906b49fb976b50a810479637fd}{ffnn\-::optimizer\-::\-None$<$ Layer\-Type $>$}.
 
 
 

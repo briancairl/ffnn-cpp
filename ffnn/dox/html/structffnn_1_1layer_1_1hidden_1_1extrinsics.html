@@ -109,7 +109,7 @@ Public Types</h2></td></tr>
 Options::input_height, <br class="typebreak"/>
 Options::input_width, <br class="typebreak"/>
 Options::input_data_ordering &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structffnn_1_1layer_1_1hidden_1_1extrinsics.html#af5299a48a27726ba0d407ecb28890092">InputBlockType</a></td></tr>
-<tr class="memdesc:af5299a48a27726ba0d407ecb28890092"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input block type standardization.  <a href="#af5299a48a27726ba0d407ecb28890092">More...</a><br/></td></tr>
+<tr class="memdesc:af5299a48a27726ba0d407ecb28890092"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classffnn_1_1layer_1_1_input.html" title="A layer which handles network inputs. ">Input</a> block type standardization.  <a href="#af5299a48a27726ba0d407ecb28890092">More...</a><br/></td></tr>
 <tr class="separator:af5299a48a27726ba0d407ecb28890092"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac5ca721e2e5843ddcf90351b59c4e56e"><td class="memItemLeft" align="right" valign="top">typedef Eigen::Matrix<br class="typebreak"/>
 &lt; ValueType, <br class="typebreak"/>
@@ -124,7 +124,7 @@ Options::output_data_ordering &gt;&#160;</td><td class="memItemRight" valign="bo
 Eigen::Map&lt; <a class="el" href="structffnn_1_1layer_1_1hidden_1_1extrinsics.html#af5299a48a27726ba0d407ecb28890092">InputBlockType</a>, 16 &gt;<br class="typebreak"/>
 , Eigen::Map&lt; <a class="el" href="structffnn_1_1layer_1_1hidden_1_1extrinsics.html#af5299a48a27726ba0d407ecb28890092">InputBlockType</a> &gt;<br class="typebreak"/>
  &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structffnn_1_1layer_1_1hidden_1_1extrinsics.html#a62256f740b1aaf253c9992d15cda7eab">InputMappingType</a></td></tr>
-<tr class="memdesc:a62256f740b1aaf253c9992d15cda7eab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input block-mapping type standardization.  <a href="#a62256f740b1aaf253c9992d15cda7eab">More...</a><br/></td></tr>
+<tr class="memdesc:a62256f740b1aaf253c9992d15cda7eab"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classffnn_1_1layer_1_1_input.html" title="A layer which handles network inputs. ">Input</a> block-mapping type standardization.  <a href="#a62256f740b1aaf253c9992d15cda7eab">More...</a><br/></td></tr>
 <tr class="separator:a62256f740b1aaf253c9992d15cda7eab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a886b2e28314f8641f14407a84af8132c"><td class="memItemLeft" align="right" valign="top">typedef std::conditional<br class="typebreak"/>
 &lt; std::is_floating_point<br class="typebreak"/>
@@ -148,7 +148,7 @@ struct ffnn::layer::hidden::extrinsics&lt; ValueType, Options &gt;</h3>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType, typename Options&gt; </div>
+template&lt;typename ValueType , typename Options &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">typedef Eigen::Matrix&lt; ValueType, Options::input_height, Options::input_width, Options::input_data_ordering &gt; <a class="el" href="structffnn_1_1layer_1_1hidden_1_1extrinsics.html">ffnn::layer::hidden::extrinsics</a>&lt; ValueType, Options &gt;::<a class="el" href="structffnn_1_1layer_1_1hidden_1_1extrinsics.html#af5299a48a27726ba0d407ecb28890092">InputBlockType</a></td>
@@ -156,7 +156,7 @@ template&lt;typename ValueType, typename Options&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Input block type standardization. </p>
+<p><a class="el" href="classffnn_1_1layer_1_1_input.html" title="A layer which handles network inputs. ">Input</a> block type standardization. </p>
 
 </div>
 </div>
@@ -164,7 +164,7 @@ template&lt;typename ValueType, typename Options&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType, typename Options&gt; </div>
+template&lt;typename ValueType , typename Options &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">typedef std::conditional&lt; std::is_floating_point&lt;ValueType&gt;::value, Eigen::Map&lt;<a class="el" href="structffnn_1_1layer_1_1hidden_1_1extrinsics.html#af5299a48a27726ba0d407ecb28890092">InputBlockType</a>, 16&gt;, Eigen::Map&lt;<a class="el" href="structffnn_1_1layer_1_1hidden_1_1extrinsics.html#af5299a48a27726ba0d407ecb28890092">InputBlockType</a>&gt; &gt;::type <a class="el" href="structffnn_1_1layer_1_1hidden_1_1extrinsics.html">ffnn::layer::hidden::extrinsics</a>&lt; ValueType, Options &gt;::<a class="el" href="structffnn_1_1layer_1_1hidden_1_1extrinsics.html#a62256f740b1aaf253c9992d15cda7eab">InputMappingType</a></td>
@@ -172,7 +172,7 @@ template&lt;typename ValueType, typename Options&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Input block-mapping type standardization. </p>
+<p><a class="el" href="classffnn_1_1layer_1_1_input.html" title="A layer which handles network inputs. ">Input</a> block-mapping type standardization. </p>
 
 </div>
 </div>
@@ -180,7 +180,7 @@ template&lt;typename ValueType, typename Options&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType, typename Options&gt; </div>
+template&lt;typename ValueType , typename Options &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">typedef <a class="el" href="classffnn_1_1layer_1_1_layer.html">Layer</a>&lt;ValueType&gt; <a class="el" href="structffnn_1_1layer_1_1hidden_1_1extrinsics.html">ffnn::layer::hidden::extrinsics</a>&lt; ValueType, Options &gt;::<a class="el" href="structffnn_1_1layer_1_1hidden_1_1extrinsics.html#a06f383c22ed682751b9a4cb8855da9eb">LayerType</a></td>
@@ -196,7 +196,7 @@ template&lt;typename ValueType, typename Options&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType, typename Options&gt; </div>
+template&lt;typename ValueType , typename Options &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">typedef Eigen::Matrix&lt; ValueType, Options::output_height, Options::output_width, Options::output_data_ordering &gt; <a class="el" href="structffnn_1_1layer_1_1hidden_1_1extrinsics.html">ffnn::layer::hidden::extrinsics</a>&lt; ValueType, Options &gt;::<a class="el" href="structffnn_1_1layer_1_1hidden_1_1extrinsics.html#ac5ca721e2e5843ddcf90351b59c4e56e">OutputBlockType</a></td>
@@ -212,7 +212,7 @@ template&lt;typename ValueType, typename Options&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ValueType, typename Options&gt; </div>
+template&lt;typename ValueType , typename Options &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">typedef std::conditional&lt; std::is_floating_point&lt;ValueType&gt;::value, Eigen::Map&lt;<a class="el" href="structffnn_1_1layer_1_1hidden_1_1extrinsics.html#ac5ca721e2e5843ddcf90351b59c4e56e">OutputBlockType</a>, 16&gt;, Eigen::Map&lt;<a class="el" href="structffnn_1_1layer_1_1hidden_1_1extrinsics.html#ac5ca721e2e5843ddcf90351b59c4e56e">OutputBlockType</a>&gt; &gt;::type <a class="el" href="structffnn_1_1layer_1_1hidden_1_1extrinsics.html">ffnn::layer::hidden::extrinsics</a>&lt; ValueType, Options &gt;::<a class="el" href="structffnn_1_1layer_1_1hidden_1_1extrinsics.html#a886b2e28314f8641f14407a84af8132c">OutputMappingType</a></td>
@@ -230,7 +230,7 @@ template&lt;typename ValueType, typename Options&gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jun 3 2017 23:40:28 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 8 2017 01:08:57 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

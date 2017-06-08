@@ -1,56 +1,50 @@
-\hypertarget{classffnn_1_1optimizer_1_1_adam_states}{\section{ffnn\-:\-:optimizer\-:\-:Adam\-States$<$ Matrix\-Type $>$ Class Template Reference}
-\label{classffnn_1_1optimizer_1_1_adam_states}\index{ffnn\-::optimizer\-::\-Adam\-States$<$ Matrix\-Type $>$@{ffnn\-::optimizer\-::\-Adam\-States$<$ Matrix\-Type $>$}}
+\hypertarget{classffnn_1_1optimizer_1_1_adam_states}{\section{ffnn\-:\-:optimizer\-:\-:Adam\-States$<$ Value\-Type, Layer\-Type $>$ Class Template Reference}
+\label{classffnn_1_1optimizer_1_1_adam_states}\index{ffnn\-::optimizer\-::\-Adam\-States$<$ Value\-Type, Layer\-Type $>$@{ffnn\-::optimizer\-::\-Adam\-States$<$ Value\-Type, Layer\-Type $>$}}
 }
 
 
 {\ttfamily \#include \char`\"{}adam\-\_\-states.\-hpp\char`\"{}}
 
-\subsection*{Public Types}
-\begin{DoxyCompactItemize}
-\item 
-typedef Matrix\-Type\-::\-Scalar \hyperlink{classffnn_1_1optimizer_1_1_adam_states_a5ff656035aff83f1e06140d556e21977}{Scalar}
-\item 
-typedef Matrix\-Type\-::\-Index \hyperlink{classffnn_1_1optimizer_1_1_adam_states_a02c5c9a4b2a5689061570f493e842f0b}{Size\-Type}
-\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{classffnn_1_1optimizer_1_1_adam_states_a3c5963e78d7cca8c7c7a81d9034c5c27}{update} (Matrix\-Type \&gradient, \hyperlink{classffnn_1_1optimizer_1_1_adam_states_a5ff656035aff83f1e06140d556e21977}{Scalar} beta1, \hyperlink{classffnn_1_1optimizer_1_1_adam_states_a5ff656035aff83f1e06140d556e21977}{Scalar} beta2, \hyperlink{classffnn_1_1optimizer_1_1_adam_states_a5ff656035aff83f1e06140d556e21977}{Scalar} eps)
+\hyperlink{classffnn_1_1optimizer_1_1_adam_states_a177eb4d888e9c25bc8766141f39f34e7}{Adam\-States} (Value\-Type beta1, Value\-Type beta2, Value\-Type eps)
 \item 
-void \hyperlink{classffnn_1_1optimizer_1_1_adam_states_a37cb508c7d60d1df86cab12254596055}{initialize} (\hyperlink{classffnn_1_1optimizer_1_1_adam_states_a02c5c9a4b2a5689061570f493e842f0b}{Size\-Type} rows, \hyperlink{classffnn_1_1optimizer_1_1_adam_states_a02c5c9a4b2a5689061570f493e842f0b}{Size\-Type} col)
+void \hyperlink{classffnn_1_1optimizer_1_1_adam_states_a9b6ac212861f499d058a2e1c35024d57}{update} (Parameters\-Type \&gradient)
+\item 
+void \hyperlink{classffnn_1_1optimizer_1_1_adam_states_a8a819fc6cdb77cca470dfa6937620210}{initialize} (const Layer\-Type \&layer)
 \end{DoxyCompactItemize}
 
 
-\subsection{Member Typedef Documentation}
-\hypertarget{classffnn_1_1optimizer_1_1_adam_states_a5ff656035aff83f1e06140d556e21977}{\index{ffnn\-::optimizer\-::\-Adam\-States@{ffnn\-::optimizer\-::\-Adam\-States}!Scalar@{Scalar}}
-\index{Scalar@{Scalar}!ffnn::optimizer::AdamStates@{ffnn\-::optimizer\-::\-Adam\-States}}
-\subsubsection[{Scalar}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Matrix\-Type$>$ typedef Matrix\-Type\-::\-Scalar {\bf ffnn\-::optimizer\-::\-Adam\-States}$<$ Matrix\-Type $>$\-::{\bf Scalar}}}\label{classffnn_1_1optimizer_1_1_adam_states_a5ff656035aff83f1e06140d556e21977}
-\hypertarget{classffnn_1_1optimizer_1_1_adam_states_a02c5c9a4b2a5689061570f493e842f0b}{\index{ffnn\-::optimizer\-::\-Adam\-States@{ffnn\-::optimizer\-::\-Adam\-States}!Size\-Type@{Size\-Type}}
-\index{Size\-Type@{Size\-Type}!ffnn::optimizer::AdamStates@{ffnn\-::optimizer\-::\-Adam\-States}}
-\subsubsection[{Size\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Matrix\-Type$>$ typedef Matrix\-Type\-::\-Index {\bf ffnn\-::optimizer\-::\-Adam\-States}$<$ Matrix\-Type $>$\-::{\bf Size\-Type}}}\label{classffnn_1_1optimizer_1_1_adam_states_a02c5c9a4b2a5689061570f493e842f0b}
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classffnn_1_1optimizer_1_1_adam_states_a177eb4d888e9c25bc8766141f39f34e7}{\index{ffnn\-::optimizer\-::\-Adam\-States@{ffnn\-::optimizer\-::\-Adam\-States}!Adam\-States@{Adam\-States}}
+\index{Adam\-States@{Adam\-States}!ffnn::optimizer::AdamStates@{ffnn\-::optimizer\-::\-Adam\-States}}
+\subsubsection[{Adam\-States}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Type$>$ {\bf ffnn\-::optimizer\-::\-Adam\-States}$<$ Value\-Type, Layer\-Type $>$\-::{\bf Adam\-States} (
+\begin{DoxyParamCaption}
+\item[{Value\-Type}]{beta1, }
+\item[{Value\-Type}]{beta2, }
+\item[{Value\-Type}]{eps}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1optimizer_1_1_adam_states_a177eb4d888e9c25bc8766141f39f34e7}
 
 
 \subsection{Member Function Documentation}
-\hypertarget{classffnn_1_1optimizer_1_1_adam_states_a37cb508c7d60d1df86cab12254596055}{\index{ffnn\-::optimizer\-::\-Adam\-States@{ffnn\-::optimizer\-::\-Adam\-States}!initialize@{initialize}}
+\hypertarget{classffnn_1_1optimizer_1_1_adam_states_a8a819fc6cdb77cca470dfa6937620210}{\index{ffnn\-::optimizer\-::\-Adam\-States@{ffnn\-::optimizer\-::\-Adam\-States}!initialize@{initialize}}
 \index{initialize@{initialize}!ffnn::optimizer::AdamStates@{ffnn\-::optimizer\-::\-Adam\-States}}
-\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Matrix\-Type$>$ void {\bf ffnn\-::optimizer\-::\-Adam\-States}$<$ Matrix\-Type $>$\-::initialize (
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Type$>$ void {\bf ffnn\-::optimizer\-::\-Adam\-States}$<$ Value\-Type, Layer\-Type $>$\-::initialize (
 \begin{DoxyParamCaption}
-\item[{{\bf Size\-Type}}]{rows, }
-\item[{{\bf Size\-Type}}]{col}
+\item[{const Layer\-Type \&}]{layer}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1optimizer_1_1_adam_states_a37cb508c7d60d1df86cab12254596055}
-\hypertarget{classffnn_1_1optimizer_1_1_adam_states_a3c5963e78d7cca8c7c7a81d9034c5c27}{\index{ffnn\-::optimizer\-::\-Adam\-States@{ffnn\-::optimizer\-::\-Adam\-States}!update@{update}}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1optimizer_1_1_adam_states_a8a819fc6cdb77cca470dfa6937620210}
+\hypertarget{classffnn_1_1optimizer_1_1_adam_states_a9b6ac212861f499d058a2e1c35024d57}{\index{ffnn\-::optimizer\-::\-Adam\-States@{ffnn\-::optimizer\-::\-Adam\-States}!update@{update}}
 \index{update@{update}!ffnn::optimizer::AdamStates@{ffnn\-::optimizer\-::\-Adam\-States}}
-\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Matrix\-Type$>$ void {\bf ffnn\-::optimizer\-::\-Adam\-States}$<$ Matrix\-Type $>$\-::update (
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Layer\-Type$>$ void {\bf ffnn\-::optimizer\-::\-Adam\-States}$<$ Value\-Type, Layer\-Type $>$\-::update (
 \begin{DoxyParamCaption}
-\item[{Matrix\-Type \&}]{gradient, }
-\item[{{\bf Scalar}}]{beta1, }
-\item[{{\bf Scalar}}]{beta2, }
-\item[{{\bf Scalar}}]{eps}
+\item[{Parameters\-Type \&}]{gradient}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1optimizer_1_1_adam_states_a3c5963e78d7cca8c7c7a81d9034c5c27}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1optimizer_1_1_adam_states_a9b6ac212861f499d058a2e1c35024d57}
 
 
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
 \item 
-/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/optimizer/impl/adam/\hyperlink{adam__states_8hpp}{adam\-\_\-states.\-hpp}\end{DoxyCompactItemize}
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/impl/optimizer/adam/\hyperlink{adam__states_8hpp}{adam\-\_\-states.\-hpp}\end{DoxyCompactItemize}

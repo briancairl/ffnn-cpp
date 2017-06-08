@@ -122,42 +122,41 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
 <div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1options.html#a45dac283a1611df3497baf255d8645c1">   38</a></span>&#160;  constexpr <span class="keyword">static</span> <a class="code" href="namespaceffnn.html#a63b90a2fd70eb76684eac482a51633e5">size_type</a> <a class="code" href="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1options.html#a45dac283a1611df3497baf255d8645c1">output_size</a> = OutputsAtCompileTime;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1options.html#acb66c282ebaa5f29ce34d14b68551b94">   41</a></span>&#160;  constexpr <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1options.html#acb66c282ebaa5f29ce34d14b68551b94">has_fixed_sizes</a> = !<a class="code" href="namespaceffnn_1_1layer.html#a83ba223c7b7eb8e3d926b98b266f24c8">is_dynamic</a>(InputsAtCompileTime) &amp;&amp;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                                          !<a class="code" href="namespaceffnn_1_1layer.html#a83ba223c7b7eb8e3d926b98b266f24c8">is_dynamic</a>(OutputsAtCompileTime);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;};</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;         <span class="keyword">typename</span> Options&gt;</div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1extrinsics.html">   50</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1extrinsics.html">extrinsics</a></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keyword">typedef</span> Eigen::Matrix&lt;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    ValueType,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    Options::output_size,</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    Options::input_size,</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    Eigen::ColMajor</div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1extrinsics.html#a0c2c0299f0112bdcbcc72f9cf7af9bf6">   58</a></span>&#160;  &gt; <a class="code" href="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1extrinsics.html#a0c2c0299f0112bdcbcc72f9cf7af9bf6">WeightBlockType</a>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keyword">typedef</span> Eigen::Matrix&lt;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    ValueType,</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    Options::output_size,</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    1,</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    Eigen::ColMajor</div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1extrinsics.html#a7ea91263929a2b1b067b8c77a37f92a4">   66</a></span>&#160;  &gt; <a class="code" href="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1extrinsics.html#a7ea91263929a2b1b067b8c77a37f92a4">BiasBlockType</a>;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;};</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}  <span class="comment">// namespace weights</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}  <span class="comment">// namespace fully_connected</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}  <span class="comment">// namespace layer</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}  <span class="comment">// namespace ffnn</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#endif  // FFNN_LAYER_CONVOLUTION_FILTER_COMPILE_TIME_OPTIONS_H</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1options.html#acb66c282ebaa5f29ce34d14b68551b94">   41</a></span>&#160;  constexpr <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1options.html#acb66c282ebaa5f29ce34d14b68551b94">has_fixed_sizes</a> = !<a class="code" href="namespaceffnn_1_1layer.html#a83ba223c7b7eb8e3d926b98b266f24c8">is_dynamic</a>(<a class="code" href="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1options.html#aa9973b3dcef51f2684f3c36bbeccd767">input_size</a>) &amp;&amp; !<a class="code" href="namespaceffnn_1_1layer.html#a83ba223c7b7eb8e3d926b98b266f24c8">is_dynamic</a>(<a class="code" href="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1options.html#a45dac283a1611df3497baf255d8645c1">output_size</a>);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;};</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;         <span class="keyword">typename</span> Options&gt;</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1extrinsics.html">   49</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1extrinsics.html">extrinsics</a></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keyword">typedef</span> Eigen::Matrix&lt;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    ValueType,</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    Options::output_size,</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    Options::input_size,</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    Eigen::ColMajor</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1extrinsics.html#a0c2c0299f0112bdcbcc72f9cf7af9bf6">   57</a></span>&#160;  &gt; <a class="code" href="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1extrinsics.html#a0c2c0299f0112bdcbcc72f9cf7af9bf6">WeightBlockType</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keyword">typedef</span> Eigen::Matrix&lt;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    ValueType,</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    Options::output_size,</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    1,</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    Eigen::ColMajor</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1extrinsics.html#a7ea91263929a2b1b067b8c77a37f92a4">   65</a></span>&#160;  &gt; <a class="code" href="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1extrinsics.html#a7ea91263929a2b1b067b8c77a37f92a4">BiasBlockType</a>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;};</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}  <span class="comment">// namespace weights</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}  <span class="comment">// namespace fully_connected</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}  <span class="comment">// namespace layer</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}  <span class="comment">// namespace ffnn</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#endif  // FFNN_LAYER_CONVOLUTION_FILTER_COMPILE_TIME_OPTIONS_H</span></div>
 <div class="ttc" id="config_8h_html"><div class="ttname"><a href="config_8h.html">config.h</a></div></div>
 <div class="ttc" id="traits_8h_html"><div class="ttname"><a href="traits_8h.html">traits.h</a></div></div>
 <div class="ttc" id="namespaceffnn_html_a63b90a2fd70eb76684eac482a51633e5"><div class="ttname"><a href="namespaceffnn.html#a63b90a2fd70eb76684eac482a51633e5">ffnn::size_type</a></div><div class="ttdeci">FFNN_SIZE_TYPE size_type</div><div class="ttdef"><b>Definition:</b> config.h:78</div></div>
 <div class="ttc" id="assert_8h_html"><div class="ttname"><a href="assert_8h.html">assert.h</a></div></div>
 <div class="ttc" id="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1options_html"><div class="ttname"><a href="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1options.html">ffnn::layer::fully_connected::weights::options</a></div><div class="ttdoc">Describes compile-time options used to set up a Weights object. </div><div class="ttdef"><b>Definition:</b> compile_time_options.h:32</div></div>
 <div class="ttc" id="namespaceffnn_1_1layer_html_a83ba223c7b7eb8e3d926b98b266f24c8"><div class="ttname"><a href="namespaceffnn_1_1layer.html#a83ba223c7b7eb8e3d926b98b266f24c8">ffnn::layer::is_dynamic</a></div><div class="ttdeci">constexpr bool is_dynamic(SizeType n)</div><div class="ttdoc">Checks if size represents a dynamic size. </div><div class="ttdef"><b>Definition:</b> shape.h:26</div></div>
-<div class="ttc" id="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1extrinsics_html_a7ea91263929a2b1b067b8c77a37f92a4"><div class="ttname"><a href="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1extrinsics.html#a7ea91263929a2b1b067b8c77a37f92a4">ffnn::layer::fully_connected::weights::extrinsics::BiasBlockType</a></div><div class="ttdeci">Eigen::Matrix&lt; ValueType, Options::output_size, 1, Eigen::ColMajor &gt; BiasBlockType</div><div class="ttdoc">Output block type standardization. </div><div class="ttdef"><b>Definition:</b> compile_time_options.h:66</div></div>
-<div class="ttc" id="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1extrinsics_html_a0c2c0299f0112bdcbcc72f9cf7af9bf6"><div class="ttname"><a href="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1extrinsics.html#a0c2c0299f0112bdcbcc72f9cf7af9bf6">ffnn::layer::fully_connected::weights::extrinsics::WeightBlockType</a></div><div class="ttdeci">Eigen::Matrix&lt; ValueType, Options::output_size, Options::input_size, Eigen::ColMajor &gt; WeightBlockType</div><div class="ttdoc">Input block type standardization. </div><div class="ttdef"><b>Definition:</b> compile_time_options.h:58</div></div>
-<div class="ttc" id="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1extrinsics_html"><div class="ttname"><a href="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1extrinsics.html">ffnn::layer::fully_connected::weights::extrinsics</a></div><div class="ttdoc">Describes types based on compile-time options. </div><div class="ttdef"><b>Definition:</b> compile_time_options.h:50</div></div>
+<div class="ttc" id="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1extrinsics_html_a7ea91263929a2b1b067b8c77a37f92a4"><div class="ttname"><a href="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1extrinsics.html#a7ea91263929a2b1b067b8c77a37f92a4">ffnn::layer::fully_connected::weights::extrinsics::BiasBlockType</a></div><div class="ttdeci">Eigen::Matrix&lt; ValueType, Options::output_size, 1, Eigen::ColMajor &gt; BiasBlockType</div><div class="ttdoc">Output block type standardization. </div><div class="ttdef"><b>Definition:</b> compile_time_options.h:65</div></div>
+<div class="ttc" id="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1extrinsics_html_a0c2c0299f0112bdcbcc72f9cf7af9bf6"><div class="ttname"><a href="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1extrinsics.html#a0c2c0299f0112bdcbcc72f9cf7af9bf6">ffnn::layer::fully_connected::weights::extrinsics::WeightBlockType</a></div><div class="ttdeci">Eigen::Matrix&lt; ValueType, Options::output_size, Options::input_size, Eigen::ColMajor &gt; WeightBlockType</div><div class="ttdoc">Input block type standardization. </div><div class="ttdef"><b>Definition:</b> compile_time_options.h:57</div></div>
+<div class="ttc" id="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1extrinsics_html"><div class="ttname"><a href="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1extrinsics.html">ffnn::layer::fully_connected::weights::extrinsics</a></div><div class="ttdoc">Describes types based on compile-time options. </div><div class="ttdef"><b>Definition:</b> compile_time_options.h:49</div></div>
 <div class="ttc" id="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1options_html_acb66c282ebaa5f29ce34d14b68551b94"><div class="ttname"><a href="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1options.html#acb66c282ebaa5f29ce34d14b68551b94">ffnn::layer::fully_connected::weights::options::has_fixed_sizes</a></div><div class="ttdeci">static constexpr bool has_fixed_sizes</div><div class="ttdoc">Used to check if dimensions are fixed. </div><div class="ttdef"><b>Definition:</b> compile_time_options.h:41</div></div>
 <div class="ttc" id="shape_8h_html"><div class="ttname"><a href="shape_8h.html">shape.h</a></div></div>
 <div class="ttc" id="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1options_html_a45dac283a1611df3497baf255d8645c1"><div class="ttname"><a href="structffnn_1_1layer_1_1fully__connected_1_1weights_1_1options.html#a45dac283a1611df3497baf255d8645c1">ffnn::layer::fully_connected::weights::options::output_size</a></div><div class="ttdeci">static constexpr size_type output_size</div><div class="ttdoc">FullyConnected layer output count. </div><div class="ttdef"><b>Definition:</b> compile_time_options.h:38</div></div>
@@ -165,7 +164,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jun 3 2017 23:40:28 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 8 2017 01:08:56 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

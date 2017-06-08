@@ -17,7 +17,7 @@ static constexpr \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{siz
 \begin{DoxyCompactList}\small\item\em \hyperlink{classffnn_1_1layer_1_1_fully_connected}{Fully\-Connected} layer input count. \end{DoxyCompactList}\item 
 static constexpr \hyperlink{namespaceffnn_a63b90a2fd70eb76684eac482a51633e5}{size\-\_\-type} \hyperlink{structffnn_1_1layer_1_1fully__connected_1_1weights_1_1options_a45dac283a1611df3497baf255d8645c1}{output\-\_\-size} = Outputs\-At\-Compile\-Time
 \begin{DoxyCompactList}\small\item\em \hyperlink{classffnn_1_1layer_1_1_fully_connected}{Fully\-Connected} layer output count. \end{DoxyCompactList}\item 
-static constexpr bool \hyperlink{structffnn_1_1layer_1_1fully__connected_1_1weights_1_1options_acb66c282ebaa5f29ce34d14b68551b94}{has\-\_\-fixed\-\_\-sizes}
+static constexpr bool \hyperlink{structffnn_1_1layer_1_1fully__connected_1_1weights_1_1options_acb66c282ebaa5f29ce34d14b68551b94}{has\-\_\-fixed\-\_\-sizes} = !\hyperlink{namespaceffnn_1_1layer_a83ba223c7b7eb8e3d926b98b266f24c8}{is\-\_\-dynamic}(\hyperlink{structffnn_1_1layer_1_1fully__connected_1_1weights_1_1options_aa9973b3dcef51f2684f3c36bbeccd767}{input\-\_\-size}) \&\& !\hyperlink{namespaceffnn_1_1layer_a83ba223c7b7eb8e3d926b98b266f24c8}{is\-\_\-dynamic}(\hyperlink{structffnn_1_1layer_1_1fully__connected_1_1weights_1_1options_a45dac283a1611df3497baf255d8645c1}{output\-\_\-size})
 \begin{DoxyCompactList}\small\item\em Used to check if dimensions are fixed. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -29,12 +29,7 @@ Describes compile-\/time options used to set up a \hyperlink{classffnn_1_1layer_
 \subsection{Member Data Documentation}
 \hypertarget{structffnn_1_1layer_1_1fully__connected_1_1weights_1_1options_acb66c282ebaa5f29ce34d14b68551b94}{\index{ffnn\-::layer\-::fully\-\_\-connected\-::weights\-::options@{ffnn\-::layer\-::fully\-\_\-connected\-::weights\-::options}!has\-\_\-fixed\-\_\-sizes@{has\-\_\-fixed\-\_\-sizes}}
 \index{has\-\_\-fixed\-\_\-sizes@{has\-\_\-fixed\-\_\-sizes}!ffnn::layer::fully_connected::weights::options@{ffnn\-::layer\-::fully\-\_\-connected\-::weights\-::options}}
-\subsubsection[{has\-\_\-fixed\-\_\-sizes}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\-\_\-type Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic$>$ constexpr bool {\bf ffnn\-::layer\-::fully\-\_\-connected\-::weights\-::options}$<$ Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::has\-\_\-fixed\-\_\-sizes\hspace{0.3cm}{\ttfamily [static]}}}\label{structffnn_1_1layer_1_1fully__connected_1_1weights_1_1options_acb66c282ebaa5f29ce34d14b68551b94}
-{\bfseries Initial value\-:}
-\begin{DoxyCode}
-= !\hyperlink{namespaceffnn_1_1layer_a83ba223c7b7eb8e3d926b98b266f24c8}{is\_dynamic}(InputsAtCompileTime) &&
-                                          !\hyperlink{namespaceffnn_1_1layer_a83ba223c7b7eb8e3d926b98b266f24c8}{is\_dynamic}(OutputsAtCompileTime)
-\end{DoxyCode}
+\subsubsection[{has\-\_\-fixed\-\_\-sizes}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\-\_\-type Inputs\-At\-Compile\-Time = Eigen\-::\-Dynamic, size\-\_\-type Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic$>$ constexpr bool {\bf ffnn\-::layer\-::fully\-\_\-connected\-::weights\-::options}$<$ Inputs\-At\-Compile\-Time, Outputs\-At\-Compile\-Time $>$\-::has\-\_\-fixed\-\_\-sizes = !{\bf is\-\_\-dynamic}({\bf input\-\_\-size}) \&\& !{\bf is\-\_\-dynamic}({\bf output\-\_\-size})\hspace{0.3cm}{\ttfamily [static]}}}\label{structffnn_1_1layer_1_1fully__connected_1_1weights_1_1options_acb66c282ebaa5f29ce34d14b68551b94}
 
 
 Used to check if dimensions are fixed. 

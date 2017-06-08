@@ -142,12 +142,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType&gt;</div>
 <div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_layer.html#a0c766a6f5770ea0ae8a7e660523eb413">   53</a></span>&#160;<a class="code" href="classffnn_1_1layer_1_1_layer.html#a0c766a6f5770ea0ae8a7e660523eb413">Layer&lt;ValueType&gt;::Layer</a>(<span class="keyword">const</span> <a class="code" href="structffnn_1_1layer_1_1_shape.html">ShapeType</a>&amp; input_shape, <span class="keyword">const</span> <a class="code" href="structffnn_1_1layer_1_1_shape.html">ShapeType</a>&amp; output_shape) :</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  input_shape_(input_shape),</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  output_shape_(output_shape)</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <a class="code" href="assert_8h.html#a0dd452510e5d75d0f71f52ed14143c40">FFNN_ASSERT_MSG</a>(<a class="code" href="classffnn_1_1layer_1_1_layer.html#a07cc49b6890743a8045e3adc7c07aca5">input_shape_</a>.<a class="code" href="structffnn_1_1layer_1_1_shape.html#abef3f2121d2b9f132d02889cd3ceab41">valid</a>(), <span class="stringliteral">&quot;Input shape is invalid.&quot;</span>);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <a class="code" href="assert_8h.html#a0dd452510e5d75d0f71f52ed14143c40">FFNN_ASSERT_MSG</a>(<a class="code" href="classffnn_1_1layer_1_1_layer.html#a453330bda96277cd7b794bfab4804c47">output_shape_</a>.<a class="code" href="structffnn_1_1layer_1_1_shape.html#abef3f2121d2b9f132d02889cd3ceab41">valid</a>(), <span class="stringliteral">&quot;Output shape is invalid.&quot;</span>);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <a class="code" href="logging_8h.html#a6423579b7bc28bf29f9d3c60a2066c48">FFNN_INTERNAL_DEBUG_NAMED</a>(<span class="stringliteral">&quot;layer::Layer&quot;</span>, <span class="stringliteral">&quot;[&quot;</span> &lt;&lt; <a class="code" href="classffnn_1_1layer_1_1_layer.html#a07cc49b6890743a8045e3adc7c07aca5">input_shape_</a> &lt;&lt; <span class="stringliteral">&quot; | &quot;</span> &lt;&lt; <a class="code" href="classffnn_1_1layer_1_1_layer.html#a453330bda96277cd7b794bfab4804c47">output_shape_</a> &lt;&lt; <span class="stringliteral">&quot;]&quot;</span>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  output_shape_(output_shape),</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  initialized_(false),</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  setup_required_(true)</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <a class="code" href="logging_8h.html#a6423579b7bc28bf29f9d3c60a2066c48">FFNN_INTERNAL_DEBUG_NAMED</a>(<span class="stringliteral">&quot;layer::Layer&quot;</span>,</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                            <span class="stringliteral">&quot;[&quot;</span> &lt;&lt; <a class="code" href="classffnn_1_1layer_1_1_layer.html#a07cc49b6890743a8045e3adc7c07aca5">input_shape_</a> &lt;&lt; <span class="stringliteral">&quot; | &quot;</span> &lt;&lt; <a class="code" href="classffnn_1_1layer_1_1_layer.html#a453330bda96277cd7b794bfab4804c47">output_shape_</a> &lt;&lt; <span class="stringliteral">&quot;]&quot;</span>);</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType&gt;</div>
@@ -178,7 +178,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="comment">// Set initialization flag</span></div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  initialized_ = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="keywordflow">return</span> isInitialized();</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="keywordflow">return</span> initialized_;</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType&gt;</div>
@@ -297,7 +297,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="classffnn_1_1layer_1_1_layer_html_aa466bcb2ac40d059e9b6e40be157d1b4"><div class="ttname"><a href="classffnn_1_1layer_1_1_layer.html#aa466bcb2ac40d059e9b6e40be157d1b4">ffnn::layer::Layer::~Layer</a></div><div class="ttdeci">virtual ~Layer()</div><div class="ttdef"><b>Definition:</b> layer.hpp:64</div></div>
 <div class="ttc" id="classffnn_1_1layer_1_1_layer_html_a0c766a6f5770ea0ae8a7e660523eb413"><div class="ttname"><a href="classffnn_1_1layer_1_1_layer.html#a0c766a6f5770ea0ae8a7e660523eb413">ffnn::layer::Layer::Layer</a></div><div class="ttdeci">Layer(const ShapeType &amp;input_shape, const ShapeType &amp;output_shape)</div><div class="ttdoc">Setup constructor. </div><div class="ttdef"><b>Definition:</b> layer.hpp:53</div></div>
 <div class="ttc" id="logging_8h_html_ad17a22e477672ae24ca9afe0abf1b46f"><div class="ttname"><a href="logging_8h.html#ad17a22e477672ae24ca9afe0abf1b46f">FFNN_DEBUG_NAMED</a></div><div class="ttdeci">#define FFNN_DEBUG_NAMED(name, msg)</div><div class="ttdoc">Prints an named debug message. </div><div class="ttdef"><b>Definition:</b> logging.h:53</div></div>
-<div class="ttc" id="structffnn_1_1layer_1_1_shape_html_abef3f2121d2b9f132d02889cd3ceab41"><div class="ttname"><a href="structffnn_1_1layer_1_1_shape.html#abef3f2121d2b9f132d02889cd3ceab41">ffnn::layer::Shape::valid</a></div><div class="ttdeci">bool valid() const </div><div class="ttdoc">Checks if Shape object is valid. </div><div class="ttdef"><b>Definition:</b> shape.h:134</div></div>
 <div class="ttc" id="classffnn_1_1internal_1_1_serializable_html_acf5baead716eb277337a4437e88a5743"><div class="ttname"><a href="classffnn_1_1internal_1_1_serializable.html#acf5baead716eb277337a4437e88a5743">ffnn::internal::Serializable::OutputArchive</a></div><div class="ttdeci">FFNN_SERIALIZATION_OUTPUT_ARCHIVE_TYPE OutputArchive</div><div class="ttdoc">Output (save) archive type. </div><div class="ttdef"><b>Definition:</b> serializable.h:42</div></div>
 <div class="ttc" id="signature_8h_html"><div class="ttname"><a href="signature_8h.html">signature.h</a></div></div>
 <div class="ttc" id="structffnn_1_1layer_1_1_shape_html"><div class="ttname"><a href="structffnn_1_1layer_1_1_shape.html">ffnn::layer::Shape&lt; size_type &gt;</a></div></div>
@@ -311,7 +310,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jun 3 2017 23:40:28 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 8 2017 01:08:56 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

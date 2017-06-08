@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>FFNN: /home/briancairl/packages/src/ffnn-cpp/ffnn/include/ffnn/impl/layer/output.hpp Source File</title>
+<title>FFNN: /home/briancairl/packages/src/ffnn-cpp/ffnn/include/ffnn/impl/layer/output/output.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -83,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_f1374a92efe2cc1f1014c2355d0648ea.html">ffnn</a></li><li class="navelem"><a class="el" href="dir_9f6bb62272f947f6d8714dfd4be1a938.html">impl</a></li><li class="navelem"><a class="el" href="dir_c0c5eb26c41234ae5380a03fa41e3ae2.html">layer</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_f1374a92efe2cc1f1014c2355d0648ea.html">ffnn</a></li><li class="navelem"><a class="el" href="dir_9f6bb62272f947f6d8714dfd4be1a938.html">impl</a></li><li class="navelem"><a class="el" href="dir_c0c5eb26c41234ae5380a03fa41e3ae2.html">layer</a></li><li class="navelem"><a class="el" href="dir_bec9cca92caf3348cafceba9db56883a.html">output</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -92,8 +92,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <a href="output_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef FFNN_LAYER_IMPL_OUTPUT_HPP</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define FFNN_LAYER_IMPL_OUTPUT_HPP</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef FFNN_IMPL_LAYER_OUTPUT_OUTPUT_HPP</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define FFNN_IMPL_LAYER_OUTPUT_OUTPUT_HPP</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// FFNN</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="logging_8h.html">ffnn/logging.h</a>&gt;</span></div>
@@ -102,119 +102,132 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span>layer</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="output_8hpp.html#a005b9b79411aa786124330e813a99057">   15</a></span>&#160;<span class="preprocessor">#define TARGS ValueType, NetworkOutputsAtCompileTime</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType, FFNN_SIZE_TYPE NetworkOutputsAtCompileTime&gt;</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_output.html#af7d5b0ae4ac072ada556478a12fe235f">   18</a></span>&#160;<a class="code" href="classffnn_1_1layer_1_1_output.html#af7d5b0ae4ac072ada556478a12fe235f">Output&lt;TARGS&gt;::Output</a>() :</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <a class="code" href="classffnn_1_1layer_1_1_layer.html">Base</a>(<a class="code" href="structffnn_1_1layer_1_1_shape.html">ShapeType</a>(NetworkOutputsAtCompileTime), <a class="code" href="structffnn_1_1layer_1_1_shape.html">ShapeType</a>(0))</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <a class="code" href="logging_8h.html#a6423579b7bc28bf29f9d3c60a2066c48">FFNN_INTERNAL_DEBUG_NAMED</a>(<span class="stringliteral">&quot;layer::Layer&quot;</span>, <span class="stringliteral">&quot;Network output size (compile-time): &quot;</span> &lt;&lt; NetworkOutputsAtCompileTime);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType, FFNN_SIZE_TYPE NetworkOutputsAtCompileTime&gt;</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_output.html#a7e835ff550e291d2015efb76290c1b6c">   25</a></span>&#160;<a class="code" href="classffnn_1_1layer_1_1_output.html#a7e835ff550e291d2015efb76290c1b6c">Output&lt;TARGS&gt;::~Output</a>()</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <a class="code" href="logging_8h.html#a6423579b7bc28bf29f9d3c60a2066c48">FFNN_INTERNAL_DEBUG_NAMED</a>(<span class="stringliteral">&quot;layer::Output&quot;</span>, <span class="stringliteral">&quot;Destroying [layer::Output] object &lt;&quot;</span> &lt;&lt; this-&gt;getID() &lt;&lt; <span class="stringliteral">&quot;&gt;&quot;</span>);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType, FFNN_SIZE_TYPE NetworkOutputsAtCompileTime&gt;</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_output.html#ab9ebd05595bc6b75718191aa48e70ad2">   31</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classffnn_1_1layer_1_1_output.html#ab9ebd05595bc6b75718191aa48e70ad2">Output&lt;TARGS&gt;::initialize</a>()</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="comment">// Abort if layer is already initialized</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordflow">if</span> (Base::setupRequired() &amp;&amp; Base::isInitialized())</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="logging_8h.html#aabf5ff82064ef58a239a35b444685955">FFNN_WARN_NAMED</a>(<span class="stringliteral">&quot;layer::Output&quot;</span>, <span class="stringliteral">&quot;&lt;&quot;</span> &lt;&lt; Base::getID() &lt;&lt; <span class="stringliteral">&quot;&gt; already initialized.&quot;</span>);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  }</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="comment">// Resolve input dimensions from previous layer output dimensions</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  Base::input_shape_ = Base::evaluateInputSize();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="comment">// Validate network input count</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <a class="code" href="assert_8h.html#aad64ee3fe6ac7c17c2a7b02318563b21">FFNN_STATIC_RUNTIME_ASSERT_MSG</a> (NetworkOutputsAtCompileTime &lt; 0 || Base::input_shape_.size() == NetworkOutputsAtCompileTime,</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                          <span class="stringliteral">&quot;(NetworkOutputsAtCompileTime != `resolved input size`) for fixed-size layer.&quot;</span>);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;         <span class="keyword">typename</span> Options,</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;         <span class="keyword">typename</span> Extrinsics&gt;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_output.html#aba563bb3b8984fe99d87872364367131">   18</a></span>&#160;<a class="code" href="classffnn_1_1layer_1_1_output.html#aba563bb3b8984fe99d87872364367131">Output&lt;ValueType, Options, Extrinsics&gt;::Output</a>(<span class="keyword">const</span> <a class="code" href="classffnn_1_1layer_1_1output_1_1_configuration.html">Configuration</a>&amp; config) :</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <a class="code" href="classffnn_1_1layer_1_1_output.html#a9f60142c3e464fcc6cda5203895dc448">BaseType</a>(<a class="code" href="classffnn_1_1layer_1_1_output.html#a8755e7ce13c1b45243a679a5a5376ee4">ShapeType</a>(config.output_size_), <a class="code" href="classffnn_1_1layer_1_1_output.html#a8755e7ce13c1b45243a679a5a5376ee4">ShapeType</a>()),</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  config_(config)</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <a class="code" href="logging_8h.html#a6423579b7bc28bf29f9d3c60a2066c48">FFNN_INTERNAL_DEBUG_NAMED</a>(<span class="stringliteral">&quot;layer::Layer&quot;</span>,</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                            <span class="stringliteral">&quot;Network output size: &quot;</span> &lt;&lt; config.output_size_);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;         <span class="keyword">typename</span> Options,</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;         <span class="keyword">typename</span> Extrinsics&gt;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_output.html#adbe7b418cbcae313ab79ffa79cc00f74">   29</a></span>&#160;<a class="code" href="classffnn_1_1layer_1_1_output.html#adbe7b418cbcae313ab79ffa79cc00f74">Output&lt;ValueType, Options, Extrinsics&gt;::~Output</a>()</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <a class="code" href="logging_8h.html#a6423579b7bc28bf29f9d3c60a2066c48">FFNN_INTERNAL_DEBUG_NAMED</a>(<span class="stringliteral">&quot;layer::Output&quot;</span>,</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                            <span class="stringliteral">&quot;Destroying [layer::Output] object &lt;&quot;</span> &lt;&lt; this-&gt;getID() &lt;&lt; <span class="stringliteral">&quot;&gt;&quot;</span>);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;         <span class="keyword">typename</span> Options,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;         <span class="keyword">typename</span> Extrinsics&gt;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_output.html#a8edca90e7ac402cd24c9872cf784a4de">   38</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classffnn_1_1layer_1_1_output.html#a8edca90e7ac402cd24c9872cf784a4de">Output&lt;ValueType, Options, Extrinsics&gt;::initialize</a>()</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="comment">// Abort if layer is already initialized</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keywordflow">if</span> (BaseType::setupRequired() &amp;&amp; BaseType::isInitialized())</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="logging_8h.html#aabf5ff82064ef58a239a35b444685955">FFNN_WARN_NAMED</a>(<span class="stringliteral">&quot;layer::Output&quot;</span>, <span class="stringliteral">&quot;&lt;&quot;</span> &lt;&lt; BaseType::getID() &lt;&lt; <span class="stringliteral">&quot;&gt; already initialized.&quot;</span>);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  }</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="comment">// Do basic initialization and connect last hidden layer</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordflow">if</span> (Base::initialize())</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">if</span> (Base::connectInputLayers() != Base::getInputShape().size())</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      <span class="comment">// Error initializing</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      Base::initialized_ = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      <a class="code" href="logging_8h.html#ad17a22e477672ae24ca9afe0abf1b46f">FFNN_DEBUG_NAMED</a>(<span class="stringliteral">&quot;layer::Output&quot;</span>,</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                       <span class="stringliteral">&quot;&lt;&quot;</span> &lt;&lt; Base::getID() &lt;&lt;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                       <span class="stringliteral">&quot;&gt; initialized as network output (net-out=&quot;</span> &lt;&lt;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                       Base::getInputShape().size() &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <a class="code" href="logging_8h.html#a48e2bf3dad548dafff4be40132286cbb">FFNN_ERROR_NAMED</a>(<span class="stringliteral">&quot;layer::Output&quot;</span>, <span class="stringliteral">&quot;&lt;&quot;</span> &lt;&lt; Base::getID() &lt;&lt; <span class="stringliteral">&quot;&gt; failed to initialize.&quot;</span>);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType, FFNN_SIZE_TYPE NetworkOutputsAtCompileTime&gt;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">typename</span> <a class="code" href="classffnn_1_1layer_1_1_output.html#a6780ece144b80cb2be355dd65096e9db">Output&lt;TARGS&gt;::OffsetType</a></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<a class="code" href="classffnn_1_1layer_1_1_output.html">Output&lt;TARGS&gt;::connectToForwardLayer</a>(<span class="keyword">const</span> Base&amp; next, OffsetType offset)</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;{</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordflow">return</span> 0; <span class="comment">/* do nothing */</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="comment">// Resolve input dimensions from previous layer output dimensions</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  BaseType::input_shape_ = BaseType::evaluateInputSize();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="comment">// Validate network input count</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <a class="code" href="assert_8h.html#aad64ee3fe6ac7c17c2a7b02318563b21">FFNN_STATIC_RUNTIME_ASSERT_MSG</a> (Options::output_size &lt; 0 || BaseType::input_shape_.size() == Options::output_size,</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                          <span class="stringliteral">&quot;(NetworkOutputsAtCompileTime != `resolved input size`) for fixed-size layer.&quot;</span>);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="comment">// Do basic initialization and connect last hidden layer</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordflow">if</span> (BaseType::initialize())</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">if</span> (BaseType::connectInputLayers() != BaseType::getInputShape().size())</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;      <span class="comment">// Error initializing</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      BaseType::initialized_ = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;      <a class="code" href="logging_8h.html#ad17a22e477672ae24ca9afe0abf1b46f">FFNN_DEBUG_NAMED</a>(<span class="stringliteral">&quot;layer::Output&quot;</span>,</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                       <span class="stringliteral">&quot;&lt;&quot;</span> &lt;&lt; BaseType::getID() &lt;&lt;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                       <span class="stringliteral">&quot;&gt; initialized as network output (net-out=&quot;</span> &lt;&lt;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                       BaseType::getInputShape().size() &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <a class="code" href="logging_8h.html#a48e2bf3dad548dafff4be40132286cbb">FFNN_ERROR_NAMED</a>(<span class="stringliteral">&quot;layer::Output&quot;</span>, <span class="stringliteral">&quot;&lt;&quot;</span> &lt;&lt; BaseType::getID() &lt;&lt; <span class="stringliteral">&quot;&gt; failed to initialize.&quot;</span>);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType, FFNN_SIZE_TYPE NetworkOutputsAtCompileTime&gt;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> NetworkOutputType&gt;</div>
-<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_output.html#a2f4eb5c36b8b5d486410366b4cd9e7a8">   77</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classffnn_1_1layer_1_1_output.html#a2f4eb5c36b8b5d486410366b4cd9e7a8">Output&lt;TARGS&gt;::operator&gt;&gt;</a>(NetworkOutputType&amp; output)</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;{</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="comment">// Check output data size</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <a class="code" href="assert_8h.html#a0dd452510e5d75d0f71f52ed14143c40">FFNN_ASSERT_MSG</a>(output.size() == Base::getInputShape().size(),</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                  <span class="stringliteral">&quot;Output object size does not match expected network output size.&quot;</span>);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;         <span class="keyword">typename</span> Options,</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;         <span class="keyword">typename</span> Extrinsics&gt;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<a class="code" href="namespaceffnn.html#add5752d74b38c6e9b200f3d696fc3ec8">offset_type</a> <a class="code" href="classffnn_1_1layer_1_1_output.html">Output&lt;ValueType, Options, Extrinsics&gt;::connectToForwardLayer</a>(<span class="keyword">const</span> BaseType&amp; next, <a class="code" href="namespaceffnn.html#add5752d74b38c6e9b200f3d696fc3ec8">offset_type</a> offset)</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;{</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keywordflow">return</span> 0; <span class="comment">/* do nothing */</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="comment">// Copy output data from last network layer</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  std::memcpy(const_cast&lt;ValueType*&gt;(output.data()),</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;              const_cast&lt;ValueType*&gt;(Base::input_buffer_.data()),</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;              Base::input_buffer_.size() * <span class="keyword">sizeof</span>(ValueType));</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType, FFNN_SIZE_TYPE NetworkOutputsAtCompileTime&gt;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> NetworkTargetType&gt;</div>
-<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_output.html#ab37eb595864f42089dc2d0556b1f68ef">   91</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classffnn_1_1layer_1_1_output.html#ab37eb595864f42089dc2d0556b1f68ef">Output&lt;TARGS&gt;::operator&lt;&lt;</a>(<span class="keyword">const</span> NetworkTargetType&amp; target)</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;{</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="comment">// Check target data size</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <a class="code" href="assert_8h.html#a0dd452510e5d75d0f71f52ed14143c40">FFNN_ASSERT_MSG</a>(target.size() == Base::getInputShape().size(),</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                  <span class="stringliteral">&quot;Target object size does not match expected network output size.&quot;</span>);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <span class="comment">// Compute network error</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keywordflow">for</span> (<a class="code" href="classffnn_1_1layer_1_1_output.html#a5e41de6c9249494dd9c6a819d7a30e20">SizeType</a> idx = 0; idx &lt; Base::backward_error_buffer_.size(); idx++)</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  {</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    Base::backward_error_buffer_.data()[idx] = Base::input_buffer_.data()[idx] - target.data()[idx];</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  }</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;}  <span class="comment">// namespace layer</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}  <span class="comment">// namespace ffnn</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="preprocessor">#undef TARGS</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">#endif  // FFNN_LAYER_IMPL_OUTPUT_HPP</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;         <span class="keyword">typename</span> Options,</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;         <span class="keyword">typename</span> Extrinsics&gt;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> NetworkOutputType&gt;</div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_output.html#a7e1b3e02e040b6c6522c688937ed5512">   87</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classffnn_1_1layer_1_1_output.html#a7e1b3e02e040b6c6522c688937ed5512">Output&lt;ValueType, Options, Extrinsics&gt;::operator&gt;&gt;</a>(NetworkOutputType&amp; output)</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;{</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="comment">// Check output data size</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <a class="code" href="assert_8h.html#a0dd452510e5d75d0f71f52ed14143c40">FFNN_ASSERT_MSG</a>(output.size() == BaseType::getInputShape().size(),</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                  <span class="stringliteral">&quot;Output object size does not match expected network output size.&quot;</span>);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="comment">// Copy output data from last network layer</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  std::memcpy(const_cast&lt;ValueType*&gt;(output.data()),</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;              const_cast&lt;ValueType*&gt;(BaseType::input_buffer_.data()),</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;              BaseType::input_buffer_.size() * <span class="keyword">sizeof</span>(ValueType));</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;         <span class="keyword">typename</span> Options,</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;         <span class="keyword">typename</span> Extrinsics&gt;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> NetworkTargetType&gt;</div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_output.html#a47b53447b900079a0cb6f0b29acd350e">  103</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classffnn_1_1layer_1_1_output.html#a47b53447b900079a0cb6f0b29acd350e">Output&lt;ValueType, Options, Extrinsics&gt;::operator&lt;&lt;</a>(<span class="keyword">const</span> NetworkTargetType&amp; target)</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;{</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <span class="comment">// Check target data size</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <a class="code" href="assert_8h.html#a0dd452510e5d75d0f71f52ed14143c40">FFNN_ASSERT_MSG</a>(target.size() == BaseType::getInputShape().size(),</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                  <span class="stringliteral">&quot;Target object size does not match expected network output size.&quot;</span>);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <span class="comment">// Compute network error</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <span class="keyword">const</span> <span class="keyword">auto</span> n = <span class="keyword">static_cast&lt;</span><a class="code" href="namespaceffnn.html#add5752d74b38c6e9b200f3d696fc3ec8">offset_type</a><span class="keyword">&gt;</span>(BaseType::backward_error_buffer_.size());</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="keywordflow">for</span> (<a class="code" href="namespaceffnn.html#add5752d74b38c6e9b200f3d696fc3ec8">offset_type</a> idx = 0; idx &lt; n; idx++)</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    BaseType::backward_error_buffer_.data()[idx] =</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;      BaseType::input_buffer_.data()[idx] - target.data()[idx];</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  }</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;}  <span class="comment">// namespace layer</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;}  <span class="comment">// namespace ffnn</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="preprocessor">#endif  // FFNN_IMPL_LAYER_OUTPUT_OUTPUT_HPP</span></div>
+<div class="ttc" id="classffnn_1_1layer_1_1output_1_1_configuration_html"><div class="ttname"><a href="classffnn_1_1layer_1_1output_1_1_configuration.html">ffnn::layer::output::Configuration&lt; SelfType, ValueType, Options, Extrinsics &gt;</a></div></div>
 <div class="ttc" id="logging_8h_html_a48e2bf3dad548dafff4be40132286cbb"><div class="ttname"><a href="logging_8h.html#a48e2bf3dad548dafff4be40132286cbb">FFNN_ERROR_NAMED</a></div><div class="ttdeci">#define FFNN_ERROR_NAMED(name, msg)</div><div class="ttdoc">Prints an named error message. </div><div class="ttdef"><b>Definition:</b> logging.h:87</div></div>
+<div class="ttc" id="classffnn_1_1layer_1_1_output_html_a7e1b3e02e040b6c6522c688937ed5512"><div class="ttname"><a href="classffnn_1_1layer_1_1_output.html#a7e1b3e02e040b6c6522c688937ed5512">ffnn::layer::Output::operator&gt;&gt;</a></div><div class="ttdeci">void operator&gt;&gt;(NetworkOutputType &amp;output)</div><div class="ttdoc">Get network output value. </div><div class="ttdef"><b>Definition:</b> output.hpp:87</div></div>
+<div class="ttc" id="classffnn_1_1layer_1_1_output_html_a8755e7ce13c1b45243a679a5a5376ee4"><div class="ttname"><a href="classffnn_1_1layer_1_1_output.html#a8755e7ce13c1b45243a679a5a5376ee4">ffnn::layer::Output::ShapeType</a></div><div class="ttdeci">BaseType::ShapeType ShapeType</div><div class="ttdoc">Dimension type standardization. </div><div class="ttdef"><b>Definition:</b> output.h:41</div></div>
 <div class="ttc" id="assert_8h_html_aad64ee3fe6ac7c17c2a7b02318563b21"><div class="ttname"><a href="assert_8h.html#aad64ee3fe6ac7c17c2a7b02318563b21">FFNN_STATIC_RUNTIME_ASSERT_MSG</a></div><div class="ttdeci">#define FFNN_STATIC_RUNTIME_ASSERT_MSG(cond, msg)</div><div class="ttdoc">Static runtime assertion definition. </div><div class="ttdef"><b>Definition:</b> assert.h:40</div></div>
-<div class="ttc" id="classffnn_1_1layer_1_1_output_html_a2f4eb5c36b8b5d486410366b4cd9e7a8"><div class="ttname"><a href="classffnn_1_1layer_1_1_output.html#a2f4eb5c36b8b5d486410366b4cd9e7a8">ffnn::layer::Output::operator&gt;&gt;</a></div><div class="ttdeci">void operator&gt;&gt;(NetworkOutputType &amp;output)</div><div class="ttdoc">Get network output value. </div><div class="ttdef"><b>Definition:</b> output.hpp:77</div></div>
+<div class="ttc" id="namespaceffnn_html_add5752d74b38c6e9b200f3d696fc3ec8"><div class="ttname"><a href="namespaceffnn.html#add5752d74b38c6e9b200f3d696fc3ec8">ffnn::offset_type</a></div><div class="ttdeci">FFNN_OFFSET_TYPE offset_type</div><div class="ttdef"><b>Definition:</b> config.h:79</div></div>
+<div class="ttc" id="classffnn_1_1layer_1_1_output_html_a9f60142c3e464fcc6cda5203895dc448"><div class="ttname"><a href="classffnn_1_1layer_1_1_output.html#a9f60142c3e464fcc6cda5203895dc448">ffnn::layer::Output::BaseType</a></div><div class="ttdeci">typename Extrinsics::LayerType BaseType</div><div class="ttdoc">Base type alias. </div><div class="ttdef"><b>Definition:</b> output.h:38</div></div>
 <div class="ttc" id="logging_8h_html"><div class="ttname"><a href="logging_8h.html">logging.h</a></div></div>
 <div class="ttc" id="logging_8h_html_aabf5ff82064ef58a239a35b444685955"><div class="ttname"><a href="logging_8h.html#aabf5ff82064ef58a239a35b444685955">FFNN_WARN_NAMED</a></div><div class="ttdeci">#define FFNN_WARN_NAMED(name, msg)</div><div class="ttdoc">Prints an named warning message. </div><div class="ttdef"><b>Definition:</b> logging.h:62</div></div>
-<div class="ttc" id="classffnn_1_1layer_1_1_output_html_a7e835ff550e291d2015efb76290c1b6c"><div class="ttname"><a href="classffnn_1_1layer_1_1_output.html#a7e835ff550e291d2015efb76290c1b6c">ffnn::layer::Output::~Output</a></div><div class="ttdeci">virtual ~Output()</div><div class="ttdef"><b>Definition:</b> output.hpp:25</div></div>
 <div class="ttc" id="assert_8h_html_a0dd452510e5d75d0f71f52ed14143c40"><div class="ttname"><a href="assert_8h.html#a0dd452510e5d75d0f71f52ed14143c40">FFNN_ASSERT_MSG</a></div><div class="ttdeci">#define FFNN_ASSERT_MSG(cond, msg)</div><div class="ttdef"><b>Definition:</b> assert.h:24</div></div>
 <div class="ttc" id="logging_8h_html_ad17a22e477672ae24ca9afe0abf1b46f"><div class="ttname"><a href="logging_8h.html#ad17a22e477672ae24ca9afe0abf1b46f">FFNN_DEBUG_NAMED</a></div><div class="ttdeci">#define FFNN_DEBUG_NAMED(name, msg)</div><div class="ttdoc">Prints an named debug message. </div><div class="ttdef"><b>Definition:</b> logging.h:53</div></div>
-<div class="ttc" id="classffnn_1_1layer_1_1_output_html_a6780ece144b80cb2be355dd65096e9db"><div class="ttname"><a href="classffnn_1_1layer_1_1_output.html#a6780ece144b80cb2be355dd65096e9db">ffnn::layer::Output::OffsetType</a></div><div class="ttdeci">Base::OffsetType OffsetType</div><div class="ttdoc">Offset type standardization. </div><div class="ttdef"><b>Definition:</b> output.h:35</div></div>
-<div class="ttc" id="classffnn_1_1layer_1_1_output_html_af7d5b0ae4ac072ada556478a12fe235f"><div class="ttname"><a href="classffnn_1_1layer_1_1_output.html#af7d5b0ae4ac072ada556478a12fe235f">ffnn::layer::Output::Output</a></div><div class="ttdeci">Output()</div><div class="ttdoc">Default constructor. </div><div class="ttdef"><b>Definition:</b> output.hpp:18</div></div>
-<div class="ttc" id="structffnn_1_1layer_1_1_shape_html"><div class="ttname"><a href="structffnn_1_1layer_1_1_shape.html">ffnn::layer::Shape&lt; size_type &gt;</a></div></div>
-<div class="ttc" id="classffnn_1_1layer_1_1_output_html_ab37eb595864f42089dc2d0556b1f68ef"><div class="ttname"><a href="classffnn_1_1layer_1_1_output.html#ab37eb595864f42089dc2d0556b1f68ef">ffnn::layer::Output::operator&lt;&lt;</a></div><div class="ttdeci">void operator&lt;&lt;(const NetworkTargetType &amp;target)</div><div class="ttdoc">Set network output-target value. </div><div class="ttdef"><b>Definition:</b> output.hpp:91</div></div>
-<div class="ttc" id="classffnn_1_1layer_1_1_output_html"><div class="ttname"><a href="classffnn_1_1layer_1_1_output.html">ffnn::layer::Output</a></div><div class="ttdoc">A layer which handles network outputs. </div><div class="ttdef"><b>Definition:</b> output.h:24</div></div>
+<div class="ttc" id="classffnn_1_1layer_1_1_output_html_adbe7b418cbcae313ab79ffa79cc00f74"><div class="ttname"><a href="classffnn_1_1layer_1_1_output.html#adbe7b418cbcae313ab79ffa79cc00f74">ffnn::layer::Output::~Output</a></div><div class="ttdeci">virtual ~Output()</div><div class="ttdef"><b>Definition:</b> output.hpp:29</div></div>
+<div class="ttc" id="classffnn_1_1layer_1_1_output_html_aba563bb3b8984fe99d87872364367131"><div class="ttname"><a href="classffnn_1_1layer_1_1_output.html#aba563bb3b8984fe99d87872364367131">ffnn::layer::Output::Output</a></div><div class="ttdeci">Output(const Configuration &amp;config=Configuration())</div><div class="ttdoc">Setup constructor. </div><div class="ttdef"><b>Definition:</b> output.hpp:18</div></div>
+<div class="ttc" id="classffnn_1_1layer_1_1_output_html_a47b53447b900079a0cb6f0b29acd350e"><div class="ttname"><a href="classffnn_1_1layer_1_1_output.html#a47b53447b900079a0cb6f0b29acd350e">ffnn::layer::Output::operator&lt;&lt;</a></div><div class="ttdeci">void operator&lt;&lt;(const NetworkTargetType &amp;target)</div><div class="ttdoc">Set network output-target value. </div><div class="ttdef"><b>Definition:</b> output.hpp:103</div></div>
+<div class="ttc" id="classffnn_1_1layer_1_1_output_html_a8edca90e7ac402cd24c9872cf784a4de"><div class="ttname"><a href="classffnn_1_1layer_1_1_output.html#a8edca90e7ac402cd24c9872cf784a4de">ffnn::layer::Output::initialize</a></div><div class="ttdeci">bool initialize()</div><div class="ttdoc">Initialize the layer. </div><div class="ttdef"><b>Definition:</b> output.hpp:38</div></div>
+<div class="ttc" id="classffnn_1_1layer_1_1_output_html"><div class="ttname"><a href="classffnn_1_1layer_1_1_output.html">ffnn::layer::Output</a></div><div class="ttdoc">A layer which handles network outputs. </div><div class="ttdef"><b>Definition:</b> output.h:29</div></div>
 <div class="ttc" id="logging_8h_html_a6423579b7bc28bf29f9d3c60a2066c48"><div class="ttname"><a href="logging_8h.html#a6423579b7bc28bf29f9d3c60a2066c48">FFNN_INTERNAL_DEBUG_NAMED</a></div><div class="ttdeci">#define FFNN_INTERNAL_DEBUG_NAMED(name, msg)</div><div class="ttdoc">Prints an named debug message. </div><div class="ttdef"><b>Definition:</b> logging.h:40</div></div>
-<div class="ttc" id="classffnn_1_1layer_1_1_output_html_ab9ebd05595bc6b75718191aa48e70ad2"><div class="ttname"><a href="classffnn_1_1layer_1_1_output.html#ab9ebd05595bc6b75718191aa48e70ad2">ffnn::layer::Output::initialize</a></div><div class="ttdeci">bool initialize()</div><div class="ttdoc">Initialize the layer. </div><div class="ttdef"><b>Definition:</b> output.hpp:31</div></div>
-<div class="ttc" id="classffnn_1_1layer_1_1_output_html_a5e41de6c9249494dd9c6a819d7a30e20"><div class="ttname"><a href="classffnn_1_1layer_1_1_output.html#a5e41de6c9249494dd9c6a819d7a30e20">ffnn::layer::Output::SizeType</a></div><div class="ttdeci">Base::SizeType SizeType</div><div class="ttdoc">Size type standardization. </div><div class="ttdef"><b>Definition:</b> output.h:32</div></div>
-<div class="ttc" id="classffnn_1_1layer_1_1_layer_html"><div class="ttname"><a href="classffnn_1_1layer_1_1_layer.html">ffnn::layer::Layer</a></div><div class="ttdoc">Base object for all layer types. </div><div class="ttdef"><b>Definition:</b> layer.h:26</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jun 3 2017 23:40:28 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 8 2017 01:08:56 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

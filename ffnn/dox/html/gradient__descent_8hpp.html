@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>FFNN: /home/briancairl/packages/src/ffnn-cpp/ffnn/include/ffnn/impl/optimizer/gradient_descent.hpp File Reference</title>
+<title>FFNN: /home/briancairl/packages/src/ffnn-cpp/ffnn/include/ffnn/impl/optimizer/gradient_descent/gradient_descent.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -83,28 +83,49 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_f1374a92efe2cc1f1014c2355d0648ea.html">ffnn</a></li><li class="navelem"><a class="el" href="dir_9f6bb62272f947f6d8714dfd4be1a938.html">impl</a></li><li class="navelem"><a class="el" href="dir_0346fed206a1c3e0ba93b1f75761b66e.html">optimizer</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_f1374a92efe2cc1f1014c2355d0648ea.html">ffnn</a></li><li class="navelem"><a class="el" href="dir_9f6bb62272f947f6d8714dfd4be1a938.html">impl</a></li><li class="navelem"><a class="el" href="dir_0346fed206a1c3e0ba93b1f75761b66e.html">optimizer</a></li><li class="navelem"><a class="el" href="dir_b493f4f0ebb7abbce8f8712f508f4627.html">gradient_descent</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
 <div class="title">gradient_descent.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
+<div class="textblock"><code>#include &lt;exception&gt;</code><br/>
+<code>#include &lt;<a class="el" href="assert_8h_source.html">ffnn/assert.h</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="logging_8h_source.html">ffnn/logging.h</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="none_8h_source.html">ffnn/optimizer/none.h</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="signature_8h_source.html">ffnn/internal/signature.h</a>&gt;</code><br/>
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for gradient_descent.hpp:</div>
+<div class="dyncontent">
+<div class="center"><img src="gradient__descent_8hpp__incl.png" border="0" usemap="#_2home_2briancairl_2packages_2src_2ffnn-cpp_2ffnn_2include_2ffnn_2impl_2optimizer_2gradient__descent_2gradient__descent_8hpp" alt=""/></div>
+<map name="_2home_2briancairl_2packages_2src_2ffnn-cpp_2ffnn_2include_2ffnn_2impl_2optimizer_2gradient__descent_2gradient__descent_8hpp" id="_2home_2briancairl_2packages_2src_2ffnn-cpp_2ffnn_2include_2ffnn_2impl_2optimizer_2gradient__descent_2gradient__descent_8hpp">
+<area shape="rect" id="node3" href="assert_8h.html" title="ffnn/assert.h" alt="" coords="1251,283,1345,309"/><area shape="rect" id="node7" href="logging_8h.html" title="ffnn/logging.h" alt="" coords="1517,448,1616,475"/><area shape="rect" id="node18" href="none_8h.html" title="ffnn/optimizer/none.h" alt="" coords="1012,125,1156,152"/><area shape="rect" id="node24" href="signature_8h.html" title="ffnn/internal/signature.h" alt="" coords="1475,125,1633,152"/><area shape="rect" id="node5" href="config_8h.html" title="ffnn/internal/config.h" alt="" coords="717,365,856,392"/><area shape="rect" id="node14" href="sparse__triplet__serialization_8h.html" title="ffnn/internal/eigen\l/sparse_triplet_serialization.h" alt="" coords="783,441,973,482"/><area shape="rect" id="node20" href="optimizer_8h.html" title="ffnn/optimizer/optimizer.h" alt="" coords="826,200,995,227"/><area shape="rect" id="node23" href="loss__function_8h.html" title="ffnn/optimizer/loss\l_function.h" alt="" coords="743,275,872,317"/></map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="gradient__descent_8hpp__dep__incl.png" border="0" usemap="#_2home_2briancairl_2packages_2src_2ffnn-cpp_2ffnn_2include_2ffnn_2impl_2optimizer_2gradient__descent_2gradient__descent_8hppdep" alt=""/></div>
+<map name="_2home_2briancairl_2packages_2src_2ffnn-cpp_2ffnn_2include_2ffnn_2impl_2optimizer_2gradient__descent_2gradient__descent_8hppdep" id="_2home_2briancairl_2packages_2src_2ffnn-cpp_2ffnn_2include_2ffnn_2impl_2optimizer_2gradient__descent_2gradient__descent_8hppdep">
+<area shape="rect" id="node2" href="gradient__descent_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/optimizer/gradient_descent.h" alt="" coords="5,125,224,181"/><area shape="rect" id="node3" href="adam_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/optimizer/adam.h" alt="" coords="27,229,201,285"/></map>
+</div>
+</div>
 <p><a href="gradient__descent_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gradient_descent_3_01layer_1_1_fully_connected_3_01_value_type_00_01_options_00_01_extrinsics_01_4_01_4.html">GradientDescent&lt; layer::FullyConnected&lt; ValueType, Options, Extrinsics &gt; &gt;</a></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespaceffnn"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceffnn.html">ffnn</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceffnn_1_1optimizer"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceffnn_1_1optimizer.html">ffnn::optimizer</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 5 2017 00:03:38 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 8 2017 01:08:57 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

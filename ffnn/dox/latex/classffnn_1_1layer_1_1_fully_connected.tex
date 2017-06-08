@@ -12,8 +12,7 @@ A fully-\/connected layer.
 
 
 
-Inheritance diagram for ffnn\-:\-:layer\-:\-:Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$\-:
-\nopagebreak
+Inheritance diagram for ffnn\-:\-:layer\-:\-:Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -22,8 +21,7 @@ Inheritance diagram for ffnn\-:\-:layer\-:\-:Fully\-Connected$<$ Value\-Type, Op
 \end{figure}
 
 
-Collaboration diagram for ffnn\-:\-:layer\-:\-:Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$\-:
-\nopagebreak
+Collaboration diagram for ffnn\-:\-:layer\-:\-:Fully\-Connected$<$ Value\-Type, Options, Extrinsics $>$\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -37,15 +35,15 @@ using \hyperlink{classffnn_1_1layer_1_1_fully_connected_a886c7ef9b12d8835f0acb23
 \begin{DoxyCompactList}\small\item\em Self type alias. \end{DoxyCompactList}\item 
 using \hyperlink{classffnn_1_1layer_1_1_fully_connected_afd4e92710e0f74a32ea0ca1a44925b48}{Base\-Type} = typename Extrinsics\-::\-Hidden\-Layer\-Type
 \begin{DoxyCompactList}\small\item\em Base type alias. \end{DoxyCompactList}\item 
+typedef Base\-Type\-::\-Shape\-Type \hyperlink{classffnn_1_1layer_1_1_fully_connected_a9599c763b107d8b07bba62a74c88e907}{Shape\-Type}
+\begin{DoxyCompactList}\small\item\em Dimension type standardization. \end{DoxyCompactList}\item 
+typedef Extrinsics\-::\-Parameters\-Type \hyperlink{classffnn_1_1layer_1_1_fully_connected_aab9cb25e10620b406a13414ac81747fa}{Parameters\-Type}
+\begin{DoxyCompactList}\small\item\em Parameters (connection weights) type standardization. \end{DoxyCompactList}\item 
 typedef \\*
 \hyperlink{classffnn_1_1layer_1_1fully__connected_1_1_configuration}{fully\-\_\-connected\-::\-Configuration}\\*
 $<$ \hyperlink{classffnn_1_1layer_1_1_fully_connected_a886c7ef9b12d8835f0acb231f446e8cf}{Self\-Type}, Value\-Type, Options, \\*
 Extrinsics $>$ \hyperlink{classffnn_1_1layer_1_1_fully_connected_a0f17b9785828b21e00a8fe84fd173406}{Configuration}
-\begin{DoxyCompactList}\small\item\em Configuration type standardization. \end{DoxyCompactList}\item 
-typedef Base\-Type\-::\-Shape\-Type \hyperlink{classffnn_1_1layer_1_1_fully_connected_a9599c763b107d8b07bba62a74c88e907}{Shape\-Type}
-\begin{DoxyCompactList}\small\item\em Dimension type standardization. \end{DoxyCompactList}\item 
-typedef Extrinsics\-::\-Parameters\-Type \hyperlink{classffnn_1_1layer_1_1_fully_connected_aab9cb25e10620b406a13414ac81747fa}{Parameters\-Type}
-\begin{DoxyCompactList}\small\item\em Parameters (connection weights) type standardization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Configuration type standardization. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -84,35 +82,35 @@ A fully-\/connected layer.
 \subsection{Member Typedef Documentation}
 \hypertarget{classffnn_1_1layer_1_1_fully_connected_afd4e92710e0f74a32ea0ca1a44925b48}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!Base\-Type@{Base\-Type}}
 \index{Base\-Type@{Base\-Type}!ffnn::layer::FullyConnected@{ffnn\-::layer\-::\-Fully\-Connected}}
-\subsubsection[{Base\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = typename fully\-\_\-connected\-::options$<$$>$, typename Extrinsics  = typename fully\-\_\-connected\-::extrinsics$<$\-Value\-Type, Options$>$$>$ using {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Options, Extrinsics $>$\-::{\bf Base\-Type} =  typename Extrinsics\-::\-Hidden\-Layer\-Type}}\label{classffnn_1_1layer_1_1_fully_connected_afd4e92710e0f74a32ea0ca1a44925b48}
+\subsubsection[{Base\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Options = typename fully\-\_\-connected\-::options$<$$>$, typename Extrinsics = typename fully\-\_\-connected\-::extrinsics$<$\-Value\-Type, Options$>$$>$ using {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Options, Extrinsics $>$\-::{\bf Base\-Type} =  typename Extrinsics\-::\-Hidden\-Layer\-Type}}\label{classffnn_1_1layer_1_1_fully_connected_afd4e92710e0f74a32ea0ca1a44925b48}
 
 
 Base type alias. 
 
 \hypertarget{classffnn_1_1layer_1_1_fully_connected_a0f17b9785828b21e00a8fe84fd173406}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!Configuration@{Configuration}}
 \index{Configuration@{Configuration}!ffnn::layer::FullyConnected@{ffnn\-::layer\-::\-Fully\-Connected}}
-\subsubsection[{Configuration}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = typename fully\-\_\-connected\-::options$<$$>$, typename Extrinsics  = typename fully\-\_\-connected\-::extrinsics$<$\-Value\-Type, Options$>$$>$ typedef {\bf fully\-\_\-connected\-::\-Configuration}$<${\bf Self\-Type}, Value\-Type, Options, Extrinsics$>$ {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Options, Extrinsics $>$\-::{\bf Configuration}}}\label{classffnn_1_1layer_1_1_fully_connected_a0f17b9785828b21e00a8fe84fd173406}
+\subsubsection[{Configuration}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Options = typename fully\-\_\-connected\-::options$<$$>$, typename Extrinsics = typename fully\-\_\-connected\-::extrinsics$<$\-Value\-Type, Options$>$$>$ typedef {\bf fully\-\_\-connected\-::\-Configuration}$<${\bf Self\-Type}, Value\-Type, Options, Extrinsics$>$ {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Options, Extrinsics $>$\-::{\bf Configuration}}}\label{classffnn_1_1layer_1_1_fully_connected_a0f17b9785828b21e00a8fe84fd173406}
 
 
 Configuration type standardization. 
 
 \hypertarget{classffnn_1_1layer_1_1_fully_connected_aab9cb25e10620b406a13414ac81747fa}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!Parameters\-Type@{Parameters\-Type}}
 \index{Parameters\-Type@{Parameters\-Type}!ffnn::layer::FullyConnected@{ffnn\-::layer\-::\-Fully\-Connected}}
-\subsubsection[{Parameters\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = typename fully\-\_\-connected\-::options$<$$>$, typename Extrinsics  = typename fully\-\_\-connected\-::extrinsics$<$\-Value\-Type, Options$>$$>$ typedef Extrinsics\-::\-Parameters\-Type {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Options, Extrinsics $>$\-::{\bf Parameters\-Type}}}\label{classffnn_1_1layer_1_1_fully_connected_aab9cb25e10620b406a13414ac81747fa}
+\subsubsection[{Parameters\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Options = typename fully\-\_\-connected\-::options$<$$>$, typename Extrinsics = typename fully\-\_\-connected\-::extrinsics$<$\-Value\-Type, Options$>$$>$ typedef Extrinsics\-::\-Parameters\-Type {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Options, Extrinsics $>$\-::{\bf Parameters\-Type}}}\label{classffnn_1_1layer_1_1_fully_connected_aab9cb25e10620b406a13414ac81747fa}
 
 
 Parameters (connection weights) type standardization. 
 
 \hypertarget{classffnn_1_1layer_1_1_fully_connected_a886c7ef9b12d8835f0acb231f446e8cf}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!Self\-Type@{Self\-Type}}
 \index{Self\-Type@{Self\-Type}!ffnn::layer::FullyConnected@{ffnn\-::layer\-::\-Fully\-Connected}}
-\subsubsection[{Self\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = typename fully\-\_\-connected\-::options$<$$>$, typename Extrinsics  = typename fully\-\_\-connected\-::extrinsics$<$\-Value\-Type, Options$>$$>$ using {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Options, Extrinsics $>$\-::{\bf Self\-Type} =  {\bf Fully\-Connected}$<$Value\-Type, Options, Extrinsics$>$}}\label{classffnn_1_1layer_1_1_fully_connected_a886c7ef9b12d8835f0acb231f446e8cf}
+\subsubsection[{Self\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Options = typename fully\-\_\-connected\-::options$<$$>$, typename Extrinsics = typename fully\-\_\-connected\-::extrinsics$<$\-Value\-Type, Options$>$$>$ using {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Options, Extrinsics $>$\-::{\bf Self\-Type} =  {\bf Fully\-Connected}$<$Value\-Type, Options, Extrinsics$>$}}\label{classffnn_1_1layer_1_1_fully_connected_a886c7ef9b12d8835f0acb231f446e8cf}
 
 
 Self type alias. 
 
 \hypertarget{classffnn_1_1layer_1_1_fully_connected_a9599c763b107d8b07bba62a74c88e907}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!Shape\-Type@{Shape\-Type}}
 \index{Shape\-Type@{Shape\-Type}!ffnn::layer::FullyConnected@{ffnn\-::layer\-::\-Fully\-Connected}}
-\subsubsection[{Shape\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = typename fully\-\_\-connected\-::options$<$$>$, typename Extrinsics  = typename fully\-\_\-connected\-::extrinsics$<$\-Value\-Type, Options$>$$>$ typedef Base\-Type\-::\-Shape\-Type {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Options, Extrinsics $>$\-::{\bf Shape\-Type}}}\label{classffnn_1_1layer_1_1_fully_connected_a9599c763b107d8b07bba62a74c88e907}
+\subsubsection[{Shape\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Options = typename fully\-\_\-connected\-::options$<$$>$, typename Extrinsics = typename fully\-\_\-connected\-::extrinsics$<$\-Value\-Type, Options$>$$>$ typedef Base\-Type\-::\-Shape\-Type {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Options, Extrinsics $>$\-::{\bf Shape\-Type}}}\label{classffnn_1_1layer_1_1_fully_connected_a9599c763b107d8b07bba62a74c88e907}
 
 
 Dimension type standardization. 
@@ -174,7 +172,7 @@ set\-Optimizer
 \end{DoxySeeAlso}
 \hypertarget{classffnn_1_1layer_1_1_fully_connected_ad66275e42a79a3f10b34828b98d964ab}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!F\-F\-N\-N\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-S\-E\-R\-I\-A\-L\-I\-Z\-A\-B\-L\-E@{F\-F\-N\-N\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-S\-E\-R\-I\-A\-L\-I\-Z\-A\-B\-L\-E}}
 \index{F\-F\-N\-N\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-S\-E\-R\-I\-A\-L\-I\-Z\-A\-B\-L\-E@{F\-F\-N\-N\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-S\-E\-R\-I\-A\-L\-I\-Z\-A\-B\-L\-E}!ffnn::layer::FullyConnected@{ffnn\-::layer\-::\-Fully\-Connected}}
-\subsubsection[{F\-F\-N\-N\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-S\-E\-R\-I\-A\-L\-I\-Z\-A\-B\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = typename fully\-\_\-connected\-::options$<$$>$, typename Extrinsics  = typename fully\-\_\-connected\-::extrinsics$<$\-Value\-Type, Options$>$$>$ {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Options, Extrinsics $>$\-::F\-F\-N\-N\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-S\-E\-R\-I\-A\-L\-I\-Z\-A\-B\-L\-E (
+\subsubsection[{F\-F\-N\-N\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-S\-E\-R\-I\-A\-L\-I\-Z\-A\-B\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Options = typename fully\-\_\-connected\-::options$<$$>$, typename Extrinsics = typename fully\-\_\-connected\-::extrinsics$<$\-Value\-Type, Options$>$$>$ {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Options, Extrinsics $>$\-::F\-F\-N\-N\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-S\-E\-R\-I\-A\-L\-I\-Z\-A\-B\-L\-E (
 \begin{DoxyParamCaption}
 \item[{{\bf Fully\-Connected}$<$ Value\-Type, Options, Extrinsics $>$}]{}
 \end{DoxyParamCaption}
@@ -199,7 +197,7 @@ Performs forward value propagation.
 \end{DoxyRetVals}
 \hypertarget{classffnn_1_1layer_1_1_fully_connected_a2b4eb3fb45590f272e8ab0ff2069793d}{\index{ffnn\-::layer\-::\-Fully\-Connected@{ffnn\-::layer\-::\-Fully\-Connected}!get\-Parameters@{get\-Parameters}}
 \index{get\-Parameters@{get\-Parameters}!ffnn::layer::FullyConnected@{ffnn\-::layer\-::\-Fully\-Connected}}
-\subsubsection[{get\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = typename fully\-\_\-connected\-::options$<$$>$, typename Extrinsics  = typename fully\-\_\-connected\-::extrinsics$<$\-Value\-Type, Options$>$$>$ const {\bf Parameters\-Type}\& {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Options, Extrinsics $>$\-::get\-Parameters (
+\subsubsection[{get\-Parameters}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Options = typename fully\-\_\-connected\-::options$<$$>$, typename Extrinsics = typename fully\-\_\-connected\-::extrinsics$<$\-Value\-Type, Options$>$$>$ const {\bf Parameters\-Type}\& {\bf ffnn\-::layer\-::\-Fully\-Connected}$<$ Value\-Type, Options, Extrinsics $>$\-::get\-Parameters (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
@@ -246,8 +244,7 @@ Load serialize.
 
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -281,8 +278,7 @@ Save serialize.
 
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -320,4 +316,4 @@ set\-Optimizer
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
 /home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/\hyperlink{fully__connected_8h}{fully\-\_\-connected.\-h}\item 
-/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/impl/layer/\hyperlink{impl_2layer_2fully__connected_8hpp}{fully\-\_\-connected.\-hpp}\end{DoxyCompactItemize}
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/impl/layer/fully\-\_\-connected/\hyperlink{layer_2fully__connected_2fully__connected_8hpp}{fully\-\_\-connected.\-hpp}\end{DoxyCompactItemize}

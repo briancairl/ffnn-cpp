@@ -7,6 +7,7 @@
 {\ttfamily \#include $<$boost/shared\-\_\-ptr.\-hpp$>$}\\*
 {\ttfamily \#include $<$ffnn/internal/config.\-h$>$}\\*
 {\ttfamily \#include $<$ffnn/assert.\-h$>$}\\*
+{\ttfamily \#include $<$ffnn/optimizer/loss\-\_\-function.\-h$>$}\\*
 Include dependency graph for optimizer.\-h\-:
 \nopagebreak
 \begin{figure}[H]
@@ -38,27 +39,31 @@ class \hyperlink{classffnn_1_1optimizer_1_1_optimizer}{ffnn\-::optimizer\-::\-Op
 \subsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \hyperlink{optimizer_8h_aee9e218ffa031741b9f3f53cc580a09f}{F\-F\-N\-N\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-O\-P\-T\-I\-M\-I\-Z\-E\-R}(layer, opt)~friend class \-::ffnn\-::optimizer\-::opt$<$layer$>$;
+\#define \hyperlink{optimizer_8h_a460eae8d9b08dc6ebaf81a71ab60e567}{F\-F\-N\-N\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-O\-P\-T\-I\-M\-I\-Z\-E\-R}(opt)
 \begin{DoxyCompactList}\small\item\em Registers an optimizer to a Layer. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Macro Definition Documentation}
-\hypertarget{optimizer_8h_aee9e218ffa031741b9f3f53cc580a09f}{\index{optimizer.\-h@{optimizer.\-h}!F\-F\-N\-N\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-O\-P\-T\-I\-M\-I\-Z\-E\-R@{F\-F\-N\-N\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-O\-P\-T\-I\-M\-I\-Z\-E\-R}}
+\hypertarget{optimizer_8h_a460eae8d9b08dc6ebaf81a71ab60e567}{\index{optimizer.\-h@{optimizer.\-h}!F\-F\-N\-N\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-O\-P\-T\-I\-M\-I\-Z\-E\-R@{F\-F\-N\-N\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-O\-P\-T\-I\-M\-I\-Z\-E\-R}}
 \index{F\-F\-N\-N\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-O\-P\-T\-I\-M\-I\-Z\-E\-R@{F\-F\-N\-N\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-O\-P\-T\-I\-M\-I\-Z\-E\-R}!optimizer.h@{optimizer.\-h}}
 \subsubsection[{F\-F\-N\-N\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-O\-P\-T\-I\-M\-I\-Z\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\-F\-N\-N\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-O\-P\-T\-I\-M\-I\-Z\-E\-R(
 \begin{DoxyParamCaption}
-\item[{}]{layer, }
 \item[{}]{opt}
 \end{DoxyParamCaption}
-)~friend class \-::ffnn\-::optimizer\-::opt$<$layer$>$;}}\label{optimizer_8h_aee9e218ffa031741b9f3f53cc580a09f}
+)}}\label{optimizer_8h_a460eae8d9b08dc6ebaf81a71ab60e567}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keyword}{template}<\textcolor{keyword}{typename} \_LayerType, ::ffnn::optimizer::LossFunction \_LossFunctionSpec>\(\backslash\)
+  friend class ::ffnn::optimizer::opt;\(\backslash\)
+  template<typename \_LayerType, ::ffnn::optimizer::LossFunction \_LossFunctionSpec>\(\backslash\)
+  friend class ::ffnn::optimizer::opt##\_;
+\end{DoxyCode}
 
 
 Registers an optimizer to a Layer. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em layer} & layer type name \\
-\hline
 {\em opt} & Optimizer type \\
 \hline
 \end{DoxyParams}

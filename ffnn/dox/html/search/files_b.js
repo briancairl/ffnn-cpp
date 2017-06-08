@@ -12,7 +12,5 @@ var searchData=
   ['soft_5fdropout_2eh',['soft_dropout.h',['../soft__dropout_8h.html',1,'']]],
   ['soft_5fsign_2eh',['soft_sign.h',['../soft__sign_8h.html',1,'']]],
   ['sparse_5fmatrix_5fbase_5faddons_2eh',['sparse_matrix_base_addons.h',['../sparse__matrix__base__addons_8h.html',1,'']]],
-  ['sparse_5ftriplet_5fserialization_2eh',['sparse_triplet_serialization.h',['../sparse__triplet__serialization_8h.html',1,'']]],
-  ['sparsely_5fconnected_2ehpp',['sparsely_connected.hpp',['../adam_2sparsely__connected_8hpp.html',1,'']]],
-  ['sparsely_5fconnected_2ehpp',['sparsely_connected.hpp',['../gradient__descent_2sparsely__connected_8hpp.html',1,'']]]
+  ['sparse_5ftriplet_5fserialization_2eh',['sparse_triplet_serialization.h',['../sparse__triplet__serialization_8h.html',1,'']]]
 ];

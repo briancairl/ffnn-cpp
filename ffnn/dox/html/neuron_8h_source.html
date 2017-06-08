@@ -102,38 +102,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span>neuron</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> NeuronType&gt;</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="structffnn_1_1neuron_1_1is__neuron.html">   16</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structffnn_1_1neuron_1_1is__neuron.html">is_neuron</a></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="structffnn_1_1neuron_1_1is__neuron.html#adfafc315a5352f2a186959d8402490d1">   18</a></span>&#160;  constexpr <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="structffnn_1_1neuron_1_1is__neuron.html#adfafc315a5352f2a186959d8402490d1">value</a> = NeuronType::IsNeuron::value;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;};</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType&gt;</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classffnn_1_1neuron_1_1_neuron.html">   25</a></span>&#160;<span class="keyword">class </span><a class="code" href="classffnn_1_1neuron_1_1_neuron.html">Neuron</a></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classffnn_1_1neuron_1_1_neuron.html#a75bfde562dcb9d0e606f52ca73451de8">   28</a></span>&#160;  <span class="keyword">typedef</span> std::true_type <a class="code" href="classffnn_1_1neuron_1_1_neuron.html#a75bfde562dcb9d0e606f52ca73451de8">IsNeuron</a>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classffnn_1_1neuron_1_1_neuron.html#a5c758fa2e21a6dc3de42b34016b93d56">   30</a></span>&#160;  <span class="keyword">typedef</span> ValueType <a class="code" href="classffnn_1_1neuron_1_1_neuron.html#a5c758fa2e21a6dc3de42b34016b93d56">Scalar</a>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classffnn_1_1neuron_1_1_neuron.html#ae215373ce29e135cb5fd728964772a32">operator()</a>(<span class="keyword">const</span> ValueType&amp; input, ValueType&amp; output) = 0;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classffnn_1_1neuron_1_1_neuron.html#ac779b179887e6b4505dec96d0319af10">derivative</a>(<span class="keyword">const</span> ValueType&amp; input, ValueType&amp; output) <span class="keyword">const</span> = 0;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;};</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}  <span class="comment">// namespace neuron</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}  <span class="comment">// namespace ffnn</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#endif  // FFNN_NEURON_NEURON_H</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType&gt;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classffnn_1_1neuron_1_1_neuron.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="classffnn_1_1neuron_1_1_neuron.html">Neuron</a></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classffnn_1_1neuron_1_1_neuron.html#a5c758fa2e21a6dc3de42b34016b93d56">   22</a></span>&#160;  <span class="keyword">typedef</span> ValueType <a class="code" href="classffnn_1_1neuron_1_1_neuron.html#a5c758fa2e21a6dc3de42b34016b93d56">Scalar</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classffnn_1_1neuron_1_1_neuron.html#ae215373ce29e135cb5fd728964772a32">operator()</a>(<span class="keyword">const</span> ValueType&amp; input, ValueType&amp; output) = 0;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classffnn_1_1neuron_1_1_neuron.html#ac779b179887e6b4505dec96d0319af10">derivative</a>(<span class="keyword">const</span> ValueType&amp; input, ValueType&amp; output) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;};</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}  <span class="comment">// namespace neuron</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}  <span class="comment">// namespace ffnn</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif  // FFNN_NEURON_NEURON_H</span></div>
 <div class="ttc" id="classffnn_1_1neuron_1_1_neuron_html_ae215373ce29e135cb5fd728964772a32"><div class="ttname"><a href="classffnn_1_1neuron_1_1_neuron.html#ae215373ce29e135cb5fd728964772a32">ffnn::neuron::Neuron::operator()</a></div><div class="ttdeci">virtual void operator()(const ValueType &amp;input, ValueType &amp;output)=0</div><div class="ttdoc">Computes activation output. </div></div>
-<div class="ttc" id="structffnn_1_1neuron_1_1is__neuron_html"><div class="ttname"><a href="structffnn_1_1neuron_1_1is__neuron.html">ffnn::neuron::is_neuron</a></div><div class="ttdef"><b>Definition:</b> neuron.h:16</div></div>
-<div class="ttc" id="classffnn_1_1neuron_1_1_neuron_html_a75bfde562dcb9d0e606f52ca73451de8"><div class="ttname"><a href="classffnn_1_1neuron_1_1_neuron.html#a75bfde562dcb9d0e606f52ca73451de8">ffnn::neuron::Neuron::IsNeuron</a></div><div class="ttdeci">std::true_type IsNeuron</div><div class="ttdef"><b>Definition:</b> neuron.h:28</div></div>
-<div class="ttc" id="classffnn_1_1neuron_1_1_neuron_html"><div class="ttname"><a href="classffnn_1_1neuron_1_1_neuron.html">ffnn::neuron::Neuron</a></div><div class="ttdoc">A basic activation unit type. </div><div class="ttdef"><b>Definition:</b> neuron.h:25</div></div>
+<div class="ttc" id="classffnn_1_1neuron_1_1_neuron_html"><div class="ttname"><a href="classffnn_1_1neuron_1_1_neuron.html">ffnn::neuron::Neuron</a></div><div class="ttdoc">A basic activation unit type. </div><div class="ttdef"><b>Definition:</b> neuron.h:19</div></div>
 <div class="ttc" id="classffnn_1_1neuron_1_1_neuron_html_ac779b179887e6b4505dec96d0319af10"><div class="ttname"><a href="classffnn_1_1neuron_1_1_neuron.html#ac779b179887e6b4505dec96d0319af10">ffnn::neuron::Neuron::derivative</a></div><div class="ttdeci">virtual void derivative(const ValueType &amp;input, ValueType &amp;output) const =0</div><div class="ttdoc">Computes first-order activation derivative. </div></div>
-<div class="ttc" id="classffnn_1_1neuron_1_1_neuron_html_a5c758fa2e21a6dc3de42b34016b93d56"><div class="ttname"><a href="classffnn_1_1neuron_1_1_neuron.html#a5c758fa2e21a6dc3de42b34016b93d56">ffnn::neuron::Neuron::Scalar</a></div><div class="ttdeci">ValueType Scalar</div><div class="ttdef"><b>Definition:</b> neuron.h:30</div></div>
-<div class="ttc" id="structffnn_1_1neuron_1_1is__neuron_html_adfafc315a5352f2a186959d8402490d1"><div class="ttname"><a href="structffnn_1_1neuron_1_1is__neuron.html#adfafc315a5352f2a186959d8402490d1">ffnn::neuron::is_neuron::value</a></div><div class="ttdeci">static constexpr bool value</div><div class="ttdef"><b>Definition:</b> neuron.h:18</div></div>
+<div class="ttc" id="classffnn_1_1neuron_1_1_neuron_html_a5c758fa2e21a6dc3de42b34016b93d56"><div class="ttname"><a href="classffnn_1_1neuron_1_1_neuron.html#a5c758fa2e21a6dc3de42b34016b93d56">ffnn::neuron::Neuron::Scalar</a></div><div class="ttdeci">ValueType Scalar</div><div class="ttdef"><b>Definition:</b> neuron.h:22</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jun 3 2017 23:40:28 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 8 2017 01:08:56 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

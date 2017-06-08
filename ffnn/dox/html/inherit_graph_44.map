@@ -1,4 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classffnn_1_1optimizer_1_1_optimizer.html" title="ffnn::optimizer::Optimizer\l\&lt; layer::Convolution\&lt; TARGS \&gt; \&gt;" alt="" coords="5,11,227,53"/>
-<area shape="rect" id="node2" href="$classffnn_1_1optimizer_1_1_gradient_descent_3_01layer_1_1_convolution_3_01_t_a_r_g_s_01_4_01_4.html" title="ffnn::optimizer::Gradient\lDescent\&lt; layer::Convolution\l\&lt; TARGS \&gt; \&gt;" alt="" coords="275,4,463,60"/>
+<area shape="rect" id="node1" href="$classffnn_1_1optimizer_1_1_gradient_descent.html" title="ffnn::optimizer::Gradient\lDescent\&lt; layer::FullyConnected\l\&lt; ValueType, InputsAtCompileTime,\l OutputsAtCompileTime \&gt; \&gt;" alt="" coords="5,5,240,75"/>
+<area shape="rect" id="node2" href="$classffnn_1_1optimizer_1_1_adam_3_01layer_1_1_fully_connected_3_01_value_type_00_01_inputs_at_co08ce471fd3ee7441a350cc42cfd35bcd.html" title="ffnn::optimizer::Adam\l\&lt; layer::FullyConnected\l\&lt; ValueType, InputsAtCompileTime,\l OutputsAtCompileTime \&gt; \&gt;" alt="" coords="288,5,523,75"/>
 </map>

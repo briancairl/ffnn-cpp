@@ -20,7 +20,7 @@ namespace optimizer
 {
 template<typename LayerType,
          LossFunction LossFn = CrossEntropy>
-class GradientDescent :
+class GradientDescent_ :
   public Optimizer<LayerType>
 {
 public:
@@ -41,8 +41,8 @@ public:
    * @param lr  Learning rate
    */
   explicit
-  GradientDescent(Scalar lr);
-  virtual ~GradientDescent() {}
+  GradientDescent_(Scalar lr);
+  virtual ~GradientDescent_() {}
 
   /**
    * @brief Initializes the Optimizer
@@ -70,7 +70,7 @@ public:
    * @retval true  if optimization setup was successful
    * @retval false  otherwise
    */
-  bool backward(LayerType& layer);
+  virtual bool backward(LayerType& layer) = 0;
 
   /**
    * @brief Applies optimization update
@@ -97,6 +97,6 @@ protected:
 #include <ffnn/impl/optimizer/gradient_descent/gradient_descent.hpp>
 
 /// FFNN (specializations)
-//#include <ffnn/impl/optimizer/gradient_descent/convolution.hpp>
-#include <ffnn/impl/optimizer/gradient_descent/fully_connected.hpp>
+#include <ffnn/impl/optimizer/gradient_descent/specializations/convolution.hpp>
+#include <ffnn/impl/optimizer/gradient_descent/specializations/fully_connected.hpp>
 #endif  // FFNN_LAYER_OPTIMIZATION_GRADIENT_DESCENT_H

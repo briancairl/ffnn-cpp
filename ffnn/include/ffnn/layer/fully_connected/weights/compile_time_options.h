@@ -2,8 +2,8 @@
  * @author Brian Cairl
  * @date 2017
  */
-#ifndef FFNN_LAYER_CONVOLUTION_FILTER_COMPILE_TIME_OPTIONS_H
-#define FFNN_LAYER_CONVOLUTION_FILTER_COMPILE_TIME_OPTIONS_H
+#ifndef FFNN_LAYER_FULLY_CONNECTED_WEIGHTS_COMPILE_TIME_OPTIONS_H
+#define FFNN_LAYER_FULLY_CONNECTED_WEIGHTS_COMPILE_TIME_OPTIONS_H
 
 // C++ Standard Library
 #include <array>
@@ -68,4 +68,4 @@ struct extrinsics
 }  // namespace fully_connected
 }  // namespace layer
 }  // namespace ffnn
-#endif  // FFNN_LAYER_CONVOLUTION_FILTER_COMPILE_TIME_OPTIONS_H
+#endif  // FFNN_LAYER_FULLY_CONNECTED_WEIGHTS_COMPILE_TIME_OPTIONS_H

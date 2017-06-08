@@ -104,7 +104,7 @@ public:
   }
 
 private:
-  FFNN_REGISTER_OPTIMIZER(Adam);
+  //FFNN_REGISTER_OPTIMIZER(Adam);
   FFNN_REGISTER_OPTIMIZER(GradientDescent);
 
   /**

@@ -1,7 +1,4 @@
 <map id="ffnn::internal::Serializable" name="ffnn::internal::Serializable">
-<area shape="rect" id="node2" href="$classffnn_1_1internal_1_1_unique.html" title="An object with a unique ID. " alt="" coords="225,45,367,72"/>
-<area shape="rect" id="node3" href="$classffnn_1_1layer_1_1_layer.html" title="Base object for all layer types. " alt="" coords="416,38,536,79"/>
-<area shape="rect" id="node4" href="$classffnn_1_1layer_1_1_output.html" title="A layer which handles network outputs. " alt="" coords="598,5,725,46"/>
-<area shape="rect" id="node5" href="$classffnn_1_1layer_1_1_hidden.html" title="Hidden\&lt; ValueType,\l _HiddenLayerShape \&gt;" alt="" coords="584,70,739,111"/>
-<area shape="rect" id="node6" href="$classffnn_1_1layer_1_1_activation.html" title="Activation layer. " alt="" coords="787,55,1018,126"/>
+<area shape="rect" id="node2" href="$classffnn_1_1internal_1_1_unique.html" title="An object with a unique ID. " alt="" coords="18,80,160,107"/>
+<area shape="rect" id="node3" href="$classffnn_1_1layer_1_1_layer.html" title="Base object for all layer types. " alt="" coords="29,155,149,197"/>
 </map>

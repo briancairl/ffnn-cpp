@@ -16,6 +16,7 @@ namespace optimizer
 template<typename LayerType> class None;
 template<typename LayerType, LossFunction LossFn> class Adam;
 template<typename LayerType, LossFunction LossFn> class GradientDescent;
+template<typename LayerType, LossFunction LossFn> class GradientDescent_;
 
 }  // namespace optimizer
 }  // namespace ffnn

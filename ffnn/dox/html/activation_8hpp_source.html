@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>FFNN: /home/briancairl/packages/src/ffnn-cpp/ffnn/include/ffnn/impl/layer/activation.hpp Source File</title>
+<title>FFNN: /home/briancairl/packages/src/ffnn-cpp/ffnn/include/ffnn/impl/layer/activation/activation.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -83,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_f1374a92efe2cc1f1014c2355d0648ea.html">ffnn</a></li><li class="navelem"><a class="el" href="dir_9f6bb62272f947f6d8714dfd4be1a938.html">impl</a></li><li class="navelem"><a class="el" href="dir_c0c5eb26c41234ae5380a03fa41e3ae2.html">layer</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_f1374a92efe2cc1f1014c2355d0648ea.html">ffnn</a></li><li class="navelem"><a class="el" href="dir_9f6bb62272f947f6d8714dfd4be1a938.html">impl</a></li><li class="navelem"><a class="el" href="dir_c0c5eb26c41234ae5380a03fa41e3ae2.html">layer</a></li><li class="navelem"><a class="el" href="dir_ee273c49f440dc4865ae9ed662475447.html">activation</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -92,8 +92,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <a href="activation_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef FFNN_LAYER_IMPL_ACTIVATION_HPP</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define FFNN_LAYER_IMPL_ACTIVATION_HPP</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef FFNN_IMPL_LAYER_ACTIVATION_ACTIVATION_HPP</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define FFNN_IMPL_LAYER_ACTIVATION_ACTIVATION_HPP</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// C++ Standard library</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;ctime&gt;</span></div>
@@ -105,145 +105,166 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="none_8h.html">ffnn/optimizer/none.h</a>&gt;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="signature_8h.html">ffnn/internal/signature.h</a>&gt;</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="activation_8hpp.html#a005b9b79411aa786124330e813a99057">   18</a></span>&#160;<span class="preprocessor">#define TARGS ValueType, NeuronType, SizeAtCompileTime, _HiddenLayerShape</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">namespace </span>ffnn</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">namespace </span>ffnn</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="namespaceffnn_1_1layer.html">   20</a></span>&#160;<span class="keyword">namespace </span>layer</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="namespaceffnn_1_1layer.html">   22</a></span>&#160;<span class="keyword">namespace </span>layer</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;         <span class="keyword">typename</span> NeuronType,</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;         <a class="code" href="config_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> SizeAtCompileTime,</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;         <span class="keyword">typename</span> _HiddenLayerShape&gt;</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_activation.html#a92e73d25dc6855597d25e2b492bd381c">   28</a></span>&#160;<a class="code" href="classffnn_1_1layer_1_1_activation.html#a92e73d25dc6855597d25e2b492bd381c">Activation&lt;TARGS&gt;::Activation</a>()</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{}</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;         <span class="keyword">typename</span> NeuronType,</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;         <a class="code" href="config_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> SizeAtCompileTime,</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;         <span class="keyword">typename</span> _HiddenLayerShape&gt;</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_activation.html#acd5aa2e208c0c85ea1ff8033133f8ebe">   35</a></span>&#160;<a class="code" href="classffnn_1_1layer_1_1_activation.html#acd5aa2e208c0c85ea1ff8033133f8ebe">Activation&lt;TARGS&gt;::~Activation</a>()</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{}</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;         <span class="keyword">typename</span> NeuronType,</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;         <a class="code" href="config_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> SizeAtCompileTime,</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;         <span class="keyword">typename</span> _HiddenLayerShape&gt;</div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_activation.html#a10a733b3fc1378fd8d1f33d231ee3e83">   42</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classffnn_1_1layer_1_1_activation.html#a10a733b3fc1378fd8d1f33d231ee3e83">Activation&lt;TARGS&gt;::initialize</a>()</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="comment">// Abort if layer is already initialized</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keywordflow">if</span> (Base::setupRequired() &amp;&amp; Base::isInitialized())</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="logging_8h.html#aabf5ff82064ef58a239a35b444685955">FFNN_WARN_NAMED</a>(<span class="stringliteral">&quot;layer::Activation&quot;</span>, <span class="stringliteral">&quot;&lt;&quot;</span> &lt;&lt; Base::getID() &lt;&lt; <span class="stringliteral">&quot;&gt; already initialized.&quot;</span>);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  }</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!Base::initialize())</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="comment">// Deduce output dimensions</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  Base::output_shape_ = Base::input_shape_;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="comment">// Initialize neurons</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  neurons_.resize(Base::getOutputShape().size());</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <a class="code" href="logging_8h.html#ad17a22e477672ae24ca9afe0abf1b46f">FFNN_DEBUG_NAMED</a>(<span class="stringliteral">&quot;layer::Activation&quot;</span>,</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                   <span class="stringliteral">&quot;&lt;&quot;</span> &lt;&lt;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                   Base::getID() &lt;&lt;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                   <span class="stringliteral">&quot;&gt; initialized as (in=&quot;</span> &lt;&lt;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                   Base::getInputShape().size() &lt;&lt;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                   <span class="stringliteral">&quot;, out=&quot;</span> &lt;&lt;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                   Base::getOutputShape().size() &lt;&lt;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                   <span class="stringliteral">&quot;)&quot;</span>);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordflow">return</span> Base::getOutputShape().size() == Base::getInputShape().size();</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;         <span class="keyword">typename</span> NeuronType,</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;         <a class="code" href="config_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> SizeAtCompileTime,</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;         <span class="keyword">typename</span> _HiddenLayerShape&gt;</div>
-<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_activation.html#a8435ed1feadfcfc2343dd65a1542fe23">   77</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classffnn_1_1layer_1_1_activation.html#a8435ed1feadfcfc2343dd65a1542fe23">Activation&lt;TARGS&gt;::forward</a>()</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;{</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="comment">// Compute neuron outputs</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keywordflow">for</span> (SizeType idx = 0; idx &lt; Base::getInputShape().size(); idx++)</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    neurons_[idx](Base::input_(idx), Base::output_(idx));</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;         <span class="keyword">typename</span> NeuronType,</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;         <a class="code" href="config_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> SizeAtCompileTime,</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;         <span class="keyword">typename</span> _HiddenLayerShape&gt;</div>
-<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_activation.html#aa5166a595cb135c7ad62569361de101b">   91</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classffnn_1_1layer_1_1_activation.html#aa5166a595cb135c7ad62569361de101b">Activation&lt;TARGS&gt;::backward</a>()</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;{</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="comment">// Compute neuron derivatives</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  Base::backward_error_.noalias() = Base::output_;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="keywordflow">for</span> (SizeType idx = 0; idx &lt; Base::getOutputShape().size(); idx++)</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  {</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    neurons_[idx].derivative(Base::input_(idx), Base::backward_error_(idx));</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  }</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="comment">// Incorporate error</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  Base::backward_error_.array() *= Base::forward_error_.array();</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;}</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;         <span class="keyword">typename</span> NeuronType,</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;         <a class="code" href="config_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> SizeAtCompileTime,</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;         <span class="keyword">typename</span> _HiddenLayerShape&gt;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="keywordtype">void</span> <a class="code" href="classffnn_1_1layer_1_1_activation.html#af4fa0c4e44033921fe6ada1dcd0c0560">Activation&lt;TARGS&gt;::</a></div>
-<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_activation.html#af4fa0c4e44033921fe6ada1dcd0c0560">  110</a></span>&#160;<a class="code" href="classffnn_1_1layer_1_1_activation.html#af4fa0c4e44033921fe6ada1dcd0c0560">  save</a>(<span class="keyword">typename</span> <a class="code" href="classffnn_1_1internal_1_1_serializable.html#acf5baead716eb277337a4437e88a5743">Activation&lt;TARGS&gt;::OutputArchive</a>&amp; ar,</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;       <span class="keyword">typename</span> <a class="code" href="classffnn_1_1internal_1_1_serializable.html#a32fe7d82b0caf9fe8b6fb7c312a26028">Activation&lt;TARGS&gt;::VersionType</a> version)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  ffnn::io::signature::apply&lt;Activation&lt;TARGS&gt;&gt;(ar);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <a class="code" href="convolution_2filter_2serialization__class__definitions_8hpp.html#ab948859788aa671e575e410654e07f16">Base::save</a>(ar, version);</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <a class="code" href="logging_8h.html#ad17a22e477672ae24ca9afe0abf1b46f">FFNN_DEBUG_NAMED</a>(<span class="stringliteral">&quot;layer::Activation&quot;</span>, <span class="stringliteral">&quot;Saved&quot;</span>);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;         <span class="keyword">typename</span> NeuronType,</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;         <a class="code" href="config_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> SizeAtCompileTime,</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;         <span class="keyword">typename</span> _HiddenLayerShape&gt;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="keywordtype">void</span> <a class="code" href="classffnn_1_1layer_1_1_activation.html#abf041de6c530dfb271dd42689927eebe">Activation&lt;TARGS&gt;::</a></div>
-<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_activation.html#abf041de6c530dfb271dd42689927eebe">  123</a></span>&#160;<a class="code" href="classffnn_1_1layer_1_1_activation.html#abf041de6c530dfb271dd42689927eebe">  load</a>(<span class="keyword">typename</span> <a class="code" href="classffnn_1_1internal_1_1_serializable.html#aadc27d79d606f35a82dd88bad33fa6d2">Activation&lt;TARGS&gt;::InputArchive</a>&amp; ar,</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;       <span class="keyword">typename</span> <a class="code" href="classffnn_1_1internal_1_1_serializable.html#a32fe7d82b0caf9fe8b6fb7c312a26028">Activation&lt;TARGS&gt;::VersionType</a> version)</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;{</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  ffnn::io::signature::check&lt;Activation&lt;TARGS&gt;&gt;(ar);</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  <a class="code" href="convolution_2filter_2serialization__class__definitions_8hpp.html#ac01af4309713b498454915035131df1b">Base::load</a>(ar, version);</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <a class="code" href="logging_8h.html#ad17a22e477672ae24ca9afe0abf1b46f">FFNN_DEBUG_NAMED</a>(<span class="stringliteral">&quot;layer::Activation&quot;</span>, <span class="stringliteral">&quot;Loaded&quot;</span>);</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;}</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}  <span class="comment">// namespace layer</span></div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;}  <span class="comment">// namespace ffnn</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="preprocessor">#undef TARGS</span></div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif  // FFNN_LAYER_IMPL_ACTIVATION_HPP</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;         <span class="keyword">typename</span> NeuronType,</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;         <span class="keyword">typename</span> Options,</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;         <span class="keyword">typename</span> Extrinsics&gt;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<a class="code" href="classffnn_1_1layer_1_1_activation.html#a05dd515cd159a0ad39a02ad0fd6599bf">Activation&lt;ValueType, NeuronType, Options, Extrinsics&gt;::</a></div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_activation.html#a05dd515cd159a0ad39a02ad0fd6599bf">   27</a></span>&#160;<a class="code" href="classffnn_1_1layer_1_1_activation.html#a05dd515cd159a0ad39a02ad0fd6599bf">Activation</a>(<span class="keyword">const</span> <a class="code" href="classffnn_1_1layer_1_1activation_1_1_configuration.html">Configuration</a>&amp; config) :</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <a class="code" href="classffnn_1_1layer_1_1_activation.html#a691766ba2bf67fd7f0987f4811d66850">BaseType</a>(<a class="code" href="classffnn_1_1layer_1_1_activation.html#a50e86585638a341d23f072d061889503">ShapeType</a>(config.input_size_, 1, 1), <a class="code" href="classffnn_1_1layer_1_1_activation.html#a50e86585638a341d23f072d061889503">ShapeType</a>(config.output_size_, 1, 1)),</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  config_(config)</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{}</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;         <span class="keyword">typename</span> NeuronType,</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;         <span class="keyword">typename</span> Options,</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;         <span class="keyword">typename</span> Extrinsics&gt;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_activation.html#a38963c402ef0ebecff769a05be8c062a">   36</a></span>&#160;<a class="code" href="classffnn_1_1layer_1_1_activation.html#a38963c402ef0ebecff769a05be8c062a">Activation&lt;ValueType, NeuronType, Options, Extrinsics&gt;::~Activation</a>()</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{}</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;         <span class="keyword">typename</span> NeuronType,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;         <span class="keyword">typename</span> Options,</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;         <span class="keyword">typename</span> Extrinsics&gt;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_activation.html#aa102b37183cacea58de3a33bf72ad3ff">   43</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classffnn_1_1layer_1_1_activation.html#aa102b37183cacea58de3a33bf72ad3ff">Activation&lt;ValueType, NeuronType, Options, Extrinsics&gt;::initialize</a>()</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="comment">// Abort if layer is already initialized</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordflow">if</span> (BaseType::setupRequired() &amp;&amp; BaseType::isInitialized())</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="logging_8h.html#aabf5ff82064ef58a239a35b444685955">FFNN_WARN_NAMED</a>(<span class="stringliteral">&quot;layer::Activation&quot;</span>, <span class="stringliteral">&quot;&lt;&quot;</span> &lt;&lt; BaseType::getID() &lt;&lt; <span class="stringliteral">&quot;&gt; already initialized.&quot;</span>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!BaseType::initialize())</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="comment">// Deduce output dimensions</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  BaseType::output_shape_ = BaseType::input_shape_;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="comment">// Initialize neurons</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  reset();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <a class="code" href="logging_8h.html#ad17a22e477672ae24ca9afe0abf1b46f">FFNN_DEBUG_NAMED</a>(<span class="stringliteral">&quot;layer::Activation&quot;</span>,</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                   <span class="stringliteral">&quot;&lt;&quot;</span> &lt;&lt;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                   BaseType::getID() &lt;&lt;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                   <span class="stringliteral">&quot;&gt; initialized as (in=&quot;</span> &lt;&lt;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                   BaseType::getInputShape().size() &lt;&lt;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                   <span class="stringliteral">&quot;, out=&quot;</span> &lt;&lt;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                   BaseType::getOutputShape().size() &lt;&lt;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                   <span class="stringliteral">&quot;)&quot;</span>);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordflow">return</span> BaseType::getOutputShape().size() ==</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;         BaseType::getInputShape().size();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;         <span class="keyword">typename</span> NeuronType,</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;         <span class="keyword">typename</span> Options,</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;         <span class="keyword">typename</span> Extrinsics&gt;</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_activation.html#a53a272bdc24ead93eb30cc6dc97e8e47">   79</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classffnn_1_1layer_1_1_activation.html#a53a272bdc24ead93eb30cc6dc97e8e47">Activation&lt;ValueType, NeuronType, Options, Extrinsics&gt;::forward</a>()</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;{</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="comment">// Compute neuron outputs</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keywordflow">for</span> (<a class="code" href="namespaceffnn.html#add5752d74b38c6e9b200f3d696fc3ec8">offset_type</a> idx = 0; idx &lt; BaseType::getInputShape().size(); idx++)</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    neurons_[idx](BaseType::input_(idx), BaseType::output_(idx));</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;         <span class="keyword">typename</span> NeuronType,</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;         <span class="keyword">typename</span> Options,</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;         <span class="keyword">typename</span> Extrinsics&gt;</div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_activation.html#a42c6cb4cc595429abcabbd83a54e73a3">   93</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classffnn_1_1layer_1_1_activation.html#a42c6cb4cc595429abcabbd83a54e73a3">Activation&lt;ValueType, NeuronType, Options, Extrinsics&gt;::backward</a>()</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;{</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="comment">// Compute neuron derivatives</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  BaseType::backward_error_.noalias() = BaseType::output_;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <span class="keywordflow">for</span> (<a class="code" href="namespaceffnn.html#add5752d74b38c6e9b200f3d696fc3ec8">offset_type</a> idx = 0; idx &lt; BaseType::getOutputShape().size(); idx++)</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    neurons_[idx].derivative(BaseType::input_(idx), BaseType::backward_error_(idx));</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  }</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="comment">// Incorporate error</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  BaseType::backward_error_.array() *= BaseType::forward_error_.array();</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;         <span class="keyword">typename</span> NeuronType,</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;         <span class="keyword">typename</span> Options,</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;         <span class="keyword">typename</span> Extrinsics&gt;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">bool</span> T&gt;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="keyword">typename</span> std::enable_if&lt;T&gt;::type</div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_activation.html#acae612dea76c788537d75ba09cb3ced2">  113</a></span>&#160;<a class="code" href="classffnn_1_1layer_1_1_activation.html#acae612dea76c788537d75ba09cb3ced2">Activation&lt;ValueType, NeuronType, Options, Extrinsics&gt;::reset</a>()</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;{}</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;         <span class="keyword">typename</span> NeuronType,</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;         <span class="keyword">typename</span> Options,</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;         <span class="keyword">typename</span> Extrinsics&gt;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="keyword">template</span>&lt;<span class="keywordtype">bool</span> T&gt;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="keyword">typename</span> std::enable_if&lt;!T&gt;::type</div>
+<div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_activation.html#a89853c9ce25aa3b6bb8932fd6fac2722">  121</a></span>&#160;<a class="code" href="classffnn_1_1layer_1_1_activation.html#acae612dea76c788537d75ba09cb3ced2">Activation&lt;ValueType, NeuronType, Options, Extrinsics&gt;::reset</a>()</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;{</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  neurons_.resize(BaseType::getOutputShape().size());</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;}</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;         <span class="keyword">typename</span> NeuronType,</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;         <span class="keyword">typename</span> Options,</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;         <span class="keyword">typename</span> Extrinsics&gt;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="keywordtype">void</span> <a class="code" href="classffnn_1_1layer_1_1_activation.html#a5329111f161909571cd73319eb3f051e">Activation&lt;ValueType, NeuronType, Options, Extrinsics&gt;::</a></div>
+<div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_activation.html#a5329111f161909571cd73319eb3f051e">  131</a></span>&#160;<a class="code" href="classffnn_1_1layer_1_1_activation.html#a5329111f161909571cd73319eb3f051e">  save</a>(OutputArchive&amp; ar, VersionType version)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  ffnn::internal::signature::apply&lt;SelfType&gt;(ar);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  <a class="code" href="convolution_2filter_2serialization__class__definitions_8hpp.html#ab948859788aa671e575e410654e07f16">BaseType::save</a>(ar, version);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  <a class="code" href="logging_8h.html#ad17a22e477672ae24ca9afe0abf1b46f">FFNN_DEBUG_NAMED</a>(<span class="stringliteral">&quot;layer::Activation&quot;</span>, <span class="stringliteral">&quot;Saved&quot;</span>);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;}</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;         <span class="keyword">typename</span> NeuronType,</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;         <span class="keyword">typename</span> Options,</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;         <span class="keyword">typename</span> Extrinsics&gt;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="keywordtype">void</span> <a class="code" href="classffnn_1_1layer_1_1_activation.html#a5441af8037bc04264f5c69c80696dc15">Activation&lt;ValueType, NeuronType, Options, Extrinsics&gt;::</a></div>
+<div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_activation.html#a5441af8037bc04264f5c69c80696dc15">  144</a></span>&#160;<a class="code" href="classffnn_1_1layer_1_1_activation.html#a5441af8037bc04264f5c69c80696dc15">  load</a>(InputArchive&amp; ar, VersionType version)</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;{</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;  ffnn::internal::signature::check&lt;SelfType&gt;(ar);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  <a class="code" href="convolution_2filter_2serialization__class__definitions_8hpp.html#ac01af4309713b498454915035131df1b">BaseType::load</a>(ar, version);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  <a class="code" href="logging_8h.html#ad17a22e477672ae24ca9afe0abf1b46f">FFNN_DEBUG_NAMED</a>(<span class="stringliteral">&quot;layer::Activation&quot;</span>, <span class="stringliteral">&quot;Loaded&quot;</span>);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;}</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;}  <span class="comment">// namespace layer</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;}  <span class="comment">// namespace ffnn</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="preprocessor">#endif  // FFNN_IMPL_LAYER_ACTIVATION_ACTIVATION_HPP</span></div>
+<div class="ttc" id="classffnn_1_1layer_1_1_activation_html_a42c6cb4cc595429abcabbd83a54e73a3"><div class="ttname"><a href="classffnn_1_1layer_1_1_activation.html#a42c6cb4cc595429abcabbd83a54e73a3">ffnn::layer::Activation::backward</a></div><div class="ttdeci">bool backward()</div><div class="ttdoc">Performs backward error propagation. </div><div class="ttdef"><b>Definition:</b> activation.hpp:93</div></div>
 <div class="ttc" id="convolution_2filter_2serialization__class__definitions_8hpp_html_ac01af4309713b498454915035131df1b"><div class="ttname"><a href="convolution_2filter_2serialization__class__definitions_8hpp.html#ac01af4309713b498454915035131df1b">load</a></div><div class="ttdeci">std::enable_if&lt; T &gt;::type load(Archive &amp;ar, const unsigned int version)</div><div class="ttdoc">Load serializer. </div><div class="ttdef"><b>Definition:</b> serialization_class_definitions.hpp:41</div></div>
-<div class="ttc" id="classffnn_1_1layer_1_1_activation_html_acd5aa2e208c0c85ea1ff8033133f8ebe"><div class="ttname"><a href="classffnn_1_1layer_1_1_activation.html#acd5aa2e208c0c85ea1ff8033133f8ebe">ffnn::layer::Activation::~Activation</a></div><div class="ttdeci">virtual ~Activation()</div><div class="ttdef"><b>Definition:</b> activation.hpp:35</div></div>
-<div class="ttc" id="config_8h_html_aab5a5a098c5bf31f4176f4a141d2ef65"><div class="ttname"><a href="config_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a></div><div class="ttdeci">#define FFNN_SIZE_TYPE</div><div class="ttdef"><b>Definition:</b> config.h:38</div></div>
-<div class="ttc" id="classffnn_1_1layer_1_1_activation_html_abf041de6c530dfb271dd42689927eebe"><div class="ttname"><a href="classffnn_1_1layer_1_1_activation.html#abf041de6c530dfb271dd42689927eebe">ffnn::layer::Activation::load</a></div><div class="ttdeci">void load(InputArchive &amp;ar, VersionType version)</div><div class="ttdoc">Load serializer. </div><div class="ttdef"><b>Definition:</b> activation.hpp:123</div></div>
+<div class="ttc" id="classffnn_1_1layer_1_1_activation_html_a5329111f161909571cd73319eb3f051e"><div class="ttname"><a href="classffnn_1_1layer_1_1_activation.html#a5329111f161909571cd73319eb3f051e">ffnn::layer::Activation::save</a></div><div class="ttdeci">void save(OutputArchive &amp;ar, VersionType version) const </div><div class="ttdoc">Save serializer. </div><div class="ttdef"><b>Definition:</b> activation.hpp:131</div></div>
+<div class="ttc" id="classffnn_1_1layer_1_1_activation_html_a50e86585638a341d23f072d061889503"><div class="ttname"><a href="classffnn_1_1layer_1_1_activation.html#a50e86585638a341d23f072d061889503">ffnn::layer::Activation::ShapeType</a></div><div class="ttdeci">BaseType::ShapeType ShapeType</div><div class="ttdoc">Dimension type standardization. </div><div class="ttdef"><b>Definition:</b> activation.h:39</div></div>
+<div class="ttc" id="classffnn_1_1layer_1_1_activation_html_a05dd515cd159a0ad39a02ad0fd6599bf"><div class="ttname"><a href="classffnn_1_1layer_1_1_activation.html#a05dd515cd159a0ad39a02ad0fd6599bf">ffnn::layer::Activation::Activation</a></div><div class="ttdeci">Activation(const Configuration &amp;config=Configuration())</div><div class="ttdoc">Setup constructor. </div><div class="ttdef"><b>Definition:</b> activation.hpp:27</div></div>
+<div class="ttc" id="namespaceffnn_html_add5752d74b38c6e9b200f3d696fc3ec8"><div class="ttname"><a href="namespaceffnn.html#add5752d74b38c6e9b200f3d696fc3ec8">ffnn::offset_type</a></div><div class="ttdeci">FFNN_OFFSET_TYPE offset_type</div><div class="ttdef"><b>Definition:</b> config.h:79</div></div>
 <div class="ttc" id="none_8h_html"><div class="ttname"><a href="none_8h.html">none.h</a></div></div>
-<div class="ttc" id="classffnn_1_1layer_1_1_activation_html_a8435ed1feadfcfc2343dd65a1542fe23"><div class="ttname"><a href="classffnn_1_1layer_1_1_activation.html#a8435ed1feadfcfc2343dd65a1542fe23">ffnn::layer::Activation::forward</a></div><div class="ttdeci">bool forward()</div><div class="ttdoc">Forward value propagation. </div><div class="ttdef"><b>Definition:</b> activation.hpp:77</div></div>
+<div class="ttc" id="classffnn_1_1layer_1_1_activation_html_a691766ba2bf67fd7f0987f4811d66850"><div class="ttname"><a href="classffnn_1_1layer_1_1_activation.html#a691766ba2bf67fd7f0987f4811d66850">ffnn::layer::Activation::BaseType</a></div><div class="ttdeci">typename Extrinsics::HiddenLayerType BaseType</div><div class="ttdoc">Base type alias. </div><div class="ttdef"><b>Definition:</b> activation.h:36</div></div>
 <div class="ttc" id="logging_8h_html"><div class="ttname"><a href="logging_8h.html">logging.h</a></div></div>
 <div class="ttc" id="logging_8h_html_aabf5ff82064ef58a239a35b444685955"><div class="ttname"><a href="logging_8h.html#aabf5ff82064ef58a239a35b444685955">FFNN_WARN_NAMED</a></div><div class="ttdeci">#define FFNN_WARN_NAMED(name, msg)</div><div class="ttdoc">Prints an named warning message. </div><div class="ttdef"><b>Definition:</b> logging.h:62</div></div>
-<div class="ttc" id="classffnn_1_1internal_1_1_serializable_html_a32fe7d82b0caf9fe8b6fb7c312a26028"><div class="ttname"><a href="classffnn_1_1internal_1_1_serializable.html#a32fe7d82b0caf9fe8b6fb7c312a26028">ffnn::internal::Serializable::VersionType</a></div><div class="ttdeci">FFNN_SERIALIZATION_VERSION_TYPE VersionType</div><div class="ttdoc">Class-version type standardization. </div><div class="ttdef"><b>Definition:</b> serializable.h:36</div></div>
 <div class="ttc" id="assert_8h_html"><div class="ttname"><a href="assert_8h.html">assert.h</a></div></div>
-<div class="ttc" id="classffnn_1_1layer_1_1_activation_html_a10a733b3fc1378fd8d1f33d231ee3e83"><div class="ttname"><a href="classffnn_1_1layer_1_1_activation.html#a10a733b3fc1378fd8d1f33d231ee3e83">ffnn::layer::Activation::initialize</a></div><div class="ttdeci">bool initialize()</div><div class="ttdoc">Initialize the layer. </div><div class="ttdef"><b>Definition:</b> activation.hpp:42</div></div>
 <div class="ttc" id="logging_8h_html_ad17a22e477672ae24ca9afe0abf1b46f"><div class="ttname"><a href="logging_8h.html#ad17a22e477672ae24ca9afe0abf1b46f">FFNN_DEBUG_NAMED</a></div><div class="ttdeci">#define FFNN_DEBUG_NAMED(name, msg)</div><div class="ttdoc">Prints an named debug message. </div><div class="ttdef"><b>Definition:</b> logging.h:53</div></div>
-<div class="ttc" id="classffnn_1_1internal_1_1_serializable_html_acf5baead716eb277337a4437e88a5743"><div class="ttname"><a href="classffnn_1_1internal_1_1_serializable.html#acf5baead716eb277337a4437e88a5743">ffnn::internal::Serializable::OutputArchive</a></div><div class="ttdeci">FFNN_SERIALIZATION_OUTPUT_ARCHIVE_TYPE OutputArchive</div><div class="ttdoc">Output (save) archive type. </div><div class="ttdef"><b>Definition:</b> serializable.h:42</div></div>
 <div class="ttc" id="signature_8h_html"><div class="ttname"><a href="signature_8h.html">signature.h</a></div></div>
-<div class="ttc" id="classffnn_1_1layer_1_1_activation_html_a92e73d25dc6855597d25e2b492bd381c"><div class="ttname"><a href="classffnn_1_1layer_1_1_activation.html#a92e73d25dc6855597d25e2b492bd381c">ffnn::layer::Activation::Activation</a></div><div class="ttdeci">Activation()</div><div class="ttdoc">Default constructor. </div><div class="ttdef"><b>Definition:</b> activation.hpp:28</div></div>
-<div class="ttc" id="classffnn_1_1layer_1_1_activation_html_af4fa0c4e44033921fe6ada1dcd0c0560"><div class="ttname"><a href="classffnn_1_1layer_1_1_activation.html#af4fa0c4e44033921fe6ada1dcd0c0560">ffnn::layer::Activation::save</a></div><div class="ttdeci">void save(OutputArchive &amp;ar, VersionType version) const </div><div class="ttdoc">Save serializer. </div><div class="ttdef"><b>Definition:</b> activation.hpp:110</div></div>
+<div class="ttc" id="classffnn_1_1layer_1_1_activation_html_a5441af8037bc04264f5c69c80696dc15"><div class="ttname"><a href="classffnn_1_1layer_1_1_activation.html#a5441af8037bc04264f5c69c80696dc15">ffnn::layer::Activation::load</a></div><div class="ttdeci">void load(InputArchive &amp;ar, VersionType version)</div><div class="ttdoc">Load serializer. </div><div class="ttdef"><b>Definition:</b> activation.hpp:144</div></div>
+<div class="ttc" id="classffnn_1_1layer_1_1_activation_html_acae612dea76c788537d75ba09cb3ced2"><div class="ttname"><a href="classffnn_1_1layer_1_1_activation.html#acae612dea76c788537d75ba09cb3ced2">ffnn::layer::Activation::reset</a></div><div class="ttdeci">std::enable_if&lt; T &gt;::type reset()</div><div class="ttdoc">Reset Neuron block. </div><div class="ttdef"><b>Definition:</b> activation.hpp:113</div></div>
+<div class="ttc" id="classffnn_1_1layer_1_1activation_1_1_configuration_html"><div class="ttname"><a href="classffnn_1_1layer_1_1activation_1_1_configuration.html">ffnn::layer::activation::Configuration&lt; SelfType, ValueType, Options, Extrinsics &gt;</a></div></div>
 <div class="ttc" id="convolution_2filter_2serialization__class__definitions_8hpp_html_ab948859788aa671e575e410654e07f16"><div class="ttname"><a href="convolution_2filter_2serialization__class__definitions_8hpp.html#ab948859788aa671e575e410654e07f16">save</a></div><div class="ttdeci">void save(Archive &amp;ar, const unsigned int version) const </div><div class="ttdoc">Save serializer. </div><div class="ttdef"><b>Definition:</b> serialization_class_definitions.hpp:21</div></div>
-<div class="ttc" id="classffnn_1_1internal_1_1_serializable_html_aadc27d79d606f35a82dd88bad33fa6d2"><div class="ttname"><a href="classffnn_1_1internal_1_1_serializable.html#aadc27d79d606f35a82dd88bad33fa6d2">ffnn::internal::Serializable::InputArchive</a></div><div class="ttdeci">FFNN_SERIALIZATION_INPUT_ARCHIVE_TYPE InputArchive</div><div class="ttdoc">Input (load) archive type. </div><div class="ttdef"><b>Definition:</b> serializable.h:39</div></div>
-<div class="ttc" id="classffnn_1_1layer_1_1_activation_html_aa5166a595cb135c7ad62569361de101b"><div class="ttname"><a href="classffnn_1_1layer_1_1_activation.html#aa5166a595cb135c7ad62569361de101b">ffnn::layer::Activation::backward</a></div><div class="ttdeci">bool backward()</div><div class="ttdoc">Performs backward error propagation. </div><div class="ttdef"><b>Definition:</b> activation.hpp:91</div></div>
+<div class="ttc" id="classffnn_1_1layer_1_1_activation_html_aa102b37183cacea58de3a33bf72ad3ff"><div class="ttname"><a href="classffnn_1_1layer_1_1_activation.html#aa102b37183cacea58de3a33bf72ad3ff">ffnn::layer::Activation::initialize</a></div><div class="ttdeci">bool initialize()</div><div class="ttdoc">Initialize the layer. </div><div class="ttdef"><b>Definition:</b> activation.hpp:43</div></div>
+<div class="ttc" id="classffnn_1_1layer_1_1_activation_html_a53a272bdc24ead93eb30cc6dc97e8e47"><div class="ttname"><a href="classffnn_1_1layer_1_1_activation.html#a53a272bdc24ead93eb30cc6dc97e8e47">ffnn::layer::Activation::forward</a></div><div class="ttdeci">bool forward()</div><div class="ttdoc">Forward value propagation. </div><div class="ttdef"><b>Definition:</b> activation.hpp:79</div></div>
+<div class="ttc" id="classffnn_1_1layer_1_1_activation_html_a38963c402ef0ebecff769a05be8c062a"><div class="ttname"><a href="classffnn_1_1layer_1_1_activation.html#a38963c402ef0ebecff769a05be8c062a">ffnn::layer::Activation::~Activation</a></div><div class="ttdeci">virtual ~Activation()</div><div class="ttdef"><b>Definition:</b> activation.hpp:36</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jun 3 2017 23:40:28 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 8 2017 01:08:56 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

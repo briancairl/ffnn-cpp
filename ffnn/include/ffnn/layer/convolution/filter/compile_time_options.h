@@ -16,7 +16,6 @@
 #include <ffnn/internal/traits.h>
 #include <ffnn/layer/shape.h>
 #include <ffnn/layer/convolution/sizing.h>
-#include <ffnn/layer/convolution/filter/compile_time_options.h>
 
 namespace ffnn
 {

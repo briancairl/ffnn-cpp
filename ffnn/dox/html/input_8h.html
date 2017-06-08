@@ -87,30 +87,48 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
 <div class="title">input.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;cstring&gt;</code><br/>
-<code>#include &lt;iostream&gt;</code><br/>
-<code>#include &lt;<a class="el" href="config_8h_source.html">ffnn/internal/config.h</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="assert_8h_source.html">ffnn/assert.h</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="config_8h_source.html">ffnn/internal/config.h</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="layer_8h_source.html">ffnn/layer/layer.h</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="shape_8h_source.html">ffnn/layer/shape.h</a>&gt;</code><br/>
-<code>#include &lt;ffnn/layer/impl/input.hpp&gt;</code><br/>
+<code>#include &lt;<a class="el" href="input_2compile__time__options_8h_source.html">ffnn/layer/input/compile_time_options.h</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="input_2configuration_8h_source.html">ffnn/layer/input/configuration.h</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="input_8hpp_source.html">ffnn/impl/layer/input/input.hpp</a>&gt;</code><br/>
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for input.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="input_8h__incl.png" border="0" usemap="#_2home_2briancairl_2packages_2src_2ffnn-cpp_2ffnn_2include_2ffnn_2layer_2input_8h" alt=""/></div>
 <map name="_2home_2briancairl_2packages_2src_2ffnn-cpp_2ffnn_2include_2ffnn_2layer_2input_8h" id="_2home_2briancairl_2packages_2src_2ffnn-cpp_2ffnn_2include_2ffnn_2layer_2input_8h">
-<area shape="rect" id="node4" href="config_8h.html" title="ffnn/internal/config.h" alt="" coords="798,349,937,376"/><area shape="rect" id="node16" href="assert_8h.html" title="ffnn/assert.h" alt="" coords="982,267,1076,293"/><area shape="rect" id="node19" href="layer_8h.html" title="ffnn/layer/layer.h" alt="" coords="1095,109,1213,136"/><area shape="rect" id="node30" href="shape_8h.html" title="ffnn/layer/shape.h" alt="" coords="886,184,1012,211"/><area shape="rect" id="node6" href="logging_8h.html" title="ffnn/logging.h" alt="" coords="1443,432,1543,459"/><area shape="rect" id="node12" href="sparse__triplet__serialization_8h.html" title="ffnn/internal/eigen\l/sparse_triplet_serialization.h" alt="" coords="5,425,195,466"/><area shape="rect" id="node21" href="serializable_8h.html" title="ffnn/internal/serializable.h" alt="" coords="1304,267,1475,293"/><area shape="rect" id="node22" href="unique_8h.html" title="ffnn/internal/unique.h" alt="" coords="1623,184,1765,211"/><area shape="rect" id="node31" href="layer_8hpp.html" title="ffnn/impl/layer/layer.hpp" alt="" coords="1203,184,1364,211"/><area shape="rect" id="node27" href="signature_8h.html" title="ffnn/internal/signature.h" alt="" coords="1550,267,1708,293"/></map>
+<area shape="rect" id="node3" href="assert_8h.html" title="ffnn/assert.h" alt="" coords="181,357,275,384"/><area shape="rect" id="node6" href="config_8h.html" title="ffnn/internal/config.h" alt="" coords="1270,440,1409,467"/><area shape="rect" id="node19" href="layer_8h.html" title="ffnn/layer/layer.h" alt="" coords="529,200,647,227"/><area shape="rect" id="node30" href="shape_8h.html" title="ffnn/layer/shape.h" alt="" coords="247,275,373,301"/><area shape="rect" id="node33" href="input_2compile__time__options_8h.html" title="ffnn/layer/input/compile\l_time_options.h" alt="" coords="393,110,551,151"/><area shape="rect" id="node34" href="input_2configuration_8h.html" title="ffnn/layer/input/configuration.h" alt="" coords="1673,275,1871,301"/><area shape="rect" id="node35" href="input_8hpp.html" title="ffnn/impl/layer/input\l/input.hpp" alt="" coords="5,110,140,151"/><area shape="rect" id="node8" href="logging_8h.html" title="ffnn/logging.h" alt="" coords="346,523,445,549"/><area shape="rect" id="node15" href="sparse__triplet__serialization_8h.html" title="ffnn/internal/eigen\l/sparse_triplet_serialization.h" alt="" coords="905,515,1095,557"/><area shape="rect" id="node21" href="serializable_8h.html" title="ffnn/internal/serializable.h" alt="" coords="736,357,907,384"/><area shape="rect" id="node22" href="unique_8h.html" title="ffnn/internal/unique.h" alt="" coords="961,275,1103,301"/><area shape="rect" id="node31" href="layer_8hpp.html" title="ffnn/impl/layer/layer.hpp" alt="" coords="521,275,681,301"/><area shape="rect" id="node27" href="signature_8h.html" title="ffnn/internal/signature.h" alt="" coords="502,357,660,384"/></map>
 </div>
 </div>
 <p><a href="input_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1layer_1_1_input.html">ffnn::layer::Input&lt; ValueType, Options, Extrinsics &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A layer which handles network inputs.  <a href="classffnn_1_1layer_1_1_input.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespaceffnn"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceffnn.html">ffnn</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceffnn_1_1layer"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceffnn_1_1layer.html">ffnn::layer</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jun 3 2017 23:40:28 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 8 2017 01:08:57 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

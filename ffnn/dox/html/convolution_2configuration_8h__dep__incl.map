@@ -1,6 +1,4 @@
 <map id="/home/briancairl/packages/src/ffnn&#45;cpp/ffnn/include/ffnn/layer/convolution/configuration.h" name="/home/briancairl/packages/src/ffnn&#45;cpp/ffnn/include/ffnn/layer/convolution/configuration.h">
-<area shape="rect" id="node2" href="$convolution_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/layer/convolution.h" alt="" coords="37,109,211,165"/>
-<area shape="rect" id="node3" href="$optimizer_2impl_2gradient__descent_2convolution_8hpp.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/optimizer/impl/gradient\l_descent/convolution.hpp" alt="" coords="33,214,215,285"/>
-<area shape="rect" id="node4" href="$gradient__descent_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/optimizer/gradient_descent.h" alt="" coords="15,333,233,389"/>
-<area shape="rect" id="node5" href="$adam_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/optimizer/adam.h" alt="" coords="37,437,211,493"/>
+<area shape="rect" id="node2" href="$convolution_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/layer/convolution.h" alt="" coords="47,109,221,165"/>
+<area shape="rect" id="node3" href="$optimizer_2gradient__descent_2specializations_2convolution_8hpp.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/impl/optimizer/gradient\l_descent/specializations/convolution.hpp" alt="" coords="5,214,264,285"/>
 </map>

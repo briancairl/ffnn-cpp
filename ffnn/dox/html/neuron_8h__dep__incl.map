@@ -1,9 +1,8 @@
 <map id="/home/briancairl/packages/src/ffnn&#45;cpp/ffnn/include/ffnn/neuron/neuron.h" name="/home/briancairl/packages/src/ffnn&#45;cpp/ffnn/include/ffnn/neuron/neuron.h">
-<area shape="rect" id="node2" href="$activation_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/layer/activation.h" alt="" coords="5,117,179,173"/>
-<area shape="rect" id="node3" href="$leaky__rectified__linear_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/neuron/leaky_rectified\l_linear.h" alt="" coords="204,110,383,181"/>
-<area shape="rect" id="node4" href="$lecun__sigmoid_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/neuron/lecun_sigmoid.h" alt="" coords="407,117,596,173"/>
-<area shape="rect" id="node5" href="$linear_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/neuron/linear.h" alt="" coords="621,117,795,173"/>
-<area shape="rect" id="node6" href="$rectified__linear_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/neuron/rectified_linear.h" alt="" coords="819,117,1009,173"/>
-<area shape="rect" id="node7" href="$sigmoid_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/neuron/sigmoid.h" alt="" coords="1034,117,1208,173"/>
-<area shape="rect" id="node8" href="$soft__sign_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/neuron/soft_sign.h" alt="" coords="1233,117,1407,173"/>
+<area shape="rect" id="node2" href="$leaky__rectified__linear_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/neuron/leaky_rectified\l_linear.h" alt="" coords="5,110,184,181"/>
+<area shape="rect" id="node3" href="$lecun__sigmoid_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/neuron/lecun_sigmoid.h" alt="" coords="208,117,397,173"/>
+<area shape="rect" id="node4" href="$linear_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/neuron/linear.h" alt="" coords="422,117,596,173"/>
+<area shape="rect" id="node5" href="$rectified__linear_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/neuron/rectified_linear.h" alt="" coords="621,117,811,173"/>
+<area shape="rect" id="node6" href="$sigmoid_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/neuron/sigmoid.h" alt="" coords="835,117,1009,173"/>
+<area shape="rect" id="node7" href="$soft__sign_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/neuron/soft_sign.h" alt="" coords="1034,117,1208,173"/>
 </map>

@@ -12,7 +12,8 @@ A network hidden-\/layer object.
 
 
 
-Inheritance diagram for ffnn\-:\-:layer\-:\-:Hidden$<$ Value\-Type, Options, Extrinsics $>$\-:\nopagebreak
+Inheritance diagram for ffnn\-:\-:layer\-:\-:Hidden$<$ Value\-Type, Options, Extrinsics $>$\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,7 +22,8 @@ Inheritance diagram for ffnn\-:\-:layer\-:\-:Hidden$<$ Value\-Type, Options, Ext
 \end{figure}
 
 
-Collaboration diagram for ffnn\-:\-:layer\-:\-:Hidden$<$ Value\-Type, Options, Extrinsics $>$\-:\nopagebreak
+Collaboration diagram for ffnn\-:\-:layer\-:\-:Hidden$<$ Value\-Type, Options, Extrinsics $>$\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -38,12 +40,12 @@ using \hyperlink{classffnn_1_1layer_1_1_hidden_af146958f4a1b59faba4ae2b2eb521faf
 typedef Base\-Type\-::\-Shape\-Type \hyperlink{classffnn_1_1layer_1_1_hidden_a567e902299b3355501393cf6c7b27c38}{Shape\-Type}
 \begin{DoxyCompactList}\small\item\em Dimension type standardization. \end{DoxyCompactList}\item 
 typedef Extrinsics\-::\-Input\-Block\-Type \hyperlink{classffnn_1_1layer_1_1_hidden_abd5a3b5c55984948f903fe88759efaf4}{Input\-Block\-Type}
-\begin{DoxyCompactList}\small\item\em Input block type standardization. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em \hyperlink{classffnn_1_1layer_1_1_input}{Input} block type standardization. \end{DoxyCompactList}\item 
 typedef Extrinsics\-::\-Output\-Block\-Type \hyperlink{classffnn_1_1layer_1_1_hidden_a9fd326932b57e1d86d86bdb168822727}{Output\-Block\-Type}
 \begin{DoxyCompactList}\small\item\em \hyperlink{classffnn_1_1layer_1_1_output}{Output} block type standardization. \end{DoxyCompactList}\item 
 typedef \\*
 Extrinsics\-::\-Input\-Mapping\-Type \hyperlink{classffnn_1_1layer_1_1_hidden_ac518f2e2be1250c1af7b2f8574cadc8d}{Input\-Mapping\-Type}
-\begin{DoxyCompactList}\small\item\em Input mapping type standardization. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em \hyperlink{classffnn_1_1layer_1_1_input}{Input} mapping type standardization. \end{DoxyCompactList}\item 
 typedef \\*
 Extrinsics\-::\-Output\-Mapping\-Type \hyperlink{classffnn_1_1layer_1_1_hidden_a9d882e035c7cd80ccd9b58fbe832591e}{Output\-Mapping\-Type}
 \begin{DoxyCompactList}\small\item\em \hyperlink{classffnn_1_1layer_1_1_output}{Output} mapping type standardization. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -67,6 +69,8 @@ virtual bool \hyperlink{classffnn_1_1layer_1_1_hidden_ac95dceacf1a0ea65674fb269a
 \item 
 virtual \hyperlink{namespaceffnn_add5752d74b38c6e9b200f3d696fc3ec8}{offset\-\_\-type} \hyperlink{classffnn_1_1layer_1_1_hidden_a850146834d054166b69309d093c650dd}{connect\-To\-Forward\-Layer} (const \hyperlink{classffnn_1_1layer_1_1_layer}{Layer}$<$ Value\-Type $>$ \&next, \hyperlink{namespaceffnn_add5752d74b38c6e9b200f3d696fc3ec8}{offset\-\_\-type} offset)
 \begin{DoxyCompactList}\small\item\em Maps outputs of this layer to inputs of the next. \end{DoxyCompactList}\item 
+\hyperlink{classffnn_1_1layer_1_1_hidden_a1f32376417e65ec5f06f360de38c8451}{F\-F\-N\-N\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-S\-E\-R\-I\-A\-L\-I\-Z\-A\-B\-L\-E} (\hyperlink{classffnn_1_1layer_1_1_hidden}{Hidden})
+\item 
 void \hyperlink{classffnn_1_1layer_1_1_hidden_a1ef2b7dc49a809498125190628e672cf}{save} (Output\-Archive \&ar, Version\-Type version) const 
 \begin{DoxyCompactList}\small\item\em Save serializer. \end{DoxyCompactList}\item 
 void \hyperlink{classffnn_1_1layer_1_1_hidden_a94cba25f361e7077a3b7eb863d7d2f02}{load} (Input\-Archive \&ar, Version\-Type version)
@@ -102,14 +106,14 @@ Base type alias.
 \subsubsection[{Input\-Block\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Options = hidden\-::options$<$$>$, typename Extrinsics = hidden\-::extrinsics$<$\-Value\-Type, Options$>$$>$ typedef Extrinsics\-::\-Input\-Block\-Type {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Options, Extrinsics $>$\-::{\bf Input\-Block\-Type}}}\label{classffnn_1_1layer_1_1_hidden_abd5a3b5c55984948f903fe88759efaf4}
 
 
-Input block type standardization. 
+\hyperlink{classffnn_1_1layer_1_1_input}{Input} block type standardization. 
 
 \hypertarget{classffnn_1_1layer_1_1_hidden_ac518f2e2be1250c1af7b2f8574cadc8d}{\index{ffnn\-::layer\-::\-Hidden@{ffnn\-::layer\-::\-Hidden}!Input\-Mapping\-Type@{Input\-Mapping\-Type}}
 \index{Input\-Mapping\-Type@{Input\-Mapping\-Type}!ffnn::layer::Hidden@{ffnn\-::layer\-::\-Hidden}}
 \subsubsection[{Input\-Mapping\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Options = hidden\-::options$<$$>$, typename Extrinsics = hidden\-::extrinsics$<$\-Value\-Type, Options$>$$>$ typedef Extrinsics\-::\-Input\-Mapping\-Type {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Options, Extrinsics $>$\-::{\bf Input\-Mapping\-Type}}}\label{classffnn_1_1layer_1_1_hidden_ac518f2e2be1250c1af7b2f8574cadc8d}
 
 
-Input mapping type standardization. 
+\hyperlink{classffnn_1_1layer_1_1_input}{Input} mapping type standardization. 
 
 \hypertarget{classffnn_1_1layer_1_1_hidden_a9fd326932b57e1d86d86bdb168822727}{\index{ffnn\-::layer\-::\-Hidden@{ffnn\-::layer\-::\-Hidden}!Output\-Block\-Type@{Output\-Block\-Type}}
 \index{Output\-Block\-Type@{Output\-Block\-Type}!ffnn::layer::Hidden@{ffnn\-::layer\-::\-Hidden}}
@@ -193,13 +197,9 @@ Backward value propagation.
 {\em false} & otherwise \\
 \hline
 \end{DoxyRetVals}
-
-
-Implemented in \hyperlink{classffnn_1_1layer_1_1_activation_aa5166a595cb135c7ad62569361de101b}{ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}.
-
 \hypertarget{classffnn_1_1layer_1_1_hidden_a850146834d054166b69309d093c650dd}{\index{ffnn\-::layer\-::\-Hidden@{ffnn\-::layer\-::\-Hidden}!connect\-To\-Forward\-Layer@{connect\-To\-Forward\-Layer}}
 \index{connect\-To\-Forward\-Layer@{connect\-To\-Forward\-Layer}!ffnn::layer::Hidden@{ffnn\-::layer\-::\-Hidden}}
-\subsubsection[{connect\-To\-Forward\-Layer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Options , typename Extrinsics $>$ {\bf offset\-\_\-type} {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Options, Extrinsics $>$\-::connect\-To\-Forward\-Layer (
+\subsubsection[{connect\-To\-Forward\-Layer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options , typename Extrinsics $>$ {\bf offset\-\_\-type} {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Options, Extrinsics $>$\-::connect\-To\-Forward\-Layer (
 \begin{DoxyParamCaption}
 \item[{const {\bf Layer}$<$ Value\-Type $>$ \&}]{next, }
 \item[{{\bf offset\-\_\-type}}]{offset}
@@ -232,6 +232,13 @@ Here is the call graph for this function\-:\nopagebreak
 \end{figure}
 
 
+\hypertarget{classffnn_1_1layer_1_1_hidden_a1f32376417e65ec5f06f360de38c8451}{\index{ffnn\-::layer\-::\-Hidden@{ffnn\-::layer\-::\-Hidden}!F\-F\-N\-N\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-S\-E\-R\-I\-A\-L\-I\-Z\-A\-B\-L\-E@{F\-F\-N\-N\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-S\-E\-R\-I\-A\-L\-I\-Z\-A\-B\-L\-E}}
+\index{F\-F\-N\-N\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-S\-E\-R\-I\-A\-L\-I\-Z\-A\-B\-L\-E@{F\-F\-N\-N\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-S\-E\-R\-I\-A\-L\-I\-Z\-A\-B\-L\-E}!ffnn::layer::Hidden@{ffnn\-::layer\-::\-Hidden}}
+\subsubsection[{F\-F\-N\-N\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-S\-E\-R\-I\-A\-L\-I\-Z\-A\-B\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Options = hidden\-::options$<$$>$, typename Extrinsics = hidden\-::extrinsics$<$\-Value\-Type, Options$>$$>$ {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Options, Extrinsics $>$\-::F\-F\-N\-N\-\_\-\-R\-E\-G\-I\-S\-T\-E\-R\-\_\-\-S\-E\-R\-I\-A\-L\-I\-Z\-A\-B\-L\-E (
+\begin{DoxyParamCaption}
+\item[{{\bf Hidden}$<$ Value\-Type, Options, Extrinsics $>$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classffnn_1_1layer_1_1_hidden_a1f32376417e65ec5f06f360de38c8451}
 \hypertarget{classffnn_1_1layer_1_1_hidden_aba6a84a760d66acec2e6e67c29a67f5b}{\index{ffnn\-::layer\-::\-Hidden@{ffnn\-::layer\-::\-Hidden}!forward@{forward}}
 \index{forward@{forward}!ffnn::layer::Hidden@{ffnn\-::layer\-::\-Hidden}}
 \subsubsection[{forward}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, typename Options = hidden\-::options$<$$>$, typename Extrinsics = hidden\-::extrinsics$<$\-Value\-Type, Options$>$$>$ virtual bool {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Options, Extrinsics $>$\-::forward (
@@ -250,10 +257,6 @@ Forward value propagation.
 {\em false} & otherwise \\
 \hline
 \end{DoxyRetVals}
-
-
-Implemented in \hyperlink{classffnn_1_1layer_1_1_activation_a8435ed1feadfcfc2343dd65a1542fe23}{ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}.
-
 \hypertarget{classffnn_1_1layer_1_1_hidden_a50b9141e7d96fb7c6a1a6418fb204d92}{\index{ffnn\-::layer\-::\-Hidden@{ffnn\-::layer\-::\-Hidden}!initialize@{initialize}}
 \index{initialize@{initialize}!ffnn::layer::Hidden@{ffnn\-::layer\-::\-Hidden}}
 \subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options , typename Extrinsics $>$ bool {\bf ffnn\-::layer\-::\-Hidden}$<$ Value\-Type, Options, Extrinsics $>$\-::initialize (
@@ -264,10 +267,6 @@ Implemented in \hyperlink{classffnn_1_1layer_1_1_activation_a8435ed1feadfcfc2343
 
 
 Initialize the layer. 
-
-
-
-Reimplemented in \hyperlink{classffnn_1_1layer_1_1_activation_a10a733b3fc1378fd8d1f33d231ee3e83}{ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}.
 
 \hypertarget{classffnn_1_1layer_1_1_hidden_a94cba25f361e7077a3b7eb863d7d2f02}{\index{ffnn\-::layer\-::\-Hidden@{ffnn\-::layer\-::\-Hidden}!load@{load}}
 \index{load@{load}!ffnn::layer::Hidden@{ffnn\-::layer\-::\-Hidden}}
@@ -283,8 +282,7 @@ Load serializer.
 
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -307,8 +305,7 @@ Save serializer.
 
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -335,10 +332,6 @@ Applies layer weight updates.
 {\em false} & otherwise \\
 \hline
 \end{DoxyRetVals}
-
-
-Implemented in \hyperlink{classffnn_1_1layer_1_1_activation_a24a044458729f72466af06153851f5b2}{ffnn\-::layer\-::\-Activation$<$ Value\-Type, Neuron\-Type, Size\-At\-Compile\-Time, \-\_\-\-Hidden\-Layer\-Shape $>$}.
-
 
 
 \subsection{Member Data Documentation}
@@ -374,5 +367,5 @@ Memory-\/mapped output vector.
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/\hyperlink{hidden_8h}{hidden.\-h}\item 
-/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/impl/layer/\hyperlink{hidden_8hpp}{hidden.\-hpp}\end{DoxyCompactItemize}
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/hidden/\hyperlink{hidden_8h}{hidden.\-h}\item 
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/impl/layer/hidden/\hyperlink{hidden_8hpp}{hidden.\-hpp}\end{DoxyCompactItemize}

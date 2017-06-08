@@ -1,0 +1,276 @@
+\hypertarget{classffnn_1_1optimizer_1_1_gradient_descent__}{\section{ffnn\-:\-:optimizer\-:\-:Gradient\-Descent\-\_\-$<$ Layer\-Type, Loss\-Fn $>$ Class Template Reference}
+\label{classffnn_1_1optimizer_1_1_gradient_descent__}\index{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-$<$ Layer\-Type, Loss\-Fn $>$@{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-$<$ Layer\-Type, Loss\-Fn $>$}}
+}
+
+
+{\ttfamily \#include \char`\"{}fwd.\-h\char`\"{}}
+
+
+
+Inheritance diagram for ffnn\-:\-:optimizer\-:\-:Gradient\-Descent\-\_\-$<$ Layer\-Type, Loss\-Fn $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classffnn_1_1optimizer_1_1_gradient_descent____inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ffnn\-:\-:optimizer\-:\-:Gradient\-Descent\-\_\-$<$ Layer\-Type, Loss\-Fn $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{classffnn_1_1optimizer_1_1_gradient_descent____coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{classffnn_1_1optimizer_1_1_optimizer}{Optimizer}$<$ Layer\-Type $>$ \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent___a0d078c334d4cdebc587ac45ceb16cf8c}{Base\-Type}
+\begin{DoxyCompactList}\small\item\em Base type standardization. \end{DoxyCompactList}\item 
+typedef \hyperlink{classffnn_1_1optimizer_1_1_optimizer_acaa42e2661559c561caf881c4d934b8c}{Base\-Type\-::\-Scalar} \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent___a9ea42179033176eb7686e00769034c8a}{Scalar}
+\begin{DoxyCompactList}\small\item\em Scalar type standardization. \end{DoxyCompactList}\item 
+typedef Layer\-Type\-::\-Input\-Block\-Type \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent___a4870280152e25bf9a7622d52fa889b06}{Input\-Block\-Type}
+\begin{DoxyCompactList}\small\item\em Matrix type standardization. \end{DoxyCompactList}\item 
+typedef Layer\-Type\-::\-Parameters\-Type \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent___ae5ad0804c042e40a0a0ac64ae34fdc85}{Parameters\-Type}
+\begin{DoxyCompactList}\small\item\em Matrix type standardization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classffnn_1_1optimizer_1_1_gradient_descent___ae6b884c98e7e5eadaac0f7c88d5a2cc1}{Gradient\-Descent\-\_\-} (\hyperlink{classffnn_1_1optimizer_1_1_gradient_descent___a9ea42179033176eb7686e00769034c8a}{Scalar} lr)
+\begin{DoxyCompactList}\small\item\em Setup constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent___a56014df7a5afe715fb041bb0d629f15a}{$\sim$\-Gradient\-Descent\-\_\-} ()
+\item 
+void \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent___a9b2a8f8c1a1411ffb3b2d207c42fca9e}{initialize} (Layer\-Type \&layer)
+\begin{DoxyCompactList}\small\item\em Initializes the \hyperlink{classffnn_1_1optimizer_1_1_optimizer}{Optimizer}. \end{DoxyCompactList}\item 
+void \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent___a50581919467a4bb592eeb7fa98cd3b34}{reset} (Layer\-Type \&layer)
+\begin{DoxyCompactList}\small\item\em Resets persistent \hyperlink{classffnn_1_1optimizer_1_1_optimizer}{Optimizer} states. \end{DoxyCompactList}\item 
+bool \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent___a3fda5e93b5fc359c4e36fc1c681e6929}{forward} (Layer\-Type \&layer)
+\begin{DoxyCompactList}\small\item\em Computes one forward optimization update step. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent___a810bd29432c41b39239337139b7a0a0b}{backward} (Layer\-Type \&layer)=0
+\begin{DoxyCompactList}\small\item\em Computes optimization step during backward propogation. \end{DoxyCompactList}\item 
+bool \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent___a90fface371af7bef89880d278a9b2007}{update} (Layer\-Type \&layer)
+\begin{DoxyCompactList}\small\item\em Applies optimization update. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classffnn_1_1optimizer_1_1_gradient_descent___a9ea42179033176eb7686e00769034c8a}{Scalar} \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent___a600bd6a5552e490da1b230c67a5e67d6}{lr\-\_\-}
+\begin{DoxyCompactList}\small\item\em Learning rate. \end{DoxyCompactList}\item 
+\hyperlink{classffnn_1_1optimizer_1_1_gradient_descent___a4870280152e25bf9a7622d52fa889b06}{Input\-Block\-Type} \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent___a6a51e6729537c7de173ea53a27965415}{prev\-\_\-input\-\_\-}
+\begin{DoxyCompactList}\small\item\em Previous input. \end{DoxyCompactList}\item 
+\hyperlink{classffnn_1_1optimizer_1_1_gradient_descent___ae5ad0804c042e40a0a0ac64ae34fdc85}{Parameters\-Type} \hyperlink{classffnn_1_1optimizer_1_1_gradient_descent___a47f75b7c806bdd2bd254c147a35e3ae2}{gradient\-\_\-}
+\begin{DoxyCompactList}\small\item\em Coefficient gradient. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classffnn_1_1optimizer_1_1_gradient_descent___a0d078c334d4cdebc587ac45ceb16cf8c}{\index{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-@{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-}!Base\-Type@{Base\-Type}}
+\index{Base\-Type@{Base\-Type}!ffnn::optimizer::GradientDescent_@{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-}}
+\subsubsection[{Base\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Layer\-Type, Loss\-Function Loss\-Fn$>$ typedef {\bf Optimizer}$<$Layer\-Type$>$ {\bf ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-}$<$ Layer\-Type, Loss\-Fn $>$\-::{\bf Base\-Type}}}\label{classffnn_1_1optimizer_1_1_gradient_descent___a0d078c334d4cdebc587ac45ceb16cf8c}
+
+
+Base type standardization. 
+
+\hypertarget{classffnn_1_1optimizer_1_1_gradient_descent___a4870280152e25bf9a7622d52fa889b06}{\index{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-@{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-}!Input\-Block\-Type@{Input\-Block\-Type}}
+\index{Input\-Block\-Type@{Input\-Block\-Type}!ffnn::optimizer::GradientDescent_@{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-}}
+\subsubsection[{Input\-Block\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Layer\-Type, Loss\-Function Loss\-Fn$>$ typedef Layer\-Type\-::\-Input\-Block\-Type {\bf ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-}$<$ Layer\-Type, Loss\-Fn $>$\-::{\bf Input\-Block\-Type}}}\label{classffnn_1_1optimizer_1_1_gradient_descent___a4870280152e25bf9a7622d52fa889b06}
+
+
+Matrix type standardization. 
+
+\hypertarget{classffnn_1_1optimizer_1_1_gradient_descent___ae5ad0804c042e40a0a0ac64ae34fdc85}{\index{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-@{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-}!Parameters\-Type@{Parameters\-Type}}
+\index{Parameters\-Type@{Parameters\-Type}!ffnn::optimizer::GradientDescent_@{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-}}
+\subsubsection[{Parameters\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Layer\-Type, Loss\-Function Loss\-Fn$>$ typedef Layer\-Type\-::\-Parameters\-Type {\bf ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-}$<$ Layer\-Type, Loss\-Fn $>$\-::{\bf Parameters\-Type}}}\label{classffnn_1_1optimizer_1_1_gradient_descent___ae5ad0804c042e40a0a0ac64ae34fdc85}
+
+
+Matrix type standardization. 
+
+\hypertarget{classffnn_1_1optimizer_1_1_gradient_descent___a9ea42179033176eb7686e00769034c8a}{\index{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-@{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-}!Scalar@{Scalar}}
+\index{Scalar@{Scalar}!ffnn::optimizer::GradientDescent_@{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-}}
+\subsubsection[{Scalar}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Layer\-Type, Loss\-Function Loss\-Fn$>$ typedef {\bf Base\-Type\-::\-Scalar} {\bf ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-}$<$ Layer\-Type, Loss\-Fn $>$\-::{\bf Scalar}}}\label{classffnn_1_1optimizer_1_1_gradient_descent___a9ea42179033176eb7686e00769034c8a}
+
+
+Scalar type standardization. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classffnn_1_1optimizer_1_1_gradient_descent___ae6b884c98e7e5eadaac0f7c88d5a2cc1}{\index{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-@{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-}!Gradient\-Descent\-\_\-@{Gradient\-Descent\-\_\-}}
+\index{Gradient\-Descent\-\_\-@{Gradient\-Descent\-\_\-}!ffnn::optimizer::GradientDescent_@{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-}}
+\subsubsection[{Gradient\-Descent\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Layer\-Type , Loss\-Function Loss\-Fn$>$ {\bf ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-}$<$ Layer\-Type, Loss\-Fn $>$\-::{\bf Gradient\-Descent\-\_\-} (
+\begin{DoxyParamCaption}
+\item[{{\bf Scalar}}]{lr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classffnn_1_1optimizer_1_1_gradient_descent___ae6b884c98e7e5eadaac0f7c88d5a2cc1}
+
+
+Setup constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lr} & Learning rate \\
+\hline
+\end{DoxyParams}
+\hypertarget{classffnn_1_1optimizer_1_1_gradient_descent___a56014df7a5afe715fb041bb0d629f15a}{\index{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-@{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-}!$\sim$\-Gradient\-Descent\-\_\-@{$\sim$\-Gradient\-Descent\-\_\-}}
+\index{$\sim$\-Gradient\-Descent\-\_\-@{$\sim$\-Gradient\-Descent\-\_\-}!ffnn::optimizer::GradientDescent_@{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-}}
+\subsubsection[{$\sim$\-Gradient\-Descent\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Layer\-Type, Loss\-Function Loss\-Fn$>$ virtual {\bf ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-}$<$ Layer\-Type, Loss\-Fn $>$\-::$\sim${\bf Gradient\-Descent\-\_\-} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classffnn_1_1optimizer_1_1_gradient_descent___a56014df7a5afe715fb041bb0d629f15a}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classffnn_1_1optimizer_1_1_gradient_descent___a810bd29432c41b39239337139b7a0a0b}{\index{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-@{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-}!backward@{backward}}
+\index{backward@{backward}!ffnn::optimizer::GradientDescent_@{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-}}
+\subsubsection[{backward}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Layer\-Type, Loss\-Function Loss\-Fn$>$ virtual bool {\bf ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-}$<$ Layer\-Type, Loss\-Fn $>$\-::backward (
+\begin{DoxyParamCaption}
+\item[{Layer\-Type \&}]{layer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classffnn_1_1optimizer_1_1_gradient_descent___a810bd29432c41b39239337139b7a0a0b}
+
+
+Computes optimization step during backward propogation. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em layer} & Layer to optimize \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & if optimization setup was successful \\
+\hline
+{\em false} & otherwise \\
+\hline
+\end{DoxyRetVals}
+
+
+Implements \hyperlink{classffnn_1_1optimizer_1_1_optimizer_ab1f9b1cae01f93f53ecf7119bedb6369}{ffnn\-::optimizer\-::\-Optimizer$<$ Layer\-Type $>$}.
+
+\hypertarget{classffnn_1_1optimizer_1_1_gradient_descent___a3fda5e93b5fc359c4e36fc1c681e6929}{\index{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-@{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-}!forward@{forward}}
+\index{forward@{forward}!ffnn::optimizer::GradientDescent_@{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-}}
+\subsubsection[{forward}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Layer\-Type, Loss\-Function Loss\-Fn$>$ bool {\bf ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-}$<$ Layer\-Type, Loss\-Fn $>$\-::forward (
+\begin{DoxyParamCaption}
+\item[{Layer\-Type \&}]{layer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classffnn_1_1optimizer_1_1_gradient_descent___a3fda5e93b5fc359c4e36fc1c681e6929}
+
+
+Computes one forward optimization update step. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em layer} & Layer to optimize \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & if optimization setup was successful \\
+\hline
+{\em false} & otherwise \\
+\hline
+\end{DoxyRetVals}
+
+
+Implements \hyperlink{classffnn_1_1optimizer_1_1_optimizer_a80505cfdeba0a3c8d1db19a2821613f2}{ffnn\-::optimizer\-::\-Optimizer$<$ Layer\-Type $>$}.
+
+\hypertarget{classffnn_1_1optimizer_1_1_gradient_descent___a9b2a8f8c1a1411ffb3b2d207c42fca9e}{\index{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-@{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-}!initialize@{initialize}}
+\index{initialize@{initialize}!ffnn::optimizer::GradientDescent_@{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Layer\-Type, Loss\-Function Loss\-Fn$>$ void {\bf ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-}$<$ Layer\-Type, Loss\-Fn $>$\-::initialize (
+\begin{DoxyParamCaption}
+\item[{Layer\-Type \&}]{layer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classffnn_1_1optimizer_1_1_gradient_descent___a9b2a8f8c1a1411ffb3b2d207c42fca9e}
+
+
+Initializes the \hyperlink{classffnn_1_1optimizer_1_1_optimizer}{Optimizer}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em layer} & Layer to optimize \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classffnn_1_1optimizer_1_1_optimizer_a4302b66ba9b013ae4833eca235ff306a}{ffnn\-::optimizer\-::\-Optimizer$<$ Layer\-Type $>$}.
+
+\hypertarget{classffnn_1_1optimizer_1_1_gradient_descent___a50581919467a4bb592eeb7fa98cd3b34}{\index{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-@{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-}!reset@{reset}}
+\index{reset@{reset}!ffnn::optimizer::GradientDescent_@{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Layer\-Type, Loss\-Function Loss\-Fn$>$ void {\bf ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-}$<$ Layer\-Type, Loss\-Fn $>$\-::reset (
+\begin{DoxyParamCaption}
+\item[{Layer\-Type \&}]{layer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classffnn_1_1optimizer_1_1_gradient_descent___a50581919467a4bb592eeb7fa98cd3b34}
+
+
+Resets persistent \hyperlink{classffnn_1_1optimizer_1_1_optimizer}{Optimizer} states. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em layer} & Layer to optimize \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classffnn_1_1optimizer_1_1_optimizer_ade04e7582eb7b833713a9bd33e0e8346}{ffnn\-::optimizer\-::\-Optimizer$<$ Layer\-Type $>$}.
+
+\hypertarget{classffnn_1_1optimizer_1_1_gradient_descent___a90fface371af7bef89880d278a9b2007}{\index{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-@{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-}!update@{update}}
+\index{update@{update}!ffnn::optimizer::GradientDescent_@{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Layer\-Type, Loss\-Function Loss\-Fn$>$ bool {\bf ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-}$<$ Layer\-Type, Loss\-Fn $>$\-::update (
+\begin{DoxyParamCaption}
+\item[{Layer\-Type \&}]{layer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classffnn_1_1optimizer_1_1_gradient_descent___a90fface371af7bef89880d278a9b2007}
+
+
+Applies optimization update. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em layer} & Layer to optimize \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & if optimization update was applied successfully \\
+\hline
+{\em false} & otherwise \\
+\hline
+\end{DoxyRetVals}
+
+
+Implements \hyperlink{classffnn_1_1optimizer_1_1_optimizer_a7c88c2794446e03ccd41628bb25d7a07}{ffnn\-::optimizer\-::\-Optimizer$<$ Layer\-Type $>$}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classffnn_1_1optimizer_1_1_gradient_descent___a47f75b7c806bdd2bd254c147a35e3ae2}{\index{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-@{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-}!gradient\-\_\-@{gradient\-\_\-}}
+\index{gradient\-\_\-@{gradient\-\_\-}!ffnn::optimizer::GradientDescent_@{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-}}
+\subsubsection[{gradient\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Layer\-Type, Loss\-Function Loss\-Fn$>$ {\bf Parameters\-Type} {\bf ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-}$<$ Layer\-Type, Loss\-Fn $>$\-::gradient\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classffnn_1_1optimizer_1_1_gradient_descent___a47f75b7c806bdd2bd254c147a35e3ae2}
+
+
+Coefficient gradient. 
+
+\hypertarget{classffnn_1_1optimizer_1_1_gradient_descent___a600bd6a5552e490da1b230c67a5e67d6}{\index{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-@{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-}!lr\-\_\-@{lr\-\_\-}}
+\index{lr\-\_\-@{lr\-\_\-}!ffnn::optimizer::GradientDescent_@{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-}}
+\subsubsection[{lr\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Layer\-Type, Loss\-Function Loss\-Fn$>$ {\bf Scalar} {\bf ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-}$<$ Layer\-Type, Loss\-Fn $>$\-::lr\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classffnn_1_1optimizer_1_1_gradient_descent___a600bd6a5552e490da1b230c67a5e67d6}
+
+
+Learning rate. 
+
+\hypertarget{classffnn_1_1optimizer_1_1_gradient_descent___a6a51e6729537c7de173ea53a27965415}{\index{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-@{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-}!prev\-\_\-input\-\_\-@{prev\-\_\-input\-\_\-}}
+\index{prev\-\_\-input\-\_\-@{prev\-\_\-input\-\_\-}!ffnn::optimizer::GradientDescent_@{ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-}}
+\subsubsection[{prev\-\_\-input\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Layer\-Type, Loss\-Function Loss\-Fn$>$ {\bf Input\-Block\-Type} {\bf ffnn\-::optimizer\-::\-Gradient\-Descent\-\_\-}$<$ Layer\-Type, Loss\-Fn $>$\-::prev\-\_\-input\-\_\-\hspace{0.3cm}{\ttfamily [protected]}}}\label{classffnn_1_1optimizer_1_1_gradient_descent___a6a51e6729537c7de173ea53a27965415}
+
+
+Previous input. 
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/optimizer/\hyperlink{fwd_8h}{fwd.\-h}\item 
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/optimizer/\hyperlink{gradient__descent_8h}{gradient\-\_\-descent.\-h}\item 
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/impl/optimizer/gradient\-\_\-descent/\hyperlink{gradient__descent_8hpp}{gradient\-\_\-descent.\-hpp}\end{DoxyCompactItemize}

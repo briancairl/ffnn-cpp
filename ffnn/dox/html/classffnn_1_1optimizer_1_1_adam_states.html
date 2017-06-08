@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>FFNN: ffnn::optimizer::AdamStates&lt; MatrixType &gt; Class Template Reference</title>
+<title>FFNN: ffnn::optimizer::AdamStates&lt; ValueType, LayerType &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -90,127 +90,50 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classffnn_1_1optimizer_1_1_adam_states-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ffnn::optimizer::AdamStates&lt; MatrixType &gt; Class Template Reference</div>  </div>
+<div class="title">ffnn::optimizer::AdamStates&lt; ValueType, LayerType &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
 <p><code>#include &quot;<a class="el" href="adam__states_8hpp_source.html">adam_states.hpp</a>&quot;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:a5ff656035aff83f1e06140d556e21977"><td class="memItemLeft" align="right" valign="top">typedef MatrixType::Scalar&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1optimizer_1_1_adam_states.html#a5ff656035aff83f1e06140d556e21977">Scalar</a></td></tr>
-<tr class="separator:a5ff656035aff83f1e06140d556e21977"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02c5c9a4b2a5689061570f493e842f0b"><td class="memItemLeft" align="right" valign="top">typedef MatrixType::Index&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1optimizer_1_1_adam_states.html#a02c5c9a4b2a5689061570f493e842f0b">SizeType</a></td></tr>
-<tr class="separator:a02c5c9a4b2a5689061570f493e842f0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3c5963e78d7cca8c7c7a81d9034c5c27"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1optimizer_1_1_adam_states.html#a3c5963e78d7cca8c7c7a81d9034c5c27">update</a> (MatrixType &amp;gradient, <a class="el" href="classffnn_1_1optimizer_1_1_adam_states.html#a5ff656035aff83f1e06140d556e21977">Scalar</a> beta1, <a class="el" href="classffnn_1_1optimizer_1_1_adam_states.html#a5ff656035aff83f1e06140d556e21977">Scalar</a> beta2, <a class="el" href="classffnn_1_1optimizer_1_1_adam_states.html#a5ff656035aff83f1e06140d556e21977">Scalar</a> eps)</td></tr>
-<tr class="separator:a3c5963e78d7cca8c7c7a81d9034c5c27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37cb508c7d60d1df86cab12254596055"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1optimizer_1_1_adam_states.html#a37cb508c7d60d1df86cab12254596055">initialize</a> (<a class="el" href="classffnn_1_1optimizer_1_1_adam_states.html#a02c5c9a4b2a5689061570f493e842f0b">SizeType</a> rows, <a class="el" href="classffnn_1_1optimizer_1_1_adam_states.html#a02c5c9a4b2a5689061570f493e842f0b">SizeType</a> col)</td></tr>
-<tr class="separator:a37cb508c7d60d1df86cab12254596055"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a177eb4d888e9c25bc8766141f39f34e7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1optimizer_1_1_adam_states.html#a177eb4d888e9c25bc8766141f39f34e7">AdamStates</a> (ValueType beta1, ValueType beta2, ValueType eps)</td></tr>
+<tr class="separator:a177eb4d888e9c25bc8766141f39f34e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b6ac212861f499d058a2e1c35024d57"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1optimizer_1_1_adam_states.html#a9b6ac212861f499d058a2e1c35024d57">update</a> (ParametersType &amp;gradient)</td></tr>
+<tr class="separator:a9b6ac212861f499d058a2e1c35024d57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a819fc6cdb77cca470dfa6937620210"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classffnn_1_1optimizer_1_1_adam_states.html#a8a819fc6cdb77cca470dfa6937620210">initialize</a> (const LayerType &amp;layer)</td></tr>
+<tr class="separator:a8a819fc6cdb77cca470dfa6937620210"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Typedef Documentation</h2>
-<a class="anchor" id="a5ff656035aff83f1e06140d556e21977"></a>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a177eb4d888e9c25bc8766141f39f34e7"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename MatrixType&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef MatrixType::Scalar <a class="el" href="classffnn_1_1optimizer_1_1_adam_states.html">ffnn::optimizer::AdamStates</a>&lt; MatrixType &gt;::<a class="el" href="classffnn_1_1optimizer_1_1_adam_states.html#a5ff656035aff83f1e06140d556e21977">Scalar</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a02c5c9a4b2a5689061570f493e842f0b"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename MatrixType&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef MatrixType::Index <a class="el" href="classffnn_1_1optimizer_1_1_adam_states.html">ffnn::optimizer::AdamStates</a>&lt; MatrixType &gt;::<a class="el" href="classffnn_1_1optimizer_1_1_adam_states.html#a02c5c9a4b2a5689061570f493e842f0b">SizeType</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a37cb508c7d60d1df86cab12254596055"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename MatrixType&gt; </div>
+template&lt;typename ValueType, typename LayerType&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classffnn_1_1optimizer_1_1_adam_states.html">ffnn::optimizer::AdamStates</a>&lt; MatrixType &gt;::initialize </td>
+          <td class="memname"><a class="el" href="classffnn_1_1optimizer_1_1_adam_states.html">ffnn::optimizer::AdamStates</a>&lt; ValueType, LayerType &gt;::<a class="el" href="classffnn_1_1optimizer_1_1_adam_states.html">AdamStates</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classffnn_1_1optimizer_1_1_adam_states.html#a02c5c9a4b2a5689061570f493e842f0b">SizeType</a>&#160;</td>
-          <td class="paramname"><em>rows</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classffnn_1_1optimizer_1_1_adam_states.html#a02c5c9a4b2a5689061570f493e842f0b">SizeType</a>&#160;</td>
-          <td class="paramname"><em>col</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a3c5963e78d7cca8c7c7a81d9034c5c27"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename MatrixType&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classffnn_1_1optimizer_1_1_adam_states.html">ffnn::optimizer::AdamStates</a>&lt; MatrixType &gt;::update </td>
-          <td>(</td>
-          <td class="paramtype">MatrixType &amp;&#160;</td>
-          <td class="paramname"><em>gradient</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classffnn_1_1optimizer_1_1_adam_states.html#a5ff656035aff83f1e06140d556e21977">Scalar</a>&#160;</td>
+          <td class="paramtype">ValueType&#160;</td>
           <td class="paramname"><em>beta1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classffnn_1_1optimizer_1_1_adam_states.html#a5ff656035aff83f1e06140d556e21977">Scalar</a>&#160;</td>
+          <td class="paramtype">ValueType&#160;</td>
           <td class="paramname"><em>beta2</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classffnn_1_1optimizer_1_1_adam_states.html#a5ff656035aff83f1e06140d556e21977">Scalar</a>&#160;</td>
+          <td class="paramtype">ValueType&#160;</td>
           <td class="paramname"><em>eps</em>&#160;</td>
         </tr>
         <tr>
@@ -228,13 +151,66 @@ template&lt;typename MatrixType&gt; </div>
 
 </div>
 </div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a8a819fc6cdb77cca470dfa6937620210"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ValueType, typename LayerType&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classffnn_1_1optimizer_1_1_adam_states.html">ffnn::optimizer::AdamStates</a>&lt; ValueType, LayerType &gt;::initialize </td>
+          <td>(</td>
+          <td class="paramtype">const LayerType &amp;&#160;</td>
+          <td class="paramname"><em>layer</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a9b6ac212861f499d058a2e1c35024d57"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ValueType, typename LayerType&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classffnn_1_1optimizer_1_1_adam_states.html">ffnn::optimizer::AdamStates</a>&lt; ValueType, LayerType &gt;::update </td>
+          <td>(</td>
+          <td class="paramtype">ParametersType &amp;&#160;</td>
+          <td class="paramname"><em>gradient</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/briancairl/packages/src/ffnn-cpp/ffnn/include/ffnn/optimizer/impl/adam/<a class="el" href="adam__states_8hpp_source.html">adam_states.hpp</a></li>
+<li>/home/briancairl/packages/src/ffnn-cpp/ffnn/include/ffnn/impl/optimizer/adam/<a class="el" href="adam__states_8hpp_source.html">adam_states.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jun 3 2017 23:40:29 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 8 2017 01:08:57 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

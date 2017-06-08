@@ -1,8 +1,8 @@
 <map id="/home/briancairl/packages/src/ffnn&#45;cpp/ffnn/include/ffnn/impl/layer/fully_connected/configuration/serialization_class_definitions.hpp" name="/home/briancairl/packages/src/ffnn&#45;cpp/ffnn/include/ffnn/impl/layer/fully_connected/configuration/serialization_class_definitions.hpp">
-<area shape="rect" id="node2" href="$fully__connected_2configuration_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/layer/fully_connected\l/configuration.h" alt="" coords="114,139,288,210"/>
-<area shape="rect" id="node3" href="$fully__connected_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/layer/fully_connected.h" alt="" coords="108,259,295,315"/>
-<area shape="rect" id="node4" href="$optimizer_2impl_2adam_2fully__connected_8hpp.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/optimizer/impl/adam\l/fully_connected.hpp" alt="" coords="5,483,179,554"/>
-<area shape="rect" id="node6" href="$optimizer_2impl_2gradient__descent_2fully__connected_8hpp.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/optimizer/impl/gradient\l_descent/fully_connected.hpp" alt="" coords="193,363,388,434"/>
-<area shape="rect" id="node5" href="$adam_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/optimizer/adam.h" alt="" coords="115,603,289,659"/>
-<area shape="rect" id="node7" href="$gradient__descent_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/optimizer/gradient_descent.h" alt="" coords="204,491,423,547"/>
+<area shape="rect" id="node2" href="$fully__connected_2configuration_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/layer/fully_connected\l/configuration.h" alt="" coords="109,139,283,210"/>
+<area shape="rect" id="node3" href="$fully__connected_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/layer/fully_connected.h" alt="" coords="103,259,289,315"/>
+<area shape="rect" id="node4" href="$optimizer_2adam_2fully__connected_8hpp.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/impl/optimizer/adam\l/fully_connected.hpp" alt="" coords="5,370,179,441"/>
+<area shape="rect" id="node5" href="$optimizer_2gradient__descent_2specializations_2fully__connected_8hpp.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/impl/optimizer/gradient\l_descent/specializations/fully\l_connected.hpp" alt="" coords="203,363,396,448"/>
+<area shape="rect" id="node6" href="$gradient__descent_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/optimizer/gradient_descent.h" alt="" coords="191,496,409,552"/>
+<area shape="rect" id="node7" href="$adam_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/optimizer/adam.h" alt="" coords="213,600,387,656"/>
 </map>

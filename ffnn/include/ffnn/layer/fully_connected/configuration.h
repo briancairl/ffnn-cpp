@@ -32,8 +32,6 @@ template<typename LayerType,
 class Configuration
 {
 public:
-  friend LayerType;
-
   /// Shape type standardization
   typedef typename LayerType::ShapeType ShapeType;
 
@@ -119,7 +117,6 @@ public:
     return *this;
   }
 
-private:
   /// Number of layer inputs
   size_type input_size_;
 

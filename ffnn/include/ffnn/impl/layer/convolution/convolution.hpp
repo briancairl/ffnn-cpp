@@ -23,7 +23,7 @@ template <typename ValueType,
           typename Extrinsics>
 Convolution<ValueType, Options, Extrinsics>::
 Convolution(const Configuration& config) :
-  BaseType(config.embedded_input_shape_, config.embedded_output_shape_)
+  BaseType(config.embedded_input_shape_, config.embedded_output_shape_),
   config_(config)
 {
   FFNN_INTERNAL_DEBUG_NAMED(
@@ -104,7 +104,6 @@ bool Convolution<ValueType, Options, Extrinsics>::forward()
   }
 
   // Perform convolution operation
-  const auto& _is = config_.input_shape_;
   const auto& _os = config_.output_shape_;
   const auto& _ss = config_.stride_shape_;
   for (offset_type idx = 0, hdx = 0; idx < _os.height; idx++, hdx += _ss.height)
@@ -115,7 +114,7 @@ bool Convolution<ValueType, Options, Extrinsics>::forward()
       for (const auto& kernel : parameters_)
       {
         output_mappings_[idx][jdx][kdx++] =
-          kernel.cwiseProduct(BaseType::input_.block(hdx, wdx, _is.height, _is.width)).sum() +
+          (BaseType::input_.block(hdx, wdx, kernel.rows(), kernel.cols()).cwiseProduct(kernel)).sum() +
           parameters_.bias;
       }
     }
@@ -134,18 +133,16 @@ bool Convolution<ValueType, Options, Extrinsics>::backward()
   BaseType::backward_error_.setZero();
 
   // Backprop error
-  const auto& _is = config_.input_shape_;
   const auto& _os = config_.output_shape_;
   const auto& _ss = config_.stride_shape_;
   for (offset_type idx = 0, hdx = 0; idx < _os.height; idx++, hdx += _ss.height)
   {
     for (offset_type jdx = 0, wdx = 0; jdx < _os.width; jdx++, wdx += _ss.width)
     {
-      // Sum over all filters
       offset_type kdx = 0;
       for (const auto& kernel : parameters_)
       {
-        BaseType::backward_error_.block(hdx, wdx, _is.height, _is.width) +=
+        BaseType::backward_error_.block(hdx, wdx, kernel.rows(), kernel.cols()) +=
           kernel * forward_error_mappings_[idx][jdx][kdx++];
       }
     }

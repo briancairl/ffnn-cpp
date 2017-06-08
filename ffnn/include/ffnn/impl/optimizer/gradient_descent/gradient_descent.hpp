@@ -20,14 +20,14 @@ namespace optimizer
 {
 template<typename LayerType,
          LossFunction LossFn>
-GradientDescent<LayerType, LossFn>::GradientDescent(Scalar lr) :
+GradientDescent_<LayerType, LossFn>::GradientDescent_(Scalar lr) :
   BaseType("GradientDescent"),
   lr_(lr)
 {}
 
 template<typename LayerType,
          LossFunction LossFn>
-void GradientDescent<LayerType, LossFn>::initialize(LayerType& layer)
+void GradientDescent_<LayerType, LossFn>::initialize(LayerType& layer)
 {
   FFNN_ASSERT_MSG(layer.isInitialized(), "Layer to optimize is not initialized.");
 
@@ -43,7 +43,7 @@ void GradientDescent<LayerType, LossFn>::initialize(LayerType& layer)
 
 template<typename LayerType,
          LossFunction LossFn>
-void GradientDescent<LayerType, LossFn>::reset(LayerType& layer)
+void GradientDescent_<LayerType, LossFn>::reset(LayerType& layer)
 {
   FFNN_ASSERT_MSG(layer.isInitialized(), "Layer to optimize is not initialized.");
 
@@ -53,7 +53,7 @@ void GradientDescent<LayerType, LossFn>::reset(LayerType& layer)
 
 template<typename LayerType,
          LossFunction LossFn>
-bool GradientDescent<LayerType, LossFn>::forward(LayerType& layer)
+bool GradientDescent_<LayerType, LossFn>::forward(LayerType& layer)
 {
   FFNN_ASSERT_MSG(layer.isInitialized(), "Layer to optimize is not initialized.");
 
@@ -64,21 +64,7 @@ bool GradientDescent<LayerType, LossFn>::forward(LayerType& layer)
 
 template<typename LayerType,
          LossFunction LossFn>
-bool GradientDescent<LayerType, LossFn>::backward(LayerType& layer)
-{
-  FFNN_ASSERT_MSG(layer.isInitialized(), "Layer to optimize is not initialized.");
-
-  // Compute and accumulate new gradient
-  gradient_.weights.noalias() += layer.forward_error_ * prev_input_.transpose();
-  gradient_.biases.noalias() += layer.forward_error_;
-
-  // Back-prop error
-  return true;
-}
-
-template<typename LayerType,
-         LossFunction LossFn>
-bool GradientDescent<LayerType, LossFn>::update(LayerType& layer)
+bool GradientDescent_<LayerType, LossFn>::update(LayerType& layer)
 {
   FFNN_ASSERT_MSG(layer.isInitialized(), "Layer to optimize is not initialized.");
 

@@ -1,4 +1,4 @@
-<map id="/home/briancairl/packages/src/ffnn&#45;cpp/ffnn/include/ffnn/impl/layer/hidden.hpp" name="/home/briancairl/packages/src/ffnn&#45;cpp/ffnn/include/ffnn/impl/layer/hidden.hpp">
+<map id="/home/briancairl/packages/src/ffnn&#45;cpp/ffnn/include/ffnn/impl/layer/hidden/hidden.hpp" name="/home/briancairl/packages/src/ffnn&#45;cpp/ffnn/include/ffnn/impl/layer/hidden/hidden.hpp">
 <area shape="rect" id="node2" href="$assert_8h.html" title="ffnn/assert.h" alt="" coords="830,109,924,136"/>
 <area shape="rect" id="node7" href="$logging_8h.html" title="ffnn/logging.h" alt="" coords="1443,267,1543,293"/>
 <area shape="rect" id="node18" href="$signature_8h.html" title="ffnn/internal/signature.h" alt="" coords="605,109,763,136"/>

@@ -1,0 +1,26 @@
+<map id="/home/briancairl/packages/src/ffnn&#45;cpp/ffnn/include/ffnn/impl/optimizer/gradient_descent/specializations/convolution.hpp" name="/home/briancairl/packages/src/ffnn&#45;cpp/ffnn/include/ffnn/impl/optimizer/gradient_descent/specializations/convolution.hpp">
+<area shape="rect" id="node3" href="$assert_8h.html" title="ffnn/assert.h" alt="" coords="1875,507,1969,533"/>
+<area shape="rect" id="node7" href="$logging_8h.html" title="ffnn/logging.h" alt="" coords="3538,672,3637,699"/>
+<area shape="rect" id="node18" href="$convolution_8h.html" title="ffnn/layer/convolution.h" alt="" coords="1932,125,2089,152"/>
+<area shape="rect" id="node5" href="$config_8h.html" title="ffnn/internal/config.h" alt="" coords="1482,589,1621,616"/>
+<area shape="rect" id="node14" href="$sparse__triplet__serialization_8h.html" title="ffnn/internal/eigen\l/sparse_triplet_serialization.h" alt="" coords="1375,665,1565,706"/>
+<area shape="rect" id="node19" href="$distribution_8h.html" title="ffnn/distribution/distribution.h" alt="" coords="1589,409,1779,436"/>
+<area shape="rect" id="node24" href="$normal_8h.html" title="ffnn/distribution/normal.h" alt="" coords="2968,409,3132,436"/>
+<area shape="rect" id="node30" href="$fwd_8h.html" title="ffnn/optimizer/fwd.h" alt="" coords="2158,409,2295,436"/>
+<area shape="rect" id="node32" href="$optimizer_8h.html" title="ffnn/optimizer/optimizer.h" alt="" coords="2673,409,2841,436"/>
+<area shape="rect" id="node35" href="$filter_8h.html" title="ffnn/layer/convolution\l/filter.h" alt="" coords="579,201,725,242"/>
+<area shape="rect" id="node39" href="$sizing_8h.html" title="ffnn/layer/convolution\l/sizing.h" alt="" coords="461,402,608,443"/>
+<area shape="rect" id="node42" href="$convolution_2configuration_8h.html" title="ffnn/layer/convolution\l/configuration.h" alt="" coords="2323,298,2469,339"/>
+<area shape="rect" id="node44" href="$convolution_2compile__time__options_8h.html" title="ffnn/layer/convolution\l/compile_time_options.h" alt="" coords="1073,201,1236,242"/>
+<area shape="rect" id="node48" href="$layer_2convolution_2convolution_8hpp.html" title="ffnn/impl/layer/convolution\l/convolution.hpp" alt="" coords="2975,201,3149,242"/>
+<area shape="rect" id="node23" href="$traits_8h.html" title="ffnn/internal/traits.h" alt="" coords="758,507,892,533"/>
+<area shape="rect" id="node31" href="$loss__function_8h.html" title="ffnn/optimizer/loss\l_function.h" alt="" coords="2163,499,2292,541"/>
+<area shape="rect" id="node38" href="$shape_8h.html" title="ffnn/layer/shape.h" alt="" coords="910,409,1036,436"/>
+<area shape="rect" id="node40" href="$convolution_2filter_2compile__time__options_8h.html" title="ffnn/layer/convolution\l/filter/compile_time_options.h" alt="" coords="699,298,891,339"/>
+<area shape="rect" id="node41" href="$convolution_2filter_2serialization__class__definitions_8hpp.html" title="ffnn/impl/layer/convolution\l/filter/serialization_class\l_definitions.hpp" alt="" coords="246,291,420,347"/>
+<area shape="rect" id="node43" href="$convolution_2configuration_2serialization__class__definitions_8hpp.html" title="ffnn/impl/layer/convolution\l/configuration/serialization\l_class_definitions.hpp" alt="" coords="2371,395,2545,451"/>
+<area shape="rect" id="node46" href="$hidden_8h.html" title="ffnn/layer/hidden/hidden.h" alt="" coords="1192,305,1363,332"/>
+<area shape="rect" id="node47" href="$hidden_2compile__time__options_8h.html" title="ffnn/layer/hidden/compile\l_time_options.h" alt="" coords="1297,402,1463,443"/>
+<area shape="rect" id="node49" href="$none_8h.html" title="ffnn/optimizer/none.h" alt="" coords="2937,305,3081,332"/>
+<area shape="rect" id="node50" href="$signature_8h.html" title="ffnn/internal/signature.h" alt="" coords="3185,305,3343,332"/>
+</map>

@@ -36,7 +36,7 @@ TEST(TestLayerFullyConnectedTraining, Dynamic_GradientDescent)
   using Output = Output<float>;
 
   // Optimizer alias
-  using Optimizer = GradientDescent<Hidden>;
+  using Optimizer = GradientDescent<Hidden, CrossEntropy>;
 
   // Layer sizes
   static const ffnn::size_type DIM = 32;
@@ -57,14 +57,10 @@ TEST(TestLayerFullyConnectedTraining, Dynamic_GradientDescent)
     EXPECT_TRUE(connect<Layer>(layers[idx-1UL], layers[idx]));
   }
 
-  // Intializer layers
-  input->initialize();
-  hidden->initialize();
-  output->initialize();
-
   // Initialize and check all layers and 
   for(const auto& layer : layers)
   {
+    layer->initialize();
     EXPECT_TRUE(layer->isInitialized());
   }
 
@@ -114,7 +110,7 @@ TEST(TestLayerFullyConnectedTraining, Static_GradientDescent)
   using Output = Output<float, output::options<32>>;
 
   // Optimizer alias
-  using Optimizer = GradientDescent<Hidden>;
+  using Optimizer = GradientDescent<Hidden, CrossEntropy>;
 
   // Layer sizes
   static const ffnn::size_type DIM = 32;

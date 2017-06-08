@@ -1,0 +1,20 @@
+<map id="/home/briancairl/packages/src/ffnn&#45;cpp/ffnn/include/ffnn/optimizer/loss_function.h" name="/home/briancairl/packages/src/ffnn&#45;cpp/ffnn/include/ffnn/optimizer/loss_function.h">
+<area shape="rect" id="node2" href="$fwd_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/optimizer/fwd.h" alt="" coords="177,213,351,269"/>
+<area shape="rect" id="node13" href="$optimizer_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/optimizer/optimizer.h" alt="" coords="606,109,780,165"/>
+<area shape="rect" id="node3" href="$convolution_2configuration_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/layer/convolution/configuration.h" alt="" coords="145,325,383,381"/>
+<area shape="rect" id="node4" href="$convolution_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/layer/convolution.h" alt="" coords="230,445,404,501"/>
+<area shape="rect" id="node6" href="$fully__connected_2compile__time__options_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/layer/fully_connected\l/compile_time_options.h" alt="" coords="606,318,780,389"/>
+<area shape="rect" id="node10" href="$gradient__descent_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/optimizer/gradient_descent.h" alt="" coords="684,691,903,747"/>
+<area shape="rect" id="node11" href="$adam_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/optimizer/adam.h" alt="" coords="311,795,485,851"/>
+<area shape="rect" id="node12" href="$fully__connected_2configuration_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/layer/fully_connected\l/configuration.h" alt="" coords="407,318,581,389"/>
+<area shape="rect" id="node5" href="$optimizer_2gradient__descent_2specializations_2convolution_8hpp.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/impl/optimizer/gradient\l_descent/specializations/convolution.hpp" alt="" coords="187,565,447,635"/>
+<area shape="rect" id="node7" href="$fully__connected_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/layer/fully_connected.h" alt="" coords="600,445,787,501"/>
+<area shape="rect" id="node8" href="$optimizer_2adam_2fully__connected_8hpp.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/impl/optimizer/adam\l/fully_connected.hpp" alt="" coords="498,565,672,635"/>
+<area shape="rect" id="node9" href="$optimizer_2gradient__descent_2specializations_2fully__connected_8hpp.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/impl/optimizer/gradient\l_descent/specializations/fully\l_connected.hpp" alt="" coords="697,557,889,643"/>
+<area shape="rect" id="node14" href="$none_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/optimizer/none.h" alt="" coords="1073,213,1247,269"/>
+<area shape="rect" id="node15" href="$activation_8hpp.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/impl/layer/activation\l/activation.hpp" alt="" coords="1337,318,1511,389"/>
+<area shape="rect" id="node17" href="$layer_2convolution_2convolution_8hpp.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/impl/layer/convolution\l/convolution.hpp" alt="" coords="856,318,1035,389"/>
+<area shape="rect" id="node18" href="$layer_2fully__connected_2fully__connected_8hpp.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/impl/layer/fully_connected\l/fully_connected.hpp" alt="" coords="1059,318,1261,389"/>
+<area shape="rect" id="node19" href="$gradient__descent_8hpp.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/impl/optimizer/gradient\l_descent/gradient_descent.hpp" alt="" coords="960,438,1163,509"/>
+<area shape="rect" id="node16" href="$activation_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/layer/activation.h" alt="" coords="1337,445,1511,501"/>
+</map>

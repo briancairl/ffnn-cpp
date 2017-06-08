@@ -1,18 +1,21 @@
 <map id="/home/briancairl/packages/src/ffnn&#45;cpp/ffnn/include/ffnn/internal/serializable.h" name="/home/briancairl/packages/src/ffnn&#45;cpp/ffnn/include/ffnn/internal/serializable.h">
-<area shape="rect" id="node2" href="$unique_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/internal/unique.h" alt="" coords="391,109,565,165"/>
-<area shape="rect" id="node3" href="$layer_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/layer/layer.h" alt="" coords="391,213,565,269"/>
-<area shape="rect" id="node14" href="$hidden_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/layer/hidden.h" alt="" coords="654,437,828,493"/>
-<area shape="rect" id="node4" href="$convolution_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/layer/convolution.h" alt="" coords="665,661,839,717"/>
-<area shape="rect" id="node8" href="$hidden_2compile__time__options_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/layer/hidden/compile\l_time_options.h" alt="" coords="454,318,628,389"/>
-<area shape="rect" id="node16" href="$input_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/layer/input.h" alt="" coords="5,325,179,381"/>
-<area shape="rect" id="node17" href="$output_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/layer/output.h" alt="" coords="203,325,377,381"/>
-<area shape="rect" id="node5" href="$optimizer_2impl_2gradient__descent_2convolution_8hpp.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/optimizer/impl/gradient\l_descent/convolution.hpp" alt="" coords="662,766,844,837"/>
-<area shape="rect" id="node6" href="$gradient__descent_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/optimizer/gradient_descent.h" alt="" coords="517,893,736,949"/>
-<area shape="rect" id="node7" href="$adam_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/optimizer/adam.h" alt="" coords="429,1005,603,1061"/>
-<area shape="rect" id="node9" href="$convolution_2compile__time__options_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/layer/convolution/compile\l_time_options.h" alt="" coords="653,542,851,613"/>
-<area shape="rect" id="node10" href="$fully__connected_2compile__time__options_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/layer/fully_connected\l/compile_time_options.h" alt="" coords="454,542,628,613"/>
-<area shape="rect" id="node11" href="$fully__connected_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/layer/fully_connected.h" alt="" coords="447,661,633,717"/>
-<area shape="rect" id="node12" href="$optimizer_2impl_2adam_2fully__connected_8hpp.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/optimizer/impl/adam\l/fully_connected.hpp" alt="" coords="318,886,492,957"/>
-<area shape="rect" id="node13" href="$optimizer_2impl_2gradient__descent_2fully__connected_8hpp.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/optimizer/impl/gradient\l_descent/fully_connected.hpp" alt="" coords="443,766,637,837"/>
-<area shape="rect" id="node15" href="$activation_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/layer/activation.h" alt="" coords="875,549,1049,605"/>
+<area shape="rect" id="node2" href="$unique_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/internal/unique.h" alt="" coords="401,109,575,165"/>
+<area shape="rect" id="node3" href="$layer_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/layer/layer.h" alt="" coords="526,213,700,269"/>
+<area shape="rect" id="node16" href="$hidden_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/layer/hidden/hidden.h" alt="" coords="177,437,351,493"/>
+<area shape="rect" id="node4" href="$hidden_2compile__time__options_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/layer/hidden/compile\l_time_options.h" alt="" coords="327,318,501,389"/>
+<area shape="rect" id="node17" href="$input_2compile__time__options_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/layer/input/compile\l_time_options.h" alt="" coords="526,318,700,389"/>
+<area shape="rect" id="node18" href="$input_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/layer/input.h" alt="" coords="583,437,757,493"/>
+<area shape="rect" id="node19" href="$output_2compile__time__options_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/layer/output/compile\l_time_options.h" alt="" coords="777,318,951,389"/>
+<area shape="rect" id="node20" href="$output_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/layer/output.h" alt="" coords="839,437,1013,493"/>
+<area shape="rect" id="node5" href="$activation_2compile__time__options_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/layer/activation/compile\l_time_options.h" alt="" coords="496,542,685,613"/>
+<area shape="rect" id="node7" href="$convolution_2compile__time__options_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/layer/convolution/compile\l_time_options.h" alt="" coords="74,542,272,613"/>
+<area shape="rect" id="node10" href="$fully__connected_2compile__time__options_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/layer/fully_connected\l/compile_time_options.h" alt="" coords="297,542,471,613"/>
+<area shape="rect" id="node6" href="$activation_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/layer/activation.h" alt="" coords="503,661,677,717"/>
+<area shape="rect" id="node8" href="$convolution_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/layer/convolution.h" alt="" coords="66,661,240,717"/>
+<area shape="rect" id="node9" href="$optimizer_2gradient__descent_2specializations_2convolution_8hpp.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/impl/optimizer/gradient\l_descent/specializations/convolution.hpp" alt="" coords="5,773,264,843"/>
+<area shape="rect" id="node11" href="$fully__connected_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/layer/fully_connected.h" alt="" coords="292,661,479,717"/>
+<area shape="rect" id="node12" href="$optimizer_2adam_2fully__connected_8hpp.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/impl/optimizer/adam\l/fully_connected.hpp" alt="" coords="506,773,680,843"/>
+<area shape="rect" id="node13" href="$optimizer_2gradient__descent_2specializations_2fully__connected_8hpp.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/impl/optimizer/gradient\l_descent/specializations/fully\l_connected.hpp" alt="" coords="289,765,481,851"/>
+<area shape="rect" id="node14" href="$gradient__descent_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/optimizer/gradient_descent.h" alt="" coords="276,899,495,955"/>
+<area shape="rect" id="node15" href="$adam_8h.html" title="/home/briancairl/packages\l/src/ffnn&#45;cpp/ffnn/include\l/ffnn/optimizer/adam.h" alt="" coords="298,1003,472,1059"/>
 </map>

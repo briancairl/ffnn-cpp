@@ -128,12 +128,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">          std::is_same&lt;Extrinsics, typename NS::extrinsics&lt;ValueType, Options&gt;&gt;::value,\</span></div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">          &quot;DO NOT MODIFY CLASS EXTRINSICS TEMPLATE PARAMETER!&quot;\</span></div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">        );</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif  // FFNN_ASSERT_H</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="assert_8h.html#a2a84c4ada6062ce37b58e83f003895dd">   66</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define FFNN_ASSERT_DONT_MODIFY_EXTRINSICS_EXT(NS, ARGS)\</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">        static_assert(\</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">          std::is_same&lt;Extrinsics, typename NS::extrinsics&lt;ValueType, ARGS, Options&gt;&gt;::value,\</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">          &quot;DO NOT MODIFY CLASS EXTRINSICS TEMPLATE PARAMETER!&quot;\</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">        );</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif  // FFNN_ASSERT_H</span></div>
 <div class="ttc" id="config_8h_html"><div class="ttname"><a href="config_8h.html">config.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jun 3 2017 23:40:28 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 8 2017 01:08:56 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

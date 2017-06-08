@@ -1,0 +1,4 @@
+<map id="ffnn::optimizer::GradientDescent&lt; layer::FullyConnected&lt; ValueType, Options, Extrinsics &gt;, CrossEntropy &gt;" name="ffnn::optimizer::GradientDescent&lt; layer::FullyConnected&lt; ValueType, Options, Extrinsics &gt;, CrossEntropy &gt;">
+<area shape="rect" id="node2" href="$classffnn_1_1optimizer_1_1_gradient_descent__.html" title="ffnn::optimizer::Gradient\lDescent_\&lt; layer::FullyConnected\l\&lt; ValueType, Options, Extrinsics\l \&gt;, CrossEntropy \&gt;" alt="" coords="294,5,511,75"/>
+<area shape="rect" id="node3" href="$classffnn_1_1optimizer_1_1_optimizer.html" title="ffnn::optimizer::Optimizer\l\&lt; layer::FullyConnected\l\&lt; ValueType, Options, Extrinsics \&gt; \&gt;" alt="" coords="6,12,245,68"/>
+</map>

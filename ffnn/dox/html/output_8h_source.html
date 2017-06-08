@@ -92,71 +92,102 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <a href="output_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef FFNN_LAYER_OUTPUT_H</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define FFNN_LAYER_OUTPUT_H</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef FFNN_LAYER_OUTPUT_OUTPUT_H</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define FFNN_LAYER_OUTPUT_OUTPUT_H</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">// C++ Standard Library</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;cstring&gt;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// FFNN</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="config_8h.html">ffnn/internal/config.h</a>&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="layer_8h.html">ffnn/layer/layer.h</a>&gt;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace </span>ffnn</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace </span>layer</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;         <a class="code" href="config_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a> NetworkOutputsAtCompileTime = Eigen::Dynamic&gt;</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_output.html">   24</a></span>&#160;<span class="keyword">class </span><a class="code" href="classffnn_1_1layer_1_1_output.html">Output</a> :</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keyword">public</span> <a class="code" href="classffnn_1_1layer_1_1_layer.html">Layer</a>&lt;ValueType&gt;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_output.html#a76c3074490fd13bd2cdd86f53322da45">   29</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classffnn_1_1layer_1_1_layer.html">Base</a> = <a class="code" href="classffnn_1_1layer_1_1_layer.html">Layer&lt;ValueType&gt;</a>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_output.html#a5e41de6c9249494dd9c6a819d7a30e20">   32</a></span>&#160;  <span class="keyword">typedef</span> <span class="keyword">typename</span> Base::SizeType <a class="code" href="classffnn_1_1layer_1_1_output.html#a5e41de6c9249494dd9c6a819d7a30e20">SizeType</a>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_output.html#a6780ece144b80cb2be355dd65096e9db">   35</a></span>&#160;  <span class="keyword">typedef</span> <span class="keyword">typename</span> Base::OffsetType <a class="code" href="classffnn_1_1layer_1_1_output.html#a6780ece144b80cb2be355dd65096e9db">OffsetType</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="assert_8h.html">ffnn/assert.h</a>&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="config_8h.html">ffnn/internal/config.h</a>&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="layer_8h.html">ffnn/layer/layer.h</a>&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="shape_8h.html">ffnn/layer/shape.h</a>&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="output_2compile__time__options_8h.html">ffnn/layer/output/compile_time_options.h</a>&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="output_2configuration_8h.html">ffnn/layer/output/configuration.h</a>&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">namespace </span>ffnn</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">namespace </span>layer</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> ValueType,</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;         <span class="keyword">typename</span> Options    = output::options&lt;&gt;,</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;         <span class="keyword">typename</span> Extrinsics = output::extrinsics&lt;ValueType, Options&gt;&gt;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_output.html">   29</a></span>&#160;<span class="keyword">class </span><a class="code" href="classffnn_1_1layer_1_1_output.html">Output</a> :</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keyword">public</span> Extrinsics::LayerType</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  FFNN_ASSERT_DONT_MODIFY_EXTRINSICS(output);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_output.html#a372fcfc142bc62cb466ad6b5a4feeaa2">   35</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classffnn_1_1layer_1_1_output.html">SelfType</a> = <a class="code" href="classffnn_1_1layer_1_1_output.html">Output&lt;ValueType, Options, Extrinsics&gt;</a>;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_output.html#ab3b7fdade20b477ce77b2fab91117a7f">   38</a></span>&#160;  <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code" href="structffnn_1_1layer_1_1_shape.html">Base::ShapeType</a> <a class="code" href="classffnn_1_1layer_1_1_output.html#ab3b7fdade20b477ce77b2fab91117a7f">ShapeType</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_output.html#a9f60142c3e464fcc6cda5203895dc448">   38</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classffnn_1_1layer_1_1_output.html#a9f60142c3e464fcc6cda5203895dc448">BaseType</a> = <span class="keyword">typename</span> Extrinsics::LayerType;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <a class="code" href="classffnn_1_1layer_1_1_output.html#af7d5b0ae4ac072ada556478a12fe235f">Output</a>();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="classffnn_1_1layer_1_1_output.html#a7e835ff550e291d2015efb76290c1b6c">~Output</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_output.html#a8755e7ce13c1b45243a679a5a5376ee4">   41</a></span>&#160;  <span class="keyword">typedef</span> <span class="keyword">typename</span> BaseType::ShapeType <a class="code" href="classffnn_1_1layer_1_1_output.html#a8755e7ce13c1b45243a679a5a5376ee4">ShapeType</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_output.html#a9e57e6ca1764925cea614e32886a1568">   44</a></span>&#160;  <span class="keyword">typedef</span> <a class="code" href="classffnn_1_1layer_1_1output_1_1_configuration.html">output::Configuration&lt;SelfType, ValueType, Options, Extrinsics&gt;</a> <a class="code" href="classffnn_1_1layer_1_1_output.html#a9e57e6ca1764925cea614e32886a1568">Configuration</a>;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classffnn_1_1layer_1_1_output.html#ab9ebd05595bc6b75718191aa48e70ad2">initialize</a>();</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> NetworkOutputType&gt;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classffnn_1_1layer_1_1_output.html#a2f4eb5c36b8b5d486410366b4cd9e7a8">operator&gt;&gt;</a>(NetworkOutputType&amp; output);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> NetworkTargetType&gt;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classffnn_1_1layer_1_1_output.html#ab37eb595864f42089dc2d0556b1f68ef">operator&lt;&lt;</a>(<span class="keyword">const</span> NetworkTargetType&amp; target);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <a class="code" href="classffnn_1_1layer_1_1_output.html#a6780ece144b80cb2be355dd65096e9db">OffsetType</a> connectToForwardLayer(<span class="keyword">const</span> <a class="code" href="classffnn_1_1layer_1_1_layer.html">Base</a>&amp; next, <a class="code" href="classffnn_1_1layer_1_1_output.html#a6780ece144b80cb2be355dd65096e9db">OffsetType</a> offset);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;};</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}  <span class="comment">// namespace layer</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}  <span class="comment">// namespace ffnn</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#include &lt;ffnn/layer/impl/output.hpp&gt;</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#endif  // FFNN_LAYER_OUTPUT_H</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keyword">explicit</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <a class="code" href="classffnn_1_1layer_1_1_output.html#aba563bb3b8984fe99d87872364367131">Output</a>(<span class="keyword">const</span> <a class="code" href="classffnn_1_1layer_1_1output_1_1_configuration.html">Configuration</a>&amp; config = <a class="code" href="classffnn_1_1layer_1_1_output.html#a9e57e6ca1764925cea614e32886a1568">Configuration</a>());</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="classffnn_1_1layer_1_1_output.html#adbe7b418cbcae313ab79ffa79cc00f74">~Output</a>();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classffnn_1_1layer_1_1_output.html#a8edca90e7ac402cd24c9872cf784a4de">initialize</a>();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_output.html#a923a4e72deaa227aa1635dcfb5220ec3">   64</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classffnn_1_1layer_1_1_output.html#a923a4e72deaa227aa1635dcfb5220ec3">update</a>()</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  };</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_output.html#a1830ecc821448395f5f3128175200f30">   74</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classffnn_1_1layer_1_1_output.html#a1830ecc821448395f5f3128175200f30">forward</a>()</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  };</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classffnn_1_1layer_1_1_output.html#ac34f7c18bb9f0b3cab9b9c78d9794874">   84</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classffnn_1_1layer_1_1_output.html#ac34f7c18bb9f0b3cab9b9c78d9794874">backward</a>()</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  };</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> NetworkOutputType&gt;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classffnn_1_1layer_1_1_output.html#a7e1b3e02e040b6c6522c688937ed5512">operator&gt;&gt;</a>(NetworkOutputType&amp; output);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> NetworkTargetType&gt;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classffnn_1_1layer_1_1_output.html#a47b53447b900079a0cb6f0b29acd350e">operator&lt;&lt;</a>(<span class="keyword">const</span> NetworkTargetType&amp; target);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <a class="code" href="classffnn_1_1layer_1_1_output.html#a9e57e6ca1764925cea614e32886a1568">Configuration</a> config_;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <a class="code" href="namespaceffnn.html#add5752d74b38c6e9b200f3d696fc3ec8">offset_type</a> connectToForwardLayer(<span class="keyword">const</span> <a class="code" href="classffnn_1_1layer_1_1_output.html#a9f60142c3e464fcc6cda5203895dc448">BaseType</a>&amp; next, <a class="code" href="namespaceffnn.html#add5752d74b38c6e9b200f3d696fc3ec8">offset_type</a> offset);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;};</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;}  <span class="comment">// namespace layer</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;}  <span class="comment">// namespace ffnn</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="output_8hpp.html">ffnn/impl/layer/output/output.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="preprocessor">#endif  // FFNN_LAYER_OUTPUT_OUTPUT_H</span></div>
+<div class="ttc" id="classffnn_1_1layer_1_1output_1_1_configuration_html"><div class="ttname"><a href="classffnn_1_1layer_1_1output_1_1_configuration.html">ffnn::layer::output::Configuration&lt; SelfType, ValueType, Options, Extrinsics &gt;</a></div></div>
+<div class="ttc" id="output_2compile__time__options_8h_html"><div class="ttname"><a href="output_2compile__time__options_8h.html">compile_time_options.h</a></div></div>
+<div class="ttc" id="output_8hpp_html"><div class="ttname"><a href="output_8hpp.html">output.hpp</a></div></div>
 <div class="ttc" id="layer_8h_html"><div class="ttname"><a href="layer_8h.html">layer.h</a></div></div>
-<div class="ttc" id="config_8h_html_aab5a5a098c5bf31f4176f4a141d2ef65"><div class="ttname"><a href="config_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a></div><div class="ttdeci">#define FFNN_SIZE_TYPE</div><div class="ttdef"><b>Definition:</b> config.h:38</div></div>
-<div class="ttc" id="classffnn_1_1layer_1_1_output_html_a2f4eb5c36b8b5d486410366b4cd9e7a8"><div class="ttname"><a href="classffnn_1_1layer_1_1_output.html#a2f4eb5c36b8b5d486410366b4cd9e7a8">ffnn::layer::Output::operator&gt;&gt;</a></div><div class="ttdeci">void operator&gt;&gt;(NetworkOutputType &amp;output)</div><div class="ttdoc">Get network output value. </div><div class="ttdef"><b>Definition:</b> output.hpp:77</div></div>
+<div class="ttc" id="classffnn_1_1layer_1_1_output_html_a7e1b3e02e040b6c6522c688937ed5512"><div class="ttname"><a href="classffnn_1_1layer_1_1_output.html#a7e1b3e02e040b6c6522c688937ed5512">ffnn::layer::Output::operator&gt;&gt;</a></div><div class="ttdeci">void operator&gt;&gt;(NetworkOutputType &amp;output)</div><div class="ttdoc">Get network output value. </div><div class="ttdef"><b>Definition:</b> output.hpp:87</div></div>
+<div class="ttc" id="classffnn_1_1layer_1_1_output_html_a8755e7ce13c1b45243a679a5a5376ee4"><div class="ttname"><a href="classffnn_1_1layer_1_1_output.html#a8755e7ce13c1b45243a679a5a5376ee4">ffnn::layer::Output::ShapeType</a></div><div class="ttdeci">BaseType::ShapeType ShapeType</div><div class="ttdoc">Dimension type standardization. </div><div class="ttdef"><b>Definition:</b> output.h:41</div></div>
+<div class="ttc" id="namespaceffnn_html_add5752d74b38c6e9b200f3d696fc3ec8"><div class="ttname"><a href="namespaceffnn.html#add5752d74b38c6e9b200f3d696fc3ec8">ffnn::offset_type</a></div><div class="ttdeci">FFNN_OFFSET_TYPE offset_type</div><div class="ttdef"><b>Definition:</b> config.h:79</div></div>
+<div class="ttc" id="classffnn_1_1layer_1_1_output_html_a9f60142c3e464fcc6cda5203895dc448"><div class="ttname"><a href="classffnn_1_1layer_1_1_output.html#a9f60142c3e464fcc6cda5203895dc448">ffnn::layer::Output::BaseType</a></div><div class="ttdeci">typename Extrinsics::LayerType BaseType</div><div class="ttdoc">Base type alias. </div><div class="ttdef"><b>Definition:</b> output.h:38</div></div>
 <div class="ttc" id="config_8h_html"><div class="ttname"><a href="config_8h.html">config.h</a></div></div>
-<div class="ttc" id="classffnn_1_1layer_1_1_output_html_a7e835ff550e291d2015efb76290c1b6c"><div class="ttname"><a href="classffnn_1_1layer_1_1_output.html#a7e835ff550e291d2015efb76290c1b6c">ffnn::layer::Output::~Output</a></div><div class="ttdeci">virtual ~Output()</div><div class="ttdef"><b>Definition:</b> output.hpp:25</div></div>
-<div class="ttc" id="classffnn_1_1layer_1_1_output_html_a6780ece144b80cb2be355dd65096e9db"><div class="ttname"><a href="classffnn_1_1layer_1_1_output.html#a6780ece144b80cb2be355dd65096e9db">ffnn::layer::Output::OffsetType</a></div><div class="ttdeci">Base::OffsetType OffsetType</div><div class="ttdoc">Offset type standardization. </div><div class="ttdef"><b>Definition:</b> output.h:35</div></div>
-<div class="ttc" id="classffnn_1_1layer_1_1_output_html_af7d5b0ae4ac072ada556478a12fe235f"><div class="ttname"><a href="classffnn_1_1layer_1_1_output.html#af7d5b0ae4ac072ada556478a12fe235f">ffnn::layer::Output::Output</a></div><div class="ttdeci">Output()</div><div class="ttdoc">Default constructor. </div><div class="ttdef"><b>Definition:</b> output.hpp:18</div></div>
-<div class="ttc" id="classffnn_1_1layer_1_1_output_html_ab3b7fdade20b477ce77b2fab91117a7f"><div class="ttname"><a href="classffnn_1_1layer_1_1_output.html#ab3b7fdade20b477ce77b2fab91117a7f">ffnn::layer::Output::ShapeType</a></div><div class="ttdeci">Base::ShapeType ShapeType</div><div class="ttdoc">Dimension type standardization. </div><div class="ttdef"><b>Definition:</b> output.h:38</div></div>
-<div class="ttc" id="structffnn_1_1layer_1_1_shape_html"><div class="ttname"><a href="structffnn_1_1layer_1_1_shape.html">ffnn::layer::Shape&lt; size_type &gt;</a></div></div>
-<div class="ttc" id="classffnn_1_1layer_1_1_output_html_ab37eb595864f42089dc2d0556b1f68ef"><div class="ttname"><a href="classffnn_1_1layer_1_1_output.html#ab37eb595864f42089dc2d0556b1f68ef">ffnn::layer::Output::operator&lt;&lt;</a></div><div class="ttdeci">void operator&lt;&lt;(const NetworkTargetType &amp;target)</div><div class="ttdoc">Set network output-target value. </div><div class="ttdef"><b>Definition:</b> output.hpp:91</div></div>
-<div class="ttc" id="classffnn_1_1layer_1_1_output_html"><div class="ttname"><a href="classffnn_1_1layer_1_1_output.html">ffnn::layer::Output</a></div><div class="ttdoc">A layer which handles network outputs. </div><div class="ttdef"><b>Definition:</b> output.h:24</div></div>
-<div class="ttc" id="classffnn_1_1layer_1_1_output_html_ab9ebd05595bc6b75718191aa48e70ad2"><div class="ttname"><a href="classffnn_1_1layer_1_1_output.html#ab9ebd05595bc6b75718191aa48e70ad2">ffnn::layer::Output::initialize</a></div><div class="ttdeci">bool initialize()</div><div class="ttdoc">Initialize the layer. </div><div class="ttdef"><b>Definition:</b> output.hpp:31</div></div>
-<div class="ttc" id="classffnn_1_1layer_1_1_output_html_a5e41de6c9249494dd9c6a819d7a30e20"><div class="ttname"><a href="classffnn_1_1layer_1_1_output.html#a5e41de6c9249494dd9c6a819d7a30e20">ffnn::layer::Output::SizeType</a></div><div class="ttdeci">Base::SizeType SizeType</div><div class="ttdoc">Size type standardization. </div><div class="ttdef"><b>Definition:</b> output.h:32</div></div>
-<div class="ttc" id="classffnn_1_1layer_1_1_layer_html"><div class="ttname"><a href="classffnn_1_1layer_1_1_layer.html">ffnn::layer::Layer</a></div><div class="ttdoc">Base object for all layer types. </div><div class="ttdef"><b>Definition:</b> layer.h:26</div></div>
+<div class="ttc" id="classffnn_1_1layer_1_1_output_html_a1830ecc821448395f5f3128175200f30"><div class="ttname"><a href="classffnn_1_1layer_1_1_output.html#a1830ecc821448395f5f3128175200f30">ffnn::layer::Output::forward</a></div><div class="ttdeci">bool forward()</div><div class="ttdoc">Forward value propagation. </div><div class="ttdef"><b>Definition:</b> output.h:74</div></div>
+<div class="ttc" id="assert_8h_html"><div class="ttname"><a href="assert_8h.html">assert.h</a></div></div>
+<div class="ttc" id="classffnn_1_1layer_1_1_output_html_adbe7b418cbcae313ab79ffa79cc00f74"><div class="ttname"><a href="classffnn_1_1layer_1_1_output.html#adbe7b418cbcae313ab79ffa79cc00f74">ffnn::layer::Output::~Output</a></div><div class="ttdeci">virtual ~Output()</div><div class="ttdef"><b>Definition:</b> output.hpp:29</div></div>
+<div class="ttc" id="classffnn_1_1layer_1_1_output_html_aba563bb3b8984fe99d87872364367131"><div class="ttname"><a href="classffnn_1_1layer_1_1_output.html#aba563bb3b8984fe99d87872364367131">ffnn::layer::Output::Output</a></div><div class="ttdeci">Output(const Configuration &amp;config=Configuration())</div><div class="ttdoc">Setup constructor. </div><div class="ttdef"><b>Definition:</b> output.hpp:18</div></div>
+<div class="ttc" id="classffnn_1_1layer_1_1_output_html_ac34f7c18bb9f0b3cab9b9c78d9794874"><div class="ttname"><a href="classffnn_1_1layer_1_1_output.html#ac34f7c18bb9f0b3cab9b9c78d9794874">ffnn::layer::Output::backward</a></div><div class="ttdeci">bool backward()</div><div class="ttdoc">Backward value propagation. </div><div class="ttdef"><b>Definition:</b> output.h:84</div></div>
+<div class="ttc" id="output_2configuration_8h_html"><div class="ttname"><a href="output_2configuration_8h.html">configuration.h</a></div></div>
+<div class="ttc" id="classffnn_1_1layer_1_1_output_html_a47b53447b900079a0cb6f0b29acd350e"><div class="ttname"><a href="classffnn_1_1layer_1_1_output.html#a47b53447b900079a0cb6f0b29acd350e">ffnn::layer::Output::operator&lt;&lt;</a></div><div class="ttdeci">void operator&lt;&lt;(const NetworkTargetType &amp;target)</div><div class="ttdoc">Set network output-target value. </div><div class="ttdef"><b>Definition:</b> output.hpp:103</div></div>
+<div class="ttc" id="classffnn_1_1layer_1_1_output_html_a8edca90e7ac402cd24c9872cf784a4de"><div class="ttname"><a href="classffnn_1_1layer_1_1_output.html#a8edca90e7ac402cd24c9872cf784a4de">ffnn::layer::Output::initialize</a></div><div class="ttdeci">bool initialize()</div><div class="ttdoc">Initialize the layer. </div><div class="ttdef"><b>Definition:</b> output.hpp:38</div></div>
+<div class="ttc" id="classffnn_1_1layer_1_1_output_html"><div class="ttname"><a href="classffnn_1_1layer_1_1_output.html">ffnn::layer::Output</a></div><div class="ttdoc">A layer which handles network outputs. </div><div class="ttdef"><b>Definition:</b> output.h:29</div></div>
+<div class="ttc" id="classffnn_1_1layer_1_1_output_html_a9e57e6ca1764925cea614e32886a1568"><div class="ttname"><a href="classffnn_1_1layer_1_1_output.html#a9e57e6ca1764925cea614e32886a1568">ffnn::layer::Output::Configuration</a></div><div class="ttdeci">output::Configuration&lt; SelfType, ValueType, Options, Extrinsics &gt; Configuration</div><div class="ttdoc">Configuration type standardization. </div><div class="ttdef"><b>Definition:</b> output.h:44</div></div>
+<div class="ttc" id="shape_8h_html"><div class="ttname"><a href="shape_8h.html">shape.h</a></div></div>
+<div class="ttc" id="classffnn_1_1layer_1_1_output_html_a923a4e72deaa227aa1635dcfb5220ec3"><div class="ttname"><a href="classffnn_1_1layer_1_1_output.html#a923a4e72deaa227aa1635dcfb5220ec3">ffnn::layer::Output::update</a></div><div class="ttdeci">bool update()</div><div class="ttdoc">Applies layer weight updates. </div><div class="ttdef"><b>Definition:</b> output.h:64</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jun 3 2017 23:40:28 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 8 2017 01:08:56 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

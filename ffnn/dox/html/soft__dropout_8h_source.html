@@ -112,7 +112,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classffnn_1_1neuron_1_1modifier_1_1_soft_dropout.html">   25</a></span>&#160;<span class="keyword">class </span><a class="code" href="classffnn_1_1neuron_1_1modifier_1_1_soft_dropout.html">SoftDropout</a> :</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keyword">public</span> NeuronType</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  FFNN_STATIC_ASSERT(<a class="code" href="structffnn_1_1neuron_1_1is__neuron.html">is_neuron&lt;NeuronType&gt;::value</a>, <span class="stringliteral">&quot;NeuronType is not a valid Neuron object.&quot;</span>);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  FFNN_STATIC_ASSERT(is_neuron&lt;NeuronType&gt;::value, <span class="stringliteral">&quot;NeuronType is not a valid Neuron object.&quot;</span>);</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classffnn_1_1neuron_1_1modifier_1_1_soft_dropout.html#a585dcf20ba5a21dd2101439de89addcb">   31</a></span>&#160;  <a class="code" href="classffnn_1_1neuron_1_1modifier_1_1_soft_dropout.html#a585dcf20ba5a21dd2101439de89addcb">SoftDropout</a>() :</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    probability_(static_cast&lt;ValueType&gt;(_P)/static_cast&lt;ValueType&gt;(_B)),</div>
@@ -147,14 +147,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="config_8h_html_aab5a5a098c5bf31f4176f4a141d2ef65"><div class="ttname"><a href="config_8h.html#aab5a5a098c5bf31f4176f4a141d2ef65">FFNN_SIZE_TYPE</a></div><div class="ttdeci">#define FFNN_SIZE_TYPE</div><div class="ttdef"><b>Definition:</b> config.h:38</div></div>
 <div class="ttc" id="config_8h_html"><div class="ttname"><a href="config_8h.html">config.h</a></div></div>
 <div class="ttc" id="classffnn_1_1neuron_1_1modifier_1_1_soft_dropout_html_a70ddf36c1544b6231f19f3c685903e2d"><div class="ttname"><a href="classffnn_1_1neuron_1_1modifier_1_1_soft_dropout.html#a70ddf36c1544b6231f19f3c685903e2d">ffnn::neuron::modifier::SoftDropout::operator()</a></div><div class="ttdeci">virtual void operator()(const ValueType &amp;input, ValueType &amp;output)</div><div class="ttdoc">Computes activation output. </div><div class="ttdef"><b>Definition:</b> soft_dropout.h:41</div></div>
-<div class="ttc" id="structffnn_1_1neuron_1_1is__neuron_html"><div class="ttname"><a href="structffnn_1_1neuron_1_1is__neuron.html">ffnn::neuron::is_neuron</a></div><div class="ttdef"><b>Definition:</b> neuron.h:16</div></div>
 <div class="ttc" id="classffnn_1_1neuron_1_1modifier_1_1_soft_dropout_html_adca41d7ad260188d4b0cfb1c21a1037a"><div class="ttname"><a href="classffnn_1_1neuron_1_1modifier_1_1_soft_dropout.html#adca41d7ad260188d4b0cfb1c21a1037a">ffnn::neuron::modifier::SoftDropout::derivative</a></div><div class="ttdeci">virtual void derivative(const ValueType &amp;input, ValueType &amp;output) const </div><div class="ttdoc">Computes first-order activation derivative. </div><div class="ttdef"><b>Definition:</b> soft_dropout.h:56</div></div>
 <div class="ttc" id="classffnn_1_1neuron_1_1modifier_1_1_soft_dropout_html"><div class="ttname"><a href="classffnn_1_1neuron_1_1modifier_1_1_soft_dropout.html">ffnn::neuron::modifier::SoftDropout</a></div><div class="ttdef"><b>Definition:</b> soft_dropout.h:25</div></div>
 <div class="ttc" id="classffnn_1_1neuron_1_1modifier_1_1_soft_dropout_html_a585dcf20ba5a21dd2101439de89addcb"><div class="ttname"><a href="classffnn_1_1neuron_1_1modifier_1_1_soft_dropout.html#a585dcf20ba5a21dd2101439de89addcb">ffnn::neuron::modifier::SoftDropout::SoftDropout</a></div><div class="ttdeci">SoftDropout()</div><div class="ttdoc">Default constructor. </div><div class="ttdef"><b>Definition:</b> soft_dropout.h:31</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jun 3 2017 23:40:28 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 8 2017 01:08:56 for FFNN by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

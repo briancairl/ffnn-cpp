@@ -2,6 +2,7 @@ var searchData=
 [
   ['ffnn_5fassert',['FFNN_ASSERT',['../assert_8h.html#acebc1a2cbd18085c2c24e2fe4311451b',1,'assert.h']]],
   ['ffnn_5fassert_5fdont_5fmodify_5fextrinsics',['FFNN_ASSERT_DONT_MODIFY_EXTRINSICS',['../assert_8h.html#abb0f32cd720478346d8bd674d9c91a37',1,'assert.h']]],
+  ['ffnn_5fassert_5fdont_5fmodify_5fextrinsics_5fext',['FFNN_ASSERT_DONT_MODIFY_EXTRINSICS_EXT',['../assert_8h.html#a2a84c4ada6062ce37b58e83f003895dd',1,'assert.h']]],
   ['ffnn_5fassert_5fmsg',['FFNN_ASSERT_MSG',['../assert_8h.html#a0dd452510e5d75d0f71f52ed14143c40',1,'assert.h']]],
   ['ffnn_5fdebug',['FFNN_DEBUG',['../logging_8h.html#ab12173b0787af69f3f1a39acd2bee8f1',1,'logging.h']]],
   ['ffnn_5fdebug_5fnamed',['FFNN_DEBUG_NAMED',['../logging_8h.html#ad17a22e477672ae24ca9afe0abf1b46f',1,'logging.h']]],
@@ -13,8 +14,8 @@ var searchData=
   ['ffnn_5flogging_5finternal',['FFNN_LOGGING_INTERNAL',['../logging_8h.html#a5560ab7db73098518421abecd72facb4',1,'logging.h']]],
   ['ffnn_5fname_5fheader',['FFNN_NAME_HEADER',['../logging_8h.html#a84a92aec634f13a63f5686cc262a0815',1,'logging.h']]],
   ['ffnn_5foffset_5ftype',['FFNN_OFFSET_TYPE',['../config_8h.html#af04b6e835b960cffc7ed05dfd1685ba0',1,'config.h']]],
-  ['ffnn_5fregister_5foptimizer',['FFNN_REGISTER_OPTIMIZER',['../optimizer_8h.html#aee9e218ffa031741b9f3f53cc580a09f',1,'optimizer.h']]],
-  ['ffnn_5fregister_5fserializable',['FFNN_REGISTER_SERIALIZABLE',['../serializable_8h.html#a3937bc18361c33fe981fe2725f70ebc5',1,'serializable.h']]],
+  ['ffnn_5fregister_5foptimizer',['FFNN_REGISTER_OPTIMIZER',['../optimizer_8h.html#a460eae8d9b08dc6ebaf81a71ab60e567',1,'optimizer.h']]],
+  ['ffnn_5fregister_5fserializable',['FFNN_REGISTER_SERIALIZABLE',['../serializable_8h.html#af9481893b80466c6d155a02167fb94a2',1,'serializable.h']]],
   ['ffnn_5fserialization_5finput_5farchive_5ftype',['FFNN_SERIALIZATION_INPUT_ARCHIVE_TYPE',['../config_8h.html#aa6057cb3965fa4db202231a2817b960b',1,'config.h']]],
   ['ffnn_5fserialization_5foutput_5farchive_5ftype',['FFNN_SERIALIZATION_OUTPUT_ARCHIVE_TYPE',['../config_8h.html#a5c59f6dbef7cac034dd58fc9752c9ea6',1,'config.h']]],
   ['ffnn_5fserialization_5fversion_5ftype',['FFNN_SERIALIZATION_VERSION_TYPE',['../config_8h.html#a0678a9de3e627b6d8dbba2f2733b4bab',1,'config.h']]],

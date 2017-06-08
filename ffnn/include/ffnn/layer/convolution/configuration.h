@@ -31,8 +31,6 @@ template<typename LayerType,
 class Configuration
 {
 public:
-  friend LayerType;
-
   /// Shape type standardization
   typedef typename LayerType::ShapeType ShapeType;
 
@@ -137,7 +135,6 @@ public:
     return resolve();
   }
 
-private:
   /**
    * @brief Recompute sizing config from user inputs
    * @return *this

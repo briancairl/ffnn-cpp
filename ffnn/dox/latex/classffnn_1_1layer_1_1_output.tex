@@ -1,5 +1,5 @@
-\hypertarget{classffnn_1_1layer_1_1_output}{\section{ffnn\-:\-:layer\-:\-:Output$<$ Value\-Type, Network\-Outputs\-At\-Compile\-Time $>$ Class Template Reference}
-\label{classffnn_1_1layer_1_1_output}\index{ffnn\-::layer\-::\-Output$<$ Value\-Type, Network\-Outputs\-At\-Compile\-Time $>$@{ffnn\-::layer\-::\-Output$<$ Value\-Type, Network\-Outputs\-At\-Compile\-Time $>$}}
+\hypertarget{classffnn_1_1layer_1_1_output}{\section{ffnn\-:\-:layer\-:\-:Output$<$ Value\-Type, Options, Extrinsics $>$ Class Template Reference}
+\label{classffnn_1_1layer_1_1_output}\index{ffnn\-::layer\-::\-Output$<$ Value\-Type, Options, Extrinsics $>$@{ffnn\-::layer\-::\-Output$<$ Value\-Type, Options, Extrinsics $>$}}
 }
 
 
@@ -12,129 +12,175 @@ A layer which handles network outputs.
 
 
 
-Inheritance diagram for ffnn\-:\-:layer\-:\-:Output$<$ Value\-Type, Network\-Outputs\-At\-Compile\-Time $>$\-:\nopagebreak
+Inheritance diagram for ffnn\-:\-:layer\-:\-:Output$<$ Value\-Type, Options, Extrinsics $>$\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=228pt]{classffnn_1_1layer_1_1_output__inherit__graph}
+\includegraphics[width=194pt]{classffnn_1_1layer_1_1_output__inherit__graph}
 \end{center}
 \end{figure}
 
 
-Collaboration diagram for ffnn\-:\-:layer\-:\-:Output$<$ Value\-Type, Network\-Outputs\-At\-Compile\-Time $>$\-:\nopagebreak
+Collaboration diagram for ffnn\-:\-:layer\-:\-:Output$<$ Value\-Type, Options, Extrinsics $>$\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=318pt]{classffnn_1_1layer_1_1_output__coll__graph}
+\includegraphics[width=194pt]{classffnn_1_1layer_1_1_output__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-using \hyperlink{classffnn_1_1layer_1_1_output_a76c3074490fd13bd2cdd86f53322da45}{Base} = \hyperlink{classffnn_1_1layer_1_1_layer}{Layer}$<$ Value\-Type $>$
+using \hyperlink{classffnn_1_1layer_1_1_output_a372fcfc142bc62cb466ad6b5a4feeaa2}{Self\-Type} = \hyperlink{classffnn_1_1layer_1_1_output}{Output}$<$ Value\-Type, Options, Extrinsics $>$
+\begin{DoxyCompactList}\small\item\em Self type alias. \end{DoxyCompactList}\item 
+using \hyperlink{classffnn_1_1layer_1_1_output_a9f60142c3e464fcc6cda5203895dc448}{Base\-Type} = typename Extrinsics\-::\-Layer\-Type
 \begin{DoxyCompactList}\small\item\em Base type alias. \end{DoxyCompactList}\item 
-typedef Base\-::\-Size\-Type \hyperlink{classffnn_1_1layer_1_1_output_a5e41de6c9249494dd9c6a819d7a30e20}{Size\-Type}
-\begin{DoxyCompactList}\small\item\em Size type standardization. \end{DoxyCompactList}\item 
-typedef Base\-::\-Offset\-Type \hyperlink{classffnn_1_1layer_1_1_output_a6780ece144b80cb2be355dd65096e9db}{Offset\-Type}
-\begin{DoxyCompactList}\small\item\em Offset type standardization. \end{DoxyCompactList}\item 
-typedef \hyperlink{classffnn_1_1layer_1_1_layer_ae2f2d0063ab4b2c2a3a6ebf81f4ec32f}{Base\-::\-Shape\-Type} \hyperlink{classffnn_1_1layer_1_1_output_ab3b7fdade20b477ce77b2fab91117a7f}{Shape\-Type}
-\begin{DoxyCompactList}\small\item\em Dimension type standardization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+typedef Base\-Type\-::\-Shape\-Type \hyperlink{classffnn_1_1layer_1_1_output_a8755e7ce13c1b45243a679a5a5376ee4}{Shape\-Type}
+\begin{DoxyCompactList}\small\item\em Dimension type standardization. \end{DoxyCompactList}\item 
+typedef \hyperlink{classffnn_1_1layer_1_1output_1_1_configuration}{output\-::\-Configuration}\\*
+$<$ \hyperlink{classffnn_1_1layer_1_1_output_a372fcfc142bc62cb466ad6b5a4feeaa2}{Self\-Type}, Value\-Type, Options, \\*
+Extrinsics $>$ \hyperlink{classffnn_1_1layer_1_1_output_a9e57e6ca1764925cea614e32886a1568}{Configuration}
+\begin{DoxyCompactList}\small\item\em Configuration type standardization. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classffnn_1_1layer_1_1_output_af7d5b0ae4ac072ada556478a12fe235f}{Output} ()
-\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
-virtual \hyperlink{classffnn_1_1layer_1_1_output_a7e835ff550e291d2015efb76290c1b6c}{$\sim$\-Output} ()
+\hyperlink{classffnn_1_1layer_1_1_output_aba563bb3b8984fe99d87872364367131}{Output} (const \hyperlink{classffnn_1_1layer_1_1_output_a9e57e6ca1764925cea614e32886a1568}{Configuration} \&config=\hyperlink{classffnn_1_1layer_1_1_output_a9e57e6ca1764925cea614e32886a1568}{Configuration}())
+\begin{DoxyCompactList}\small\item\em Setup constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classffnn_1_1layer_1_1_output_adbe7b418cbcae313ab79ffa79cc00f74}{$\sim$\-Output} ()
 \item 
-bool \hyperlink{classffnn_1_1layer_1_1_output_ab9ebd05595bc6b75718191aa48e70ad2}{initialize} ()
+bool \hyperlink{classffnn_1_1layer_1_1_output_a8edca90e7ac402cd24c9872cf784a4de}{initialize} ()
 \begin{DoxyCompactList}\small\item\em Initialize the layer. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Network\-Output\-Type $>$ }\\void \hyperlink{classffnn_1_1layer_1_1_output_a2f4eb5c36b8b5d486410366b4cd9e7a8}{operator$>$$>$} (Network\-Output\-Type \&output)
+bool \hyperlink{classffnn_1_1layer_1_1_output_a923a4e72deaa227aa1635dcfb5220ec3}{update} ()
+\begin{DoxyCompactList}\small\item\em Applies layer weight updates. \end{DoxyCompactList}\item 
+bool \hyperlink{classffnn_1_1layer_1_1_output_a1830ecc821448395f5f3128175200f30}{forward} ()
+\begin{DoxyCompactList}\small\item\em Forward value propagation. \end{DoxyCompactList}\item 
+bool \hyperlink{classffnn_1_1layer_1_1_output_ac34f7c18bb9f0b3cab9b9c78d9794874}{backward} ()
+\begin{DoxyCompactList}\small\item\em Backward value propagation. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Network\-Output\-Type $>$ }\\void \hyperlink{classffnn_1_1layer_1_1_output_a7e1b3e02e040b6c6522c688937ed5512}{operator$>$$>$} (Network\-Output\-Type \&output)
 \begin{DoxyCompactList}\small\item\em Get network output value. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename Network\-Target\-Type $>$ }\\void \hyperlink{classffnn_1_1layer_1_1_output_ab37eb595864f42089dc2d0556b1f68ef}{operator$<$$<$} (const Network\-Target\-Type \&target)
+{\footnotesize template$<$typename Network\-Target\-Type $>$ }\\void \hyperlink{classffnn_1_1layer_1_1_output_a47b53447b900079a0cb6f0b29acd350e}{operator$<$$<$} (const Network\-Target\-Type \&target)
 \begin{DoxyCompactList}\small\item\em Set network output-\/target value. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Additional Inherited Members}
 
 
 \subsection{Detailed Description}
-\subsubsection*{template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Network\-Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic$>$class ffnn\-::layer\-::\-Output$<$ Value\-Type, Network\-Outputs\-At\-Compile\-Time $>$}
+\subsubsection*{template$<$typename Value\-Type, typename Options = output\-::options$<$$>$, typename Extrinsics = output\-::extrinsics$<$\-Value\-Type, Options$>$$>$class ffnn\-::layer\-::\-Output$<$ Value\-Type, Options, Extrinsics $>$}
 
 A layer which handles network outputs. 
 
 \subsection{Member Typedef Documentation}
-\hypertarget{classffnn_1_1layer_1_1_output_a76c3074490fd13bd2cdd86f53322da45}{\index{ffnn\-::layer\-::\-Output@{ffnn\-::layer\-::\-Output}!Base@{Base}}
-\index{Base@{Base}!ffnn::layer::Output@{ffnn\-::layer\-::\-Output}}
-\subsubsection[{Base}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Network\-Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic$>$ using {\bf ffnn\-::layer\-::\-Output}$<$ Value\-Type, Network\-Outputs\-At\-Compile\-Time $>$\-::{\bf Base} =  {\bf Layer}$<$Value\-Type$>$}}\label{classffnn_1_1layer_1_1_output_a76c3074490fd13bd2cdd86f53322da45}
+\hypertarget{classffnn_1_1layer_1_1_output_a9f60142c3e464fcc6cda5203895dc448}{\index{ffnn\-::layer\-::\-Output@{ffnn\-::layer\-::\-Output}!Base\-Type@{Base\-Type}}
+\index{Base\-Type@{Base\-Type}!ffnn::layer::Output@{ffnn\-::layer\-::\-Output}}
+\subsubsection[{Base\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = output\-::options$<$$>$, typename Extrinsics  = output\-::extrinsics$<$\-Value\-Type, Options$>$$>$ using {\bf ffnn\-::layer\-::\-Output}$<$ Value\-Type, Options, Extrinsics $>$\-::{\bf Base\-Type} =  typename Extrinsics\-::\-Layer\-Type}}\label{classffnn_1_1layer_1_1_output_a9f60142c3e464fcc6cda5203895dc448}
 
 
 Base type alias. 
 
-\hypertarget{classffnn_1_1layer_1_1_output_a6780ece144b80cb2be355dd65096e9db}{\index{ffnn\-::layer\-::\-Output@{ffnn\-::layer\-::\-Output}!Offset\-Type@{Offset\-Type}}
-\index{Offset\-Type@{Offset\-Type}!ffnn::layer::Output@{ffnn\-::layer\-::\-Output}}
-\subsubsection[{Offset\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Network\-Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic$>$ typedef Base\-::\-Offset\-Type {\bf ffnn\-::layer\-::\-Output}$<$ Value\-Type, Network\-Outputs\-At\-Compile\-Time $>$\-::{\bf Offset\-Type}}}\label{classffnn_1_1layer_1_1_output_a6780ece144b80cb2be355dd65096e9db}
+\hypertarget{classffnn_1_1layer_1_1_output_a9e57e6ca1764925cea614e32886a1568}{\index{ffnn\-::layer\-::\-Output@{ffnn\-::layer\-::\-Output}!Configuration@{Configuration}}
+\index{Configuration@{Configuration}!ffnn::layer::Output@{ffnn\-::layer\-::\-Output}}
+\subsubsection[{Configuration}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = output\-::options$<$$>$, typename Extrinsics  = output\-::extrinsics$<$\-Value\-Type, Options$>$$>$ typedef {\bf output\-::\-Configuration}$<${\bf Self\-Type}, Value\-Type, Options, Extrinsics$>$ {\bf ffnn\-::layer\-::\-Output}$<$ Value\-Type, Options, Extrinsics $>$\-::{\bf Configuration}}}\label{classffnn_1_1layer_1_1_output_a9e57e6ca1764925cea614e32886a1568}
 
 
-Offset type standardization. 
+Configuration type standardization. 
 
-\hypertarget{classffnn_1_1layer_1_1_output_ab3b7fdade20b477ce77b2fab91117a7f}{\index{ffnn\-::layer\-::\-Output@{ffnn\-::layer\-::\-Output}!Shape\-Type@{Shape\-Type}}
+\hypertarget{classffnn_1_1layer_1_1_output_a372fcfc142bc62cb466ad6b5a4feeaa2}{\index{ffnn\-::layer\-::\-Output@{ffnn\-::layer\-::\-Output}!Self\-Type@{Self\-Type}}
+\index{Self\-Type@{Self\-Type}!ffnn::layer::Output@{ffnn\-::layer\-::\-Output}}
+\subsubsection[{Self\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = output\-::options$<$$>$, typename Extrinsics  = output\-::extrinsics$<$\-Value\-Type, Options$>$$>$ using {\bf ffnn\-::layer\-::\-Output}$<$ Value\-Type, Options, Extrinsics $>$\-::{\bf Self\-Type} =  {\bf Output}$<$Value\-Type, Options, Extrinsics$>$}}\label{classffnn_1_1layer_1_1_output_a372fcfc142bc62cb466ad6b5a4feeaa2}
+
+
+Self type alias. 
+
+\hypertarget{classffnn_1_1layer_1_1_output_a8755e7ce13c1b45243a679a5a5376ee4}{\index{ffnn\-::layer\-::\-Output@{ffnn\-::layer\-::\-Output}!Shape\-Type@{Shape\-Type}}
 \index{Shape\-Type@{Shape\-Type}!ffnn::layer::Output@{ffnn\-::layer\-::\-Output}}
-\subsubsection[{Shape\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Network\-Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic$>$ typedef {\bf Base\-::\-Shape\-Type} {\bf ffnn\-::layer\-::\-Output}$<$ Value\-Type, Network\-Outputs\-At\-Compile\-Time $>$\-::{\bf Shape\-Type}}}\label{classffnn_1_1layer_1_1_output_ab3b7fdade20b477ce77b2fab91117a7f}
+\subsubsection[{Shape\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = output\-::options$<$$>$, typename Extrinsics  = output\-::extrinsics$<$\-Value\-Type, Options$>$$>$ typedef Base\-Type\-::\-Shape\-Type {\bf ffnn\-::layer\-::\-Output}$<$ Value\-Type, Options, Extrinsics $>$\-::{\bf Shape\-Type}}}\label{classffnn_1_1layer_1_1_output_a8755e7ce13c1b45243a679a5a5376ee4}
 
 
 Dimension type standardization. 
 
-\hypertarget{classffnn_1_1layer_1_1_output_a5e41de6c9249494dd9c6a819d7a30e20}{\index{ffnn\-::layer\-::\-Output@{ffnn\-::layer\-::\-Output}!Size\-Type@{Size\-Type}}
-\index{Size\-Type@{Size\-Type}!ffnn::layer::Output@{ffnn\-::layer\-::\-Output}}
-\subsubsection[{Size\-Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type, F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Network\-Outputs\-At\-Compile\-Time = Eigen\-::\-Dynamic$>$ typedef Base\-::\-Size\-Type {\bf ffnn\-::layer\-::\-Output}$<$ Value\-Type, Network\-Outputs\-At\-Compile\-Time $>$\-::{\bf Size\-Type}}}\label{classffnn_1_1layer_1_1_output_a5e41de6c9249494dd9c6a819d7a30e20}
-
-
-Size type standardization. 
-
 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classffnn_1_1layer_1_1_output_af7d5b0ae4ac072ada556478a12fe235f}{\index{ffnn\-::layer\-::\-Output@{ffnn\-::layer\-::\-Output}!Output@{Output}}
+\hypertarget{classffnn_1_1layer_1_1_output_aba563bb3b8984fe99d87872364367131}{\index{ffnn\-::layer\-::\-Output@{ffnn\-::layer\-::\-Output}!Output@{Output}}
 \index{Output@{Output}!ffnn::layer::Output@{ffnn\-::layer\-::\-Output}}
-\subsubsection[{Output}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Network\-Outputs\-At\-Compile\-Time$>$ {\bf ffnn\-::layer\-::\-Output}$<$ Value\-Type, Network\-Outputs\-At\-Compile\-Time $>$\-::{\bf Output} (
+\subsubsection[{Output}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options , typename Extrinsics $>$ {\bf ffnn\-::layer\-::\-Output}$<$ Value\-Type, Options, Extrinsics $>$\-::{\bf Output} (
 \begin{DoxyParamCaption}
-{}
+\item[{const {\bf Configuration} \&}]{config = {\ttfamily {\bf Configuration}()}}
 \end{DoxyParamCaption}
-)}}\label{classffnn_1_1layer_1_1_output_af7d5b0ae4ac072ada556478a12fe235f}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classffnn_1_1layer_1_1_output_aba563bb3b8984fe99d87872364367131}
 
 
-Default constructor. 
+Setup constructor. 
 
-\hypertarget{classffnn_1_1layer_1_1_output_a7e835ff550e291d2015efb76290c1b6c}{\index{ffnn\-::layer\-::\-Output@{ffnn\-::layer\-::\-Output}!$\sim$\-Output@{$\sim$\-Output}}
+
+\begin{DoxyParams}{Parameters}
+{\em config} & layer configuration \\
+\hline
+\end{DoxyParams}
+\hypertarget{classffnn_1_1layer_1_1_output_adbe7b418cbcae313ab79ffa79cc00f74}{\index{ffnn\-::layer\-::\-Output@{ffnn\-::layer\-::\-Output}!$\sim$\-Output@{$\sim$\-Output}}
 \index{$\sim$\-Output@{$\sim$\-Output}!ffnn::layer::Output@{ffnn\-::layer\-::\-Output}}
-\subsubsection[{$\sim$\-Output}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Network\-Outputs\-At\-Compile\-Time$>$ {\bf ffnn\-::layer\-::\-Output}$<$ Value\-Type, Network\-Outputs\-At\-Compile\-Time $>$\-::$\sim${\bf Output} (
+\subsubsection[{$\sim$\-Output}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options , typename Extrinsics $>$ {\bf ffnn\-::layer\-::\-Output}$<$ Value\-Type, Options, Extrinsics $>$\-::$\sim${\bf Output} (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_output_a7e835ff550e291d2015efb76290c1b6c}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_output_adbe7b418cbcae313ab79ffa79cc00f74}
 
 
 \subsection{Member Function Documentation}
-\hypertarget{classffnn_1_1layer_1_1_output_ab9ebd05595bc6b75718191aa48e70ad2}{\index{ffnn\-::layer\-::\-Output@{ffnn\-::layer\-::\-Output}!initialize@{initialize}}
-\index{initialize@{initialize}!ffnn::layer::Output@{ffnn\-::layer\-::\-Output}}
-\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Network\-Outputs\-At\-Compile\-Time$>$ bool {\bf ffnn\-::layer\-::\-Output}$<$ Value\-Type, Network\-Outputs\-At\-Compile\-Time $>$\-::initialize (
+\hypertarget{classffnn_1_1layer_1_1_output_ac34f7c18bb9f0b3cab9b9c78d9794874}{\index{ffnn\-::layer\-::\-Output@{ffnn\-::layer\-::\-Output}!backward@{backward}}
+\index{backward@{backward}!ffnn::layer::Output@{ffnn\-::layer\-::\-Output}}
+\subsubsection[{backward}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = output\-::options$<$$>$, typename Extrinsics  = output\-::extrinsics$<$\-Value\-Type, Options$>$$>$ bool {\bf ffnn\-::layer\-::\-Output}$<$ Value\-Type, Options, Extrinsics $>$\-::backward (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classffnn_1_1layer_1_1_output_ab9ebd05595bc6b75718191aa48e70ad2}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1_output_ac34f7c18bb9f0b3cab9b9c78d9794874}
+
+
+Backward value propagation. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & if backward-\/propagation succeeded \\
+\hline
+{\em false} & otherwise \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{classffnn_1_1layer_1_1_output_a1830ecc821448395f5f3128175200f30}{\index{ffnn\-::layer\-::\-Output@{ffnn\-::layer\-::\-Output}!forward@{forward}}
+\index{forward@{forward}!ffnn::layer::Output@{ffnn\-::layer\-::\-Output}}
+\subsubsection[{forward}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = output\-::options$<$$>$, typename Extrinsics  = output\-::extrinsics$<$\-Value\-Type, Options$>$$>$ bool {\bf ffnn\-::layer\-::\-Output}$<$ Value\-Type, Options, Extrinsics $>$\-::forward (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1_output_a1830ecc821448395f5f3128175200f30}
+
+
+Forward value propagation. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & if forward-\/propagation succeeded \\
+\hline
+{\em false} & otherwise \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{classffnn_1_1layer_1_1_output_a8edca90e7ac402cd24c9872cf784a4de}{\index{ffnn\-::layer\-::\-Output@{ffnn\-::layer\-::\-Output}!initialize@{initialize}}
+\index{initialize@{initialize}!ffnn::layer::Output@{ffnn\-::layer\-::\-Output}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options , typename Extrinsics $>$ bool {\bf ffnn\-::layer\-::\-Output}$<$ Value\-Type, Options, Extrinsics $>$\-::initialize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classffnn_1_1layer_1_1_output_a8edca90e7ac402cd24c9872cf784a4de}
 
 
 Initialize the layer. 
 
-
-
-Reimplemented from \hyperlink{classffnn_1_1layer_1_1_layer_ae8a7daa81382a7965b8ab8861da7e522}{ffnn\-::layer\-::\-Layer$<$ Value\-Type $>$}.
-
-\hypertarget{classffnn_1_1layer_1_1_output_ab37eb595864f42089dc2d0556b1f68ef}{\index{ffnn\-::layer\-::\-Output@{ffnn\-::layer\-::\-Output}!operator$<$$<$@{operator$<$$<$}}
+\hypertarget{classffnn_1_1layer_1_1_output_a47b53447b900079a0cb6f0b29acd350e}{\index{ffnn\-::layer\-::\-Output@{ffnn\-::layer\-::\-Output}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!ffnn::layer::Output@{ffnn\-::layer\-::\-Output}}
-\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Network\-Outputs\-At\-Compile\-Time$>$ template$<$typename Network\-Target\-Type $>$ void {\bf ffnn\-::layer\-::\-Output}$<$ Value\-Type, Network\-Outputs\-At\-Compile\-Time $>$\-::operator$<$$<$ (
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options , typename Extrinsics $>$ template$<$typename Network\-Target\-Type $>$ void {\bf ffnn\-::layer\-::\-Output}$<$ Value\-Type, Options, Extrinsics $>$\-::operator$<$$<$ (
 \begin{DoxyParamCaption}
 \item[{const Network\-Target\-Type \&}]{target}
 \end{DoxyParamCaption}
-)}}\label{classffnn_1_1layer_1_1_output_ab37eb595864f42089dc2d0556b1f68ef}
+)}}\label{classffnn_1_1layer_1_1_output_a47b53447b900079a0cb6f0b29acd350e}
 
 
 Set network output-\/target value. 
@@ -154,20 +200,20 @@ Set network output-\/target value.
 \begin{DoxyWarning}{Warning}
 This method does not check element type correctness 
 \end{DoxyWarning}
-\hypertarget{classffnn_1_1layer_1_1_output_a2f4eb5c36b8b5d486410366b4cd9e7a8}{\index{ffnn\-::layer\-::\-Output@{ffnn\-::layer\-::\-Output}!operator$>$$>$@{operator$>$$>$}}
+\hypertarget{classffnn_1_1layer_1_1_output_a7e1b3e02e040b6c6522c688937ed5512}{\index{ffnn\-::layer\-::\-Output@{ffnn\-::layer\-::\-Output}!operator$>$$>$@{operator$>$$>$}}
 \index{operator$>$$>$@{operator$>$$>$}!ffnn::layer::Output@{ffnn\-::layer\-::\-Output}}
-\subsubsection[{operator$>$$>$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , F\-F\-N\-N\-\_\-\-S\-I\-Z\-E\-\_\-\-T\-Y\-P\-E Network\-Outputs\-At\-Compile\-Time$>$ template$<$typename Network\-Output\-Type $>$ void {\bf ffnn\-::layer\-::\-Output}$<$ Value\-Type, Network\-Outputs\-At\-Compile\-Time $>$\-::operator$>$$>$ (
+\subsubsection[{operator$>$$>$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options , typename Extrinsics $>$ template$<$typename Network\-Output\-Type $>$ void {\bf ffnn\-::layer\-::\-Output}$<$ Value\-Type, Options, Extrinsics $>$\-::operator$>$$>$ (
 \begin{DoxyParamCaption}
 \item[{Network\-Output\-Type \&}]{output}
 \end{DoxyParamCaption}
-)}}\label{classffnn_1_1layer_1_1_output_a2f4eb5c36b8b5d486410366b4cd9e7a8}
+)}}\label{classffnn_1_1layer_1_1_output_a7e1b3e02e040b6c6522c688937ed5512}
 
 
 Get network output value. 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt out}  & {\em output} & network input data \\
+\mbox{\tt out}  & {\em output} & network output data \\
 \hline
 \end{DoxyParams}
 \begin{DoxyNote}{Note}
@@ -180,9 +226,27 @@ Get network output value.
 \begin{DoxyWarning}{Warning}
 This method does not check element type correctness 
 \end{DoxyWarning}
+\hypertarget{classffnn_1_1layer_1_1_output_a923a4e72deaa227aa1635dcfb5220ec3}{\index{ffnn\-::layer\-::\-Output@{ffnn\-::layer\-::\-Output}!update@{update}}
+\index{update@{update}!ffnn::layer::Output@{ffnn\-::layer\-::\-Output}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Value\-Type , typename Options  = output\-::options$<$$>$, typename Extrinsics  = output\-::extrinsics$<$\-Value\-Type, Options$>$$>$ bool {\bf ffnn\-::layer\-::\-Output}$<$ Value\-Type, Options, Extrinsics $>$\-::update (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classffnn_1_1layer_1_1_output_a923a4e72deaa227aa1635dcfb5220ec3}
+
+
+Applies layer weight updates. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & if weight update succeeded \\
+\hline
+{\em false} & otherwise \\
+\hline
+\end{DoxyRetVals}
 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
 /home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/layer/\hyperlink{output_8h}{output.\-h}\item 
-/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/impl/layer/\hyperlink{output_8hpp}{output.\-hpp}\end{DoxyCompactItemize}
+/home/briancairl/packages/src/ffnn-\/cpp/ffnn/include/ffnn/impl/layer/output/\hyperlink{output_8hpp}{output.\-hpp}\end{DoxyCompactItemize}
