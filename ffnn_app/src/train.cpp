@@ -22,68 +22,84 @@
 #include <ffnn/layer/fully_connected.h>
 #include <ffnn/layer/convolution.h>
 #include <ffnn/layer/output.h>
-#include <ffnn/neuron/rectified_linear.h>
+#include <ffnn/neuron/leaky_rectified_linear.h>
 #include <ffnn/optimizer/gradient_descent.h>
 #include <ffnn/distribution/normal.h>
 
 // Run tests
 int main(int argc, char** argv)
 {
-  cv::Mat img = cv::imread("/home/brian/Desktop/tacocat.png");
+  using namespace ffnn::distribution;
+  using namespace ffnn::layer;
+  using namespace ffnn::optimizer;
+  cv::Mat img = cv::imread("/home/briancairl/Desktop/tacocat.jpg");
 
   cv::Mat f_img;
   img.convertTo(f_img, CV_32FC3);
 
   // Layer-type alias
-  using Layer  = ffnn::layer::Layer<float>;
-  using Input  = ffnn::layer::Input<float>;
-  using Conv = ffnn::layer::Convolution<float>;
-  using FullyConnected = ffnn::layer::FullyConnected<float>;
-  using Activation = ffnn::layer::Activation<float, ffnn::neuron::RectifiedLinear<float>>;
-  using Output = ffnn::layer::Output<float>;
+  using Layer  = Layer<float>;
+  using Input  = Input<float>;
+  using Conv = Convolution<float>;
+  using FullyConnected = FullyConnected<float>;
+  using Activation = Activation<float, ffnn::neuron::LeakyRectifiedLinear<float>>;
+  using Output = Output<float>;
+
+  typedef GradientDescent<Conv, CrossEntropy> ConvOpt;
+  typedef GradientDescent<FullyConnected, CrossEntropy> FCOpt;
 
   // Layer sizes
-  static const Layer::SizeType DIM = 128 * 128 * 3;
+  static const ffnn::size_type DIM = 128 * 128 * 3;
+  static const ffnn::size_type FDIM = 10;
+  static const ffnn::size_type OUTRES = 20;
+
 
   // Create layers
   auto input = boost::make_shared<Input>(DIM);
-  auto conv1 = boost::make_shared<Conv>(Conv::ShapeType(128, 128, 3), 10, 10, 6, 3);
-  auto conv2 = boost::make_shared<Conv>(Conv::ShapeType(40, 40, 6), 5, 5, 3, 2);
+  auto conv1 = boost::make_shared<Conv>(Conv::Configuration()
+                                        .setInputShape(128, 128, 3)
+                                        .setFilterShape(FDIM, FDIM, 3)
+                                        .setStride(FDIM/2,FDIM/2)
+                                        .setOptimizer(boost::make_shared<ConvOpt>(5e-7))
+                                        .setParameterDistribution(boost::make_shared<Normal<float>>(0, 1e-4)));
+  // auto conv2 = boost::make_shared<Conv>(Conv::Configuration()
+  //                                       .setInputShape(40, 40, 3)
+  //                                       .setFilterShape(5, 5, 3)
+  //                                       .setStride(2,2)
+  //                                       .setOptimizer(boost::make_shared<ConvOpt>(5e-7))
+  //                                       .setParameterDistribution(boost::make_shared<Normal<float>>(0, 1e-4)));
   auto act1 = boost::make_shared<Activation>();
-  auto act2 = boost::make_shared<Activation>();
-  auto fc = boost::make_shared<FullyConnected>(5);
+  //auto act2 = boost::make_shared<Activation>();
+  auto fc = boost::make_shared<FullyConnected>(FullyConnected::Configuration()
+                                               .setOutputShape(OUTRES)
+                                               .setOptimizer(boost::make_shared<FCOpt>(5e-7))
+                                               .setParameterDistribution(boost::make_shared<Normal<float>>(0, 1e-4)));
   auto output = boost::make_shared<Output>();
 
-  FFNN_ERROR(conv1->inputShape());
-
-  // Set optimizer (gradient descent)
-  conv1->setOptimizer(boost::make_shared<ffnn::optimizer::GradientDescent<Conv>>(1e-5));
-  conv2->setOptimizer(boost::make_shared<ffnn::optimizer::GradientDescent<Conv>>(1e-5));
-  fc->setOptimizer(boost::make_shared<ffnn::optimizer::GradientDescent<FullyConnected>>(1e-5));
+  FFNN_ERROR(conv1->getInputShape());
 
   // Create network
-  std::vector<Layer::Ptr> layers({input, conv1, act1, conv2, act2, fc, output});
+  //std::vector<Layer::Ptr> layers({input, conv1, act1, conv2, act2, fc, output});
+  std::vector<Layer::Ptr> layers({input, conv1, act1, fc, output});
 
   // Connect layers
   for (size_t idx = 1UL; idx < layers.size(); idx++)
   {
-    ffnn::layer::connect<Layer>(layers[idx-1UL], layers[idx]);
+    connect<Layer>(layers[idx-1UL], layers[idx]);
   }
 
-  using ND = ffnn::distribution::Normal<float>;
+  //using ND = ffnn::distribution::Normal<float>;
 
   // Intializer layers
-  input->initialize();
-  conv1->initialize(ND(0, 1e6/ DIM / DIM), ND(0, 1e6/ DIM / DIM));
-  act1->initialize();
-  conv2->initialize(ND(0, 1e6/ DIM / DIM), ND(0, 1e6/ DIM / DIM));
-  act2->initialize();
-  fc->initialize(ND(0, 1e6 / DIM / DIM), ND(0, 1e6 / DIM / DIM));
-  output->initialize();
+  for (auto& layer : layers)
+  {
+    layer->initialize();
+  }
 
   for (size_t idx = 1UL; idx < layers.size(); idx++)
   {
-    FFNN_ERROR((layers[idx-1UL]->outputShape().size() == layers[idx]->inputShape().size()));
+    FFNN_ERROR((layers[idx-1UL]->getOutputShape().size() == layers[idx]->getInputShape().size()));
+    FFNN_INFO(layers[idx-1UL]->getOutputShape());
   }
 
   // Create windows for display grids
@@ -99,7 +115,7 @@ int main(int argc, char** argv)
   double error = 0;
   for (size_t idx = 0UL; idx < 1e9; idx++)
   {
-    const double angle =  (180.0 / 2) * (double)(idx % 5) / 5.0;
+    const double angle =  180.0 * (double)(idx % OUTRES) / static_cast<float>(OUTRES);
     cv::Point2f src_center(f_img.cols/2.0F, f_img.rows/2.0F);
     cv::Mat rot_mat = cv::getRotationMatrix2D(src_center, angle, 1.0);
     cv::Mat dst;
@@ -107,11 +123,11 @@ int main(int argc, char** argv)
 
     // Creat eigen mapping
     Eigen::Map<Eigen::MatrixXf> input_img((float*)dst.data, dst.channels() * dst.rows, dst.cols);
-    Eigen::MatrixXf target_signal(5, 1);
-    Eigen::MatrixXf output_signal(5, 1);
+    Eigen::MatrixXf target_signal(OUTRES, 1);
+    Eigen::MatrixXf output_signal(OUTRES, 1);
 
     target_signal.setZero();
-    target_signal(idx % 5) = 1.0;
+    target_signal(idx % OUTRES) = 1.0;
 
     // Forward activate
     (*input) << input_img;
@@ -134,7 +150,7 @@ int main(int argc, char** argv)
     }
 
     // Trigget optimization
-    if (!(idx%5))
+    if (!(idx%OUTRES))
     {
       FFNN_INFO(error - prev_error);
 
@@ -144,22 +160,22 @@ int main(int argc, char** argv)
       }
 
       {
-        Eigen::Matrix<float, -1, -1, Eigen::ColMajor> ok = conv2->getParameters().filters[0].kernel;
-        cv::Mat kernel_img_cv(5, 5, CV_32FC3, const_cast<float*>(ok.data()));
+        Eigen::Matrix<float, -1, -1, Eigen::ColMajor> ok = conv1->getParameters()[0];
+        cv::Mat kernel_img_cv(FDIM, FDIM, CV_32FC3, const_cast<float*>(ok.data()));
         cv::Mat kernel_img_cv_norm;
         cv::normalize(kernel_img_cv, kernel_img_cv_norm, 0, 1, cv::NORM_MINMAX, CV_32FC3);
         cv::imshow("Kernel-0", kernel_img_cv_norm);
       }
       {
-        Eigen::Matrix<float, -1, -1, Eigen::ColMajor> ok = conv2->getParameters().filters[1].kernel;
-        cv::Mat kernel_img_cv(5, 5, CV_32FC3, const_cast<float*>(ok.data()));
+        Eigen::Matrix<float, -1, -1, Eigen::ColMajor> ok = conv1->getParameters()[1];
+        cv::Mat kernel_img_cv(FDIM, FDIM, CV_32FC3, const_cast<float*>(ok.data()));
         cv::Mat kernel_img_cv_norm;
         cv::normalize(kernel_img_cv, kernel_img_cv_norm, 0, 1, cv::NORM_MINMAX, CV_32FC3);
         cv::imshow("Kernel-1", kernel_img_cv_norm);
       }
       {
-        Eigen::Matrix<float, -1, -1, Eigen::ColMajor> ok = conv2->getParameters().filters[2].kernel;
-        cv::Mat kernel_img_cv(5, 5, CV_32FC3, const_cast<float*>(ok.data()));
+        Eigen::Matrix<float, -1, -1, Eigen::ColMajor> ok = conv1->getParameters()[2];
+        cv::Mat kernel_img_cv(FDIM, FDIM, CV_32FC3, const_cast<float*>(ok.data()));
         cv::Mat kernel_img_cv_norm;
         cv::normalize(kernel_img_cv, kernel_img_cv_norm, 0, 1, cv::NORM_MINMAX, CV_32FC3);
         cv::imshow("Kernel-2", kernel_img_cv_norm);
@@ -169,19 +185,18 @@ int main(int argc, char** argv)
       prev_error = error;
       error = 0;
     }
-    // FFNN_INFO(conv2->getInputBuffer()[0]);
-    // {
-    //   cv::Mat kernel_img_cv(conv1->outputShape().height / 3, conv1->outputShape().width, CV_32FC3, const_cast<float*>(conv2->getInputBuffer().data()));
-    //   cv::Mat kernel_img_cv_norm;
-    //   cv::normalize(kernel_img_cv, kernel_img_cv_norm, 0, 1, cv::NORM_MINMAX, CV_32FC3);
-    //   cv::imshow("Conv-1", kernel_img_cv_norm);
-    // }
     {
-      cv::Mat kernel_img_cv(conv2->outputShape().height / 3, conv2->outputShape().width, CV_32FC3, const_cast<float*>(fc->getInputBuffer().data()));
+      cv::Mat kernel_img_cv(conv1->getOutputShape().height / 3, conv1->getOutputShape().width, CV_32FC3, const_cast<float*>(act1->getInputBuffer().data()));
       cv::Mat kernel_img_cv_norm;
       cv::normalize(kernel_img_cv, kernel_img_cv_norm, 0, 1, cv::NORM_MINMAX, CV_32FC3);
-      cv::imshow("Conv-2", kernel_img_cv_norm);
+      cv::imshow("Conv-1", kernel_img_cv_norm);
     }
+    // {
+    //   cv::Mat kernel_img_cv(conv2->getOutputShape().height / 3, conv2->getOutputShape().width, CV_32FC3, const_cast<float*>(fc->getInputBuffer().data()));
+    //   cv::Mat kernel_img_cv_norm;
+    //   cv::normalize(kernel_img_cv, kernel_img_cv_norm, 0, 1, cv::NORM_MINMAX, CV_32FC3);
+    //   cv::imshow("Conv-2", kernel_img_cv_norm);
+    // }
     cv::waitKey(1);
   }
 

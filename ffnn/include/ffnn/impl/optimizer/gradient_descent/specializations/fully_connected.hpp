@@ -22,7 +22,10 @@ class GradientDescent<layer::FullyConnected<ValueType, Options, Extrinsics>, Cro
   public GradientDescent_<layer::FullyConnected<ValueType, Options, Extrinsics>, CrossEntropy>
 {
 public:
+  /// Layer type alias
   using LayerType = layer::FullyConnected<ValueType, Options, Extrinsics>;
+
+  /// Base type alias
   using BaseType = GradientDescent_<LayerType, CrossEntropy>;
 
   // Use BaseType constructors

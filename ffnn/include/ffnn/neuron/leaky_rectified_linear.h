@@ -14,26 +14,28 @@ namespace ffnn
 {
 namespace neuron
 {
+
+template<typename ValueType>
+struct leak_option
+{
+  constexpr static const ValueType leak  = 0.01;
+};
+
 /**
  * @brief A leaky-rectified linear activation unit
  */
 template<typename ValueType,
-         FFNN_SIZE_TYPE _P,
-         FFNN_SIZE_TYPE _B = 100>
+         typename OptionType = leak_option<ValueType>>
 class LeakyRectifiedLinear :
   public Neuron<ValueType>
 {
+  static_assert(OptionType::leak <  1.0, "Leak constant must be in the range [0, 1)");
+  static_assert(OptionType::leak >= 0.0, "Leak constant must be in the range [0, 1)");
 public:
   /**
    * @brief Setup constructor
-   * @param leak_factor input to leak with (input < 0) 
    */
-  LeakyRectifiedLinear() :
-    leak_factor_(static_cast<ValueType>(_P)/static_cast<ValueType>(_B))
-  {
-    FFNN_ASSERT_MSG((leak_factor_ > 0 && leak_factor_ <= 1),
-                    "Leak constant is not in the range [0, 1]");
-  }
+  LeakyRectifiedLinear() {}
 
   /**
    * @brief Computes activation output
@@ -42,7 +44,7 @@ public:
    */
   virtual void operator()(const ValueType& input, ValueType& output)
   {
-    output = (input > 0) ? input : (leak_factor_ * input);
+    output = (input > 0) ? input : (OptionType::leak * input);
   }
 
   /**
@@ -52,12 +54,8 @@ public:
    */
   virtual void derivative(const ValueType& input, ValueType& output) const
   {
-    output = (input > 0) ? 1 : leak_factor_;
+    output = (input > 0) ? 1 : OptionType::leak;
   }
-
-protected:
-  /// Factor in the range [0, 1] to leak when (input < 0)
-  const ValueType leak_factor_;
 };
 }  // namespace neuron
 }  // namespace ffnn

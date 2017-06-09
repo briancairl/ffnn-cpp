@@ -142,6 +142,18 @@ public:
 
   /**
    * @brief Scales weight and bias values
+   * @param offset  scalar value
+   * @return *this
+   */
+  Weights& operator+=(ValueType offset)
+  {
+    weights.array() += offset;
+    biases .array() += offset;
+    return *this;
+  }
+
+  /**
+   * @brief Scales weight and bias values
    * @param scale  scalar value
    * @return *this
    */
@@ -149,6 +161,18 @@ public:
   {
     weights *= scale;
     biases *= scale;
+    return *this;
+  }
+
+ /**
+   * @brief Scales weight and bias values
+   * @param scale  scalar value
+   * @return *this
+   */
+  Weights& operator/=(ValueType scale)
+  {
+    weights /= scale;
+    biases /= scale;
     return *this;
   }
 

@@ -22,9 +22,9 @@
 #include <ffnn/layer/input.h>
 #include <ffnn/layer/fully_connected.h>
 #include <ffnn/layer/output.h>
-#include <ffnn/optimizer/gradient_descent.h>
+#include <ffnn/optimizer/adam.h>
 
-TEST(TestLayerFullyConnectedTraining, Dynamic_GradientDescent)
+TEST(TestLayerFullyConnectedTraining, Dynamic_Adam)
 {
   using namespace ffnn::layer;
   using namespace ffnn::optimizer;
@@ -36,7 +36,7 @@ TEST(TestLayerFullyConnectedTraining, Dynamic_GradientDescent)
   using Output = Output<float>;
 
   // Optimizer alias
-  using Optimizer = GradientDescent<Hidden, CrossEntropy>;
+  using Optimizer = Adam<Hidden, CrossEntropy>;
 
   // Layer sizes
   static const ffnn::size_type DIM = 32;
@@ -69,6 +69,7 @@ TEST(TestLayerFullyConnectedTraining, Dynamic_GradientDescent)
   Hidden::InputBlockType output_data(DIM, 1);
 
   // Check that error montonically decreases
+  float error = 1000.0;
   for (size_t idx = 0UL; idx < 1000; idx++)
   {
     // Forward activate
@@ -93,12 +94,19 @@ TEST(TestLayerFullyConnectedTraining, Dynamic_GradientDescent)
     {
       EXPECT_TRUE(layer->update());
     }
+
+    error = (target_data - output_data).norm();
+    if (error < 1e-4)
+    {
+      FFNN_DEBUG("Iterations: " << idx);
+      break;
+    }
   }
-  EXPECT_NEAR((target_data - output_data).norm(), 0.0, 1e-4);
+  EXPECT_LT(error, 1e-4);
 }
 
 
-TEST(TestLayerFullyConnectedTraining, Static_GradientDescent)
+TEST(TestLayerFullyConnectedTraining, Static_Adam)
 {
   using namespace ffnn::layer;
   using namespace ffnn::optimizer;
@@ -110,7 +118,7 @@ TEST(TestLayerFullyConnectedTraining, Static_GradientDescent)
   using Output = Output<float, output::options<32>>;
 
   // Optimizer alias
-  using Optimizer = GradientDescent<Hidden, CrossEntropy>;
+  using Optimizer = Adam<Hidden, CrossEntropy>;
 
   // Layer sizes
   static const ffnn::size_type DIM = 32;
@@ -147,6 +155,7 @@ TEST(TestLayerFullyConnectedTraining, Static_GradientDescent)
   Hidden::InputBlockType output_data(DIM, 1);
 
   // Check that error montonically decreases
+  float error = 1000.0;
   for (size_t idx = 0UL; idx < 1000; idx++)
   {
     // Forward activate
@@ -171,8 +180,15 @@ TEST(TestLayerFullyConnectedTraining, Static_GradientDescent)
     {
       EXPECT_TRUE(layer->update());
     }
+
+    error = (target_data - output_data).norm();
+    if (error < 1e-4)
+    {
+      FFNN_DEBUG("Iterations: " << idx);
+      break;
+    }
   }
-  EXPECT_NEAR((target_data - output_data).norm(), 0.0, 1e-4);
+  EXPECT_LT(error, 1e-4);
 }
 
 // Run tests

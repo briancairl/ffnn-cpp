@@ -30,8 +30,13 @@ class GradientDescent<layer::Convolution<ValueType, Options, Extrinsics>, CrossE
   public GradientDescent_<layer::Convolution<ValueType, Options, Extrinsics>, CrossEntropy>
 {
 public:
+  /// Layer type alias
   using LayerType = layer::Convolution<ValueType, Options, Extrinsics>;
+
+  /// Base type alias
   using BaseType  = GradientDescent_<LayerType, CrossEntropy>;
+
+  /// Layer shape type alias
   using ShapeType = typename LayerType::ShapeType;
 
   // Use BaseType constructors

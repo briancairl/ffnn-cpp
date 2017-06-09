@@ -56,16 +56,16 @@ public:
  * @param[in,out] x  matrix whose values to randomize
  * @param d  distribution
  */
-template<typename M,
+template<typename BlockType,
          typename DistributionType>
-void setRandom(Eigen::MatrixBase<M>& x, const DistributionType& dist)
+void setRandom(Eigen::MatrixBase<BlockType>& x, const DistributionType& dist)
 {
   static_assert(internal::traits::is_distribution<DistributionType>::value,
                 "[DistributionType] MUST FUFILL DISTRIBUTION CONCEPT REQUIREMENTS!");
 
   static_assert(std::is_same<typename DistributionType::Scalar,
-                             typename Eigen::MatrixBase<M>::Scalar>::value,
-                "SCALAR TYPE MISMATCH BETWEEN [Eigen::MatrixBase<M>::Scalar] AND [DistributionType::Scalar]!");
+                             typename Eigen::MatrixBase<BlockType>::Scalar>::value,
+                "SCALAR TYPE MISMATCH BETWEEN [Eigen::MatrixBase<BlockType>::Scalar] AND [DistributionType::Scalar]!");
 
   // Assign random values to all coefficients
   auto unaryExprSetRandomCoeff = [&dist](typename DistributionType::Scalar x)

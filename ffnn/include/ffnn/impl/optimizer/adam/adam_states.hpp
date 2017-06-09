@@ -2,58 +2,105 @@
  * @note HEADER-ONLY IMPLEMENTATION FILE
  * @warning Do not include directly
  */
-#ifndef FFNN_LAYER_OPTIMIZATION_ADAM_STATES_HPP
-#define FFNN_LAYER_OPTIMIZATION_ADAM_STATES_HPP
+#ifndef FFNN_IMPL_OPTIMIZER_ADAM_ADAM_STATES_HPP
+#define FFNN_IMPL_OPTIMIZER_ADAM_ADAM_STATES_HPP
 
 namespace ffnn
 {
 namespace optimizer
 {
-template<typename ValueType, typename LayerType>
+/**
+ * @brief Maintains gradient state (1st,2nd moment estimates)
+ *        To be used with the Adam optimizer.
+ */
+template<typename LayerType>
 class AdamStates
 {
 public:
-  AdamStates(ValueType beta1, ValueType beta2, ValueType eps) :
+  /// Scalar type alias
+  using Scalar = typename LayerType::Scalar;
+
+  /// Layer parameters type alias
+  using ParametersType = typename LayerType::ParametersType;
+
+  /**
+   * @brief Setup constructor
+   * @param beta1  1st-moment update gain parameter
+   * @param beta2  2nd-moment update gain parameter
+   * @param eps  Regularization parameter
+   */
+  AdamStates(Scalar beta1, Scalar beta2, Scalar eps) :
     inv_beta1_(1 - beta1),
     inv_beta2_(1 - beta2),
     epsilon_(eps)
-  {}
+  {
+    FFNN_ASSERT_MSG(beta1 > 0.0, "beta1 must be in the range (0, 1)");
+    FFNN_ASSERT_MSG(beta1 < 1.0, "beta1 must be in the range (0, 1)");
+    FFNN_ASSERT_MSG(beta2 > 0.0, "beta2 must be in the range (0, 1)");
+    FFNN_ASSERT_MSG(beta2 < 1.0, "beta2 must be in the range (0, 1)");
+  }
 
+  /**
+   * @brief Updates Adam gradient states
+   *
+   *        Updates 1st and 2nd moment estimates for layer
+   *        parameter gradients
+   * @param[in,out] gradient  Layer parameter gradient
+   */
   void update(ParametersType& gradient)
   {
-    // Update gradient moments
-    mean_ += beta1 * (gradient - mean_);
-    var_  += beta2 * (gradient - var_);
+    ParametersType t;
+
+    // Update 1st moment
+    t  = gradient;
+    t -= mean_;
+    t *= inv_beta1_;
+    mean_ += t;
+    // >> mean_' := mean_ + inv_beta1_ * (g - mean_)
+
+    // Update 2nd moment
+    gradient *= gradient;
+    gradient -= var_;
+    gradient *= inv_beta2_;
+    var_ += gradient;
+    // >> var_' := var_ + inv_beta2_ * (g * g - var_)
 
     // Compute learning rates for all weights
-    ParametersType tmp;
+    t = mean_;
     gradient = var_;
     gradient /= inv_beta2_;
     gradient += epsilon_;
-    tmp = mean_;
-    tmp /= gradient;
-    gradient = tmp;
+    t /= gradient;
+    gradient = t;
     gradient /= inv_beta1_;
+    // >> g' := mean_^ / (var_^ + eps)
+
   }
 
+  /**
+   * @brief Initializes Adam states from layer parameters
+   * @param layer  Layer to optimize
+   */
   inline void initialize(const LayerType& layer)
   {
+    // Capture parameter sizings
     mean_ = layer.getParameters();
-    mean_.setZero();
-
     var_  = layer.getParameters();
+
+    // Zero out parameters
+    mean_.setZero();
     var_.setZero();
   }
 
 private:
-  /// Mean decay rate
-  const ValueType inv_beta1_;
+  /// Compliment of mean decay rate
+  const Scalar inv_beta1_;
 
-  /// Variance decay rate
-  const ValueType inv_beta2_;
+  /// Compliment of variance decay rate
+  const Scalar inv_beta2_;
 
   /// Variance normalization value
-  const ValueType epsilon_;
+  const Scalar epsilon_;
 
   /// Running mean of error gradient
   ParametersType mean_;
@@ -63,4 +110,4 @@ private:
 };
 }  // namespace optimizer
 }  // namespace ffnn
-#endif  // FFNN_LAYER_OPTIMIZATION_ADAM_STATES_HPP
+#endif  // FFNN_IMPL_OPTIMIZER_ADAM_ADAM_STATES_HPP

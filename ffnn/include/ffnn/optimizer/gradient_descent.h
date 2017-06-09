@@ -30,10 +30,10 @@ public:
   /// Scalar type standardization
   typedef typename BaseType::Scalar Scalar;
 
-  /// Matrix type standardization
+  /// Input block type standardization
   typedef typename LayerType::InputBlockType InputBlockType;
 
-  /// Matrix type standardization
+  /// Layer parameter type standardization
   typedef typename LayerType::ParametersType ParametersType;
 
   /**
@@ -81,6 +81,8 @@ public:
   bool update(LayerType& layer);
 
 protected:
+  FFNN_REGISTER_OPTIMIZER(Adam)
+
   /// Learning rate
   Scalar lr_;
 

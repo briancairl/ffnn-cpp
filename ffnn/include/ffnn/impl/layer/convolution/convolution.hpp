@@ -57,7 +57,7 @@ bool Convolution<ValueType, Options, Extrinsics>::initialize()
   else if (!BaseType::initialize())
   {
     FFNN_WARN_NAMED("layer::Convolution",
-                    "<" << BaseType::getID() << "> failed basic initializaition.");
+                    "<" << BaseType::getID() << "> failed basic initialization.");
     return false;
   }
   else if (BaseType::setupRequired())

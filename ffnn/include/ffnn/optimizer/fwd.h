@@ -15,6 +15,7 @@ namespace optimizer
 // Foward Declarations
 template<typename LayerType> class None;
 template<typename LayerType, LossFunction LossFn> class Adam;
+template<typename LayerType, LossFunction LossFn> class Adam_;
 template<typename LayerType, LossFunction LossFn> class GradientDescent;
 template<typename LayerType, LossFunction LossFn> class GradientDescent_;
 

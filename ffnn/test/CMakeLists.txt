@@ -82,6 +82,26 @@ target_link_libraries(test_layer_fully_connected
   ${GTEST_LIBRARIES}
 )
 
+catkin_add_gtest(test_layer_fully_connected_training_gd
+  test_layer_fully_connected_training_gd.cpp
+)
+target_link_libraries(test_layer_fully_connected_training_gd
+  ${Boost_LIBRARIES}
+  ${catkin_LIBRARIES}
+  ${EIGEN_LIBRARIES}
+  ${GTEST_LIBRARIES}
+)
+
+catkin_add_gtest(test_layer_fully_connected_training_adam
+  test_layer_fully_connected_training_adam.cpp
+)
+target_link_libraries(test_layer_fully_connected_training_adam
+  ${Boost_LIBRARIES}
+  ${catkin_LIBRARIES}
+  ${EIGEN_LIBRARIES}
+  ${GTEST_LIBRARIES}
+)
+
 catkin_add_gtest(test_layer_convolution_filter
   test_layer_convolution_filter.cpp
 )
@@ -96,6 +116,26 @@ catkin_add_gtest(test_layer_convolution
   test_layer_convolution.cpp
 )
 target_link_libraries(test_layer_convolution
+  ${Boost_LIBRARIES}
+  ${catkin_LIBRARIES}
+  ${EIGEN_LIBRARIES}
+  ${GTEST_LIBRARIES}
+)
+
+catkin_add_gtest(test_layer_convolution_training_gd
+  test_layer_convolution_training_gd.cpp
+)
+target_link_libraries(test_layer_convolution_training_gd
+  ${Boost_LIBRARIES}
+  ${catkin_LIBRARIES}
+  ${EIGEN_LIBRARIES}
+  ${GTEST_LIBRARIES}
+)
+
+catkin_add_gtest(test_layer_convolution_training_adam
+  test_layer_convolution_training_adam.cpp
+)
+target_link_libraries(test_layer_convolution_training_adam
   ${Boost_LIBRARIES}
   ${catkin_LIBRARIES}
   ${EIGEN_LIBRARIES}
@@ -133,45 +173,6 @@ catkin_add_gtest(test_layer_activation_dropout_training
   test_layer_activation_dropout_training.cpp
 )
 target_link_libraries(test_layer_activation_dropout_training
-  ${Boost_LIBRARIES}
-  ${catkin_LIBRARIES}
-  ${EIGEN_LIBRARIES}
-  ${GTEST_LIBRARIES}
-)
-
-##############################################################
-# Tests:
-#    - layer::Input
-#    - layer::Output
-#    - layer::FullyConnected
-#    - layer::Activation
-#  	 - optimizer::GradientDescent[FullyConnected]
-#  	 - optimizer::GradientDescent[Activation]
-##############################################################
-
-catkin_add_gtest(test_layer_fully_connected_training
-  test_layer_fully_connected_training.cpp
-)
-target_link_libraries(test_layer_fully_connected_training
-  ${Boost_LIBRARIES}
-  ${catkin_LIBRARIES}
-  ${EIGEN_LIBRARIES}
-  ${GTEST_LIBRARIES}
-)
-
-##############################################################
-# Tests:
-#    - layer::Input
-#    - layer::Output
-#    - layer::Convolution
-#  	 - optimizer::GradientDescent[Convolution]
-#  	 - optimizer::GradientDescent[Activation]
-##############################################################
-
-catkin_add_gtest(test_layer_convolution_training
-  test_layer_convolution_training.cpp
-)
-target_link_libraries(test_layer_convolution_training
   ${Boost_LIBRARIES}
   ${catkin_LIBRARIES}
   ${EIGEN_LIBRARIES}

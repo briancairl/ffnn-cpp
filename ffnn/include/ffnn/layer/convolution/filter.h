@@ -50,12 +50,12 @@ public:
    * @brief Default constructor
    */
   template<bool T = Options::has_fixed_kernel_count>
-  Filter(typename std::enable_if<T>::type* = nullptr) :
+  Filter(typename std::enable_if<T, void>::type* = nullptr) :
     bias(0)
   {}
   template<bool T = Options::has_fixed_kernel_count>
   Filter(size_type filter_count = Eigen::Dynamic,
-         typename std::enable_if<!T>::type* = nullptr) :
+         typename std::enable_if<!T, void>::type* = nullptr) :
     bias(0)
   {
     if (filter_count > 0)
@@ -84,7 +84,7 @@ public:
    * @param kernel_count  number of kernels
    */
   template<bool T = Options::has_fixed_kernel_count>
-  typename std::enable_if<T>::type
+  typename std::enable_if<T, void>::type
     setZero(size_type kernel_height,
             size_type kernel_width,
             size_type kernel_depth,
@@ -99,7 +99,7 @@ public:
     setZero();
   }
   template<bool T = Options::has_fixed_kernel_count>
-  typename std::enable_if<!T>::type
+  typename std::enable_if<!T, void>::type
     setZero(size_type kernel_height,
             size_type kernel_width,
             size_type kernel_depth,
@@ -148,7 +148,7 @@ public:
    */
   template<typename DistributionType,
            bool T = Options::has_fixed_kernel_count>
-  typename std::enable_if<T>::type
+  typename std::enable_if<T, void>::type
     setRandom(const DistributionType& distribution,
               size_type kernel_height,
               size_type kernel_width,
@@ -168,7 +168,7 @@ public:
   }
   template<typename DistributionType,
            bool T = Options::has_fixed_kernel_count>
-  typename std::enable_if<!T>::type
+  typename std::enable_if<!T, void>::type
     setRandom(const DistributionType& distribution,
               size_type kernel_height,
               size_type kernel_width,
@@ -196,6 +196,21 @@ public:
 
   /**
    * @brief Scales kernels and bias value
+   * @param offset  scalar value
+   * @return *this
+   */
+  Filter& operator+=(ValueType offset)
+  {
+    for (auto& kernel : *this)
+    {
+      kernel.array() += offset;
+    }
+    this->bias += offset;
+    return *this;
+  }
+
+  /**
+   * @brief Scales kernels and bias value
    * @param scale  scalar value
    * @return *this
    */
@@ -206,6 +221,21 @@ public:
       kernel *= scale;
     }
     this->bias *= scale;
+    return *this;
+  }
+
+  /**
+   * @brief Scales kernels and bias value
+   * @param scale  scalar value
+   * @return *this
+   */
+  Filter& operator/=(ValueType scale)
+  {
+    for (auto& kernel : *this)
+    {
+      kernel /= scale;
+    }
+    this->bias /= scale;
     return *this;
   }
 
