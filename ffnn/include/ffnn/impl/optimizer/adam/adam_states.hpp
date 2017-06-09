@@ -74,7 +74,6 @@ public:
     gradient = t;
     gradient /= inv_beta1_;
     // >> g' := mean_^ / (var_^ + eps)
-
   }
 
   /**

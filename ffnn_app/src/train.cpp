@@ -23,7 +23,7 @@
 #include <ffnn/layer/convolution.h>
 #include <ffnn/layer/output.h>
 #include <ffnn/neuron/leaky_rectified_linear.h>
-#include <ffnn/optimizer/gradient_descent.h>
+#include <ffnn/optimizer/adam.h>
 #include <ffnn/distribution/normal.h>
 
 // Run tests
@@ -45,12 +45,12 @@ int main(int argc, char** argv)
   using Activation = Activation<float, ffnn::neuron::LeakyRectifiedLinear<float>>;
   using Output = Output<float>;
 
-  typedef GradientDescent<Conv, CrossEntropy> ConvOpt;
-  typedef GradientDescent<FullyConnected, CrossEntropy> FCOpt;
+  typedef Adam<Conv, CrossEntropy> ConvOpt;
+  typedef Adam<FullyConnected, CrossEntropy> FCOpt;
 
   // Layer sizes
   static const ffnn::size_type DIM = 128 * 128 * 3;
-  static const ffnn::size_type FDIM = 10;
+  static const ffnn::size_type FDIM = 6;
   static const ffnn::size_type OUTRES = 20;
 
 
@@ -60,19 +60,19 @@ int main(int argc, char** argv)
                                         .setInputShape(128, 128, 3)
                                         .setFilterShape(FDIM, FDIM, 3)
                                         .setStride(FDIM/2,FDIM/2)
-                                        .setOptimizer(boost::make_shared<ConvOpt>(5e-7))
+                                        .setOptimizer(boost::make_shared<ConvOpt>(1e1))
                                         .setParameterDistribution(boost::make_shared<Normal<float>>(0, 1e-4)));
   // auto conv2 = boost::make_shared<Conv>(Conv::Configuration()
   //                                       .setInputShape(40, 40, 3)
   //                                       .setFilterShape(5, 5, 3)
   //                                       .setStride(2,2)
-  //                                       .setOptimizer(boost::make_shared<ConvOpt>(5e-7))
+  //                                       .setOptimizer(boost::make_shared<ConvOpt>(1e-3))
   //                                       .setParameterDistribution(boost::make_shared<Normal<float>>(0, 1e-4)));
   auto act1 = boost::make_shared<Activation>();
   //auto act2 = boost::make_shared<Activation>();
   auto fc = boost::make_shared<FullyConnected>(FullyConnected::Configuration()
                                                .setOutputShape(OUTRES)
-                                               .setOptimizer(boost::make_shared<FCOpt>(5e-7))
+                                               .setOptimizer(boost::make_shared<FCOpt>(1e-1))
                                                .setParameterDistribution(boost::make_shared<Normal<float>>(0, 1e-4)));
   auto output = boost::make_shared<Output>();
 

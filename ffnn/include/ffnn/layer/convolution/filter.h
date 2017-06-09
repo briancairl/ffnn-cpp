@@ -163,8 +163,6 @@ public:
     FFNN_ASSERT_MSG(kernel_depth > 0,  "kernel_depth must be positive");
     FFNN_ASSERT_MSG(kernel_count > 0,  "kernel_count must be positive");
     FFNN_ASSERT_MSG(kernel_count == Options::kernel_count,  "kernel_count is fixed");
-
-    setRandom(distribution);
   }
   template<typename DistributionType,
            bool T = Options::has_fixed_kernel_count>
@@ -246,7 +244,7 @@ public:
    */
   Filter& operator-=(const Filter& other)
   {
-    FFNN_ASSERT_MSG(this->size() == other.size(), "Kernel coutns are inconsistent");
+    FFNN_ASSERT_MSG(this->size() == other.size(), "Kernel counts are inconsistent");
     for (size_t idx = 0UL; idx < this->size(); idx++)
     {
       (*this)[idx] -= other[idx];
@@ -262,7 +260,7 @@ public:
    */
   Filter& operator+=(const Filter& other)
   {
-    FFNN_ASSERT_MSG(this->size() == other.size(), "Kernel coutns are inconsistent");
+    FFNN_ASSERT_MSG(this->size() == other.size(), "Kernel counts are inconsistent");
     for (size_t idx = 0UL; idx < this->size(); idx++)
     {
       (*this)[idx] += other[idx];
@@ -278,7 +276,7 @@ public:
    */
   Filter& operator*=(const Filter& other)
   {
-    FFNN_ASSERT_MSG(this->size() == other.size(), "Kernel coutns are inconsistent");
+    FFNN_ASSERT_MSG(this->size() == other.size(), "Kernel counts are inconsistent");
     for (size_t idx = 0UL; idx < this->size(); idx++)
     {
       (*this)[idx].array() *= other[idx].array();
@@ -294,7 +292,7 @@ public:
    */
   Filter& operator/=(const Filter& other)
   {
-    FFNN_ASSERT_MSG(this->size() == other.size(), "Kernel coutns are inconsistent");
+    FFNN_ASSERT_MSG(this->size() == other.size(), "Kernel counts are inconsistent");
     for (size_t idx = 0UL; idx < this->size(); idx++)
     {
       (*this)[idx].array() /= other[idx].array();
